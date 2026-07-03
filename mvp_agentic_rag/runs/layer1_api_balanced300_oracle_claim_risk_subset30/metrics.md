@@ -1,0 +1,46 @@
+# Metrics: layer1_api_balanced300_oracle_claim_risk_subset30
+
+## claim_risk
+- count: 30
+- answer_f1: 0.5263663663663664
+- avg_retrieval_calls: 1.2
+- unsupported_claim_rate: 0.2
+- abstention_rate: 0.26666666666666666
+- no_new_evidence_call_rate: 0.2
+- coverage: 0.7333333333333333
+- selective_answer_f1: 0.7177723177723178
+- cost_normalized_f1: 0.43863863863863867
+- wasted_retrieval_rate: 0.2
+- answered_unsupported_rate: 0
+- final_answered_unsupported_rate: 0
+- abstention_precision: 0.75
+
+## ours
+- count: 30
+- answer_f1: 0.5863663663663664
+- avg_retrieval_calls: 1.4
+- unsupported_claim_rate: 0.2
+- abstention_rate: 0.2
+- no_new_evidence_call_rate: 0.2
+- coverage: 0.8
+- selective_answer_f1: 0.7329579579579579
+- cost_normalized_f1: 0.4188331188331189
+- wasted_retrieval_rate: 0.2
+- answered_unsupported_rate: 0
+- final_answered_unsupported_rate: 0
+- abstention_precision: 1
+
+## prompt_verifier
+- count: 30
+- answer_f1: 0.5596996996996997
+- avg_retrieval_calls: 1
+- unsupported_claim_rate: 0.2
+- abstention_rate: 0.2
+- no_new_evidence_call_rate: 0
+- coverage: 0.8
+- selective_answer_f1: 0.6996246246246246
+- cost_normalized_f1: 0.5596996996996997
+- wasted_retrieval_rate: 0
+- answered_unsupported_rate: 0
+- final_answered_unsupported_rate: 0
+- abstention_precision: 1

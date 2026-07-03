@@ -1,0 +1,24 @@
+﻿run_name: layer1_api_balanced300_dense_bge_llm_verifier_full300_agentic_rag_baseline
+dataset: data/musique_mvp_300.jsonl
+corpus: data/musique_corpus.jsonl
+output_dir: runs/layer1_api_balanced300_dense_bge_llm_verifier_full300_agentic_rag_baseline
+retriever: dense
+index_path: indexes/faiss_musique_bge_base_en_v1_5.index
+meta_path: indexes/faiss_musique_bge_base_en_v1_5_meta.pkl
+embedding_backend: sentence_transformers
+embedding_model: D:\research\model\models--BAAI--bge-base-en-v1.5\snapshots\a5beb1e3e68b9ab74eb54cfd186867f64f240e1a
+methods: [prompt_verifier, agentic_rag_baseline]
+top_k: 5
+max_rounds: 3
+answer_backend: openai_compatible
+answer_base_url: https://api.siliconflow.cn/v1
+answer_api_key_env: SILICONFLOW_API_KEY
+answer_model: Qwen/Qwen2.5-14B-Instruct
+answer_timeout: 60
+answer_max_tokens: 256
+verifier_backend: openai_compatible
+verifier_base_url: https://api.siliconflow.cn/v1
+verifier_api_key_env: SILICONFLOW_API_KEY
+verifier_model: Qwen/Qwen2.5-14B-Instruct
+verifier_timeout: 60
+verifier_max_tokens: 768

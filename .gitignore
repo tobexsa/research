@@ -1,0 +1,10 @@
+# Large local artifacts and raw datasets should stay outside Git history.
+model/
+datasets/data/
+datasets/*.zip
+
+# Runtime launch logs and process files.
+mvp_agentic_rag/runs/logs/
+mvp_agentic_rag/runs/**/*.log
+mvp_agentic_rag/runs/**/*.pid.txt
+mvp_agentic_rag/runs/**/*.cmd

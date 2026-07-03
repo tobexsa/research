@@ -1,0 +1,8 @@
+﻿run_name: layer1_api_balanced300_dense_scoped_prompt_v3_all_methods_agentic_rag_baseline
+dataset: data/musique_mvp_300.jsonl
+corpus: data/musique_corpus.jsonl
+output_dir: runs/layer1_api_balanced300_dense_scoped_prompt_v3_all_methods_agentic_rag_baseline
+retriever: dense
+methods: [naive, fixed_k, self_stop, prompt_verifier, agentic_rag_baseline]
+top_k: 5
+max_rounds: 3

@@ -1,0 +1,98 @@
+{
+  "status": "partial_blocked",
+  "blocked_reason": "SiliconFlow chat/completions returned stable HTTP 403 for Qwen/Qwen3-14B and Qwen/Qwen2.5-14B-Instruct during resume/health checks.",
+  "completed_records": 35,
+  "target_records": 45,
+  "timestamp": "2026-06-28T17:17:47",
+  "metrics_partial_35": {
+    "count": 35,
+    "answer_f1": 0.2759128590707538,
+    "avg_retrieval_calls": 2.257142857142857,
+    "unsupported_claim_rate": 0.6857142857142857,
+    "abstention_rate": 0.6571428571428571,
+    "no_new_evidence_call_rate": 0.7142857142857143,
+    "coverage": 0.34285714285714286,
+    "selective_answer_f1": 0.8047458389563653,
+    "cost_normalized_f1": 0.12223987427185296,
+    "wasted_retrieval_rate": 0.7142857142857143,
+    "answered_unsupported_rate": 0.16666666666666666,
+    "final_answered_unsupported_rate": 0,
+    "abstention_precision": 0.9565217391304348
+  },
+  "hop_coverage_partial": {
+    "2hop": 0.4666666666666667,
+    "3hop": 0.3333333333333333,
+    "4hop": 0.0
+  },
+  "v1_2_slot_steps": 62,
+  "v1_2_field_coverage_counts": {
+    "question_slot_parser": 62,
+    "candidate_role_labeler": 62,
+    "ordered_hop_binding": 62,
+    "slot_bound_entailment": 62,
+    "set_level_sufficiency": 62,
+    "decision_head": 62
+  },
+  "actions": {
+    "refine_missing_hop": 15,
+    "continue_search": 14,
+    "abstain": 31,
+    "answer": 2
+  },
+  "candidate_roles": {
+    "bridge_entity": 15,
+    "final_answer": 10,
+    "unknown": 31,
+    "distractor": 4,
+    "evidence_location": 1,
+    "evidence_date": 1
+  },
+  "role_errors": {
+    "none": 56,
+    "distractor": 1,
+    "wrong_target": 2,
+    "bridge_as_final": 1,
+    "date_component_as_final": 1,
+    "relation_direction_error": 1
+  },
+  "candidate_is_final_relation_object": {
+    "False": 54,
+    "True": 8
+  },
+  "branch_counts": {
+    "(False, False)": 61,
+    "(True, False)": 1
+  },
+  "wrong_answered_cases_by_f1": [
+    {
+      "id": "2hop__131951_643670",
+      "pred": "Nieuwe Waterweg",
+      "gold": "Het Scheur",
+      "f1": 0.0
+    },
+    {
+      "id": "2hop__167577_31122",
+      "pred": "18th century",
+      "gold": "18th",
+      "f1": 0.6666666666666666
+    },
+    {
+      "id": "3hop1__128554_39743_24526",
+      "pred": "upper 40s–lower 50s °F (8–12 °C)",
+      "gold": "upper 40s–lower 50s °F",
+      "f1": 0.7692307692307693
+    },
+    {
+      "id": "3hop1__145194_160545_62931",
+      "pred": "Koh Phi Phi",
+      "gold": "island Koh Phi Phi",
+      "f1": 0.8
+    },
+    {
+      "id": "3hop1__222497_309482_27537",
+      "pred": "Roncalli left Venice to attend the conclave in Rome and became Pope John XXIII.",
+      "gold": "for the conclave in Rome",
+      "f1": 0.4210526315789473
+    }
+  ]
+}

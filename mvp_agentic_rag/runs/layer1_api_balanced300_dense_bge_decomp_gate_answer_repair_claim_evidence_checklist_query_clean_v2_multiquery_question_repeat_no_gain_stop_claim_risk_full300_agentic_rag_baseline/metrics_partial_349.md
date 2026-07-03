@@ -1,0 +1,46 @@
+# Metrics: layer1_api_balanced300_dense_bge_decomp_gate_answer_repair_claim_evidence_checklist_query_clean_v2_multiquery_question_repeat_no_gain_stop_claim_risk_full300_agentic_rag_baseline
+
+## agentic_rag_baseline
+- count: 116
+- answer_f1: 0.31328097190166154
+- avg_retrieval_calls: 2.2241379310344827
+- unsupported_claim_rate: 0.6637931034482759
+- abstention_rate: 0.5172413793103449
+- no_new_evidence_call_rate: 0.5517241379310345
+- coverage: 0.4827586206896552
+- selective_answer_f1: 0.6489391560820132
+- cost_normalized_f1: 0.14085501062245248
+- wasted_retrieval_rate: 0.5517241379310345
+- answered_unsupported_rate: 0.32142857142857145
+- final_answered_unsupported_rate: 0
+- abstention_precision: 0.95
+
+## claim_risk
+- count: 116
+- answer_f1: 0.35524052097327957
+- avg_retrieval_calls: 2
+- unsupported_claim_rate: 0.6724137931034483
+- abstention_rate: 0.5258620689655172
+- no_new_evidence_call_rate: 0.5775862068965517
+- coverage: 0.47413793103448276
+- selective_answer_f1: 0.7492345533254624
+- cost_normalized_f1: 0.17762026048663979
+- wasted_retrieval_rate: 0.5775862068965517
+- answered_unsupported_rate: 0.34545454545454546
+- final_answered_unsupported_rate: 0
+- abstention_precision: 0.9508196721311475
+
+## prompt_verifier
+- count: 117
+- answer_f1: 0.1697849159387621
+- avg_retrieval_calls: 1
+- unsupported_claim_rate: 0.6923076923076923
+- abstention_rate: 0.6837606837606838
+- no_new_evidence_call_rate: 0
+- coverage: 0.3162393162393162
+- selective_answer_f1: 0.5368874368874369
+- cost_normalized_f1: 0.1697849159387621
+- wasted_retrieval_rate: 0
+- answered_unsupported_rate: 0.02702702702702703
+- final_answered_unsupported_rate: 0.02702702702702703
+- abstention_precision: 1

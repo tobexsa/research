@@ -1,0 +1,20 @@
+{
+  "run_name": "layer1_local_qwen3_14b_int4_decomp_gate_answer_repair_claim_risk_stratified45_slot_ledger_slot_binding_slot_final_verifier_no_closure_no_think",
+  "methods": {
+    "claim_risk": {
+      "count": 45,
+      "answer_f1": 0.16376068376068376,
+      "avg_retrieval_calls": 1.8222222222222222,
+      "unsupported_claim_rate": 0.7555555555555555,
+      "abstention_rate": 0.7555555555555555,
+      "no_new_evidence_call_rate": 0.7333333333333333,
+      "coverage": 0.24444444444444444,
+      "selective_answer_f1": 0.66993006993007,
+      "cost_normalized_f1": 0.08986866791744841,
+      "wasted_retrieval_rate": 0.7333333333333333,
+      "answered_unsupported_rate": 0.09090909090909091,
+      "final_answered_unsupported_rate": 0,
+      "abstention_precision": 0.9705882352941176
+    }
+  }
+}

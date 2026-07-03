@@ -1,0 +1,889 @@
+{
+  "summary": {
+    "cases": 22,
+    "broken_suggested_executed": 22,
+    "fixed_suggested_executed": 21,
+    "broken_hit_sum": 31,
+    "fixed_hit_sum": 31,
+    "broken_any": 20,
+    "fixed_any": 20,
+    "broken_full": 11,
+    "fixed_full": 11,
+    "fixed_better": 0,
+    "fixed_worse": 0,
+    "changed_ids": 11
+  },
+  "records": [
+    {
+      "id": "2hop__129721_40482",
+      "round": 2,
+      "support": [
+        "2hop__129721_40482::p14",
+        "2hop__129721_40482::p18"
+      ],
+      "queries": {
+        "clean": "Huguenots purchasing land state encompassing Zubly Cemetery purchase",
+        "suggested": "From whom did the Huguenots in South Carolina, specifically in the area of Zubly Cemetery, purchase land?"
+      },
+      "broken": {
+        "ids": [
+          "2hop__129721_40482::p18",
+          "2hop__129721_40482::p3",
+          "2hop__129721_40482::p14"
+        ],
+        "hits": 2,
+        "queries_executed": [
+          "Huguenots purchasing land state encompassing Zubly Cemetery purchase",
+          "From whom did the Huguenots in South Carolina, specifically in the area of Zubly Cemetery, purchase land?"
+        ]
+      },
+      "fixed": {
+        "ids": [
+          "2hop__129721_40482::p18",
+          "2hop__129721_40482::p3",
+          "2hop__129721_40482::p14"
+        ],
+        "hits": 2,
+        "queries_executed": [
+          "Huguenots purchasing land state encompassing Zubly Cemetery purchase",
+          "From whom did the Huguenots in South Carolina, specifically in the area of Zubly Cemetery, purchase land?"
+        ]
+      }
+    },
+    {
+      "id": "2hop__131951_643670",
+      "round": 2,
+      "support": [
+        "2hop__131951_643670::p10",
+        "2hop__131951_643670::p6"
+      ],
+      "queries": {
+        "clean": "name mouth watercourse Rotterdam Centrum body water",
+        "suggested": "What is the name of the mouth of the watercourse by Rotterdam Centrum?"
+      },
+      "broken": {
+        "ids": [
+          "2hop__131951_643670::p6",
+          "4hop1__726391_153080_33952_34109::p1",
+          "2hop__131951_643670::p10"
+        ],
+        "hits": 2,
+        "queries_executed": [
+          "name mouth watercourse Rotterdam Centrum body water",
+          "What is the name of the mouth of the watercourse by Rotterdam Centrum?"
+        ]
+      },
+      "fixed": {
+        "ids": [
+          "2hop__131951_643670::p6",
+          "4hop1__726391_153080_33952_34109::p1",
+          "2hop__131951_643670::p10"
+        ],
+        "hits": 2,
+        "queries_executed": [
+          "name mouth watercourse Rotterdam Centrum body water",
+          "What is the name of the mouth of the watercourse by Rotterdam Centrum?"
+        ]
+      }
+    },
+    {
+      "id": "2hop__132854_417697",
+      "round": 2,
+      "support": [
+        "2hop__132854_417697::p10",
+        "2hop__132854_417697::p6"
+      ],
+      "queries": {
+        "clean": "Mohammed Atta's connection Datsun Nissan model he might Atta kind company makes Type 12",
+        "suggested": "Find information about Mohammed Atta's connection to Datsun or Nissan and any specific model he might have."
+      },
+      "broken": {
+        "ids": [
+          "2hop__132854_417697::p10",
+          "3hop2__132957_133264_40768::p13",
+          "2hop__132854_417697::p16",
+          "3hop2__132957_379231_40768::p3",
+          "2hop__857493_17335::p8"
+        ],
+        "hits": 1,
+        "queries_executed": [
+          "Mohammed Atta's connection Datsun Nissan model he might Atta kind company makes Type 12",
+          "Find information about Mohammed Atta's connection to Datsun or Nissan and any specific model he might have.",
+          "Find information about Mohammed Atta's connection to Datsun or Nissan",
+          "any specific model he might have."
+        ]
+      },
+      "fixed": {
+        "ids": [
+          "2hop__132854_417697::p10",
+          "3hop2__132957_379231_40768::p3",
+          "3hop2__132957_133264_40768::p13",
+          "2hop__132854_417697::p16",
+          "2hop__857493_17335::p8"
+        ],
+        "hits": 1,
+        "queries_executed": [
+          "Mohammed Atta's connection Datsun Nissan model he might Atta kind company makes Type 12",
+          "Find information about Mohammed Atta's connection to Datsun or Nissan and any specific model he might have.",
+          "Find information about Mohammed Atta's connection to Datsun or Nissan",
+          "any specific model he might have."
+        ]
+      }
+    },
+    {
+      "id": "2hop__167577_31122",
+      "round": 2,
+      "support": [
+        "2hop__167577_31122::p10",
+        "2hop__167577_31122::p14"
+      ],
+      "queries": {
+        "clean": "George Berkeley author Treatise Concerning Principles Human Knowledge lived 18th century 18 世纪",
+        "suggested": ""
+      },
+      "broken": {
+        "ids": [
+          "2hop__167577_31122::p10",
+          "2hop__269766_43945::p12",
+          "2hop__167577_31122::p9",
+          "3hop2__132957_379231_40768::p5",
+          "3hop2__132957_133264_40768::p2"
+        ],
+        "hits": 1,
+        "queries_executed": [
+          "George Berkeley author Treatise Concerning Principles Human Knowledge lived 18th century 18 世纪",
+          ""
+        ]
+      },
+      "fixed": {
+        "ids": [
+          "2hop__167577_31122::p10",
+          "2hop__269766_43945::p12",
+          "2hop__167577_31122::p9"
+        ],
+        "hits": 1,
+        "queries_executed": [
+          "George Berkeley author Treatise Concerning Principles Human Knowledge lived 18th century 18 世纪"
+        ]
+      }
+    },
+    {
+      "id": "2hop__194469_83289",
+      "round": 2,
+      "support": [
+        "2hop__194469_83289::p19",
+        "2hop__194469_83289::p7"
+      ],
+      "queries": {
+        "clean": "Listening Sessions identifies Matt Bennett co star video guy One Last Time participant",
+        "suggested": "Clarify the connection between Ariana Grande's 'One Last Time' video and The Listening Sessions, and identify the specific participant in The Listening Sessions mentioned in the claim."
+      },
+      "broken": {
+        "ids": [
+          "2hop__194469_83289::p19",
+          "2hop__374495_68633::p0",
+          "2hop__810411_159673::p10",
+          "2hop__194469_83289::p7",
+          "2hop__132854_417697::p9"
+        ],
+        "hits": 2,
+        "queries_executed": [
+          "Listening Sessions identifies Matt Bennett co star video guy One Last Time participant",
+          "Clarify the connection between Ariana Grande's 'One Last Time' video and The Listening Sessions, and identify the specific participant in The Listening Sessions mentioned in the claim.",
+          "Clarify the connection between Ariana Grande's 'One Last Time' video"
+        ]
+      },
+      "fixed": {
+        "ids": [
+          "2hop__194469_83289::p19",
+          "2hop__374495_68633::p0",
+          "2hop__194469_83289::p7",
+          "2hop__810411_159673::p10",
+          "2hop__132854_417697::p9"
+        ],
+        "hits": 2,
+        "queries_executed": [
+          "Listening Sessions identifies Matt Bennett co star video guy One Last Time participant",
+          "Clarify the connection between Ariana Grande's 'One Last Time' video and The Listening Sessions, and identify the specific participant in The Listening Sessions mentioned in the claim.",
+          "Clarify the connection between Ariana Grande's 'One Last Time' video"
+        ]
+      }
+    },
+    {
+      "id": "2hop__20268_42014",
+      "round": 2,
+      "support": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8"
+      ],
+      "queries": {
+        "clean": "how many members Scottish Government seats organization enacted Directory Public Worship into law",
+        "suggested": "How many members of the Scottish Government were part of the Scottish Parliament when the Directory of Public Worship was enacted into law?"
+      },
+      "broken": {
+        "ids": [
+          "2hop__20268_42014::p8",
+          "2hop__20268_42014::p1",
+          "2hop__20268_42014::p16",
+          "2hop__433694_20273::p3"
+        ],
+        "hits": 2,
+        "queries_executed": [
+          "how many members Scottish Government seats organization enacted Directory Public Worship into law",
+          "How many members of the Scottish Government were part of the Scottish Parliament when the Directory of Public Worship was enacted into law?"
+        ]
+      },
+      "fixed": {
+        "ids": [
+          "2hop__20268_42014::p8",
+          "2hop__20268_42014::p1",
+          "2hop__20268_42014::p16",
+          "2hop__433694_20273::p3"
+        ],
+        "hits": 2,
+        "queries_executed": [
+          "how many members Scottish Government seats organization enacted Directory Public Worship into law",
+          "How many members of the Scottish Government were part of the Scottish Parliament when the Directory of Public Worship was enacted into law?"
+        ]
+      }
+    },
+    {
+      "id": "2hop__20268_42014",
+      "round": 3,
+      "support": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8"
+      ],
+      "queries": {
+        "clean": "number members Scottish Government seats organization enacted Directory Public Worship into law How many",
+        "suggested": "How many members of the Scottish Government were part of the Scottish Parliament when the Directory of Public Worship was enacted into law?"
+      },
+      "broken": {
+        "ids": [
+          "2hop__20268_42014::p8",
+          "2hop__20268_42014::p16",
+          "2hop__20268_42014::p10",
+          "2hop__20268_42014::p1",
+          "2hop__433694_20273::p3"
+        ],
+        "hits": 2,
+        "queries_executed": [
+          "number members Scottish Government seats organization enacted Directory Public Worship into law How many",
+          "How many members of the Scottish Government were part of the Scottish Parliament when the Directory of Public Worship was enacted into law?"
+        ]
+      },
+      "fixed": {
+        "ids": [
+          "2hop__20268_42014::p8",
+          "2hop__20268_42014::p1",
+          "2hop__20268_42014::p16",
+          "2hop__20268_42014::p10",
+          "2hop__433694_20273::p3"
+        ],
+        "hits": 2,
+        "queries_executed": [
+          "number members Scottish Government seats organization enacted Directory Public Worship into law How many",
+          "How many members of the Scottish Government were part of the Scottish Parliament when the Directory of Public Worship was enacted into law?"
+        ]
+      }
+    },
+    {
+      "id": "2hop__244193_461106",
+      "round": 2,
+      "support": [
+        "2hop__244193_461106::p3",
+        "2hop__244193_461106::p6"
+      ],
+      "queries": {
+        "clean": "creator Washington Monument associated movement belongs",
+        "suggested": "Who is the creator of the Washington Monument and what movement do they belong to?"
+      },
+      "broken": {
+        "ids": [
+          "2hop__244193_461106::p12",
+          "2hop__244193_461106::p4",
+          "2hop__244193_461106::p18",
+          "2hop__92590_43786::p18",
+          "2hop__244193_461106::p6"
+        ],
+        "hits": 1,
+        "queries_executed": [
+          "creator Washington Monument associated movement belongs",
+          "Who is the creator of the Washington Monument and what movement do they belong to?",
+          "Who is the creator of the Washington Monument",
+          "what movement do they belong to?"
+        ]
+      },
+      "fixed": {
+        "ids": [
+          "2hop__244193_461106::p12",
+          "2hop__244193_461106::p4",
+          "2hop__244193_461106::p18",
+          "2hop__92590_43786::p18",
+          "2hop__244193_461106::p6"
+        ],
+        "hits": 1,
+        "queries_executed": [
+          "creator Washington Monument associated movement belongs",
+          "Who is the creator of the Washington Monument and what movement do they belong to?",
+          "Who is the creator of the Washington Monument",
+          "what movement do they belong to?"
+        ]
+      }
+    },
+    {
+      "id": "2hop__244193_461106",
+      "round": 3,
+      "support": [
+        "2hop__244193_461106::p3",
+        "2hop__244193_461106::p6"
+      ],
+      "queries": {
+        "clean": "creator Washington Monument affiliation movement belongs",
+        "suggested": "Who is the creator of the Washington Monument and what movement do they belong to?"
+      },
+      "broken": {
+        "ids": [
+          "2hop__244193_461106::p12",
+          "2hop__244193_461106::p4",
+          "2hop__244193_461106::p13",
+          "2hop__92590_43786::p18",
+          "2hop__244193_461106::p6"
+        ],
+        "hits": 1,
+        "queries_executed": [
+          "creator Washington Monument affiliation movement belongs",
+          "Who is the creator of the Washington Monument and what movement do they belong to?",
+          "Who is the creator of the Washington Monument",
+          "what movement do they belong to?"
+        ]
+      },
+      "fixed": {
+        "ids": [
+          "2hop__244193_461106::p12",
+          "2hop__244193_461106::p4",
+          "2hop__244193_461106::p13",
+          "2hop__92590_43786::p18",
+          "2hop__244193_461106::p6"
+        ],
+        "hits": 1,
+        "queries_executed": [
+          "creator Washington Monument affiliation movement belongs",
+          "Who is the creator of the Washington Monument and what movement do they belong to?",
+          "Who is the creator of the Washington Monument",
+          "what movement do they belong to?"
+        ]
+      }
+    },
+    {
+      "id": "2hop__247353_55227",
+      "round": 2,
+      "support": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ],
+      "queries": {
+        "clean": "wife Here Comes Boom's screenwriter Grown Ups plays",
+        "suggested": "Who is the wife of Here Comes the Boom's screenwriter in the movie Grown Ups?"
+      },
+      "broken": {
+        "ids": [
+          "2hop__247353_55227::p17",
+          "2hop__247353_55227::p6",
+          "2hop__92590_43786::p2",
+          "3hop2__140194_16797_51068::p5"
+        ],
+        "hits": 2,
+        "queries_executed": [
+          "wife Here Comes Boom's screenwriter Grown Ups plays",
+          "Who is the wife of Here Comes the Boom's screenwriter in the movie Grown Ups?"
+        ]
+      },
+      "fixed": {
+        "ids": [
+          "2hop__247353_55227::p17",
+          "2hop__247353_55227::p6",
+          "2hop__92590_43786::p2",
+          "3hop2__140194_16797_51068::p5"
+        ],
+        "hits": 2,
+        "queries_executed": [
+          "wife Here Comes Boom's screenwriter Grown Ups plays",
+          "Who is the wife of Here Comes the Boom's screenwriter in the movie Grown Ups?"
+        ]
+      }
+    },
+    {
+      "id": "2hop__247353_55227",
+      "round": 3,
+      "support": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ],
+      "queries": {
+        "clean": "wife Here Comes Boom's screenwriter Grown Ups plays",
+        "suggested": "Who is the wife of Here Comes the Boom's screenwriter in Grown Ups?"
+      },
+      "broken": {
+        "ids": [
+          "2hop__247353_55227::p17",
+          "2hop__247353_55227::p6",
+          "2hop__92590_43786::p2"
+        ],
+        "hits": 2,
+        "queries_executed": [
+          "wife Here Comes Boom's screenwriter Grown Ups plays",
+          "Who is the wife of Here Comes the Boom's screenwriter in Grown Ups?"
+        ]
+      },
+      "fixed": {
+        "ids": [
+          "2hop__247353_55227::p17",
+          "2hop__247353_55227::p6",
+          "2hop__92590_43786::p2"
+        ],
+        "hits": 2,
+        "queries_executed": [
+          "wife Here Comes Boom's screenwriter Grown Ups plays",
+          "Who is the wife of Here Comes the Boom's screenwriter in Grown Ups?"
+        ]
+      }
+    },
+    {
+      "id": "2hop__25396_593388",
+      "round": 2,
+      "support": [
+        "2hop__25396_593388::p1",
+        "2hop__25396_593388::p12"
+      ],
+      "queries": {
+        "clean": "father Robert Peel issued Tamworth Manifesto person",
+        "suggested": "Who was the father of Robert Peel?"
+      },
+      "broken": {
+        "ids": [
+          "2hop__25396_593388::p12",
+          "2hop__39063_593388::p13",
+          "2hop__25396_593388::p1",
+          "2hop__39063_593388::p3"
+        ],
+        "hits": 2,
+        "queries_executed": [
+          "father Robert Peel issued Tamworth Manifesto person",
+          "Who was the father of Robert Peel?"
+        ]
+      },
+      "fixed": {
+        "ids": [
+          "2hop__25396_593388::p12",
+          "2hop__39063_593388::p13",
+          "2hop__25396_593388::p1",
+          "2hop__39063_593388::p3"
+        ],
+        "hits": 2,
+        "queries_executed": [
+          "father Robert Peel issued Tamworth Manifesto person",
+          "Who was the father of Robert Peel?"
+        ]
+      }
+    },
+    {
+      "id": "2hop__2682_577502",
+      "round": 2,
+      "support": [
+        "2hop__2682_577502::p17",
+        "2hop__2682_577502::p9"
+      ],
+      "queries": {
+        "clean": "spouse Arnold Schwarzenegger famous governor signing legislation honor Donda West's death",
+        "suggested": "Who is the spouse of Arnold Schwarzenegger?"
+      },
+      "broken": {
+        "ids": [
+          "2hop__2682_577502::p9",
+          "2hop__645448_77615::p13",
+          "2hop__2682_577502::p15",
+          "2hop__2682_577502::p17"
+        ],
+        "hits": 2,
+        "queries_executed": [
+          "spouse Arnold Schwarzenegger famous governor signing legislation honor Donda West's death",
+          "Who is the spouse of Arnold Schwarzenegger?"
+        ]
+      },
+      "fixed": {
+        "ids": [
+          "2hop__2682_577502::p9",
+          "2hop__645448_77615::p13",
+          "2hop__2682_577502::p17",
+          "2hop__2682_577502::p15"
+        ],
+        "hits": 2,
+        "queries_executed": [
+          "spouse Arnold Schwarzenegger famous governor signing legislation honor Donda West's death",
+          "Who is the spouse of Arnold Schwarzenegger?"
+        ]
+      }
+    },
+    {
+      "id": "2hop__2682_577502",
+      "round": 3,
+      "support": [
+        "2hop__2682_577502::p17",
+        "2hop__2682_577502::p9"
+      ],
+      "queries": {
+        "clean": "spouse Arnold Schwarzenegger time signing legislation famous governor honor Donda West's death",
+        "suggested": "Who was Arnold Schwarzenegger's spouse at the time of signing the 'Donda West Law'?"
+      },
+      "broken": {
+        "ids": [
+          "2hop__2682_577502::p9",
+          "2hop__645448_77615::p13",
+          "2hop__2682_577502::p15",
+          "2hop__77518_548781::p5"
+        ],
+        "hits": 1,
+        "queries_executed": [
+          "spouse Arnold Schwarzenegger time signing legislation famous governor honor Donda West's death",
+          "Who was Arnold Schwarzenegger's spouse at the time of signing the 'Donda West Law'?"
+        ]
+      },
+      "fixed": {
+        "ids": [
+          "2hop__2682_577502::p9",
+          "2hop__645448_77615::p13",
+          "2hop__2682_577502::p15",
+          "2hop__77518_548781::p5"
+        ],
+        "hits": 1,
+        "queries_executed": [
+          "spouse Arnold Schwarzenegger time signing legislation famous governor honor Donda West's death",
+          "Who was Arnold Schwarzenegger's spouse at the time of signing the 'Donda West Law'?"
+        ]
+      }
+    },
+    {
+      "id": "2hop__286621_84856",
+      "round": 2,
+      "support": [
+        "2hop__286621_84856::p12",
+        "2hop__286621_84856::p17"
+      ],
+      "queries": {
+        "clean": "new season show named Politically Incorrect cast member",
+        "suggested": "Find information about a new season of a show named for a cast member of Politically Incorrect."
+      },
+      "broken": {
+        "ids": [
+          "2hop__286621_84856::p17",
+          "3hop1__389955_132457_47686::p11",
+          "2hop__435184_84856::p1",
+          "2hop__286621_84856::p15",
+          "2hop__286621_84856::p10"
+        ],
+        "hits": 1,
+        "queries_executed": [
+          "new season show named Politically Incorrect cast member",
+          "Find information about a new season of a show named for a cast member of Politically Incorrect."
+        ]
+      },
+      "fixed": {
+        "ids": [
+          "2hop__286621_84856::p17",
+          "3hop1__389955_132457_47686::p11",
+          "2hop__286621_84856::p15",
+          "2hop__435184_84856::p1",
+          "2hop__286621_84856::p10"
+        ],
+        "hits": 1,
+        "queries_executed": [
+          "new season show named Politically Incorrect cast member",
+          "Find information about a new season of a show named for a cast member of Politically Incorrect."
+        ]
+      }
+    },
+    {
+      "id": "2hop__286621_84856",
+      "round": 3,
+      "support": [
+        "2hop__286621_84856::p12",
+        "2hop__286621_84856::p17"
+      ],
+      "queries": {
+        "clean": "show named Politically Incorrect cast member new season date",
+        "suggested": "Find a show named for a Politically Incorrect cast member and its new season date."
+      },
+      "broken": {
+        "ids": [
+          "2hop__286621_84856::p17",
+          "3hop1__652852_2053_52946::p16",
+          "3hop1__140786_2053_52946::p19",
+          "3hop1__140786_2053_5289::p10",
+          "2hop__286621_84856::p15"
+        ],
+        "hits": 1,
+        "queries_executed": [
+          "show named Politically Incorrect cast member new season date",
+          "Find a show named for a Politically Incorrect cast member and its new season date.",
+          "Find a show named for a Politically Incorrect cast member"
+        ]
+      },
+      "fixed": {
+        "ids": [
+          "2hop__286621_84856::p17",
+          "3hop1__652852_2053_52946::p16",
+          "3hop1__140786_2053_5289::p10",
+          "3hop1__140786_2053_52946::p19",
+          "2hop__286621_84856::p15"
+        ],
+        "hits": 1,
+        "queries_executed": [
+          "show named Politically Incorrect cast member new season date",
+          "Find a show named for a Politically Incorrect cast member and its new season date.",
+          "Find a show named for a Politically Incorrect cast member"
+        ]
+      }
+    },
+    {
+      "id": "2hop__315267_277284",
+      "round": 2,
+      "support": [
+        "2hop__315267_277284::p15",
+        "2hop__315267_277284::p18"
+      ],
+      "queries": {
+        "clean": "administrative territorial entity Bill Cockcroft educated missing",
+        "suggested": "What administrative territorial entity includes the place where Bill Cockcroft was educated?"
+      },
+      "broken": {
+        "ids": [
+          "2hop__315267_277284::p18",
+          "2hop__446324_620302::p1",
+          "2hop__25396_593388::p16",
+          "2hop__770487_494646::p4",
+          "4hop1__94201_642284_131926_13165::p2"
+        ],
+        "hits": 1,
+        "queries_executed": [
+          "administrative territorial entity Bill Cockcroft educated missing",
+          "What administrative territorial entity includes the place where Bill Cockcroft was educated?",
+          "What administrative territorial entity includes the place"
+        ]
+      },
+      "fixed": {
+        "ids": [
+          "2hop__315267_277284::p18",
+          "2hop__446324_620302::p1",
+          "2hop__770487_494646::p4",
+          "2hop__25396_593388::p16",
+          "4hop1__94201_642284_131926_13165::p2"
+        ],
+        "hits": 1,
+        "queries_executed": [
+          "administrative territorial entity Bill Cockcroft educated missing",
+          "What administrative territorial entity includes the place where Bill Cockcroft was educated?",
+          "What administrative territorial entity includes the place"
+        ]
+      }
+    },
+    {
+      "id": "2hop__315267_277284",
+      "round": 3,
+      "support": [
+        "2hop__315267_277284::p15",
+        "2hop__315267_277284::p18"
+      ],
+      "queries": {
+        "clean": "administrative territorial entity Bill Cockcroft educated",
+        "suggested": "What administrative territorial entity includes the place where Bill Cockcroft was educated?"
+      },
+      "broken": {
+        "ids": [
+          "2hop__315267_277284::p18",
+          "2hop__25396_593388::p16",
+          "2hop__557743_92763::p3",
+          "2hop__770487_494646::p4",
+          "4hop1__94201_642284_131926_13165::p2"
+        ],
+        "hits": 1,
+        "queries_executed": [
+          "administrative territorial entity Bill Cockcroft educated",
+          "What administrative territorial entity includes the place where Bill Cockcroft was educated?",
+          "What administrative territorial entity includes the place"
+        ]
+      },
+      "fixed": {
+        "ids": [
+          "2hop__315267_277284::p18",
+          "2hop__25396_593388::p16",
+          "2hop__770487_494646::p4",
+          "2hop__557743_92763::p3",
+          "4hop1__94201_642284_131926_13165::p2"
+        ],
+        "hits": 1,
+        "queries_executed": [
+          "administrative territorial entity Bill Cockcroft educated",
+          "What administrative territorial entity includes the place where Bill Cockcroft was educated?",
+          "What administrative territorial entity includes the place"
+        ]
+      }
+    },
+    {
+      "id": "2hop__341176_711757",
+      "round": 2,
+      "support": [
+        "2hop__341176_711757::p10",
+        "2hop__341176_711757::p4"
+      ],
+      "queries": {
+        "clean": "other districts Ryki County Lublin Voivodeship district found same Gmina St yca",
+        "suggested": "List other districts in Ryki County, Lublin Voivodeship"
+      },
+      "broken": {
+        "ids": [
+          "2hop__341176_711757::p10",
+          "2hop__341176_711757::p4",
+          "2hop__341176_711757::p16",
+          "2hop__341176_711757::p9"
+        ],
+        "hits": 2,
+        "queries_executed": [
+          "other districts Ryki County Lublin Voivodeship district found same Gmina St yca",
+          "List other districts in Ryki County, Lublin Voivodeship"
+        ]
+      },
+      "fixed": {
+        "ids": [
+          "2hop__341176_711757::p10",
+          "2hop__341176_711757::p4",
+          "2hop__341176_711757::p16",
+          "2hop__341176_711757::p9"
+        ],
+        "hits": 2,
+        "queries_executed": [
+          "other districts Ryki County Lublin Voivodeship district found same Gmina St yca",
+          "List other districts in Ryki County, Lublin Voivodeship"
+        ]
+      }
+    },
+    {
+      "id": "2hop__351045_47134",
+      "round": 2,
+      "support": [
+        "2hop__351045_47134::p2",
+        "2hop__351045_47134::p4"
+      ],
+      "queries": {
+        "clean": "There no mascot College Oceanic Atmospheric Sciences Oregon State University operates RV Wecoma operator",
+        "suggested": "What is the mascot of the College of Oceanic & Atmospheric Sciences at Oregon State University?"
+      },
+      "broken": {
+        "ids": [
+          "2hop__351045_47134::p4",
+          "2hop__351045_47134::p2",
+          "2hop__351045_47134::p10",
+          "2hop__351045_47134::p18"
+        ],
+        "hits": 2,
+        "queries_executed": [
+          "There no mascot College Oceanic Atmospheric Sciences Oregon State University operates RV Wecoma operator",
+          "What is the mascot of the College of Oceanic & Atmospheric Sciences at Oregon State University?"
+        ]
+      },
+      "fixed": {
+        "ids": [
+          "2hop__351045_47134::p4",
+          "2hop__351045_47134::p2",
+          "2hop__351045_47134::p10",
+          "2hop__351045_47134::p18"
+        ],
+        "hits": 2,
+        "queries_executed": [
+          "There no mascot College Oceanic Atmospheric Sciences Oregon State University operates RV Wecoma operator",
+          "What is the mascot of the College of Oceanic & Atmospheric Sciences at Oregon State University?"
+        ]
+      }
+    },
+    {
+      "id": "2hop__3739_13529",
+      "round": 2,
+      "support": [
+        "2hop__3739_13529::p16",
+        "2hop__3739_13529::p4"
+      ],
+      "queries": {
+        "clean": "football star backing out due relay controversy only discusses David Beckham's transfer Real Madrid instead Barcelona backed signed",
+        "suggested": "Find evidence of a football star who backed out of signing with Barcelona due to a relay controversy."
+      },
+      "broken": {
+        "ids": [
+          "2hop__136179_13529::p13",
+          "4hop3__316459_41402_157761_13584::p18",
+          "4hop3__316459_41402_145282_13584::p15",
+          "2hop__136179_13529::p12",
+          "2hop__136179_13529::p4"
+        ],
+        "hits": 0,
+        "queries_executed": [
+          "football star backing out due relay controversy only discusses David Beckham's transfer Real Madrid instead Barcelona backed signed",
+          "Find evidence of a football star who backed out of signing with Barcelona due to a relay controversy."
+        ]
+      },
+      "fixed": {
+        "ids": [
+          "2hop__136179_13529::p13",
+          "4hop3__316459_41402_157761_13584::p18",
+          "2hop__136179_13529::p12",
+          "4hop3__316459_41402_145282_13584::p15",
+          "2hop__136179_13529::p4"
+        ],
+        "hits": 0,
+        "queries_executed": [
+          "football star backing out due relay controversy only discusses David Beckham's transfer Real Madrid instead Barcelona backed signed",
+          "Find evidence of a football star who backed out of signing with Barcelona due to a relay controversy."
+        ]
+      }
+    },
+    {
+      "id": "2hop__3739_13529",
+      "round": 3,
+      "support": [
+        "2hop__3739_13529::p16",
+        "2hop__3739_13529::p4"
+      ],
+      "queries": {
+        "clean": "football star backing out due relay controversy only discusses David Beckham's transfer Real Madrid instead Barcelona backed signed",
+        "suggested": "Find evidence about a football star who backed out of a transfer to Barcelona due to a relay controversy."
+      },
+      "broken": {
+        "ids": [
+          "2hop__136179_13529::p13",
+          "4hop3__316459_41402_157761_13584::p18",
+          "4hop3__316459_41402_145282_13584::p15",
+          "2hop__136179_13529::p12",
+          "2hop__136179_13529::p4"
+        ],
+        "hits": 0,
+        "queries_executed": [
+          "football star backing out due relay controversy only discusses David Beckham's transfer Real Madrid instead Barcelona backed signed",
+          "Find evidence about a football star who backed out of a transfer to Barcelona due to a relay controversy."
+        ]
+      },
+      "fixed": {
+        "ids": [
+          "2hop__136179_13529::p13",
+          "4hop3__316459_41402_157761_13584::p18",
+          "2hop__136179_13529::p12",
+          "4hop3__316459_41402_145282_13584::p15",
+          "2hop__136179_13529::p4"
+        ],
+        "hits": 0,
+        "queries_executed": [
+          "football star backing out due relay controversy only discusses David Beckham's transfer Real Madrid instead Barcelona backed signed",
+          "Find evidence about a football star who backed out of a transfer to Barcelona due to a relay controversy."
+        ]
+      }
+    }
+  ]
+}

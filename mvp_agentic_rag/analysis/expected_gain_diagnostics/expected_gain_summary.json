@@ -1,0 +1,486 @@
+{
+  "pair_definition": "For claim_risk only, align step[t].verifier_output.expected_gain with step[t+1].evidence_gain in the same trajectory.",
+  "runs": [
+    {
+      "run": "layer1_api_balanced300_dense_bge_decomp_gate_claim_risk_subset30",
+      "pairs": 21,
+      "expected_gain_counts": {
+        "0.0": 21
+      },
+      "next_evidence_gain_counts": {
+        "0.0": 15,
+        "0.5": 6
+      },
+      "next_zero_gain_rate": 0.7142857142857143,
+      "next_positive_gain_rate": 0.2857142857142857,
+      "avg_expected_gain": 0.0,
+      "avg_next_evidence_gain": 0.14285714285714285,
+      "pearson": null,
+      "spearman": null,
+      "thresholds": {
+        "0.0": {
+          "selected": 21,
+          "selection_rate": 1.0,
+          "precision_next_gain": 0.2857142857142857,
+          "recall_next_gain": 1.0,
+          "selected_zero_gain_rate": 0.7142857142857143
+        },
+        "0.1": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        },
+        "0.25": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        },
+        "0.5": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        },
+        "0.75": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        }
+      }
+    },
+    {
+      "run": "layer1_api_balanced300_dense_bge_decomp_gate_claim_evidence_memory_claim_risk_subset30_agentic_rag_baseline",
+      "pairs": 27,
+      "expected_gain_counts": {
+        "0.0": 27
+      },
+      "next_evidence_gain_counts": {
+        "0.0": 22,
+        "0.5": 5
+      },
+      "next_zero_gain_rate": 0.8148148148148148,
+      "next_positive_gain_rate": 0.18518518518518517,
+      "avg_expected_gain": 0.0,
+      "avg_next_evidence_gain": 0.09259259259259259,
+      "pearson": null,
+      "spearman": null,
+      "thresholds": {
+        "0.0": {
+          "selected": 27,
+          "selection_rate": 1.0,
+          "precision_next_gain": 0.18518518518518517,
+          "recall_next_gain": 1.0,
+          "selected_zero_gain_rate": 0.8148148148148148
+        },
+        "0.1": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        },
+        "0.25": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        },
+        "0.5": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        },
+        "0.75": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        }
+      }
+    },
+    {
+      "run": "layer1_api_balanced300_dense_bge_decomp_gate_claim_evidence_memory_short_query_claim_risk_subset30_agentic_rag_baseline",
+      "pairs": 24,
+      "expected_gain_counts": {
+        "0.0": 24
+      },
+      "next_evidence_gain_counts": {
+        "0.0": 21,
+        "0.5": 3
+      },
+      "next_zero_gain_rate": 0.875,
+      "next_positive_gain_rate": 0.125,
+      "avg_expected_gain": 0.0,
+      "avg_next_evidence_gain": 0.0625,
+      "pearson": null,
+      "spearman": null,
+      "thresholds": {
+        "0.0": {
+          "selected": 24,
+          "selection_rate": 1.0,
+          "precision_next_gain": 0.125,
+          "recall_next_gain": 1.0,
+          "selected_zero_gain_rate": 0.875
+        },
+        "0.1": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        },
+        "0.25": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        },
+        "0.5": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        },
+        "0.75": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        }
+      }
+    },
+    {
+      "run": "layer1_api_balanced300_dense_bge_decomp_gate_claim_evidence_memory_structured_query_claim_risk_subset30_agentic_rag_baseline",
+      "pairs": 22,
+      "expected_gain_counts": {
+        "0.0": 22
+      },
+      "next_evidence_gain_counts": {
+        "0.0": 16,
+        "0.5": 6
+      },
+      "next_zero_gain_rate": 0.7272727272727273,
+      "next_positive_gain_rate": 0.2727272727272727,
+      "avg_expected_gain": 0.0,
+      "avg_next_evidence_gain": 0.13636363636363635,
+      "pearson": null,
+      "spearman": null,
+      "thresholds": {
+        "0.0": {
+          "selected": 22,
+          "selection_rate": 1.0,
+          "precision_next_gain": 0.2727272727272727,
+          "recall_next_gain": 1.0,
+          "selected_zero_gain_rate": 0.7272727272727273
+        },
+        "0.1": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        },
+        "0.25": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        },
+        "0.5": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        },
+        "0.75": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        }
+      }
+    },
+    {
+      "run": "layer1_api_balanced300_dense_bge_decomp_gate_claim_evidence_memory_structured_query_fallback_claim_risk_subset30_agentic_rag_baseline",
+      "pairs": 25,
+      "expected_gain_counts": {
+        "0.0": 25
+      },
+      "next_evidence_gain_counts": {
+        "0.0": 17,
+        "0.5": 8
+      },
+      "next_zero_gain_rate": 0.68,
+      "next_positive_gain_rate": 0.32,
+      "avg_expected_gain": 0.0,
+      "avg_next_evidence_gain": 0.16,
+      "pearson": null,
+      "spearman": null,
+      "thresholds": {
+        "0.0": {
+          "selected": 25,
+          "selection_rate": 1.0,
+          "precision_next_gain": 0.32,
+          "recall_next_gain": 1.0,
+          "selected_zero_gain_rate": 0.68
+        },
+        "0.1": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        },
+        "0.25": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        },
+        "0.5": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        },
+        "0.75": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        }
+      }
+    },
+    {
+      "run": "layer1_api_balanced300_dense_bge_decomp_gate_claim_evidence_memory_structured_query_fallback_query_source_claim_risk_subset30_agentic_rag_baseline",
+      "pairs": 24,
+      "expected_gain_counts": {
+        "0.0": 24
+      },
+      "next_evidence_gain_counts": {
+        "0.0": 18,
+        "0.5": 6
+      },
+      "next_zero_gain_rate": 0.75,
+      "next_positive_gain_rate": 0.25,
+      "avg_expected_gain": 0.0,
+      "avg_next_evidence_gain": 0.125,
+      "pearson": null,
+      "spearman": null,
+      "thresholds": {
+        "0.0": {
+          "selected": 24,
+          "selection_rate": 1.0,
+          "precision_next_gain": 0.25,
+          "recall_next_gain": 1.0,
+          "selected_zero_gain_rate": 0.75
+        },
+        "0.1": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        },
+        "0.25": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        },
+        "0.5": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        },
+        "0.75": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        }
+      }
+    },
+    {
+      "run": "layer1_api_balanced300_dense_bge_decomp_gate_claim_evidence_memory_structured_query_low_yield_abstain_claim_risk_subset30_agentic_rag_baseline",
+      "pairs": 19,
+      "expected_gain_counts": {
+        "0.0": 19
+      },
+      "next_evidence_gain_counts": {
+        "0.0": 13,
+        "0.5": 6
+      },
+      "next_zero_gain_rate": 0.6842105263157895,
+      "next_positive_gain_rate": 0.3157894736842105,
+      "avg_expected_gain": 0.0,
+      "avg_next_evidence_gain": 0.15789473684210525,
+      "pearson": null,
+      "spearman": null,
+      "thresholds": {
+        "0.0": {
+          "selected": 19,
+          "selection_rate": 1.0,
+          "precision_next_gain": 0.3157894736842105,
+          "recall_next_gain": 1.0,
+          "selected_zero_gain_rate": 0.6842105263157895
+        },
+        "0.1": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        },
+        "0.25": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        },
+        "0.5": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        },
+        "0.75": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": 0.0,
+          "selected_zero_gain_rate": null
+        }
+      }
+    },
+    {
+      "run": "layer1_api_balanced300_dense_bge_decomp_gate_claim_evidence_memory_structured_query_expected_gain_gate_claim_risk_subset30_agentic_rag_baseline",
+      "pairs": 0,
+      "expected_gain_counts": {},
+      "next_evidence_gain_counts": {},
+      "next_zero_gain_rate": null,
+      "next_positive_gain_rate": null,
+      "avg_expected_gain": null,
+      "avg_next_evidence_gain": null,
+      "pearson": null,
+      "spearman": null,
+      "thresholds": {
+        "0.0": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": null,
+          "selected_zero_gain_rate": null
+        },
+        "0.1": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": null,
+          "selected_zero_gain_rate": null
+        },
+        "0.25": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": null,
+          "selected_zero_gain_rate": null
+        },
+        "0.5": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": null,
+          "selected_zero_gain_rate": null
+        },
+        "0.75": {
+          "selected": 0,
+          "selection_rate": 0.0,
+          "precision_next_gain": null,
+          "recall_next_gain": null,
+          "selected_zero_gain_rate": null
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "run": "ALL",
+    "pairs": 162,
+    "expected_gain_counts": {
+      "0.0": 162
+    },
+    "next_evidence_gain_counts": {
+      "0.0": 122,
+      "0.5": 40
+    },
+    "next_zero_gain_rate": 0.7530864197530864,
+    "next_positive_gain_rate": 0.24691358024691357,
+    "avg_expected_gain": 0.0,
+    "avg_next_evidence_gain": 0.12345679012345678,
+    "pearson": null,
+    "spearman": null,
+    "thresholds": {
+      "0.0": {
+        "selected": 162,
+        "selection_rate": 1.0,
+        "precision_next_gain": 0.24691358024691357,
+        "recall_next_gain": 1.0,
+        "selected_zero_gain_rate": 0.7530864197530864
+      },
+      "0.1": {
+        "selected": 0,
+        "selection_rate": 0.0,
+        "precision_next_gain": null,
+        "recall_next_gain": 0.0,
+        "selected_zero_gain_rate": null
+      },
+      "0.25": {
+        "selected": 0,
+        "selection_rate": 0.0,
+        "precision_next_gain": null,
+        "recall_next_gain": 0.0,
+        "selected_zero_gain_rate": null
+      },
+      "0.5": {
+        "selected": 0,
+        "selection_rate": 0.0,
+        "precision_next_gain": null,
+        "recall_next_gain": 0.0,
+        "selected_zero_gain_rate": null
+      },
+      "0.75": {
+        "selected": 0,
+        "selection_rate": 0.0,
+        "precision_next_gain": null,
+        "recall_next_gain": 0.0,
+        "selected_zero_gain_rate": null
+      }
+    }
+  }
+}

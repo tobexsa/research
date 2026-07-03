@@ -1,0 +1,16 @@
+# Metrics: layer1_local_qwen3_14b_int4_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_2_1_ordered_hop_repair_loop_local_api_no_think
+
+## claim_risk
+- count: 45
+- answer_f1: 0.27487179487179486
+- avg_retrieval_calls: 2.2222222222222223
+- unsupported_claim_rate: 0.7111111111111111
+- abstention_rate: 0.6444444444444445
+- no_new_evidence_call_rate: 0.7111111111111111
+- coverage: 0.35555555555555557
+- selective_answer_f1: 0.7730769230769231
+- cost_normalized_f1: 0.12369230769230768
+- wasted_retrieval_rate: 0.7111111111111111
+- answered_unsupported_rate: 0.1875
+- final_answered_unsupported_rate: 0
+- abstention_precision: 1

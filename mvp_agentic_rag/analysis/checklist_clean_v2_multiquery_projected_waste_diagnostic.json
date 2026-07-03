@@ -1,0 +1,341 @@
+{
+  "summary": {
+    "base_wasted_samples": 12,
+    "projected_wasted_samples_if_any_support_hit_counts_as_gain": 1,
+    "converted_zero_gain_steps": 15,
+    "still_zero_gain_steps": 2,
+    "n": 30
+  },
+  "converted": [
+    {
+      "id": "2hop__129721_40482",
+      "round": 2,
+      "old_ids": [
+        "2hop__129721_40482::p18",
+        "2hop__129721_40482::p9",
+        "2hop__129721_40482::p5"
+      ],
+      "fixed_ids": [
+        "2hop__129721_40482::p18",
+        "2hop__129721_40482::p3",
+        "2hop__129721_40482::p14"
+      ],
+      "support": [
+        "2hop__129721_40482::p14",
+        "2hop__129721_40482::p18"
+      ],
+      "hits": 2,
+      "query": "land purchase Huguenots area Zubly Cemetery state encompassing"
+    },
+    {
+      "id": "2hop__129721_40482",
+      "round": 3,
+      "old_ids": [
+        "2hop__129721_40482::p18",
+        "2hop__129721_40482::p9",
+        "2hop__129721_40482::p5"
+      ],
+      "fixed_ids": [
+        "2hop__129721_40482::p18",
+        "2hop__129721_40482::p3",
+        "2hop__129721_40482::p14"
+      ],
+      "support": [
+        "2hop__129721_40482::p14",
+        "2hop__129721_40482::p18"
+      ],
+      "hits": 2,
+      "query": "land purchase Huguenots area Zubly Cemetery state encompassing"
+    },
+    {
+      "id": "2hop__131951_643670",
+      "round": 2,
+      "old_ids": [
+        "2hop__131951_643670::p6",
+        "4hop1__726391_153080_33952_34109::p1",
+        "2hop__131951_643670::p10"
+      ],
+      "fixed_ids": [
+        "2hop__131951_643670::p6",
+        "4hop1__726391_153080_33952_34109::p1",
+        "2hop__131951_643670::p10"
+      ],
+      "support": [
+        "2hop__131951_643670::p10",
+        "2hop__131951_643670::p6"
+      ],
+      "hits": 2,
+      "query": "name mouth watercourse Rotterdam Centrum body water"
+    },
+    {
+      "id": "2hop__132854_417697",
+      "round": 2,
+      "old_ids": [
+        "2hop__132854_417697::p10",
+        "3hop2__132957_133264_40768::p13",
+        "2hop__132854_417697::p16"
+      ],
+      "fixed_ids": [
+        "2hop__132854_417697::p10",
+        "3hop2__132957_379231_40768::p3",
+        "3hop2__132957_133264_40768::p13",
+        "2hop__132854_417697::p16",
+        "2hop__857493_17335::p8"
+      ],
+      "support": [
+        "2hop__132854_417697::p10",
+        "2hop__132854_417697::p6"
+      ],
+      "hits": 1,
+      "query": "Mohammed Atta's ownership possession Datsun model any connection between Atta company makes Type 12 kind"
+    },
+    {
+      "id": "2hop__167577_31122",
+      "round": 2,
+      "old_ids": [
+        "2hop__167577_31122::p10",
+        "2hop__167577_31122::p9",
+        "2hop__269766_43945::p1"
+      ],
+      "fixed_ids": [
+        "2hop__167577_31122::p10",
+        "2hop__269766_43945::p12",
+        "2hop__167577_31122::p9"
+      ],
+      "support": [
+        "2hop__167577_31122::p10",
+        "2hop__167577_31122::p14"
+      ],
+      "hits": 1,
+      "query": "states Treatise Concerning Principles Human Knowledge written 1710 places author 18th century but claim not directly supported explicitly stated 18 世纪"
+    },
+    {
+      "id": "2hop__20268_42014",
+      "round": 2,
+      "old_ids": [
+        "2hop__20268_42014::p8",
+        "2hop__20268_42014::p16",
+        "2hop__20268_42014::p10"
+      ],
+      "fixed_ids": [
+        "2hop__20268_42014::p8",
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p16",
+        "2hop__433694_20273::p3"
+      ],
+      "support": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8"
+      ],
+      "hits": 2,
+      "query": "number members Scottish Government seats organization enacted Directory Public Worship into law How many"
+    },
+    {
+      "id": "2hop__244193_461106",
+      "round": 2,
+      "old_ids": [
+        "2hop__244193_461106::p12",
+        "2hop__244193_461106::p4",
+        "2hop__244193_461106::p13"
+      ],
+      "fixed_ids": [
+        "2hop__244193_461106::p12",
+        "2hop__244193_461106::p4",
+        "2hop__244193_461106::p18",
+        "2hop__92590_43786::p18",
+        "2hop__244193_461106::p6"
+      ],
+      "support": [
+        "2hop__244193_461106::p3",
+        "2hop__244193_461106::p6"
+      ],
+      "hits": 1,
+      "query": "creator Washington Monument affiliation movement belongs"
+    },
+    {
+      "id": "2hop__247353_55227",
+      "round": 2,
+      "old_ids": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6",
+        "2hop__92590_43786::p2"
+      ],
+      "fixed_ids": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6",
+        "2hop__92590_43786::p2",
+        "3hop2__140194_16797_51068::p5"
+      ],
+      "support": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ],
+      "hits": 2,
+      "query": "wife Here Comes Boom's screenwriter Grown Ups plays"
+    },
+    {
+      "id": "2hop__247353_55227",
+      "round": 3,
+      "old_ids": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6",
+        "2hop__92590_43786::p2"
+      ],
+      "fixed_ids": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6",
+        "2hop__92590_43786::p2"
+      ],
+      "support": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ],
+      "hits": 2,
+      "query": "wife Here Comes Boom's screenwriter Grown Ups plays"
+    },
+    {
+      "id": "2hop__2682_577502",
+      "round": 2,
+      "old_ids": [
+        "2hop__2682_577502::p9",
+        "2hop__645448_77615::p13",
+        "2hop__2682_577502::p15"
+      ],
+      "fixed_ids": [
+        "2hop__2682_577502::p9",
+        "2hop__645448_77615::p13",
+        "2hop__2682_577502::p17",
+        "2hop__2682_577502::p15"
+      ],
+      "support": [
+        "2hop__2682_577502::p17",
+        "2hop__2682_577502::p9"
+      ],
+      "hits": 2,
+      "query": "spouse Arnold Schwarzenegger famous governor signing legislation honor Donda West's death"
+    },
+    {
+      "id": "2hop__286621_84856",
+      "round": 2,
+      "old_ids": [
+        "2hop__286621_84856::p17",
+        "3hop1__140786_2053_5289::p10",
+        "3hop1__140786_2053_52946::p19"
+      ],
+      "fixed_ids": [
+        "2hop__286621_84856::p17",
+        "3hop1__389955_132457_47686::p11",
+        "2hop__286621_84856::p15",
+        "2hop__435184_84856::p1",
+        "2hop__286621_84856::p10"
+      ],
+      "support": [
+        "2hop__286621_84856::p12",
+        "2hop__286621_84856::p17"
+      ],
+      "hits": 1,
+      "query": "show named Politically Incorrect cast member new season release date"
+    },
+    {
+      "id": "2hop__286621_84856",
+      "round": 3,
+      "old_ids": [
+        "2hop__286621_84856::p17",
+        "3hop1__140786_2053_5289::p10",
+        "3hop1__140786_2053_52946::p19"
+      ],
+      "fixed_ids": [
+        "2hop__286621_84856::p17",
+        "3hop1__652852_2053_52946::p16",
+        "3hop1__140786_2053_5289::p10",
+        "3hop1__140786_2053_52946::p19",
+        "2hop__286621_84856::p15"
+      ],
+      "support": [
+        "2hop__286621_84856::p12",
+        "2hop__286621_84856::p17"
+      ],
+      "hits": 1,
+      "query": "show named Politically Incorrect cast member new season release date"
+    },
+    {
+      "id": "2hop__315267_277284",
+      "round": 2,
+      "old_ids": [
+        "2hop__315267_277284::p18",
+        "2hop__286093_361551::p9",
+        "2hop__249867_557232::p1"
+      ],
+      "fixed_ids": [
+        "2hop__315267_277284::p18",
+        "2hop__446324_620302::p1",
+        "2hop__770487_494646::p4",
+        "2hop__25396_593388::p16",
+        "4hop1__94201_642284_131926_13165::p2"
+      ],
+      "support": [
+        "2hop__315267_277284::p15",
+        "2hop__315267_277284::p18"
+      ],
+      "hits": 1,
+      "query": "not specify administrative territorial entity Bill Cockcroft educated includes place"
+    },
+    {
+      "id": "2hop__315267_277284",
+      "round": 3,
+      "old_ids": [
+        "2hop__315267_277284::p18",
+        "2hop__286093_361551::p9",
+        "2hop__249867_557232::p1"
+      ],
+      "fixed_ids": [
+        "2hop__315267_277284::p18",
+        "2hop__25396_593388::p16",
+        "2hop__770487_494646::p4",
+        "2hop__557743_92763::p3",
+        "4hop1__94201_642284_131926_13165::p2"
+      ],
+      "support": [
+        "2hop__315267_277284::p15",
+        "2hop__315267_277284::p18"
+      ],
+      "hits": 1,
+      "query": "not specify administrative territorial entity Bill Cockcroft educated includes place"
+    },
+    {
+      "id": "2hop__351045_47134",
+      "round": 2,
+      "old_ids": [
+        "2hop__351045_47134::p4",
+        "2hop__684287_78303::p12",
+        "2hop__472486_97805::p14"
+      ],
+      "fixed_ids": [
+        "2hop__351045_47134::p4",
+        "2hop__351045_47134::p2",
+        "2hop__351045_47134::p10",
+        "2hop__351045_47134::p18"
+      ],
+      "support": [
+        "2hop__351045_47134::p2",
+        "2hop__351045_47134::p4"
+      ],
+      "hits": 2,
+      "query": "There no mascot operator RV Wecoma"
+    }
+  ],
+  "still": [
+    {
+      "id": "2hop__3739_13529",
+      "round": 2,
+      "query": "any football star backing out due relay controversy only discusses David Beckham's transfer Real Madrid instead Barcelona backed signed",
+      "reason": "no fixed support hit"
+    },
+    {
+      "id": "2hop__3739_13529",
+      "round": 3,
+      "query": "talks about David Beckham backing out deal Barcelona join Real Madrid but not any relay controversy also provide date he initially signed happen football",
+      "reason": "no fixed support hit"
+    }
+  ]
+}

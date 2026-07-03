@@ -1,0 +1,8 @@
+﻿run_name: offline_bm25_smoke_all_methods_agentic_rag_baseline
+dataset: data/challenge_smoke.jsonl
+corpus: data/challenge_corpus.jsonl
+output_dir: runs/offline_bm25_smoke_all_methods_agentic_rag_baseline
+retriever: bm25
+methods: [naive, fixed_k, self_stop, prompt_verifier, agentic_rag_baseline]
+top_k: 2
+max_rounds: 3

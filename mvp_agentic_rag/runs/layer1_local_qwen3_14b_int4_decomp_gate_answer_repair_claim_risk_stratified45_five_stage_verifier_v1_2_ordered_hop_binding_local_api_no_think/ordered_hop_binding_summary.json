@@ -1,0 +1,98 @@
+{
+  "headline": {
+    "records": 45,
+    "steps": 100,
+    "v1_2_field_coverage_min": 0.81,
+    "wrong_target_accepted_count": 0,
+    "candidate_extraction_failure_count": 0,
+    "ordered_hop_repair_count": 0,
+    "hop_coverage": {
+      "2hop": 0.6666666666666666,
+      "3hop": 0.3333333333333333,
+      "4hop": 0.06666666666666667
+    }
+  },
+  "field_coverage": {
+    "question_slot_parser": 0.81,
+    "candidate_role_labeler": 0.81,
+    "ordered_hop_binding": 0.81,
+    "slot_bound_entailment": 0.81,
+    "set_level_sufficiency": 0.81,
+    "decision_head": 0.81
+  },
+  "action_counts": {
+    "answer": 22,
+    "continue_search": 45,
+    "abstain": 30,
+    "refine_query": 3
+  },
+  "candidate_role_counts": {
+    "missing": 19,
+    "bridge_entity": 24,
+    "unknown": 31,
+    "final_answer": 12,
+    "distractor": 6,
+    "evidence_location": 7,
+    "subject_entity": 1
+  },
+  "role_error_counts": {
+    "missing": 19,
+    "none": 73,
+    "wrong_target": 2,
+    "no_candidate": 1,
+    "date_component_as_final": 2,
+    "unknown": 1,
+    "bridge_as_final": 1,
+    "container_as_final": 1
+  },
+  "abstain_reason_counts": {
+    "missing": 19,
+    "insufficient_evidence": 27,
+    "none": 54
+  },
+  "branch_counts": {
+    "config_seen_by_verifier": 81,
+    "ordered_hop_binding_enabled": 81,
+    "structured_acceptance_branch_taken": 5
+  },
+  "hop_counts": {
+    "2hop": {
+      "steps": 23,
+      "action:answer": 13,
+      "role:missing": 10,
+      "action:continue_search": 8,
+      "role:bridge_entity": 5,
+      "action:abstain": 2,
+      "role:unknown": 3,
+      "role:final_answer": 5
+    },
+    "3hop": {
+      "steps": 36,
+      "action:abstain": 13,
+      "role:unknown": 12,
+      "action:continue_search": 12,
+      "role:distractor": 2,
+      "role:final_answer": 6,
+      "role:bridge_entity": 5,
+      "action:answer": 8,
+      "role:missing": 9,
+      "role:evidence_location": 2,
+      "action:refine_query": 3
+    },
+    "4hop": {
+      "steps": 41,
+      "action:continue_search": 25,
+      "role:bridge_entity": 14,
+      "role:evidence_location": 5,
+      "action:abstain": 15,
+      "role:unknown": 16,
+      "action:answer": 1,
+      "role:final_answer": 1,
+      "role:subject_entity": 1,
+      "role:distractor": 4
+    }
+  },
+  "wrong_target_accepted_cases": [],
+  "candidate_extraction_failure_cases": [],
+  "ordered_hop_repair_cases": []
+}

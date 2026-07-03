@@ -1,0 +1,31 @@
+id,incumbent_decomp_gate30_f1,incumbent_decomp_gate30_action,incumbent_decomp_gate30_answer,incumbent_decomp_gate30_calls,incumbent_decomp_gate30_gate,low_yield_abstain30_f1,low_yield_abstain30_action,low_yield_abstain30_answer,low_yield_abstain30_calls,low_yield_abstain30_gate,utilization_gate_v2_f1,utilization_gate_v2_action,utilization_gate_v2_answer,utilization_gate_v2_calls,utilization_gate_v2_gate,util_minus_incumbent,low_yield_minus_incumbent
+2hop__10620_49084,0.000000,abstain,,1,False,0.000000,abstain,,1,False,0.000000,abstain,,1,False,0.000000,0.000000
+2hop__129721_40482,0.000000,abstain,,3,False,0.000000,abstain,,2,False,0.000000,abstain,,2,False,0.000000,0.000000
+2hop__131951_643670,0.000000,abstain,,2,False,0.000000,abstain,,2,False,0.000000,abstain,,2,False,0.000000,0.000000
+2hop__132854_417697,0.000000,abstain,,3,False,0.000000,abstain,,2,False,0.000000,abstain,,2,False,0.000000,0.000000
+2hop__136179_13529,1.000000,answer,June 1982,1,False,1.000000,answer,June 1982,1,False,1.000000,answer,June 1982,1,False,0.000000,0.000000
+2hop__142699_67465,0.500000,answer,2011,1,False,0.500000,answer,2011,1,False,0.500000,answer,2011,1,False,0.000000,0.000000
+2hop__151750_141308,0.800000,answer,Apple Corps Ltd,1,False,0.800000,answer,Apple Corps Ltd,1,False,0.800000,answer,Apple Corps Ltd,1,False,0.000000,0.000000
+2hop__153573_44085,0.333333,answer,Metal Mickey,1,False,0.000000,abstain,,1,False,0.000000,abstain,,3,False,-0.333333,-0.333333
+2hop__167577_31122,0.666667,answer,18th century,2,False,0.666667,answer,18th century,2,False,0.666667,answer,18th century,2,False,0.000000,0.000000
+2hop__194469_83289,1.000000,answer,Matt Bennett,1,False,1.000000,answer,Matt Bennett,1,False,1.000000,answer,Matt Bennett,3,False,0.000000,0.000000
+2hop__20268_42014,0.000000,abstain,,3,False,0.000000,answer,131,2,False,0.000000,abstain,,2,True,0.000000,0.000000
+2hop__23459_35124,1.000000,answer,450,1,False,1.000000,answer,450,1,False,1.000000,answer,450,1,False,0.000000,0.000000
+2hop__244193_461106,0.000000,abstain,,3,False,0.000000,abstain,,3,False,0.000000,abstain,,3,False,0.000000,0.000000
+2hop__247353_55227,0.000000,abstain,,3,False,0.000000,abstain,,3,False,0.000000,abstain,,2,True,0.000000,0.000000
+2hop__249867_557232,0.000000,answer,USA,1,False,0.000000,answer,USA,1,False,0.000000,answer,United States,1,False,0.000000,0.000000
+2hop__25396_593388,1.000000,answer,"Sir Robert Peel, 1st Baronet",2,False,1.000000,answer,"Sir Robert Peel, 1st Baronet",2,False,1.000000,answer,"Sir Robert Peel, 1st Baronet",2,False,0.000000,0.000000
+2hop__25797_25855,1.000000,answer,PowerShare,1,False,1.000000,answer,PowerShare,1,False,1.000000,answer,PowerShare,1,False,0.000000,0.000000
+2hop__2682_577502,1.000000,answer,Maria Shriver,2,False,1.000000,answer,Maria Shriver,2,False,0.000000,abstain,,2,True,-1.000000,0.000000
+2hop__269766_43945,0.500000,answer,advocating independence from Great Britain to people in the Thirteen Colonies,1,False,0.500000,answer,advocating independence from Great Britain to people in the Thirteen Colonies,1,False,0.500000,answer,advocating independence from Great Britain to people in the Thirteen Colonies,1,False,0.000000,0.000000
+2hop__28203_55840,1.000000,answer,Colin Firth,1,False,1.000000,answer,Colin Firth,1,False,1.000000,answer,Colin Firth,1,False,0.000000,0.000000
+2hop__286093_361551,1.000000,answer,Bay County,1,False,1.000000,answer,Bay County,1,False,1.000000,answer,Bay County,1,False,0.000000,0.000000
+2hop__286621_84856,0.000000,abstain,,3,False,0.000000,abstain,,3,False,0.000000,abstain,,3,False,0.000000,0.000000
+2hop__29873_679424,0.666667,answer,Serbia,1,False,0.666667,answer,Serbia,1,False,0.666667,answer,Serbia,1,False,0.000000,0.000000
+2hop__31124_31122,0.666667,answer,18th century,1,False,0.666667,answer,18th century,1,False,0.666667,answer,18th century,1,False,0.000000,0.000000
+2hop__315267_277284,0.000000,abstain,,2,False,0.000000,abstain,,2,False,0.000000,abstain,,3,False,0.000000,0.000000
+2hop__341176_711757,1.000000,answer,Gmina Ryki,2,False,1.000000,answer,Gmina Ryki,2,False,0.000000,abstain,,2,False,-1.000000,0.000000
+2hop__351045_47134,1.000000,answer,Benny Beaver,2,False,0.000000,abstain,,3,False,1.000000,answer,Benny Beaver,2,False,0.000000,-1.000000
+2hop__370564_71701,0.000000,answer,1941,1,False,0.000000,answer,1941,1,False,0.000000,answer,1941,1,False,0.000000,0.000000
+2hop__3739_13529,0.000000,abstain,,3,False,0.000000,abstain,,3,False,0.000000,abstain,,3,False,0.000000,0.000000
+2hop__374495_68633,1.000000,answer,Thomas Bach,1,False,1.000000,answer,Thomas Bach,1,False,1.000000,answer,Thomas Bach,1,False,0.000000,0.000000

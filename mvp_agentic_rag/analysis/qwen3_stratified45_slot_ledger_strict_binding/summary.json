@@ -1,0 +1,1560 @@
+{
+  "runs": {
+    "baseline": "runs\\layer1_local_qwen3_14b_int4_decomp_gate_answer_repair_claim_risk_stratified45_closure_verifier_guarded_cost_cleanup_no_think_agentic_rag_baseline",
+    "soft_binding": "runs\\layer1_local_qwen3_14b_int4_decomp_gate_answer_repair_claim_risk_stratified45_final_target_binding_no_think_agentic_rag_baseline",
+    "slot_ledger_v1": "runs\\layer1_local_qwen3_14b_int4_decomp_gate_answer_repair_claim_risk_stratified45_slot_ledger_no_think",
+    "slot_ledger_strict_binding": "runs\\layer1_local_qwen3_14b_int4_decomp_gate_answer_repair_claim_risk_stratified45_slot_ledger_strict_binding_no_think"
+  },
+  "common_samples": 45,
+  "perhop": {
+    "baseline": [
+      {
+        "hop": "2hop",
+        "n": 15,
+        "answer_f1": 0.5,
+        "coverage": 0.7333333333333333,
+        "selective_answer_f1": 0.6818181818181818,
+        "avg_rounds": 1.6,
+        "zero_answered": 3,
+        "slot_answer": 0,
+        "slot_missing": 0,
+        "slot_next": 0,
+        "closure_success": 1,
+        "closure_not_final": 0,
+        "nonjson": 0
+      },
+      {
+        "hop": "3hop",
+        "n": 15,
+        "answer_f1": 0.19032967032967033,
+        "coverage": 0.3333333333333333,
+        "selective_answer_f1": 0.570989010989011,
+        "avg_rounds": 2.2,
+        "zero_answered": 1,
+        "slot_answer": 0,
+        "slot_missing": 0,
+        "slot_next": 0,
+        "closure_success": 1,
+        "closure_not_final": 0,
+        "nonjson": 0
+      },
+      {
+        "hop": "4hop",
+        "n": 15,
+        "answer_f1": 0.1,
+        "coverage": 0.3333333333333333,
+        "selective_answer_f1": 0.3,
+        "avg_rounds": 2.533333333333333,
+        "zero_answered": 3,
+        "slot_answer": 0,
+        "slot_missing": 0,
+        "slot_next": 0,
+        "closure_success": 5,
+        "closure_not_final": 0,
+        "nonjson": 1
+      },
+      {
+        "hop": "all",
+        "n": 45,
+        "answer_f1": 0.26344322344322346,
+        "coverage": 0.4666666666666667,
+        "selective_answer_f1": 0.5645211930926217,
+        "avg_rounds": 2.111111111111111,
+        "zero_answered": 7,
+        "slot_answer": 0,
+        "slot_missing": 0,
+        "slot_next": 0,
+        "closure_success": 7,
+        "closure_not_final": 0,
+        "nonjson": 1
+      }
+    ],
+    "soft_binding": [
+      {
+        "hop": "2hop",
+        "n": 15,
+        "answer_f1": 0.4866666666666667,
+        "coverage": 0.7333333333333333,
+        "selective_answer_f1": 0.6636363636363637,
+        "avg_rounds": 1.4666666666666666,
+        "zero_answered": 3,
+        "slot_answer": 0,
+        "slot_missing": 0,
+        "slot_next": 0,
+        "closure_success": 0,
+        "closure_not_final": 0,
+        "nonjson": 0
+      },
+      {
+        "hop": "3hop",
+        "n": 15,
+        "answer_f1": 0.256996336996337,
+        "coverage": 0.4666666666666667,
+        "selective_answer_f1": 0.5507064364207221,
+        "avg_rounds": 2,
+        "zero_answered": 2,
+        "slot_answer": 0,
+        "slot_missing": 0,
+        "slot_next": 0,
+        "closure_success": 2,
+        "closure_not_final": 0,
+        "nonjson": 0
+      },
+      {
+        "hop": "4hop",
+        "n": 15,
+        "answer_f1": 0.1,
+        "coverage": 0.3333333333333333,
+        "selective_answer_f1": 0.3,
+        "avg_rounds": 2.466666666666667,
+        "zero_answered": 3,
+        "slot_answer": 0,
+        "slot_missing": 0,
+        "slot_next": 0,
+        "closure_success": 4,
+        "closure_not_final": 0,
+        "nonjson": 0
+      },
+      {
+        "hop": "all",
+        "n": 45,
+        "answer_f1": 0.28122100122100124,
+        "coverage": 0.5111111111111111,
+        "selective_answer_f1": 0.5502150023889154,
+        "avg_rounds": 1.9777777777777779,
+        "zero_answered": 8,
+        "slot_answer": 0,
+        "slot_missing": 0,
+        "slot_next": 0,
+        "closure_success": 6,
+        "closure_not_final": 0,
+        "nonjson": 0
+      }
+    ],
+    "slot_ledger_v1": [
+      {
+        "hop": "2hop",
+        "n": 15,
+        "answer_f1": 0.5422222222222223,
+        "coverage": 0.8,
+        "selective_answer_f1": 0.6777777777777778,
+        "avg_rounds": 1.4,
+        "zero_answered": 2,
+        "slot_answer": 11,
+        "slot_missing": 1,
+        "slot_next": 6,
+        "closure_success": 2,
+        "closure_not_final": 0,
+        "nonjson": 0
+      },
+      {
+        "hop": "3hop",
+        "n": 15,
+        "answer_f1": 0.32366300366300366,
+        "coverage": 0.6,
+        "selective_answer_f1": 0.5394383394383394,
+        "avg_rounds": 2.066666666666667,
+        "zero_answered": 3,
+        "slot_answer": 11,
+        "slot_missing": 0,
+        "slot_next": 13,
+        "closure_success": 4,
+        "closure_not_final": 0,
+        "nonjson": 0
+      },
+      {
+        "hop": "4hop",
+        "n": 15,
+        "answer_f1": 0.1,
+        "coverage": 0.4,
+        "selective_answer_f1": 0.25,
+        "avg_rounds": 2.1333333333333333,
+        "zero_answered": 4,
+        "slot_answer": 6,
+        "slot_missing": 0,
+        "slot_next": 14,
+        "closure_success": 6,
+        "closure_not_final": 0,
+        "nonjson": 0
+      },
+      {
+        "hop": "all",
+        "n": 45,
+        "answer_f1": 0.321961741961742,
+        "coverage": 0.6,
+        "selective_answer_f1": 0.5366029032695699,
+        "avg_rounds": 1.8666666666666667,
+        "zero_answered": 9,
+        "slot_answer": 28,
+        "slot_missing": 1,
+        "slot_next": 33,
+        "closure_success": 12,
+        "closure_not_final": 0,
+        "nonjson": 0
+      }
+    ],
+    "slot_ledger_strict_binding": [
+      {
+        "hop": "2hop",
+        "n": 15,
+        "answer_f1": 0.47555555555555556,
+        "coverage": 0.7333333333333333,
+        "selective_answer_f1": 0.6484848484848484,
+        "avg_rounds": 1.4,
+        "zero_answered": 2,
+        "slot_answer": 10,
+        "slot_missing": 3,
+        "slot_next": 6,
+        "closure_success": 1,
+        "closure_not_final": 0,
+        "nonjson": 0
+      },
+      {
+        "hop": "3hop",
+        "n": 15,
+        "answer_f1": 0.19032967032967033,
+        "coverage": 0.4,
+        "selective_answer_f1": 0.47582417582417585,
+        "avg_rounds": 1.8666666666666667,
+        "zero_answered": 2,
+        "slot_answer": 3,
+        "slot_missing": 4,
+        "slot_next": 13,
+        "closure_success": 3,
+        "closure_not_final": 0,
+        "nonjson": 0
+      },
+      {
+        "hop": "4hop",
+        "n": 15,
+        "answer_f1": 0.06666666666666667,
+        "coverage": 0.2,
+        "selective_answer_f1": 0.3333333333333333,
+        "avg_rounds": 2,
+        "zero_answered": 2,
+        "slot_answer": 0,
+        "slot_missing": 7,
+        "slot_next": 14,
+        "closure_success": 3,
+        "closure_not_final": 0,
+        "nonjson": 0
+      },
+      {
+        "hop": "all",
+        "n": 45,
+        "answer_f1": 0.24418396418396418,
+        "coverage": 0.4444444444444444,
+        "selective_answer_f1": 0.5494139194139194,
+        "avg_rounds": 1.7555555555555555,
+        "zero_answered": 6,
+        "slot_answer": 13,
+        "slot_missing": 14,
+        "slot_next": 33,
+        "closure_success": 7,
+        "closure_not_final": 0,
+        "nonjson": 0
+      }
+    ]
+  },
+  "closure_quality": {
+    "baseline": {
+      "successes": 7,
+      "exact": 2,
+      "partial": 1,
+      "zero": 4,
+      "mean": 0.35714285714285715
+    },
+    "soft_binding": {
+      "successes": 6,
+      "exact": 0,
+      "partial": 1,
+      "zero": 5,
+      "mean": 0.08333333333333333
+    },
+    "slot_ledger_v1": {
+      "successes": 12,
+      "exact": 2,
+      "partial": 3,
+      "zero": 7,
+      "mean": 0.25992063492063494
+    },
+    "slot_ledger_strict_binding": {
+      "successes": 7,
+      "exact": 1,
+      "partial": 2,
+      "zero": 4,
+      "mean": 0.23129251700680273
+    }
+  },
+  "zero_answered_cases": [
+    {
+      "id": "2hop__131951_643670",
+      "hop": "2hop",
+      "answer": "Nieuwe Maas River",
+      "gold": "Het Scheur",
+      "question": "What is the name for the mouth of the watercourse of the body of water by Rotterdam Centrum?",
+      "slot_answer": true,
+      "closure_success": false
+    },
+    {
+      "id": "2hop__247353_55227",
+      "hop": "2hop",
+      "answer": "Salma Hayek",
+      "gold": "Maria Bello",
+      "question": "Who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?",
+      "slot_answer": true,
+      "closure_success": false
+    },
+    {
+      "id": "3hop1__104996_160713_77246",
+      "hop": "3hop",
+      "answer": "Islam",
+      "gold": "the country of India",
+      "question": "What is the meaning of the word that is also a majority religion in the area that became India when the country that release Ankahi was created in Arabic dictionary?",
+      "slot_answer": false,
+      "closure_success": true
+    },
+    {
+      "id": "3hop1__159803_89752_75165",
+      "hop": "3hop",
+      "answer": "39.3 million",
+      "gold": "1,335,907",
+      "question": "What's the population of the largest state in the region of the U.S. where trading practices were once threatened by the Navigation Acts?",
+      "slot_answer": false,
+      "closure_success": true
+    },
+    {
+      "id": "4hop1__152146_5274_458768_33632",
+      "hop": "4hop",
+      "answer": "18 November",
+      "gold": "May 4",
+      "question": "What day is the Feast held in the city where the headquarters of the only group larger than Långa nätter's record label is located?",
+      "slot_answer": false,
+      "closure_success": true
+    },
+    {
+      "id": "4hop1__28352_53706_795904_580996",
+      "hop": "4hop",
+      "answer": "Canada",
+      "gold": "Rio Linda",
+      "question": "What shares a border with the city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works?",
+      "slot_answer": false,
+      "closure_success": true
+    }
+  ],
+  "largest_regressions_vs_v1": [
+    {
+      "id": "2hop__167577_31122",
+      "hop": "2hop",
+      "question": "What century did the author of A Treatise Concerning the Principles of Human Knowledge live in?",
+      "gold": "18th",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": -1.0,
+      "strict_minus_base": -1.0,
+      "soft": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 3
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "18th",
+        "f1": 1.0,
+        "rounds": 2
+      },
+      "strict": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "slot_answer": false,
+      "slot_missing": false,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "3hop1__136129_87694_124169",
+      "hop": "3hop",
+      "question": "What year did the Governor of the city where the basilica named after the same saint as the one that Mantua Cathedral is dedicated to die?",
+      "gold": "1952",
+      "strict_minus_soft": -1.0,
+      "strict_minus_v1": -1.0,
+      "strict_minus_base": -1.0,
+      "soft": {
+        "action": "answer",
+        "answer": "1952",
+        "f1": 1.0,
+        "rounds": 2
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "1952",
+        "f1": 1.0,
+        "rounds": 3
+      },
+      "strict": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "slot_answer": false,
+      "slot_missing": true,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "3hop1__140786_2053_5289",
+      "hop": "3hop",
+      "question": "What UK label was bought by the major broadcaster that, along with ABC and the network of the show Just Men!?, is based in New York?",
+      "gold": "Oriole Records.",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": -1.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "Oriole Records",
+        "f1": 1.0,
+        "rounds": 2
+      },
+      "strict": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "slot_answer": false,
+      "slot_missing": true,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "4hop1__161605_32392_823060_610794",
+      "hop": "4hop",
+      "question": "What county is the city that shares a border with the state capital of the state where Darlington County located in?",
+      "gold": "Richland County",
+      "strict_minus_soft": -0.5,
+      "strict_minus_v1": -0.5,
+      "strict_minus_base": -0.5,
+      "soft": {
+        "action": "answer",
+        "answer": "Charleston County",
+        "f1": 0.5,
+        "rounds": 2
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "Charleston County",
+        "f1": 0.5,
+        "rounds": 2
+      },
+      "strict": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "slot_answer": false,
+      "slot_missing": false,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "2hop__10620_49084",
+      "hop": "2hop",
+      "question": "Who plays the legendary figure featured in Historia Regum Britanniae in the show Once Upon a Time?",
+      "gold": "Liam Thomas Garrigan",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.8,
+      "soft": {
+        "action": "answer",
+        "answer": "Liam Garrigan",
+        "f1": 0.8,
+        "rounds": 1
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "Liam Garrigan",
+        "f1": 0.8,
+        "rounds": 1
+      },
+      "strict": {
+        "action": "answer",
+        "answer": "Liam Garrigan",
+        "f1": 0.8,
+        "rounds": 1
+      },
+      "slot_answer": true,
+      "slot_missing": false,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "2hop__129721_40482",
+      "hop": "2hop",
+      "question": "From whom did the Huguenots in the state encompassing Zubly Cemetery purchase land from?",
+      "gold": "Edmund Bellinger",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "answer",
+        "answer": "Edmund Bellinger",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "Edmund Bellinger",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "strict": {
+        "action": "answer",
+        "answer": "Edmund Bellinger",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "slot_answer": true,
+      "slot_missing": false,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "2hop__131951_643670",
+      "hop": "2hop",
+      "question": "What is the name for the mouth of the watercourse of the body of water by Rotterdam Centrum?",
+      "gold": "Het Scheur",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "answer",
+        "answer": "Nieuwe Maas River",
+        "f1": 0.0,
+        "rounds": 1
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "Nieuwe Maas River",
+        "f1": 0.0,
+        "rounds": 1
+      },
+      "strict": {
+        "action": "answer",
+        "answer": "Nieuwe Maas River",
+        "f1": 0.0,
+        "rounds": 1
+      },
+      "slot_answer": true,
+      "slot_missing": false,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "2hop__132854_417697",
+      "hop": "2hop",
+      "question": "Mohammed Atta has what kind of model of the company that makes Datsun Type 12?",
+      "gold": "Nissan Altima",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "v1": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "strict": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "slot_answer": false,
+      "slot_missing": true,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "2hop__136179_13529",
+      "hop": "2hop",
+      "question": "When was the player that Iglesia Maradoniana is named after signed by Barcelona?",
+      "gold": "June 1982",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "answer",
+        "answer": "June 1982",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "June 1982",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "strict": {
+        "action": "answer",
+        "answer": "June 1982",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "slot_answer": true,
+      "slot_missing": false,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "2hop__142699_67465",
+      "hop": "2hop",
+      "question": "When did the rapper on On and On and Beyond release Best day Ever?",
+      "gold": "March 11, 2011",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "answer",
+        "answer": "March 11, 2011",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "March 11, 2011.",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "strict": {
+        "action": "answer",
+        "answer": "March 11, 2011.",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "slot_answer": true,
+      "slot_missing": false,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "2hop__151750_141308",
+      "hop": "2hop",
+      "question": "What company is the record label of Magic Christian Music part of?",
+      "gold": "Apple Corps",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "answer",
+        "answer": "Apple Records",
+        "f1": 0.5,
+        "rounds": 1
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "Apple Records",
+        "f1": 0.5,
+        "rounds": 1
+      },
+      "strict": {
+        "action": "answer",
+        "answer": "Apple Records",
+        "f1": 0.5,
+        "rounds": 1
+      },
+      "slot_answer": true,
+      "slot_missing": false,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "2hop__153573_44085",
+      "hop": "2hop",
+      "question": "What was the show named after the character featured in the video game Mickey's Safari in Letterland?",
+      "gold": "The Mickey Mouse Club",
+      "strict_minus_soft": 0.3333333333333333,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.3333333333333333,
+      "soft": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "Metal Mickey",
+        "f1": 0.3333333333333333,
+        "rounds": 2
+      },
+      "strict": {
+        "action": "answer",
+        "answer": "Metal Mickey",
+        "f1": 0.3333333333333333,
+        "rounds": 2
+      },
+      "slot_answer": false,
+      "slot_missing": false,
+      "closure_success": true,
+      "closure_not_final": false
+    },
+    {
+      "id": "2hop__194469_83289",
+      "hop": "2hop",
+      "question": "Who is the guy in the One Last Time video by the participant in The Listening Sessions?",
+      "gold": "Matt Bennett",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "answer",
+        "answer": "Matt Bennett",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "Matt Bennett",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "strict": {
+        "action": "answer",
+        "answer": "Matt Bennett",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "slot_answer": true,
+      "slot_missing": false,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "2hop__20268_42014",
+      "hop": "2hop",
+      "question": "How many members in the seats of the organization that enacted the Directory of Public Worship into law are members of the Scottish Government?",
+      "gold": "2",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "answer",
+        "answer": "2",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "2",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "strict": {
+        "action": "answer",
+        "answer": "2",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "slot_answer": true,
+      "slot_missing": false,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "2hop__23459_35124",
+      "hop": "2hop",
+      "question": "How many books were said to be written by the most influential in Islamic philosophy?",
+      "gold": "450",
+      "strict_minus_soft": -0.5,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": -0.5,
+      "soft": {
+        "action": "answer",
+        "answer": "450",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "More than 450",
+        "f1": 0.5,
+        "rounds": 1
+      },
+      "strict": {
+        "action": "answer",
+        "answer": "More than 450",
+        "f1": 0.5,
+        "rounds": 1
+      },
+      "slot_answer": true,
+      "slot_missing": false,
+      "closure_success": false,
+      "closure_not_final": false
+    }
+  ],
+  "largest_improvements_vs_soft": [
+    {
+      "id": "2hop__153573_44085",
+      "hop": "2hop",
+      "question": "What was the show named after the character featured in the video game Mickey's Safari in Letterland?",
+      "gold": "The Mickey Mouse Club",
+      "strict_minus_soft": 0.3333333333333333,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.3333333333333333,
+      "soft": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "Metal Mickey",
+        "f1": 0.3333333333333333,
+        "rounds": 2
+      },
+      "strict": {
+        "action": "answer",
+        "answer": "Metal Mickey",
+        "f1": 0.3333333333333333,
+        "rounds": 2
+      },
+      "slot_answer": false,
+      "slot_missing": false,
+      "closure_success": true,
+      "closure_not_final": false
+    },
+    {
+      "id": "4hop1__28352_53706_795904_580996",
+      "hop": "4hop",
+      "question": "What shares a border with the city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works?",
+      "gold": "Rio Linda",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "answer",
+        "answer": "Canada",
+        "f1": 0.0,
+        "rounds": 3
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "Canada",
+        "f1": 0.0,
+        "rounds": 3
+      },
+      "strict": {
+        "action": "answer",
+        "answer": "Canada",
+        "f1": 0.0,
+        "rounds": 3
+      },
+      "slot_answer": false,
+      "slot_missing": false,
+      "closure_success": true,
+      "closure_not_final": false
+    },
+    {
+      "id": "4hop1__264443_49925_13759_736921",
+      "hop": "4hop",
+      "question": "Where is the district that the person who wanted to reform and address Edward Egan's religion preached a sermon on Marian devotion before his death located?",
+      "gold": "Saxony-Anhalt",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "v1": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "strict": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "slot_answer": false,
+      "slot_missing": false,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "4hop1__236903_153080_33897_81096",
+      "hop": "4hop",
+      "question": "Who won the indy car race in the most populated city of the state where the performer of East Coasting is from?",
+      "gold": "Mario Andretti",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 3
+      },
+      "v1": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 3
+      },
+      "strict": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "slot_answer": false,
+      "slot_missing": false,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "4hop1__17192_17130_70784_79935",
+      "hop": "4hop",
+      "question": "When was the region immediately north of the region where the country that secured southern Lebanon is located and the Persian Gulf created?",
+      "gold": "1930",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 3
+      },
+      "v1": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "strict": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "slot_answer": false,
+      "slot_missing": true,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "4hop1__166471_49925_13759_736921",
+      "hop": "4hop",
+      "question": "In what state is the district where the one who wanted to reform and address the institution behind the religion of Egidio Vagnozzi preached a sermon?",
+      "gold": "Saxony-Anhalt",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "v1": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "strict": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "slot_answer": false,
+      "slot_missing": true,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "4hop1__161810_583746_457883_650651",
+      "hop": "4hop",
+      "question": "Country A has an embassy from the country that contains the bay where the city of General Santos is located. What network created country A's version of The Biggest Loser?",
+      "gold": "NBC",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "answer",
+        "answer": "NBC",
+        "f1": 1.0,
+        "rounds": 3
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "NBC",
+        "f1": 1.0,
+        "rounds": 2
+      },
+      "strict": {
+        "action": "answer",
+        "answer": "NBC",
+        "f1": 1.0,
+        "rounds": 2
+      },
+      "slot_answer": false,
+      "slot_missing": false,
+      "closure_success": true,
+      "closure_not_final": false
+    },
+    {
+      "id": "4hop1__152146_5274_458768_33632",
+      "hop": "4hop",
+      "question": "What day is the Feast held in the city where the headquarters of the only group larger than Långa nätter's record label is located?",
+      "gold": "May 4",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "answer",
+        "answer": "18 November",
+        "f1": 0.0,
+        "rounds": 1
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "18 November",
+        "f1": 0.0,
+        "rounds": 1
+      },
+      "strict": {
+        "action": "answer",
+        "answer": "18 November",
+        "f1": 0.0,
+        "rounds": 1
+      },
+      "slot_answer": false,
+      "slot_missing": false,
+      "closure_success": true,
+      "closure_not_final": false
+    },
+    {
+      "id": "4hop1__151650_5274_458768_33637",
+      "hop": "4hop",
+      "question": "How many ethnic minorities were looked at differently in the city where the headquarters of the only group larger than Desde El Principio's record label is located?",
+      "gold": "two",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 3
+      },
+      "v1": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "strict": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "slot_answer": false,
+      "slot_missing": true,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "4hop1__151650_5274_458768_33632",
+      "hop": "4hop",
+      "question": "What day is the Feast in the city where the headquarters of the only group larger than Desde El Principio's record label held on?",
+      "gold": "May 4",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "18 November",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "strict": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "slot_answer": false,
+      "slot_missing": true,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "4hop1__145494_698949_157828_162309",
+      "hop": "4hop",
+      "question": "When did the country whose co-official language was used in the movie named after the place where Bela Linder died first attend the Olympics games as an independent team?",
+      "gold": "2016",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "answer",
+        "answer": "1920",
+        "f1": 0.0,
+        "rounds": 3
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "1920",
+        "f1": 0.0,
+        "rounds": 3
+      },
+      "strict": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "slot_answer": false,
+      "slot_missing": true,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "4hop1__13170_32392_823060_610794",
+      "hop": "4hop",
+      "question": "In which county is the city sharing a border with the capitol of the first state to formally secede?",
+      "gold": "Richland County",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "v1": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "strict": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "slot_answer": false,
+      "slot_missing": false,
+      "closure_success": false,
+      "closure_not_final": false
+    }
+  ],
+  "largest_regressions_vs_soft": [
+    {
+      "id": "3hop1__136129_87694_124169",
+      "hop": "3hop",
+      "question": "What year did the Governor of the city where the basilica named after the same saint as the one that Mantua Cathedral is dedicated to die?",
+      "gold": "1952",
+      "strict_minus_soft": -1.0,
+      "strict_minus_v1": -1.0,
+      "strict_minus_base": -1.0,
+      "soft": {
+        "action": "answer",
+        "answer": "1952",
+        "f1": 1.0,
+        "rounds": 2
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "1952",
+        "f1": 1.0,
+        "rounds": 3
+      },
+      "strict": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "slot_answer": false,
+      "slot_missing": true,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "2hop__23459_35124",
+      "hop": "2hop",
+      "question": "How many books were said to be written by the most influential in Islamic philosophy?",
+      "gold": "450",
+      "strict_minus_soft": -0.5,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": -0.5,
+      "soft": {
+        "action": "answer",
+        "answer": "450",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "More than 450",
+        "f1": 0.5,
+        "rounds": 1
+      },
+      "strict": {
+        "action": "answer",
+        "answer": "More than 450",
+        "f1": 0.5,
+        "rounds": 1
+      },
+      "slot_answer": true,
+      "slot_missing": false,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "4hop1__161605_32392_823060_610794",
+      "hop": "4hop",
+      "question": "What county is the city that shares a border with the state capital of the state where Darlington County located in?",
+      "gold": "Richland County",
+      "strict_minus_soft": -0.5,
+      "strict_minus_v1": -0.5,
+      "strict_minus_base": -0.5,
+      "soft": {
+        "action": "answer",
+        "answer": "Charleston County",
+        "f1": 0.5,
+        "rounds": 2
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "Charleston County",
+        "f1": 0.5,
+        "rounds": 2
+      },
+      "strict": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "slot_answer": false,
+      "slot_missing": false,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "2hop__10620_49084",
+      "hop": "2hop",
+      "question": "Who plays the legendary figure featured in Historia Regum Britanniae in the show Once Upon a Time?",
+      "gold": "Liam Thomas Garrigan",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.8,
+      "soft": {
+        "action": "answer",
+        "answer": "Liam Garrigan",
+        "f1": 0.8,
+        "rounds": 1
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "Liam Garrigan",
+        "f1": 0.8,
+        "rounds": 1
+      },
+      "strict": {
+        "action": "answer",
+        "answer": "Liam Garrigan",
+        "f1": 0.8,
+        "rounds": 1
+      },
+      "slot_answer": true,
+      "slot_missing": false,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "2hop__129721_40482",
+      "hop": "2hop",
+      "question": "From whom did the Huguenots in the state encompassing Zubly Cemetery purchase land from?",
+      "gold": "Edmund Bellinger",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "answer",
+        "answer": "Edmund Bellinger",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "Edmund Bellinger",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "strict": {
+        "action": "answer",
+        "answer": "Edmund Bellinger",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "slot_answer": true,
+      "slot_missing": false,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "2hop__131951_643670",
+      "hop": "2hop",
+      "question": "What is the name for the mouth of the watercourse of the body of water by Rotterdam Centrum?",
+      "gold": "Het Scheur",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "answer",
+        "answer": "Nieuwe Maas River",
+        "f1": 0.0,
+        "rounds": 1
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "Nieuwe Maas River",
+        "f1": 0.0,
+        "rounds": 1
+      },
+      "strict": {
+        "action": "answer",
+        "answer": "Nieuwe Maas River",
+        "f1": 0.0,
+        "rounds": 1
+      },
+      "slot_answer": true,
+      "slot_missing": false,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "2hop__132854_417697",
+      "hop": "2hop",
+      "question": "Mohammed Atta has what kind of model of the company that makes Datsun Type 12?",
+      "gold": "Nissan Altima",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "v1": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "strict": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "slot_answer": false,
+      "slot_missing": true,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "2hop__136179_13529",
+      "hop": "2hop",
+      "question": "When was the player that Iglesia Maradoniana is named after signed by Barcelona?",
+      "gold": "June 1982",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "answer",
+        "answer": "June 1982",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "June 1982",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "strict": {
+        "action": "answer",
+        "answer": "June 1982",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "slot_answer": true,
+      "slot_missing": false,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "2hop__142699_67465",
+      "hop": "2hop",
+      "question": "When did the rapper on On and On and Beyond release Best day Ever?",
+      "gold": "March 11, 2011",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "answer",
+        "answer": "March 11, 2011",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "March 11, 2011.",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "strict": {
+        "action": "answer",
+        "answer": "March 11, 2011.",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "slot_answer": true,
+      "slot_missing": false,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "2hop__151750_141308",
+      "hop": "2hop",
+      "question": "What company is the record label of Magic Christian Music part of?",
+      "gold": "Apple Corps",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "answer",
+        "answer": "Apple Records",
+        "f1": 0.5,
+        "rounds": 1
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "Apple Records",
+        "f1": 0.5,
+        "rounds": 1
+      },
+      "strict": {
+        "action": "answer",
+        "answer": "Apple Records",
+        "f1": 0.5,
+        "rounds": 1
+      },
+      "slot_answer": true,
+      "slot_missing": false,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "2hop__167577_31122",
+      "hop": "2hop",
+      "question": "What century did the author of A Treatise Concerning the Principles of Human Knowledge live in?",
+      "gold": "18th",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": -1.0,
+      "strict_minus_base": -1.0,
+      "soft": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 3
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "18th",
+        "f1": 1.0,
+        "rounds": 2
+      },
+      "strict": {
+        "action": "abstain",
+        "answer": "",
+        "f1": 0.0,
+        "rounds": 2
+      },
+      "slot_answer": false,
+      "slot_missing": false,
+      "closure_success": false,
+      "closure_not_final": false
+    },
+    {
+      "id": "2hop__194469_83289",
+      "hop": "2hop",
+      "question": "Who is the guy in the One Last Time video by the participant in The Listening Sessions?",
+      "gold": "Matt Bennett",
+      "strict_minus_soft": 0.0,
+      "strict_minus_v1": 0.0,
+      "strict_minus_base": 0.0,
+      "soft": {
+        "action": "answer",
+        "answer": "Matt Bennett",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "v1": {
+        "action": "answer",
+        "answer": "Matt Bennett",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "strict": {
+        "action": "answer",
+        "answer": "Matt Bennett",
+        "f1": 1.0,
+        "rounds": 1
+      },
+      "slot_answer": true,
+      "slot_missing": false,
+      "closure_success": false,
+      "closure_not_final": false
+    }
+  ]
+}

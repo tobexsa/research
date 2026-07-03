@@ -1,0 +1,147 @@
+{
+  "headline": {
+    "records": 35,
+    "steps": 79,
+    "v1_2_field_coverage_min": 0.7848101265822784,
+    "wrong_target_accepted_count": 2,
+    "candidate_extraction_failure_count": 0,
+    "ordered_hop_repair_count": 0,
+    "hop_coverage": {
+      "2hop": 0.4666666666666667,
+      "3hop": 0.3333333333333333,
+      "4hop": 0.0
+    }
+  },
+  "field_coverage": {
+    "question_slot_parser": 0.7848101265822784,
+    "candidate_role_labeler": 0.7848101265822784,
+    "ordered_hop_binding": 0.7848101265822784,
+    "slot_bound_entailment": 0.7848101265822784,
+    "set_level_sufficiency": 0.7848101265822784,
+    "decision_head": 0.7848101265822784
+  },
+  "action_counts": {
+    "refine_query": 3,
+    "abstain": 33,
+    "answer": 14,
+    "refine_missing_hop": 15,
+    "continue_search": 14
+  },
+  "candidate_role_counts": {
+    "missing": 17,
+    "bridge_entity": 15,
+    "final_answer": 10,
+    "unknown": 31,
+    "distractor": 4,
+    "evidence_location": 1,
+    "evidence_date": 1
+  },
+  "role_error_counts": {
+    "missing": 17,
+    "none": 56,
+    "distractor": 1,
+    "wrong_target": 2,
+    "bridge_as_final": 1,
+    "date_component_as_final": 1,
+    "relation_direction_error": 1
+  },
+  "abstain_reason_counts": {
+    "missing": 17,
+    "insufficient_evidence": 19,
+    "none": 43
+  },
+  "branch_counts": {
+    "config_seen_by_verifier": 62,
+    "ordered_hop_binding_enabled": 62,
+    "structured_acceptance_branch_taken": 1
+  },
+  "hop_counts": {
+    "2hop": {
+      "steps": 28,
+      "action:refine_query": 2,
+      "role:missing": 11,
+      "action:abstain": 9,
+      "action:answer": 9,
+      "action:refine_missing_hop": 4,
+      "role:bridge_entity": 6,
+      "action:continue_search": 4,
+      "role:final_answer": 3,
+      "role:unknown": 7,
+      "role:distractor": 1
+    },
+    "3hop": {
+      "steps": 38,
+      "action:abstain": 15,
+      "role:unknown": 15,
+      "action:refine_missing_hop": 10,
+      "role:distractor": 2,
+      "action:continue_search": 7,
+      "role:final_answer": 7,
+      "role:bridge_entity": 7,
+      "action:answer": 5,
+      "role:missing": 6,
+      "role:evidence_location": 1,
+      "action:refine_query": 1
+    },
+    "4hop": {
+      "steps": 13,
+      "action:refine_missing_hop": 1,
+      "role:bridge_entity": 2,
+      "action:abstain": 9,
+      "role:unknown": 9,
+      "action:continue_search": 3,
+      "role:evidence_date": 1,
+      "role:distractor": 1
+    }
+  },
+  "wrong_target_accepted_cases": [
+    {
+      "case_id": "3hop1__128554_39743_24526",
+      "question": "What is the average winter daytime temperature in the region where Richmond is found, in the state where WIRR operates?",
+      "pred": "upper 40s–lower 50s °F (8–12 °C)",
+      "gold": "upper 40s–lower 50s °F",
+      "final_action": "answer",
+      "candidate": null,
+      "candidate_role": "unknown",
+      "role_error_type": "none",
+      "filled_hop_index": 0,
+      "final_hop_index": 0,
+      "chain_complete": false,
+      "candidate_is_final_relation_object": false,
+      "decision_action": "abstain",
+      "abstain_reason": "none",
+      "retrieved_ids": [
+        "3hop1__128554_39743_24526::p2",
+        "3hop1__128554_39743_24526::p6",
+        "3hop1__128554_39743_24526::p15",
+        "3hop1__128554_39743_24526::p16",
+        "3hop1__128554_39743_24526::p17"
+      ]
+    },
+    {
+      "case_id": "3hop1__222497_309482_27537",
+      "question": "Why did Roncalli leave the place where the composer of Al gran sole carico d'amore worked?",
+      "pred": "Roncalli left Venice to attend the conclave in Rome and became Pope John XXIII.",
+      "gold": "for the conclave in Rome",
+      "final_action": "answer",
+      "candidate": null,
+      "candidate_role": "unknown",
+      "role_error_type": "none",
+      "filled_hop_index": 0,
+      "final_hop_index": 0,
+      "chain_complete": false,
+      "candidate_is_final_relation_object": false,
+      "decision_action": "abstain",
+      "abstain_reason": "none",
+      "retrieved_ids": [
+        "3hop1__820301_720914_27537::p5",
+        "3hop1__312146_720914_27537::p14",
+        "3hop1__222497_309482_27537::p12",
+        "3hop1__222497_309482_27537::p0",
+        "3hop1__28841_547811_80702::p13"
+      ]
+    }
+  ],
+  "candidate_extraction_failure_cases": [],
+  "ordered_hop_repair_cases": []
+}

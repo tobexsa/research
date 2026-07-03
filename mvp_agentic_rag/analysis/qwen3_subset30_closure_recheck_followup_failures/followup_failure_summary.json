@@ -1,0 +1,1208 @@
+{
+  "run_dir": "runs\\layer1_local_qwen3_14b_int4_decomp_gate_answer_repair_claim_risk_subset30_closure_recheck_no_think_agentic_rag_baseline",
+  "config": "configs\\layer1_local_qwen3_14b_int4_decomp_gate_answer_repair_claim_risk_subset30_closure_recheck_no_think.yaml",
+  "case_definition": "claim_risk follow-up step with evidence_gain <= 0",
+  "summary": {
+    "cases": 12,
+    "category_counts": {
+      "support_retrieved_but_no_evidence_gain": 12,
+      "support_already_seen_before_followup": 12,
+      "verifier_failed_despite_support_context": 11,
+      "query_drops_question_constraints": 3,
+      "top_k_too_small": 1,
+      "per_subquery_or_total_top_k_too_small": 1
+    },
+    "query_source_counts": {
+      "memory": 12
+    },
+    "action_counts": {
+      "abstain": 7,
+      "refine_query": 4,
+      "answer": 1
+    },
+    "support_in_raw_top50_cases": 12,
+    "support_in_raw_top50_rate": 1.0,
+    "support_in_original_question_top50_cases": 12,
+    "support_in_original_question_top50_rate": 1.0
+  },
+  "cases": [
+    {
+      "run_id": "2hop__10620_49084",
+      "round": 2,
+      "query_source": "memory",
+      "action": "refine_query",
+      "query": "Who is the legendary figure featured in Historia Regum Britanniae?",
+      "question": "Who plays the legendary figure featured in Historia Regum Britanniae in the show Once Upon a Time?",
+      "gold_answer": "Liam Thomas Garrigan",
+      "retrieved_ids": [
+        "2hop__10620_49084::p7",
+        "2hop__10620_49084::p11",
+        "2hop__10620_49084::p0",
+        "2hop__10620_49084::p18",
+        "2hop__10620_49084::p6"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__10620_49084::p18"
+      ],
+      "support_seen_before": [
+        "2hop__10620_49084::p18"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__10620_49084::p18"
+      ],
+      "supporting_ids": [
+        "2hop__10620_49084::p18",
+        "2hop__10620_49084::p2"
+      ],
+      "support_titles": {
+        "2hop__10620_49084::p18": "Liam Garrigan",
+        "2hop__10620_49084::p2": "Middle Ages"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [],
+      "support_in_raw_top50": [
+        "2hop__10620_49084::p2"
+      ],
+      "support_in_decomposed_topk": [],
+      "support_in_decomposed_top50": [
+        "2hop__10620_49084::p2"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__10620_49084::p18",
+        "2hop__10620_49084::p2"
+      ],
+      "raw_rank_first_support": 6,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "Who is the legendary figure featured in Historia Regum Britanniae?"
+      ],
+      "missing_question_terms": [
+        "a",
+        "once",
+        "plays",
+        "show",
+        "time",
+        "upon"
+      ],
+      "overlap_question_terms": [
+        "britanniae",
+        "featured",
+        "figure",
+        "historia",
+        "in",
+        "legendary",
+        "regum",
+        "the",
+        "who"
+      ],
+      "query_support_overlap_terms": [
+        "britanniae",
+        "historia",
+        "in",
+        "is",
+        "regum",
+        "the"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context",
+        "top_k_too_small",
+        "per_subquery_or_total_top_k_too_small"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__10620_49084",
+      "round": 3,
+      "query_source": "memory",
+      "action": "abstain",
+      "query": "Which legendary figure from Historia Regum Britanniae is portrayed by Liam Garrigan in Once Upon a Time?",
+      "question": "Who plays the legendary figure featured in Historia Regum Britanniae in the show Once Upon a Time?",
+      "gold_answer": "Liam Thomas Garrigan",
+      "retrieved_ids": [
+        "2hop__10620_49084::p18",
+        "2hop__10620_49084::p7",
+        "2hop__10620_49084::p11",
+        "2hop__28203_55840::p5",
+        "2hop__10620_49084::p6"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__10620_49084::p18"
+      ],
+      "support_seen_before": [
+        "2hop__10620_49084::p18"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__10620_49084::p18"
+      ],
+      "supporting_ids": [
+        "2hop__10620_49084::p18",
+        "2hop__10620_49084::p2"
+      ],
+      "support_titles": {
+        "2hop__10620_49084::p18": "Liam Garrigan",
+        "2hop__10620_49084::p2": "Middle Ages"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__10620_49084::p18"
+      ],
+      "support_in_raw_top50": [
+        "2hop__10620_49084::p18",
+        "2hop__10620_49084::p2"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__10620_49084::p18"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__10620_49084::p18",
+        "2hop__10620_49084::p2"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__10620_49084::p18",
+        "2hop__10620_49084::p2"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "Which legendary figure from Historia Regum Britanniae is portrayed by Liam Garrigan in Once Upon a Time?",
+        "legendary figure from Historia Regum Britanniae is portrayed by Liam Garrigan in Once Upon a Time?"
+      ],
+      "missing_question_terms": [
+        "featured",
+        "plays",
+        "show",
+        "the",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "a",
+        "britanniae",
+        "figure",
+        "historia",
+        "in",
+        "legendary",
+        "once",
+        "regum",
+        "time",
+        "upon"
+      ],
+      "query_support_overlap_terms": [
+        "a",
+        "britanniae",
+        "by",
+        "garrigan",
+        "historia",
+        "in",
+        "is",
+        "liam",
+        "once",
+        "regum",
+        "time",
+        "upon"
+      ],
+      "query_mentions_gold_answer": true,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__132854_417697",
+      "round": 2,
+      "query_source": "memory",
+      "action": "abstain",
+      "query": "What is Mohammed Atta's association with the Datsun Type 12 or its manufacturer?",
+      "question": "Mohammed Atta has what kind of model of the company that makes Datsun Type 12?",
+      "gold_answer": "Nissan Altima",
+      "retrieved_ids": [
+        "2hop__132854_417697::p10",
+        "3hop2__132957_133264_40768::p13",
+        "2hop__132854_417697::p16",
+        "4hop1__443274_17130_70784_79935::p2",
+        "4hop1__443274_17130_70784_61381::p19"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__132854_417697::p10"
+      ],
+      "support_seen_before": [
+        "2hop__132854_417697::p10"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__132854_417697::p10"
+      ],
+      "supporting_ids": [
+        "2hop__132854_417697::p10",
+        "2hop__132854_417697::p6"
+      ],
+      "support_titles": {
+        "2hop__132854_417697::p10": "Datsun Type 12",
+        "2hop__132854_417697::p6": "Mohamed Atta's Nissan"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__132854_417697::p10"
+      ],
+      "support_in_raw_top50": [
+        "2hop__132854_417697::p10",
+        "2hop__132854_417697::p6"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__132854_417697::p10"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__132854_417697::p10",
+        "2hop__132854_417697::p6"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__132854_417697::p10",
+        "2hop__132854_417697::p6"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "What is Mohammed Atta's association with the Datsun Type 12 or its manufacturer?"
+      ],
+      "missing_question_terms": [
+        "company",
+        "has",
+        "kind",
+        "makes",
+        "model",
+        "of",
+        "that"
+      ],
+      "overlap_question_terms": [
+        "12",
+        "atta",
+        "datsun",
+        "mohammed",
+        "the",
+        "type",
+        "what"
+      ],
+      "query_support_overlap_terms": [
+        "12",
+        "atta",
+        "datsun",
+        "is",
+        "s",
+        "the",
+        "type"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__153573_44085",
+      "round": 2,
+      "query_source": "memory",
+      "action": "abstain",
+      "query": "What is the name of the television show that was named after a character from Mickey's Safari in Letterland?",
+      "question": "What was the show named after the character featured in the video game Mickey's Safari in Letterland?",
+      "gold_answer": "The Mickey Mouse Club",
+      "retrieved_ids": [
+        "2hop__153573_44085::p14",
+        "2hop__153573_44085::p9",
+        "2hop__153573_44085::p2",
+        "2hop__82669_768138::p19",
+        "3hop2__49541_140875_51068::p3"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__153573_44085::p14",
+        "2hop__153573_44085::p2"
+      ],
+      "support_seen_before": [
+        "2hop__153573_44085::p14",
+        "2hop__153573_44085::p2"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__153573_44085::p14",
+        "2hop__153573_44085::p2"
+      ],
+      "supporting_ids": [
+        "2hop__153573_44085::p14",
+        "2hop__153573_44085::p2"
+      ],
+      "support_titles": {
+        "2hop__153573_44085::p14": "Mickey's Safari in Letterland",
+        "2hop__153573_44085::p2": "The Mickey Mouse Club"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__153573_44085::p14",
+        "2hop__153573_44085::p2"
+      ],
+      "support_in_raw_top50": [
+        "2hop__153573_44085::p14",
+        "2hop__153573_44085::p2"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__153573_44085::p14",
+        "2hop__153573_44085::p2"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__153573_44085::p14",
+        "2hop__153573_44085::p2"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__153573_44085::p14",
+        "2hop__153573_44085::p2"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "What is the name of the television show that was named after a character from Mickey's Safari in Letterland?",
+        "What is the name of the television show",
+        "was named",
+        "a character from Mickey's Safari in Letterland?"
+      ],
+      "missing_question_terms": [
+        "featured",
+        "game",
+        "video"
+      ],
+      "overlap_question_terms": [
+        "after",
+        "character",
+        "in",
+        "letterland",
+        "mickey",
+        "named",
+        "s",
+        "safari",
+        "show",
+        "the",
+        "was",
+        "what"
+      ],
+      "query_support_overlap_terms": [
+        "a",
+        "after",
+        "character",
+        "from",
+        "in",
+        "is",
+        "letterland",
+        "mickey",
+        "of",
+        "s",
+        "safari",
+        "show",
+        "television",
+        "that",
+        "the",
+        "was"
+      ],
+      "query_mentions_gold_answer": true,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__167577_31122",
+      "round": 2,
+      "query_source": "memory",
+      "action": "refine_query",
+      "query": "What were the birth and death years of George Berkeley?",
+      "question": "What century did the author of A Treatise Concerning the Principles of Human Knowledge live in?",
+      "gold_answer": "18th",
+      "retrieved_ids": [
+        "2hop__28203_55840::p4",
+        "2hop__167577_31122::p10",
+        "2hop__269766_43945::p1",
+        "2hop__167577_31122::p17",
+        "2hop__167577_31122::p9"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__167577_31122::p10"
+      ],
+      "support_seen_before": [
+        "2hop__167577_31122::p10"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__167577_31122::p10"
+      ],
+      "supporting_ids": [
+        "2hop__167577_31122::p10",
+        "2hop__167577_31122::p14"
+      ],
+      "support_titles": {
+        "2hop__167577_31122::p10": "A Treatise Concerning the Principles of Human Knowledge",
+        "2hop__167577_31122::p14": "Idealism"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__167577_31122::p10"
+      ],
+      "support_in_raw_top50": [
+        "2hop__167577_31122::p10",
+        "2hop__167577_31122::p14"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__167577_31122::p10"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__167577_31122::p10",
+        "2hop__167577_31122::p14"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__167577_31122::p10",
+        "2hop__167577_31122::p14"
+      ],
+      "raw_rank_first_support": 2,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "What were the birth and death years of George Berkeley?",
+        "What were the birth",
+        "death years of George Berkeley?"
+      ],
+      "missing_question_terms": [
+        "a",
+        "author",
+        "century",
+        "concerning",
+        "did",
+        "human",
+        "in",
+        "knowledge",
+        "live",
+        "principles",
+        "treatise"
+      ],
+      "overlap_question_terms": [
+        "of",
+        "the",
+        "what"
+      ],
+      "query_support_overlap_terms": [
+        "and",
+        "berkeley",
+        "george",
+        "of",
+        "the"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context",
+        "query_drops_question_constraints"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__167577_31122",
+      "round": 3,
+      "query_source": "memory",
+      "action": "abstain",
+      "query": "What were the birth and death years of George Berkeley?",
+      "question": "What century did the author of A Treatise Concerning the Principles of Human Knowledge live in?",
+      "gold_answer": "18th",
+      "retrieved_ids": [
+        "2hop__28203_55840::p4",
+        "3hop2__127483_156850_10557::p16",
+        "2hop__167577_31122::p17",
+        "2hop__167577_31122::p10",
+        "2hop__167577_31122::p9"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__167577_31122::p10"
+      ],
+      "support_seen_before": [
+        "2hop__167577_31122::p10"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__167577_31122::p10"
+      ],
+      "supporting_ids": [
+        "2hop__167577_31122::p10",
+        "2hop__167577_31122::p14"
+      ],
+      "support_titles": {
+        "2hop__167577_31122::p10": "A Treatise Concerning the Principles of Human Knowledge",
+        "2hop__167577_31122::p14": "Idealism"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__167577_31122::p10"
+      ],
+      "support_in_raw_top50": [
+        "2hop__167577_31122::p10",
+        "2hop__167577_31122::p14"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__167577_31122::p10"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__167577_31122::p10",
+        "2hop__167577_31122::p14"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__167577_31122::p10",
+        "2hop__167577_31122::p14"
+      ],
+      "raw_rank_first_support": 2,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "What were the birth and death years of George Berkeley?",
+        "What were the birth",
+        "death years of George Berkeley?"
+      ],
+      "missing_question_terms": [
+        "a",
+        "author",
+        "century",
+        "concerning",
+        "did",
+        "human",
+        "in",
+        "knowledge",
+        "live",
+        "principles",
+        "treatise"
+      ],
+      "overlap_question_terms": [
+        "of",
+        "the",
+        "what"
+      ],
+      "query_support_overlap_terms": [
+        "and",
+        "berkeley",
+        "george",
+        "of",
+        "the"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context",
+        "query_drops_question_constraints"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__244193_461106",
+      "round": 3,
+      "query_source": "memory",
+      "action": "abstain",
+      "query": "What movement is Robert Mills associated with?",
+      "question": "What movement does the creator of the Washington Monument belong to?",
+      "gold_answer": "Greek Revival",
+      "retrieved_ids": [
+        "2hop__244193_461106::p6",
+        "2hop__728969_131890::p8",
+        "2hop__244193_461106::p13",
+        "2hop__244193_461106::p12",
+        "2hop__244193_461106::p4"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__244193_461106::p6"
+      ],
+      "support_seen_before": [
+        "2hop__244193_461106::p6"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__244193_461106::p6"
+      ],
+      "supporting_ids": [
+        "2hop__244193_461106::p3",
+        "2hop__244193_461106::p6"
+      ],
+      "support_titles": {
+        "2hop__244193_461106::p3": "United States Customhouse (New Bedford, Massachusetts)",
+        "2hop__244193_461106::p6": "Robert Mills (architect)"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__244193_461106::p6"
+      ],
+      "support_in_raw_top50": [
+        "2hop__244193_461106::p6"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__244193_461106::p6"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__244193_461106::p6"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__244193_461106::p6"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 4,
+      "decomposed_queries": [
+        "What movement is Robert Mills associated with?"
+      ],
+      "missing_question_terms": [
+        "belong",
+        "creator",
+        "does",
+        "monument",
+        "of",
+        "the",
+        "to",
+        "washington"
+      ],
+      "overlap_question_terms": [
+        "movement",
+        "what"
+      ],
+      "query_support_overlap_terms": [
+        "is",
+        "mills",
+        "robert"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context",
+        "query_drops_question_constraints"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__247353_55227",
+      "round": 2,
+      "query_source": "memory",
+      "action": "answer",
+      "query": "Who is the screenwriter of Here Comes the Boom, and who plays their wife in Grown Ups?",
+      "question": "Who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?",
+      "gold_answer": "Maria Bello",
+      "retrieved_ids": [
+        "2hop__247353_55227::p6",
+        "2hop__247353_55227::p17",
+        "2hop__91211_90973::p9",
+        "2hop__92590_43786::p2",
+        "2hop__92590_43786::p16"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ],
+      "support_seen_before": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ],
+      "supporting_ids": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ],
+      "support_titles": {
+        "2hop__247353_55227::p17": "Grown Ups (film)",
+        "2hop__247353_55227::p6": "Here Comes the Boom"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ],
+      "support_in_raw_top50": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "Who is the screenwriter of Here Comes the Boom, and who plays their wife in Grown Ups?",
+        "Who is the screenwriter of Here Comes the Boom",
+        "who plays their wife in Grown Ups?"
+      ],
+      "missing_question_terms": [
+        "s"
+      ],
+      "overlap_question_terms": [
+        "boom",
+        "comes",
+        "grown",
+        "here",
+        "in",
+        "of",
+        "plays",
+        "screenwriter",
+        "the",
+        "ups",
+        "who",
+        "wife"
+      ],
+      "query_support_overlap_terms": [
+        "and",
+        "boom",
+        "comes",
+        "grown",
+        "here",
+        "in",
+        "is",
+        "of",
+        "the",
+        "their",
+        "ups",
+        "wife"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__286621_84856",
+      "round": 2,
+      "query_source": "memory",
+      "action": "refine_query",
+      "query": "What is the name of the show that is named after a cast member from Politically Incorrect?",
+      "question": "When does the new season of the show named for the Politically Incorrect cast member?",
+      "gold_answer": "January 20, 2017",
+      "retrieved_ids": [
+        "2hop__286621_84856::p17",
+        "2hop__286621_84856::p15",
+        "2hop__244193_461106::p5",
+        "2hop__82669_768138::p19",
+        "3hop1__140786_2053_52946::p8"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__286621_84856::p17"
+      ],
+      "support_seen_before": [
+        "2hop__286621_84856::p17"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__286621_84856::p17"
+      ],
+      "supporting_ids": [
+        "2hop__286621_84856::p12",
+        "2hop__286621_84856::p17"
+      ],
+      "support_titles": {
+        "2hop__286621_84856::p12": "Real Time with Bill Maher",
+        "2hop__286621_84856::p17": "Politically Incorrect"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__286621_84856::p17"
+      ],
+      "support_in_raw_top50": [
+        "2hop__286621_84856::p17"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__286621_84856::p17"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__286621_84856::p17"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__286621_84856::p12",
+        "2hop__286621_84856::p17"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "What is the name of the show that is named after a cast member from Politically Incorrect?",
+        "What is the name of the show",
+        "is named",
+        "a cast member from Politically Incorrect?"
+      ],
+      "missing_question_terms": [
+        "does",
+        "for",
+        "new",
+        "season",
+        "when"
+      ],
+      "overlap_question_terms": [
+        "cast",
+        "incorrect",
+        "member",
+        "named",
+        "of",
+        "politically",
+        "show",
+        "the"
+      ],
+      "query_support_overlap_terms": [
+        "from",
+        "incorrect",
+        "politically",
+        "show",
+        "that"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__370564_71701",
+      "round": 2,
+      "query_source": "memory",
+      "action": "refine_query",
+      "query": "What specific year did the Japanese take full control of Foshan and Century Lotus Stadium in Guangdong Province?",
+      "question": "What year did the japanese get to the current administrative territorial entity of the Century Lotus Stadium and the rest of the guangdong province?",
+      "gold_answer": "November 5",
+      "retrieved_ids": [
+        "2hop__370564_71701::p0",
+        "2hop__370564_71701::p18",
+        "2hop__763840_144857::p5",
+        "3hop1__462960_160545_34751::p10",
+        "3hop1__857_846_7701::p11"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__370564_71701::p0",
+        "2hop__370564_71701::p18"
+      ],
+      "support_seen_before": [
+        "2hop__370564_71701::p0",
+        "2hop__370564_71701::p18"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__370564_71701::p0",
+        "2hop__370564_71701::p18"
+      ],
+      "supporting_ids": [
+        "2hop__370564_71701::p0",
+        "2hop__370564_71701::p18"
+      ],
+      "support_titles": {
+        "2hop__370564_71701::p0": "Century Lotus Stadium",
+        "2hop__370564_71701::p18": "Twenty-First Army (Japan)"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__370564_71701::p0",
+        "2hop__370564_71701::p18"
+      ],
+      "support_in_raw_top50": [
+        "2hop__370564_71701::p0",
+        "2hop__370564_71701::p18"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__370564_71701::p0",
+        "2hop__370564_71701::p18"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__370564_71701::p0",
+        "2hop__370564_71701::p18"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__370564_71701::p0",
+        "2hop__370564_71701::p18"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "What specific year did the Japanese take full control of Foshan and Century Lotus Stadium in Guangdong Province?",
+        "What specific year did the Japanese take full control of Foshan",
+        "Century Lotus Stadium in Guangdong Province?"
+      ],
+      "missing_question_terms": [
+        "administrative",
+        "current",
+        "entity",
+        "get",
+        "rest",
+        "territorial",
+        "to"
+      ],
+      "overlap_question_terms": [
+        "and",
+        "century",
+        "did",
+        "guangdong",
+        "japanese",
+        "lotus",
+        "of",
+        "province",
+        "stadium",
+        "the",
+        "what",
+        "year"
+      ],
+      "query_support_overlap_terms": [
+        "and",
+        "century",
+        "control",
+        "foshan",
+        "in",
+        "japanese",
+        "lotus",
+        "of",
+        "province",
+        "stadium",
+        "the"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__370564_71701",
+      "round": 3,
+      "query_source": "memory",
+      "action": "abstain",
+      "query": "What year did the Japanese capture Guangzhou and Foshan during World War II?",
+      "question": "What year did the japanese get to the current administrative territorial entity of the Century Lotus Stadium and the rest of the guangdong province?",
+      "gold_answer": "November 5",
+      "retrieved_ids": [
+        "2hop__370564_71701::p18",
+        "3hop1__462960_160545_34751::p10",
+        "2hop__5658_25002::p11",
+        "3hop1__857_846_7713::p18",
+        "2hop__370564_71701::p0"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__370564_71701::p0",
+        "2hop__370564_71701::p18"
+      ],
+      "support_seen_before": [
+        "2hop__370564_71701::p0",
+        "2hop__370564_71701::p18"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__370564_71701::p0",
+        "2hop__370564_71701::p18"
+      ],
+      "supporting_ids": [
+        "2hop__370564_71701::p0",
+        "2hop__370564_71701::p18"
+      ],
+      "support_titles": {
+        "2hop__370564_71701::p0": "Century Lotus Stadium",
+        "2hop__370564_71701::p18": "Twenty-First Army (Japan)"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__370564_71701::p18"
+      ],
+      "support_in_raw_top50": [
+        "2hop__370564_71701::p0",
+        "2hop__370564_71701::p18"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__370564_71701::p18"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__370564_71701::p0",
+        "2hop__370564_71701::p18"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__370564_71701::p0",
+        "2hop__370564_71701::p18"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "What year did the Japanese capture Guangzhou and Foshan during World War II?",
+        "What year did the Japanese capture Guangzhou",
+        "Foshan during World War II?"
+      ],
+      "missing_question_terms": [
+        "administrative",
+        "century",
+        "current",
+        "entity",
+        "get",
+        "guangdong",
+        "lotus",
+        "of",
+        "province",
+        "rest",
+        "stadium",
+        "territorial",
+        "to"
+      ],
+      "overlap_question_terms": [
+        "and",
+        "did",
+        "japanese",
+        "the",
+        "what",
+        "year"
+      ],
+      "query_support_overlap_terms": [
+        "and",
+        "during",
+        "foshan",
+        "guangzhou",
+        "japanese",
+        "the",
+        "world"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__3739_13529",
+      "round": 3,
+      "query_source": "memory",
+      "action": "abstain",
+      "query": "Who is the football star who backed out of the 2008 Summer Olympics torch relay and was later signed by Barcelona?",
+      "question": "When was the football star who backed out due to relay controversy signed by Barcelona?",
+      "gold_answer": "June 1982",
+      "retrieved_ids": [
+        "2hop__3739_13529::p4",
+        "2hop__136179_13529::p13",
+        "2hop__136179_13529::p12",
+        "2hop__3739_13529::p12",
+        "2hop__3739_13529::p16"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__3739_13529::p16",
+        "2hop__3739_13529::p4"
+      ],
+      "support_seen_before": [
+        "2hop__3739_13529::p16",
+        "2hop__3739_13529::p4"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__3739_13529::p16",
+        "2hop__3739_13529::p4"
+      ],
+      "supporting_ids": [
+        "2hop__3739_13529::p16",
+        "2hop__3739_13529::p4"
+      ],
+      "support_titles": {
+        "2hop__3739_13529::p16": "FC Barcelona",
+        "2hop__3739_13529::p4": "2008 Summer Olympics torch relay"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__3739_13529::p16",
+        "2hop__3739_13529::p4"
+      ],
+      "support_in_raw_top50": [
+        "2hop__3739_13529::p16",
+        "2hop__3739_13529::p4"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__3739_13529::p16",
+        "2hop__3739_13529::p4"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__3739_13529::p16",
+        "2hop__3739_13529::p4"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__3739_13529::p16",
+        "2hop__3739_13529::p4"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 2,
+      "decomposed_queries": [
+        "Who is the football star who backed out of the 2008 Summer Olympics torch relay and was later signed by Barcelona?",
+        "Who is the football star who backed out of the 2008 Summer Olympics torch relay",
+        "was later signed by Barcelona?"
+      ],
+      "missing_question_terms": [
+        "controversy",
+        "due",
+        "to",
+        "when"
+      ],
+      "overlap_question_terms": [
+        "backed",
+        "barcelona",
+        "by",
+        "football",
+        "out",
+        "relay",
+        "signed",
+        "star",
+        "the",
+        "was",
+        "who"
+      ],
+      "query_support_overlap_terms": [
+        "2008",
+        "and",
+        "barcelona",
+        "by",
+        "is",
+        "of",
+        "olympics",
+        "out",
+        "relay",
+        "signed",
+        "summer",
+        "the",
+        "torch",
+        "was"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    }
+  ]
+}

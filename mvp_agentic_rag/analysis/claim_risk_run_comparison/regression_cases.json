@@ -1,0 +1,934 @@
+[
+  {
+    "run": "incumbent",
+    "id": "2hop__153573_44085",
+    "final_action": "answer",
+    "final_answer": "Metal Mickey",
+    "gold": "The Mickey Mouse Club",
+    "calls": 1,
+    "trajectory": [
+      {
+        "action": "answer",
+        "budget_remaining": 2,
+        "evidence_gain": 1.0,
+        "query": "What was the show named after the character featured in the video game Mickey's Safari in Letterland?",
+        "retrieved_ids": [
+          "2hop__153573_44085::p14",
+          "2hop__153573_44085::p9",
+          "2hop__153573_44085::p2",
+          "3hop2__49541_140875_51068::p3",
+          "2hop__82669_768138::p19"
+        ],
+        "round": 1,
+        "verifier_output": {
+          "claims": [
+            {
+              "claim": "Metal Mickey was the show named after the character featured in the video game Mickey's Safari in Letterland.",
+              "evidence_ids": [
+                "2hop__153573_44085::p9",
+                "2hop__153573_44085::p14"
+              ],
+              "is_critical": true,
+              "missing_evidence": "",
+              "status": "supported"
+            }
+          ],
+          "expected_gain": 0.0,
+          "need_more_evidence": false,
+          "overall_sufficiency": "sufficient",
+          "risk_score": 0.0,
+          "suggested_query": ""
+        }
+      }
+    ]
+  },
+  {
+    "run": "incumbent",
+    "id": "2hop__167577_31122",
+    "final_action": "answer",
+    "final_answer": "18th century",
+    "gold": "18th",
+    "calls": 2,
+    "trajectory": [
+      {
+        "action": "refine_query",
+        "budget_remaining": 2,
+        "evidence_gain": 0.5,
+        "query": "What century did the author of A Treatise Concerning the Principles of Human Knowledge live in?",
+        "retrieved_ids": [
+          "2hop__167577_31122::p10",
+          "2hop__167577_31122::p9",
+          "2hop__167577_31122::p17"
+        ],
+        "round": 1,
+        "verifier_output": {
+          "claims": [
+            {
+              "claim": "18世纪",
+              "evidence_ids": [
+                "2hop__167577_31122"
+              ],
+              "is_critical": true,
+              "missing_evidence": "The evidence provided indicates that George Berkeley, the author of A Treatise Concerning the Principles of Human Knowledge, lived in the 18th century, not the 17th century as the candidate answer suggests.",
+              "status": "unsupported"
+            }
+          ],
+          "expected_gain": 0.0,
+          "need_more_evidence": false,
+          "overall_sufficiency": "sufficient",
+          "risk_score": 0.0,
+          "suggested_query": ""
+        }
+      },
+      {
+        "action": "answer",
+        "budget_remaining": 1,
+        "evidence_gain": 0.0,
+        "query": "What century did the author of A Treatise Concerning the Principles of Human Knowledge live in?",
+        "retrieved_ids": [
+          "2hop__167577_31122::p10",
+          "2hop__167577_31122::p9",
+          "2hop__167577_31122::p17"
+        ],
+        "round": 2,
+        "verifier_output": {
+          "claims": [
+            {
+              "claim": "18th century",
+              "evidence_ids": [
+                "2hop__167577_31122::p10"
+              ],
+              "is_critical": true,
+              "missing_evidence": "",
+              "status": "supported"
+            }
+          ],
+          "expected_gain": 0.0,
+          "need_more_evidence": false,
+          "overall_sufficiency": "sufficient",
+          "risk_score": 0.0,
+          "suggested_query": ""
+        }
+      }
+    ]
+  },
+  {
+    "run": "incumbent",
+    "id": "2hop__194469_83289",
+    "final_action": "answer",
+    "final_answer": "Matt Bennett",
+    "gold": "Matt Bennett",
+    "calls": 1,
+    "trajectory": [
+      {
+        "action": "answer",
+        "budget_remaining": 2,
+        "evidence_gain": 0.5,
+        "query": "Who is the guy in the One Last Time video by the participant in The Listening Sessions?",
+        "retrieved_ids": [
+          "2hop__194469_83289::p19",
+          "2hop__194469_83289::p11",
+          "2hop__73719_510545::p16"
+        ],
+        "round": 1,
+        "verifier_output": {
+          "claims": [
+            {
+              "claim": "Matt Bennett is the guy in the One Last Time video by the participant in The Listening Sessions",
+              "evidence_ids": [
+                "2hop__194469_83289"
+              ],
+              "is_critical": true,
+              "missing_evidence": "",
+              "status": "supported"
+            }
+          ],
+          "expected_gain": 0.0,
+          "need_more_evidence": false,
+          "overall_sufficiency": "sufficient",
+          "risk_score": 0.0,
+          "suggested_query": ""
+        }
+      }
+    ]
+  },
+  {
+    "run": "incumbent",
+    "id": "2hop__341176_711757",
+    "final_action": "answer",
+    "final_answer": "Gmina Ryki",
+    "gold": "Gmina Ryki",
+    "calls": 2,
+    "trajectory": [
+      {
+        "action": "refine_query",
+        "budget_remaining": 2,
+        "evidence_gain": 0.5,
+        "query": "What other district is found in the same county as Gmina Stężyca?",
+        "retrieved_ids": [
+          "2hop__341176_711757::p10",
+          "4hop2__9988_158985_70784_61381::p2",
+          "4hop1__570103_49925_13759_736921::p9"
+        ],
+        "round": 1,
+        "verifier_output": {
+          "claims": [
+            {
+              "claim": "What other district is found in the same county as Gmina Stężyca?",
+              "evidence_ids": [
+                "2hop__341176_711757::p10"
+              ],
+              "is_critical": true,
+              "missing_evidence": "Information about other districts in Ryki County, Lublin Voivodeship",
+              "status": "unsupported"
+            }
+          ],
+          "expected_gain": 0.0,
+          "need_more_evidence": true,
+          "overall_sufficiency": "insufficient",
+          "risk_score": 0.0,
+          "suggested_query": "List other districts in Ryki County, Lublin Voivodeship"
+        }
+      },
+      {
+        "action": "answer",
+        "budget_remaining": 1,
+        "evidence_gain": 0.5,
+        "query": "List other districts in Ryki County, Lublin Voivodeship",
+        "retrieved_ids": [
+          "2hop__341176_711757::p4",
+          "2hop__341176_711757::p10",
+          "2hop__341176_711757::p9"
+        ],
+        "round": 2,
+        "verifier_output": {
+          "claims": [
+            {
+              "claim": "Gmina Ryki is found in the same county as Gmina Stężyca",
+              "evidence_ids": [
+                "2hop__341176_711757::p10",
+                "2hop__341176_711757::p4"
+              ],
+              "is_critical": true,
+              "missing_evidence": "",
+              "status": "supported"
+            }
+          ],
+          "expected_gain": 0.0,
+          "need_more_evidence": false,
+          "overall_sufficiency": "sufficient",
+          "risk_score": 0.0,
+          "suggested_query": ""
+        }
+      }
+    ]
+  },
+  {
+    "run": "scope_fix",
+    "id": "2hop__153573_44085",
+    "final_action": "abstain",
+    "final_answer": "",
+    "gold": "The Mickey Mouse Club",
+    "calls": 1,
+    "trajectory": [
+      {
+        "action": "abstain",
+        "budget_remaining": 2,
+        "evidence_gain": 1.0,
+        "query": "What was the show named after the character featured in the video game Mickey's Safari in Letterland?",
+        "query_source": "initial",
+        "retrieved_ids": [
+          "2hop__153573_44085::p14",
+          "2hop__153573_44085::p9",
+          "2hop__153573_44085::p2",
+          "3hop2__49541_140875_51068::p3",
+          "2hop__82669_768138::p19"
+        ],
+        "round": 1,
+        "verifier_output": {
+          "claims": [
+            {
+              "claim": "The show named after the character featured in the video game Mickey's Safari in Letterland is Metal Mickey.",
+              "evidence_ids": [
+                "2hop__153573_44085::p9"
+              ],
+              "is_critical": true,
+              "missing_evidence": "",
+              "status": "supported"
+            }
+          ],
+          "expected_gain": 0.0,
+          "need_more_evidence": false,
+          "overall_sufficiency": "sufficient",
+          "risk_score": 0.0,
+          "suggested_query": ""
+        }
+      }
+    ]
+  },
+  {
+    "run": "scope_fix",
+    "id": "2hop__167577_31122",
+    "final_action": "abstain",
+    "final_answer": "",
+    "gold": "18th",
+    "calls": 2,
+    "trajectory": [
+      {
+        "action": "refine_query",
+        "budget_remaining": 2,
+        "evidence_gain": 0.5,
+        "query": "What century did the author of A Treatise Concerning the Principles of Human Knowledge live in?",
+        "query_source": "initial",
+        "retrieved_ids": [
+          "2hop__167577_31122::p10",
+          "2hop__167577_31122::p9",
+          "2hop__167577_31122::p17"
+        ],
+        "round": 1,
+        "verifier_output": {
+          "claims": [
+            {
+              "claim": "18世纪",
+              "evidence_ids": [
+                "2hop__167577_31122::p10"
+              ],
+              "is_critical": true,
+              "missing_evidence": "The evidence provided states that A Treatise Concerning the Principles of Human Knowledge was written in 1710, which places the author in the 18th century, but the claim is not directly supported by the evidence as it is not explicitly stated.",
+              "status": "unsupported"
+            }
+          ],
+          "expected_gain": 0.0,
+          "need_more_evidence": false,
+          "overall_sufficiency": "sufficient",
+          "risk_score": 0.0,
+          "suggested_query": ""
+        }
+      },
+      {
+        "action": "abstain",
+        "budget_remaining": 1,
+        "evidence_gain": 0.0,
+        "query": "What century did the author of A Treatise Concerning the Principles of Human Knowledge live in?",
+        "query_source": "memory",
+        "retrieved_ids": [
+          "2hop__167577_31122::p10",
+          "2hop__167577_31122::p9",
+          "2hop__167577_31122::p17"
+        ],
+        "round": 2,
+        "verifier_output": {
+          "claims": [
+            {
+              "claim": "18世纪",
+              "evidence_ids": [
+                "2hop__167577_31122"
+              ],
+              "is_critical": true,
+              "missing_evidence": "The evidence provided indicates that George Berkeley, the author of A Treatise Concerning the Principles of Human Knowledge, lived in the 18th century, not the 17th century as the candidate answer suggests.",
+              "status": "unsupported"
+            }
+          ],
+          "expected_gain": 0.0,
+          "need_more_evidence": false,
+          "overall_sufficiency": "sufficient",
+          "risk_score": 0.0,
+          "suggested_query": ""
+        }
+      }
+    ]
+  },
+  {
+    "run": "scope_fix",
+    "id": "2hop__194469_83289",
+    "final_action": "abstain",
+    "final_answer": "",
+    "gold": "Matt Bennett",
+    "calls": 2,
+    "trajectory": [
+      {
+        "action": "refine_query",
+        "budget_remaining": 2,
+        "evidence_gain": 0.5,
+        "query": "Who is the guy in the One Last Time video by the participant in The Listening Sessions?",
+        "query_source": "initial",
+        "retrieved_ids": [
+          "2hop__194469_83289::p19",
+          "2hop__194469_83289::p11",
+          "2hop__73719_510545::p16"
+        ],
+        "round": 1,
+        "verifier_output": {
+          "claims": [
+            {
+              "claim": "The guy in the One Last Time video by the participant in The Listening Sessions is UNKNOWN",
+              "evidence_ids": [
+                "2hop__194469_83289"
+              ],
+              "is_critical": true,
+              "missing_evidence": "The evidence provided does not mention The Listening Sessions and identifies Matt Bennett as a co-star in the video, contradicting the claim that the guy is unknown.",
+              "status": "unsupported"
+            }
+          ],
+          "expected_gain": 0.0,
+          "need_more_evidence": true,
+          "overall_sufficiency": "insufficient",
+          "risk_score": 0.0,
+          "suggested_query": "Clarify the connection between Ariana Grande's 'One Last Time' video and The Listening Sessions, and identify the specific participant in The Listening Sessions mentioned in the claim."
+        }
+      },
+      {
+        "action": "abstain",
+        "budget_remaining": 1,
+        "evidence_gain": 0.5,
+        "query": "Clarify the connection between Ariana Grande's 'One Last Time' video and The Listening Sessions, and identify the specific participant in The Listening Sessions mentioned in the claim.",
+        "query_source": "memory",
+        "retrieved_ids": [
+          "2hop__194469_83289::p19",
+          "2hop__194469_83289::p7",
+          "2hop__132854_417697::p9",
+          "2hop__194469_83289::p10",
+          "2hop__131951_643670::p16"
+        ],
+        "round": 2,
+        "verifier_output": {
+          "claims": [
+            {
+              "claim": "The guy in the One Last Time video by the participant in The Listening Sessions is UNKNOWN",
+              "evidence_ids": [
+                "2hop__194469_83289::p19"
+              ],
+              "is_critical": true,
+              "missing_evidence": "",
+              "status": "supported"
+            }
+          ],
+          "expected_gain": 0.0,
+          "need_more_evidence": false,
+          "overall_sufficiency": "sufficient",
+          "risk_score": 0.0,
+          "suggested_query": ""
+        }
+      }
+    ]
+  },
+  {
+    "run": "scope_fix",
+    "id": "2hop__341176_711757",
+    "final_action": "abstain",
+    "final_answer": "",
+    "gold": "Gmina Ryki",
+    "calls": 3,
+    "trajectory": [
+      {
+        "action": "refine_query",
+        "budget_remaining": 2,
+        "evidence_gain": 0.5,
+        "query": "What other district is found in the same county as Gmina Stężyca?",
+        "query_source": "initial",
+        "retrieved_ids": [
+          "2hop__341176_711757::p10",
+          "4hop2__9988_158985_70784_61381::p2",
+          "4hop1__570103_49925_13759_736921::p9"
+        ],
+        "round": 1,
+        "verifier_output": {
+          "claims": [
+            {
+              "claim": "What other district is found in the same county as Gmina Stężyca?",
+              "evidence_ids": [
+                "2hop__341176_711757::p10"
+              ],
+              "is_critical": true,
+              "missing_evidence": "Information about other districts in Ryki County",
+              "status": "unsupported"
+            }
+          ],
+          "expected_gain": 0.0,
+          "need_more_evidence": true,
+          "overall_sufficiency": "insufficient",
+          "risk_score": 0.0,
+          "suggested_query": "List other districts in Ryki County, Lublin Voivodeship, Poland."
+        }
+      },
+      {
+        "action": "refine_query",
+        "budget_remaining": 1,
+        "evidence_gain": 0.5,
+        "query": "List other districts in Ryki County, Lublin Voivodeship, Poland.",
+        "query_source": "memory",
+        "retrieved_ids": [
+          "2hop__341176_711757::p4",
+          "3hop1__273571_834494_34109::p6",
+          "2hop__341176_711757::p9"
+        ],
+        "round": 2,
+        "verifier_output": {
+          "claims": [
+            {
+              "claim": "What other district is found in the same county as Gmina Stężyca?",
+              "evidence_ids": [
+                "2hop__341176_711757::p10",
+                "2hop__341176_711757::p4"
+              ],
+              "is_critical": true,
+              "missing_evidence": "The evidence provided does not list other districts in the same county as Gmina Stężyca.",
+              "status": "unsupported"
+            }
+          ],
+          "expected_gain": 0.0,
+          "need_more_evidence": true,
+          "overall_sufficiency": "insufficient",
+          "risk_score": 0.0,
+          "suggested_query": "List other districts in Ryki County, Lublin Voivodeship."
+        }
+      },
+      {
+        "action": "abstain",
+        "budget_remaining": 0,
+        "evidence_gain": 0.0,
+        "query": "List other districts in Ryki County, Lublin Voivodeship.",
+        "query_source": "memory",
+        "retrieved_ids": [
+          "2hop__341176_711757::p4",
+          "3hop1__273571_834494_34109::p6",
+          "2hop__341176_711757::p9"
+        ],
+        "round": 3,
+        "verifier_output": {
+          "claims": [
+            {
+              "claim": "Gmina Stężyca is in the same county as another district",
+              "evidence_ids": [
+                "2hop__341176_711757::p10",
+                "2hop__341176_711757::p4"
+              ],
+              "is_critical": true,
+              "missing_evidence": "",
+              "status": "supported"
+            }
+          ],
+          "expected_gain": 0.0,
+          "need_more_evidence": false,
+          "overall_sufficiency": "sufficient",
+          "risk_score": 0.0,
+          "suggested_query": ""
+        }
+      }
+    ]
+  },
+  {
+    "run": "util_v2",
+    "id": "2hop__153573_44085",
+    "final_action": "abstain",
+    "final_answer": "",
+    "gold": "The Mickey Mouse Club",
+    "calls": 3,
+    "trajectory": [
+      {
+        "action": "refine_query",
+        "budget_remaining": 2,
+        "evidence_gain": 1.0,
+        "query": "What was the show named after the character featured in the video game Mickey's Safari in Letterland?",
+        "query_source": "initial",
+        "retrieved_ids": [
+          "2hop__153573_44085::p14",
+          "2hop__153573_44085::p9",
+          "2hop__153573_44085::p2",
+          "3hop2__49541_140875_51068::p3",
+          "2hop__82669_768138::p19"
+        ],
+        "round": 1,
+        "verifier_output": {
+          "claims": [
+            {
+              "claim": "UNKNOWN",
+              "evidence_ids": [],
+              "is_critical": true,
+              "missing_evidence": "missing_passage: The provided evidence does not contain information about a show named after a character featured in the video game Mickey's Safari in Letterland.",
+              "status": "unclear"
+            }
+          ],
+          "expected_gain": 0.0,
+          "need_more_evidence": true,
+          "overall_sufficiency": "insufficient",
+          "risk_score": 0.0,
+          "suggested_query": "What show was named after a character featured in the video game Mickey's Safari in Letterland?"
+        }
+      },
+      {
+        "action": "refine_query",
+        "budget_remaining": 1,
+        "evidence_gain": 0.0,
+        "query": "show named after character from game Mickey's Safari in Letterland",
+        "query_source": "structured_llm",
+        "retrieved_ids": [
+          "2hop__153573_44085::p14",
+          "2hop__153573_44085::p6",
+          "2hop__153573_44085::p9",
+          "3hop2__49541_140875_51068::p3",
+          "2hop__82766_67668::p2"
+        ],
+        "round": 2,
+        "structured_query": {
+          "entities": [
+            "Mickey's Safari in Letterland",
+            "character"
+          ],
+          "query": "show named after character from game Mickey's Safari in Letterland",
+          "relation": "named after",
+          "target_attribute": "show name"
+        },
+        "verifier_output": {
+          "claims": [
+            {
+              "claim": "UNKNOWN",
+              "evidence_ids": [
+                "missing_passage: The provided evidence does not contain information about a show named after a character featured in the video game Mickey's Safari in Letterland."
+              ],
+              "is_critical": true,
+              "missing_evidence": "The provided evidence does not contain information about a show named after a character featured in the video game Mickey's Safari in Letterland.",
+              "status": "unsupported"
+            }
+          ],
+          "expected_gain": 0.0,
+          "need_more_evidence": true,
+          "overall_sufficiency": "insufficient",
+          "risk_score": 0.0,
+          "suggested_query": "What show was named after a character featured in the video game Mickey's Safari in Letterland?"
+        }
+      },
+      {
+        "action": "abstain",
+        "budget_remaining": 0,
+        "evidence_gain": 0.0,
+        "query": "show named after character in Mickey's Safari in Letterland",
+        "query_source": "structured_llm",
+        "retrieved_ids": [
+          "2hop__153573_44085::p14",
+          "2hop__153573_44085::p6",
+          "2hop__153573_44085::p9",
+          "3hop2__49541_140875_51068::p3",
+          "2hop__82766_67668::p2"
+        ],
+        "round": 3,
+        "structured_query": {
+          "entities": [
+            "Mickey's Safari in Letterland",
+            "character"
+          ],
+          "query": "show named after character in Mickey's Safari in Letterland",
+          "relation": "named after",
+          "target_attribute": "show name"
+        },
+        "verifier_output": {
+          "claims": [
+            {
+              "claim": "UNKNOWN",
+              "evidence_ids": [
+                "2hop__153573_44085::p14",
+                "2hop__153573_44085::p9",
+                "2hop__153573_44085::p2",
+                "3hop2__49541_140875_51068::p3",
+                "2hop__82669_768138::p19",
+                "2hop__153573_44085::p6",
+                "2hop__82766_67668::p2"
+              ],
+              "is_critical": true,
+              "missing_evidence": "missing_passage: The provided evidence does not contain information about a show named after a character featured in the video game Mickey's Safari in Letterland.",
+              "status": "unsupported"
+            }
+          ],
+          "expected_gain": 0.0,
+          "need_more_evidence": true,
+          "overall_sufficiency": "insufficient",
+          "risk_score": 0.0,
+          "suggested_query": "What show was named after a character featured in the video game Mickey's Safari in Letterland?"
+        }
+      }
+    ]
+  },
+  {
+    "run": "util_v2",
+    "id": "2hop__167577_31122",
+    "final_action": "answer",
+    "final_answer": "18th century",
+    "gold": "18th",
+    "calls": 2,
+    "trajectory": [
+      {
+        "action": "refine_query",
+        "budget_remaining": 2,
+        "evidence_gain": 0.5,
+        "query": "What century did the author of A Treatise Concerning the Principles of Human Knowledge live in?",
+        "query_source": "initial",
+        "retrieved_ids": [
+          "2hop__167577_31122::p10",
+          "2hop__167577_31122::p9",
+          "2hop__167577_31122::p17"
+        ],
+        "round": 1,
+        "verifier_output": {
+          "claims": [
+            {
+              "claim": "UNKNOWN",
+              "evidence_ids": [
+                "2hop__167577_31122::p10"
+              ],
+              "is_critical": true,
+              "missing_evidence": "missing_passage: The candidate answer is 'UNKNOWN', but the evidence clearly states that A Treatise Concerning the Principles of Human Knowledge was written by George Berkeley in 1710.",
+              "status": "unsupported"
+            }
+          ],
+          "expected_gain": 0.0,
+          "need_more_evidence": false,
+          "overall_sufficiency": "sufficient",
+          "risk_score": 0.0,
+          "suggested_query": ""
+        }
+      },
+      {
+        "action": "answer",
+        "budget_remaining": 1,
+        "evidence_gain": 0.5,
+        "query": "century George Berkeley lived in",
+        "query_source": "structured_llm",
+        "retrieved_ids": [
+          "2hop__31124_31122::p15",
+          "2hop__167577_31122::p14",
+          "2hop__167577_31122::p10"
+        ],
+        "round": 2,
+        "structured_query": {
+          "entities": [
+            "George Berkeley"
+          ],
+          "query": "century George Berkeley lived in",
+          "relation": "lived in",
+          "target_attribute": "century"
+        },
+        "verifier_output": {
+          "claims": [
+            {
+              "claim": "The author of A Treatise Concerning the Principles of Human Knowledge lived in the 18th century.",
+              "evidence_ids": [
+                "2hop__167577_31122::p10"
+              ],
+              "is_critical": true,
+              "missing_evidence": "",
+              "status": "supported"
+            }
+          ],
+          "expected_gain": 0.0,
+          "need_more_evidence": false,
+          "overall_sufficiency": "sufficient",
+          "risk_score": 0.0,
+          "suggested_query": ""
+        }
+      }
+    ]
+  },
+  {
+    "run": "util_v2",
+    "id": "2hop__194469_83289",
+    "final_action": "answer",
+    "final_answer": "Matt Bennett",
+    "gold": "Matt Bennett",
+    "calls": 3,
+    "trajectory": [
+      {
+        "action": "refine_query",
+        "budget_remaining": 2,
+        "evidence_gain": 0.5,
+        "query": "Who is the guy in the One Last Time video by the participant in The Listening Sessions?",
+        "query_source": "initial",
+        "retrieved_ids": [
+          "2hop__194469_83289::p19",
+          "2hop__194469_83289::p11",
+          "2hop__73719_510545::p16"
+        ],
+        "round": 1,
+        "verifier_output": {
+          "claims": [
+            {
+              "claim": "UNKNOWN",
+              "evidence_ids": [
+                "2hop__194469_83289"
+              ],
+              "is_critical": true,
+              "missing_evidence": "missing_passage: The provided evidence does not mention the participant in The Listening Sessions or any specific guy in the One Last Time video.",
+              "status": "unsupported"
+            }
+          ],
+          "expected_gain": 0.0,
+          "need_more_evidence": true,
+          "overall_sufficiency": "insufficient",
+          "risk_score": 0.0,
+          "suggested_query": "Who is the participant in The Listening Sessions and who is the guy in the One Last Time video by Ariana Grande?"
+        }
+      },
+      {
+        "action": "refine_query",
+        "budget_remaining": 1,
+        "evidence_gain": 0.5,
+        "query": "artist of The Listening Sessions and One Last Time",
+        "query_source": "structured_llm",
+        "retrieved_ids": [
+          "2hop__194469_83289::p7",
+          "3hop2__57233_106716_56883::p10",
+          "2hop__82910_75184::p14",
+          "2hop__194469_83289::p2",
+          "4hop1__567737_141375_458768_33637::p13"
+        ],
+        "round": 2,
+        "structured_query": {
+          "entities": [
+            "The Listening Sessions",
+            "One Last Time"
+          ],
+          "query": "artist of The Listening Sessions and One Last Time",
+          "relation": "participant in",
+          "target_attribute": "artist"
+        },
+        "verifier_output": {
+          "claims": [
+            {
+              "claim": "The guy in the One Last Time video by the participant in The Listening Sessions is unknown.",
+              "evidence_ids": [
+                "2hop__194469_83289::p19"
+              ],
+              "is_critical": true,
+              "missing_evidence": "missing_passage: The provided evidence mentions Matt Bennett as a co-star in the video, but does not specify if he is the 'guy' referred to in the claim. The claim states the guy is unknown, which contradicts the evidence.",
+              "status": "unsupported"
+            }
+          ],
+          "expected_gain": 0.0,
+          "need_more_evidence": true,
+          "overall_sufficiency": "insufficient",
+          "risk_score": 0.0,
+          "suggested_query": "Who is the main guy featured in the One Last Time music video by Ariana Grande?"
+        }
+      },
+      {
+        "action": "answer",
+        "budget_remaining": 0,
+        "evidence_gain": 0.0,
+        "query": "main guy in One Last Time music video by Ariana Grande",
+        "query_source": "structured_llm",
+        "retrieved_ids": [
+          "2hop__194469_83289::p19",
+          "4hop1__726391_153080_33952_34109::p11",
+          "2hop__194469_83289::p11"
+        ],
+        "round": 3,
+        "structured_query": {
+          "entities": [
+            "Ariana Grande",
+            "One Last Time"
+          ],
+          "query": "main guy in One Last Time music video by Ariana Grande",
+          "relation": "main guy in music video",
+          "target_attribute": "name"
+        },
+        "verifier_output": {
+          "claims": [
+            {
+              "claim": "Matt Bennett is the guy in the One Last Time video by the participant in The Listening Sessions",
+              "evidence_ids": [
+                "2hop__194469_83289::p19"
+              ],
+              "is_critical": true,
+              "missing_evidence": "",
+              "status": "supported"
+            }
+          ],
+          "expected_gain": 0.0,
+          "need_more_evidence": false,
+          "overall_sufficiency": "sufficient",
+          "risk_score": 0.0,
+          "suggested_query": ""
+        }
+      }
+    ]
+  },
+  {
+    "run": "util_v2",
+    "id": "2hop__341176_711757",
+    "final_action": "abstain",
+    "final_answer": "",
+    "gold": "Gmina Ryki",
+    "calls": 2,
+    "trajectory": [
+      {
+        "action": "refine_query",
+        "budget_remaining": 2,
+        "evidence_gain": 0.5,
+        "query": "What other district is found in the same county as Gmina Stężyca?",
+        "query_source": "initial",
+        "retrieved_ids": [
+          "2hop__341176_711757::p10",
+          "4hop2__9988_158985_70784_61381::p2",
+          "4hop1__570103_49925_13759_736921::p9"
+        ],
+        "round": 1,
+        "verifier_output": {
+          "claims": [
+            {
+              "claim": "UNKNOWN",
+              "evidence_ids": [
+                "2hop__341176_711757"
+              ],
+              "is_critical": true,
+              "missing_evidence": "missing_passage: The provided evidence does not contain information about other districts in the same county as Gmina Stężyca.",
+              "status": "unsupported"
+            }
+          ],
+          "expected_gain": 0.0,
+          "need_more_evidence": true,
+          "overall_sufficiency": "insufficient",
+          "risk_score": 0.0,
+          "suggested_query": "What other districts are found in the same county as Gmina Stężyca?"
+        }
+      },
+      {
+        "action": "abstain",
+        "budget_remaining": 1,
+        "evidence_gain": 0.0,
+        "query": "other districts in the same county as Gmina Stężyca",
+        "query_source": "structured_llm",
+        "retrieved_ids": [
+          "2hop__341176_711757::p10",
+          "4hop2__9988_158985_70784_61381::p2",
+          "4hop1__570103_49925_13759_736921::p9"
+        ],
+        "round": 2,
+        "structured_query": {
+          "entities": [
+            "Gmina Stężyca"
+          ],
+          "query": "other districts in the same county as Gmina Stężyca",
+          "relation": "same county as",
+          "target_attribute": "other districts"
+        },
+        "verifier_output": {
+          "claims": [
+            {
+              "claim": "UNKNOWN",
+              "evidence_ids": [
+                "2hop__341176_711757"
+              ],
+              "is_critical": true,
+              "missing_evidence": "missing_passage: The provided evidence does not contain information about other districts in the same county as Gmina Stężyca.",
+              "status": "unsupported"
+            }
+          ],
+          "expected_gain": 0.0,
+          "need_more_evidence": true,
+          "overall_sufficiency": "insufficient",
+          "risk_score": 0.0,
+          "suggested_query": "What other districts are found in the same county as Gmina Stężyca?"
+        }
+      }
+    ]
+  }
+]

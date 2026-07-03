@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: mvp-agentic-rag
+Version: 0.1.0
+Summary: Functionally equivalent MVP reconstruction for claim-level risk-calibrated Agentic RAG.
+Requires-Python: >=3.10

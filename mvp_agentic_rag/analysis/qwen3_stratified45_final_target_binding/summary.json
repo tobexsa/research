@@ -1,0 +1,136 @@
+{
+  "summary": {
+    "baseline": {
+      "2hop": {
+        "n": 15,
+        "answer_f1": 0.5,
+        "coverage": 0.7333333333333333,
+        "selective_answer_f1": 0.6818181818181818,
+        "avg_rounds": 1.6,
+        "actions": {
+          "abstain": 4,
+          "answer": 11
+        },
+        "binding_reject": 0,
+        "closure_not_final": 0,
+        "closure_success": 1,
+        "cost_cleanup": 1,
+        "nonjson": 0
+      },
+      "3hop": {
+        "n": 15,
+        "answer_f1": 0.19032967032967033,
+        "coverage": 0.3333333333333333,
+        "selective_answer_f1": 0.570989010989011,
+        "avg_rounds": 2.2,
+        "actions": {
+          "answer": 5,
+          "abstain": 10
+        },
+        "binding_reject": 0,
+        "closure_not_final": 0,
+        "closure_success": 1,
+        "cost_cleanup": 4,
+        "nonjson": 0
+      },
+      "4hop": {
+        "n": 15,
+        "answer_f1": 0.1,
+        "coverage": 0.3333333333333333,
+        "selective_answer_f1": 0.3,
+        "avg_rounds": 2.533333333333333,
+        "actions": {
+          "abstain": 10,
+          "answer": 5
+        },
+        "binding_reject": 0,
+        "closure_not_final": 0,
+        "closure_success": 5,
+        "cost_cleanup": 1,
+        "nonjson": 1
+      },
+      "all": {
+        "n": 45,
+        "answer_f1": 0.26344322344322346,
+        "coverage": 0.4666666666666667,
+        "selective_answer_f1": 0.5645211930926217,
+        "avg_rounds": 2.111111111111111,
+        "actions": {
+          "abstain": 24,
+          "answer": 21
+        },
+        "binding_reject": 0,
+        "closure_not_final": 0,
+        "closure_success": 7,
+        "cost_cleanup": 6,
+        "nonjson": 1
+      }
+    },
+    "final_target_binding": {
+      "2hop": {
+        "n": 15,
+        "answer_f1": 0.48666666666666664,
+        "coverage": 0.7333333333333333,
+        "selective_answer_f1": 0.6636363636363636,
+        "avg_rounds": 1.4666666666666666,
+        "actions": {
+          "answer": 11,
+          "abstain": 4
+        },
+        "binding_reject": 0,
+        "closure_not_final": 0,
+        "closure_success": 0,
+        "cost_cleanup": 1,
+        "nonjson": 0
+      },
+      "3hop": {
+        "n": 15,
+        "answer_f1": 0.256996336996337,
+        "coverage": 0.4666666666666667,
+        "selective_answer_f1": 0.5507064364207221,
+        "avg_rounds": 2.0,
+        "actions": {
+          "answer": 7,
+          "abstain": 8
+        },
+        "binding_reject": 0,
+        "closure_not_final": 0,
+        "closure_success": 2,
+        "cost_cleanup": 3,
+        "nonjson": 0
+      },
+      "4hop": {
+        "n": 15,
+        "answer_f1": 0.1,
+        "coverage": 0.3333333333333333,
+        "selective_answer_f1": 0.3,
+        "avg_rounds": 2.466666666666667,
+        "actions": {
+          "abstain": 10,
+          "answer": 5
+        },
+        "binding_reject": 0,
+        "closure_not_final": 0,
+        "closure_success": 4,
+        "cost_cleanup": 3,
+        "nonjson": 0
+      },
+      "all": {
+        "n": 45,
+        "answer_f1": 0.2812210012210012,
+        "coverage": 0.5111111111111111,
+        "selective_answer_f1": 0.5502150023889154,
+        "avg_rounds": 1.9777777777777779,
+        "actions": {
+          "answer": 23,
+          "abstain": 22
+        },
+        "binding_reject": 0,
+        "closure_not_final": 0,
+        "closure_success": 6,
+        "cost_cleanup": 7,
+        "nonjson": 0
+      }
+    }
+  }
+}

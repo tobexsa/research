@@ -1,0 +1,3098 @@
+{
+  "answered": 27,
+  "zero_answered": 9,
+  "slot_answered": 21,
+  "slot_zero_answered": 6,
+  "closure_success": 12,
+  "closure_zero": 7,
+  "by_hop": {
+    "2hop": {
+      "n": 15,
+      "answered": 12,
+      "zero_answered": 2,
+      "slot_answered": 11,
+      "slot_zero_answered": 2,
+      "closure_success": 2
+    },
+    "3hop": {
+      "n": 15,
+      "answered": 9,
+      "zero_answered": 3,
+      "slot_answered": 7,
+      "slot_zero_answered": 2,
+      "closure_success": 4
+    },
+    "4hop": {
+      "n": 15,
+      "answered": 6,
+      "zero_answered": 4,
+      "slot_answered": 3,
+      "slot_zero_answered": 2,
+      "closure_success": 6
+    }
+  },
+  "zero_answered_cases": [
+    {
+      "cost": {
+        "llm_calls": 1,
+        "retrieval_calls": 1,
+        "retrieved_passages": 3,
+        "tokens": 72
+      },
+      "final_action": "answer",
+      "final_answer": "Nieuwe Maas River",
+      "gold_answer": "Het Scheur",
+      "id": "2hop__131951_643670",
+      "method": "claim_risk",
+      "question": "What is the name for the mouth of the watercourse of the body of water by Rotterdam Centrum?",
+      "trajectory": [
+        {
+          "action": "answer",
+          "budget_remaining": 2,
+          "evidence_gain": 1.0,
+          "query": "What is the name for the mouth of the watercourse of the body of water by Rotterdam Centrum?",
+          "query_source": "initial",
+          "retrieved_ids": [
+            "2hop__131951_643670::p6",
+            "2hop__131951_643670::p10",
+            "4hop1__726391_153080_33952_34109::p1"
+          ],
+          "round": 1,
+          "slot_ledger": {
+            "plan": {
+              "final_slot": "final_target",
+              "final_target_type": "entity",
+              "slot_names": [
+                "bridge_1",
+                "final_target"
+              ]
+            },
+            "slots": {
+              "bridge_1": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_1",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "final_target": {
+                "claims": [
+                  "The mouth of the watercourse of the body of water by Rotterdam Centrum is called Nieuwe Maas River.",
+                  "The mouth of the watercourse of the body of water by Rotterdam Centrum is called Nieuwe Maas River."
+                ],
+                "evidence_ids": [
+                  "2hop__131951_643670::p6"
+                ],
+                "name": "final_target",
+                "source_queries": [
+                  "What is the name for the mouth of the watercourse of the body of water by Rotterdam Centrum?",
+                  "What is the name for the mouth of the watercourse of the body of water by Rotterdam Centrum?"
+                ],
+                "status": "supported"
+              }
+            }
+          },
+          "slot_ledger_answer_from_final_target": true,
+          "slot_ledger_candidate_answer": "Nieuwe Maas River",
+          "slot_ledger_final_target_evidence_ids": [
+            "2hop__131951_643670::p6"
+          ],
+          "verifier_output": {
+            "answer_slot": "final requested target",
+            "claims": [
+              {
+                "claim": "The mouth of the watercourse of the body of water by Rotterdam Centrum is called Nieuwe Maas River.",
+                "evidence_ids": [
+                  "2hop__131951_643670::p6"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              }
+            ],
+            "expected_gain": 0.0,
+            "final_target_match": true,
+            "need_more_evidence": false,
+            "overall_sufficiency": "sufficient",
+            "risk_score": 0.0,
+            "suggested_query": ""
+          }
+        }
+      ],
+      "_hop": "2hop",
+      "_f1": 0.0,
+      "_slot_answer": true,
+      "_slot_missing": false,
+      "_closure_success": false,
+      "_closure_steps": [],
+      "_slot_candidate_answers": [
+        "Nieuwe Maas River"
+      ],
+      "_final_evidence_ids": [
+        "2hop__131951_643670::p6"
+      ]
+    },
+    {
+      "cost": {
+        "llm_calls": 2,
+        "retrieval_calls": 2,
+        "retrieved_passages": 8,
+        "tokens": 72
+      },
+      "final_action": "answer",
+      "final_answer": "Salma Hayek",
+      "gold_answer": "Maria Bello",
+      "id": "2hop__247353_55227",
+      "method": "claim_risk",
+      "question": "Who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?",
+      "trajectory": [
+        {
+          "action": "refine_query",
+          "budget_remaining": 2,
+          "evidence_gain": 1.0,
+          "query": "Who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?",
+          "query_source": "initial",
+          "retrieved_ids": [
+            "2hop__247353_55227::p17",
+            "2hop__247353_55227::p6",
+            "3hop2__140194_16797_51068::p5"
+          ],
+          "round": 1,
+          "slot_ledger": {
+            "plan": {
+              "final_slot": "final_target",
+              "final_target_type": "person",
+              "slot_names": [
+                "bridge_1",
+                "bridge_2",
+                "final_target"
+              ]
+            },
+            "slots": {
+              "bridge_1": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_1",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_2": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_2",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "final_target": {
+                "claims": [
+                  "Salma Hayek plays the wife of Here Comes the Boom's screenwriter in Grown Ups",
+                  "Salma Hayek plays the wife of Here Comes the Boom's screenwriter in Grown Ups"
+                ],
+                "evidence_ids": [
+                  "2hop__247353_55227::p17",
+                  "2hop__247353_55227::p6"
+                ],
+                "name": "final_target",
+                "source_queries": [
+                  "What person answers Grown Ups?",
+                  "What person answers Grown Ups?"
+                ],
+                "status": "pending"
+              }
+            }
+          },
+          "slot_ledger_final_target_evidence_ids": [],
+          "verifier_output": {
+            "answer_slot": "intermediate entity",
+            "claims": [
+              {
+                "claim": "Salma Hayek plays the wife of Here Comes the Boom's screenwriter in Grown Ups",
+                "evidence_ids": [
+                  "2hop__247353_55227::p17",
+                  "2hop__247353_55227::p6"
+                ],
+                "is_critical": true,
+                "missing_evidence": "missing_passage: Information about the screenwriter of Here Comes the Boom and their spouse in Grown Ups",
+                "status": "unsupported"
+              }
+            ],
+            "expected_gain": 0.6,
+            "final_target_match": false,
+            "need_more_evidence": true,
+            "overall_sufficiency": "insufficient",
+            "risk_score": 0.8,
+            "suggested_query": "Who is the screenwriter of Here Comes the Boom, and who plays their wife in Grown Ups?"
+          }
+        },
+        {
+          "action": "answer",
+          "budget_remaining": 1,
+          "evidence_gain": 0.0,
+          "followup_backfill_queries": [
+            "Who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?"
+          ],
+          "query": "What person answers Grown Ups?",
+          "query_source": "slot_ledger",
+          "retrieved_ids": [
+            "2hop__247353_55227::p17",
+            "2hop__23459_35124::p11",
+            "2hop__91211_90973::p4",
+            "2hop__247353_55227::p6",
+            "3hop2__140194_16797_51068::p5"
+          ],
+          "round": 2,
+          "slot_ledger": {
+            "plan": {
+              "final_slot": "final_target",
+              "final_target_type": "person",
+              "slot_names": [
+                "bridge_1",
+                "bridge_2",
+                "final_target"
+              ]
+            },
+            "slots": {
+              "bridge_1": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_1",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_2": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_2",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "final_target": {
+                "claims": [
+                  "Salma Hayek plays the wife of Here Comes the Boom's screenwriter in Grown Ups",
+                  "Salma Hayek plays the wife of Here Comes the Boom's screenwriter in Grown Ups"
+                ],
+                "evidence_ids": [
+                  "2hop__247353_55227::p17",
+                  "2hop__247353_55227::p6"
+                ],
+                "name": "final_target",
+                "source_queries": [
+                  "What person answers Grown Ups?",
+                  "What person answers Grown Ups?"
+                ],
+                "status": "supported"
+              }
+            }
+          },
+          "slot_ledger_answer_from_final_target": true,
+          "slot_ledger_candidate_answer": "Salma Hayek",
+          "slot_ledger_final_target_evidence_ids": [
+            "2hop__247353_55227::p17",
+            "2hop__247353_55227::p6"
+          ],
+          "slot_ledger_next_query": true,
+          "verifier_output": {
+            "answer_slot": "final requested target",
+            "claims": [
+              {
+                "claim": "Salma Hayek plays the wife of Here Comes the Boom's screenwriter in Grown Ups",
+                "evidence_ids": [
+                  "2hop__247353_55227::p17",
+                  "2hop__247353_55227::p6"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              }
+            ],
+            "expected_gain": 0.0,
+            "final_target_match": true,
+            "need_more_evidence": false,
+            "overall_sufficiency": "sufficient",
+            "risk_score": 0.0,
+            "suggested_query": ""
+          }
+        }
+      ],
+      "_hop": "2hop",
+      "_f1": 0.0,
+      "_slot_answer": true,
+      "_slot_missing": false,
+      "_closure_success": false,
+      "_closure_steps": [],
+      "_slot_candidate_answers": [
+        "Salma Hayek"
+      ],
+      "_final_evidence_ids": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ]
+    },
+    {
+      "cost": {
+        "llm_calls": 2,
+        "retrieval_calls": 2,
+        "retrieved_passages": 10,
+        "tokens": 136
+      },
+      "final_action": "answer",
+      "final_answer": "Islam",
+      "gold_answer": "the country of India",
+      "id": "3hop1__104996_160713_77246",
+      "method": "claim_risk",
+      "question": "What is the meaning of the word that is also a majority religion in the area that became India when the country that release Ankahi was created in Arabic dictionary?",
+      "trajectory": [
+        {
+          "action": "refine_query",
+          "budget_remaining": 2,
+          "closure_recheck_attempt": true,
+          "closure_recheck_attempt_reason": "closure_verifier_rejected_candidate_answer",
+          "closure_recheck_candidate_answer": "Islam",
+          "closure_recheck_evidence_ids": [
+            "3hop1__248929_160713_77246::p3",
+            "3hop1__104996_160713_77246::p15",
+            "3hop1__104996_160713_77246::p18"
+          ],
+          "closure_recheck_scope": "retrieved",
+          "evidence_gain": 0.0,
+          "query": "What is the meaning of the word that is also a majority religion in the area that became India when the country that release Ankahi was created in Arabic dictionary?",
+          "query_source": "initial",
+          "retrieved_ids": [
+            "3hop1__248929_160713_77246::p3",
+            "3hop1__104996_160713_77246::p15",
+            "3hop1__104996_160713_77246::p18",
+            "2hop__677929_696450::p17",
+            "2hop__37656_36240::p1"
+          ],
+          "round": 1,
+          "slot_ledger": {
+            "plan": {
+              "final_slot": "final_target",
+              "final_target_type": "entity",
+              "slot_names": [
+                "bridge_1",
+                "bridge_2",
+                "bridge_3",
+                "final_target"
+              ]
+            },
+            "slots": {
+              "bridge_1": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_1",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_2": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_2",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_3": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_3",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "final_target": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "final_target",
+                "source_queries": [],
+                "status": "pending"
+              }
+            }
+          },
+          "slot_ledger_final_target_evidence_ids": [],
+          "verifier_output": {
+            "answer_slot": "intermediate entity",
+            "claims": [
+              {
+                "claim": "The word that is also a majority religion in the area that became India when the country that released Ankahi was created in an Arabic dictionary is Islam.",
+                "evidence_ids": [
+                  "3hop1__248929_160713_77246::p3",
+                  "3hop1__104996_160713_77246::p15",
+                  "3hop1__104996_160713_77246::p18"
+                ],
+                "is_critical": true,
+                "missing_evidence": "missing_passage: The country that released Ankahi and its relation to the creation of India, as well as the meaning of the word in an Arabic dictionary.",
+                "status": "unsupported"
+              }
+            ],
+            "expected_gain": 0.0,
+            "final_target_match": false,
+            "need_more_evidence": true,
+            "overall_sufficiency": "insufficient",
+            "risk_score": 0.0,
+            "suggested_query": "What is the country that released Ankahi and how does it relate to the creation of India?"
+          }
+        },
+        {
+          "action": "answer",
+          "budget_remaining": 1,
+          "closure_recheck": true,
+          "closure_recheck_attempt": true,
+          "closure_recheck_candidate_answer": "Islam",
+          "closure_recheck_evidence_ids": [
+            "3hop1__248929_160713_77246::p3",
+            "3hop1__104996_160713_77246::p15",
+            "3hop1__104996_160713_77246::p18"
+          ],
+          "closure_recheck_reason": "existing_evidence_verified_repaired_answer",
+          "closure_recheck_scope": "retrieved",
+          "evidence_gain": 0.0,
+          "followup_backfill_queries": [
+            "What is the meaning of the word that is also a majority religion in the area that became India when the country that release Ankahi was created in Arabic dictionary?"
+          ],
+          "query": "What entity answers Arabic?",
+          "query_source": "slot_ledger",
+          "retrieved_ids": [
+            "2hop__92590_43786::p0",
+            "3hop1__662413_42197_18397::p9",
+            "4hop1__636860_49925_13759_736921::p14",
+            "3hop1__104996_160713_77246::p18",
+            "3hop1__104996_160713_77246::p15"
+          ],
+          "round": 2,
+          "slot_ledger": {
+            "plan": {
+              "final_slot": "final_target",
+              "final_target_type": "entity",
+              "slot_names": [
+                "bridge_1",
+                "bridge_2",
+                "bridge_3",
+                "final_target"
+              ]
+            },
+            "slots": {
+              "bridge_1": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_1",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_2": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_2",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_3": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_3",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "final_target": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "final_target",
+                "source_queries": [],
+                "status": "pending"
+              }
+            }
+          },
+          "slot_ledger_final_target_evidence_ids": [],
+          "slot_ledger_next_query": true,
+          "verifier_output": {
+            "answer_slot": "final requested target",
+            "claims": [
+              {
+                "claim": "The word that is also a majority religion in the area that became India when the country that released Ankahi was created in an Arabic dictionary is Islam.",
+                "evidence_ids": [
+                  "3hop1__248929_160713_77246::p3",
+                  "3hop1__104996_160713_77246::p15",
+                  "3hop1__104996_160713_77246::p18"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              }
+            ],
+            "expected_gain": 0.0,
+            "final_target_match": true,
+            "need_more_evidence": false,
+            "overall_sufficiency": "sufficient",
+            "risk_score": 0.0,
+            "suggested_query": ""
+          }
+        }
+      ],
+      "_hop": "3hop",
+      "_f1": 0.0,
+      "_slot_answer": false,
+      "_slot_missing": false,
+      "_closure_success": true,
+      "_closure_steps": [
+        {
+          "action": "answer",
+          "budget_remaining": 1,
+          "closure_recheck": true,
+          "closure_recheck_attempt": true,
+          "closure_recheck_candidate_answer": "Islam",
+          "closure_recheck_evidence_ids": [
+            "3hop1__248929_160713_77246::p3",
+            "3hop1__104996_160713_77246::p15",
+            "3hop1__104996_160713_77246::p18"
+          ],
+          "closure_recheck_reason": "existing_evidence_verified_repaired_answer",
+          "closure_recheck_scope": "retrieved",
+          "evidence_gain": 0.0,
+          "followup_backfill_queries": [
+            "What is the meaning of the word that is also a majority religion in the area that became India when the country that release Ankahi was created in Arabic dictionary?"
+          ],
+          "query": "What entity answers Arabic?",
+          "query_source": "slot_ledger",
+          "retrieved_ids": [
+            "2hop__92590_43786::p0",
+            "3hop1__662413_42197_18397::p9",
+            "4hop1__636860_49925_13759_736921::p14",
+            "3hop1__104996_160713_77246::p18",
+            "3hop1__104996_160713_77246::p15"
+          ],
+          "round": 2,
+          "slot_ledger": {
+            "plan": {
+              "final_slot": "final_target",
+              "final_target_type": "entity",
+              "slot_names": [
+                "bridge_1",
+                "bridge_2",
+                "bridge_3",
+                "final_target"
+              ]
+            },
+            "slots": {
+              "bridge_1": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_1",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_2": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_2",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_3": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_3",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "final_target": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "final_target",
+                "source_queries": [],
+                "status": "pending"
+              }
+            }
+          },
+          "slot_ledger_final_target_evidence_ids": [],
+          "slot_ledger_next_query": true,
+          "verifier_output": {
+            "answer_slot": "final requested target",
+            "claims": [
+              {
+                "claim": "The word that is also a majority religion in the area that became India when the country that released Ankahi was created in an Arabic dictionary is Islam.",
+                "evidence_ids": [
+                  "3hop1__248929_160713_77246::p3",
+                  "3hop1__104996_160713_77246::p15",
+                  "3hop1__104996_160713_77246::p18"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              }
+            ],
+            "expected_gain": 0.0,
+            "final_target_match": true,
+            "need_more_evidence": false,
+            "overall_sufficiency": "sufficient",
+            "risk_score": 0.0,
+            "suggested_query": ""
+          }
+        }
+      ],
+      "_slot_candidate_answers": [],
+      "_final_evidence_ids": []
+    },
+    {
+      "cost": {
+        "llm_calls": 3,
+        "retrieval_calls": 3,
+        "retrieved_passages": 15,
+        "tokens": 200
+      },
+      "final_action": "answer",
+      "final_answer": "Susilo Bambang Yudhoyono",
+      "gold_answer": "Francisco Guterres",
+      "id": "3hop1__105767_443779_52195",
+      "method": "claim_risk",
+      "question": "Who is the president of the newly declared independent country that is part of the commission of truth and friendship with the country that eats Kemplang?",
+      "trajectory": [
+        {
+          "action": "refine_query",
+          "budget_remaining": 2,
+          "evidence_gain": 0.3333333333333333,
+          "query": "Who is the president of the newly declared independent country that is part of the commission of truth and friendship with the country that eats Kemplang?",
+          "query_source": "initial",
+          "retrieved_ids": [
+            "3hop1__144439_443779_52195::p7",
+            "3hop1__105767_443779_52195::p3",
+            "3hop1__103881_443779_52195::p7",
+            "3hop1__105767_443779_52195::p6",
+            "3hop1__103881_443779_52195::p18"
+          ],
+          "round": 1,
+          "slot_ledger": {
+            "plan": {
+              "final_slot": "final_target",
+              "final_target_type": "person",
+              "slot_names": [
+                "bridge_1",
+                "bridge_2",
+                "bridge_3",
+                "final_target"
+              ]
+            },
+            "slots": {
+              "bridge_1": {
+                "claims": [
+                  "The country that eats Kemplang is Indonesia.",
+                  "The country that eats Kemplang is Indonesia."
+                ],
+                "evidence_ids": [
+                  "3hop1__105767_443779_52195::p0"
+                ],
+                "name": "bridge_1",
+                "source_queries": [
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?"
+                ],
+                "status": "pending"
+              },
+              "bridge_2": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_2",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_3": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_3",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "final_target": {
+                "claims": [
+                  "The president of East Timor is the final requested target in the question.",
+                  "East Timor is a newly declared independent country.",
+                  "Indonesia is part of the commission of truth and friendship with East Timor.",
+                  "The commission of truth and friendship is between Indonesia and East Timor.",
+                  "The newly declared independent country is East Timor.",
+                  "The president of East Timor is the final requested target.",
+                  "The commission of truth and friendship is between Indonesia and East Timor.",
+                  "East Timor is a newly declared independent country.",
+                  "Susilo Bambang Yudhoyono was the president of Indonesia during the commission's endorsement."
+                ],
+                "evidence_ids": [
+                  "3hop1__144439_443779_52195::p7",
+                  "3hop1__105767_443779_52195::p3",
+                  "3hop1__103881_443779_52195::p7"
+                ],
+                "name": "final_target",
+                "source_queries": [
+                  "What person answers Kemplang?",
+                  "What person answers Kemplang?",
+                  "What person answers Kemplang?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?"
+                ],
+                "status": "pending"
+              }
+            }
+          },
+          "slot_ledger_final_target_evidence_ids": [],
+          "verifier_output": {
+            "answer_slot": "unknown",
+            "claims": [
+              {
+                "claim": "The newly declared independent country that is part of the commission of truth and friendship with the country that eats Kemplang is East Timor.",
+                "evidence_ids": [
+                  "3hop1__144439_443779_52195::p7",
+                  "3hop1__105767_443779_52195::p3",
+                  "3hop1__103881_443779_52195::p7"
+                ],
+                "is_critical": true,
+                "missing_evidence": "missing_passage: Information about the country that eats Kemplang and its relation to East Timor or another newly declared independent country.",
+                "status": "unclear"
+              }
+            ],
+            "expected_gain": 0.0,
+            "final_target_match": false,
+            "need_more_evidence": true,
+            "overall_sufficiency": "insufficient",
+            "risk_score": 0.0,
+            "suggested_query": "What is the country that eats Kemplang, and is it related to a newly declared independent country?"
+          }
+        },
+        {
+          "action": "refine_query",
+          "budget_remaining": 1,
+          "evidence_gain": 0.3333333333333333,
+          "followup_backfill_queries": [
+            "Who is the president of the newly declared independent country that is part of the commission of truth and friendship with the country that eats Kemplang?"
+          ],
+          "query": "What person answers Kemplang?",
+          "query_source": "slot_ledger",
+          "retrieved_ids": [
+            "3hop1__105767_443779_52195::p0",
+            "2hop__23459_35124::p11",
+            "3hop2__127483_19639_10557::p16",
+            "3hop1__105767_443779_52195::p6",
+            "3hop1__105767_443779_52195::p3"
+          ],
+          "round": 2,
+          "slot_ledger": {
+            "plan": {
+              "final_slot": "final_target",
+              "final_target_type": "person",
+              "slot_names": [
+                "bridge_1",
+                "bridge_2",
+                "bridge_3",
+                "final_target"
+              ]
+            },
+            "slots": {
+              "bridge_1": {
+                "claims": [
+                  "The country that eats Kemplang is Indonesia.",
+                  "The country that eats Kemplang is Indonesia."
+                ],
+                "evidence_ids": [
+                  "3hop1__105767_443779_52195::p0"
+                ],
+                "name": "bridge_1",
+                "source_queries": [
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?"
+                ],
+                "status": "pending"
+              },
+              "bridge_2": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_2",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_3": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_3",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "final_target": {
+                "claims": [
+                  "The president of East Timor is the final requested target in the question.",
+                  "East Timor is a newly declared independent country.",
+                  "Indonesia is part of the commission of truth and friendship with East Timor.",
+                  "The commission of truth and friendship is between Indonesia and East Timor.",
+                  "The newly declared independent country is East Timor.",
+                  "The president of East Timor is the final requested target.",
+                  "The commission of truth and friendship is between Indonesia and East Timor.",
+                  "East Timor is a newly declared independent country.",
+                  "Susilo Bambang Yudhoyono was the president of Indonesia during the commission's endorsement."
+                ],
+                "evidence_ids": [
+                  "3hop1__144439_443779_52195::p7",
+                  "3hop1__105767_443779_52195::p3",
+                  "3hop1__103881_443779_52195::p7"
+                ],
+                "name": "final_target",
+                "source_queries": [
+                  "What person answers Kemplang?",
+                  "What person answers Kemplang?",
+                  "What person answers Kemplang?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?"
+                ],
+                "status": "supported"
+              }
+            }
+          },
+          "slot_ledger_answer_from_final_target": true,
+          "slot_ledger_candidate_answer": "Susilo Bambang Yudhoyono",
+          "slot_ledger_final_target_evidence_ids": [
+            "3hop1__144439_443779_52195::p7",
+            "3hop1__105767_443779_52195::p3",
+            "3hop1__103881_443779_52195::p7"
+          ],
+          "slot_ledger_next_query": true,
+          "verifier_output": {
+            "answer_slot": "intermediate entity",
+            "claims": [
+              {
+                "claim": "The president of the newly declared independent country that is part of the commission of truth and friendship with the country that eats Kemplang is Susilo Bambang Yudhoyono.",
+                "evidence_ids": [
+                  "3hop1__144439_443779_52195::p7",
+                  "3hop1__105767_443779_52195::p3",
+                  "3hop1__103881_443779_52195::p7"
+                ],
+                "is_critical": true,
+                "missing_evidence": "missing_passage: Information about the country that eats Kemplang and its relation to the newly declared independent country.",
+                "status": "unsupported"
+              },
+              {
+                "claim": "East Timor is a newly declared independent country.",
+                "evidence_ids": [
+                  "3hop1__144439_443779_52195::p7",
+                  "3hop1__105767_443779_52195::p3",
+                  "3hop1__103881_443779_52195::p7"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              },
+              {
+                "claim": "Indonesia is part of the commission of truth and friendship with East Timor.",
+                "evidence_ids": [
+                  "3hop1__144439_443779_52195::p7",
+                  "3hop1__105767_443779_52195::p3",
+                  "3hop1__103881_443779_52195::p7"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              },
+              {
+                "claim": "The country that eats Kemplang is East Timor.",
+                "evidence_ids": [],
+                "is_critical": true,
+                "missing_evidence": "missing_passage: Information about which country eats Kemplang and its relation to the commission of truth and friendship.",
+                "status": "unclear"
+              }
+            ],
+            "expected_gain": 0.6,
+            "final_target_match": false,
+            "need_more_evidence": true,
+            "overall_sufficiency": "insufficient",
+            "risk_score": 0.75,
+            "suggested_query": "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?"
+          }
+        },
+        {
+          "action": "answer",
+          "budget_remaining": 0,
+          "closure_recheck": true,
+          "closure_recheck_attempt": true,
+          "closure_recheck_candidate_answer": "Susilo Bambang Yudhoyono",
+          "closure_recheck_evidence_ids": [
+            "3hop1__144439_443779_52195::p7",
+            "3hop1__105767_443779_52195::p3",
+            "3hop1__103881_443779_52195::p7"
+          ],
+          "closure_recheck_reason": "existing_evidence_verified_repaired_answer",
+          "closure_recheck_scope": "retrieved",
+          "evidence_gain": 0.0,
+          "followup_backfill_queries": [
+            "Who is the president of the newly declared independent country that is part of the commission of truth and friendship with the country that eats Kemplang?"
+          ],
+          "query": "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+          "query_source": "slot_ledger",
+          "retrieved_ids": [
+            "3hop1__105767_443779_52195::p0",
+            "3hop1__105767_443779_52195::p3",
+            "3hop1__103881_443779_52195::p7",
+            "4hop2__161602_426860_88460_18966::p7",
+            "3hop1__105767_443779_52195::p6"
+          ],
+          "round": 3,
+          "slot_ledger": {
+            "plan": {
+              "final_slot": "final_target",
+              "final_target_type": "person",
+              "slot_names": [
+                "bridge_1",
+                "bridge_2",
+                "bridge_3",
+                "final_target"
+              ]
+            },
+            "slots": {
+              "bridge_1": {
+                "claims": [
+                  "The country that eats Kemplang is Indonesia.",
+                  "The country that eats Kemplang is Indonesia."
+                ],
+                "evidence_ids": [
+                  "3hop1__105767_443779_52195::p0"
+                ],
+                "name": "bridge_1",
+                "source_queries": [
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?"
+                ],
+                "status": "supported"
+              },
+              "bridge_2": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_2",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_3": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_3",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "final_target": {
+                "claims": [
+                  "The president of East Timor is the final requested target in the question.",
+                  "East Timor is a newly declared independent country.",
+                  "Indonesia is part of the commission of truth and friendship with East Timor.",
+                  "The commission of truth and friendship is between Indonesia and East Timor.",
+                  "The newly declared independent country is East Timor.",
+                  "The president of East Timor is the final requested target.",
+                  "The commission of truth and friendship is between Indonesia and East Timor.",
+                  "East Timor is a newly declared independent country.",
+                  "Susilo Bambang Yudhoyono was the president of Indonesia during the commission's endorsement."
+                ],
+                "evidence_ids": [
+                  "3hop1__144439_443779_52195::p7",
+                  "3hop1__105767_443779_52195::p3",
+                  "3hop1__103881_443779_52195::p7"
+                ],
+                "name": "final_target",
+                "source_queries": [
+                  "What person answers Kemplang?",
+                  "What person answers Kemplang?",
+                  "What person answers Kemplang?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?"
+                ],
+                "status": "supported"
+              }
+            }
+          },
+          "slot_ledger_answer_from_final_target": true,
+          "slot_ledger_candidate_answer": "Susilo Bambang Yudhoyono",
+          "slot_ledger_final_target_evidence_ids": [
+            "3hop1__144439_443779_52195::p7",
+            "3hop1__105767_443779_52195::p3",
+            "3hop1__103881_443779_52195::p7"
+          ],
+          "slot_ledger_next_query": true,
+          "verifier_output": {
+            "answer_slot": "final requested target",
+            "claims": [
+              {
+                "claim": "The president of the newly declared independent country that is part of the commission of truth and friendship with the country that eats Kemplang is Susilo Bambang Yudhoyono.",
+                "evidence_ids": [
+                  "3hop1__144439_443779_52195::p7",
+                  "3hop1__105767_443779_52195::p3",
+                  "3hop1__103881_443779_52195::p7"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              }
+            ],
+            "expected_gain": 0.0,
+            "final_target_match": true,
+            "need_more_evidence": false,
+            "overall_sufficiency": "sufficient",
+            "risk_score": 0.0,
+            "suggested_query": ""
+          }
+        }
+      ],
+      "_hop": "3hop",
+      "_f1": 0.0,
+      "_slot_answer": true,
+      "_slot_missing": false,
+      "_closure_success": true,
+      "_closure_steps": [
+        {
+          "action": "answer",
+          "budget_remaining": 0,
+          "closure_recheck": true,
+          "closure_recheck_attempt": true,
+          "closure_recheck_candidate_answer": "Susilo Bambang Yudhoyono",
+          "closure_recheck_evidence_ids": [
+            "3hop1__144439_443779_52195::p7",
+            "3hop1__105767_443779_52195::p3",
+            "3hop1__103881_443779_52195::p7"
+          ],
+          "closure_recheck_reason": "existing_evidence_verified_repaired_answer",
+          "closure_recheck_scope": "retrieved",
+          "evidence_gain": 0.0,
+          "followup_backfill_queries": [
+            "Who is the president of the newly declared independent country that is part of the commission of truth and friendship with the country that eats Kemplang?"
+          ],
+          "query": "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+          "query_source": "slot_ledger",
+          "retrieved_ids": [
+            "3hop1__105767_443779_52195::p0",
+            "3hop1__105767_443779_52195::p3",
+            "3hop1__103881_443779_52195::p7",
+            "4hop2__161602_426860_88460_18966::p7",
+            "3hop1__105767_443779_52195::p6"
+          ],
+          "round": 3,
+          "slot_ledger": {
+            "plan": {
+              "final_slot": "final_target",
+              "final_target_type": "person",
+              "slot_names": [
+                "bridge_1",
+                "bridge_2",
+                "bridge_3",
+                "final_target"
+              ]
+            },
+            "slots": {
+              "bridge_1": {
+                "claims": [
+                  "The country that eats Kemplang is Indonesia.",
+                  "The country that eats Kemplang is Indonesia."
+                ],
+                "evidence_ids": [
+                  "3hop1__105767_443779_52195::p0"
+                ],
+                "name": "bridge_1",
+                "source_queries": [
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?"
+                ],
+                "status": "supported"
+              },
+              "bridge_2": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_2",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_3": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_3",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "final_target": {
+                "claims": [
+                  "The president of East Timor is the final requested target in the question.",
+                  "East Timor is a newly declared independent country.",
+                  "Indonesia is part of the commission of truth and friendship with East Timor.",
+                  "The commission of truth and friendship is between Indonesia and East Timor.",
+                  "The newly declared independent country is East Timor.",
+                  "The president of East Timor is the final requested target.",
+                  "The commission of truth and friendship is between Indonesia and East Timor.",
+                  "East Timor is a newly declared independent country.",
+                  "Susilo Bambang Yudhoyono was the president of Indonesia during the commission's endorsement."
+                ],
+                "evidence_ids": [
+                  "3hop1__144439_443779_52195::p7",
+                  "3hop1__105767_443779_52195::p3",
+                  "3hop1__103881_443779_52195::p7"
+                ],
+                "name": "final_target",
+                "source_queries": [
+                  "What person answers Kemplang?",
+                  "What person answers Kemplang?",
+                  "What person answers Kemplang?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?",
+                  "Which country is associated with eating Kemplang, and is it related to the Indonesia–Timor Leste Commission of Truth and Friendship?"
+                ],
+                "status": "supported"
+              }
+            }
+          },
+          "slot_ledger_answer_from_final_target": true,
+          "slot_ledger_candidate_answer": "Susilo Bambang Yudhoyono",
+          "slot_ledger_final_target_evidence_ids": [
+            "3hop1__144439_443779_52195::p7",
+            "3hop1__105767_443779_52195::p3",
+            "3hop1__103881_443779_52195::p7"
+          ],
+          "slot_ledger_next_query": true,
+          "verifier_output": {
+            "answer_slot": "final requested target",
+            "claims": [
+              {
+                "claim": "The president of the newly declared independent country that is part of the commission of truth and friendship with the country that eats Kemplang is Susilo Bambang Yudhoyono.",
+                "evidence_ids": [
+                  "3hop1__144439_443779_52195::p7",
+                  "3hop1__105767_443779_52195::p3",
+                  "3hop1__103881_443779_52195::p7"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              }
+            ],
+            "expected_gain": 0.0,
+            "final_target_match": true,
+            "need_more_evidence": false,
+            "overall_sufficiency": "sufficient",
+            "risk_score": 0.0,
+            "suggested_query": ""
+          }
+        }
+      ],
+      "_slot_candidate_answers": [
+        "Susilo Bambang Yudhoyono",
+        "Susilo Bambang Yudhoyono"
+      ],
+      "_final_evidence_ids": [
+        "3hop1__144439_443779_52195::p7",
+        "3hop1__105767_443779_52195::p3",
+        "3hop1__103881_443779_52195::p7"
+      ]
+    },
+    {
+      "cost": {
+        "llm_calls": 1,
+        "retrieval_calls": 1,
+        "retrieved_passages": 5,
+        "tokens": 92
+      },
+      "final_action": "answer",
+      "final_answer": "39.3 million",
+      "gold_answer": "1,335,907",
+      "id": "3hop1__159803_89752_75165",
+      "method": "claim_risk",
+      "question": "What's the population of the largest state in the region of the U.S. where trading practices were once threatened by the Navigation Acts?",
+      "trajectory": [
+        {
+          "action": "answer",
+          "budget_remaining": 2,
+          "closure_recheck": true,
+          "closure_recheck_attempt": true,
+          "closure_recheck_candidate_answer": "39.3 million",
+          "closure_recheck_evidence_ids": [
+            "2hop__40270_11402::p13"
+          ],
+          "closure_recheck_reason": "existing_evidence_verified_repaired_answer",
+          "closure_recheck_scope": "retrieved",
+          "evidence_gain": 0.0,
+          "query": "What's the population of the largest state in the region of the U.S. where trading practices were once threatened by the Navigation Acts?",
+          "query_source": "initial",
+          "retrieved_ids": [
+            "4hop1__342858_131850_33952_33939::p2",
+            "4hop1__161605_32392_823060_610794::p16",
+            "4hop1__131611_32392_823060_610794::p5",
+            "2hop__40270_11402::p13",
+            "4hop1__813171_153080_159767_81096::p3"
+          ],
+          "round": 1,
+          "slot_ledger": {
+            "plan": {
+              "final_slot": "final_target",
+              "final_target_type": "population",
+              "slot_names": [
+                "bridge_1",
+                "bridge_2",
+                "bridge_3",
+                "final_target"
+              ]
+            },
+            "slots": {
+              "bridge_1": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_1",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_2": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_2",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_3": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_3",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "final_target": {
+                "claims": [
+                  "The population of California is 39.3 million.",
+                  "California has a population of 39.3 million."
+                ],
+                "evidence_ids": [
+                  "2hop__40270_11402::p13"
+                ],
+                "name": "final_target",
+                "source_queries": [
+                  "What's the population of the largest state in the region of the U.S. where trading practices were once threatened by the Navigation Acts?",
+                  "What's the population of the largest state in the region of the U.S. where trading practices were once threatened by the Navigation Acts?"
+                ],
+                "status": "supported"
+              }
+            }
+          },
+          "slot_ledger_answer_from_final_target": true,
+          "slot_ledger_candidate_answer": "39.3 million",
+          "slot_ledger_final_target_evidence_ids": [
+            "2hop__40270_11402::p13"
+          ],
+          "verifier_output": {
+            "answer_slot": "final requested target",
+            "claims": [
+              {
+                "claim": "The largest state in the region of the U.S. where trading practices were once threatened by the Navigation Acts is California.",
+                "evidence_ids": [
+                  "2hop__40270_11402::p13"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              },
+              {
+                "claim": "The population of the largest state in the region of the U.S. where trading practices were once threatened by the Navigation Acts is 39.3 million.",
+                "evidence_ids": [
+                  "2hop__40270_11402::p13"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              }
+            ],
+            "expected_gain": 0.0,
+            "final_target_match": true,
+            "need_more_evidence": false,
+            "overall_sufficiency": "sufficient",
+            "risk_score": 0.0,
+            "suggested_query": ""
+          }
+        }
+      ],
+      "_hop": "3hop",
+      "_f1": 0.0,
+      "_slot_answer": true,
+      "_slot_missing": false,
+      "_closure_success": true,
+      "_closure_steps": [
+        {
+          "action": "answer",
+          "budget_remaining": 2,
+          "closure_recheck": true,
+          "closure_recheck_attempt": true,
+          "closure_recheck_candidate_answer": "39.3 million",
+          "closure_recheck_evidence_ids": [
+            "2hop__40270_11402::p13"
+          ],
+          "closure_recheck_reason": "existing_evidence_verified_repaired_answer",
+          "closure_recheck_scope": "retrieved",
+          "evidence_gain": 0.0,
+          "query": "What's the population of the largest state in the region of the U.S. where trading practices were once threatened by the Navigation Acts?",
+          "query_source": "initial",
+          "retrieved_ids": [
+            "4hop1__342858_131850_33952_33939::p2",
+            "4hop1__161605_32392_823060_610794::p16",
+            "4hop1__131611_32392_823060_610794::p5",
+            "2hop__40270_11402::p13",
+            "4hop1__813171_153080_159767_81096::p3"
+          ],
+          "round": 1,
+          "slot_ledger": {
+            "plan": {
+              "final_slot": "final_target",
+              "final_target_type": "population",
+              "slot_names": [
+                "bridge_1",
+                "bridge_2",
+                "bridge_3",
+                "final_target"
+              ]
+            },
+            "slots": {
+              "bridge_1": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_1",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_2": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_2",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_3": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_3",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "final_target": {
+                "claims": [
+                  "The population of California is 39.3 million.",
+                  "California has a population of 39.3 million."
+                ],
+                "evidence_ids": [
+                  "2hop__40270_11402::p13"
+                ],
+                "name": "final_target",
+                "source_queries": [
+                  "What's the population of the largest state in the region of the U.S. where trading practices were once threatened by the Navigation Acts?",
+                  "What's the population of the largest state in the region of the U.S. where trading practices were once threatened by the Navigation Acts?"
+                ],
+                "status": "supported"
+              }
+            }
+          },
+          "slot_ledger_answer_from_final_target": true,
+          "slot_ledger_candidate_answer": "39.3 million",
+          "slot_ledger_final_target_evidence_ids": [
+            "2hop__40270_11402::p13"
+          ],
+          "verifier_output": {
+            "answer_slot": "final requested target",
+            "claims": [
+              {
+                "claim": "The largest state in the region of the U.S. where trading practices were once threatened by the Navigation Acts is California.",
+                "evidence_ids": [
+                  "2hop__40270_11402::p13"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              },
+              {
+                "claim": "The population of the largest state in the region of the U.S. where trading practices were once threatened by the Navigation Acts is 39.3 million.",
+                "evidence_ids": [
+                  "2hop__40270_11402::p13"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              }
+            ],
+            "expected_gain": 0.0,
+            "final_target_match": true,
+            "need_more_evidence": false,
+            "overall_sufficiency": "sufficient",
+            "risk_score": 0.0,
+            "suggested_query": ""
+          }
+        }
+      ],
+      "_slot_candidate_answers": [
+        "39.3 million"
+      ],
+      "_final_evidence_ids": [
+        "2hop__40270_11402::p13"
+      ]
+    },
+    {
+      "cost": {
+        "llm_calls": 3,
+        "retrieval_calls": 3,
+        "retrieved_passages": 15,
+        "tokens": 268
+      },
+      "final_action": "answer",
+      "final_answer": "1920",
+      "gold_answer": "2016",
+      "id": "4hop1__145494_698949_157828_162309",
+      "method": "claim_risk",
+      "question": "When did the country whose co-official language was used in the movie named after the place where Bela Linder died first attend the Olympics games as an independent team?",
+      "trajectory": [
+        {
+          "action": "refine_query",
+          "budget_remaining": 2,
+          "evidence_gain": 0.25,
+          "query": "When did the country whose co-official language was used in the movie named after the place where Bela Linder died first attend the Olympics games as an independent team?",
+          "query_source": "initial",
+          "retrieved_ids": [
+            "4hop1__749065_698949_157828_162309::p18",
+            "4hop1__145494_698949_157828_162309::p15",
+            "3hop1__105767_443779_52195::p1",
+            "4hop1__749065_698949_157828_162309::p17",
+            "4hop1__145494_698949_157828_162309::p14"
+          ],
+          "round": 1,
+          "slot_ledger": {
+            "plan": {
+              "final_slot": "final_target",
+              "final_target_type": "date",
+              "slot_names": [
+                "bridge_1",
+                "bridge_2",
+                "bridge_3",
+                "final_target"
+              ]
+            },
+            "slots": {
+              "bridge_1": {
+                "claims": [
+                  "Béla Linder died in Belgrade.",
+                  "Béla Linder died in Belgrade",
+                  "The movie named after the place where Béla Linder died is named 'Belgrade'"
+                ],
+                "evidence_ids": [
+                  "4hop1__145494_698949_157828_162309::p0"
+                ],
+                "name": "bridge_1",
+                "source_queries": [
+                  "What is the movie named after the place where Bela Linder died, and what language was used in it?",
+                  "What is the movie named after the place where Bela Linder died, and what language was used in it?",
+                  "What is the movie named after the place where Bela Linder died, and what language was used in it?"
+                ],
+                "status": "pending"
+              },
+              "bridge_2": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_2",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_3": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_3",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "final_target": {
+                "claims": [
+                  "Estonia first attended the Olympics as an independent team in 1920.",
+                  "Estonia first attended the Olympics as an independent team in 1920.",
+                  "Estonia first attended the Olympics as an independent team in 1920.",
+                  "Estonia first attended the Olympics as an independent team in 1920"
+                ],
+                "evidence_ids": [
+                  "3hop1__105767_443779_52195::p1"
+                ],
+                "name": "final_target",
+                "source_queries": [
+                  "When did the country whose co-official language was used in the movie named after the place where Bela Linder died first attend the Olympics games as an independent team?",
+                  "When did the country whose co-official language was used in the movie named after the place where Bela Linder died first attend the Olympics games as an independent team?",
+                  "What is the movie named after the place where Bela Linder died, and what language was used in it?",
+                  "What is the movie named after the place where Bela Linder died, and what language was used in it?"
+                ],
+                "status": "supported"
+              }
+            }
+          },
+          "slot_ledger_answer_from_final_target": true,
+          "slot_ledger_candidate_answer": "1920",
+          "slot_ledger_final_target_evidence_ids": [
+            "3hop1__105767_443779_52195::p1"
+          ],
+          "verifier_output": {
+            "answer_slot": "date component",
+            "claims": [
+              {
+                "claim": "The country whose co-official language was used in the movie named after the place where Bela Linder died is Estonia.",
+                "evidence_ids": [
+                  "3hop1__105767_443779_52195::p1"
+                ],
+                "is_critical": true,
+                "missing_evidence": "missing_passage: Information about the movie named after the place where Bela Linder died and its language.",
+                "status": "unclear"
+              },
+              {
+                "claim": "Estonia first attended the Olympics as an independent team in 1920.",
+                "evidence_ids": [
+                  "3hop1__105767_443779_52195::p1"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              }
+            ],
+            "expected_gain": 0.7,
+            "final_target_match": false,
+            "need_more_evidence": true,
+            "overall_sufficiency": "insufficient",
+            "risk_score": 0.5,
+            "suggested_query": "What is the movie named after the place where Bela Linder died, and what language was used in it?"
+          }
+        },
+        {
+          "action": "refine_query",
+          "budget_remaining": 1,
+          "evidence_gain": 0.25,
+          "followup_backfill_queries": [
+            "When did the country whose co-official language was used in the movie named after the place where Bela Linder died first attend the Olympics games as an independent team?"
+          ],
+          "query": "What is the movie named after the place where Bela Linder died, and what language was used in it?",
+          "query_source": "slot_ledger",
+          "retrieved_ids": [
+            "4hop1__145494_698949_157828_162309::p0",
+            "2hop__857493_17335::p18",
+            "3hop1__662413_42197_18397::p2",
+            "4hop1__145494_698949_157828_162309::p14",
+            "4hop1__145494_698949_157828_162309::p15"
+          ],
+          "round": 2,
+          "slot_ledger": {
+            "plan": {
+              "final_slot": "final_target",
+              "final_target_type": "date",
+              "slot_names": [
+                "bridge_1",
+                "bridge_2",
+                "bridge_3",
+                "final_target"
+              ]
+            },
+            "slots": {
+              "bridge_1": {
+                "claims": [
+                  "Béla Linder died in Belgrade.",
+                  "Béla Linder died in Belgrade",
+                  "The movie named after the place where Béla Linder died is named 'Belgrade'"
+                ],
+                "evidence_ids": [
+                  "4hop1__145494_698949_157828_162309::p0"
+                ],
+                "name": "bridge_1",
+                "source_queries": [
+                  "What is the movie named after the place where Bela Linder died, and what language was used in it?",
+                  "What is the movie named after the place where Bela Linder died, and what language was used in it?",
+                  "What is the movie named after the place where Bela Linder died, and what language was used in it?"
+                ],
+                "status": "pending"
+              },
+              "bridge_2": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_2",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_3": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_3",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "final_target": {
+                "claims": [
+                  "Estonia first attended the Olympics as an independent team in 1920.",
+                  "Estonia first attended the Olympics as an independent team in 1920.",
+                  "Estonia first attended the Olympics as an independent team in 1920.",
+                  "Estonia first attended the Olympics as an independent team in 1920"
+                ],
+                "evidence_ids": [
+                  "3hop1__105767_443779_52195::p1"
+                ],
+                "name": "final_target",
+                "source_queries": [
+                  "When did the country whose co-official language was used in the movie named after the place where Bela Linder died first attend the Olympics games as an independent team?",
+                  "When did the country whose co-official language was used in the movie named after the place where Bela Linder died first attend the Olympics games as an independent team?",
+                  "What is the movie named after the place where Bela Linder died, and what language was used in it?",
+                  "What is the movie named after the place where Bela Linder died, and what language was used in it?"
+                ],
+                "status": "supported"
+              }
+            }
+          },
+          "slot_ledger_answer_from_final_target": true,
+          "slot_ledger_candidate_answer": "1920",
+          "slot_ledger_final_target_evidence_ids": [
+            "3hop1__105767_443779_52195::p1"
+          ],
+          "slot_ledger_next_query": true,
+          "verifier_output": {
+            "answer_slot": "date component",
+            "claims": [
+              {
+                "claim": "The country whose co-official language was used in the movie named after the place where Bela Linder died is Estonia.",
+                "evidence_ids": [
+                  "3hop1__105767_443779_52195::p1"
+                ],
+                "is_critical": true,
+                "missing_evidence": "missing_passage: Information about the movie named after the place where Bela Linder died and its language.",
+                "status": "unclear"
+              },
+              {
+                "claim": "Estonia first attended the Olympics as an independent team in 1920.",
+                "evidence_ids": [
+                  "3hop1__105767_443779_52195::p1"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              }
+            ],
+            "expected_gain": 0.7,
+            "final_target_match": false,
+            "need_more_evidence": true,
+            "overall_sufficiency": "insufficient",
+            "risk_score": 0.5,
+            "suggested_query": "What is the movie named after the place where Bela Linder died, and what language was used in it?"
+          }
+        },
+        {
+          "action": "answer",
+          "budget_remaining": 0,
+          "closure_recheck": true,
+          "closure_recheck_attempt": true,
+          "closure_recheck_candidate_answer": "1920",
+          "closure_recheck_evidence_ids": [
+            "3hop1__105767_443779_52195::p1",
+            "4hop1__145494_698949_157828_162309::p0"
+          ],
+          "closure_recheck_reason": "existing_evidence_verified_repaired_answer",
+          "closure_recheck_scope": "retrieved",
+          "evidence_gain": 0.0,
+          "followup_backfill_queries": [
+            "When did the country whose co-official language was used in the movie named after the place where Bela Linder died first attend the Olympics games as an independent team?"
+          ],
+          "query": "What is the movie named after the place where Bela Linder died, and what language was used in it?",
+          "query_source": "slot_ledger",
+          "retrieved_ids": [
+            "2hop__770487_494646::p4",
+            "3hop1__465684_160545_62931::p3",
+            "4hop1__145494_698949_157828_162309::p14",
+            "4hop1__145494_698949_157828_162309::p0",
+            "4hop1__145494_698949_157828_162309::p15"
+          ],
+          "round": 3,
+          "slot_ledger": {
+            "plan": {
+              "final_slot": "final_target",
+              "final_target_type": "date",
+              "slot_names": [
+                "bridge_1",
+                "bridge_2",
+                "bridge_3",
+                "final_target"
+              ]
+            },
+            "slots": {
+              "bridge_1": {
+                "claims": [
+                  "Béla Linder died in Belgrade.",
+                  "Béla Linder died in Belgrade",
+                  "The movie named after the place where Béla Linder died is named 'Belgrade'"
+                ],
+                "evidence_ids": [
+                  "4hop1__145494_698949_157828_162309::p0"
+                ],
+                "name": "bridge_1",
+                "source_queries": [
+                  "What is the movie named after the place where Bela Linder died, and what language was used in it?",
+                  "What is the movie named after the place where Bela Linder died, and what language was used in it?",
+                  "What is the movie named after the place where Bela Linder died, and what language was used in it?"
+                ],
+                "status": "supported"
+              },
+              "bridge_2": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_2",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_3": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_3",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "final_target": {
+                "claims": [
+                  "Estonia first attended the Olympics as an independent team in 1920.",
+                  "Estonia first attended the Olympics as an independent team in 1920.",
+                  "Estonia first attended the Olympics as an independent team in 1920.",
+                  "Estonia first attended the Olympics as an independent team in 1920"
+                ],
+                "evidence_ids": [
+                  "3hop1__105767_443779_52195::p1"
+                ],
+                "name": "final_target",
+                "source_queries": [
+                  "When did the country whose co-official language was used in the movie named after the place where Bela Linder died first attend the Olympics games as an independent team?",
+                  "When did the country whose co-official language was used in the movie named after the place where Bela Linder died first attend the Olympics games as an independent team?",
+                  "What is the movie named after the place where Bela Linder died, and what language was used in it?",
+                  "What is the movie named after the place where Bela Linder died, and what language was used in it?"
+                ],
+                "status": "supported"
+              }
+            }
+          },
+          "slot_ledger_answer_from_final_target": true,
+          "slot_ledger_candidate_answer": "1920",
+          "slot_ledger_final_target_evidence_ids": [
+            "3hop1__105767_443779_52195::p1"
+          ],
+          "slot_ledger_next_query": true,
+          "verifier_output": {
+            "answer_slot": "date component",
+            "claims": [
+              {
+                "claim": "The country whose co-official language was used in the movie named after the place where Béla Linder died first attended the Olympics games as an independent team in 1920.",
+                "evidence_ids": [
+                  "3hop1__105767_443779_52195::p1",
+                  "4hop1__145494_698949_157828_162309::p0"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              }
+            ],
+            "expected_gain": 0.0,
+            "final_target_match": true,
+            "need_more_evidence": false,
+            "overall_sufficiency": "sufficient",
+            "risk_score": 0.0,
+            "suggested_query": ""
+          }
+        }
+      ],
+      "_hop": "4hop",
+      "_f1": 0.0,
+      "_slot_answer": true,
+      "_slot_missing": false,
+      "_closure_success": true,
+      "_closure_steps": [
+        {
+          "action": "answer",
+          "budget_remaining": 0,
+          "closure_recheck": true,
+          "closure_recheck_attempt": true,
+          "closure_recheck_candidate_answer": "1920",
+          "closure_recheck_evidence_ids": [
+            "3hop1__105767_443779_52195::p1",
+            "4hop1__145494_698949_157828_162309::p0"
+          ],
+          "closure_recheck_reason": "existing_evidence_verified_repaired_answer",
+          "closure_recheck_scope": "retrieved",
+          "evidence_gain": 0.0,
+          "followup_backfill_queries": [
+            "When did the country whose co-official language was used in the movie named after the place where Bela Linder died first attend the Olympics games as an independent team?"
+          ],
+          "query": "What is the movie named after the place where Bela Linder died, and what language was used in it?",
+          "query_source": "slot_ledger",
+          "retrieved_ids": [
+            "2hop__770487_494646::p4",
+            "3hop1__465684_160545_62931::p3",
+            "4hop1__145494_698949_157828_162309::p14",
+            "4hop1__145494_698949_157828_162309::p0",
+            "4hop1__145494_698949_157828_162309::p15"
+          ],
+          "round": 3,
+          "slot_ledger": {
+            "plan": {
+              "final_slot": "final_target",
+              "final_target_type": "date",
+              "slot_names": [
+                "bridge_1",
+                "bridge_2",
+                "bridge_3",
+                "final_target"
+              ]
+            },
+            "slots": {
+              "bridge_1": {
+                "claims": [
+                  "Béla Linder died in Belgrade.",
+                  "Béla Linder died in Belgrade",
+                  "The movie named after the place where Béla Linder died is named 'Belgrade'"
+                ],
+                "evidence_ids": [
+                  "4hop1__145494_698949_157828_162309::p0"
+                ],
+                "name": "bridge_1",
+                "source_queries": [
+                  "What is the movie named after the place where Bela Linder died, and what language was used in it?",
+                  "What is the movie named after the place where Bela Linder died, and what language was used in it?",
+                  "What is the movie named after the place where Bela Linder died, and what language was used in it?"
+                ],
+                "status": "supported"
+              },
+              "bridge_2": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_2",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_3": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_3",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "final_target": {
+                "claims": [
+                  "Estonia first attended the Olympics as an independent team in 1920.",
+                  "Estonia first attended the Olympics as an independent team in 1920.",
+                  "Estonia first attended the Olympics as an independent team in 1920.",
+                  "Estonia first attended the Olympics as an independent team in 1920"
+                ],
+                "evidence_ids": [
+                  "3hop1__105767_443779_52195::p1"
+                ],
+                "name": "final_target",
+                "source_queries": [
+                  "When did the country whose co-official language was used in the movie named after the place where Bela Linder died first attend the Olympics games as an independent team?",
+                  "When did the country whose co-official language was used in the movie named after the place where Bela Linder died first attend the Olympics games as an independent team?",
+                  "What is the movie named after the place where Bela Linder died, and what language was used in it?",
+                  "What is the movie named after the place where Bela Linder died, and what language was used in it?"
+                ],
+                "status": "supported"
+              }
+            }
+          },
+          "slot_ledger_answer_from_final_target": true,
+          "slot_ledger_candidate_answer": "1920",
+          "slot_ledger_final_target_evidence_ids": [
+            "3hop1__105767_443779_52195::p1"
+          ],
+          "slot_ledger_next_query": true,
+          "verifier_output": {
+            "answer_slot": "date component",
+            "claims": [
+              {
+                "claim": "The country whose co-official language was used in the movie named after the place where Béla Linder died first attended the Olympics games as an independent team in 1920.",
+                "evidence_ids": [
+                  "3hop1__105767_443779_52195::p1",
+                  "4hop1__145494_698949_157828_162309::p0"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              }
+            ],
+            "expected_gain": 0.0,
+            "final_target_match": true,
+            "need_more_evidence": false,
+            "overall_sufficiency": "sufficient",
+            "risk_score": 0.0,
+            "suggested_query": ""
+          }
+        }
+      ],
+      "_slot_candidate_answers": [
+        "1920",
+        "1920",
+        "1920"
+      ],
+      "_final_evidence_ids": [
+        "3hop1__105767_443779_52195::p1"
+      ]
+    },
+    {
+      "cost": {
+        "llm_calls": 2,
+        "retrieval_calls": 2,
+        "retrieved_passages": 10,
+        "tokens": 180
+      },
+      "final_action": "answer",
+      "final_answer": "18 November",
+      "gold_answer": "May 4",
+      "id": "4hop1__151650_5274_458768_33632",
+      "method": "claim_risk",
+      "question": "What day is the Feast in the city where the headquarters of the only group larger than Desde El Principio's record label held on?",
+      "trajectory": [
+        {
+          "action": "refine_query",
+          "budget_remaining": 2,
+          "evidence_gain": 0.25,
+          "query": "What day is the Feast in the city where the headquarters of the only group larger than Desde El Principio's record label held on?",
+          "query_source": "initial",
+          "retrieved_ids": [
+            "4hop1__151650_5274_458768_33637::p15",
+            "4hop1__151650_5274_458768_33632::p1",
+            "2hop__151750_141308::p11",
+            "3hop1__64957_87694_124169::p15",
+            "4hop1__152146_5274_458768_33632::p18"
+          ],
+          "round": 1,
+          "slot_ledger": {
+            "plan": {
+              "final_slot": "final_target",
+              "final_target_type": "date",
+              "slot_names": [
+                "bridge_1",
+                "bridge_2",
+                "bridge_3",
+                "final_target"
+              ]
+            },
+            "slots": {
+              "bridge_1": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_1",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_2": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_2",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_3": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_3",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "final_target": {
+                "claims": [
+                  "The Feast of Our Lady of the Rosary is celebrated on 7 October.",
+                  "The Dedication of the Basilicas of the Apostles Peter and Paul is celebrated on 18 November."
+                ],
+                "evidence_ids": [
+                  "4hop1__152146_5274_458768_33632::p18",
+                  "3hop1__64957_87694_124169::p15"
+                ],
+                "name": "final_target",
+                "source_queries": [
+                  "What day is the Feast in the city where the headquarters of the only group larger than Desde El Principio's record label held on?",
+                  "What day is the Feast in the city where the headquarters of the only group larger than Desde El Principio's record label held on?"
+                ],
+                "status": "supported"
+              }
+            }
+          },
+          "slot_ledger_answer_from_final_target": true,
+          "slot_ledger_candidate_answer": "18 November",
+          "slot_ledger_final_target_evidence_ids": [
+            "4hop1__152146_5274_458768_33632::p18",
+            "3hop1__64957_87694_124169::p15"
+          ],
+          "verifier_output": {
+            "answer_slot": "date component",
+            "claims": [
+              {
+                "claim": "The Feast in the city where the headquarters of the only group larger than Desde El Principio's record label is held on 18 November.",
+                "evidence_ids": [
+                  "3hop1__64957_87694_124169::p15"
+                ],
+                "is_critical": true,
+                "missing_evidence": "missing_passage: Information about Desde El Principio's record label, the group larger than it, and its headquarters location.",
+                "status": "unclear"
+              }
+            ],
+            "expected_gain": 0.0,
+            "final_target_match": false,
+            "need_more_evidence": true,
+            "overall_sufficiency": "insufficient",
+            "risk_score": 0.0,
+            "suggested_query": "What is the name of the only group larger than Desde El Principio's record label, and where is its headquarters located?"
+          }
+        },
+        {
+          "action": "answer",
+          "budget_remaining": 1,
+          "closure_recheck": true,
+          "closure_recheck_attempt": true,
+          "closure_recheck_candidate_answer": "18 November",
+          "closure_recheck_evidence_ids": [
+            "3hop1__64957_87694_124169::p15"
+          ],
+          "closure_recheck_reason": "existing_evidence_verified_repaired_answer",
+          "closure_recheck_scope": "retrieved",
+          "evidence_gain": 0.0,
+          "followup_backfill_queries": [
+            "What day is the Feast in the city where the headquarters of the only group larger than Desde El Principio's record label held on?"
+          ],
+          "query": "What is the name of the only group larger than Desde El Principio's record label, and where is its headquarters located?",
+          "query_source": "slot_ledger",
+          "retrieved_ids": [
+            "4hop1__151650_5274_458768_33637::p15",
+            "4hop1__151650_5274_458768_33632::p1",
+            "2hop__151750_141308::p11",
+            "2hop__628752_538661::p7",
+            "3hop2__132957_133264_40768::p2"
+          ],
+          "round": 2,
+          "slot_ledger": {
+            "plan": {
+              "final_slot": "final_target",
+              "final_target_type": "date",
+              "slot_names": [
+                "bridge_1",
+                "bridge_2",
+                "bridge_3",
+                "final_target"
+              ]
+            },
+            "slots": {
+              "bridge_1": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_1",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_2": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_2",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_3": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_3",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "final_target": {
+                "claims": [
+                  "The Feast of Our Lady of the Rosary is celebrated on 7 October.",
+                  "The Dedication of the Basilicas of the Apostles Peter and Paul is celebrated on 18 November."
+                ],
+                "evidence_ids": [
+                  "4hop1__152146_5274_458768_33632::p18",
+                  "3hop1__64957_87694_124169::p15"
+                ],
+                "name": "final_target",
+                "source_queries": [
+                  "What day is the Feast in the city where the headquarters of the only group larger than Desde El Principio's record label held on?",
+                  "What day is the Feast in the city where the headquarters of the only group larger than Desde El Principio's record label held on?"
+                ],
+                "status": "supported"
+              }
+            }
+          },
+          "slot_ledger_answer_from_final_target": true,
+          "slot_ledger_candidate_answer": "18 November",
+          "slot_ledger_final_target_evidence_ids": [
+            "4hop1__152146_5274_458768_33632::p18",
+            "3hop1__64957_87694_124169::p15"
+          ],
+          "slot_ledger_next_query": true,
+          "verifier_output": {
+            "answer_slot": "date component",
+            "claims": [
+              {
+                "claim": "The Feast in the city where the headquarters of the only group larger than Desde El Principio's record label is held on 18 November.",
+                "evidence_ids": [
+                  "3hop1__64957_87694_124169::p15"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              }
+            ],
+            "expected_gain": 0.0,
+            "final_target_match": true,
+            "need_more_evidence": false,
+            "overall_sufficiency": "sufficient",
+            "risk_score": 0.0,
+            "suggested_query": ""
+          }
+        }
+      ],
+      "_hop": "4hop",
+      "_f1": 0.0,
+      "_slot_answer": true,
+      "_slot_missing": false,
+      "_closure_success": true,
+      "_closure_steps": [
+        {
+          "action": "answer",
+          "budget_remaining": 1,
+          "closure_recheck": true,
+          "closure_recheck_attempt": true,
+          "closure_recheck_candidate_answer": "18 November",
+          "closure_recheck_evidence_ids": [
+            "3hop1__64957_87694_124169::p15"
+          ],
+          "closure_recheck_reason": "existing_evidence_verified_repaired_answer",
+          "closure_recheck_scope": "retrieved",
+          "evidence_gain": 0.0,
+          "followup_backfill_queries": [
+            "What day is the Feast in the city where the headquarters of the only group larger than Desde El Principio's record label held on?"
+          ],
+          "query": "What is the name of the only group larger than Desde El Principio's record label, and where is its headquarters located?",
+          "query_source": "slot_ledger",
+          "retrieved_ids": [
+            "4hop1__151650_5274_458768_33637::p15",
+            "4hop1__151650_5274_458768_33632::p1",
+            "2hop__151750_141308::p11",
+            "2hop__628752_538661::p7",
+            "3hop2__132957_133264_40768::p2"
+          ],
+          "round": 2,
+          "slot_ledger": {
+            "plan": {
+              "final_slot": "final_target",
+              "final_target_type": "date",
+              "slot_names": [
+                "bridge_1",
+                "bridge_2",
+                "bridge_3",
+                "final_target"
+              ]
+            },
+            "slots": {
+              "bridge_1": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_1",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_2": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_2",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_3": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_3",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "final_target": {
+                "claims": [
+                  "The Feast of Our Lady of the Rosary is celebrated on 7 October.",
+                  "The Dedication of the Basilicas of the Apostles Peter and Paul is celebrated on 18 November."
+                ],
+                "evidence_ids": [
+                  "4hop1__152146_5274_458768_33632::p18",
+                  "3hop1__64957_87694_124169::p15"
+                ],
+                "name": "final_target",
+                "source_queries": [
+                  "What day is the Feast in the city where the headquarters of the only group larger than Desde El Principio's record label held on?",
+                  "What day is the Feast in the city where the headquarters of the only group larger than Desde El Principio's record label held on?"
+                ],
+                "status": "supported"
+              }
+            }
+          },
+          "slot_ledger_answer_from_final_target": true,
+          "slot_ledger_candidate_answer": "18 November",
+          "slot_ledger_final_target_evidence_ids": [
+            "4hop1__152146_5274_458768_33632::p18",
+            "3hop1__64957_87694_124169::p15"
+          ],
+          "slot_ledger_next_query": true,
+          "verifier_output": {
+            "answer_slot": "date component",
+            "claims": [
+              {
+                "claim": "The Feast in the city where the headquarters of the only group larger than Desde El Principio's record label is held on 18 November.",
+                "evidence_ids": [
+                  "3hop1__64957_87694_124169::p15"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              }
+            ],
+            "expected_gain": 0.0,
+            "final_target_match": true,
+            "need_more_evidence": false,
+            "overall_sufficiency": "sufficient",
+            "risk_score": 0.0,
+            "suggested_query": ""
+          }
+        }
+      ],
+      "_slot_candidate_answers": [
+        "18 November",
+        "18 November"
+      ],
+      "_final_evidence_ids": [
+        "4hop1__152146_5274_458768_33632::p18",
+        "3hop1__64957_87694_124169::p15"
+      ]
+    },
+    {
+      "cost": {
+        "llm_calls": 1,
+        "retrieval_calls": 1,
+        "retrieved_passages": 5,
+        "tokens": 96
+      },
+      "final_action": "answer",
+      "final_answer": "18 November",
+      "gold_answer": "May 4",
+      "id": "4hop1__152146_5274_458768_33632",
+      "method": "claim_risk",
+      "question": "What day is the Feast held in the city where the headquarters of the only group larger than Långa nätter's record label is located?",
+      "trajectory": [
+        {
+          "action": "answer",
+          "budget_remaining": 2,
+          "closure_recheck": true,
+          "closure_recheck_attempt": true,
+          "closure_recheck_candidate_answer": "18 November",
+          "closure_recheck_evidence_ids": [
+            "4hop3__668721_132409_371500_35031::p19",
+            "3hop2__851134_613770_7713::p13",
+            "3hop1__64957_87694_124169::p15"
+          ],
+          "closure_recheck_reason": "existing_evidence_verified_repaired_answer",
+          "closure_recheck_scope": "retrieved",
+          "evidence_gain": 0.0,
+          "query": "What day is the Feast held in the city where the headquarters of the only group larger than Långa nätter's record label is located?",
+          "query_source": "initial",
+          "retrieved_ids": [
+            "4hop3__668721_132409_371500_35031::p19",
+            "3hop2__851134_613770_7713::p13",
+            "4hop3__387712_132409_223216_35031::p11",
+            "3hop1__64957_87694_124169::p15",
+            "4hop1__152146_5274_458768_33632::p18"
+          ],
+          "round": 1,
+          "slot_ledger": {
+            "plan": {
+              "final_slot": "final_target",
+              "final_target_type": "date",
+              "slot_names": [
+                "bridge_1",
+                "bridge_2",
+                "bridge_3",
+                "final_target"
+              ]
+            },
+            "slots": {
+              "bridge_1": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_1",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_2": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_2",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_3": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_3",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "final_target": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "final_target",
+                "source_queries": [],
+                "status": "pending"
+              }
+            }
+          },
+          "slot_ledger_final_target_evidence_ids": [],
+          "verifier_output": {
+            "answer_slot": "date component",
+            "claims": [
+              {
+                "claim": "The headquarters of the only group larger than Långa nätter's record label is located in Kathmandu.",
+                "evidence_ids": [
+                  "4hop3__668721_132409_371500_35031::p19",
+                  "3hop2__851134_613770_7713::p13"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              },
+              {
+                "claim": "The Feast held in Kathmandu is on 18 November.",
+                "evidence_ids": [
+                  "3hop1__64957_87694_124169::p15"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              }
+            ],
+            "expected_gain": 0.0,
+            "final_target_match": true,
+            "need_more_evidence": false,
+            "overall_sufficiency": "sufficient",
+            "risk_score": 0.0,
+            "suggested_query": ""
+          }
+        }
+      ],
+      "_hop": "4hop",
+      "_f1": 0.0,
+      "_slot_answer": false,
+      "_slot_missing": false,
+      "_closure_success": true,
+      "_closure_steps": [
+        {
+          "action": "answer",
+          "budget_remaining": 2,
+          "closure_recheck": true,
+          "closure_recheck_attempt": true,
+          "closure_recheck_candidate_answer": "18 November",
+          "closure_recheck_evidence_ids": [
+            "4hop3__668721_132409_371500_35031::p19",
+            "3hop2__851134_613770_7713::p13",
+            "3hop1__64957_87694_124169::p15"
+          ],
+          "closure_recheck_reason": "existing_evidence_verified_repaired_answer",
+          "closure_recheck_scope": "retrieved",
+          "evidence_gain": 0.0,
+          "query": "What day is the Feast held in the city where the headquarters of the only group larger than Långa nätter's record label is located?",
+          "query_source": "initial",
+          "retrieved_ids": [
+            "4hop3__668721_132409_371500_35031::p19",
+            "3hop2__851134_613770_7713::p13",
+            "4hop3__387712_132409_223216_35031::p11",
+            "3hop1__64957_87694_124169::p15",
+            "4hop1__152146_5274_458768_33632::p18"
+          ],
+          "round": 1,
+          "slot_ledger": {
+            "plan": {
+              "final_slot": "final_target",
+              "final_target_type": "date",
+              "slot_names": [
+                "bridge_1",
+                "bridge_2",
+                "bridge_3",
+                "final_target"
+              ]
+            },
+            "slots": {
+              "bridge_1": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_1",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_2": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_2",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_3": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_3",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "final_target": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "final_target",
+                "source_queries": [],
+                "status": "pending"
+              }
+            }
+          },
+          "slot_ledger_final_target_evidence_ids": [],
+          "verifier_output": {
+            "answer_slot": "date component",
+            "claims": [
+              {
+                "claim": "The headquarters of the only group larger than Långa nätter's record label is located in Kathmandu.",
+                "evidence_ids": [
+                  "4hop3__668721_132409_371500_35031::p19",
+                  "3hop2__851134_613770_7713::p13"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              },
+              {
+                "claim": "The Feast held in Kathmandu is on 18 November.",
+                "evidence_ids": [
+                  "3hop1__64957_87694_124169::p15"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              }
+            ],
+            "expected_gain": 0.0,
+            "final_target_match": true,
+            "need_more_evidence": false,
+            "overall_sufficiency": "sufficient",
+            "risk_score": 0.0,
+            "suggested_query": ""
+          }
+        }
+      ],
+      "_slot_candidate_answers": [],
+      "_final_evidence_ids": []
+    },
+    {
+      "cost": {
+        "llm_calls": 3,
+        "retrieval_calls": 3,
+        "retrieved_passages": 15,
+        "tokens": 256
+      },
+      "final_action": "answer",
+      "final_answer": "Canada",
+      "gold_answer": "Rio Linda",
+      "id": "4hop1__28352_53706_795904_580996",
+      "method": "claim_risk",
+      "question": "What shares a border with the city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works?",
+      "trajectory": [
+        {
+          "action": "refine_query",
+          "budget_remaining": 2,
+          "evidence_gain": 0.25,
+          "query": "What shares a border with the city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works?",
+          "query_source": "initial",
+          "retrieved_ids": [
+            "2hop__132854_417697::p3",
+            "4hop1__28352_53706_795904_580996::p10",
+            "4hop1__28352_53706_795904_580996::p17",
+            "4hop1__463635_624859_355213_203322::p10",
+            "4hop1__43565_624859_355213_203322::p8"
+          ],
+          "round": 1,
+          "slot_ledger": {
+            "plan": {
+              "final_slot": "final_target",
+              "final_target_type": "person",
+              "slot_names": [
+                "bridge_1",
+                "bridge_2",
+                "bridge_3",
+                "final_target"
+              ]
+            },
+            "slots": {
+              "bridge_1": {
+                "claims": [
+                  "The planes were originally going to California on 9/11.",
+                  "The planes were originally going to California on 9/11.",
+                  "The planes were originally going to California on 9/11."
+                ],
+                "evidence_ids": [
+                  "4hop1__28352_53706_795904_580996::p10"
+                ],
+                "name": "bridge_1",
+                "source_queries": [
+                  "What shares a border with the city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works?",
+                  "What is the name of the city where the person who went to California during the gold rush works?",
+                  "What is the name of the city where the person who went to California on 9/11 works?"
+                ],
+                "status": "supported"
+              },
+              "bridge_2": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_2",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_3": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_3",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "final_target": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "final_target",
+                "source_queries": [],
+                "status": "pending"
+              }
+            }
+          },
+          "slot_ledger_final_target_evidence_ids": [],
+          "verifier_output": {
+            "answer_slot": "container/location",
+            "claims": [
+              {
+                "claim": "The planes were originally going to California on 9/11.",
+                "evidence_ids": [
+                  "4hop1__28352_53706_795904_580996::p10"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              },
+              {
+                "claim": "The person who went to the state where the planes were originally going on 9/11 worked during the gold rush.",
+                "evidence_ids": [
+                  "4hop1__28352_53706_795904_580996::p10",
+                  "4hop1__28352_53706_795904_580996::p17"
+                ],
+                "is_critical": true,
+                "missing_evidence": "missing_passage: Information about the person who went to California during the gold rush and their work.",
+                "status": "unclear"
+              },
+              {
+                "claim": "The city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works shares a border with Canada.",
+                "evidence_ids": [
+                  "4hop1__28352_53706_795904_580996::p10",
+                  "4hop1__28352_53706_795904_580996::p17",
+                  "4hop1__463635_624859_355213_203322::p10"
+                ],
+                "is_critical": true,
+                "missing_evidence": "missing_passage: Information about the city where the person who went to California during the gold rush works.",
+                "status": "unclear"
+              }
+            ],
+            "expected_gain": 0.0,
+            "final_target_match": false,
+            "need_more_evidence": true,
+            "overall_sufficiency": "insufficient",
+            "risk_score": 0.0,
+            "suggested_query": "What is the name of the city where the person who went to California during the gold rush works?"
+          }
+        },
+        {
+          "action": "refine_query",
+          "budget_remaining": 1,
+          "evidence_gain": 0.25,
+          "followup_backfill_queries": [
+            "What shares a border with the city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works?"
+          ],
+          "query": "What is the name of the city where the person who went to California during the gold rush works?",
+          "query_source": "slot_ledger",
+          "retrieved_ids": [
+            "4hop1__83058_53706_795904_580996::p10",
+            "4hop1__28352_53706_795904_580996::p4",
+            "4hop1__28352_53706_795904_580996::p17",
+            "4hop1__236903_153080_33897_81096::p17",
+            "4hop1__28352_53706_795904_580996::p10"
+          ],
+          "round": 2,
+          "slot_ledger": {
+            "plan": {
+              "final_slot": "final_target",
+              "final_target_type": "person",
+              "slot_names": [
+                "bridge_1",
+                "bridge_2",
+                "bridge_3",
+                "final_target"
+              ]
+            },
+            "slots": {
+              "bridge_1": {
+                "claims": [
+                  "The planes were originally going to California on 9/11.",
+                  "The planes were originally going to California on 9/11.",
+                  "The planes were originally going to California on 9/11."
+                ],
+                "evidence_ids": [
+                  "4hop1__28352_53706_795904_580996::p10"
+                ],
+                "name": "bridge_1",
+                "source_queries": [
+                  "What shares a border with the city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works?",
+                  "What is the name of the city where the person who went to California during the gold rush works?",
+                  "What is the name of the city where the person who went to California on 9/11 works?"
+                ],
+                "status": "supported"
+              },
+              "bridge_2": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_2",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_3": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_3",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "final_target": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "final_target",
+                "source_queries": [],
+                "status": "pending"
+              }
+            }
+          },
+          "slot_ledger_final_target_evidence_ids": [],
+          "slot_ledger_next_query": true,
+          "verifier_output": {
+            "answer_slot": "container/location",
+            "claims": [
+              {
+                "claim": "The planes were originally going to California on 9/11.",
+                "evidence_ids": [
+                  "4hop1__28352_53706_795904_580996::p10"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              },
+              {
+                "claim": "The person who went to the state where the planes were originally going on 9/11 works in that state.",
+                "evidence_ids": [],
+                "is_critical": true,
+                "missing_evidence": "missing_passage: Information about the person who went to California and their current workplace.",
+                "status": "unsupported"
+              },
+              {
+                "claim": "The city where the person who went to the state where the planes were originally going on 9/11 works shares a border with Canada.",
+                "evidence_ids": [],
+                "is_critical": true,
+                "missing_evidence": "missing_passage: Information about the specific city where the person works and its geographical location.",
+                "status": "unclear"
+              }
+            ],
+            "expected_gain": 0.0,
+            "final_target_match": false,
+            "need_more_evidence": true,
+            "overall_sufficiency": "insufficient",
+            "risk_score": 0.0,
+            "suggested_query": "What is the name of the city where the person who went to California on 9/11 works?"
+          }
+        },
+        {
+          "action": "answer",
+          "budget_remaining": 0,
+          "closure_recheck": true,
+          "closure_recheck_attempt": true,
+          "closure_recheck_candidate_answer": "Canada",
+          "closure_recheck_evidence_ids": [
+            "4hop1__463635_624859_355213_203322::p10",
+            "4hop1__43565_624859_355213_203322::p8"
+          ],
+          "closure_recheck_reason": "existing_evidence_verified_repaired_answer",
+          "closure_recheck_scope": "retrieved",
+          "evidence_gain": 0.0,
+          "followup_backfill_queries": [
+            "What shares a border with the city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works?"
+          ],
+          "query": "What is the name of the city where the person who went to California on 9/11 works?",
+          "query_source": "slot_ledger",
+          "retrieved_ids": [
+            "2hop__132854_417697::p3",
+            "4hop1__28352_53706_795904_580996::p10",
+            "4hop1__726152_153080_159767_81096::p4",
+            "2hop__132854_417697::p9",
+            "4hop1__28352_53706_795904_580996::p17"
+          ],
+          "round": 3,
+          "slot_ledger": {
+            "plan": {
+              "final_slot": "final_target",
+              "final_target_type": "person",
+              "slot_names": [
+                "bridge_1",
+                "bridge_2",
+                "bridge_3",
+                "final_target"
+              ]
+            },
+            "slots": {
+              "bridge_1": {
+                "claims": [
+                  "The planes were originally going to California on 9/11.",
+                  "The planes were originally going to California on 9/11.",
+                  "The planes were originally going to California on 9/11."
+                ],
+                "evidence_ids": [
+                  "4hop1__28352_53706_795904_580996::p10"
+                ],
+                "name": "bridge_1",
+                "source_queries": [
+                  "What shares a border with the city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works?",
+                  "What is the name of the city where the person who went to California during the gold rush works?",
+                  "What is the name of the city where the person who went to California on 9/11 works?"
+                ],
+                "status": "supported"
+              },
+              "bridge_2": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_2",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_3": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_3",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "final_target": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "final_target",
+                "source_queries": [],
+                "status": "pending"
+              }
+            }
+          },
+          "slot_ledger_final_target_evidence_ids": [],
+          "slot_ledger_next_query": true,
+          "verifier_output": {
+            "answer_slot": "final requested target",
+            "claims": [
+              {
+                "claim": "The city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works shares a border with Canada.",
+                "evidence_ids": [
+                  "4hop1__463635_624859_355213_203322::p10",
+                  "4hop1__43565_624859_355213_203322::p8"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              }
+            ],
+            "expected_gain": 0.0,
+            "final_target_match": true,
+            "need_more_evidence": false,
+            "overall_sufficiency": "sufficient",
+            "risk_score": 0.0,
+            "suggested_query": ""
+          }
+        }
+      ],
+      "_hop": "4hop",
+      "_f1": 0.0,
+      "_slot_answer": false,
+      "_slot_missing": false,
+      "_closure_success": true,
+      "_closure_steps": [
+        {
+          "action": "answer",
+          "budget_remaining": 0,
+          "closure_recheck": true,
+          "closure_recheck_attempt": true,
+          "closure_recheck_candidate_answer": "Canada",
+          "closure_recheck_evidence_ids": [
+            "4hop1__463635_624859_355213_203322::p10",
+            "4hop1__43565_624859_355213_203322::p8"
+          ],
+          "closure_recheck_reason": "existing_evidence_verified_repaired_answer",
+          "closure_recheck_scope": "retrieved",
+          "evidence_gain": 0.0,
+          "followup_backfill_queries": [
+            "What shares a border with the city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works?"
+          ],
+          "query": "What is the name of the city where the person who went to California on 9/11 works?",
+          "query_source": "slot_ledger",
+          "retrieved_ids": [
+            "2hop__132854_417697::p3",
+            "4hop1__28352_53706_795904_580996::p10",
+            "4hop1__726152_153080_159767_81096::p4",
+            "2hop__132854_417697::p9",
+            "4hop1__28352_53706_795904_580996::p17"
+          ],
+          "round": 3,
+          "slot_ledger": {
+            "plan": {
+              "final_slot": "final_target",
+              "final_target_type": "person",
+              "slot_names": [
+                "bridge_1",
+                "bridge_2",
+                "bridge_3",
+                "final_target"
+              ]
+            },
+            "slots": {
+              "bridge_1": {
+                "claims": [
+                  "The planes were originally going to California on 9/11.",
+                  "The planes were originally going to California on 9/11.",
+                  "The planes were originally going to California on 9/11."
+                ],
+                "evidence_ids": [
+                  "4hop1__28352_53706_795904_580996::p10"
+                ],
+                "name": "bridge_1",
+                "source_queries": [
+                  "What shares a border with the city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works?",
+                  "What is the name of the city where the person who went to California during the gold rush works?",
+                  "What is the name of the city where the person who went to California on 9/11 works?"
+                ],
+                "status": "supported"
+              },
+              "bridge_2": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_2",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "bridge_3": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "bridge_3",
+                "source_queries": [],
+                "status": "pending"
+              },
+              "final_target": {
+                "claims": [],
+                "evidence_ids": [],
+                "name": "final_target",
+                "source_queries": [],
+                "status": "pending"
+              }
+            }
+          },
+          "slot_ledger_final_target_evidence_ids": [],
+          "slot_ledger_next_query": true,
+          "verifier_output": {
+            "answer_slot": "final requested target",
+            "claims": [
+              {
+                "claim": "The city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works shares a border with Canada.",
+                "evidence_ids": [
+                  "4hop1__463635_624859_355213_203322::p10",
+                  "4hop1__43565_624859_355213_203322::p8"
+                ],
+                "is_critical": true,
+                "missing_evidence": "",
+                "status": "supported"
+              }
+            ],
+            "expected_gain": 0.0,
+            "final_target_match": true,
+            "need_more_evidence": false,
+            "overall_sufficiency": "sufficient",
+            "risk_score": 0.0,
+            "suggested_query": ""
+          }
+        }
+      ],
+      "_slot_candidate_answers": [],
+      "_final_evidence_ids": []
+    }
+  ],
+  "closure_success_cases": [
+    {
+      "id": "2hop__153573_44085",
+      "hop": "2hop",
+      "question": "What was the show named after the character featured in the video game Mickey's Safari in Letterland?",
+      "gold": "The Mickey Mouse Club",
+      "candidate": "Metal Mickey",
+      "final_answer": "Metal Mickey",
+      "f1": 0.3333333333333333,
+      "evidence_ids": [
+        "2hop__153573_44085::p14",
+        "2hop__153573_44085::p9"
+      ],
+      "slot_answer": false
+    },
+    {
+      "id": "2hop__167577_31122",
+      "hop": "2hop",
+      "question": "What century did the author of A Treatise Concerning the Principles of Human Knowledge live in?",
+      "gold": "18th",
+      "candidate": "18th",
+      "final_answer": "18th",
+      "f1": 1.0,
+      "evidence_ids": [
+        "2hop__167577_31122::p10"
+      ],
+      "slot_answer": true
+    },
+    {
+      "id": "3hop1__103751_24918_24991",
+      "hop": "3hop",
+      "question": "What went down after the Soviet President visiting the country of origin of Ethella Chupryk while the protests were taking place departed from the Kremlin?",
+      "gold": "Soviet flag",
+      "candidate": "Dissolution of the Soviet Union",
+      "final_answer": "Dissolution of the Soviet Union",
+      "f1": 0.28571428571428575,
+      "evidence_ids": [
+        "3hop1__103751_24918_24991::p11"
+      ],
+      "slot_answer": false
+    },
+    {
+      "id": "3hop1__104996_160713_77246",
+      "hop": "3hop",
+      "question": "What is the meaning of the word that is also a majority religion in the area that became India when the country that release Ankahi was created in Arabic dictionary?",
+      "gold": "the country of India",
+      "candidate": "Islam",
+      "final_answer": "Islam",
+      "f1": 0.0,
+      "evidence_ids": [
+        "3hop1__248929_160713_77246::p3",
+        "3hop1__104996_160713_77246::p15",
+        "3hop1__104996_160713_77246::p18"
+      ],
+      "slot_answer": false
+    },
+    {
+      "id": "3hop1__105767_443779_52195",
+      "hop": "3hop",
+      "question": "Who is the president of the newly declared independent country that is part of the commission of truth and friendship with the country that eats Kemplang?",
+      "gold": "Francisco Guterres",
+      "candidate": "Susilo Bambang Yudhoyono",
+      "final_answer": "Susilo Bambang Yudhoyono",
+      "f1": 0.0,
+      "evidence_ids": [
+        "3hop1__144439_443779_52195::p7",
+        "3hop1__105767_443779_52195::p3",
+        "3hop1__103881_443779_52195::p7"
+      ],
+      "slot_answer": true
+    },
+    {
+      "id": "3hop1__159803_89752_75165",
+      "hop": "3hop",
+      "question": "What's the population of the largest state in the region of the U.S. where trading practices were once threatened by the Navigation Acts?",
+      "gold": "1,335,907",
+      "candidate": "39.3 million",
+      "final_answer": "39.3 million",
+      "f1": 0.0,
+      "evidence_ids": [
+        "2hop__40270_11402::p13"
+      ],
+      "slot_answer": true
+    },
+    {
+      "id": "4hop1__145494_698949_157828_162309",
+      "hop": "4hop",
+      "question": "When did the country whose co-official language was used in the movie named after the place where Bela Linder died first attend the Olympics games as an independent team?",
+      "gold": "2016",
+      "candidate": "1920",
+      "final_answer": "1920",
+      "f1": 0.0,
+      "evidence_ids": [
+        "3hop1__105767_443779_52195::p1",
+        "4hop1__145494_698949_157828_162309::p0"
+      ],
+      "slot_answer": true
+    },
+    {
+      "id": "4hop1__151650_5274_458768_33632",
+      "hop": "4hop",
+      "question": "What day is the Feast in the city where the headquarters of the only group larger than Desde El Principio's record label held on?",
+      "gold": "May 4",
+      "candidate": "18 November",
+      "final_answer": "18 November",
+      "f1": 0.0,
+      "evidence_ids": [
+        "3hop1__64957_87694_124169::p15"
+      ],
+      "slot_answer": true
+    },
+    {
+      "id": "4hop1__152146_5274_458768_33632",
+      "hop": "4hop",
+      "question": "What day is the Feast held in the city where the headquarters of the only group larger than Långa nätter's record label is located?",
+      "gold": "May 4",
+      "candidate": "18 November",
+      "final_answer": "18 November",
+      "f1": 0.0,
+      "evidence_ids": [
+        "4hop3__668721_132409_371500_35031::p19",
+        "3hop2__851134_613770_7713::p13",
+        "3hop1__64957_87694_124169::p15"
+      ],
+      "slot_answer": false
+    },
+    {
+      "id": "4hop1__161605_32392_823060_610794",
+      "hop": "4hop",
+      "question": "What county is the city that shares a border with the state capital of the state where Darlington County located in?",
+      "gold": "Richland County",
+      "candidate": "Charleston County",
+      "final_answer": "Charleston County",
+      "f1": 0.5,
+      "evidence_ids": [
+        "4hop3__387712_132409_223216_35031::p10",
+        "3hop1__159803_89752_75165::p8"
+      ],
+      "slot_answer": true
+    },
+    {
+      "id": "4hop1__161810_583746_457883_650651",
+      "hop": "4hop",
+      "question": "Country A has an embassy from the country that contains the bay where the city of General Santos is located. What network created country A's version of The Biggest Loser?",
+      "gold": "NBC",
+      "candidate": "NBC",
+      "final_answer": "NBC",
+      "f1": 1.0,
+      "evidence_ids": [
+        "4hop1__161810_583746_457883_650651::p18",
+        "4hop1__161810_583746_457883_650651::p10"
+      ],
+      "slot_answer": false
+    },
+    {
+      "id": "4hop1__28352_53706_795904_580996",
+      "hop": "4hop",
+      "question": "What shares a border with the city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works?",
+      "gold": "Rio Linda",
+      "candidate": "Canada",
+      "final_answer": "Canada",
+      "f1": 0.0,
+      "evidence_ids": [
+        "4hop1__463635_624859_355213_203322::p10",
+        "4hop1__43565_624859_355213_203322::p8"
+      ],
+      "slot_answer": false
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+# Metrics: layer1_api_balanced300_dense_bge_llm_verifier_subset10
+
+## ours
+- count: 10
+- answer_f1: 0.09391845627139744
+- avg_retrieval_calls: 2
+- unsupported_claim_rate: 0.5
+- abstention_rate: 0.4
+- no_new_evidence_call_rate: 0.5
+
+## prompt_verifier
+- count: 10
+- answer_f1: 0.08587055874981571
+- avg_retrieval_calls: 1
+- unsupported_claim_rate: 0.5
+- abstention_rate: 0.6
+- no_new_evidence_call_rate: 0

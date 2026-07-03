@@ -1,0 +1,182 @@
+{
+  "summaries": [
+    {
+      "name": "subset30_run",
+      "n": 30,
+      "answer_f1": 0.5833333333333334,
+      "coverage": 0.8,
+      "avg_rounds": 1.6333333333333333,
+      "action_counts": {
+        "abstain": 6,
+        "answer": 24
+      },
+      "hop_counts": {
+        "2hop": 30
+      },
+      "hop_f1": {
+        "2hop": 0.5833333333333334
+      },
+      "hop_coverage": {
+        "2hop": 0.8
+      },
+      "closure_attempt_records": 7,
+      "closure_success_records": 1,
+      "cost_cleanup_records": 2,
+      "non_json_records": 0,
+      "invalid_json_records": 0,
+      "think_records": 0,
+      "last_suff_counts": {
+        "insufficient": 6,
+        "sufficient": 24
+      },
+      "f1_zero": 11,
+      "f1_positive": 19,
+      "f1_ge_0_5": 18
+    },
+    {
+      "name": "full300_same_first30_ids",
+      "n": 30,
+      "answer_f1": 0.5833333333333334,
+      "coverage": 0.8,
+      "avg_rounds": 1.6333333333333333,
+      "action_counts": {
+        "abstain": 6,
+        "answer": 24
+      },
+      "hop_counts": {
+        "2hop": 30
+      },
+      "hop_f1": {
+        "2hop": 0.5833333333333334
+      },
+      "hop_coverage": {
+        "2hop": 0.8
+      },
+      "closure_attempt_records": 7,
+      "closure_success_records": 1,
+      "cost_cleanup_records": 2,
+      "non_json_records": 0,
+      "invalid_json_records": 0,
+      "think_records": 0,
+      "last_suff_counts": {
+        "insufficient": 6,
+        "sufficient": 24
+      },
+      "f1_zero": 11,
+      "f1_positive": 19,
+      "f1_ge_0_5": 18
+    },
+    {
+      "name": "full300_remaining270",
+      "n": 270,
+      "answer_f1": 0.2062528829195496,
+      "coverage": 0.44074074074074077,
+      "avg_rounds": 2.1444444444444444,
+      "action_counts": {
+        "abstain": 151,
+        "answer": 119
+      },
+      "hop_counts": {
+        "2hop": 70,
+        "3hop": 100,
+        "4hop": 100
+      },
+      "hop_f1": {
+        "2hop": 0.3846258503401361,
+        "3hop": 0.18707326007326006,
+        "4hop": 0.10057142857142858
+      },
+      "hop_coverage": {
+        "2hop": 0.7142857142857143,
+        "3hop": 0.39,
+        "4hop": 0.3
+      },
+      "closure_attempt_records": 131,
+      "closure_success_records": 32,
+      "cost_cleanup_records": 44,
+      "non_json_records": 4,
+      "invalid_json_records": 0,
+      "think_records": 0,
+      "last_suff_counts": {
+        "insufficient": 137,
+        "sufficient": 123,
+        "conflicting": 7,
+        "unclear": 3
+      },
+      "f1_zero": 198,
+      "f1_positive": 72,
+      "f1_ge_0_5": 62
+    },
+    {
+      "name": "full300_all300",
+      "n": 300,
+      "answer_f1": 0.24396092796092797,
+      "coverage": 0.4766666666666667,
+      "avg_rounds": 2.0933333333333333,
+      "action_counts": {
+        "abstain": 157,
+        "answer": 143
+      },
+      "hop_counts": {
+        "2hop": 100,
+        "3hop": 100,
+        "4hop": 100
+      },
+      "hop_f1": {
+        "2hop": 0.44423809523809527,
+        "3hop": 0.18707326007326006,
+        "4hop": 0.10057142857142858
+      },
+      "hop_coverage": {
+        "2hop": 0.74,
+        "3hop": 0.39,
+        "4hop": 0.3
+      },
+      "closure_attempt_records": 138,
+      "closure_success_records": 33,
+      "cost_cleanup_records": 46,
+      "non_json_records": 4,
+      "invalid_json_records": 0,
+      "think_records": 0,
+      "last_suff_counts": {
+        "insufficient": 143,
+        "sufficient": 147,
+        "conflicting": 7,
+        "unclear": 3
+      },
+      "f1_zero": 209,
+      "f1_positive": 91,
+      "f1_ge_0_5": 80
+    }
+  ],
+  "closure_summary": {
+    "full_all300": {
+      "successes": 33,
+      "exact_f1_1": 5,
+      "partial_positive": 11,
+      "f1_zero": 17,
+      "mean_f1": 0.30567580567580566
+    },
+    "full_first30": {
+      "successes": 1,
+      "exact_f1_1": 1,
+      "partial_positive": 0,
+      "f1_zero": 0,
+      "mean_f1": 1.0
+    },
+    "full_rest270": {
+      "successes": 32,
+      "exact_f1_1": 4,
+      "partial_positive": 11,
+      "f1_zero": 17,
+      "mean_f1": 0.2839781746031746
+    },
+    "subset30": {
+      "successes": 1,
+      "exact_f1_1": 1,
+      "partial_positive": 0,
+      "f1_zero": 0,
+      "mean_f1": 1.0
+    }
+  }
+}

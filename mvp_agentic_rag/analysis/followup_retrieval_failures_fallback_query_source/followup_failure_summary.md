@@ -1,0 +1,171 @@
+# Follow-Up Retrieval Failure Analysis
+
+Run: `runs\layer1_api_balanced300_dense_bge_decomp_gate_claim_evidence_memory_structured_query_fallback_query_source_claim_risk_subset30_agentic_rag_baseline`
+
+Case definition: claim_risk follow-up step with evidence_gain <= 0
+
+## Summary
+
+- cases: 18
+- support_in_raw_top50_rate: 1.0000
+- support_in_original_question_top50_rate: 1.0000
+
+## Category Counts
+
+| category | count |
+| --- | ---: |
+| support_already_seen_before_followup | 18 |
+| verifier_failed_despite_support_context | 16 |
+| support_retrieved_but_no_evidence_gain | 15 |
+| top_k_too_small | 2 |
+| per_subquery_or_total_top_k_too_small | 2 |
+| query_drops_question_constraints | 1 |
+
+## Query Source Counts
+
+| query_source | count |
+| --- | ---: |
+| structured_llm | 12 |
+| verifier_fallback | 6 |
+
+## Representative Cases
+
+### 2hop__129721_40482 round 2
+
+- query_source: `structured_llm`
+- action: `refine_query`
+- categories: support_retrieved_but_no_evidence_gain, support_already_seen_before_followup, verifier_failed_despite_support_context
+- raw_rank_first_support: 1
+- original_question_rank_first_support: 1
+- support_seen_before: 2hop__129721_40482::p14, 2hop__129721_40482::p18
+- support_in_current_retrieved: 2hop__129721_40482::p14, 2hop__129721_40482::p18
+- new_support_in_current_retrieved: 
+- question: From whom did the Huguenots in the state encompassing Zubly Cemetery purchase land from?
+- query: Who did the Huguenots in Aiken County, South Carolina purchase land from?
+- supporting_ids: 2hop__129721_40482::p14, 2hop__129721_40482::p18
+
+### 2hop__129721_40482 round 3
+
+- query_source: `verifier_fallback`
+- action: `abstain`
+- categories: support_retrieved_but_no_evidence_gain, support_already_seen_before_followup, verifier_failed_despite_support_context
+- raw_rank_first_support: 1
+- original_question_rank_first_support: 1
+- support_seen_before: 2hop__129721_40482::p14, 2hop__129721_40482::p18
+- support_in_current_retrieved: 2hop__129721_40482::p14, 2hop__129721_40482::p18
+- new_support_in_current_retrieved: 
+- question: From whom did the Huguenots in the state encompassing Zubly Cemetery purchase land from?
+- query: From whom did the Huguenots in South Carolina, specifically in the area of Zubly Cemetery, purchase land?
+- supporting_ids: 2hop__129721_40482::p14, 2hop__129721_40482::p18
+
+### 2hop__131951_643670 round 2
+
+- query_source: `structured_llm`
+- action: `refine_query`
+- categories: support_retrieved_but_no_evidence_gain, support_already_seen_before_followup, verifier_failed_despite_support_context
+- raw_rank_first_support: 1
+- original_question_rank_first_support: 1
+- support_seen_before: 2hop__131951_643670::p10, 2hop__131951_643670::p6
+- support_in_current_retrieved: 2hop__131951_643670::p10, 2hop__131951_643670::p6
+- new_support_in_current_retrieved: 
+- question: What is the name for the mouth of the watercourse of the body of water by Rotterdam Centrum?
+- query: name of the mouth of the watercourse by Rotterdam Centrum
+- supporting_ids: 2hop__131951_643670::p10, 2hop__131951_643670::p6
+
+### 2hop__131951_643670 round 3
+
+- query_source: `verifier_fallback`
+- action: `abstain`
+- categories: support_retrieved_but_no_evidence_gain, support_already_seen_before_followup, verifier_failed_despite_support_context
+- raw_rank_first_support: 1
+- original_question_rank_first_support: 1
+- support_seen_before: 2hop__131951_643670::p10, 2hop__131951_643670::p6
+- support_in_current_retrieved: 2hop__131951_643670::p10, 2hop__131951_643670::p6
+- new_support_in_current_retrieved: 
+- question: What is the name for the mouth of the watercourse of the body of water by Rotterdam Centrum?
+- query: What is the name of the mouth of the watercourse by Rotterdam Centrum?
+- supporting_ids: 2hop__131951_643670::p10, 2hop__131951_643670::p6
+
+### 2hop__132854_417697 round 2
+
+- query_source: `structured_llm`
+- action: `refine_query`
+- categories: support_already_seen_before_followup, verifier_failed_despite_support_context, top_k_too_small, per_subquery_or_total_top_k_too_small
+- raw_rank_first_support: 6
+- original_question_rank_first_support: 1
+- support_seen_before: 2hop__132854_417697::p10
+- support_in_current_retrieved: 
+- new_support_in_current_retrieved: 
+- question: Mohammed Atta has what kind of model of the company that makes Datsun Type 12?
+- query: Does Mohammed Atta own or possess a Datsun model?
+- supporting_ids: 2hop__132854_417697::p10, 2hop__132854_417697::p6
+
+### 2hop__132854_417697 round 3
+
+- query_source: `verifier_fallback`
+- action: `abstain`
+- categories: support_already_seen_before_followup, verifier_failed_despite_support_context, top_k_too_small, per_subquery_or_total_top_k_too_small
+- raw_rank_first_support: 6
+- original_question_rank_first_support: 1
+- support_seen_before: 2hop__132854_417697::p10
+- support_in_current_retrieved: 
+- new_support_in_current_retrieved: 
+- question: Mohammed Atta has what kind of model of the company that makes Datsun Type 12?
+- query: What kind of Datsun model does Mohammed Atta have?
+- supporting_ids: 2hop__132854_417697::p10, 2hop__132854_417697::p6
+
+### 2hop__167577_31122 round 2
+
+- query_source: `structured_llm`
+- action: `answer`
+- categories: support_retrieved_but_no_evidence_gain, support_already_seen_before_followup
+- raw_rank_first_support: 1
+- original_question_rank_first_support: 1
+- support_seen_before: 2hop__167577_31122::p10
+- support_in_current_retrieved: 2hop__167577_31122::p10
+- new_support_in_current_retrieved: 
+- question: What century did the author of A Treatise Concerning the Principles of Human Knowledge live in?
+- query: century of author of A Treatise Concerning the Principles of Human Knowledge
+- supporting_ids: 2hop__167577_31122::p10, 2hop__167577_31122::p14
+
+### 2hop__20268_42014 round 2
+
+- query_source: `structured_llm`
+- action: `answer`
+- categories: support_retrieved_but_no_evidence_gain, support_already_seen_before_followup
+- raw_rank_first_support: 1
+- original_question_rank_first_support: 1
+- support_seen_before: 2hop__20268_42014::p1, 2hop__20268_42014::p8
+- support_in_current_retrieved: 2hop__20268_42014::p1, 2hop__20268_42014::p8
+- new_support_in_current_retrieved: 
+- question: How many members in the seats of the organization that enacted the Directory of Public Worship into law are members of the Scottish Government?
+- query: number of Scottish Government members in Scottish Parliament when Directory of Public Worship was enacted
+- supporting_ids: 2hop__20268_42014::p1, 2hop__20268_42014::p8
+
+### 2hop__244193_461106 round 3
+
+- query_source: `structured_llm`
+- action: `abstain`
+- categories: support_retrieved_but_no_evidence_gain, support_already_seen_before_followup, verifier_failed_despite_support_context, query_drops_question_constraints
+- raw_rank_first_support: 1
+- original_question_rank_first_support: 4
+- support_seen_before: 2hop__244193_461106::p6
+- support_in_current_retrieved: 2hop__244193_461106::p6
+- new_support_in_current_retrieved: 
+- question: What movement does the creator of the Washington Monument belong to?
+- query: movement of Robert Mills
+- supporting_ids: 2hop__244193_461106::p3, 2hop__244193_461106::p6
+
+### 2hop__247353_55227 round 2
+
+- query_source: `structured_llm`
+- action: `refine_query`
+- categories: support_retrieved_but_no_evidence_gain, support_already_seen_before_followup, verifier_failed_despite_support_context
+- raw_rank_first_support: 1
+- original_question_rank_first_support: 1
+- support_seen_before: 2hop__247353_55227::p17, 2hop__247353_55227::p6
+- support_in_current_retrieved: 2hop__247353_55227::p17, 2hop__247353_55227::p6
+- new_support_in_current_retrieved: 
+- question: Who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?
+- query: wife of Here Comes the Boom screenwriter in Grown Ups actor
+- supporting_ids: 2hop__247353_55227::p17, 2hop__247353_55227::p6

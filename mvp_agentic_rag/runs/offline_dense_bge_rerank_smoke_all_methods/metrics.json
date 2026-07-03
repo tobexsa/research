@@ -1,0 +1,45 @@
+{
+  "run_name": "offline_dense_bge_rerank_smoke_all_methods",
+  "methods": {
+    "fixed_k": {
+      "count": 4,
+      "answer_f1": 0.75,
+      "avg_retrieval_calls": 3,
+      "unsupported_claim_rate": 0,
+      "abstention_rate": 0,
+      "no_new_evidence_call_rate": 1
+    },
+    "naive": {
+      "count": 4,
+      "answer_f1": 0.75,
+      "avg_retrieval_calls": 1,
+      "unsupported_claim_rate": 0,
+      "abstention_rate": 0,
+      "no_new_evidence_call_rate": 0
+    },
+    "ours": {
+      "count": 4,
+      "answer_f1": 0.75,
+      "avg_retrieval_calls": 1.5,
+      "unsupported_claim_rate": 0,
+      "abstention_rate": 0.25,
+      "no_new_evidence_call_rate": 0.25
+    },
+    "prompt_verifier": {
+      "count": 4,
+      "answer_f1": 0.75,
+      "avg_retrieval_calls": 1,
+      "unsupported_claim_rate": 0,
+      "abstention_rate": 0.25,
+      "no_new_evidence_call_rate": 0
+    },
+    "self_stop": {
+      "count": 4,
+      "answer_f1": 0.75,
+      "avg_retrieval_calls": 1,
+      "unsupported_claim_rate": 0,
+      "abstention_rate": 0,
+      "no_new_evidence_call_rate": 0
+    }
+  }
+}

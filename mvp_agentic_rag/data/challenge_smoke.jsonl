@@ -1,0 +1,4 @@
+{"id":"q1","question":"What city is the capital of France?","answer":"Paris","supporting_passage_ids":["p1"],"hop":1,"subset":"smoke"}
+{"id":"q2","question":"Who wrote Hamlet?","answer":"William Shakespeare","supporting_passage_ids":["p2"],"hop":1,"subset":"smoke"}
+{"id":"q3","question":"Which painter is associated with water lilies?","answer":"Claude Monet","supporting_passage_ids":["p3"],"hop":1,"subset":"smoke"}
+{"id":"q4","question":"What is the answer when the corpus has no evidence?","answer":"Unknown","supporting_passage_ids":["missing"],"hop":1,"subset":"insufficient"}

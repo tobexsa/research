@@ -1,0 +1,82 @@
+{
+  "summary": {
+    "count": 30,
+    "changed_count": 4,
+    "base_answer_f1": 0.5311111111111111,
+    "replay_answer_f1": 0.5311111111111111,
+    "base_avg_retrieval_calls": 1.7,
+    "replay_avg_retrieval_calls": 1.5666666666666667,
+    "base_wasted_retrieval_rate": 0.4,
+    "replay_wasted_retrieval_rate": 0.4
+  },
+  "changed": [
+    {
+      "id": "2hop__129721_40482",
+      "gold": "Edmund Bellinger",
+      "base_action": "abstain",
+      "base_answer": "",
+      "base_f1": 0.0,
+      "base_calls": 3,
+      "replay_calls": 2,
+      "reason": "repeat_after_no_gain",
+      "stopped_before_round": 3,
+      "repeated_query": "land purchase Huguenots area Zubly Cemetery state encompassing",
+      "gains": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2hop__247353_55227",
+      "gold": "Maria Bello",
+      "base_action": "abstain",
+      "base_answer": "",
+      "base_f1": 0.0,
+      "base_calls": 3,
+      "replay_calls": 2,
+      "reason": "repeat_after_no_gain",
+      "stopped_before_round": 3,
+      "repeated_query": "wife Here Comes Boom's screenwriter Grown Ups plays",
+      "gains": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2hop__286621_84856",
+      "gold": "January 20, 2017",
+      "base_action": "abstain",
+      "base_answer": "",
+      "base_f1": 0.0,
+      "base_calls": 3,
+      "replay_calls": 2,
+      "reason": "repeat_after_no_gain",
+      "stopped_before_round": 3,
+      "repeated_query": "show named Politically Incorrect cast member new season release date",
+      "gains": [
+        0.5,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2hop__315267_277284",
+      "gold": "Tonbridge, Kent",
+      "base_action": "abstain",
+      "base_answer": "",
+      "base_f1": 0.0,
+      "base_calls": 3,
+      "replay_calls": 2,
+      "reason": "repeat_after_no_gain",
+      "stopped_before_round": 3,
+      "repeated_query": "not specify administrative territorial entity Bill Cockcroft educated includes place",
+      "gains": [
+        0.5,
+        0.0,
+        0.0
+      ]
+    }
+  ]
+}

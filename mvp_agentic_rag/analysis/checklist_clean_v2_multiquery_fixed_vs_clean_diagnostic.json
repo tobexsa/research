@@ -1,0 +1,145 @@
+{
+  "summary": {
+    "cases": 22,
+    "clean_hit_sum": 26,
+    "fixed_hit_sum": 31,
+    "clean_any": 18,
+    "fixed_any": 20,
+    "clean_full": 8,
+    "fixed_full": 11,
+    "fixed_better": 5,
+    "fixed_worse": 0,
+    "changed_ids": 18
+  },
+  "examples": [
+    {
+      "id": "2hop__194469_83289",
+      "support": [
+        "2hop__194469_83289::p7",
+        "2hop__194469_83289::p19"
+      ],
+      "clean_hits": 1,
+      "fixed_hits": 2,
+      "clean_ids": [
+        "2hop__194469_83289::p19",
+        "2hop__374495_68633::p0",
+        "2hop__810411_159673::p10"
+      ],
+      "fixed_ids": [
+        "2hop__194469_83289::p19",
+        "2hop__374495_68633::p0",
+        "2hop__194469_83289::p7",
+        "2hop__810411_159673::p10",
+        "2hop__132854_417697::p9"
+      ],
+      "queries": {
+        "clean": "Listening Sessions identifies Matt Bennett co star video guy One Last Time participant",
+        "question": "Who is the guy in the One Last Time video by the participant in The Listening Sessions?",
+        "suggested": "Clarify the connection between Ariana Grande's 'One Last Time' video and The Listening Sessions, and identify the specific participant in The Listening Sessions mentioned in the claim."
+      }
+    },
+    {
+      "id": "2hop__20268_42014",
+      "support": [
+        "2hop__20268_42014::p8",
+        "2hop__20268_42014::p1"
+      ],
+      "clean_hits": 1,
+      "fixed_hits": 2,
+      "clean_ids": [
+        "2hop__20268_42014::p8",
+        "2hop__20268_42014::p16",
+        "2hop__20268_42014::p10"
+      ],
+      "fixed_ids": [
+        "2hop__20268_42014::p8",
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p16",
+        "2hop__20268_42014::p10",
+        "2hop__433694_20273::p3"
+      ],
+      "queries": {
+        "clean": "number members Scottish Government seats organization enacted Directory Public Worship into law How many",
+        "question": "How many members in the seats of the organization that enacted the Directory of Public Worship into law are members of the Scottish Government?",
+        "suggested": "How many members of the Scottish Government were part of the Scottish Parliament when the Directory of Public Worship was enacted into law?"
+      }
+    },
+    {
+      "id": "2hop__244193_461106",
+      "support": [
+        "2hop__244193_461106::p6",
+        "2hop__244193_461106::p3"
+      ],
+      "clean_hits": 0,
+      "fixed_hits": 1,
+      "clean_ids": [
+        "2hop__244193_461106::p12",
+        "2hop__244193_461106::p4",
+        "2hop__244193_461106::p18"
+      ],
+      "fixed_ids": [
+        "2hop__244193_461106::p12",
+        "2hop__244193_461106::p4",
+        "2hop__244193_461106::p18",
+        "2hop__92590_43786::p18",
+        "2hop__244193_461106::p6"
+      ],
+      "queries": {
+        "clean": "creator Washington Monument associated movement belongs",
+        "question": "What movement does the creator of the Washington Monument belong to?",
+        "suggested": "Who is the creator of the Washington Monument and what movement do they belong to?"
+      }
+    },
+    {
+      "id": "2hop__244193_461106",
+      "support": [
+        "2hop__244193_461106::p6",
+        "2hop__244193_461106::p3"
+      ],
+      "clean_hits": 0,
+      "fixed_hits": 1,
+      "clean_ids": [
+        "2hop__244193_461106::p12",
+        "2hop__244193_461106::p4",
+        "2hop__244193_461106::p13"
+      ],
+      "fixed_ids": [
+        "2hop__244193_461106::p12",
+        "2hop__244193_461106::p4",
+        "2hop__244193_461106::p13",
+        "2hop__92590_43786::p18",
+        "2hop__244193_461106::p6"
+      ],
+      "queries": {
+        "clean": "creator Washington Monument affiliation movement belongs",
+        "question": "What movement does the creator of the Washington Monument belong to?",
+        "suggested": "Who is the creator of the Washington Monument and what movement do they belong to?"
+      }
+    },
+    {
+      "id": "2hop__2682_577502",
+      "support": [
+        "2hop__2682_577502::p9",
+        "2hop__2682_577502::p17"
+      ],
+      "clean_hits": 1,
+      "fixed_hits": 2,
+      "clean_ids": [
+        "2hop__2682_577502::p9",
+        "2hop__645448_77615::p13",
+        "2hop__2682_577502::p15"
+      ],
+      "fixed_ids": [
+        "2hop__2682_577502::p9",
+        "2hop__645448_77615::p13",
+        "2hop__2682_577502::p17",
+        "2hop__2682_577502::p15"
+      ],
+      "queries": {
+        "clean": "spouse Arnold Schwarzenegger famous governor signing legislation honor Donda West's death",
+        "question": "Who is the spouse of the famous governor signing legislation in honor of Donda West's death?",
+        "suggested": "Who is the spouse of Arnold Schwarzenegger?"
+      }
+    }
+  ]
+}

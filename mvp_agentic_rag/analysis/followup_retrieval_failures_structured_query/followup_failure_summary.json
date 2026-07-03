@@ -1,0 +1,1488 @@
+{
+  "run_dir": "runs\\layer1_api_balanced300_dense_bge_decomp_gate_claim_evidence_memory_structured_query_claim_risk_subset30_agentic_rag_baseline",
+  "config": "configs\\layer1_api_balanced300_dense_bge_decomp_gate_claim_evidence_memory_structured_query_claim_risk_subset30.yaml",
+  "case_definition": "claim_risk follow-up step with evidence_gain <= 0",
+  "summary": {
+    "cases": 16,
+    "category_counts": {
+      "support_already_seen_before_followup": 16,
+      "verifier_failed_despite_support_context": 15,
+      "support_retrieved_but_no_evidence_gain": 14,
+      "query_drops_question_constraints": 1
+    },
+    "query_source_counts": {
+      "missing": 16
+    },
+    "action_counts": {
+      "abstain": 10,
+      "refine_query": 5,
+      "answer": 1
+    },
+    "support_in_raw_top50_cases": 16,
+    "support_in_raw_top50_rate": 1.0,
+    "support_in_original_question_top50_cases": 16,
+    "support_in_original_question_top50_rate": 1.0
+  },
+  "cases": [
+    {
+      "run_id": "2hop__129721_40482",
+      "round": 2,
+      "query_source": "",
+      "action": "abstain",
+      "query": "Native American tribes or colonial authorities from whom Huguenots in South Carolina purchased land near Zubly Cemetery",
+      "question": "From whom did the Huguenots in the state encompassing Zubly Cemetery purchase land from?",
+      "gold_answer": "Edmund Bellinger",
+      "retrieved_ids": [
+        "2hop__129721_40482::p18",
+        "2hop__129721_40482::p14",
+        "2hop__129721_40482::p3"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__129721_40482::p14",
+        "2hop__129721_40482::p18"
+      ],
+      "support_seen_before": [
+        "2hop__129721_40482::p14",
+        "2hop__129721_40482::p18"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__129721_40482::p14",
+        "2hop__129721_40482::p18"
+      ],
+      "supporting_ids": [
+        "2hop__129721_40482::p14",
+        "2hop__129721_40482::p18"
+      ],
+      "support_titles": {
+        "2hop__129721_40482::p14": "Huguenots",
+        "2hop__129721_40482::p18": "Zubly Cemetery"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__129721_40482::p14",
+        "2hop__129721_40482::p18"
+      ],
+      "support_in_raw_top50": [
+        "2hop__129721_40482::p14",
+        "2hop__129721_40482::p18"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__129721_40482::p14",
+        "2hop__129721_40482::p18"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__129721_40482::p14",
+        "2hop__129721_40482::p18"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__129721_40482::p14",
+        "2hop__129721_40482::p18"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "Native American tribes or colonial authorities from whom Huguenots in South Carolina purchased land near Zubly Cemetery"
+      ],
+      "missing_question_terms": [
+        "did",
+        "encompassing",
+        "purchase",
+        "state",
+        "the"
+      ],
+      "overlap_question_terms": [
+        "cemetery",
+        "from",
+        "huguenots",
+        "in",
+        "land",
+        "whom",
+        "zubly"
+      ],
+      "query_support_overlap_terms": [
+        "carolina",
+        "cemetery",
+        "from",
+        "huguenots",
+        "in",
+        "land",
+        "near",
+        "purchased",
+        "south",
+        "zubly"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__131951_643670",
+      "round": 2,
+      "query_source": "",
+      "action": "abstain",
+      "query": "name of the mouth of the watercourse by Rotterdam Centrum",
+      "question": "What is the name for the mouth of the watercourse of the body of water by Rotterdam Centrum?",
+      "gold_answer": "Het Scheur",
+      "retrieved_ids": [
+        "2hop__131951_643670::p6",
+        "2hop__131951_643670::p10",
+        "4hop1__726391_153080_33952_34109::p1"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__131951_643670::p10",
+        "2hop__131951_643670::p6"
+      ],
+      "support_seen_before": [
+        "2hop__131951_643670::p10",
+        "2hop__131951_643670::p6"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__131951_643670::p10",
+        "2hop__131951_643670::p6"
+      ],
+      "supporting_ids": [
+        "2hop__131951_643670::p10",
+        "2hop__131951_643670::p6"
+      ],
+      "support_titles": {
+        "2hop__131951_643670::p10": "Het Scheur",
+        "2hop__131951_643670::p6": "Rotterdam Centrum"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__131951_643670::p10",
+        "2hop__131951_643670::p6"
+      ],
+      "support_in_raw_top50": [
+        "2hop__131951_643670::p10",
+        "2hop__131951_643670::p6"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__131951_643670::p10",
+        "2hop__131951_643670::p6"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__131951_643670::p10",
+        "2hop__131951_643670::p6"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__131951_643670::p10",
+        "2hop__131951_643670::p6"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "name of the mouth of the watercourse by Rotterdam Centrum"
+      ],
+      "missing_question_terms": [
+        "body",
+        "for",
+        "is",
+        "water",
+        "what"
+      ],
+      "overlap_question_terms": [
+        "by",
+        "centrum",
+        "mouth",
+        "name",
+        "of",
+        "rotterdam",
+        "the",
+        "watercourse"
+      ],
+      "query_support_overlap_terms": [
+        "by",
+        "centrum",
+        "of",
+        "rotterdam",
+        "the"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__132854_417697",
+      "round": 2,
+      "query_source": "",
+      "action": "abstain",
+      "query": "Does Mohammed Atta own or have a Datsun Type 12 or any other Datsun model?",
+      "question": "Mohammed Atta has what kind of model of the company that makes Datsun Type 12?",
+      "gold_answer": "Nissan Altima",
+      "retrieved_ids": [
+        "2hop__132854_417697::p10",
+        "3hop2__132957_133264_40768::p13",
+        "2hop__132854_417697::p16"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__132854_417697::p10"
+      ],
+      "support_seen_before": [
+        "2hop__132854_417697::p10"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__132854_417697::p10"
+      ],
+      "supporting_ids": [
+        "2hop__132854_417697::p10",
+        "2hop__132854_417697::p6"
+      ],
+      "support_titles": {
+        "2hop__132854_417697::p10": "Datsun Type 12",
+        "2hop__132854_417697::p6": "Mohamed Atta's Nissan"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__132854_417697::p10"
+      ],
+      "support_in_raw_top50": [
+        "2hop__132854_417697::p10",
+        "2hop__132854_417697::p6"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__132854_417697::p10"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__132854_417697::p10",
+        "2hop__132854_417697::p6"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__132854_417697::p10",
+        "2hop__132854_417697::p6"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "Does Mohammed Atta own or have a Datsun Type 12 or any other Datsun model?"
+      ],
+      "missing_question_terms": [
+        "company",
+        "has",
+        "kind",
+        "makes",
+        "of",
+        "that",
+        "the",
+        "what"
+      ],
+      "overlap_question_terms": [
+        "12",
+        "atta",
+        "datsun",
+        "model",
+        "mohammed",
+        "type"
+      ],
+      "query_support_overlap_terms": [
+        "12",
+        "a",
+        "atta",
+        "datsun",
+        "model",
+        "type"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__20268_42014",
+      "round": 2,
+      "query_source": "",
+      "action": "refine_query",
+      "query": "How many members of the Scottish Government were part of the organization that enacted the Directory of Public Worship into law?",
+      "question": "How many members in the seats of the organization that enacted the Directory of Public Worship into law are members of the Scottish Government?",
+      "gold_answer": "2",
+      "retrieved_ids": [
+        "2hop__20268_42014::p1",
+        "2hop__433694_20273::p3",
+        "2hop__20268_42014::p8",
+        "2hop__20268_42014::p10",
+        "2hop__20268_42014::p12"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8"
+      ],
+      "support_seen_before": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8"
+      ],
+      "supporting_ids": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8"
+      ],
+      "support_titles": {
+        "2hop__20268_42014::p1": "Presbyterianism",
+        "2hop__20268_42014::p8": "Scottish Parliament"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8"
+      ],
+      "support_in_raw_top50": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "How many members of the Scottish Government were part of the organization that enacted the Directory of Public Worship into law?",
+        "How many members of the Scottish Government were part of the organization",
+        "enacted the Directory of Public Worship into law?"
+      ],
+      "missing_question_terms": [
+        "are",
+        "in",
+        "seats"
+      ],
+      "overlap_question_terms": [
+        "directory",
+        "enacted",
+        "government",
+        "how",
+        "into",
+        "law",
+        "many",
+        "members",
+        "of",
+        "organization",
+        "public",
+        "scottish",
+        "that",
+        "the",
+        "worship"
+      ],
+      "query_support_overlap_terms": [
+        "directory",
+        "enacted",
+        "government",
+        "law",
+        "members",
+        "of",
+        "public",
+        "scottish",
+        "that",
+        "the",
+        "worship"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__20268_42014",
+      "round": 3,
+      "query_source": "",
+      "action": "abstain",
+      "query": "number of Scottish Government members in organization that enacted Directory of Public Worship",
+      "question": "How many members in the seats of the organization that enacted the Directory of Public Worship into law are members of the Scottish Government?",
+      "gold_answer": "2",
+      "retrieved_ids": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8",
+        "2hop__20268_42014::p10",
+        "2hop__20268_42014::p12",
+        "2hop__677929_696450::p15"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8"
+      ],
+      "support_seen_before": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8"
+      ],
+      "supporting_ids": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8"
+      ],
+      "support_titles": {
+        "2hop__20268_42014::p1": "Presbyterianism",
+        "2hop__20268_42014::p8": "Scottish Parliament"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8"
+      ],
+      "support_in_raw_top50": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "number of Scottish Government members in organization that enacted Directory of Public Worship",
+        "number of Scottish Government members in organization",
+        "enacted Directory of Public Worship"
+      ],
+      "missing_question_terms": [
+        "are",
+        "how",
+        "into",
+        "law",
+        "many",
+        "seats",
+        "the"
+      ],
+      "overlap_question_terms": [
+        "directory",
+        "enacted",
+        "government",
+        "in",
+        "members",
+        "of",
+        "organization",
+        "public",
+        "scottish",
+        "that",
+        "worship"
+      ],
+      "query_support_overlap_terms": [
+        "directory",
+        "enacted",
+        "government",
+        "in",
+        "members",
+        "of",
+        "public",
+        "scottish",
+        "that",
+        "worship"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__244193_461106",
+      "round": 3,
+      "query_source": "",
+      "action": "abstain",
+      "query": "movement of Robert Mills, creator of the Washington Monument",
+      "question": "What movement does the creator of the Washington Monument belong to?",
+      "gold_answer": "Greek Revival",
+      "retrieved_ids": [
+        "2hop__244193_461106::p6",
+        "2hop__244193_461106::p12",
+        "2hop__244193_461106::p4"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__244193_461106::p6"
+      ],
+      "support_seen_before": [
+        "2hop__244193_461106::p6"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__244193_461106::p6"
+      ],
+      "supporting_ids": [
+        "2hop__244193_461106::p3",
+        "2hop__244193_461106::p6"
+      ],
+      "support_titles": {
+        "2hop__244193_461106::p3": "United States Customhouse (New Bedford, Massachusetts)",
+        "2hop__244193_461106::p6": "Robert Mills (architect)"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__244193_461106::p6"
+      ],
+      "support_in_raw_top50": [
+        "2hop__244193_461106::p6"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__244193_461106::p6"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__244193_461106::p6"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__244193_461106::p6"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 4,
+      "decomposed_queries": [
+        "movement of Robert Mills, creator of the Washington Monument"
+      ],
+      "missing_question_terms": [
+        "belong",
+        "does",
+        "to",
+        "what"
+      ],
+      "overlap_question_terms": [
+        "creator",
+        "monument",
+        "movement",
+        "of",
+        "the",
+        "washington"
+      ],
+      "query_support_overlap_terms": [
+        "mills",
+        "monument",
+        "of",
+        "robert",
+        "the",
+        "washington"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__247353_55227",
+      "round": 2,
+      "query_source": "",
+      "action": "abstain",
+      "query": "Who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?",
+      "question": "Who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?",
+      "gold_answer": "Maria Bello",
+      "retrieved_ids": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6",
+        "3hop2__140194_16797_51068::p5"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ],
+      "support_seen_before": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ],
+      "supporting_ids": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ],
+      "support_titles": {
+        "2hop__247353_55227::p17": "Grown Ups (film)",
+        "2hop__247353_55227::p6": "Here Comes the Boom"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ],
+      "support_in_raw_top50": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "Who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?"
+      ],
+      "missing_question_terms": [],
+      "overlap_question_terms": [
+        "boom",
+        "comes",
+        "grown",
+        "here",
+        "in",
+        "of",
+        "plays",
+        "s",
+        "screenwriter",
+        "the",
+        "ups",
+        "who",
+        "wife"
+      ],
+      "query_support_overlap_terms": [
+        "boom",
+        "comes",
+        "grown",
+        "here",
+        "in",
+        "of",
+        "s",
+        "the",
+        "ups",
+        "wife"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__286621_84856",
+      "round": 2,
+      "query_source": "",
+      "action": "refine_query",
+      "query": "show named after Politically Incorrect cast member new season release date",
+      "question": "When does the new season of the show named for the Politically Incorrect cast member?",
+      "gold_answer": "January 20, 2017",
+      "retrieved_ids": [
+        "2hop__286621_84856::p17",
+        "3hop1__140786_2053_5289::p10",
+        "3hop1__312146_720914_27537::p16",
+        "3hop2__49541_140875_51068::p3",
+        "2hop__82766_67668::p2"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__286621_84856::p17"
+      ],
+      "support_seen_before": [
+        "2hop__286621_84856::p17"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__286621_84856::p17"
+      ],
+      "supporting_ids": [
+        "2hop__286621_84856::p12",
+        "2hop__286621_84856::p17"
+      ],
+      "support_titles": {
+        "2hop__286621_84856::p12": "Real Time with Bill Maher",
+        "2hop__286621_84856::p17": "Politically Incorrect"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__286621_84856::p17"
+      ],
+      "support_in_raw_top50": [
+        "2hop__286621_84856::p12",
+        "2hop__286621_84856::p17"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__286621_84856::p17"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__286621_84856::p12",
+        "2hop__286621_84856::p17"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__286621_84856::p12",
+        "2hop__286621_84856::p17"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "show named after Politically Incorrect cast member new season release date",
+        "show named",
+        "Politically Incorrect cast member new season release date"
+      ],
+      "missing_question_terms": [
+        "does",
+        "for",
+        "of",
+        "the",
+        "when"
+      ],
+      "overlap_question_terms": [
+        "cast",
+        "incorrect",
+        "member",
+        "named",
+        "new",
+        "politically",
+        "season",
+        "show"
+      ],
+      "query_support_overlap_terms": [
+        "incorrect",
+        "politically",
+        "season",
+        "show"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__286621_84856",
+      "round": 3,
+      "query_source": "",
+      "action": "abstain",
+      "query": "show named after Politically Incorrect cast member new season release date",
+      "question": "When does the new season of the show named for the Politically Incorrect cast member?",
+      "gold_answer": "January 20, 2017",
+      "retrieved_ids": [
+        "2hop__286621_84856::p17",
+        "3hop1__140786_2053_5289::p10",
+        "3hop1__312146_720914_27537::p16",
+        "3hop2__49541_140875_51068::p3",
+        "2hop__82766_67668::p2"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__286621_84856::p17"
+      ],
+      "support_seen_before": [
+        "2hop__286621_84856::p17"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__286621_84856::p17"
+      ],
+      "supporting_ids": [
+        "2hop__286621_84856::p12",
+        "2hop__286621_84856::p17"
+      ],
+      "support_titles": {
+        "2hop__286621_84856::p12": "Real Time with Bill Maher",
+        "2hop__286621_84856::p17": "Politically Incorrect"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__286621_84856::p17"
+      ],
+      "support_in_raw_top50": [
+        "2hop__286621_84856::p12",
+        "2hop__286621_84856::p17"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__286621_84856::p17"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__286621_84856::p12",
+        "2hop__286621_84856::p17"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__286621_84856::p12",
+        "2hop__286621_84856::p17"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "show named after Politically Incorrect cast member new season release date",
+        "show named",
+        "Politically Incorrect cast member new season release date"
+      ],
+      "missing_question_terms": [
+        "does",
+        "for",
+        "of",
+        "the",
+        "when"
+      ],
+      "overlap_question_terms": [
+        "cast",
+        "incorrect",
+        "member",
+        "named",
+        "new",
+        "politically",
+        "season",
+        "show"
+      ],
+      "query_support_overlap_terms": [
+        "incorrect",
+        "politically",
+        "season",
+        "show"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__315267_277284",
+      "round": 2,
+      "query_source": "",
+      "action": "refine_query",
+      "query": "Bill Cockcroft education location administrative territorial entity",
+      "question": "What administrative territorial entity includes the place where Bill Cockcroft was educated?",
+      "gold_answer": "Tonbridge, Kent",
+      "retrieved_ids": [
+        "2hop__315267_277284::p18",
+        "2hop__315267_277284::p10",
+        "2hop__351045_47134::p6"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__315267_277284::p18"
+      ],
+      "support_seen_before": [
+        "2hop__315267_277284::p18"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__315267_277284::p18"
+      ],
+      "supporting_ids": [
+        "2hop__315267_277284::p15",
+        "2hop__315267_277284::p18"
+      ],
+      "support_titles": {
+        "2hop__315267_277284::p15": "The Judd School",
+        "2hop__315267_277284::p18": "Bill Cockcroft"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__315267_277284::p18"
+      ],
+      "support_in_raw_top50": [
+        "2hop__315267_277284::p15",
+        "2hop__315267_277284::p18"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__315267_277284::p18"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__315267_277284::p15",
+        "2hop__315267_277284::p18"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__315267_277284::p18"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "Bill Cockcroft education location administrative territorial entity"
+      ],
+      "missing_question_terms": [
+        "educated",
+        "includes",
+        "place",
+        "the",
+        "was",
+        "what",
+        "where"
+      ],
+      "overlap_question_terms": [
+        "administrative",
+        "bill",
+        "cockcroft",
+        "entity",
+        "territorial"
+      ],
+      "query_support_overlap_terms": [
+        "bill",
+        "cockcroft",
+        "location"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__315267_277284",
+      "round": 3,
+      "query_source": "",
+      "action": "abstain",
+      "query": "Bill Cockcroft education location administrative territorial entity",
+      "question": "What administrative territorial entity includes the place where Bill Cockcroft was educated?",
+      "gold_answer": "Tonbridge, Kent",
+      "retrieved_ids": [
+        "2hop__315267_277284::p18",
+        "2hop__315267_277284::p10",
+        "2hop__351045_47134::p6"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__315267_277284::p18"
+      ],
+      "support_seen_before": [
+        "2hop__315267_277284::p18"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__315267_277284::p18"
+      ],
+      "supporting_ids": [
+        "2hop__315267_277284::p15",
+        "2hop__315267_277284::p18"
+      ],
+      "support_titles": {
+        "2hop__315267_277284::p15": "The Judd School",
+        "2hop__315267_277284::p18": "Bill Cockcroft"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__315267_277284::p18"
+      ],
+      "support_in_raw_top50": [
+        "2hop__315267_277284::p15",
+        "2hop__315267_277284::p18"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__315267_277284::p18"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__315267_277284::p15",
+        "2hop__315267_277284::p18"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__315267_277284::p18"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "Bill Cockcroft education location administrative territorial entity"
+      ],
+      "missing_question_terms": [
+        "educated",
+        "includes",
+        "place",
+        "the",
+        "was",
+        "what",
+        "where"
+      ],
+      "overlap_question_terms": [
+        "administrative",
+        "bill",
+        "cockcroft",
+        "entity",
+        "territorial"
+      ],
+      "query_support_overlap_terms": [
+        "bill",
+        "cockcroft",
+        "location"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__341176_711757",
+      "round": 3,
+      "query_source": "",
+      "action": "answer",
+      "query": "other districts in Ryki County, Lublin Voivodeship",
+      "question": "What other district is found in the same county as Gmina Stężyca?",
+      "gold_answer": "Gmina Ryki",
+      "retrieved_ids": [
+        "2hop__341176_711757::p4",
+        "2hop__341176_711757::p10",
+        "2hop__341176_711757::p9"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__341176_711757::p10",
+        "2hop__341176_711757::p4"
+      ],
+      "support_seen_before": [
+        "2hop__341176_711757::p10",
+        "2hop__341176_711757::p4"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__341176_711757::p10",
+        "2hop__341176_711757::p4"
+      ],
+      "supporting_ids": [
+        "2hop__341176_711757::p10",
+        "2hop__341176_711757::p4"
+      ],
+      "support_titles": {
+        "2hop__341176_711757::p10": "Gmina Stężyca, Lublin Voivodeship",
+        "2hop__341176_711757::p4": "Gmina Ryki"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__341176_711757::p10",
+        "2hop__341176_711757::p4"
+      ],
+      "support_in_raw_top50": [
+        "2hop__341176_711757::p10",
+        "2hop__341176_711757::p4"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__341176_711757::p10",
+        "2hop__341176_711757::p4"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__341176_711757::p10",
+        "2hop__341176_711757::p4"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__341176_711757::p10"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "other districts in Ryki County, Lublin Voivodeship"
+      ],
+      "missing_question_terms": [
+        "as",
+        "district",
+        "found",
+        "gmina",
+        "is",
+        "same",
+        "st",
+        "the",
+        "what",
+        "yca"
+      ],
+      "overlap_question_terms": [
+        "county",
+        "in",
+        "other"
+      ],
+      "query_support_overlap_terms": [
+        "county",
+        "in",
+        "lublin",
+        "ryki",
+        "voivodeship"
+      ],
+      "query_mentions_gold_answer": true,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "query_drops_question_constraints"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__351045_47134",
+      "round": 2,
+      "query_source": "",
+      "action": "refine_query",
+      "query": "mascot of the operator of RV Wecoma",
+      "question": "What is the mascot of the operator of RV Wecoma?",
+      "gold_answer": "Benny Beaver",
+      "retrieved_ids": [
+        "2hop__351045_47134::p4",
+        "3hop1__786067_228453_86925::p9",
+        "2hop__351045_47134::p18"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__351045_47134::p4"
+      ],
+      "support_seen_before": [
+        "2hop__351045_47134::p4"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__351045_47134::p4"
+      ],
+      "supporting_ids": [
+        "2hop__351045_47134::p2",
+        "2hop__351045_47134::p4"
+      ],
+      "support_titles": {
+        "2hop__351045_47134::p2": "Benny Beaver",
+        "2hop__351045_47134::p4": "RV Wecoma"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__351045_47134::p2",
+        "2hop__351045_47134::p4"
+      ],
+      "support_in_raw_top50": [
+        "2hop__351045_47134::p2",
+        "2hop__351045_47134::p4"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__351045_47134::p2",
+        "2hop__351045_47134::p4"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__351045_47134::p2",
+        "2hop__351045_47134::p4"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__351045_47134::p2",
+        "2hop__351045_47134::p4"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "mascot of the operator of RV Wecoma"
+      ],
+      "missing_question_terms": [
+        "is",
+        "what"
+      ],
+      "overlap_question_terms": [
+        "mascot",
+        "of",
+        "operator",
+        "rv",
+        "the",
+        "wecoma"
+      ],
+      "query_support_overlap_terms": [
+        "mascot",
+        "of",
+        "rv",
+        "the",
+        "wecoma"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__351045_47134",
+      "round": 3,
+      "query_source": "",
+      "action": "abstain",
+      "query": "mascot of operator of RV Wecoma",
+      "question": "What is the mascot of the operator of RV Wecoma?",
+      "gold_answer": "Benny Beaver",
+      "retrieved_ids": [
+        "2hop__351045_47134::p4",
+        "3hop1__786067_228453_86925::p9",
+        "2hop__351045_47134::p18"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__351045_47134::p4"
+      ],
+      "support_seen_before": [
+        "2hop__351045_47134::p4"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__351045_47134::p4"
+      ],
+      "supporting_ids": [
+        "2hop__351045_47134::p2",
+        "2hop__351045_47134::p4"
+      ],
+      "support_titles": {
+        "2hop__351045_47134::p2": "Benny Beaver",
+        "2hop__351045_47134::p4": "RV Wecoma"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__351045_47134::p2",
+        "2hop__351045_47134::p4"
+      ],
+      "support_in_raw_top50": [
+        "2hop__351045_47134::p2",
+        "2hop__351045_47134::p4"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__351045_47134::p2",
+        "2hop__351045_47134::p4"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__351045_47134::p2",
+        "2hop__351045_47134::p4"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__351045_47134::p2",
+        "2hop__351045_47134::p4"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "mascot of operator of RV Wecoma"
+      ],
+      "missing_question_terms": [
+        "is",
+        "the",
+        "what"
+      ],
+      "overlap_question_terms": [
+        "mascot",
+        "of",
+        "operator",
+        "rv",
+        "wecoma"
+      ],
+      "query_support_overlap_terms": [
+        "mascot",
+        "of",
+        "rv",
+        "wecoma"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__3739_13529",
+      "round": 2,
+      "query_source": "",
+      "action": "refine_query",
+      "query": "football star backed out relay controversy signed Barcelona",
+      "question": "When was the football star who backed out due to relay controversy signed by Barcelona?",
+      "gold_answer": "June 1982",
+      "retrieved_ids": [
+        "2hop__136179_13529::p13",
+        "2hop__136179_13529::p12",
+        "2hop__136179_13529::p4"
+      ],
+      "support_in_current_retrieved": [],
+      "support_seen_before": [
+        "2hop__3739_13529::p16"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__3739_13529::p16"
+      ],
+      "supporting_ids": [
+        "2hop__3739_13529::p16",
+        "2hop__3739_13529::p4"
+      ],
+      "support_titles": {
+        "2hop__3739_13529::p16": "FC Barcelona",
+        "2hop__3739_13529::p4": "2008 Summer Olympics torch relay"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__3739_13529::p16"
+      ],
+      "support_in_raw_top50": [
+        "2hop__3739_13529::p16",
+        "2hop__3739_13529::p4"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__3739_13529::p16"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__3739_13529::p16",
+        "2hop__3739_13529::p4"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__3739_13529::p16",
+        "2hop__3739_13529::p4"
+      ],
+      "raw_rank_first_support": 3,
+      "original_question_rank_first_support": 2,
+      "decomposed_queries": [
+        "football star backed out relay controversy signed Barcelona"
+      ],
+      "missing_question_terms": [
+        "by",
+        "due",
+        "the",
+        "to",
+        "was",
+        "when",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "backed",
+        "barcelona",
+        "controversy",
+        "football",
+        "out",
+        "relay",
+        "signed",
+        "star"
+      ],
+      "query_support_overlap_terms": [
+        "barcelona",
+        "controversy",
+        "out",
+        "relay",
+        "signed"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__3739_13529",
+      "round": 3,
+      "query_source": "",
+      "action": "abstain",
+      "query": "football star backed out relay controversy signed barcelona",
+      "question": "When was the football star who backed out due to relay controversy signed by Barcelona?",
+      "gold_answer": "June 1982",
+      "retrieved_ids": [
+        "2hop__136179_13529::p13",
+        "2hop__136179_13529::p12",
+        "2hop__136179_13529::p4"
+      ],
+      "support_in_current_retrieved": [],
+      "support_seen_before": [
+        "2hop__3739_13529::p16"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__3739_13529::p16"
+      ],
+      "supporting_ids": [
+        "2hop__3739_13529::p16",
+        "2hop__3739_13529::p4"
+      ],
+      "support_titles": {
+        "2hop__3739_13529::p16": "FC Barcelona",
+        "2hop__3739_13529::p4": "2008 Summer Olympics torch relay"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__3739_13529::p16"
+      ],
+      "support_in_raw_top50": [
+        "2hop__3739_13529::p16",
+        "2hop__3739_13529::p4"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__3739_13529::p16"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__3739_13529::p16",
+        "2hop__3739_13529::p4"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__3739_13529::p16",
+        "2hop__3739_13529::p4"
+      ],
+      "raw_rank_first_support": 3,
+      "original_question_rank_first_support": 2,
+      "decomposed_queries": [
+        "football star backed out relay controversy signed barcelona"
+      ],
+      "missing_question_terms": [
+        "by",
+        "due",
+        "the",
+        "to",
+        "was",
+        "when",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "backed",
+        "barcelona",
+        "controversy",
+        "football",
+        "out",
+        "relay",
+        "signed",
+        "star"
+      ],
+      "query_support_overlap_terms": [
+        "barcelona",
+        "controversy",
+        "out",
+        "relay",
+        "signed"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    }
+  ]
+}

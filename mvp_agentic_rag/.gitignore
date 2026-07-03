@@ -1,0 +1,10 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+runs/*/trajectories.jsonl
+runs/*/metrics.json
+runs/*/metrics.md
+indexes/*.index
+indexes/*.pkl

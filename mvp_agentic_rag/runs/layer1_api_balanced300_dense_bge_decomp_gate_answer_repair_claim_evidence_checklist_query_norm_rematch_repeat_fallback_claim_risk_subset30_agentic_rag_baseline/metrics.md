@@ -1,0 +1,46 @@
+# Metrics: layer1_api_balanced300_dense_bge_decomp_gate_answer_repair_claim_evidence_checklist_query_norm_rematch_repeat_fallback_claim_risk_subset30_agentic_rag_baseline
+
+## agentic_rag_baseline
+- count: 30
+- answer_f1: 0.43777777777777777
+- avg_retrieval_calls: 1.8666666666666667
+- unsupported_claim_rate: 0.5
+- abstention_rate: 0.3
+- no_new_evidence_call_rate: 0.4
+- coverage: 0.7
+- selective_answer_f1: 0.6253968253968254
+- cost_normalized_f1: 0.23452380952380952
+- wasted_retrieval_rate: 0.4
+- answered_unsupported_rate: 0.2857142857142857
+- final_answered_unsupported_rate: 0
+- abstention_precision: 1
+
+## claim_risk
+- count: 30
+- answer_f1: 0.49777777777777776
+- avg_retrieval_calls: 1.6666666666666667
+- unsupported_claim_rate: 0.4666666666666667
+- abstention_rate: 0.3333333333333333
+- no_new_evidence_call_rate: 0.4
+- coverage: 0.6666666666666666
+- selective_answer_f1: 0.7466666666666667
+- cost_normalized_f1: 0.29866666666666664
+- wasted_retrieval_rate: 0.4
+- answered_unsupported_rate: 0.2
+- final_answered_unsupported_rate: 0
+- abstention_precision: 0.9
+
+## prompt_verifier
+- count: 30
+- answer_f1: 0.30444444444444446
+- avg_retrieval_calls: 1
+- unsupported_claim_rate: 0.5
+- abstention_rate: 0.4666666666666667
+- no_new_evidence_call_rate: 0
+- coverage: 0.5333333333333333
+- selective_answer_f1: 0.5708333333333333
+- cost_normalized_f1: 0.30444444444444446
+- wasted_retrieval_rate: 0
+- answered_unsupported_rate: 0.0625
+- final_answered_unsupported_rate: 0.0625
+- abstention_precision: 1

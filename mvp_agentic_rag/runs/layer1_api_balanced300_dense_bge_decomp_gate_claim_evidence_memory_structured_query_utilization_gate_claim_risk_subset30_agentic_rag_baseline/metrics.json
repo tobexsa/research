@@ -1,0 +1,50 @@
+{
+  "run_name": "layer1_api_balanced300_dense_bge_decomp_gate_claim_evidence_memory_structured_query_utilization_gate_claim_risk_subset30_agentic_rag_baseline",
+  "methods": {
+    "agentic_rag_baseline": {
+      "count": 30,
+      "answer_f1": 0.46,
+      "avg_retrieval_calls": 1.8666666666666667,
+      "unsupported_claim_rate": 0.5,
+      "abstention_rate": 0.36666666666666664,
+      "no_new_evidence_call_rate": 0.36666666666666664,
+      "coverage": 0.6333333333333333,
+      "selective_answer_f1": 0.7263157894736842,
+      "cost_normalized_f1": 0.24642857142857144,
+      "wasted_retrieval_rate": 0.36666666666666664,
+      "answered_unsupported_rate": 0.21052631578947367,
+      "final_answered_unsupported_rate": 0,
+      "abstention_precision": 1
+    },
+    "claim_risk": {
+      "count": 30,
+      "answer_f1": 0.3933333333333333,
+      "avg_retrieval_calls": 1.6,
+      "unsupported_claim_rate": 0.5,
+      "abstention_rate": 0.4666666666666667,
+      "no_new_evidence_call_rate": 0.4,
+      "coverage": 0.5333333333333333,
+      "selective_answer_f1": 0.7375,
+      "cost_normalized_f1": 0.24583333333333332,
+      "wasted_retrieval_rate": 0.4,
+      "answered_unsupported_rate": 0.125,
+      "final_answered_unsupported_rate": 0,
+      "abstention_precision": 0.9285714285714286
+    },
+    "prompt_verifier": {
+      "count": 30,
+      "answer_f1": 0.30444444444444446,
+      "avg_retrieval_calls": 1,
+      "unsupported_claim_rate": 0.5333333333333333,
+      "abstention_rate": 0.5333333333333333,
+      "no_new_evidence_call_rate": 0,
+      "coverage": 0.4666666666666667,
+      "selective_answer_f1": 0.6523809523809524,
+      "cost_normalized_f1": 0.30444444444444446,
+      "wasted_retrieval_rate": 0,
+      "answered_unsupported_rate": 0,
+      "final_answered_unsupported_rate": 0,
+      "abstention_precision": 1
+    }
+  }
+}

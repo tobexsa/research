@@ -1,0 +1,22 @@
+{
+  "paired_samples": 30,
+  "utilization_gate_v2": {
+    "wins_vs_incumbent": 0,
+    "losses_vs_incumbent": 3,
+    "ties_vs_incumbent": 27,
+    "sum_delta_f1": -2.333333,
+    "gate_samples": 3,
+    "gate_sample_ids": [
+      "2hop__20268_42014",
+      "2hop__247353_55227",
+      "2hop__2682_577502"
+    ],
+    "gate_sum_delta_f1": -1.0
+  },
+  "low_yield_abstain30": {
+    "wins_vs_incumbent": 0,
+    "losses_vs_incumbent": 2,
+    "ties_vs_incumbent": 28,
+    "sum_delta_f1": -1.333333
+  }
+}

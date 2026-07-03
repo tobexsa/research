@@ -1,0 +1,41 @@
+# Metrics: layer1_api_balanced300_dense_bge_scoped_prompt_v3_all_methods
+
+## fixed_k
+- count: 300
+- answer_f1: 0.3883471744244563
+- avg_retrieval_calls: 3
+- unsupported_claim_rate: 0
+- abstention_rate: 0
+- no_new_evidence_call_rate: 1
+
+## naive
+- count: 300
+- answer_f1: 0.3883471744244563
+- avg_retrieval_calls: 1
+- unsupported_claim_rate: 0
+- abstention_rate: 0
+- no_new_evidence_call_rate: 0
+
+## ours
+- count: 300
+- answer_f1: 0.35332466595925144
+- avg_retrieval_calls: 1.8866666666666667
+- unsupported_claim_rate: 0
+- abstention_rate: 0.44333333333333336
+- no_new_evidence_call_rate: 0.44333333333333336
+
+## prompt_verifier
+- count: 300
+- answer_f1: 0.35332466595925144
+- avg_retrieval_calls: 1
+- unsupported_claim_rate: 0
+- abstention_rate: 0.44333333333333336
+- no_new_evidence_call_rate: 0
+
+## self_stop
+- count: 300
+- answer_f1: 0.3883471744244563
+- avg_retrieval_calls: 1
+- unsupported_claim_rate: 0
+- abstention_rate: 0
+- no_new_evidence_call_rate: 0

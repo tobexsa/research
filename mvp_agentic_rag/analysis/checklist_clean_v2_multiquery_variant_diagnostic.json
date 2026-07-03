@@ -1,0 +1,1458 @@
+{
+  "summary": {
+    "old_actual_hit_sum": 26,
+    "old_actual_any": 18,
+    "old_actual_full": 8,
+    "clean_hit_sum": 26,
+    "clean_any": 18,
+    "clean_full": 8,
+    "clean_then_question_hit_sum": 29,
+    "clean_then_question_any": 20,
+    "clean_then_question_full": 9,
+    "question_then_clean_hit_sum": 29,
+    "question_then_clean_any": 20,
+    "question_then_clean_full": 9,
+    "clean_then_suggested_hit_sum": 29,
+    "clean_then_suggested_any": 18,
+    "clean_then_suggested_full": 11,
+    "suggested_then_clean_hit_sum": 29,
+    "suggested_then_clean_any": 18,
+    "suggested_then_clean_full": 11,
+    "clean_question_suggested_hit_sum": 30,
+    "clean_question_suggested_any": 20,
+    "clean_question_suggested_full": 10,
+    "cases": 22
+  },
+  "records": [
+    {
+      "id": "2hop__129721_40482",
+      "round": 2,
+      "support": [
+        "2hop__129721_40482::p14",
+        "2hop__129721_40482::p18"
+      ],
+      "hits": {
+        "old_actual": 2,
+        "clean": 2,
+        "clean_then_question": 2,
+        "question_then_clean": 2,
+        "clean_then_suggested": 2,
+        "suggested_then_clean": 2,
+        "clean_question_suggested": 2
+      },
+      "ids": {
+        "old_actual": [
+          "2hop__129721_40482::p18",
+          "2hop__129721_40482::p3",
+          "2hop__129721_40482::p14"
+        ],
+        "clean": [
+          "2hop__129721_40482::p18",
+          "2hop__129721_40482::p3",
+          "2hop__129721_40482::p14"
+        ],
+        "clean_then_question": [
+          "2hop__129721_40482::p18",
+          "2hop__129721_40482::p3",
+          "2hop__129721_40482::p14"
+        ],
+        "question_then_clean": [
+          "2hop__129721_40482::p18",
+          "2hop__129721_40482::p3",
+          "2hop__129721_40482::p14"
+        ],
+        "clean_then_suggested": [
+          "2hop__129721_40482::p18",
+          "2hop__129721_40482::p3",
+          "2hop__129721_40482::p14"
+        ],
+        "suggested_then_clean": [
+          "2hop__129721_40482::p18",
+          "2hop__129721_40482::p14",
+          "2hop__129721_40482::p3"
+        ],
+        "clean_question_suggested": [
+          "2hop__129721_40482::p18",
+          "2hop__129721_40482::p3",
+          "2hop__129721_40482::p14"
+        ]
+      },
+      "queries": {
+        "clean": "Huguenots purchasing land state encompassing Zubly Cemetery purchase",
+        "question": "From whom did the Huguenots in the state encompassing Zubly Cemetery purchase land from?",
+        "suggested": "From whom did the Huguenots in South Carolina, specifically in the area of Zubly Cemetery, purchase land?"
+      }
+    },
+    {
+      "id": "2hop__131951_643670",
+      "round": 2,
+      "support": [
+        "2hop__131951_643670::p10",
+        "2hop__131951_643670::p6"
+      ],
+      "hits": {
+        "old_actual": 2,
+        "clean": 2,
+        "clean_then_question": 2,
+        "question_then_clean": 2,
+        "clean_then_suggested": 2,
+        "suggested_then_clean": 2,
+        "clean_question_suggested": 2
+      },
+      "ids": {
+        "old_actual": [
+          "2hop__131951_643670::p6",
+          "4hop1__726391_153080_33952_34109::p1",
+          "2hop__131951_643670::p10"
+        ],
+        "clean": [
+          "2hop__131951_643670::p6",
+          "4hop1__726391_153080_33952_34109::p1",
+          "2hop__131951_643670::p10"
+        ],
+        "clean_then_question": [
+          "2hop__131951_643670::p6",
+          "4hop1__726391_153080_33952_34109::p1",
+          "2hop__131951_643670::p10"
+        ],
+        "question_then_clean": [
+          "2hop__131951_643670::p6",
+          "2hop__131951_643670::p10",
+          "4hop1__726391_153080_33952_34109::p1"
+        ],
+        "clean_then_suggested": [
+          "2hop__131951_643670::p6",
+          "4hop1__726391_153080_33952_34109::p1",
+          "2hop__131951_643670::p10"
+        ],
+        "suggested_then_clean": [
+          "2hop__131951_643670::p6",
+          "2hop__131951_643670::p10",
+          "4hop1__726391_153080_33952_34109::p1"
+        ],
+        "clean_question_suggested": [
+          "2hop__131951_643670::p6",
+          "4hop1__726391_153080_33952_34109::p1",
+          "2hop__131951_643670::p10"
+        ]
+      },
+      "queries": {
+        "clean": "name mouth watercourse Rotterdam Centrum body water",
+        "question": "What is the name for the mouth of the watercourse of the body of water by Rotterdam Centrum?",
+        "suggested": "What is the name of the mouth of the watercourse by Rotterdam Centrum?"
+      }
+    },
+    {
+      "id": "2hop__132854_417697",
+      "round": 2,
+      "support": [
+        "2hop__132854_417697::p10",
+        "2hop__132854_417697::p6"
+      ],
+      "hits": {
+        "old_actual": 1,
+        "clean": 1,
+        "clean_then_question": 1,
+        "question_then_clean": 1,
+        "clean_then_suggested": 1,
+        "suggested_then_clean": 1,
+        "clean_question_suggested": 1
+      },
+      "ids": {
+        "old_actual": [
+          "2hop__132854_417697::p10",
+          "3hop2__132957_133264_40768::p13",
+          "2hop__132854_417697::p16"
+        ],
+        "clean": [
+          "2hop__132854_417697::p10",
+          "3hop2__132957_133264_40768::p13",
+          "2hop__132854_417697::p16"
+        ],
+        "clean_then_question": [
+          "2hop__132854_417697::p10",
+          "3hop2__132957_133264_40768::p13",
+          "2hop__132854_417697::p16"
+        ],
+        "question_then_clean": [
+          "2hop__132854_417697::p10",
+          "3hop2__132957_133264_40768::p13",
+          "2hop__132854_417697::p16"
+        ],
+        "clean_then_suggested": [
+          "2hop__132854_417697::p10",
+          "3hop2__132957_133264_40768::p13",
+          "2hop__132854_417697::p16",
+          "3hop2__132957_379231_40768::p3"
+        ],
+        "suggested_then_clean": [
+          "3hop2__132957_379231_40768::p3",
+          "3hop2__132957_133264_40768::p13",
+          "2hop__132854_417697::p16",
+          "2hop__132854_417697::p10"
+        ],
+        "clean_question_suggested": [
+          "2hop__132854_417697::p10",
+          "3hop2__132957_133264_40768::p13",
+          "2hop__132854_417697::p16",
+          "3hop2__132957_379231_40768::p3"
+        ]
+      },
+      "queries": {
+        "clean": "Mohammed Atta's connection Datsun Nissan model he might Atta kind company makes Type 12",
+        "question": "Mohammed Atta has what kind of model of the company that makes Datsun Type 12?",
+        "suggested": "Find information about Mohammed Atta's connection to Datsun or Nissan and any specific model he might have."
+      }
+    },
+    {
+      "id": "2hop__167577_31122",
+      "round": 2,
+      "support": [
+        "2hop__167577_31122::p10",
+        "2hop__167577_31122::p14"
+      ],
+      "hits": {
+        "old_actual": 1,
+        "clean": 1,
+        "clean_then_question": 1,
+        "question_then_clean": 1,
+        "clean_then_suggested": 1,
+        "suggested_then_clean": 1,
+        "clean_question_suggested": 1
+      },
+      "ids": {
+        "old_actual": [
+          "2hop__167577_31122::p10",
+          "2hop__269766_43945::p1",
+          "2hop__31124_31122::p9"
+        ],
+        "clean": [
+          "2hop__167577_31122::p10",
+          "2hop__269766_43945::p12",
+          "2hop__167577_31122::p9"
+        ],
+        "clean_then_question": [
+          "2hop__167577_31122::p10",
+          "2hop__269766_43945::p12",
+          "2hop__167577_31122::p9",
+          "2hop__167577_31122::p17"
+        ],
+        "question_then_clean": [
+          "2hop__167577_31122::p10",
+          "2hop__167577_31122::p9",
+          "2hop__167577_31122::p17",
+          "2hop__269766_43945::p12"
+        ],
+        "clean_then_suggested": [
+          "2hop__167577_31122::p10",
+          "2hop__269766_43945::p12",
+          "2hop__167577_31122::p9"
+        ],
+        "suggested_then_clean": [
+          "2hop__167577_31122::p10",
+          "2hop__269766_43945::p12",
+          "2hop__167577_31122::p9"
+        ],
+        "clean_question_suggested": [
+          "2hop__167577_31122::p10",
+          "2hop__269766_43945::p12",
+          "2hop__167577_31122::p9",
+          "2hop__167577_31122::p17"
+        ]
+      },
+      "queries": {
+        "clean": "George Berkeley author Treatise Concerning Principles Human Knowledge lived 18th century 18 世纪",
+        "question": "What century did the author of A Treatise Concerning the Principles of Human Knowledge live in?",
+        "suggested": ""
+      }
+    },
+    {
+      "id": "2hop__194469_83289",
+      "round": 2,
+      "support": [
+        "2hop__194469_83289::p19",
+        "2hop__194469_83289::p7"
+      ],
+      "hits": {
+        "old_actual": 1,
+        "clean": 1,
+        "clean_then_question": 1,
+        "question_then_clean": 1,
+        "clean_then_suggested": 2,
+        "suggested_then_clean": 2,
+        "clean_question_suggested": 1
+      },
+      "ids": {
+        "old_actual": [
+          "2hop__194469_83289::p19",
+          "2hop__810411_159673::p10",
+          "2hop__374495_68633::p0"
+        ],
+        "clean": [
+          "2hop__194469_83289::p19",
+          "2hop__374495_68633::p0",
+          "2hop__810411_159673::p10"
+        ],
+        "clean_then_question": [
+          "2hop__194469_83289::p19",
+          "2hop__374495_68633::p0",
+          "2hop__810411_159673::p10",
+          "2hop__194469_83289::p11",
+          "2hop__73719_510545::p16"
+        ],
+        "question_then_clean": [
+          "2hop__194469_83289::p19",
+          "2hop__194469_83289::p11",
+          "2hop__73719_510545::p16",
+          "2hop__374495_68633::p0",
+          "2hop__810411_159673::p10"
+        ],
+        "clean_then_suggested": [
+          "2hop__194469_83289::p19",
+          "2hop__374495_68633::p0",
+          "2hop__810411_159673::p10",
+          "2hop__194469_83289::p7",
+          "2hop__132854_417697::p9"
+        ],
+        "suggested_then_clean": [
+          "2hop__194469_83289::p19",
+          "2hop__194469_83289::p7",
+          "2hop__132854_417697::p9",
+          "2hop__374495_68633::p0",
+          "2hop__810411_159673::p10"
+        ],
+        "clean_question_suggested": [
+          "2hop__194469_83289::p19",
+          "2hop__374495_68633::p0",
+          "2hop__810411_159673::p10",
+          "2hop__194469_83289::p11",
+          "2hop__73719_510545::p16"
+        ]
+      },
+      "queries": {
+        "clean": "Listening Sessions identifies Matt Bennett co star video guy One Last Time participant",
+        "question": "Who is the guy in the One Last Time video by the participant in The Listening Sessions?",
+        "suggested": "Clarify the connection between Ariana Grande's 'One Last Time' video and The Listening Sessions, and identify the specific participant in The Listening Sessions mentioned in the claim."
+      }
+    },
+    {
+      "id": "2hop__20268_42014",
+      "round": 2,
+      "support": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8"
+      ],
+      "hits": {
+        "old_actual": 2,
+        "clean": 2,
+        "clean_then_question": 2,
+        "question_then_clean": 2,
+        "clean_then_suggested": 2,
+        "suggested_then_clean": 2,
+        "clean_question_suggested": 2
+      },
+      "ids": {
+        "old_actual": [
+          "2hop__20268_42014::p8",
+          "2hop__20268_42014::p1",
+          "2hop__42027_42004::p7"
+        ],
+        "clean": [
+          "2hop__20268_42014::p8",
+          "2hop__20268_42014::p1",
+          "2hop__20268_42014::p16"
+        ],
+        "clean_then_question": [
+          "2hop__20268_42014::p8",
+          "2hop__20268_42014::p1",
+          "2hop__20268_42014::p16",
+          "2hop__433694_20273::p3"
+        ],
+        "question_then_clean": [
+          "2hop__20268_42014::p1",
+          "2hop__20268_42014::p8",
+          "2hop__433694_20273::p3",
+          "2hop__20268_42014::p16"
+        ],
+        "clean_then_suggested": [
+          "2hop__20268_42014::p8",
+          "2hop__20268_42014::p1",
+          "2hop__20268_42014::p16",
+          "2hop__433694_20273::p3"
+        ],
+        "suggested_then_clean": [
+          "2hop__20268_42014::p1",
+          "2hop__20268_42014::p8",
+          "2hop__433694_20273::p3",
+          "2hop__20268_42014::p16"
+        ],
+        "clean_question_suggested": [
+          "2hop__20268_42014::p8",
+          "2hop__20268_42014::p1",
+          "2hop__20268_42014::p16",
+          "2hop__433694_20273::p3"
+        ]
+      },
+      "queries": {
+        "clean": "how many members Scottish Government seats organization enacted Directory Public Worship into law",
+        "question": "How many members in the seats of the organization that enacted the Directory of Public Worship into law are members of the Scottish Government?",
+        "suggested": "How many members of the Scottish Government were part of the Scottish Parliament when the Directory of Public Worship was enacted into law?"
+      }
+    },
+    {
+      "id": "2hop__20268_42014",
+      "round": 3,
+      "support": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8"
+      ],
+      "hits": {
+        "old_actual": 1,
+        "clean": 1,
+        "clean_then_question": 2,
+        "question_then_clean": 2,
+        "clean_then_suggested": 2,
+        "suggested_then_clean": 2,
+        "clean_question_suggested": 2
+      },
+      "ids": {
+        "old_actual": [
+          "2hop__20268_42014::p8",
+          "2hop__20268_42014::p16",
+          "2hop__20268_42014::p10"
+        ],
+        "clean": [
+          "2hop__20268_42014::p8",
+          "2hop__20268_42014::p16",
+          "2hop__20268_42014::p10"
+        ],
+        "clean_then_question": [
+          "2hop__20268_42014::p8",
+          "2hop__20268_42014::p16",
+          "2hop__20268_42014::p10",
+          "2hop__20268_42014::p1",
+          "2hop__433694_20273::p3"
+        ],
+        "question_then_clean": [
+          "2hop__20268_42014::p1",
+          "2hop__20268_42014::p8",
+          "2hop__433694_20273::p3",
+          "2hop__20268_42014::p16",
+          "2hop__20268_42014::p10"
+        ],
+        "clean_then_suggested": [
+          "2hop__20268_42014::p8",
+          "2hop__20268_42014::p16",
+          "2hop__20268_42014::p10",
+          "2hop__20268_42014::p1",
+          "2hop__433694_20273::p3"
+        ],
+        "suggested_then_clean": [
+          "2hop__20268_42014::p1",
+          "2hop__20268_42014::p8",
+          "2hop__433694_20273::p3",
+          "2hop__20268_42014::p16",
+          "2hop__20268_42014::p10"
+        ],
+        "clean_question_suggested": [
+          "2hop__20268_42014::p8",
+          "2hop__20268_42014::p16",
+          "2hop__20268_42014::p10",
+          "2hop__20268_42014::p1",
+          "2hop__433694_20273::p3"
+        ]
+      },
+      "queries": {
+        "clean": "number members Scottish Government seats organization enacted Directory Public Worship into law How many",
+        "question": "How many members in the seats of the organization that enacted the Directory of Public Worship into law are members of the Scottish Government?",
+        "suggested": "How many members of the Scottish Government were part of the Scottish Parliament when the Directory of Public Worship was enacted into law?"
+      }
+    },
+    {
+      "id": "2hop__244193_461106",
+      "round": 2,
+      "support": [
+        "2hop__244193_461106::p3",
+        "2hop__244193_461106::p6"
+      ],
+      "hits": {
+        "old_actual": 0,
+        "clean": 0,
+        "clean_then_question": 0,
+        "question_then_clean": 0,
+        "clean_then_suggested": 0,
+        "suggested_then_clean": 0,
+        "clean_question_suggested": 0
+      },
+      "ids": {
+        "old_actual": [
+          "2hop__244193_461106::p12",
+          "2hop__244193_461106::p4",
+          "2hop__244193_461106::p18"
+        ],
+        "clean": [
+          "2hop__244193_461106::p12",
+          "2hop__244193_461106::p4",
+          "2hop__244193_461106::p18"
+        ],
+        "clean_then_question": [
+          "2hop__244193_461106::p12",
+          "2hop__244193_461106::p4",
+          "2hop__244193_461106::p18",
+          "2hop__244193_461106::p13"
+        ],
+        "question_then_clean": [
+          "2hop__244193_461106::p12",
+          "2hop__244193_461106::p4",
+          "2hop__244193_461106::p13",
+          "2hop__244193_461106::p18"
+        ],
+        "clean_then_suggested": [
+          "2hop__244193_461106::p12",
+          "2hop__244193_461106::p4",
+          "2hop__244193_461106::p18",
+          "2hop__92590_43786::p18"
+        ],
+        "suggested_then_clean": [
+          "2hop__244193_461106::p12",
+          "2hop__244193_461106::p4",
+          "2hop__92590_43786::p18",
+          "2hop__244193_461106::p18"
+        ],
+        "clean_question_suggested": [
+          "2hop__244193_461106::p12",
+          "2hop__244193_461106::p4",
+          "2hop__244193_461106::p18",
+          "2hop__244193_461106::p13",
+          "2hop__92590_43786::p18"
+        ]
+      },
+      "queries": {
+        "clean": "creator Washington Monument associated movement belongs",
+        "question": "What movement does the creator of the Washington Monument belong to?",
+        "suggested": "Who is the creator of the Washington Monument and what movement do they belong to?"
+      }
+    },
+    {
+      "id": "2hop__244193_461106",
+      "round": 3,
+      "support": [
+        "2hop__244193_461106::p3",
+        "2hop__244193_461106::p6"
+      ],
+      "hits": {
+        "old_actual": 0,
+        "clean": 0,
+        "clean_then_question": 0,
+        "question_then_clean": 0,
+        "clean_then_suggested": 0,
+        "suggested_then_clean": 0,
+        "clean_question_suggested": 0
+      },
+      "ids": {
+        "old_actual": [
+          "2hop__244193_461106::p12",
+          "2hop__244193_461106::p4",
+          "2hop__244193_461106::p18"
+        ],
+        "clean": [
+          "2hop__244193_461106::p12",
+          "2hop__244193_461106::p4",
+          "2hop__244193_461106::p13"
+        ],
+        "clean_then_question": [
+          "2hop__244193_461106::p12",
+          "2hop__244193_461106::p4",
+          "2hop__244193_461106::p13"
+        ],
+        "question_then_clean": [
+          "2hop__244193_461106::p12",
+          "2hop__244193_461106::p4",
+          "2hop__244193_461106::p13"
+        ],
+        "clean_then_suggested": [
+          "2hop__244193_461106::p12",
+          "2hop__244193_461106::p4",
+          "2hop__244193_461106::p13",
+          "2hop__92590_43786::p18"
+        ],
+        "suggested_then_clean": [
+          "2hop__244193_461106::p12",
+          "2hop__244193_461106::p4",
+          "2hop__92590_43786::p18",
+          "2hop__244193_461106::p13"
+        ],
+        "clean_question_suggested": [
+          "2hop__244193_461106::p12",
+          "2hop__244193_461106::p4",
+          "2hop__244193_461106::p13",
+          "2hop__92590_43786::p18"
+        ]
+      },
+      "queries": {
+        "clean": "creator Washington Monument affiliation movement belongs",
+        "question": "What movement does the creator of the Washington Monument belong to?",
+        "suggested": "Who is the creator of the Washington Monument and what movement do they belong to?"
+      }
+    },
+    {
+      "id": "2hop__247353_55227",
+      "round": 2,
+      "support": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ],
+      "hits": {
+        "old_actual": 2,
+        "clean": 2,
+        "clean_then_question": 2,
+        "question_then_clean": 2,
+        "clean_then_suggested": 2,
+        "suggested_then_clean": 2,
+        "clean_question_suggested": 2
+      },
+      "ids": {
+        "old_actual": [
+          "2hop__247353_55227::p17",
+          "2hop__247353_55227::p6",
+          "2hop__92590_43786::p2"
+        ],
+        "clean": [
+          "2hop__247353_55227::p17",
+          "2hop__247353_55227::p6",
+          "2hop__92590_43786::p2"
+        ],
+        "clean_then_question": [
+          "2hop__247353_55227::p17",
+          "2hop__247353_55227::p6",
+          "2hop__92590_43786::p2",
+          "3hop2__140194_16797_51068::p5"
+        ],
+        "question_then_clean": [
+          "2hop__247353_55227::p17",
+          "2hop__247353_55227::p6",
+          "3hop2__140194_16797_51068::p5",
+          "2hop__92590_43786::p2"
+        ],
+        "clean_then_suggested": [
+          "2hop__247353_55227::p17",
+          "2hop__247353_55227::p6",
+          "2hop__92590_43786::p2",
+          "3hop2__140194_16797_51068::p5"
+        ],
+        "suggested_then_clean": [
+          "2hop__247353_55227::p17",
+          "2hop__247353_55227::p6",
+          "3hop2__140194_16797_51068::p5",
+          "2hop__92590_43786::p2"
+        ],
+        "clean_question_suggested": [
+          "2hop__247353_55227::p17",
+          "2hop__247353_55227::p6",
+          "2hop__92590_43786::p2",
+          "3hop2__140194_16797_51068::p5"
+        ]
+      },
+      "queries": {
+        "clean": "wife Here Comes Boom's screenwriter Grown Ups plays",
+        "question": "Who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?",
+        "suggested": "Who is the wife of Here Comes the Boom's screenwriter in the movie Grown Ups?"
+      }
+    },
+    {
+      "id": "2hop__247353_55227",
+      "round": 3,
+      "support": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ],
+      "hits": {
+        "old_actual": 2,
+        "clean": 2,
+        "clean_then_question": 2,
+        "question_then_clean": 2,
+        "clean_then_suggested": 2,
+        "suggested_then_clean": 2,
+        "clean_question_suggested": 2
+      },
+      "ids": {
+        "old_actual": [
+          "2hop__247353_55227::p17",
+          "2hop__247353_55227::p6",
+          "2hop__92590_43786::p2"
+        ],
+        "clean": [
+          "2hop__247353_55227::p17",
+          "2hop__247353_55227::p6",
+          "2hop__92590_43786::p2"
+        ],
+        "clean_then_question": [
+          "2hop__247353_55227::p17",
+          "2hop__247353_55227::p6",
+          "2hop__92590_43786::p2",
+          "3hop2__140194_16797_51068::p5"
+        ],
+        "question_then_clean": [
+          "2hop__247353_55227::p17",
+          "2hop__247353_55227::p6",
+          "3hop2__140194_16797_51068::p5",
+          "2hop__92590_43786::p2"
+        ],
+        "clean_then_suggested": [
+          "2hop__247353_55227::p17",
+          "2hop__247353_55227::p6",
+          "2hop__92590_43786::p2"
+        ],
+        "suggested_then_clean": [
+          "2hop__247353_55227::p17",
+          "2hop__247353_55227::p6",
+          "2hop__92590_43786::p2"
+        ],
+        "clean_question_suggested": [
+          "2hop__247353_55227::p17",
+          "2hop__247353_55227::p6",
+          "2hop__92590_43786::p2",
+          "3hop2__140194_16797_51068::p5"
+        ]
+      },
+      "queries": {
+        "clean": "wife Here Comes Boom's screenwriter Grown Ups plays",
+        "question": "Who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?",
+        "suggested": "Who is the wife of Here Comes the Boom's screenwriter in Grown Ups?"
+      }
+    },
+    {
+      "id": "2hop__25396_593388",
+      "round": 2,
+      "support": [
+        "2hop__25396_593388::p1",
+        "2hop__25396_593388::p12"
+      ],
+      "hits": {
+        "old_actual": 2,
+        "clean": 2,
+        "clean_then_question": 2,
+        "question_then_clean": 2,
+        "clean_then_suggested": 2,
+        "suggested_then_clean": 2,
+        "clean_question_suggested": 2
+      },
+      "ids": {
+        "old_actual": [
+          "2hop__25396_593388::p12",
+          "2hop__39063_593388::p13",
+          "2hop__25396_593388::p1"
+        ],
+        "clean": [
+          "2hop__25396_593388::p12",
+          "2hop__39063_593388::p13",
+          "2hop__25396_593388::p1"
+        ],
+        "clean_then_question": [
+          "2hop__25396_593388::p12",
+          "2hop__39063_593388::p13",
+          "2hop__25396_593388::p1",
+          "2hop__39063_593388::p3",
+          "2hop__61924_712629::p11"
+        ],
+        "question_then_clean": [
+          "2hop__25396_593388::p12",
+          "2hop__39063_593388::p3",
+          "2hop__61924_712629::p11",
+          "2hop__39063_593388::p13",
+          "2hop__25396_593388::p1"
+        ],
+        "clean_then_suggested": [
+          "2hop__25396_593388::p12",
+          "2hop__39063_593388::p13",
+          "2hop__25396_593388::p1",
+          "2hop__39063_593388::p3"
+        ],
+        "suggested_then_clean": [
+          "2hop__39063_593388::p13",
+          "2hop__25396_593388::p1",
+          "2hop__39063_593388::p3",
+          "2hop__25396_593388::p12"
+        ],
+        "clean_question_suggested": [
+          "2hop__25396_593388::p12",
+          "2hop__39063_593388::p13",
+          "2hop__25396_593388::p1",
+          "2hop__39063_593388::p3",
+          "2hop__61924_712629::p11"
+        ]
+      },
+      "queries": {
+        "clean": "father Robert Peel issued Tamworth Manifesto person",
+        "question": "Who was the father of the person who issued the Tamworth manifesto?",
+        "suggested": "Who was the father of Robert Peel?"
+      }
+    },
+    {
+      "id": "2hop__2682_577502",
+      "round": 2,
+      "support": [
+        "2hop__2682_577502::p17",
+        "2hop__2682_577502::p9"
+      ],
+      "hits": {
+        "old_actual": 1,
+        "clean": 1,
+        "clean_then_question": 1,
+        "question_then_clean": 1,
+        "clean_then_suggested": 2,
+        "suggested_then_clean": 2,
+        "clean_question_suggested": 2
+      },
+      "ids": {
+        "old_actual": [
+          "2hop__2682_577502::p9",
+          "2hop__645448_77615::p13",
+          "2hop__2682_577502::p15"
+        ],
+        "clean": [
+          "2hop__2682_577502::p9",
+          "2hop__645448_77615::p13",
+          "2hop__2682_577502::p15"
+        ],
+        "clean_then_question": [
+          "2hop__2682_577502::p9",
+          "2hop__645448_77615::p13",
+          "2hop__2682_577502::p15",
+          "3hop2__92991_27069_76291::p7"
+        ],
+        "question_then_clean": [
+          "2hop__2682_577502::p9",
+          "2hop__2682_577502::p15",
+          "3hop2__92991_27069_76291::p7",
+          "2hop__645448_77615::p13"
+        ],
+        "clean_then_suggested": [
+          "2hop__2682_577502::p9",
+          "2hop__645448_77615::p13",
+          "2hop__2682_577502::p15",
+          "2hop__2682_577502::p17"
+        ],
+        "suggested_then_clean": [
+          "2hop__645448_77615::p13",
+          "2hop__2682_577502::p17",
+          "2hop__2682_577502::p9",
+          "2hop__2682_577502::p15"
+        ],
+        "clean_question_suggested": [
+          "2hop__2682_577502::p9",
+          "2hop__645448_77615::p13",
+          "2hop__2682_577502::p15",
+          "3hop2__92991_27069_76291::p7",
+          "2hop__2682_577502::p17"
+        ]
+      },
+      "queries": {
+        "clean": "spouse Arnold Schwarzenegger famous governor signing legislation honor Donda West's death",
+        "question": "Who is the spouse of the famous governor signing legislation in honor of Donda West's death?",
+        "suggested": "Who is the spouse of Arnold Schwarzenegger?"
+      }
+    },
+    {
+      "id": "2hop__2682_577502",
+      "round": 3,
+      "support": [
+        "2hop__2682_577502::p17",
+        "2hop__2682_577502::p9"
+      ],
+      "hits": {
+        "old_actual": 1,
+        "clean": 1,
+        "clean_then_question": 1,
+        "question_then_clean": 1,
+        "clean_then_suggested": 1,
+        "suggested_then_clean": 1,
+        "clean_question_suggested": 1
+      },
+      "ids": {
+        "old_actual": [
+          "2hop__2682_577502::p9",
+          "2hop__645448_77615::p13",
+          "2hop__2682_577502::p15"
+        ],
+        "clean": [
+          "2hop__2682_577502::p9",
+          "2hop__645448_77615::p13",
+          "2hop__2682_577502::p15"
+        ],
+        "clean_then_question": [
+          "2hop__2682_577502::p9",
+          "2hop__645448_77615::p13",
+          "2hop__2682_577502::p15",
+          "3hop2__92991_27069_76291::p7"
+        ],
+        "question_then_clean": [
+          "2hop__2682_577502::p9",
+          "2hop__2682_577502::p15",
+          "3hop2__92991_27069_76291::p7",
+          "2hop__645448_77615::p13"
+        ],
+        "clean_then_suggested": [
+          "2hop__2682_577502::p9",
+          "2hop__645448_77615::p13",
+          "2hop__2682_577502::p15",
+          "2hop__77518_548781::p5"
+        ],
+        "suggested_then_clean": [
+          "2hop__2682_577502::p9",
+          "2hop__645448_77615::p13",
+          "2hop__77518_548781::p5",
+          "2hop__2682_577502::p15"
+        ],
+        "clean_question_suggested": [
+          "2hop__2682_577502::p9",
+          "2hop__645448_77615::p13",
+          "2hop__2682_577502::p15",
+          "3hop2__92991_27069_76291::p7",
+          "2hop__77518_548781::p5"
+        ]
+      },
+      "queries": {
+        "clean": "spouse Arnold Schwarzenegger time signing legislation famous governor honor Donda West's death",
+        "question": "Who is the spouse of the famous governor signing legislation in honor of Donda West's death?",
+        "suggested": "Who was Arnold Schwarzenegger's spouse at the time of signing the 'Donda West Law'?"
+      }
+    },
+    {
+      "id": "2hop__286621_84856",
+      "round": 2,
+      "support": [
+        "2hop__286621_84856::p12",
+        "2hop__286621_84856::p17"
+      ],
+      "hits": {
+        "old_actual": 1,
+        "clean": 1,
+        "clean_then_question": 1,
+        "question_then_clean": 1,
+        "clean_then_suggested": 1,
+        "suggested_then_clean": 1,
+        "clean_question_suggested": 1
+      },
+      "ids": {
+        "old_actual": [
+          "2hop__286621_84856::p17",
+          "3hop1__140786_2053_5289::p10",
+          "2hop__435184_84856::p0"
+        ],
+        "clean": [
+          "2hop__286621_84856::p17",
+          "3hop1__389955_132457_47686::p11",
+          "2hop__435184_84856::p1"
+        ],
+        "clean_then_question": [
+          "2hop__286621_84856::p17",
+          "3hop1__389955_132457_47686::p11",
+          "2hop__435184_84856::p1",
+          "3hop1__140786_2053_5289::p10"
+        ],
+        "question_then_clean": [
+          "2hop__286621_84856::p17",
+          "3hop1__140786_2053_5289::p10",
+          "3hop1__389955_132457_47686::p11",
+          "2hop__435184_84856::p1"
+        ],
+        "clean_then_suggested": [
+          "2hop__286621_84856::p17",
+          "3hop1__389955_132457_47686::p11",
+          "2hop__435184_84856::p1",
+          "2hop__286621_84856::p15",
+          "2hop__286621_84856::p10"
+        ],
+        "suggested_then_clean": [
+          "2hop__286621_84856::p17",
+          "2hop__286621_84856::p15",
+          "2hop__286621_84856::p10",
+          "3hop1__389955_132457_47686::p11",
+          "2hop__435184_84856::p1"
+        ],
+        "clean_question_suggested": [
+          "2hop__286621_84856::p17",
+          "3hop1__389955_132457_47686::p11",
+          "2hop__435184_84856::p1",
+          "3hop1__140786_2053_5289::p10",
+          "2hop__286621_84856::p15"
+        ]
+      },
+      "queries": {
+        "clean": "new season show named Politically Incorrect cast member",
+        "question": "When does the new season of the show named for the Politically Incorrect cast member?",
+        "suggested": "Find information about a new season of a show named for a cast member of Politically Incorrect."
+      }
+    },
+    {
+      "id": "2hop__286621_84856",
+      "round": 3,
+      "support": [
+        "2hop__286621_84856::p12",
+        "2hop__286621_84856::p17"
+      ],
+      "hits": {
+        "old_actual": 1,
+        "clean": 1,
+        "clean_then_question": 1,
+        "question_then_clean": 1,
+        "clean_then_suggested": 1,
+        "suggested_then_clean": 1,
+        "clean_question_suggested": 1
+      },
+      "ids": {
+        "old_actual": [
+          "2hop__286621_84856::p17",
+          "3hop1__140786_2053_5289::p10",
+          "2hop__435184_84856::p0"
+        ],
+        "clean": [
+          "2hop__286621_84856::p17",
+          "3hop1__652852_2053_52946::p16",
+          "3hop1__140786_2053_52946::p19"
+        ],
+        "clean_then_question": [
+          "2hop__286621_84856::p17",
+          "3hop1__652852_2053_52946::p16",
+          "3hop1__140786_2053_52946::p19",
+          "3hop1__140786_2053_5289::p10",
+          "3hop1__389955_132457_47686::p11"
+        ],
+        "question_then_clean": [
+          "2hop__286621_84856::p17",
+          "3hop1__140786_2053_5289::p10",
+          "3hop1__389955_132457_47686::p11",
+          "3hop1__652852_2053_52946::p16",
+          "3hop1__140786_2053_52946::p19"
+        ],
+        "clean_then_suggested": [
+          "2hop__286621_84856::p17",
+          "3hop1__652852_2053_52946::p16",
+          "3hop1__140786_2053_52946::p19",
+          "3hop1__140786_2053_5289::p10",
+          "2hop__286621_84856::p15"
+        ],
+        "suggested_then_clean": [
+          "2hop__286621_84856::p17",
+          "3hop1__140786_2053_5289::p10",
+          "2hop__286621_84856::p15",
+          "3hop1__652852_2053_52946::p16",
+          "3hop1__140786_2053_52946::p19"
+        ],
+        "clean_question_suggested": [
+          "2hop__286621_84856::p17",
+          "3hop1__652852_2053_52946::p16",
+          "3hop1__140786_2053_52946::p19",
+          "3hop1__140786_2053_5289::p10",
+          "3hop1__389955_132457_47686::p11"
+        ]
+      },
+      "queries": {
+        "clean": "show named Politically Incorrect cast member new season date",
+        "question": "When does the new season of the show named for the Politically Incorrect cast member?",
+        "suggested": "Find a show named for a Politically Incorrect cast member and its new season date."
+      }
+    },
+    {
+      "id": "2hop__315267_277284",
+      "round": 2,
+      "support": [
+        "2hop__315267_277284::p15",
+        "2hop__315267_277284::p18"
+      ],
+      "hits": {
+        "old_actual": 1,
+        "clean": 1,
+        "clean_then_question": 1,
+        "question_then_clean": 1,
+        "clean_then_suggested": 1,
+        "suggested_then_clean": 1,
+        "clean_question_suggested": 1
+      },
+      "ids": {
+        "old_actual": [
+          "2hop__315267_277284::p18",
+          "2hop__446324_620302::p1",
+          "2hop__25396_593388::p16"
+        ],
+        "clean": [
+          "2hop__315267_277284::p18",
+          "2hop__446324_620302::p1",
+          "2hop__25396_593388::p16"
+        ],
+        "clean_then_question": [
+          "2hop__315267_277284::p18",
+          "2hop__446324_620302::p1",
+          "2hop__25396_593388::p16",
+          "2hop__770487_494646::p4"
+        ],
+        "question_then_clean": [
+          "2hop__315267_277284::p18",
+          "2hop__770487_494646::p4",
+          "2hop__25396_593388::p16",
+          "2hop__446324_620302::p1"
+        ],
+        "clean_then_suggested": [
+          "2hop__315267_277284::p18",
+          "2hop__446324_620302::p1",
+          "2hop__25396_593388::p16",
+          "2hop__770487_494646::p4"
+        ],
+        "suggested_then_clean": [
+          "2hop__315267_277284::p18",
+          "2hop__770487_494646::p4",
+          "2hop__25396_593388::p16",
+          "2hop__446324_620302::p1"
+        ],
+        "clean_question_suggested": [
+          "2hop__315267_277284::p18",
+          "2hop__446324_620302::p1",
+          "2hop__25396_593388::p16",
+          "2hop__770487_494646::p4"
+        ]
+      },
+      "queries": {
+        "clean": "administrative territorial entity Bill Cockcroft educated missing",
+        "question": "What administrative territorial entity includes the place where Bill Cockcroft was educated?",
+        "suggested": "What administrative territorial entity includes the place where Bill Cockcroft was educated?"
+      }
+    },
+    {
+      "id": "2hop__315267_277284",
+      "round": 3,
+      "support": [
+        "2hop__315267_277284::p15",
+        "2hop__315267_277284::p18"
+      ],
+      "hits": {
+        "old_actual": 1,
+        "clean": 1,
+        "clean_then_question": 1,
+        "question_then_clean": 1,
+        "clean_then_suggested": 1,
+        "suggested_then_clean": 1,
+        "clean_question_suggested": 1
+      },
+      "ids": {
+        "old_actual": [
+          "2hop__315267_277284::p18",
+          "2hop__25396_593388::p16",
+          "2hop__557743_92763::p3"
+        ],
+        "clean": [
+          "2hop__315267_277284::p18",
+          "2hop__25396_593388::p16",
+          "2hop__557743_92763::p3"
+        ],
+        "clean_then_question": [
+          "2hop__315267_277284::p18",
+          "2hop__25396_593388::p16",
+          "2hop__557743_92763::p3",
+          "2hop__770487_494646::p4"
+        ],
+        "question_then_clean": [
+          "2hop__315267_277284::p18",
+          "2hop__770487_494646::p4",
+          "2hop__25396_593388::p16",
+          "2hop__557743_92763::p3"
+        ],
+        "clean_then_suggested": [
+          "2hop__315267_277284::p18",
+          "2hop__25396_593388::p16",
+          "2hop__557743_92763::p3",
+          "2hop__770487_494646::p4"
+        ],
+        "suggested_then_clean": [
+          "2hop__315267_277284::p18",
+          "2hop__770487_494646::p4",
+          "2hop__25396_593388::p16",
+          "2hop__557743_92763::p3"
+        ],
+        "clean_question_suggested": [
+          "2hop__315267_277284::p18",
+          "2hop__25396_593388::p16",
+          "2hop__557743_92763::p3",
+          "2hop__770487_494646::p4"
+        ]
+      },
+      "queries": {
+        "clean": "administrative territorial entity Bill Cockcroft educated",
+        "question": "What administrative territorial entity includes the place where Bill Cockcroft was educated?",
+        "suggested": "What administrative territorial entity includes the place where Bill Cockcroft was educated?"
+      }
+    },
+    {
+      "id": "2hop__341176_711757",
+      "round": 2,
+      "support": [
+        "2hop__341176_711757::p10",
+        "2hop__341176_711757::p4"
+      ],
+      "hits": {
+        "old_actual": 2,
+        "clean": 2,
+        "clean_then_question": 2,
+        "question_then_clean": 2,
+        "clean_then_suggested": 2,
+        "suggested_then_clean": 2,
+        "clean_question_suggested": 2
+      },
+      "ids": {
+        "old_actual": [
+          "2hop__341176_711757::p10",
+          "2hop__341176_711757::p4",
+          "2hop__341176_711757::p16"
+        ],
+        "clean": [
+          "2hop__341176_711757::p10",
+          "2hop__341176_711757::p4",
+          "2hop__341176_711757::p16"
+        ],
+        "clean_then_question": [
+          "2hop__341176_711757::p10",
+          "2hop__341176_711757::p4",
+          "2hop__341176_711757::p16",
+          "4hop2__9988_158985_70784_61381::p2",
+          "4hop1__570103_49925_13759_736921::p9"
+        ],
+        "question_then_clean": [
+          "2hop__341176_711757::p10",
+          "4hop2__9988_158985_70784_61381::p2",
+          "4hop1__570103_49925_13759_736921::p9",
+          "2hop__341176_711757::p4",
+          "2hop__341176_711757::p16"
+        ],
+        "clean_then_suggested": [
+          "2hop__341176_711757::p10",
+          "2hop__341176_711757::p4",
+          "2hop__341176_711757::p16",
+          "2hop__341176_711757::p9"
+        ],
+        "suggested_then_clean": [
+          "2hop__341176_711757::p4",
+          "2hop__341176_711757::p10",
+          "2hop__341176_711757::p9",
+          "2hop__341176_711757::p16"
+        ],
+        "clean_question_suggested": [
+          "2hop__341176_711757::p10",
+          "2hop__341176_711757::p4",
+          "2hop__341176_711757::p16",
+          "4hop2__9988_158985_70784_61381::p2",
+          "4hop1__570103_49925_13759_736921::p9"
+        ]
+      },
+      "queries": {
+        "clean": "other districts Ryki County Lublin Voivodeship district found same Gmina St yca",
+        "question": "What other district is found in the same county as Gmina Stężyca?",
+        "suggested": "List other districts in Ryki County, Lublin Voivodeship"
+      }
+    },
+    {
+      "id": "2hop__351045_47134",
+      "round": 2,
+      "support": [
+        "2hop__351045_47134::p2",
+        "2hop__351045_47134::p4"
+      ],
+      "hits": {
+        "old_actual": 2,
+        "clean": 2,
+        "clean_then_question": 2,
+        "question_then_clean": 2,
+        "clean_then_suggested": 2,
+        "suggested_then_clean": 2,
+        "clean_question_suggested": 2
+      },
+      "ids": {
+        "old_actual": [
+          "2hop__351045_47134::p4",
+          "2hop__351045_47134::p2",
+          "2hop__351045_47134::p10"
+        ],
+        "clean": [
+          "2hop__351045_47134::p4",
+          "2hop__351045_47134::p2",
+          "2hop__351045_47134::p10"
+        ],
+        "clean_then_question": [
+          "2hop__351045_47134::p4",
+          "2hop__351045_47134::p2",
+          "2hop__351045_47134::p10",
+          "2hop__684287_78303::p12",
+          "3hop2__140194_16797_51068::p2"
+        ],
+        "question_then_clean": [
+          "2hop__351045_47134::p4",
+          "2hop__684287_78303::p12",
+          "3hop2__140194_16797_51068::p2",
+          "2hop__351045_47134::p2",
+          "2hop__351045_47134::p10"
+        ],
+        "clean_then_suggested": [
+          "2hop__351045_47134::p4",
+          "2hop__351045_47134::p2",
+          "2hop__351045_47134::p10",
+          "2hop__351045_47134::p18"
+        ],
+        "suggested_then_clean": [
+          "2hop__351045_47134::p2",
+          "2hop__351045_47134::p4",
+          "2hop__351045_47134::p18",
+          "2hop__351045_47134::p10"
+        ],
+        "clean_question_suggested": [
+          "2hop__351045_47134::p4",
+          "2hop__351045_47134::p2",
+          "2hop__351045_47134::p10",
+          "2hop__684287_78303::p12",
+          "3hop2__140194_16797_51068::p2"
+        ]
+      },
+      "queries": {
+        "clean": "There no mascot College Oceanic Atmospheric Sciences Oregon State University operates RV Wecoma operator",
+        "question": "What is the mascot of the operator of RV Wecoma?",
+        "suggested": "What is the mascot of the College of Oceanic & Atmospheric Sciences at Oregon State University?"
+      }
+    },
+    {
+      "id": "2hop__3739_13529",
+      "round": 2,
+      "support": [
+        "2hop__3739_13529::p16",
+        "2hop__3739_13529::p4"
+      ],
+      "hits": {
+        "old_actual": 0,
+        "clean": 0,
+        "clean_then_question": 1,
+        "question_then_clean": 1,
+        "clean_then_suggested": 0,
+        "suggested_then_clean": 0,
+        "clean_question_suggested": 1
+      },
+      "ids": {
+        "old_actual": [
+          "2hop__136179_13529::p13",
+          "2hop__136179_13529::p12",
+          "4hop3__316459_41402_145282_13584::p15"
+        ],
+        "clean": [
+          "2hop__136179_13529::p13",
+          "4hop3__316459_41402_157761_13584::p18",
+          "4hop3__316459_41402_145282_13584::p15"
+        ],
+        "clean_then_question": [
+          "2hop__136179_13529::p13",
+          "4hop3__316459_41402_157761_13584::p18",
+          "4hop3__316459_41402_145282_13584::p15",
+          "2hop__3739_13529::p16",
+          "2hop__136179_13529::p4"
+        ],
+        "question_then_clean": [
+          "2hop__136179_13529::p13",
+          "2hop__3739_13529::p16",
+          "2hop__136179_13529::p4",
+          "4hop3__316459_41402_157761_13584::p18",
+          "4hop3__316459_41402_145282_13584::p15"
+        ],
+        "clean_then_suggested": [
+          "2hop__136179_13529::p13",
+          "4hop3__316459_41402_157761_13584::p18",
+          "4hop3__316459_41402_145282_13584::p15",
+          "2hop__136179_13529::p12",
+          "2hop__136179_13529::p4"
+        ],
+        "suggested_then_clean": [
+          "2hop__136179_13529::p13",
+          "2hop__136179_13529::p12",
+          "2hop__136179_13529::p4",
+          "4hop3__316459_41402_157761_13584::p18",
+          "4hop3__316459_41402_145282_13584::p15"
+        ],
+        "clean_question_suggested": [
+          "2hop__136179_13529::p13",
+          "4hop3__316459_41402_157761_13584::p18",
+          "4hop3__316459_41402_145282_13584::p15",
+          "2hop__3739_13529::p16",
+          "2hop__136179_13529::p4"
+        ]
+      },
+      "queries": {
+        "clean": "football star backing out due relay controversy only discusses David Beckham's transfer Real Madrid instead Barcelona backed signed",
+        "question": "When was the football star who backed out due to relay controversy signed by Barcelona?",
+        "suggested": "Find evidence of a football star who backed out of signing with Barcelona due to a relay controversy."
+      }
+    },
+    {
+      "id": "2hop__3739_13529",
+      "round": 3,
+      "support": [
+        "2hop__3739_13529::p16",
+        "2hop__3739_13529::p4"
+      ],
+      "hits": {
+        "old_actual": 0,
+        "clean": 0,
+        "clean_then_question": 1,
+        "question_then_clean": 1,
+        "clean_then_suggested": 0,
+        "suggested_then_clean": 0,
+        "clean_question_suggested": 1
+      },
+      "ids": {
+        "old_actual": [
+          "2hop__136179_13529::p13",
+          "2hop__136179_13529::p12",
+          "4hop3__316459_41402_145282_13584::p15"
+        ],
+        "clean": [
+          "2hop__136179_13529::p13",
+          "4hop3__316459_41402_157761_13584::p18",
+          "4hop3__316459_41402_145282_13584::p15"
+        ],
+        "clean_then_question": [
+          "2hop__136179_13529::p13",
+          "4hop3__316459_41402_157761_13584::p18",
+          "4hop3__316459_41402_145282_13584::p15",
+          "2hop__3739_13529::p16",
+          "2hop__136179_13529::p4"
+        ],
+        "question_then_clean": [
+          "2hop__136179_13529::p13",
+          "2hop__3739_13529::p16",
+          "2hop__136179_13529::p4",
+          "4hop3__316459_41402_157761_13584::p18",
+          "4hop3__316459_41402_145282_13584::p15"
+        ],
+        "clean_then_suggested": [
+          "2hop__136179_13529::p13",
+          "4hop3__316459_41402_157761_13584::p18",
+          "4hop3__316459_41402_145282_13584::p15",
+          "2hop__136179_13529::p12",
+          "2hop__136179_13529::p4"
+        ],
+        "suggested_then_clean": [
+          "2hop__136179_13529::p13",
+          "2hop__136179_13529::p12",
+          "2hop__136179_13529::p4",
+          "4hop3__316459_41402_157761_13584::p18",
+          "4hop3__316459_41402_145282_13584::p15"
+        ],
+        "clean_question_suggested": [
+          "2hop__136179_13529::p13",
+          "4hop3__316459_41402_157761_13584::p18",
+          "4hop3__316459_41402_145282_13584::p15",
+          "2hop__3739_13529::p16",
+          "2hop__136179_13529::p4"
+        ]
+      },
+      "queries": {
+        "clean": "football star backing out due relay controversy only discusses David Beckham's transfer Real Madrid instead Barcelona backed signed",
+        "question": "When was the football star who backed out due to relay controversy signed by Barcelona?",
+        "suggested": "Find evidence about a football star who backed out of a transfer to Barcelona due to a relay controversy."
+      }
+    }
+  ]
+}

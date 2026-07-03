@@ -1,0 +1,562 @@
+{
+  "summary": {
+    "changed_query": 10,
+    "same_support_hit": 19,
+    "clean_any_support_hit": 18,
+    "old_any_support_hit": 18,
+    "improved_support_hit": 3,
+    "cases": 22
+  },
+  "cases": [
+    {
+      "id": "2hop__129721_40482",
+      "round": 2,
+      "gold": "Edmund Bellinger",
+      "old_query": "Huguenots purchasing land state encompassing Zubly Cemetery purchase",
+      "clean_query": "Huguenots purchasing land state encompassing Zubly Cemetery purchase",
+      "old_hit": 2,
+      "clean_hit": 2,
+      "old_ids": [
+        "2hop__129721_40482::p18",
+        "2hop__129721_40482::p3",
+        "2hop__129721_40482::p14"
+      ],
+      "clean_ids": [
+        "2hop__129721_40482::p18",
+        "2hop__129721_40482::p3",
+        "2hop__129721_40482::p14",
+        "2hop__129721_40482::p9",
+        "2hop__129721_40482::p5"
+      ],
+      "support": [
+        "2hop__129721_40482::p14",
+        "2hop__129721_40482::p18"
+      ]
+    },
+    {
+      "id": "2hop__131951_643670",
+      "round": 2,
+      "gold": "Het Scheur",
+      "old_query": "name mouth watercourse Rotterdam Centrum body water",
+      "clean_query": "name mouth watercourse Rotterdam Centrum body water",
+      "old_hit": 2,
+      "clean_hit": 2,
+      "old_ids": [
+        "2hop__131951_643670::p6",
+        "4hop1__726391_153080_33952_34109::p1",
+        "2hop__131951_643670::p10"
+      ],
+      "clean_ids": [
+        "2hop__131951_643670::p6",
+        "4hop1__726391_153080_33952_34109::p1",
+        "2hop__131951_643670::p10",
+        "2hop__6827_49664::p2",
+        "4hop1__860115_798482_131926_13165::p9"
+      ],
+      "support": [
+        "2hop__131951_643670::p10",
+        "2hop__131951_643670::p6"
+      ]
+    },
+    {
+      "id": "2hop__132854_417697",
+      "round": 2,
+      "gold": "Nissan Altima",
+      "old_query": "Mohammed Atta's connection Datsun Nissan any model he might Atta kind company makes Type 12",
+      "clean_query": "Mohammed Atta's connection Datsun Nissan model he might Atta kind company makes Type 12",
+      "old_hit": 1,
+      "clean_hit": 1,
+      "old_ids": [
+        "2hop__132854_417697::p10",
+        "3hop2__132957_133264_40768::p13",
+        "2hop__132854_417697::p16"
+      ],
+      "clean_ids": [
+        "2hop__132854_417697::p10",
+        "3hop2__132957_593597_40768::p1",
+        "3hop2__132957_379231_40768::p3",
+        "3hop2__132957_133264_40768::p13",
+        "2hop__132854_417697::p16"
+      ],
+      "support": [
+        "2hop__132854_417697::p10",
+        "2hop__132854_417697::p6"
+      ]
+    },
+    {
+      "id": "2hop__167577_31122",
+      "round": 2,
+      "gold": "18th",
+      "old_query": "indicates George Berkeley author Treatise Concerning Principles Human Knowledge lived 18th century not 19th 18 世纪",
+      "clean_query": "George Berkeley author Treatise Concerning Principles Human Knowledge lived 18th century 18 世纪",
+      "old_hit": 1,
+      "clean_hit": 1,
+      "old_ids": [
+        "2hop__167577_31122::p10",
+        "2hop__269766_43945::p1",
+        "2hop__31124_31122::p9"
+      ],
+      "clean_ids": [
+        "2hop__167577_31122::p10",
+        "2hop__269766_43945::p12",
+        "2hop__167577_31122::p9",
+        "2hop__31124_31122::p9",
+        "2hop__269766_43945::p1"
+      ],
+      "support": [
+        "2hop__167577_31122::p10",
+        "2hop__167577_31122::p14"
+      ]
+    },
+    {
+      "id": "2hop__194469_83289",
+      "round": 2,
+      "gold": "Matt Bennett",
+      "old_query": "Listening Sessions identifies Matt Bennett co star video contradicting claim guy One Last Time participant",
+      "clean_query": "Listening Sessions identifies Matt Bennett co star video guy One Last Time participant",
+      "old_hit": 1,
+      "clean_hit": 1,
+      "old_ids": [
+        "2hop__194469_83289::p19",
+        "2hop__810411_159673::p10",
+        "2hop__374495_68633::p0"
+      ],
+      "clean_ids": [
+        "2hop__194469_83289::p19",
+        "2hop__374495_68633::p0",
+        "2hop__810411_159673::p10",
+        "2hop__435184_84856::p11",
+        "2hop__10620_49084::p18"
+      ],
+      "support": [
+        "2hop__194469_83289::p19",
+        "2hop__194469_83289::p7"
+      ]
+    },
+    {
+      "id": "2hop__20268_42014",
+      "round": 2,
+      "gold": "2",
+      "old_query": "not specify how many members Scottish Government seats organization enacted Directory Public Worship into law",
+      "clean_query": "how many members Scottish Government seats organization enacted Directory Public Worship into law",
+      "old_hit": 2,
+      "clean_hit": 2,
+      "old_ids": [
+        "2hop__20268_42014::p8",
+        "2hop__20268_42014::p1",
+        "2hop__42027_42004::p7"
+      ],
+      "clean_ids": [
+        "2hop__20268_42014::p8",
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p16",
+        "2hop__42027_42004::p4",
+        "2hop__20268_42014::p10"
+      ],
+      "support": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8"
+      ]
+    },
+    {
+      "id": "2hop__20268_42014",
+      "round": 3,
+      "gold": "2",
+      "old_query": "not provide number members Scottish Government seats organization enacted Directory Public Worship into law How many",
+      "clean_query": "number members Scottish Government seats organization enacted Directory Public Worship into law How many",
+      "old_hit": 1,
+      "clean_hit": 2,
+      "old_ids": [
+        "2hop__20268_42014::p8",
+        "2hop__20268_42014::p16",
+        "2hop__20268_42014::p10"
+      ],
+      "clean_ids": [
+        "2hop__20268_42014::p8",
+        "2hop__20268_42014::p16",
+        "2hop__20268_42014::p10",
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p12"
+      ],
+      "support": [
+        "2hop__20268_42014::p1",
+        "2hop__20268_42014::p8"
+      ]
+    },
+    {
+      "id": "2hop__244193_461106",
+      "round": 2,
+      "gold": "Greek Revival",
+      "old_query": "creator Washington Monument associated movement belongs",
+      "clean_query": "creator Washington Monument associated movement belongs",
+      "old_hit": 0,
+      "clean_hit": 0,
+      "old_ids": [
+        "2hop__244193_461106::p12",
+        "2hop__244193_461106::p4",
+        "2hop__244193_461106::p18"
+      ],
+      "clean_ids": [
+        "2hop__244193_461106::p12",
+        "2hop__244193_461106::p4",
+        "2hop__244193_461106::p18",
+        "2hop__92590_43786::p18",
+        "2hop__244193_461106::p13"
+      ],
+      "support": [
+        "2hop__244193_461106::p3",
+        "2hop__244193_461106::p6"
+      ]
+    },
+    {
+      "id": "2hop__244193_461106",
+      "round": 3,
+      "gold": "Greek Revival",
+      "old_query": "creator Washington Monument associated movement belongs",
+      "clean_query": "creator Washington Monument affiliation movement belongs",
+      "old_hit": 0,
+      "clean_hit": 0,
+      "old_ids": [
+        "2hop__244193_461106::p12",
+        "2hop__244193_461106::p4",
+        "2hop__244193_461106::p18"
+      ],
+      "clean_ids": [
+        "2hop__244193_461106::p12",
+        "2hop__244193_461106::p4",
+        "2hop__244193_461106::p13",
+        "2hop__244193_461106::p0",
+        "2hop__92590_43786::p18"
+      ],
+      "support": [
+        "2hop__244193_461106::p3",
+        "2hop__244193_461106::p6"
+      ]
+    },
+    {
+      "id": "2hop__247353_55227",
+      "round": 2,
+      "gold": "Maria Bello",
+      "old_query": "wife Here Comes Boom's screenwriter Grown Ups plays",
+      "clean_query": "wife Here Comes Boom's screenwriter Grown Ups plays",
+      "old_hit": 2,
+      "clean_hit": 2,
+      "old_ids": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6",
+        "2hop__92590_43786::p2"
+      ],
+      "clean_ids": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6",
+        "2hop__92590_43786::p2",
+        "2hop__92590_43786::p16",
+        "2hop__92590_43786::p12"
+      ],
+      "support": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ]
+    },
+    {
+      "id": "2hop__247353_55227",
+      "round": 3,
+      "gold": "Maria Bello",
+      "old_query": "wife Here Comes Boom's screenwriter Grown Ups plays",
+      "clean_query": "wife Here Comes Boom's screenwriter Grown Ups plays",
+      "old_hit": 2,
+      "clean_hit": 2,
+      "old_ids": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6",
+        "2hop__92590_43786::p2"
+      ],
+      "clean_ids": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6",
+        "2hop__92590_43786::p2",
+        "2hop__92590_43786::p16",
+        "2hop__92590_43786::p12"
+      ],
+      "support": [
+        "2hop__247353_55227::p17",
+        "2hop__247353_55227::p6"
+      ]
+    },
+    {
+      "id": "2hop__25396_593388",
+      "round": 2,
+      "gold": "Sir Robert Peel, 1st Baronet",
+      "old_query": "father Robert Peel issued Tamworth Manifesto person",
+      "clean_query": "father Robert Peel issued Tamworth Manifesto person",
+      "old_hit": 2,
+      "clean_hit": 2,
+      "old_ids": [
+        "2hop__25396_593388::p12",
+        "2hop__39063_593388::p13",
+        "2hop__25396_593388::p1"
+      ],
+      "clean_ids": [
+        "2hop__25396_593388::p12",
+        "2hop__39063_593388::p13",
+        "2hop__25396_593388::p1",
+        "2hop__39063_593388::p3",
+        "2hop__39063_593388::p1"
+      ],
+      "support": [
+        "2hop__25396_593388::p1",
+        "2hop__25396_593388::p12"
+      ]
+    },
+    {
+      "id": "2hop__2682_577502",
+      "round": 2,
+      "gold": "Maria Shriver",
+      "old_query": "spouse Arnold Schwarzenegger famous governor signing legislation honor Donda West's death",
+      "clean_query": "spouse Arnold Schwarzenegger famous governor signing legislation honor Donda West's death",
+      "old_hit": 1,
+      "clean_hit": 2,
+      "old_ids": [
+        "2hop__2682_577502::p9",
+        "2hop__645448_77615::p13",
+        "2hop__2682_577502::p15"
+      ],
+      "clean_ids": [
+        "2hop__2682_577502::p9",
+        "2hop__645448_77615::p13",
+        "2hop__2682_577502::p15",
+        "2hop__2682_577502::p17",
+        "3hop2__92991_27069_76291::p7"
+      ],
+      "support": [
+        "2hop__2682_577502::p17",
+        "2hop__2682_577502::p9"
+      ]
+    },
+    {
+      "id": "2hop__2682_577502",
+      "round": 3,
+      "gold": "Maria Shriver",
+      "old_query": "spouse Arnold Schwarzenegger time signing legislation famous governor honor Donda West's death",
+      "clean_query": "spouse Arnold Schwarzenegger time signing legislation famous governor honor Donda West's death",
+      "old_hit": 1,
+      "clean_hit": 2,
+      "old_ids": [
+        "2hop__2682_577502::p9",
+        "2hop__645448_77615::p13",
+        "2hop__2682_577502::p15"
+      ],
+      "clean_ids": [
+        "2hop__2682_577502::p9",
+        "2hop__645448_77615::p13",
+        "2hop__2682_577502::p15",
+        "2hop__2682_577502::p17",
+        "3hop2__92991_27069_76291::p7"
+      ],
+      "support": [
+        "2hop__2682_577502::p17",
+        "2hop__2682_577502::p9"
+      ]
+    },
+    {
+      "id": "2hop__286621_84856",
+      "round": 2,
+      "gold": "January 20, 2017",
+      "old_query": "not contain any new season show named Politically Incorrect cast member",
+      "clean_query": "new season show named Politically Incorrect cast member",
+      "old_hit": 1,
+      "clean_hit": 1,
+      "old_ids": [
+        "2hop__286621_84856::p17",
+        "3hop1__140786_2053_5289::p10",
+        "2hop__435184_84856::p0"
+      ],
+      "clean_ids": [
+        "2hop__286621_84856::p17",
+        "3hop1__389955_132457_47686::p11",
+        "2hop__435184_84856::p1",
+        "2hop__286621_84856::p19",
+        "2hop__91211_90973::p17"
+      ],
+      "support": [
+        "2hop__286621_84856::p12",
+        "2hop__286621_84856::p17"
+      ]
+    },
+    {
+      "id": "2hop__286621_84856",
+      "round": 3,
+      "gold": "January 20, 2017",
+      "old_query": "not contain any new season show named Politically Incorrect cast member",
+      "clean_query": "show named Politically Incorrect cast member new season date",
+      "old_hit": 1,
+      "clean_hit": 1,
+      "old_ids": [
+        "2hop__286621_84856::p17",
+        "3hop1__140786_2053_5289::p10",
+        "2hop__435184_84856::p0"
+      ],
+      "clean_ids": [
+        "2hop__286621_84856::p17",
+        "3hop1__652852_2053_52946::p16",
+        "3hop1__140786_2053_52946::p19",
+        "3hop1__140786_2053_5289::p10",
+        "2hop__286621_84856::p14"
+      ],
+      "support": [
+        "2hop__286621_84856::p12",
+        "2hop__286621_84856::p17"
+      ]
+    },
+    {
+      "id": "2hop__315267_277284",
+      "round": 2,
+      "gold": "Tonbridge, Kent",
+      "old_query": "administrative territorial entity Bill Cockcroft educated missing",
+      "clean_query": "administrative territorial entity Bill Cockcroft educated missing",
+      "old_hit": 1,
+      "clean_hit": 1,
+      "old_ids": [
+        "2hop__315267_277284::p18",
+        "2hop__446324_620302::p1",
+        "2hop__25396_593388::p16"
+      ],
+      "clean_ids": [
+        "2hop__315267_277284::p18",
+        "2hop__446324_620302::p1",
+        "2hop__25396_593388::p16",
+        "2hop__478978_124498::p5",
+        "2hop__315267_277284::p9"
+      ],
+      "support": [
+        "2hop__315267_277284::p15",
+        "2hop__315267_277284::p18"
+      ]
+    },
+    {
+      "id": "2hop__315267_277284",
+      "round": 3,
+      "gold": "Tonbridge, Kent",
+      "old_query": "administrative territorial entity Bill Cockcroft educated",
+      "clean_query": "administrative territorial entity Bill Cockcroft educated",
+      "old_hit": 1,
+      "clean_hit": 1,
+      "old_ids": [
+        "2hop__315267_277284::p18",
+        "2hop__25396_593388::p16",
+        "2hop__557743_92763::p3"
+      ],
+      "clean_ids": [
+        "2hop__315267_277284::p18",
+        "2hop__25396_593388::p16",
+        "2hop__557743_92763::p3",
+        "2hop__315267_277284::p6",
+        "2hop__446324_620302::p1"
+      ],
+      "support": [
+        "2hop__315267_277284::p15",
+        "2hop__315267_277284::p18"
+      ]
+    },
+    {
+      "id": "2hop__341176_711757",
+      "round": 2,
+      "gold": "Gmina Ryki",
+      "old_query": "other districts Ryki County Lublin Voivodeship district found same Gmina St yca",
+      "clean_query": "other districts Ryki County Lublin Voivodeship district found same Gmina St yca",
+      "old_hit": 2,
+      "clean_hit": 2,
+      "old_ids": [
+        "2hop__341176_711757::p10",
+        "2hop__341176_711757::p4",
+        "2hop__341176_711757::p16"
+      ],
+      "clean_ids": [
+        "2hop__341176_711757::p10",
+        "2hop__341176_711757::p4",
+        "2hop__341176_711757::p16",
+        "2hop__341176_711757::p5",
+        "3hop2__851134_613770_7713::p19"
+      ],
+      "support": [
+        "2hop__341176_711757::p10",
+        "2hop__341176_711757::p4"
+      ]
+    },
+    {
+      "id": "2hop__351045_47134",
+      "round": 2,
+      "gold": "Benny Beaver",
+      "old_query": "There no mascot College Oceanic Atmospheric Sciences Oregon State University operates RV Wecoma operator",
+      "clean_query": "There no mascot College Oceanic Atmospheric Sciences Oregon State University operates RV Wecoma operator",
+      "old_hit": 2,
+      "clean_hit": 2,
+      "old_ids": [
+        "2hop__351045_47134::p4",
+        "2hop__351045_47134::p2",
+        "2hop__351045_47134::p10"
+      ],
+      "clean_ids": [
+        "2hop__351045_47134::p4",
+        "2hop__351045_47134::p2",
+        "2hop__351045_47134::p10",
+        "3hop1__786067_228453_86925::p9",
+        "2hop__351045_47134::p18"
+      ],
+      "support": [
+        "2hop__351045_47134::p2",
+        "2hop__351045_47134::p4"
+      ]
+    },
+    {
+      "id": "2hop__3739_13529",
+      "round": 2,
+      "gold": "June 1982",
+      "old_query": "any football star backing out due relay controversy only discusses David Beckham's transfer Real Madrid instead Barcelona backed signed",
+      "clean_query": "football star backing out due relay controversy only discusses David Beckham's transfer Real Madrid instead Barcelona backed signed",
+      "old_hit": 0,
+      "clean_hit": 0,
+      "old_ids": [
+        "2hop__136179_13529::p13",
+        "2hop__136179_13529::p12",
+        "4hop3__316459_41402_145282_13584::p15"
+      ],
+      "clean_ids": [
+        "2hop__136179_13529::p13",
+        "4hop3__316459_41402_599212_13584::p10",
+        "4hop3__316459_41402_157761_13584::p18",
+        "4hop3__316459_41402_145282_13584::p15",
+        "2hop__136179_13529::p12"
+      ],
+      "support": [
+        "2hop__3739_13529::p16",
+        "2hop__3739_13529::p4"
+      ]
+    },
+    {
+      "id": "2hop__3739_13529",
+      "round": 3,
+      "gold": "June 1982",
+      "old_query": "any football star backing out due relay controversy only discusses David Beckham's transfer Real Madrid instead Barcelona backed signed",
+      "clean_query": "football star backing out due relay controversy only discusses David Beckham's transfer Real Madrid instead Barcelona backed signed",
+      "old_hit": 0,
+      "clean_hit": 0,
+      "old_ids": [
+        "2hop__136179_13529::p13",
+        "2hop__136179_13529::p12",
+        "4hop3__316459_41402_145282_13584::p15"
+      ],
+      "clean_ids": [
+        "2hop__136179_13529::p13",
+        "4hop3__316459_41402_599212_13584::p10",
+        "4hop3__316459_41402_157761_13584::p18",
+        "4hop3__316459_41402_145282_13584::p15",
+        "2hop__136179_13529::p12"
+      ],
+      "support": [
+        "2hop__3739_13529::p16",
+        "2hop__3739_13529::p4"
+      ]
+    }
+  ]
+}

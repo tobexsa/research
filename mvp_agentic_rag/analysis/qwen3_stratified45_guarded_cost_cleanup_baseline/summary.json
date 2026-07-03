@@ -1,0 +1,62 @@
+{
+  "2hop": {
+    "n": 15,
+    "answer_f1": 0.5,
+    "coverage": 0.7333333333333333,
+    "selective_answer_f1": 0.6818181818181818,
+    "avg_rounds": 1.6,
+    "actions": {
+      "abstain": 4,
+      "answer": 11
+    },
+    "nonjson_records": 0,
+    "closure_attempt_records": 5,
+    "closure_success_records": 1,
+    "cost_cleanup_records": 1,
+    "f1_zero": 7,
+    "f1_ge_0_5": 8
+  },
+  "3hop": {
+    "n": 15,
+    "answer_f1": 0.19032967032967033,
+    "coverage": 0.3333333333333333,
+    "selective_answer_f1": 0.570989010989011,
+    "avg_rounds": 2.2,
+    "actions": {
+      "answer": 5,
+      "abstain": 10
+    },
+    "nonjson_records": 0,
+    "closure_attempt_records": 9,
+    "closure_success_records": 1,
+    "cost_cleanup_records": 4,
+    "f1_zero": 11,
+    "f1_ge_0_5": 3
+  },
+  "4hop": {
+    "n": 15,
+    "answer_f1": 0.1,
+    "coverage": 0.3333333333333333,
+    "selective_answer_f1": 0.3,
+    "avg_rounds": 2.533333333333333,
+    "actions": {
+      "abstain": 10,
+      "answer": 5
+    },
+    "nonjson_records": 1,
+    "closure_attempt_records": 12,
+    "closure_success_records": 5,
+    "cost_cleanup_records": 1,
+    "f1_zero": 13,
+    "f1_ge_0_5": 2
+  },
+  "all": {
+    "n": 45,
+    "answer_f1": 0.26344322344322346,
+    "coverage": 0.4666666666666667,
+    "selective_answer_f1": 0.5645211930926217,
+    "avg_rounds": 2.111111111111111,
+    "nonjson_records": 1,
+    "closure_success_records": 7
+  }
+}
