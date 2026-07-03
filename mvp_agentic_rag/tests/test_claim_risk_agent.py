@@ -3290,6 +3290,98 @@ class ClaimRiskAgentTests(unittest.TestCase):
         self.assertEqual("Example Place sovereignty date", record["repair_next_query"])
         self.assertNotIn("string", retriever.queries)
 
+    def test_v1_3_3_verified_chain_progress_routes_partial_next_hop_repair(self) -> None:
+        sample = Sample("s1", "Who created the item connected to BridgeCo?", "Alice")
+        agent = ClaimRiskAgent(
+            StaticRetriever(),
+            config={
+                "repair_verified_chain_progress_v1_3_3": True,
+                "repair_query_rewrite_v1_3_2": True,
+            },
+        )
+        slot_metadata = {
+            "slot_binding_verifier_result": {
+                "ordered_hop_binding": {
+                    "required_hops": [
+                        {
+                            "hop_index": 1,
+                            "subject": "Start",
+                            "relation": "connected to",
+                            "object": "BridgeCo",
+                            "status": "bound",
+                            "supporting_evidence_ids": ["s1::p1"],
+                        },
+                        {
+                            "hop_index": 2,
+                            "subject": "BridgeCo",
+                            "relation": "created by",
+                            "object": None,
+                            "status": "missing",
+                            "supporting_evidence_ids": [],
+                        },
+                    ],
+                    "bound_bridge_values": ["BridgeCo"],
+                    "missing_critical_hops": ["created by"],
+                    "final_relation": "created by",
+                    "chain_complete": False,
+                },
+                "decision_head": {"action": "ordered_hop_repair"},
+            }
+        }
+
+        metadata = agent._build_repair_metadata(
+            sample,
+            VerifierOutput([], "insufficient", True, "", 0.0, 0.0),
+            slot_metadata,
+        )
+
+        self.assertEqual("partial_chain_next_hop_repair", metadata["repair_query_action"])
+        self.assertEqual("BridgeCo created by", metadata["repair_next_query"])
+        self.assertTrue(metadata["repair_verified_chain_progress"])
+        self.assertEqual([1], metadata["repair_verified_prefix_hops"])
+        self.assertEqual("created by", metadata["repair_next_missing_relation"])
+        self.assertEqual("useful", metadata["repair_query_quality_bucket"])
+
+    def test_v1_3_3_does_not_mark_partial_repair_without_verified_prefix(self) -> None:
+        sample = Sample("s1", "Who created the item connected to BridgeCo?", "Alice")
+        agent = ClaimRiskAgent(
+            StaticRetriever(),
+            config={
+                "repair_verified_chain_progress_v1_3_3": True,
+                "repair_query_rewrite_v1_3_2": True,
+            },
+        )
+        slot_metadata = {
+            "slot_binding_verifier_result": {
+                "ordered_hop_binding": {
+                    "required_hops": [
+                        {
+                            "hop_index": 1,
+                            "subject": "Start",
+                            "relation": "connected to",
+                            "object": None,
+                            "status": "missing",
+                            "supporting_evidence_ids": [],
+                        }
+                    ],
+                    "bound_bridge_values": ["BridgeCo"],
+                    "missing_critical_hops": ["created by"],
+                    "final_relation": "created by",
+                    "chain_complete": False,
+                },
+                "decision_head": {"action": "ordered_hop_repair"},
+            }
+        }
+
+        metadata = agent._build_repair_metadata(
+            sample,
+            VerifierOutput([], "insufficient", True, "BridgeCo created by", 0.0, 0.0),
+            slot_metadata,
+        )
+
+        self.assertEqual("ordered_hop_repair", metadata["repair_query_action"])
+        self.assertNotIn("repair_verified_chain_progress", metadata)
+
     def test_sufficient_unknown_records_answer_extraction_repair(self) -> None:
         sample = Sample("s1", "What UK label was bought by CBS in the UK?", "Oriole Records", ["s1::p7"])
         retriever = StaticTextRetriever(

@@ -2,6 +2,8 @@
 model/
 datasets/data/
 datasets/*.zip
+.tmp/
+papers/*.pdf
 
 # Runtime launch logs and process files.
 mvp_agentic_rag/runs/logs/

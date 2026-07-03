@@ -478,7 +478,11 @@ class ClaimRiskAgent(BaseAgent):
             repair_metadata = self._build_repair_metadata(sample, verifier_output, slot_metadata)
             if repair_metadata:
                 slot_metadata = {**slot_metadata, **repair_metadata}
-                if repair_metadata.get("repair_query_action") in {"refine_missing_hop", "ordered_hop_repair"} and budget_remaining > 0:
+                if (
+                    repair_metadata.get("repair_query_action")
+                    in {"refine_missing_hop", "ordered_hop_repair", "partial_chain_next_hop_repair"}
+                    and budget_remaining > 0
+                ):
                     action = "refine_query"
                 elif repair_metadata.get("repair_query_action") == "answer_extraction_repair":
                     repair_result = self._attempt_answer_extraction_repair(
@@ -915,11 +919,25 @@ class ClaimRiskAgent(BaseAgent):
         action = str(decision_head.get("action", "") or "")
         repair_next_query = ""
         repair_state = "normal"
+        rewrite_metadata: dict = {}
         if action == "refine_missing_hop":
             repair_next_query = self._query_from_missing_hop(sample, record, verifier_output)
             repair_state = "hop_repair_pending"
         elif action == "ordered_hop_repair":
-            repair_next_query = self._query_from_ordered_hop(sample, record, verifier_output)
+            verified_chain_repair = {}
+            if bool(self.config.get("repair_verified_chain_progress_v1_3_3", False)):
+                verified_chain_repair = self._verified_chain_progress_repair(record)
+            if verified_chain_repair:
+                action = "partial_chain_next_hop_repair"
+                repair_next_query = verified_chain_repair["query"]
+                rewrite_metadata = {
+                    "repair_verified_chain_progress": True,
+                    "repair_verified_prefix_hops": verified_chain_repair["verified_prefix_hops"],
+                    "repair_next_missing_relation": verified_chain_repair["next_missing_relation"],
+                    "repair_verified_prefix_evidence_ids": verified_chain_repair["verified_prefix_evidence_ids"],
+                }
+            else:
+                repair_next_query = self._query_from_ordered_hop(sample, record, verifier_output)
             repair_state = "hop_repair_pending"
         elif action == "answer_extraction_repair":
             repair_next_query = self._query_from_answer_extraction(sample, record, verifier_output)
@@ -927,15 +945,15 @@ class ClaimRiskAgent(BaseAgent):
         if not action or (action != "answer_extraction_repair" and not repair_next_query):
             return {}
         query_quality = self._classify_repair_query_quality(repair_next_query)
-        rewrite_metadata: dict = {}
         if bool(self.config.get("repair_query_rewrite_v1_3_2", False)):
-            repair_next_query, query_quality, rewrite_metadata = self._maybe_rewrite_repair_query_v1_3_2(
+            repair_next_query, query_quality, extra_rewrite_metadata = self._maybe_rewrite_repair_query_v1_3_2(
                 sample,
                 record,
                 verifier_output,
                 repair_next_query,
                 query_quality,
             )
+            rewrite_metadata = {**rewrite_metadata, **extra_rewrite_metadata}
         return {
             "repair_started": True,
             "repair_query_action": action,
@@ -981,7 +999,9 @@ class ClaimRiskAgent(BaseAgent):
             return _repair_query_quality("wrong-direction", "relation_before_subject_pattern", text, tokens)
         if token_count <= 1:
             return _repair_query_quality("under-specified", "single_token_query", text, tokens)
-        if re.search(r"\b(of|in|with|by|for|from|to)$", lower):
+        if re.search(r"\b(of|in|with|by|for|from|to)$", lower) and not (
+            lower.endswith(" by") and has_entity and has_relation
+        ):
             return _repair_query_quality("under-specified", "dangling_relation_preposition", text, tokens)
         if has_entity and not has_relation:
             return _repair_query_quality("entity-only", "entity_without_relation", text, tokens)
@@ -1404,6 +1424,70 @@ class ClaimRiskAgent(BaseAgent):
         if suggested:
             return str(suggested)
         return str(getattr(verifier_output, "suggested_query", "") or sample.question)
+
+    def _verified_chain_progress_repair(self, record: dict) -> dict:
+        ordered = record.get("ordered_hop_binding", {}) or {}
+        required_hops = [
+            hop
+            for hop in ordered.get("required_hops", [])
+            if isinstance(hop, dict)
+        ]
+        if not required_hops:
+            return {}
+        required_hops = sorted(required_hops, key=lambda hop: int(hop.get("hop_index", 0) or 0))
+        verified_prefix_hops: list[int] = []
+        verified_prefix_evidence_ids: list[str] = []
+        last_verified_hop: dict = {}
+        next_missing_hop: dict = {}
+        for hop in required_hops:
+            evidence_ids = [
+                str(evidence_id).strip()
+                for evidence_id in hop.get("supporting_evidence_ids", [])
+                if str(evidence_id).strip()
+            ]
+            if hop.get("status") == "bound" and evidence_ids:
+                verified_prefix_hops.append(int(hop.get("hop_index", 0) or 0))
+                verified_prefix_evidence_ids.extend(evidence_ids)
+                last_verified_hop = hop
+                continue
+            next_missing_hop = hop
+            break
+        if not verified_prefix_hops or not next_missing_hop:
+            return {}
+        relation = str(next_missing_hop.get("relation", "") or "").strip()
+        if not _usable_repair_query_piece(relation):
+            missing_hops = [
+                str(value).strip()
+                for value in ordered.get("missing_critical_hops", [])
+                if _usable_repair_query_piece(value)
+            ]
+            relation = missing_hops[0] if missing_hops else ""
+        if not _usable_repair_query_piece(relation):
+            return {}
+        bridge_values = [
+            str(value).strip()
+            for value in ordered.get("bound_bridge_values", [])
+            if _usable_repair_query_piece(value)
+        ]
+        bridge = bridge_values[-1] if bridge_values else ""
+        if not bridge:
+            for key in ("object", "bound_value", "subject"):
+                candidate = str(last_verified_hop.get(key, "") or "").strip()
+                if _usable_repair_query_piece(candidate):
+                    bridge = candidate
+                    break
+        if not bridge:
+            candidate = str(next_missing_hop.get("subject", "") or "").strip()
+            if _usable_repair_query_piece(candidate):
+                bridge = candidate
+        if not bridge:
+            return {}
+        return {
+            "query": f"{bridge} {relation}",
+            "verified_prefix_hops": verified_prefix_hops,
+            "next_missing_relation": relation,
+            "verified_prefix_evidence_ids": verified_prefix_evidence_ids,
+        }
 
     def _query_from_ordered_hop(self, sample, record: dict, verifier_output) -> str:
         ordered = record.get("ordered_hop_binding", {}) or {}

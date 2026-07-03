@@ -1,0 +1,1186 @@
+{
+  "runs": {
+    "v1_3_2": "runs\\layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think",
+    "v1_3_3": "runs\\layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_3_verified_chain_progress_repair_no_think"
+  },
+  "paired_records": 45,
+  "transition_delta": {
+    "count": 45,
+    "transition_counts": {
+      "wrong_to_abstain": 2,
+      "unchanged_answer": 7,
+      "unchanged_abstain": 33,
+      "abstain_to_correct": 1,
+      "wrong_to_correct": 1,
+      "correct_to_abstain": 1
+    },
+    "cases": [
+      {
+        "id": "2hop__10620_49084",
+        "hop": "2hop",
+        "transition": "wrong_to_abstain",
+        "old_action": "answer",
+        "new_action": "abstain",
+        "old_answer": "Liam Garrigan",
+        "new_answer": "",
+        "gold_answer": "Liam Thomas Garrigan",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "accepted_final",
+        "new_repair_closed": "accepted_intermediate_but_not_final",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": "entity-only"
+      },
+      {
+        "id": "2hop__129721_40482",
+        "hop": "2hop",
+        "transition": "unchanged_answer",
+        "old_action": "answer",
+        "new_action": "answer",
+        "old_answer": "Edmund Bellinger",
+        "new_answer": "Edmund Bellinger",
+        "gold_answer": "Edmund Bellinger",
+        "old_exact": true,
+        "new_exact": true,
+        "old_repair_closed": "",
+        "new_repair_closed": "",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": ""
+      },
+      {
+        "id": "2hop__131951_643670",
+        "hop": "2hop",
+        "transition": "unchanged_answer",
+        "old_action": "answer",
+        "new_action": "answer",
+        "old_answer": "Nieuwe Waterweg",
+        "new_answer": "Nieuwe Waterweg",
+        "gold_answer": "Het Scheur",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "",
+        "new_repair_closed": "",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": ""
+      },
+      {
+        "id": "2hop__132854_417697",
+        "hop": "2hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "Nissan Altima",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "repair_rejected",
+        "new_repair_closed": "repair_expired",
+        "new_repair_query_rewritten": true,
+        "new_repair_query_quality_bucket": "useful"
+      },
+      {
+        "id": "2hop__136179_13529",
+        "hop": "2hop",
+        "transition": "unchanged_answer",
+        "old_action": "answer",
+        "new_action": "answer",
+        "old_answer": "June 1982",
+        "new_answer": "June 1982",
+        "gold_answer": "June 1982",
+        "old_exact": true,
+        "new_exact": true,
+        "old_repair_closed": "",
+        "new_repair_closed": "",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": ""
+      },
+      {
+        "id": "2hop__142699_67465",
+        "hop": "2hop",
+        "transition": "unchanged_answer",
+        "old_action": "answer",
+        "new_action": "answer",
+        "old_answer": "March 11, 2011.",
+        "new_answer": "2011",
+        "gold_answer": "March 11, 2011",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "",
+        "new_repair_closed": "",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": ""
+      },
+      {
+        "id": "2hop__151750_141308",
+        "hop": "2hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "Apple Corps",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "",
+        "new_repair_closed": "",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": ""
+      },
+      {
+        "id": "2hop__153573_44085",
+        "hop": "2hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "The Mickey Mouse Club",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "",
+        "new_repair_closed": "",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": ""
+      },
+      {
+        "id": "2hop__167577_31122",
+        "hop": "2hop",
+        "transition": "wrong_to_abstain",
+        "old_action": "answer",
+        "new_action": "abstain",
+        "old_answer": "18th century",
+        "new_answer": "",
+        "gold_answer": "18th",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "",
+        "new_repair_closed": "",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": ""
+      },
+      {
+        "id": "2hop__194469_83289",
+        "hop": "2hop",
+        "transition": "unchanged_answer",
+        "old_action": "answer",
+        "new_action": "answer",
+        "old_answer": "Matt Bennett",
+        "new_answer": "Matt Bennett",
+        "gold_answer": "Matt Bennett",
+        "old_exact": true,
+        "new_exact": true,
+        "old_repair_closed": "accepted_final",
+        "new_repair_closed": "repair_rejected",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": "entity-only"
+      },
+      {
+        "id": "2hop__20268_42014",
+        "hop": "2hop",
+        "transition": "unchanged_answer",
+        "old_action": "answer",
+        "new_action": "answer",
+        "old_answer": "2",
+        "new_answer": "2",
+        "gold_answer": "2",
+        "old_exact": true,
+        "new_exact": true,
+        "old_repair_closed": "",
+        "new_repair_closed": "",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": ""
+      },
+      {
+        "id": "2hop__23459_35124",
+        "hop": "2hop",
+        "transition": "unchanged_answer",
+        "old_action": "answer",
+        "new_action": "answer",
+        "old_answer": "450",
+        "new_answer": "450",
+        "gold_answer": "450",
+        "old_exact": true,
+        "new_exact": true,
+        "old_repair_closed": "",
+        "new_repair_closed": "",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": ""
+      },
+      {
+        "id": "2hop__244193_461106",
+        "hop": "2hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "Greek Revival",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "repair_expired",
+        "new_repair_closed": "repair_unresolved_terminal",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": "under-specified"
+      },
+      {
+        "id": "2hop__247353_55227",
+        "hop": "2hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "Maria Bello",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "",
+        "new_repair_closed": "",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": ""
+      },
+      {
+        "id": "2hop__249867_557232",
+        "hop": "2hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "Maricopa County",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "repair_unresolved_terminal",
+        "new_repair_closed": "repair_unresolved_terminal",
+        "new_repair_query_rewritten": true,
+        "new_repair_query_quality_bucket": "useful"
+      },
+      {
+        "id": "3hop1__103751_24918_24991",
+        "hop": "3hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "Soviet flag",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "repair_rejected",
+        "new_repair_closed": "",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": ""
+      },
+      {
+        "id": "3hop1__103881_443779_52195",
+        "hop": "3hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "Francisco Guterres",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "",
+        "new_repair_closed": "",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": ""
+      },
+      {
+        "id": "3hop1__104996_160713_77246",
+        "hop": "3hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "the country of India",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "repair_rejected",
+        "new_repair_closed": "repair_rejected",
+        "new_repair_query_rewritten": true,
+        "new_repair_query_quality_bucket": "useful"
+      },
+      {
+        "id": "3hop1__105767_443779_52195",
+        "hop": "3hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "Francisco Guterres",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "",
+        "new_repair_closed": "",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": ""
+      },
+      {
+        "id": "3hop1__108833_720914_41132",
+        "hop": "3hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "22",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "repair_expired",
+        "new_repair_closed": "repair_expired",
+        "new_repair_query_rewritten": true,
+        "new_repair_query_quality_bucket": "useful"
+      },
+      {
+        "id": "3hop1__128554_39743_24526",
+        "hop": "3hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "upper 40s–lower 50s °F",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "",
+        "new_repair_closed": "repair_rejected",
+        "new_repair_query_rewritten": true,
+        "new_repair_query_quality_bucket": "useful"
+      },
+      {
+        "id": "3hop1__129499_33897_81096",
+        "hop": "3hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "Mario Andretti",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "repair_expired",
+        "new_repair_closed": "repair_rejected",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": "useful"
+      },
+      {
+        "id": "3hop1__135659_87694_64412",
+        "hop": "3hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "11 February 1929",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "repair_expired",
+        "new_repair_closed": "repair_expired",
+        "new_repair_query_rewritten": true,
+        "new_repair_query_quality_bucket": "useful"
+      },
+      {
+        "id": "3hop1__136129_87694_124169",
+        "hop": "3hop",
+        "transition": "abstain_to_correct",
+        "old_action": "abstain",
+        "new_action": "answer",
+        "old_answer": "",
+        "new_answer": "1952",
+        "gold_answer": "1952",
+        "old_exact": false,
+        "new_exact": true,
+        "old_repair_closed": "",
+        "new_repair_closed": "",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": ""
+      },
+      {
+        "id": "3hop1__140786_2053_5289",
+        "hop": "3hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "Oriole Records.",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "repair_rejected",
+        "new_repair_closed": "",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": ""
+      },
+      {
+        "id": "3hop1__140786_2053_52946",
+        "hop": "3hop",
+        "transition": "wrong_to_correct",
+        "old_action": "answer",
+        "new_action": "answer",
+        "old_answer": "February 7, 2018.",
+        "new_answer": "February 7, 2018",
+        "gold_answer": "February 7, 2018",
+        "old_exact": false,
+        "new_exact": true,
+        "old_repair_closed": "",
+        "new_repair_closed": "",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": ""
+      },
+      {
+        "id": "3hop1__144439_443779_52195",
+        "hop": "3hop",
+        "transition": "correct_to_abstain",
+        "old_action": "answer",
+        "new_action": "abstain",
+        "old_answer": "Francisco Guterres",
+        "new_answer": "",
+        "gold_answer": "Francisco Guterres",
+        "old_exact": true,
+        "new_exact": false,
+        "old_repair_closed": "accepted_final",
+        "new_repair_closed": "",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": ""
+      },
+      {
+        "id": "3hop1__145194_160545_62931",
+        "hop": "3hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "island Koh Phi Phi",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "",
+        "new_repair_closed": "",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": ""
+      },
+      {
+        "id": "3hop1__159803_89752_75165",
+        "hop": "3hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "1,335,907",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "repair_rejected",
+        "new_repair_closed": "repair_rejected",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": "useful"
+      },
+      {
+        "id": "3hop1__222497_309482_27537",
+        "hop": "3hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "for the conclave in Rome",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "",
+        "new_repair_closed": "",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": ""
+      },
+      {
+        "id": "4hop1__105401_17130_70784_79935",
+        "hop": "4hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "1930",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "repair_unresolved_terminal",
+        "new_repair_closed": "repair_rejected",
+        "new_repair_query_rewritten": true,
+        "new_repair_query_quality_bucket": "useful"
+      },
+      {
+        "id": "4hop1__105688_17130_70784_79935",
+        "hop": "4hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "1930",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "repair_rejected",
+        "new_repair_closed": "repair_expired",
+        "new_repair_query_rewritten": true,
+        "new_repair_query_quality_bucket": "useful"
+      },
+      {
+        "id": "4hop1__131611_32392_823060_610794",
+        "hop": "4hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "Richland County",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "",
+        "new_repair_closed": "",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": ""
+      },
+      {
+        "id": "4hop1__13170_32392_823060_610794",
+        "hop": "4hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "Richland County",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "",
+        "new_repair_closed": "",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": ""
+      },
+      {
+        "id": "4hop1__145494_698949_157828_162309",
+        "hop": "4hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "2016",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "",
+        "new_repair_closed": "repair_rejected",
+        "new_repair_query_rewritten": true,
+        "new_repair_query_quality_bucket": "useful"
+      },
+      {
+        "id": "4hop1__151650_5274_458768_33632",
+        "hop": "4hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "May 4",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "",
+        "new_repair_closed": "repair_expired",
+        "new_repair_query_rewritten": true,
+        "new_repair_query_quality_bucket": "useful"
+      },
+      {
+        "id": "4hop1__151650_5274_458768_33637",
+        "hop": "4hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "two",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "repair_rejected",
+        "new_repair_closed": "repair_unresolved_terminal",
+        "new_repair_query_rewritten": true,
+        "new_repair_query_quality_bucket": "useful"
+      },
+      {
+        "id": "4hop1__152146_5274_458768_33632",
+        "hop": "4hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "May 4",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "repair_rejected",
+        "new_repair_closed": "",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": ""
+      },
+      {
+        "id": "4hop1__161605_32392_823060_610794",
+        "hop": "4hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "Richland County",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "repair_rejected",
+        "new_repair_closed": "repair_rejected",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": "useful"
+      },
+      {
+        "id": "4hop1__161810_583746_457883_650651",
+        "hop": "4hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "NBC",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "",
+        "new_repair_closed": "accepted_intermediate_but_not_final",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": "useful"
+      },
+      {
+        "id": "4hop1__166471_49925_13759_736921",
+        "hop": "4hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "Saxony-Anhalt",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "repair_rejected",
+        "new_repair_closed": "repair_rejected",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": "under-specified"
+      },
+      {
+        "id": "4hop1__17192_17130_70784_79935",
+        "hop": "4hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "1930",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "repair_rejected",
+        "new_repair_closed": "repair_unresolved_terminal",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": "useful"
+      },
+      {
+        "id": "4hop1__236903_153080_33897_81096",
+        "hop": "4hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "Mario Andretti",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "",
+        "new_repair_closed": "",
+        "new_repair_query_rewritten": false,
+        "new_repair_query_quality_bucket": ""
+      },
+      {
+        "id": "4hop1__264443_49925_13759_736921",
+        "hop": "4hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "Saxony-Anhalt",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "repair_expired",
+        "new_repair_closed": "repair_expired",
+        "new_repair_query_rewritten": true,
+        "new_repair_query_quality_bucket": "useful"
+      },
+      {
+        "id": "4hop1__28352_53706_795904_580996",
+        "hop": "4hop",
+        "transition": "unchanged_abstain",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "Rio Linda",
+        "old_exact": false,
+        "new_exact": false,
+        "old_repair_closed": "repair_rejected",
+        "new_repair_closed": "repair_rejected",
+        "new_repair_query_rewritten": true,
+        "new_repair_query_quality_bucket": "useful"
+      }
+    ]
+  },
+  "metric_delta": {
+    "overall_acc": {
+      "v1_3_2": 0.17777777777777778,
+      "v1_3_3": 0.15555555555555556,
+      "delta": -0.022222222222222227
+    },
+    "answer_f1": {
+      "v1_3_2": 0.21037037037037037,
+      "v1_3_3": 0.16666666666666666,
+      "delta": -0.04370370370370372
+    },
+    "coverage": {
+      "v1_3_2": 0.24444444444444444,
+      "v1_3_3": 0.2,
+      "delta": -0.044444444444444425
+    },
+    "selective_acc": {
+      "v1_3_2": 0.7272727272727273,
+      "v1_3_3": 0.7777777777777778,
+      "delta": 0.0505050505050505
+    },
+    "selective_answer_f1": {
+      "v1_3_2": 0.8606060606060606,
+      "v1_3_3": 0.8333333333333334,
+      "delta": -0.027272727272727226
+    },
+    "avg_retrieval_calls": {
+      "v1_3_2": 2.4,
+      "v1_3_3": 2.5555555555555554,
+      "delta": 0.15555555555555545
+    },
+    "wasted_retrieval_rate": {
+      "v1_3_2": 0.7777777777777778,
+      "v1_3_3": 0.8222222222222222,
+      "delta": 0.0444444444444444
+    },
+    "answered_unsupported_rate": {
+      "v1_3_2": 0.36363636363636365,
+      "v1_3_3": 0.2222222222222222,
+      "delta": -0.14141414141414144
+    },
+    "final_answered_unsupported_rate": {
+      "v1_3_2": 0,
+      "v1_3_3": 0,
+      "delta": 0
+    },
+    "abstention_precision": {
+      "v1_3_2": 0.8529411764705882,
+      "v1_3_3": 0.8888888888888888,
+      "delta": 0.03594771241830064
+    }
+  },
+  "hop_delta": {
+    "2hop": {
+      "answered": {
+        "v1_3_2": 9,
+        "v1_3_3": 7,
+        "delta": -2
+      },
+      "overall_acc": {
+        "v1_3_2": 0.4,
+        "v1_3_3": 0.3333333333333333,
+        "delta": -0.06666666666666671
+      },
+      "answer_f1": {
+        "v1_3_2": 0.49777777777777776,
+        "v1_3_3": 0.36666666666666664,
+        "delta": -0.13111111111111112
+      },
+      "coverage": {
+        "v1_3_2": 0.6,
+        "v1_3_3": 0.4666666666666667,
+        "delta": -0.1333333333333333
+      },
+      "selective_acc": {
+        "v1_3_2": 0.6666666666666666,
+        "v1_3_3": 0.7142857142857143,
+        "delta": 0.04761904761904767
+      },
+      "selective_answer_f1": {
+        "v1_3_2": 0.8296296296296296,
+        "v1_3_3": 0.7857142857142857,
+        "delta": -0.04391534391534391
+      }
+    },
+    "3hop": {
+      "answered": {
+        "v1_3_2": 2,
+        "v1_3_3": 2,
+        "delta": 0
+      },
+      "overall_acc": {
+        "v1_3_2": 0.13333333333333333,
+        "v1_3_3": 0.13333333333333333,
+        "delta": 0.0
+      },
+      "answer_f1": {
+        "v1_3_2": 0.13333333333333333,
+        "v1_3_3": 0.13333333333333333,
+        "delta": 0.0
+      },
+      "coverage": {
+        "v1_3_2": 0.13333333333333333,
+        "v1_3_3": 0.13333333333333333,
+        "delta": 0.0
+      },
+      "selective_acc": {
+        "v1_3_2": 1,
+        "v1_3_3": 1,
+        "delta": 0
+      },
+      "selective_answer_f1": {
+        "v1_3_2": 1.0,
+        "v1_3_3": 1.0,
+        "delta": 0.0
+      }
+    },
+    "4hop": {
+      "answered": {
+        "v1_3_2": 0,
+        "v1_3_3": 0,
+        "delta": 0
+      },
+      "overall_acc": {
+        "v1_3_2": 0,
+        "v1_3_3": 0,
+        "delta": 0
+      },
+      "answer_f1": {
+        "v1_3_2": 0.0,
+        "v1_3_3": 0.0,
+        "delta": 0.0
+      },
+      "coverage": {
+        "v1_3_2": 0.0,
+        "v1_3_3": 0.0,
+        "delta": 0.0
+      },
+      "selective_acc": {
+        "v1_3_2": 0.0,
+        "v1_3_3": 0.0,
+        "delta": 0.0
+      },
+      "selective_answer_f1": {
+        "v1_3_2": 0.0,
+        "v1_3_3": 0.0,
+        "delta": 0.0
+      }
+    }
+  },
+  "partial_chain_next_hop_repair": {
+    "case_count": 5,
+    "step_count": 8,
+    "improved_cases": [],
+    "regressed_cases": [],
+    "unchanged_cases": [
+      {
+        "id": "3hop1__108833_720914_41132",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "22",
+        "old_f1": 0.0,
+        "new_f1": 0.0,
+        "partial_step_count": 1,
+        "queries": [
+          "How many times did the plague occur in the city where the painter of The Bacchanal of the Andrians died? death location of Titian"
+        ],
+        "relations": [
+          "death location"
+        ],
+        "verified_prefix_hops": [
+          [
+            1
+          ]
+        ],
+        "closed": [
+          "repair_unresolved_terminal"
+        ]
+      },
+      {
+        "id": "3hop1__129499_33897_81096",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "Mario Andretti",
+        "old_f1": 0.0,
+        "new_f1": 0.0,
+        "partial_step_count": 2,
+        "queries": [
+          "Arizona largest population city",
+          "Arizona largest population city"
+        ],
+        "relations": [
+          "largest population city",
+          "largest population city"
+        ],
+        "verified_prefix_hops": [
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "closed": [
+          "repair_unresolved_terminal",
+          "repair_rejected"
+        ]
+      },
+      {
+        "id": "3hop1__135659_87694_64412",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "11 February 1929",
+        "old_f1": 0.0,
+        "new_f1": 0.0,
+        "partial_step_count": 1,
+        "queries": [
+          "When did the place where St for whom the Mantua Cathedral was named for basilica the head of the catholic religion is located in become its own country? Mantua, Lombardy, northern Italy became its own country"
+        ],
+        "relations": [
+          "became its own country"
+        ],
+        "verified_prefix_hops": [
+          [
+            1
+          ]
+        ],
+        "closed": [
+          "repair_expired"
+        ]
+      },
+      {
+        "id": "4hop1__151650_5274_458768_33632",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "May 4",
+        "old_f1": 0.0,
+        "new_f1": 0.0,
+        "partial_step_count": 2,
+        "queries": [
+          "Sony Music Entertainment feast day",
+          "Sony Music Entertainment feast day"
+        ],
+        "relations": [
+          "headquarters location",
+          "headquarters location"
+        ],
+        "verified_prefix_hops": [
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "closed": [
+          "repair_unresolved_terminal",
+          "repair_expired"
+        ]
+      },
+      {
+        "id": "4hop1__161605_32392_823060_610794",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "Richland County",
+        "old_f1": 0.0,
+        "new_f1": 0.0,
+        "partial_step_count": 2,
+        "queries": [
+          "South Carolina state capital",
+          "South Carolina state capital"
+        ],
+        "relations": [
+          "state capital",
+          "state capital"
+        ],
+        "verified_prefix_hops": [
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "closed": [
+          "repair_unresolved_terminal",
+          "repair_rejected"
+        ]
+      }
+    ],
+    "cases": [
+      {
+        "id": "3hop1__108833_720914_41132",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "22",
+        "old_f1": 0.0,
+        "new_f1": 0.0,
+        "partial_step_count": 1,
+        "queries": [
+          "How many times did the plague occur in the city where the painter of The Bacchanal of the Andrians died? death location of Titian"
+        ],
+        "relations": [
+          "death location"
+        ],
+        "verified_prefix_hops": [
+          [
+            1
+          ]
+        ],
+        "closed": [
+          "repair_unresolved_terminal"
+        ]
+      },
+      {
+        "id": "3hop1__129499_33897_81096",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "Mario Andretti",
+        "old_f1": 0.0,
+        "new_f1": 0.0,
+        "partial_step_count": 2,
+        "queries": [
+          "Arizona largest population city",
+          "Arizona largest population city"
+        ],
+        "relations": [
+          "largest population city",
+          "largest population city"
+        ],
+        "verified_prefix_hops": [
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "closed": [
+          "repair_unresolved_terminal",
+          "repair_rejected"
+        ]
+      },
+      {
+        "id": "3hop1__135659_87694_64412",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "11 February 1929",
+        "old_f1": 0.0,
+        "new_f1": 0.0,
+        "partial_step_count": 1,
+        "queries": [
+          "When did the place where St for whom the Mantua Cathedral was named for basilica the head of the catholic religion is located in become its own country? Mantua, Lombardy, northern Italy became its own country"
+        ],
+        "relations": [
+          "became its own country"
+        ],
+        "verified_prefix_hops": [
+          [
+            1
+          ]
+        ],
+        "closed": [
+          "repair_expired"
+        ]
+      },
+      {
+        "id": "4hop1__151650_5274_458768_33632",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "May 4",
+        "old_f1": 0.0,
+        "new_f1": 0.0,
+        "partial_step_count": 2,
+        "queries": [
+          "Sony Music Entertainment feast day",
+          "Sony Music Entertainment feast day"
+        ],
+        "relations": [
+          "headquarters location",
+          "headquarters location"
+        ],
+        "verified_prefix_hops": [
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "closed": [
+          "repair_unresolved_terminal",
+          "repair_expired"
+        ]
+      },
+      {
+        "id": "4hop1__161605_32392_823060_610794",
+        "old_action": "abstain",
+        "new_action": "abstain",
+        "old_answer": "",
+        "new_answer": "",
+        "gold_answer": "Richland County",
+        "old_f1": 0.0,
+        "new_f1": 0.0,
+        "partial_step_count": 2,
+        "queries": [
+          "South Carolina state capital",
+          "South Carolina state capital"
+        ],
+        "relations": [
+          "state capital",
+          "state capital"
+        ],
+        "verified_prefix_hops": [
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "closed": [
+          "repair_unresolved_terminal",
+          "repair_rejected"
+        ]
+      }
+    ]
+  }
+}
