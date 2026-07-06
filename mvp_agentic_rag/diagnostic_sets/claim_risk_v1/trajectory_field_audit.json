@@ -1,0 +1,174 @@
+{
+  "runs": [
+    {
+      "run": "runs\\layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think",
+      "run_name": "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think",
+      "sampled_records": 5,
+      "top_level_keys": [
+        "cost",
+        "final_action",
+        "final_answer",
+        "gold_answer",
+        "id",
+        "method",
+        "question",
+        "trajectory"
+      ],
+      "path_stats": {
+        "final_action": {
+          "present_count": 5,
+          "total_count": 5,
+          "present_rate": 1.0
+        },
+        "final_answer": {
+          "present_count": 5,
+          "total_count": 5,
+          "present_rate": 1.0
+        },
+        "gold_answer": {
+          "present_count": 5,
+          "total_count": 5,
+          "present_rate": 1.0
+        },
+        "trajectory[].action": {
+          "present_count": 5,
+          "total_count": 5,
+          "present_rate": 1.0
+        },
+        "trajectory[].verifier_output.overall_sufficiency": {
+          "present_count": 5,
+          "total_count": 5,
+          "present_rate": 1.0
+        },
+        "trajectory[].verifier_output.final_target_match": {
+          "present_count": 5,
+          "total_count": 5,
+          "present_rate": 1.0
+        },
+        "trajectory[].verifier_output.claims[].status": {
+          "present_count": 5,
+          "total_count": 5,
+          "present_rate": 1.0
+        },
+        "trajectory[].slot_binding_verifier_result.ordered_hop_binding.final_relation": {
+          "present_count": 5,
+          "total_count": 5,
+          "present_rate": 1.0
+        },
+        "trajectory[].slot_binding_verifier_result.ordered_hop_binding.missing_critical_hops[]": {
+          "present_count": 1,
+          "total_count": 5,
+          "present_rate": 0.2
+        },
+        "trajectory[].repair_query_quality_bucket": {
+          "present_count": 1,
+          "total_count": 5,
+          "present_rate": 0.2
+        },
+        "trajectory[].repair_closed": {
+          "present_count": 1,
+          "total_count": 5,
+          "present_rate": 0.2
+        }
+      },
+      "safe_extraction_fields": [
+        "final_action",
+        "final_answer",
+        "gold_answer",
+        "trajectory[].action",
+        "trajectory[].verifier_output.overall_sufficiency",
+        "trajectory[].verifier_output.final_target_match",
+        "trajectory[].verifier_output.claims[].status",
+        "trajectory[].slot_binding_verifier_result.ordered_hop_binding.final_relation",
+        "trajectory[].slot_binding_verifier_result.ordered_hop_binding.missing_critical_hops[]",
+        "trajectory[].repair_query_quality_bucket",
+        "trajectory[].repair_closed"
+      ]
+    },
+    {
+      "run": "runs\\layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think",
+      "run_name": "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think",
+      "sampled_records": 5,
+      "top_level_keys": [
+        "cost",
+        "final_action",
+        "final_answer",
+        "gold_answer",
+        "id",
+        "method",
+        "question",
+        "trajectory"
+      ],
+      "path_stats": {
+        "final_action": {
+          "present_count": 5,
+          "total_count": 5,
+          "present_rate": 1.0
+        },
+        "final_answer": {
+          "present_count": 5,
+          "total_count": 5,
+          "present_rate": 1.0
+        },
+        "gold_answer": {
+          "present_count": 5,
+          "total_count": 5,
+          "present_rate": 1.0
+        },
+        "trajectory[].action": {
+          "present_count": 5,
+          "total_count": 5,
+          "present_rate": 1.0
+        },
+        "trajectory[].verifier_output.overall_sufficiency": {
+          "present_count": 5,
+          "total_count": 5,
+          "present_rate": 1.0
+        },
+        "trajectory[].verifier_output.final_target_match": {
+          "present_count": 5,
+          "total_count": 5,
+          "present_rate": 1.0
+        },
+        "trajectory[].verifier_output.claims[].status": {
+          "present_count": 5,
+          "total_count": 5,
+          "present_rate": 1.0
+        },
+        "trajectory[].slot_binding_verifier_result.ordered_hop_binding.final_relation": {
+          "present_count": 5,
+          "total_count": 5,
+          "present_rate": 1.0
+        },
+        "trajectory[].slot_binding_verifier_result.ordered_hop_binding.missing_critical_hops[]": {
+          "present_count": 2,
+          "total_count": 5,
+          "present_rate": 0.4
+        },
+        "trajectory[].repair_query_quality_bucket": {
+          "present_count": 2,
+          "total_count": 5,
+          "present_rate": 0.4
+        },
+        "trajectory[].repair_closed": {
+          "present_count": 2,
+          "total_count": 5,
+          "present_rate": 0.4
+        }
+      },
+      "safe_extraction_fields": [
+        "final_action",
+        "final_answer",
+        "gold_answer",
+        "trajectory[].action",
+        "trajectory[].verifier_output.overall_sufficiency",
+        "trajectory[].verifier_output.final_target_match",
+        "trajectory[].verifier_output.claims[].status",
+        "trajectory[].slot_binding_verifier_result.ordered_hop_binding.final_relation",
+        "trajectory[].slot_binding_verifier_result.ordered_hop_binding.missing_critical_hops[]",
+        "trajectory[].repair_query_quality_bucket",
+        "trajectory[].repair_closed"
+      ]
+    }
+  ]
+}

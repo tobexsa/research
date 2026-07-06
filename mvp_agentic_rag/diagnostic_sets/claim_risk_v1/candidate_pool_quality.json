@@ -1,0 +1,31 @@
+{
+  "total_candidates": 215,
+  "records_by_risk_type": {
+    "supported_answer": 20,
+    "wrong_target": 179,
+    "repairable_missing_hop": 7,
+    "no_new_evidence": 6,
+    "insufficient_evidence": 2,
+    "contradiction": 1
+  },
+  "records_by_oracle_action": {
+    "answer": 20,
+    "repair_missing_hop": 169,
+    "disambiguate_conflict": 18,
+    "abstain": 8
+  },
+  "records_by_mining_reason_rule": {
+    "supported_answer": 20,
+    "wrong_target": 179,
+    "repairable_missing_hop": 7,
+    "no_new_evidence": 6,
+    "insufficient_evidence": 2,
+    "contradiction": 1
+  },
+  "records_by_claims_source": {
+    "verifier_output": 215
+  },
+  "records_with_ordered_hop_signal": 201,
+  "records_with_label_provenance": 215,
+  "validation_error_count": 0
+}

@@ -1,0 +1,29 @@
+{
+  "support_labels": ["supported", "unsupported", "contradicted", "unclear"],
+  "evidence_sufficiency": ["sufficient", "insufficient", "conflicting", "unclear"],
+  "oracle_actions": ["answer", "refine_query", "repair_missing_hop", "disambiguate_conflict", "read_more", "abstain"],
+  "risk_types": [
+    "supported_answer",
+    "critical_gap",
+    "noncritical_gap",
+    "wrong_target",
+    "bridge_as_final",
+    "contradiction",
+    "insufficient_evidence",
+    "no_new_evidence",
+    "repairable_missing_hop"
+  ],
+  "required_review_fields": [
+    "claim_support",
+    "critical_missing_claims",
+    "noncritical_missing_claims",
+    "contradicted_claims",
+    "wrong_target",
+    "bridge_as_final",
+    "final_answer_supported",
+    "oracle_action",
+    "oracle_repair_target",
+    "notes",
+    "annotation_status"
+  ]
+}
