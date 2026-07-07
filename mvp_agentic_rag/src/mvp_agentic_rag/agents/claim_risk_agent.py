@@ -26,6 +26,10 @@ class ClaimRiskAgent(BaseAgent):
             min_retrieval_novelty=float(self.config.get("min_retrieval_novelty", 0.01)),
             low_yield_abstain_after_round=int(self.config.get("low_yield_abstain_after_round", 2)),
         )
+        self.controller_policy_v1 = bool(self.config.get("claim_risk_controller_policy_v1", False))
+        self.answer_safety_guard = bool(
+            self.config.get("claim_risk_answer_safety_guard", self.controller_policy_v1)
+        )
         self.strict_claim_support_gate = bool(self.config.get("strict_claim_support_gate", False))
         self.use_retrieval_memory = bool(self.config.get("retrieval_memory", False))
         self.stop_when_retrieval_memory_exhausted = bool(
@@ -721,6 +725,24 @@ class ClaimRiskAgent(BaseAgent):
                     "slot_ledger": slot_ledger.to_record(),
                     "slot_ledger_final_target_evidence_ids": slot_ledger.final_target_evidence_ids(),
                 }
+            controller_policy_metadata = {}
+            if self.controller_policy_v1:
+                action, controller_policy_metadata = self._apply_controller_policy_v1(
+                    action,
+                    verifier_output=verifier_output,
+                    slot_metadata=slot_metadata,
+                    repair_metadata=repair_metadata,
+                    budget_remaining=budget_remaining,
+                )
+            answer_safety_metadata = {}
+            if self.answer_safety_guard:
+                action, answer_safety_metadata = self._apply_answer_safety_guard(
+                    action,
+                    verifier_output=verifier_output,
+                    slot_metadata=slot_metadata,
+                    repair_metadata=repair_metadata,
+                    budget_remaining=budget_remaining,
+                )
             if action in {"answer", "abstain"}:
                 slot_metadata = self._expire_pending_repair_if_terminal(slot_metadata)
                 pre_final_metadata = self._expire_pending_repair_if_terminal(pre_final_metadata)
@@ -742,6 +764,8 @@ class ClaimRiskAgent(BaseAgent):
                         **final_target_metadata,
                         **pre_final_metadata,
                         **closure_metadata,
+                        **controller_policy_metadata,
+                        **answer_safety_metadata,
                     },
                 )
             )
@@ -974,6 +998,100 @@ class ClaimRiskAgent(BaseAgent):
             "repair_final_verifier_passed": False,
             "repair_final_action_answered": False,
             "repair_closed": "pending",
+        }
+
+    def _apply_controller_policy_v1(
+        self,
+        action: str,
+        *,
+        verifier_output: VerifierOutput,
+        slot_metadata: dict,
+        repair_metadata: dict,
+        budget_remaining: int,
+    ) -> tuple[str, dict]:
+        repair_action = _controller_policy_v1_repair_action(repair_metadata)
+        repair_signal_present = bool(repair_action)
+        conflict = _controller_policy_v1_has_conflict(verifier_output, slot_metadata)
+        base_metadata = {
+            "controller_policy_v1_applied": False,
+            "controller_policy_v1_original_action": action,
+            "controller_policy_v1_repair_signal_present": repair_signal_present,
+            "controller_policy_v1_budget_remaining": budget_remaining,
+            "controller_policy_v1_conflict_or_disambiguation_required": conflict,
+        }
+        if not repair_signal_present:
+            return action, {}
+        if action not in {"abstain", "refine_query"}:
+            return action, {**base_metadata, "controller_policy_v1_blocked_reason": "action_not_eligible"}
+        if budget_remaining <= 0:
+            return action, {**base_metadata, "controller_policy_v1_blocked_reason": "budget_exhausted"}
+        if conflict:
+            return action, {
+                **base_metadata,
+                "controller_policy_v1_blocked_reason": "conflict_or_disambiguation_required",
+            }
+
+        reason = "repair_signal_present_but_abstain" if action == "abstain" else "repair_signal_present_but_refine_query"
+        return repair_action, {
+            **base_metadata,
+            "controller_policy_v1_applied": True,
+            "controller_policy_v1_action": repair_action,
+            "controller_policy_v1_reason": reason,
+        }
+
+    def _apply_answer_safety_guard(
+        self,
+        action: str,
+        *,
+        verifier_output: VerifierOutput,
+        slot_metadata: dict,
+        repair_metadata: dict,
+        budget_remaining: int,
+    ) -> tuple[str, dict]:
+        if action != "answer":
+            return action, {}
+
+        conflict = _controller_policy_v1_has_conflict(verifier_output, slot_metadata)
+        if conflict:
+            guarded_action = "abstain"
+            return guarded_action, {
+                "answer_safety_guard_applied": True,
+                "answer_safety_guard_original_action": action,
+                "answer_safety_guard_action": guarded_action,
+                "answer_safety_guard_reason": "conflict_signal",
+                "answer_safety_guard_conflict_signal": True,
+                "answer_safety_guard_wrong_target_signal": False,
+                "answer_safety_guard_budget_remaining": budget_remaining,
+            }
+
+        wrong_target = _answer_safety_wrong_target_signal(verifier_output, slot_metadata)
+        if not wrong_target["present"]:
+            return action, {}
+
+        repair_action = _controller_policy_v1_repair_action(repair_metadata)
+        if repair_action and budget_remaining > 0:
+            guarded_action = repair_action
+            reason = "wrong_target_signal_with_repair_signal"
+        elif budget_remaining > 0:
+            guarded_action = "refine_query"
+            reason = "wrong_target_signal_without_repair_signal"
+        else:
+            guarded_action = "abstain"
+            reason = "wrong_target_signal_budget_exhausted"
+
+        return guarded_action, {
+            "answer_safety_guard_applied": True,
+            "answer_safety_guard_original_action": action,
+            "answer_safety_guard_action": guarded_action,
+            "answer_safety_guard_reason": reason,
+            "answer_safety_guard_conflict_signal": False,
+            "answer_safety_guard_wrong_target_signal": True,
+            "answer_safety_guard_wrong_target_reason": wrong_target["reason"],
+            "answer_safety_guard_blocked_role": wrong_target["blocked_role"],
+            "answer_safety_guard_relation_to_question": wrong_target["relation_to_question"],
+            "answer_safety_guard_role_error_type": wrong_target["role_error_type"],
+            "answer_safety_guard_repair_signal_present": bool(repair_action),
+            "answer_safety_guard_budget_remaining": budget_remaining,
         }
 
     def _classify_repair_query_quality(self, query: str) -> dict:
@@ -1776,6 +1894,111 @@ def _legacy_verifier_sufficient_final(verifier_output) -> bool:
     if _normalize_answer_slot(verifier_output.answer_slot) != "final requested target":
         return False
     return _has_supported_claim_evidence(verifier_output)
+
+
+def _controller_policy_v1_repair_action(repair_metadata: dict) -> str:
+    action = str(repair_metadata.get("repair_query_action") or "")
+    if action not in {
+        "refine_missing_hop",
+        "ordered_hop_repair",
+        "partial_chain_next_hop_repair",
+        "answer_extraction_repair",
+    }:
+        return ""
+    if action == "answer_extraction_repair" or repair_metadata.get("repair_next_query"):
+        return action
+    return ""
+
+
+def _controller_policy_v1_has_conflict(verifier_output, slot_metadata: dict) -> bool:
+    if verifier_output.overall_sufficiency == "conflicting":
+        return True
+    if any(claim.status == "contradicted" for claim in verifier_output.claims):
+        return True
+    record = slot_metadata.get("slot_binding_verifier_result") or {}
+    set_level = record.get("set_level_sufficiency") or {}
+    if set_level.get("conflict_on_final_slot") or set_level.get("conflict_on_bridge"):
+        return True
+    slot_entailment = record.get("slot_bound_entailment") or {}
+    return bool(slot_entailment.get("contradicted"))
+
+
+def _answer_safety_wrong_target_signal(verifier_output, slot_metadata: dict) -> dict:
+    record = slot_metadata.get("slot_binding_verifier_result") or {}
+    if not isinstance(record, dict):
+        record = {}
+    role_record = record.get("candidate_role_labeler") or {}
+    if not isinstance(role_record, dict):
+        role_record = {}
+    candidate_role = str(role_record.get("candidate_role") or "").strip().lower()
+    relation_to_question = str(role_record.get("relation_to_question") or "").strip().lower()
+    role_error_type = str(role_record.get("role_error_type") or "").strip().lower()
+    signal = {
+        "present": False,
+        "reason": "",
+        "blocked_role": candidate_role,
+        "relation_to_question": relation_to_question,
+        "role_error_type": role_error_type,
+    }
+
+    if verifier_output.final_target_match is False:
+        return {
+            **signal,
+            "present": True,
+            "reason": "verifier_final_target_mismatch",
+            "blocked_role": candidate_role or _normalize_answer_slot(verifier_output.answer_slot),
+        }
+
+    typed_binding = slot_metadata.get("typed_target_slot_binder_result") or {}
+    if isinstance(typed_binding, dict) and typed_binding.get("accepted") is False:
+        return {
+            **signal,
+            "present": True,
+            "reason": str(typed_binding.get("reason") or "typed_target_slot_binder_reject"),
+        }
+
+    blocked_roles = {"bridge_entity", "subject_entity", "evidence_location", "container_location", "distractor"}
+    if candidate_role in blocked_roles:
+        return {
+            **signal,
+            "present": True,
+            "reason": "candidate_role_blocked",
+        }
+
+    blocked_relations = {"supports_bridge", "local_support_only", "unrelated"}
+    if relation_to_question in blocked_relations:
+        return {
+            **signal,
+            "present": True,
+            "reason": "candidate_relation_not_final_slot",
+        }
+
+    if role_error_type and role_error_type != "none":
+        return {
+            **signal,
+            "present": True,
+            "reason": "candidate_role_error",
+        }
+
+    risk = (record.get("decision_head") or {}).get("risk")
+    if isinstance(risk, dict):
+        for key in (
+            "wrong_target_risk",
+            "bridge_binding_risk",
+            "relation_direction_risk",
+            "candidate_extraction_risk",
+        ):
+            try:
+                if float(risk.get(key, 0.0) or 0.0) >= 0.5:
+                    return {
+                        **signal,
+                        "present": True,
+                        "reason": key,
+                    }
+            except (TypeError, ValueError):
+                continue
+
+    return signal
 
 
 def _binding_failure_can_fallback_to_legacy(

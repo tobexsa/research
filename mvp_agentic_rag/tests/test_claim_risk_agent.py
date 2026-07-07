@@ -3149,6 +3149,304 @@ class ClaimRiskAgentTests(unittest.TestCase):
         self.assertEqual("relation-only", first_record["repair_query_quality_bucket_before_rewrite"])
         self.assertEqual("useful", first_record["repair_query_quality_bucket"])
 
+    def test_controller_policy_v1_routes_repair_signal_abstain_to_repair_action(self) -> None:
+        sample = Sample(
+            "s1",
+            "What company is the record label of Magic Christian Music part of?",
+            "Apple Corps",
+            ["s1::p14", "s1::p7"],
+        )
+        retriever = TopKRetriever(
+            {
+                "What company is the record label of Magic Christian Music part of?": ["s1::p14"],
+                "Apple Records parent company": ["s1::p7"],
+            }
+        )
+        unresolved_response = (
+            '{"claims":[{"claim":"Apple Records is the record label of Magic Christian Music.",'
+            '"status":"unsupported","evidence_ids":["s1::p14"],"missing_evidence":"",'
+            '"is_critical":true}],'
+            '"overall_sufficiency":"insufficient","need_more_evidence":true,'
+            '"suggested_query":"Apple Records parent company","risk_score":0,'
+            '"expected_gain":0.0,"final_target_match":false,"answer_slot":"intermediate entity"}'
+        )
+        agent = ClaimRiskAgent(
+            retriever,
+            top_k=1,
+            max_rounds=2,
+            config={
+                "query_decomposition": "none",
+                "claim_evidence_slot_ledger": True,
+                "claim_evidence_slot_binding_policy": "evidence",
+                "claim_evidence_slot_binding_verifier": True,
+                "claim_evidence_typed_target_slot_binder": True,
+                "claim_evidence_ordered_hop_binding_gate": True,
+                "claim_evidence_final_answer_from_slot": True,
+                "claim_evidence_expected_gain_threshold": 0.5,
+                "claim_risk_controller_policy_v1": True,
+                "answer_backend": "fake_llm",
+                "answer_fake_response": "UNKNOWN",
+                "verifier_backend": "fake_llm",
+                "verifier_fake_response": unresolved_response,
+            },
+        )
+        agent.verifier.client.responses = [unresolved_response, unresolved_response]
+        agent.slot_binding_verifier = FakeSlotBindingVerifier(
+            SlotBindingResult(
+                slot_name="final_target",
+                supports_slot=False,
+                bound_value="Apple Records",
+                evidence_ids=["s1::p14"],
+                slot_relation_match=False,
+                answer_type_match=True,
+                ordered_hop_binding=OrderedHopBindingResult(
+                    filled_hop_index=1,
+                    final_hop_index=2,
+                    final_relation="parent company",
+                    final_relation_object="",
+                    candidate_is_final_relation_object=False,
+                    missing_critical_hops=["parent company"],
+                    bound_bridge_values=["Apple Records"],
+                    chain_complete=False,
+                ),
+                set_level_sufficiency=SetLevelSufficiencyResult(
+                    final_slot_covered=False,
+                    all_required_hops_covered=False,
+                    missing_critical_hops=["parent company"],
+                    conflict_on_final_slot=False,
+                ),
+            )
+        )
+
+        result = agent.run(sample)
+        first_record = result.trajectory[0].to_record()
+
+        self.assertEqual("abstain", result.final_action)
+        self.assertEqual(2, len(result.trajectory))
+        self.assertEqual("ordered_hop_repair", first_record["action"])
+        self.assertEqual("Apple Records parent company", retriever.queries[1])
+        self.assertTrue(first_record["controller_policy_v1_applied"])
+        self.assertEqual("abstain", first_record["controller_policy_v1_original_action"])
+        self.assertEqual("ordered_hop_repair", first_record["controller_policy_v1_action"])
+        self.assertEqual("repair_signal_present_but_abstain", first_record["controller_policy_v1_reason"])
+
+    def test_controller_policy_v1_does_not_route_conflicting_repair_signal(self) -> None:
+        sample = Sample(
+            "s1",
+            "What company is the record label of Magic Christian Music part of?",
+            "Apple Corps",
+            ["s1::p14", "s1::p7"],
+        )
+        retriever = TopKRetriever(
+            {
+                "What company is the record label of Magic Christian Music part of?": ["s1::p14"],
+                "Apple Records parent company": ["s1::p7"],
+            }
+        )
+        conflicting_response = (
+            '{"claims":[{"claim":"Apple Records is the record label of Magic Christian Music.",'
+            '"status":"contradicted","evidence_ids":["s1::p14"],"missing_evidence":"",'
+            '"is_critical":true}],'
+            '"overall_sufficiency":"conflicting","need_more_evidence":true,'
+            '"suggested_query":"Apple Records parent company","risk_score":1,'
+            '"expected_gain":0.8,"final_target_match":false,"answer_slot":"intermediate entity"}'
+        )
+        agent = ClaimRiskAgent(
+            retriever,
+            top_k=1,
+            max_rounds=2,
+            config={
+                "query_decomposition": "none",
+                "claim_evidence_slot_ledger": True,
+                "claim_evidence_slot_binding_policy": "evidence",
+                "claim_evidence_slot_binding_verifier": True,
+                "claim_evidence_typed_target_slot_binder": True,
+                "claim_evidence_ordered_hop_binding_gate": True,
+                "claim_evidence_final_answer_from_slot": True,
+                "claim_risk_controller_policy_v1": True,
+                "answer_backend": "fake_llm",
+                "answer_fake_response": "UNKNOWN",
+                "verifier_backend": "fake_llm",
+                "verifier_fake_response": conflicting_response,
+            },
+        )
+        agent.verifier.client.responses = [conflicting_response, conflicting_response]
+        agent.slot_binding_verifier = FakeSlotBindingVerifier(
+            SlotBindingResult(
+                slot_name="final_target",
+                supports_slot=False,
+                bound_value="Apple Records",
+                evidence_ids=["s1::p14"],
+                slot_relation_match=False,
+                answer_type_match=True,
+                ordered_hop_binding=OrderedHopBindingResult(
+                    filled_hop_index=1,
+                    final_hop_index=2,
+                    final_relation="parent company",
+                    final_relation_object="",
+                    candidate_is_final_relation_object=False,
+                    missing_critical_hops=["parent company"],
+                    bound_bridge_values=["Apple Records"],
+                    chain_complete=False,
+                ),
+                set_level_sufficiency=SetLevelSufficiencyResult(
+                    final_slot_covered=False,
+                    all_required_hops_covered=False,
+                    missing_critical_hops=["parent company"],
+                    conflict_on_final_slot=True,
+                ),
+            )
+        )
+
+        result = agent.run(sample)
+        first_record = result.trajectory[0].to_record()
+
+        self.assertEqual("refine_query", first_record["action"])
+        self.assertFalse(first_record["controller_policy_v1_applied"])
+        self.assertEqual(
+            "conflict_or_disambiguation_required",
+            first_record["controller_policy_v1_blocked_reason"],
+        )
+
+    def test_answer_safety_guard_blocks_conflicting_answer(self) -> None:
+        agent = ClaimRiskAgent(StaticRetriever())
+        verifier_output = VerifierOutput(
+            claims=[
+                ClaimAssessment(
+                    "Apple Records is the parent company of Magic Christian Music.",
+                    "contradicted",
+                    ["p1"],
+                    "",
+                    True,
+                )
+            ],
+            overall_sufficiency="conflicting",
+            need_more_evidence=True,
+            risk_score=1.0,
+            expected_gain=0.0,
+            final_target_match=True,
+            answer_slot="final requested target",
+        )
+
+        action, metadata = agent._apply_answer_safety_guard(
+            "answer",
+            verifier_output=verifier_output,
+            slot_metadata={},
+            repair_metadata={},
+            budget_remaining=1,
+        )
+
+        self.assertEqual("abstain", action)
+        self.assertTrue(metadata["answer_safety_guard_applied"])
+        self.assertEqual("answer", metadata["answer_safety_guard_original_action"])
+        self.assertEqual("abstain", metadata["answer_safety_guard_action"])
+        self.assertEqual("conflict_signal", metadata["answer_safety_guard_reason"])
+        self.assertTrue(metadata["answer_safety_guard_conflict_signal"])
+        self.assertFalse(metadata["answer_safety_guard_wrong_target_signal"])
+
+    def test_answer_safety_guard_routes_wrong_role_answer_to_repair_when_budget_available(self) -> None:
+        agent = ClaimRiskAgent(StaticRetriever())
+        verifier_output = VerifierOutput(
+            claims=[
+                ClaimAssessment(
+                    "Apple Records is the record label of Magic Christian Music.",
+                    "supported",
+                    ["s1::p14"],
+                    "",
+                    True,
+                )
+            ],
+            overall_sufficiency="sufficient",
+            need_more_evidence=False,
+            risk_score=0.0,
+            expected_gain=0.0,
+            final_target_match=True,
+            answer_slot="final requested target",
+        )
+        binding_record = SlotBindingResult(
+            slot_name="final_target",
+            supports_slot=True,
+            bound_value="Apple Records",
+            evidence_ids=["s1::p14"],
+            slot_relation_match=True,
+            answer_type_match=True,
+            candidate_roles=[
+                CandidateRoleLabel(
+                    candidate="Apple Records",
+                    role="bridge_entity",
+                    relation_to_question="supports_bridge",
+                )
+            ],
+        ).to_record()
+
+        action, metadata = agent._apply_answer_safety_guard(
+            "answer",
+            verifier_output=verifier_output,
+            slot_metadata={"slot_binding_verifier_result": binding_record},
+            repair_metadata={
+                "repair_query_action": "ordered_hop_repair",
+                "repair_next_query": "Apple Records parent company",
+            },
+            budget_remaining=1,
+        )
+
+        self.assertEqual("ordered_hop_repair", action)
+        self.assertTrue(metadata["answer_safety_guard_applied"])
+        self.assertEqual("wrong_target_signal_with_repair_signal", metadata["answer_safety_guard_reason"])
+        self.assertTrue(metadata["answer_safety_guard_wrong_target_signal"])
+        self.assertEqual("bridge_entity", metadata["answer_safety_guard_blocked_role"])
+
+    def test_answer_safety_guard_keeps_supported_final_answer(self) -> None:
+        agent = ClaimRiskAgent(StaticRetriever())
+        verifier_output = VerifierOutput(
+            claims=[
+                ClaimAssessment(
+                    "Oriole Records fills the final requested label.",
+                    "supported",
+                    ["s1::p7"],
+                    "",
+                    True,
+                )
+            ],
+            overall_sufficiency="sufficient",
+            need_more_evidence=False,
+            risk_score=0.0,
+            expected_gain=0.0,
+            final_target_match=True,
+            answer_slot="final requested target",
+        )
+        binding_record = SlotBindingResult(
+            slot_name="final_target",
+            supports_slot=True,
+            bound_value="Oriole Records",
+            evidence_ids=["s1::p7"],
+            slot_relation_match=True,
+            answer_type_match=True,
+            candidate_roles=[
+                CandidateRoleLabel(
+                    candidate="Oriole Records",
+                    role="final_answer",
+                    relation_to_question="fills_final_slot",
+                )
+            ],
+            set_level_sufficiency=SetLevelSufficiencyResult(
+                final_slot_covered=True,
+                all_required_hops_covered=True,
+                evidence_set_sufficient=True,
+            ),
+        ).to_record()
+
+        action, metadata = agent._apply_answer_safety_guard(
+            "answer",
+            verifier_output=verifier_output,
+            slot_metadata={"slot_binding_verifier_result": binding_record},
+            repair_metadata={},
+            budget_remaining=1,
+        )
+
+        self.assertEqual("answer", action)
+        self.assertEqual({}, metadata)
+
     def test_ordered_hop_repair_routes_query_to_final_relation_object(self) -> None:
         sample = Sample(
             "s1",
