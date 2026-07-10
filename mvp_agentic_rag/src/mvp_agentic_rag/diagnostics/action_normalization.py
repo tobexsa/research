@@ -6,6 +6,7 @@ ACTION_MAP = {
     "final_answer": "answer",
     "continue_search": "refine_query",
     "refine_query": "refine_query",
+    "repair_missing_hop": "repair_missing_hop",
     "refine_missing_hop": "repair_missing_hop",
     "ordered_hop_repair": "repair_missing_hop",
     "repair_next_hop": "repair_missing_hop",

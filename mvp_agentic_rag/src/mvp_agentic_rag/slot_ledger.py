@@ -346,6 +346,11 @@ def _extract_structured_final_value(target_type: str, text: str, question: str =
         match = re.search(r"\b(\d{1,2})(?:st|nd|rd|th)[-\s]+century\b", source, flags=re.IGNORECASE)
         if match:
             return f"{match.group(1)}th" if match.group(1).endswith("0") else _ordinal(match.group(1))
+        if re.search(r"\blive(?:d)?\s+in\b", normalized_question):
+            year_match = re.search(r"\b(1[0-9]{3}|20[0-9]{2})\b", source)
+            if year_match:
+                century = (int(year_match.group(1)) - 1) // 100 + 1
+                return _ordinal(str(century))
         return ""
     if normalized_type == "year":
         for cue in cues:

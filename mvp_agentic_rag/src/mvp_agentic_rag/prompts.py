@@ -20,6 +20,7 @@ def build_answer_prompt(sample: Sample, evidence: list[Passage], answer_style: s
             "Return only the short answer. Do not explain. "
             "Do not include citations or evidence discussion. "
             "Return the entity or value that directly answers the question's requested type. "
+            "When evidence contains a complete supported entity name, return the complete supported entity name. "
             "Do not return a related broader entity, narrower entity, container, location, or explanation. "
             "If evidence is insufficient, return UNKNOWN."
         )

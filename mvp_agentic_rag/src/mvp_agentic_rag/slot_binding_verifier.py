@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass, field
+from difflib import SequenceMatcher
 
 from .llm_client import LLMClient, make_llm_client
 from .prompts import format_evidence
@@ -252,6 +254,7 @@ class SlotBindingResult:
     slot_entailment: SlotBoundEntailmentResult = field(default_factory=SlotBoundEntailmentResult)
     set_level_sufficiency: SetLevelSufficiencyResult = field(default_factory=SetLevelSufficiencyResult)
     decision: CalibratedDecisionResult = field(default_factory=CalibratedDecisionResult)
+    repair_target: dict = field(default_factory=dict)
 
     def to_record(self) -> dict:
         candidate_role = self.candidate_roles[0] if self.candidate_roles else CandidateRoleLabel(
@@ -270,10 +273,28 @@ class SlotBindingResult:
             self.bound_value,
             self.set_level_sufficiency,
         ):
+            risk = decision_head.get("risk")
+            if not isinstance(risk, dict):
+                risk = {
+                    "unsupported_risk": float(risk or 0.0),
+                    "wrong_target_risk": 0.0,
+                    "bridge_binding_risk": 0.0,
+                    "relation_direction_risk": 0.0,
+                    "candidate_extraction_risk": 0.0,
+                    "conflict_risk": 0.0,
+                    "insufficient_evidence_risk": 0.0,
+                }
+            else:
+                risk = dict(risk)
+            risk["candidate_extraction_risk"] = max(
+                float(risk.get("candidate_extraction_risk", 0.0) or 0.0),
+                0.9,
+            )
             decision_head = {
                 **decision_head,
                 "action": "answer_extraction_repair",
                 "abstain_reason": "candidate_extraction_failure",
+                "risk": risk,
             }
         return {
             "slot_name": self.slot_name,
@@ -292,6 +313,7 @@ class SlotBindingResult:
             "question_slot_parser": self.question_slot.to_v1_2_record(),
             "candidate_role_labeler": candidate_role.to_v1_2_record(),
             "slot_bound_entailment": self.slot_entailment.to_v1_2_record(),
+            "repair_target": _repair_target_record(self.repair_target),
             "decision_head": decision_head,
         }
 
@@ -358,6 +380,7 @@ def _build_slot_binding_prompt(
 ) -> list[dict[str, str]]:
     target_slot_spec = build_target_slot_spec(sample)
     schema = _slot_binding_schema(sample, target_slot_spec)
+    evidence_hints = _build_binding_evidence_hints(sample, evidence)
     return [
         {
             "role": "system",
@@ -376,6 +399,10 @@ def _build_slot_binding_prompt(
                 "related but non-final fact. If the evidence only supports a bridge slot or an intermediate fact, "
                 "the final slot must not be marked supported. If expected_granularity is day, a bare year is not a "
                 "valid final answer; if the target is a count, bridge years or dates are not valid counts."
+                " Passage titles are evidence-bearing entity spans, but a title is not automatically the answer. "
+                "Resolve minor spelling variants and aliases across the question, title, and body before rejecting "
+                "a hop. For cast/person chains, keep actor and character identities separate; apply spouse relations "
+                "to characters before mapping back to performers."
             ),
         },
         {
@@ -394,13 +421,111 @@ def _build_slot_binding_prompt(
                 "Aggregate all evidence; do not average passage scores.\n\n"
                 "E. Calibrated Decision Head\n"
                 "Output action, risk, expected_gain, and reason only after the previous stages.\n\n"
+                "For repair actions, also output repair_target with anchor_entity, target_relation, missing_hop, "
+                "expected_answer_type, and single_hop_query. The repair target must describe exactly one missing hop; "
+                "do not use a distractor, unrelated entity, or bridge-only candidate as the anchor.\n\n"
                 f"Target slot spec:\n{json.dumps(target_slot_spec.to_record(), ensure_ascii=False)}\n\n"
                 f"Slot ledger:\n{json.dumps(slot_ledger.to_record(), ensure_ascii=False)}\n\n"
+                "Deterministic evidence hints (structure only; not acceptance decisions):\n"
+                f"{json.dumps(evidence_hints, ensure_ascii=False)}\n\n"
                 f"Retrieved evidence:\n{format_evidence(evidence)}\n\n"
                 f"Return JSON with this schema:\n{json.dumps(schema, ensure_ascii=False)}"
             ),
         },
     ]
+
+
+def _build_binding_evidence_hints(sample: Sample, evidence: list[Passage]) -> dict:
+    title_entities = [
+        {"evidence_id": passage.passage_id, "title": passage.title}
+        for passage in evidence
+        if str(passage.title or "").strip()
+    ]
+    possessive_relations: list[dict] = []
+    title_name_forms: list[tuple[str, str]] = []
+    actor_character_pairs: list[dict] = []
+    for passage in evidence:
+        title = str(passage.title or "").strip()
+        possessive = re.match(r"^(?P<subject>.+?)(?:['’]s)\s+(?P<object>.+)$", title)
+        if possessive:
+            subject = possessive.group("subject").strip()
+            object_value = possessive.group("object").strip()
+            possessive_relations.append(
+                {
+                    "evidence_id": passage.passage_id,
+                    "subject": subject,
+                    "relation": "title_possessive",
+                    "object": object_value,
+                }
+            )
+            title_name_forms.append((subject, passage.passage_id))
+        title_name_forms.extend((name, passage.passage_id) for name in _proper_name_spans(title))
+        actor_character_pairs.extend(_actor_character_pairs(passage))
+
+    question_names = _proper_name_spans(sample.question)
+    aliases: list[dict] = []
+    seen_aliases: set[tuple[str, str, str]] = set()
+    for question_name in question_names:
+        for evidence_name, evidence_id in title_name_forms:
+            if not _near_name_alias(question_name, evidence_name):
+                continue
+            key = (question_name, evidence_name, evidence_id)
+            if key in seen_aliases:
+                continue
+            seen_aliases.add(key)
+            aliases.append(
+                {
+                    "question_form": question_name,
+                    "evidence_form": evidence_name,
+                    "evidence_id": evidence_id,
+                }
+            )
+    return {
+        "evidence_title_entities": title_entities,
+        "question_title_aliases": aliases,
+        "title_possessive_relations": possessive_relations,
+        "actor_character_pairs": actor_character_pairs,
+    }
+
+
+def _proper_name_spans(text: str) -> list[str]:
+    return [
+        " ".join(match.group(0).split())
+        for match in re.finditer(
+            r"\b[A-Z][A-Za-z'’-]+(?:\s+[A-Z][A-Za-z0-9'’-]+)+\b",
+            str(text or ""),
+        )
+    ]
+
+
+def _near_name_alias(left: str, right: str) -> bool:
+    left_tokens = re.findall(r"[a-z0-9]+", str(left or "").lower())
+    right_tokens = re.findall(r"[a-z0-9]+", str(right or "").lower())
+    if not left_tokens or len(left_tokens) != len(right_tokens) or left_tokens == right_tokens:
+        return False
+    token_scores = [SequenceMatcher(None, a, b).ratio() for a, b in zip(left_tokens, right_tokens)]
+    return min(token_scores) >= 0.8 and SequenceMatcher(
+        None,
+        " ".join(left_tokens),
+        " ".join(right_tokens),
+    ).ratio() >= 0.88
+
+
+def _actor_character_pairs(passage: Passage) -> list[dict]:
+    pairs = []
+    pattern = re.compile(
+        r"\b(?P<character>[A-Z][A-Za-z'’-]*(?:\s+[A-Z][A-Za-z'’-]*){0,2})\s*"
+        r"\((?P<performer>[A-Z][A-Za-z'’.-]*(?:\s+[A-Z][A-Za-z'’.-]*){1,3})\)"
+    )
+    for match in pattern.finditer(str(passage.text or "")):
+        pairs.append(
+            {
+                "evidence_id": passage.passage_id,
+                "character": " ".join(match.group("character").split()),
+                "performer": " ".join(match.group("performer").split()),
+            }
+        )
+    return pairs
 
 
 def _parse_slot_binding_result(content: str) -> SlotBindingResult:
@@ -433,6 +558,7 @@ def _parse_slot_binding_result(content: str) -> SlotBindingResult:
         slot_entailment=slot_entailment,
         set_level_sufficiency=set_level_sufficiency,
         decision=decision,
+        repair_target=_parse_repair_target(payload.get("repair_target", {})),
     )
 
 
@@ -519,6 +645,13 @@ def _slot_binding_schema(sample: Sample, target_slot_spec) -> dict:
             "sufficiency_confidence": 0.0,
             "uncertainty": 0.0,
         },
+        "repair_target": {
+            "anchor_entity": "verified bridge entity or original question subject for the next missing hop",
+            "target_relation": "single relation needed for the next missing hop",
+            "missing_hop": "single missing hop, not the full question",
+            "expected_answer_type": target_slot_spec.target_type,
+            "single_hop_query": "short query containing only anchor_entity and target_relation",
+        },
         "decision": {
             "action": "answer|answer_extraction_repair|ordered_hop_repair|refine_missing_hop|continue_search|read_more_chunks|disambiguate_conflict|abstain",
             "risk": 0.0,
@@ -547,6 +680,24 @@ def _slot_binding_schema(sample: Sample, target_slot_spec) -> dict:
         "slot_relation_match": True,
         "answer_type_match": True,
         "reason": "brief evidence-grounded reason",
+    }
+
+
+def _parse_repair_target(payload: dict) -> dict:
+    if not isinstance(payload, dict):
+        return {}
+    return _repair_target_record(payload)
+
+
+def _repair_target_record(payload: dict) -> dict:
+    if not isinstance(payload, dict):
+        payload = {}
+    return {
+        "anchor_entity": str(payload.get("anchor_entity") or ""),
+        "target_relation": str(payload.get("target_relation") or ""),
+        "missing_hop": str(payload.get("missing_hop") or ""),
+        "expected_answer_type": str(payload.get("expected_answer_type") or ""),
+        "single_hop_query": str(payload.get("single_hop_query") or payload.get("suggested_query") or ""),
     }
 
 

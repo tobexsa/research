@@ -63,3 +63,16 @@ def test_repair_action_requires_target() -> None:
     record["oracle_repair_target"] = {}
 
     assert "invalid:repair_missing_hop_without_target" in validate_record(record)
+
+
+def test_answer_extraction_failure_is_valid_risk_type() -> None:
+    record = _record()
+    record["candidate_answer"] = ""
+    record["risk_type"] = "answer_extraction_failure"
+    record["metadata"]["risk_type"] = "answer_extraction_failure"
+    record["final_answer_supported"] = False
+    record["should_abstain"] = False
+    record["oracle_action"] = "answer"
+    record["annotation_status"] = "human_verified"
+
+    assert validate_record(record) == []

@@ -146,6 +146,10 @@ class AgentResult:
     final_action: str
     trajectory: list[TrajectoryStep]
     cost: dict[str, int]
+    supporting_passage_ids: list[str] = field(default_factory=list)
+    hop: int | None = None
+    subset: str = "default"
+    sample_metadata: dict[str, Any] = field(default_factory=dict)
 
     def to_record(self) -> dict[str, Any]:
         return {
@@ -155,6 +159,10 @@ class AgentResult:
             "method": self.method,
             "final_answer": self.final_answer,
             "final_action": self.final_action,
+            "supporting_passage_ids": list(self.supporting_passage_ids),
+            "hop": self.hop,
+            "subset": self.subset,
+            "sample_metadata": dict(self.sample_metadata),
             "trajectory": [step.to_record() for step in self.trajectory],
             "cost": self.cost,
         }

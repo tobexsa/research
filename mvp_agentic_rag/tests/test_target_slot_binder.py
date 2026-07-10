@@ -419,6 +419,73 @@ class TargetSlotBinderTests(unittest.TestCase):
         self.assertFalse(decision.accepted)
         self.assertEqual("mouth_watercourse_bridge_evidence_only", decision.reason)
 
+    def test_mouth_watercourse_question_rejects_downstream_continuation_as_final_answer(self) -> None:
+        sample = Sample(
+            "2hop__131951_643670",
+            "What is the name for the mouth of the watercourse of the body of water by Rotterdam Centrum?",
+            "Het Scheur",
+        )
+        ledger = SlotLedger(build_slot_plan(sample))
+        result = SlotBindingResult(
+            slot_name="final_target",
+            supports_slot=True,
+            bound_value="Nieuwe Waterweg",
+            evidence_ids=["2hop__131951_643670::p10"],
+            slot_relation_match=True,
+            answer_type_match=True,
+            candidate_roles=[
+                CandidateRoleLabel(
+                    candidate="Nieuwe Waterweg",
+                    role="final_answer",
+                    evidence_span="It continues as the Nieuwe Waterweg to the North Sea.",
+                    relation_to_question="fills_final_slot",
+                )
+            ],
+            slot_entailment=SlotBoundEntailmentResult(
+                candidate="Nieuwe Waterweg",
+                evidence_ids=["2hop__131951_643670::p10"],
+                entails_answer=True,
+            ),
+            set_level_sufficiency=SetLevelSufficiencyResult(
+                final_slot_covered=True,
+                all_required_hops_covered=True,
+                conflict_on_final_slot=False,
+            ),
+            ordered_hop_binding=OrderedHopBindingResult(
+                filled_hop_index=2,
+                final_hop_index=2,
+                final_relation="mouth of the watercourse",
+                final_relation_object="Nieuwe Waterweg",
+                candidate_is_final_relation_object=True,
+                missing_critical_hops=[],
+                bound_bridge_values=["Nieuwe Maas River"],
+                chain_complete=True,
+            ),
+        )
+
+        decision = validate_slot_binding_result(
+            sample,
+            [
+                Passage(
+                    "2hop__131951_643670::p10",
+                    "Het Scheur",
+                    (
+                        'Het Scheur (; Dutch for "The Rip") is a branch of the Rhine-Meuse delta '
+                        "in South Holland, Netherlands, that flows west from the confluence of the "
+                        "Oude Maas and Nieuwe Maas branches past the towns of Rozenburg and Maassluis. "
+                        "It continues as the Nieuwe Waterweg (New Waterway) to the North Sea."
+                    ),
+                )
+            ],
+            ledger,
+            result,
+            structured_acceptance=True,
+            ordered_hop_gate=True,
+        )
+
+        self.assertFalse(decision.accepted)
+        self.assertEqual("mouth_watercourse_downstream_continuation", decision.reason)
+
     def test_target_slot_spec_names_answer_type_slot(self) -> None:
         date_spec = build_target_slot_spec(
             Sample("s1", "When was Example Treaty signed?", "June 1982")

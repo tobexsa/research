@@ -14,6 +14,7 @@ DEFAULT_COLUMNS = [
     "wasted_retrieval_rate",
     "answered_unsupported_rate",
     "final_answered_unsupported_rate",
+    "final_answered_unsupported_excluding_structured_slot_verified_rate",
     "cost_normalized_acc",
     "cost_normalized_f1",
 ]

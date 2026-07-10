@@ -23,6 +23,14 @@ class RunnerTests(unittest.TestCase):
                         "question": "What city is the capital of France?",
                         "answer": "Paris",
                         "supporting_passage_ids": ["p1"],
+                        "metadata": {
+                            "evaluation_issue": {
+                                "category": "dataset_evidence_ambiguity",
+                                "subcategory": "gold_support_not_textually_entailing",
+                                "reason_code": "fixture",
+                                "exclude_from_acceptance": True,
+                            }
+                        },
                     }
                 )
                 + "\n",
@@ -46,10 +54,18 @@ class RunnerTests(unittest.TestCase):
             first = run_experiment(config)
             second = run_experiment(config)
             lines = (out / "trajectories.jsonl").read_text(encoding="utf-8").strip().splitlines()
+            records = [json.loads(line) for line in lines]
 
         self.assertEqual(first["completed"], 5)
         self.assertEqual(second["skipped"], 5)
         self.assertEqual(len(lines), 5)
+        self.assertTrue(all(record["supporting_passage_ids"] == ["p1"] for record in records))
+        self.assertTrue(
+            all(
+                record["sample_metadata"]["evaluation_issue"]["reason_code"] == "fixture"
+                for record in records
+            )
+        )
 
     def test_runner_reports_progress_and_writes_result_table(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -171,6 +187,106 @@ class RunnerTests(unittest.TestCase):
 
         self.assertNotIn("progress:", stdout.getvalue())
         self.assertIn("result_table:", stdout.getvalue())
+
+    def test_runner_prints_terminal_result_summary_after_tui_progress(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            dataset = root / "samples.jsonl"
+            corpus = root / "corpus.jsonl"
+            out = root / "run"
+            dataset.write_text(
+                json.dumps(
+                    {
+                        "id": "q1",
+                        "question": "What city is the capital of France?",
+                        "answer": "Paris",
+                        "supporting_passage_ids": ["p1"],
+                    }
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            corpus.write_text(
+                json.dumps({"id": "p1", "title": "Paris", "text": "Paris is the capital of France."})
+                + "\n",
+                encoding="utf-8",
+            )
+            config = {
+                "dataset": str(dataset),
+                "corpus": str(corpus),
+                "output_dir": str(out),
+                "retriever": "bm25",
+                "methods": ["naive"],
+                "top_k": 1,
+                "max_rounds": 1,
+                "progress_every": 1,
+                "progress_display": "tui",
+            }
+            stdout = io.StringIO()
+
+            with patch("sys.stdout", stdout):
+                run_experiment(config)
+
+        output = stdout.getvalue()
+        self.assertIn("result_table:", output)
+        self.assertIn("results: run", output)
+        self.assertIn("method", output)
+        self.assertIn("naive", output)
+        self.assertNotIn("# Results:", output)
+        self.assertNotIn("| --- |", output)
+        self.assertNotIn("| method |", output)
+        self.assertNotIn("\n\n------", output)
+        self.assertNotIn("\n\nnaive", output)
+
+    def test_runner_prints_terminal_result_summary_without_markdown_table_file(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            dataset = root / "samples.jsonl"
+            corpus = root / "corpus.jsonl"
+            out = root / "run"
+            dataset.write_text(
+                json.dumps(
+                    {
+                        "id": "q1",
+                        "question": "What city is the capital of France?",
+                        "answer": "Paris",
+                        "supporting_passage_ids": ["p1"],
+                    }
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            corpus.write_text(
+                json.dumps({"id": "p1", "title": "Paris", "text": "Paris is the capital of France."})
+                + "\n",
+                encoding="utf-8",
+            )
+            config = {
+                "dataset": str(dataset),
+                "corpus": str(corpus),
+                "output_dir": str(out),
+                "retriever": "bm25",
+                "methods": ["naive"],
+                "top_k": 1,
+                "max_rounds": 1,
+                "progress_every": 1,
+                "progress_display": "tui",
+                "write_result_table": False,
+            }
+            stdout = io.StringIO()
+
+            with patch("sys.stdout", stdout):
+                result = run_experiment(config)
+
+            table_exists = (out / "run_summary.md").exists()
+
+        output = stdout.getvalue()
+        self.assertNotIn("result_table:", output)
+        self.assertNotIn("result_table", result)
+        self.assertFalse(table_exists)
+        self.assertIn("results: run", output)
+        self.assertIn("method", output)
+        self.assertIn("naive", output)
 
 
 class ProgressReporterTests(unittest.TestCase):

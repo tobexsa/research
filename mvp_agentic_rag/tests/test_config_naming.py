@@ -23,6 +23,29 @@ class ConfigNamingTests(unittest.TestCase):
 
         self.assertGreater(checked, 0)
 
+    def test_controller_policy_v1_config_is_isolated_and_enabled(self) -> None:
+        config_path = Path(
+            "configs/layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_"
+            "stratified45_five_stage_verifier_v1_3_4_controller_policy_v1_no_think.yaml"
+        )
+
+        config = load_simple_config(config_path)
+
+        self.assertEqual(
+            "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_"
+            "stratified45_five_stage_verifier_v1_3_4_controller_policy_v1_no_think",
+            config.get("run_name"),
+        )
+        self.assertEqual(
+            "runs/layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_"
+            "stratified45_five_stage_verifier_v1_3_4_controller_policy_v1_no_think",
+            config.get("output_dir"),
+        )
+        self.assertEqual(["claim_risk"], config.get("methods"))
+        self.assertTrue(config.get("claim_risk_controller_policy_v1"))
+        self.assertTrue(config.get("repair_verified_chain_progress_v1_3_3"))
+        self.assertTrue(config.get("repair_query_rewrite_v1_3_2"))
+
 
 if __name__ == "__main__":
     unittest.main()

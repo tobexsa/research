@@ -35,6 +35,12 @@ class ShortAnswerPromptTests(unittest.TestCase):
         self.assertIn("broader entity", content)
         self.assertIn("narrower entity", content)
 
+    def test_short_answer_prompt_prefers_complete_supported_entity_names(self) -> None:
+        messages = build_answer_prompt(_sample(), _evidence(), answer_style="short")
+        content = "\n".join(message["content"] for message in messages)
+
+        self.assertIn("complete supported entity name", content)
+
     def test_repair_prompt_uses_supported_evidence_and_discourages_unknown(self) -> None:
         messages = build_answer_repair_prompt(_sample(), _evidence(), supported_claims=["X was released in 2011"])
         content = "\n".join(message["content"] for message in messages)

@@ -6,9 +6,11 @@ from mvp_agentic_rag.diagnostics.checkpoint_a import (
     build_candidates,
     check_source_runs,
     compact_review_form_to_markdown,
+    export_pilot_review_summary,
     export_annotation_sheet,
     review_records_to_csv,
     export_candidate_pool_quality,
+    merge_review_csv_into_records,
     sample_candidates,
 )
 
@@ -235,3 +237,272 @@ def test_compact_review_form_preserves_unicode_text() -> None:
     assert "\u9225" not in markdown
     assert "\u8305" not in markdown
     assert "\u63b3" not in markdown
+
+
+def test_merge_review_csv_statuses_and_provenance() -> None:
+    template_records = [
+        {
+            "id": "rec-ok",
+            "dataset": "musique",
+            "source_run": "run-a",
+            "sample_id": "s-ok",
+            "question": "Who founded X?",
+            "gold_answer": "Ada",
+            "candidate_answer": "Ada",
+            "hop": 2,
+            "round": 1,
+            "claims": [{"claim_id": "c1", "text": "Ada founded X.", "role": "critical", "source": "verifier_output"}],
+            "evidence": [{"id": "p1", "title": "T", "text": "Ada founded X."}],
+            "claim_support": {"c1": "supported"},
+            "evidence_sufficiency": "sufficient",
+            "critical_missing_claims": [],
+            "noncritical_missing_claims": [],
+            "contradicted_claims": [],
+            "wrong_target": False,
+            "bridge_as_final": False,
+            "final_answer_supported": True,
+            "should_abstain": False,
+            "oracle_action": "answer",
+            "oracle_repair_target": {},
+            "risk_type": "supported_answer",
+            "state": {"round": 1, "max_rounds": 1, "budget_remaining": 2, "allowed_actions": ["answer"]},
+            "metadata": {"claims_source": "verifier_output", "risk_type": "supported_answer"},
+            "mining_reason": {"rule": "supported_answer", "matched_fields": ["final_action"], "confidence": "strong"},
+            "label_provenance": {
+                "uses_gold_answer": False,
+                "uses_gold_chain": False,
+                "uses_model_output": True,
+                "uses_human_review": False,
+                "runtime_available": True,
+            },
+            "action_metadata": {"runtime_action": "answer", "diagnostic_action": "answer"},
+            "annotation_status": "pending_review",
+            "notes": "",
+        },
+        {
+            "id": "rec-drop",
+            "dataset": "musique",
+            "source_run": "run-a",
+            "sample_id": "s-drop",
+            "question": "Broken question?",
+            "gold_answer": "County",
+            "candidate_answer": "",
+            "hop": 2,
+            "round": 1,
+            "claims": [{"claim_id": "c1", "text": "Broken claim.", "role": "critical", "source": "verifier_output"}],
+            "evidence": [],
+            "claim_support": {"c1": "unsupported"},
+            "evidence_sufficiency": "insufficient",
+            "critical_missing_claims": ["c1"],
+            "noncritical_missing_claims": [],
+            "contradicted_claims": [],
+            "wrong_target": True,
+            "bridge_as_final": False,
+            "final_answer_supported": False,
+            "should_abstain": True,
+            "oracle_action": "abstain",
+            "oracle_repair_target": {},
+            "risk_type": "wrong_target",
+            "state": {"round": 1, "max_rounds": 1, "budget_remaining": 0, "allowed_actions": ["abstain"]},
+            "metadata": {"claims_source": "verifier_output", "risk_type": "wrong_target"},
+            "mining_reason": {"rule": "wrong_target", "matched_fields": ["final_action"], "confidence": "medium"},
+            "label_provenance": {
+                "uses_gold_answer": False,
+                "uses_gold_chain": False,
+                "uses_model_output": True,
+                "uses_human_review": False,
+                "runtime_available": True,
+            },
+            "action_metadata": {"runtime_action": "abstain", "diagnostic_action": "abstain"},
+            "annotation_status": "pending_review",
+            "notes": "",
+        },
+        {
+            "id": "rec-fix",
+            "dataset": "musique",
+            "source_run": "run-a",
+            "sample_id": "s-fix",
+            "question": "What company?",
+            "gold_answer": "Apple Corps",
+            "candidate_answer": "",
+            "hop": 2,
+            "round": 1,
+            "claims": [{"claim_id": "c1", "text": "Evidence supports Apple Corps.", "role": "critical", "source": "verifier_output"}],
+            "evidence": [],
+            "claim_support": {"c1": "supported"},
+            "evidence_sufficiency": "sufficient",
+            "critical_missing_claims": [],
+            "noncritical_missing_claims": [],
+            "contradicted_claims": [],
+            "wrong_target": False,
+            "bridge_as_final": False,
+            "final_answer_supported": False,
+            "should_abstain": False,
+            "oracle_action": "answer",
+            "oracle_repair_target": {},
+            "risk_type": "critical_gap",
+            "state": {"round": 1, "max_rounds": 1, "budget_remaining": 2, "allowed_actions": ["answer"]},
+            "metadata": {"claims_source": "verifier_output", "risk_type": "critical_gap"},
+            "mining_reason": {"rule": "critical_gap", "matched_fields": ["final_action"], "confidence": "medium"},
+            "label_provenance": {
+                "uses_gold_answer": False,
+                "uses_gold_chain": False,
+                "uses_model_output": True,
+                "uses_human_review": False,
+                "runtime_available": True,
+            },
+            "action_metadata": {"runtime_action": "answer", "diagnostic_action": "answer"},
+            "annotation_status": "pending_review",
+            "notes": "",
+        },
+    ]
+    csv_text = "\n".join(
+        [
+            "id,risk_type,oracle_action,claim_support,critical_missing_claims,noncritical_missing_claims,contradicted_claims,wrong_target,bridge_as_final,final_answer_supported,evidence_sufficiency,oracle_repair_target,annotation_status,notes",
+            "rec-ok,supported_answer,answer,c1=supported,,,,false,false,true,sufficient,{},reviewed_ok,ok",
+            "rec-drop,wrong_target,abstain,c1=unsupported,c1,,,true,false,false,insufficient,{},drop,drop: dataset issue",
+            "rec-fix,answer_extraction_failure,answer,c1=supported,,,,false,false,false,sufficient,{},needs_fix,needs_fix: answer extraction failed",
+        ]
+    )
+
+    merged = merge_review_csv_into_records(template_records, csv_text)
+    by_id = {record["id"]: record for record in merged}
+
+    assert by_id["rec-ok"]["annotation_status"] == "human_verified"
+    assert by_id["rec-ok"]["label_provenance"]["uses_human_review"] is True
+    assert by_id["rec-drop"]["annotation_status"] == "excluded"
+    assert by_id["rec-drop"]["metadata"]["review_original_status"] == "drop"
+    assert by_id["rec-fix"]["annotation_status"] == "adjudication_needed"
+    assert by_id["rec-fix"]["risk_type"] == "answer_extraction_failure"
+    assert by_id["rec-fix"]["metadata"]["review_original_risk_type"] == "answer_extraction_failure"
+
+
+def test_export_pilot_review_summary_gates_no_go_when_needs_fix_dominates() -> None:
+    records = []
+    for index in range(15):
+        records.append(
+            {
+                "id": f"ok-{index}",
+                "dataset": "musique",
+                "source_run": "run-a",
+                "sample_id": f"s-ok-{index}",
+                "question": "Who founded X?",
+                "gold_answer": "Ada",
+                "candidate_answer": "Ada",
+                "hop": 2,
+                "claims": [{"claim_id": "c1", "text": "Ada founded X.", "role": "critical", "source": "verifier_output"}],
+                "evidence": [{"id": "p1", "title": "T", "text": "Ada founded X."}],
+                "claim_support": {"c1": "supported"},
+                "evidence_sufficiency": "sufficient",
+                "critical_missing_claims": [],
+                "noncritical_missing_claims": [],
+                "contradicted_claims": [],
+                "wrong_target": False,
+                "bridge_as_final": False,
+                "final_answer_supported": True,
+                "should_abstain": False,
+                "oracle_action": "answer",
+                "oracle_repair_target": {},
+                "risk_type": "supported_answer",
+                "state": {"round": 1, "max_rounds": 1, "budget_remaining": 2, "allowed_actions": ["answer"]},
+                "metadata": {"claims_source": "verifier_output", "risk_type": "supported_answer"},
+                "mining_reason": {"rule": "supported_answer", "matched_fields": ["final_action"], "confidence": "strong"},
+                "label_provenance": {
+                    "uses_gold_answer": False,
+                    "uses_gold_chain": False,
+                    "uses_model_output": True,
+                    "uses_human_review": True,
+                    "runtime_available": True,
+                },
+                "action_metadata": {"runtime_action": "answer", "diagnostic_action": "answer"},
+                "annotation_status": "human_verified",
+            }
+        )
+    for index in range(37):
+        records.append(
+            {
+                "id": f"fix-{index}",
+                "risk_type": "wrong_target",
+                "oracle_action": "repair_missing_hop",
+                "hop": "unknown",
+                "annotation_status": "adjudication_needed",
+                "notes": "needs_fix",
+            }
+        )
+    for index in range(8):
+        records.append(
+            {
+                "id": f"drop-{index}",
+                "risk_type": "wrong_target",
+                "oracle_action": "abstain",
+                "hop": 2,
+                "annotation_status": "excluded",
+                "notes": "drop: dataset issue",
+            }
+        )
+
+    summary = export_pilot_review_summary(records)
+
+    assert summary["annotated_count"] == 60
+    assert summary["valid_count"] == 15
+    assert summary["schema_issue_count"] == 0
+    assert summary["adjudication_needed_count"] == 37
+    assert summary["excluded_count"] == 8
+    assert summary["go_or_no_go_for_full_batch"] == "no_go"
+    assert summary["gate_checks"]["adjudication_needed_rate"]["passed"] is False
+    assert summary["review_status_counts"] == {
+        "adjudication_needed": 37,
+        "excluded": 8,
+        "human_verified": 15,
+    }
+    assert "reviewed_ok" not in summary["reviewer_notes_summary"]
+
+
+def test_summary_has_no_schema_recommendation_for_formal_answer_extraction_failure() -> None:
+    summary = export_pilot_review_summary(
+        [
+            {
+                "id": "answer-extract",
+                "dataset": "musique",
+                "source_run": "run-a",
+                "sample_id": "s-answer-extract",
+                "question": "What company?",
+                "gold_answer": "Apple Corps",
+                "candidate_answer": "",
+                "hop": 2,
+                "claims": [{"claim_id": "c1", "text": "Magic Christian Music is part of Apple Corps.", "role": "critical", "source": "verifier_output"}],
+                "evidence": [{"id": "p1", "title": "Apple Records", "text": "Apple Records is a division of Apple Corps Ltd."}],
+                "claim_support": {"c1": "supported"},
+                "evidence_sufficiency": "sufficient",
+                "critical_missing_claims": [],
+                "noncritical_missing_claims": [],
+                "contradicted_claims": [],
+                "wrong_target": False,
+                "bridge_as_final": False,
+                "final_answer_supported": False,
+                "should_abstain": False,
+                "oracle_action": "answer",
+                "oracle_repair_target": {},
+                "risk_type": "answer_extraction_failure",
+                "state": {"round": 1, "max_rounds": 1, "budget_remaining": 2, "allowed_actions": ["answer"]},
+                "metadata": {
+                    "claims_source": "verifier_output",
+                    "risk_type": "answer_extraction_failure",
+                    "review_original_risk_type": "answer_extraction_failure",
+                },
+                "mining_reason": {"rule": "answer_extraction_failure", "matched_fields": ["final_action"], "confidence": "medium"},
+                "label_provenance": {
+                    "uses_gold_answer": False,
+                    "uses_gold_chain": False,
+                    "uses_model_output": True,
+                    "uses_human_review": True,
+                    "runtime_available": True,
+                },
+                "action_metadata": {"runtime_action": "answer", "diagnostic_action": "answer"},
+                "annotation_status": "human_verified",
+            }
+        ]
+    )
+
+    assert summary["schema_issue_count"] == 0
+    assert summary["recommended_schema_changes"] == []

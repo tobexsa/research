@@ -147,6 +147,8 @@ def _ordered_hop_rejection_reason(
     if ordered.has_signal():
         if _mouth_watercourse_bridge_evidence_only(sample, evidence, binding_result):
             return "mouth_watercourse_bridge_evidence_only"
+        if _mouth_watercourse_downstream_continuation(sample, evidence, binding_result):
+            return "mouth_watercourse_downstream_continuation"
         if _ordered_relation_depth_mismatch(sample, binding_result):
             return "ordered_relation_depth_mismatch"
         if not ordered.candidate_is_final_relation_object:
@@ -217,6 +219,36 @@ def _mouth_watercourse_bridge_evidence_only(
     return any(cue in cited for cue in bridge_only_cues) and not any(
         cue in cited for cue in final_watercourse_cues
     )
+
+
+def _mouth_watercourse_downstream_continuation(
+    sample: Sample,
+    evidence: list[Passage],
+    binding_result: "SlotBindingResult",
+) -> bool:
+    question = _normalize(sample.question)
+    if "mouth" not in question or "watercourse" not in question:
+        return False
+    if "body of water" not in question and "river" not in question:
+        return False
+    value = _normalize(binding_result.bound_value)
+    if not value:
+        return False
+    cited = _normalize(_cited_text(evidence, binding_result.evidence_ids))
+    if value not in cited:
+        return False
+    final_relation = _normalize(binding_result.ordered_hop_binding.final_relation)
+    if "mouth" not in final_relation and "watercourse" not in final_relation:
+        return False
+    value_pattern = re.escape(value)
+    downstream_patterns = [
+        rf"\bcontinues as (?:the )?{value_pattern}\b",
+        rf"\bbecomes (?:the )?{value_pattern}\b",
+        rf"\bflows into (?:the )?{value_pattern}\b",
+        rf"\bempties into (?:the )?{value_pattern}\b",
+        rf"\bdrains into (?:the )?{value_pattern}\b",
+    ]
+    return any(re.search(pattern, cited) for pattern in downstream_patterns)
 
 
 def _ordered_relation_depth_mismatch(sample: Sample, binding_result: "SlotBindingResult") -> bool:
@@ -348,6 +380,12 @@ def _relation_cues(question: str, target_type: str) -> list[str]:
         (("premiere", "premiered"), "premiere"),
         (("founded", "founding", "established"), "founding"),
         (("occur", "occurred", "times"), "occurrence"),
+        (("model",), "model"),
+        (("named after",), "named_after"),
+        (("show",), "show"),
+        (("screenwriter", "screen writer", "written by", "wrote"), "screenwriter"),
+        (("wife", "husband", "spouse"), "spouse"),
+        (("plays", "played by", "portrays"), "performed_by"),
         (("mouth",), "mouth"),
         (("watercourse",), "watercourse"),
         (("population",), "population"),

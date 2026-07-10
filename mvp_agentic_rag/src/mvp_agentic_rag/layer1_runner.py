@@ -11,6 +11,7 @@ from .progress import ProgressReporter
 from .result_plot import write_metrics_svg
 from .result_table import write_metrics_markdown
 from .retriever import make_retriever
+from .tui_result_summary import emit_tui_result_summary
 
 
 def run_experiment(config: dict, progress_writer=None) -> dict:
@@ -87,6 +88,11 @@ def run_experiment(config: dict, progress_writer=None) -> dict:
                 reporter.write_line(f"result_table: {table_path}")
             else:
                 _emit(f"result_table: {table_path}")
+        if bool(config.get("print_result_summary", True)):
+            if reporter is not None:
+                emit_tui_result_summary(metrics, reporter.write_line)
+            else:
+                emit_tui_result_summary(metrics, _emit)
         if bool(config.get("write_result_plot", False)):
             plot_path = write_metrics_svg(metrics, output_dir / "result_summary.svg")
             result["result_plot"] = str(plot_path)

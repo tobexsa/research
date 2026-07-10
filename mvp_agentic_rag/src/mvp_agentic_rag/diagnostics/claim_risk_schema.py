@@ -23,6 +23,7 @@ ALLOWED_RISK_TYPES = {
     "insufficient_evidence",
     "no_new_evidence",
     "repairable_missing_hop",
+    "answer_extraction_failure",
 }
 PROVENANCE_KEYS = {
     "uses_gold_answer",
@@ -117,7 +118,7 @@ def validate_record(record: dict) -> list[str]:
         if record.get("annotation_status") not in {"unclear", "adjudication_needed"}:
             errors.append("invalid:bridge_as_final_without_wrong_target")
     if record.get("final_answer_supported") is False and record.get("oracle_action") == "answer":
-        if record.get("annotation_status") != "unclear":
+        if record.get("annotation_status") != "unclear" and record.get("risk_type") != "answer_extraction_failure":
             errors.append("invalid:unsupported_answer_action")
 
     action_metadata = record.get("action_metadata") or {}

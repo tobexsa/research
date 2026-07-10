@@ -139,6 +139,8 @@ class SlotBindingVerifierTests(unittest.TestCase):
         self.assertIn("ordered_hop_binding", prompt_text)
         self.assertIn("candidate_is_final_relation_object", prompt_text)
         self.assertIn("bridge_as_final", prompt_text)
+        self.assertIn("repair_target", prompt_text)
+        self.assertIn("single_hop_query", prompt_text)
 
     def test_parses_five_stage_structured_binding_result(self) -> None:
         client = FakeLLMClient(
@@ -289,6 +291,117 @@ class SlotBindingVerifierTests(unittest.TestCase):
         self.assertIn('"target_type": "date"', prompt_text)
         self.assertIn('"expected_granularity": "day"', prompt_text)
 
+    def test_nissan_fixture_surfaces_title_possessive_and_spelling_alias(self) -> None:
+        client = FakeLLMClient(
+            [
+                '{"slot_name":"final_target","supports_slot":false,"bound_value":"",'
+                '"evidence_ids":[],"slot_relation_match":false,"answer_type_match":false,'
+                '"reason":"fixture"}'
+            ]
+        )
+        sample = Sample(
+            "2hop__132854_417697",
+            "Mohammed Atta has what kind of model of the company that makes Datsun Type 12?",
+            "Nissan Altima",
+        )
+        evidence = [
+            Passage(
+                "2hop__132854_417697::p6",
+                "Mohamed Atta's Nissan",
+                "A 2001 Nissan Altima was found in the airport parking lot.",
+            ),
+            Passage(
+                "2hop__132854_417697::p10",
+                "Datsun Type 12",
+                "The Datsun Type 12 was produced by Nissan.",
+            ),
+        ]
+        verifier = LLMSlotBindingVerifier(client)
+
+        verifier.bind_final_slot(sample, evidence, SlotLedger(build_slot_plan(sample)))
+
+        prompt_text = "\n".join(message["content"] for message in client.calls[0])
+        self.assertIn('"question_form": "Mohammed Atta"', prompt_text)
+        self.assertIn('"evidence_form": "Mohamed Atta"', prompt_text)
+        self.assertIn('"relation": "title_possessive"', prompt_text)
+        self.assertIn('"object": "Nissan"', prompt_text)
+        self.assertIn('"relation_cues": ["model"]', prompt_text)
+
+    def test_mickey_fixture_surfaces_evidence_title_as_candidate_bearing_span(self) -> None:
+        client = FakeLLMClient(
+            [
+                '{"slot_name":"final_target","supports_slot":false,"bound_value":"",'
+                '"evidence_ids":[],"slot_relation_match":false,"answer_type_match":false,'
+                '"reason":"fixture"}'
+            ]
+        )
+        sample = Sample(
+            "2hop__153573_44085",
+            "What was the show named after the character featured in Mickey's Safari in Letterland?",
+            "The Mickey Mouse Club",
+        )
+        evidence = [
+            Passage(
+                "2hop__153573_44085::p14",
+                "Mickey's Safari in Letterland",
+                "The video game stars Mickey Mouse.",
+            ),
+            Passage(
+                "2hop__153573_44085::p2",
+                "The Mickey Mouse Club",
+                "The Mickey Mouse Club is an American variety television show.",
+            ),
+        ]
+        verifier = LLMSlotBindingVerifier(client)
+
+        verifier.bind_final_slot(sample, evidence, SlotLedger(build_slot_plan(sample)))
+
+        prompt_text = "\n".join(message["content"] for message in client.calls[0])
+        self.assertIn('"evidence_title_entities"', prompt_text)
+        self.assertIn('"title": "The Mickey Mouse Club"', prompt_text)
+        self.assertIn("Passage titles are evidence-bearing entity spans", prompt_text)
+        self.assertIn('"named_after"', prompt_text)
+        self.assertIn('"show"', prompt_text)
+
+    def test_maria_fixture_surfaces_actor_character_pairs_for_relation_binding(self) -> None:
+        client = FakeLLMClient(
+            [
+                '{"slot_name":"final_target","supports_slot":false,"bound_value":"",'
+                '"evidence_ids":[],"slot_relation_match":false,"answer_type_match":false,'
+                '"reason":"fixture"}'
+            ]
+        )
+        sample = Sample(
+            "2hop__247353_55227",
+            "Who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?",
+            "Maria Bello",
+        )
+        evidence = [
+            Passage(
+                "2hop__247353_55227::p6",
+                "Here Comes the Boom",
+                "Here Comes the Boom was co-written by and stars Kevin James.",
+            ),
+            Passage(
+                "2hop__247353_55227::p17",
+                "Grown Ups (film)",
+                "Eric (Kevin James) is disappointed in his wife Sally (Maria Bello).",
+            ),
+        ]
+        verifier = LLMSlotBindingVerifier(client)
+
+        verifier.bind_final_slot(sample, evidence, SlotLedger(build_slot_plan(sample)))
+
+        prompt_text = "\n".join(message["content"] for message in client.calls[0])
+        self.assertIn('"character": "Eric"', prompt_text)
+        self.assertIn('"performer": "Kevin James"', prompt_text)
+        self.assertIn('"character": "Sally"', prompt_text)
+        self.assertIn('"performer": "Maria Bello"', prompt_text)
+        self.assertIn("apply spouse relations to characters before mapping back to performers", prompt_text)
+        self.assertIn('"screenwriter"', prompt_text)
+        self.assertIn('"spouse"', prompt_text)
+        self.assertIn('"performed_by"', prompt_text)
+
     def test_normalizes_continue_search_missing_final_hop_to_ordered_hop_repair(self) -> None:
         result = SlotBindingResult(
             slot_name="final_target",
@@ -358,6 +471,33 @@ class SlotBindingVerifierTests(unittest.TestCase):
 
         self.assertEqual("answer_extraction_repair", record["decision_head"]["action"])
         self.assertEqual("candidate_extraction_failure", record["decision_head"]["abstain_reason"])
+
+    def test_answer_extraction_failure_sets_candidate_extraction_risk(self) -> None:
+        result = SlotBindingResult(
+            slot_name="final_target",
+            supports_slot=False,
+            bound_value="",
+            evidence_ids=["s1::p7"],
+            slot_relation_match=False,
+            answer_type_match=True,
+            set_level_sufficiency=SetLevelSufficiencyResult(
+                final_slot_covered=True,
+                all_required_hops_covered=True,
+                conflict_on_final_slot=False,
+                evidence_set_sufficient=True,
+            ),
+            decision=CalibratedDecisionResult(action="continue_search", expected_gain=0.0),
+        )
+
+        record = result.to_record()
+
+        self.assertEqual("answer_extraction_repair", record["decision_head"]["action"])
+        self.assertEqual("candidate_extraction_failure", record["decision_head"]["abstain_reason"])
+        self.assertGreaterEqual(
+            record["decision_head"]["risk"]["candidate_extraction_risk"],
+            0.5,
+        )
+        self.assertEqual(0.0, record["decision_head"]["risk"]["wrong_target_risk"])
 
 
 if __name__ == "__main__":

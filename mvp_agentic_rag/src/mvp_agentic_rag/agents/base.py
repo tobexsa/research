@@ -64,6 +64,10 @@ class BaseAgent:
             final_answer=answer,
             final_action=action,
             trajectory=trajectory,
+            supporting_passage_ids=list(sample.supporting_passage_ids),
+            hop=sample.hop,
+            subset=sample.subset,
+            sample_metadata=dict(sample.metadata),
             cost={
                 "retrieval_calls": len(trajectory),
                 "llm_calls": sum(1 for step in trajectory if step.verifier_output),

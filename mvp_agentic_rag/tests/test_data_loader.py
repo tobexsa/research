@@ -46,3 +46,18 @@ class DataLoaderTests(unittest.TestCase):
         self.assertEqual(samples[0].supporting_passage_ids, ["p1"])
         self.assertEqual(passages["p1"].title, "Hamlet")
 
+    def test_known_gold_support_ambiguities_are_marked_in_runtime_datasets(self) -> None:
+        root = Path(__file__).resolve().parents[1]
+        expected_reason_codes = {
+            "3hop1__108833_720914_41132": "missing_death_location_entailment",
+            "3hop1__128554_39743_24526": "entity_type_collision",
+        }
+
+        for relative_path in ("data/musique_mvp_stratified45.jsonl", "data/musique_mvp_300.jsonl"):
+            samples = {sample.sample_id: sample for sample in load_samples(root / relative_path)}
+            for sample_id, reason_code in expected_reason_codes.items():
+                issue = samples[sample_id].metadata["evaluation_issue"]
+                self.assertEqual("dataset_evidence_ambiguity", issue["category"])
+                self.assertEqual("gold_support_not_textually_entailing", issue["subcategory"])
+                self.assertEqual(reason_code, issue["reason_code"])
+                self.assertTrue(issue["exclude_from_acceptance"])

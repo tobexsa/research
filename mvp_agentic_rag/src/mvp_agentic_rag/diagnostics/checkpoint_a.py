@@ -5,12 +5,13 @@ import io
 import json
 import random
 from collections import Counter, defaultdict
+from copy import deepcopy
 from itertools import combinations
 from pathlib import Path
 from typing import Any
 
 from .action_normalization import normalize_allowed_actions, normalize_runtime_action
-from .claim_risk_schema import validate_record
+from .claim_risk_schema import ALLOWED_RISK_TYPES, validate_record
 
 
 IMPORTANT_PATHS = [
@@ -229,6 +230,19 @@ CSV_FIELDNAMES = [
     "notes",
 ]
 
+REVIEW_STATUS_MAP = {
+    "reviewed_ok": "human_verified",
+    "human_verified": "human_verified",
+    "ok": "human_verified",
+    "drop": "excluded",
+    "excluded": "excluded",
+    "needs_fix": "adjudication_needed",
+    "adjudication_needed": "adjudication_needed",
+    "unclear": "adjudication_needed",
+}
+
+RISK_TYPE_REVIEW_MAP: dict[str, str] = {}
+
 
 def review_records_to_csv(records: list[dict[str, Any]]) -> str:
     buffer = io.StringIO()
@@ -237,6 +251,150 @@ def review_records_to_csv(records: list[dict[str, Any]]) -> str:
     for record in records:
         writer.writerow({field: _csv_field(record, field) for field in CSV_FIELDNAMES})
     return buffer.getvalue()
+
+
+def merge_review_csv_into_records(records: list[dict[str, Any]], csv_text: str) -> list[dict[str, Any]]:
+    review_rows = {
+        row.get("id", ""): row
+        for row in csv.DictReader(io.StringIO(csv_text))
+        if row.get("id")
+    }
+    merged = []
+    for record in records:
+        updated = deepcopy(record)
+        review = review_rows.get(str(record.get("id", "")))
+        if review:
+            _apply_review_row(updated, review)
+        merged.append(updated)
+    return merged
+
+
+def export_pilot_review_summary(records: list[dict[str, Any]]) -> dict[str, Any]:
+    annotated_records = [
+        record
+        for record in records
+        if record.get("annotation_status") in {"human_verified", "adjudication_needed", "excluded"}
+    ]
+    human_verified = [record for record in records if record.get("annotation_status") == "human_verified"]
+    excluded = [record for record in records if record.get("annotation_status") == "excluded"]
+    adjudication = [record for record in records if record.get("annotation_status") == "adjudication_needed"]
+    validation_errors = {
+        str(record.get("id", "")): validate_record(record)
+        for record in human_verified
+    }
+    validation_errors = {
+        record_id: errors
+        for record_id, errors in validation_errors.items()
+        if errors
+    }
+    annotated_count = len(annotated_records)
+    valid_count = len(human_verified)
+    schema_issue_count = sum(len(errors) for errors in validation_errors.values())
+    pass_count = valid_count - len(validation_errors)
+    validate_pass_rate = pass_count / valid_count if valid_count else 0.0
+    adjudication_rate = len(adjudication) / annotated_count if annotated_count else 0.0
+    gate_checks = {
+        "annotated_count": {"value": annotated_count, "threshold": ">= 30", "passed": annotated_count >= 30},
+        "adjudication_needed_rate": {
+            "value": adjudication_rate,
+            "threshold": "<= 0.25",
+            "passed": adjudication_rate <= 0.25,
+        },
+        "validate_record_pass_rate": {
+            "value": validate_pass_rate,
+            "threshold": ">= 0.90",
+            "passed": validate_pass_rate >= 0.90,
+        },
+        "schema_issue_count": {"value": schema_issue_count, "threshold": "== 0", "passed": schema_issue_count == 0},
+    }
+    go = all(check["passed"] for check in gate_checks.values())
+    original_risk_types = Counter(
+        (record.get("metadata") or {}).get("review_original_risk_type", "")
+        for record in records
+        if (record.get("metadata") or {}).get("review_original_risk_type")
+    )
+    return {
+        "annotated_count": annotated_count,
+        "valid_count": valid_count,
+        "validate_record_pass_rate": validate_pass_rate,
+        "adjudication_needed_count": len(adjudication),
+        "adjudication_needed_rate": adjudication_rate,
+        "excluded_count": len(excluded),
+        "schema_issue_count": schema_issue_count,
+        "schema_issue_records": validation_errors,
+        "guideline_issue_count": len(adjudication),
+        "risk_type_coverage": dict(Counter(str(record.get("risk_type", "unknown")) for record in annotated_records)),
+        "valid_risk_type_coverage": dict(Counter(str(record.get("risk_type", "unknown")) for record in human_verified)),
+        "hop_coverage": dict(Counter(str(record.get("hop", "unknown")) for record in annotated_records)),
+        "oracle_action_distribution": dict(Counter(str(record.get("oracle_action", "unknown")) for record in annotated_records)),
+        "valid_oracle_action_distribution": dict(
+            Counter(str(record.get("oracle_action", "unknown")) for record in human_verified)
+        ),
+        "review_status_counts": dict(Counter(str(record.get("annotation_status", "unknown")) for record in annotated_records)),
+        "reviewer_notes_summary": _reviewer_notes_summary(records),
+        "recommended_schema_changes": _recommended_schema_changes(original_risk_types),
+        "original_risk_type_mappings": dict(original_risk_types),
+        "gate_checks": gate_checks,
+        "go_or_no_go_for_full_batch": "go" if go else "no_go",
+    }
+
+
+def pilot_review_summary_to_markdown(summary: dict[str, Any]) -> str:
+    lines = [
+        "# Claim-Risk Pilot Review Summary",
+        "",
+        f"- annotated_count: {summary.get('annotated_count', 0)}",
+        f"- valid_count: {summary.get('valid_count', 0)}",
+        f"- validate_record_pass_rate: {summary.get('validate_record_pass_rate', 0.0):.4f}",
+        f"- adjudication_needed_count: {summary.get('adjudication_needed_count', 0)}",
+        f"- adjudication_needed_rate: {summary.get('adjudication_needed_rate', 0.0):.4f}",
+        f"- excluded_count: {summary.get('excluded_count', 0)}",
+        f"- schema_issue_count: {summary.get('schema_issue_count', 0)}",
+        f"- guideline_issue_count: {summary.get('guideline_issue_count', 0)}",
+        f"- go_or_no_go_for_full_batch: {summary.get('go_or_no_go_for_full_batch', 'no_go')}",
+        "",
+        "## Gate Checks",
+        "",
+        "| Gate | Value | Threshold | Passed |",
+        "|---|---:|---|---|",
+    ]
+    for name, check in sorted((summary.get("gate_checks") or {}).items()):
+        value = check.get("value", "")
+        if isinstance(value, float):
+            value = f"{value:.4f}"
+        lines.append(f"| {name} | {value} | {check.get('threshold', '')} | {check.get('passed', False)} |")
+
+    for title, key in [
+        ("Risk Type Coverage", "risk_type_coverage"),
+        ("Valid Risk Type Coverage", "valid_risk_type_coverage"),
+        ("Oracle Action Distribution", "oracle_action_distribution"),
+        ("Valid Oracle Action Distribution", "valid_oracle_action_distribution"),
+        ("Hop Coverage", "hop_coverage"),
+        ("Review Status Counts", "review_status_counts"),
+    ]:
+        lines.extend(["", f"## {title}", ""])
+        for label, count in sorted((summary.get(key) or {}).items()):
+            lines.append(f"- {label}: {count}")
+
+    lines.extend(["", "## Reviewer Notes Summary", ""])
+    for label, count in sorted((summary.get("reviewer_notes_summary") or {}).items()):
+        lines.append(f"- {label}: {count}")
+
+    lines.extend(["", "## Recommended Schema Changes", ""])
+    recommendations = summary.get("recommended_schema_changes") or []
+    if recommendations:
+        for recommendation in recommendations:
+            lines.append(f"- {recommendation}")
+    else:
+        lines.append("- none")
+
+    schema_records = summary.get("schema_issue_records") or {}
+    if schema_records:
+        lines.extend(["", "## Schema Issue Records", ""])
+        for record_id, errors in sorted(schema_records.items()):
+            lines.append(f"- `{record_id}`: {', '.join(errors)}")
+
+    return "\n".join(lines) + "\n"
 
 
 def compact_review_form_to_markdown(records: list[dict[str, Any]]) -> str:
@@ -307,6 +465,83 @@ def _csv_evidence_preview(evidence: dict[str, Any]) -> str:
     text = evidence.get("text_preview", evidence.get("text", ""))
     suffix = " [truncated]" if evidence.get("truncated") else ""
     return f"{evidence.get('id', '')} | {evidence.get('title', '')} | {text}{suffix}"
+
+
+def _apply_review_row(record: dict[str, Any], review: dict[str, str]) -> None:
+    metadata = record.setdefault("metadata", {})
+    original_status = (review.get("annotation_status") or "").strip()
+    if original_status:
+        metadata["review_original_status"] = original_status
+    record["annotation_status"] = REVIEW_STATUS_MAP.get(original_status, "adjudication_needed")
+
+    original_risk_type = (review.get("risk_type") or "").strip()
+    if original_risk_type:
+        metadata["review_original_risk_type"] = original_risk_type
+        record["risk_type"] = RISK_TYPE_REVIEW_MAP.get(original_risk_type, original_risk_type)
+        if record["risk_type"] not in ALLOWED_RISK_TYPES:
+            record["annotation_status"] = "adjudication_needed"
+        metadata["risk_type"] = record["risk_type"]
+
+    for key in ["oracle_action", "evidence_sufficiency"]:
+        if review.get(key):
+            record[key] = review[key].strip()
+    for key in ["wrong_target", "bridge_as_final", "final_answer_supported"]:
+        if review.get(key):
+            record[key] = _parse_bool(review[key])
+    if "final_answer_supported" in record:
+        record["should_abstain"] = record.get("oracle_action") == "abstain"
+
+    if review.get("claim_support"):
+        record["claim_support"] = _parse_claim_support(review["claim_support"])
+    for key in ["critical_missing_claims", "noncritical_missing_claims", "contradicted_claims"]:
+        if key in review:
+            record[key] = _parse_semicolon_list(review.get(key, ""))
+    if review.get("oracle_repair_target"):
+        record["oracle_repair_target"] = _parse_json_object(review["oracle_repair_target"])
+    if review.get("notes") is not None:
+        record["notes"] = review.get("notes", "")
+
+    provenance = record.setdefault("label_provenance", {})
+    provenance["uses_human_review"] = True
+
+
+def _parse_claim_support(text: str) -> dict[str, str]:
+    support = {}
+    for item in _parse_semicolon_list(text):
+        if "=" not in item:
+            continue
+        claim_id, label = item.split("=", 1)
+        support[claim_id.strip()] = label.strip()
+    return support
+
+
+def _parse_semicolon_list(text: str) -> list[str]:
+    return [item.strip() for item in str(text or "").split(";") if item.strip()]
+
+
+def _parse_json_object(text: str) -> dict[str, Any]:
+    try:
+        value = json.loads(text)
+    except json.JSONDecodeError:
+        return {}
+    return value if isinstance(value, dict) else {}
+
+
+def _parse_bool(text: str) -> bool:
+    return str(text).strip().lower() in {"1", "true", "yes", "y"}
+
+
+def _reviewer_notes_summary(records: list[dict[str, Any]]) -> dict[str, int]:
+    notes = [str(record.get("notes", "")).lower() for record in records]
+    return {
+        "notes_nonempty": sum(1 for note in notes if note.strip()),
+        "notes_drop_dataset_issue": sum(1 for note in notes if "drop:" in note and "dataset issue" in note),
+        "notes_need_fix_signal": sum(1 for note in notes if "needs_fix" in note or "fix:" in note),
+    }
+
+
+def _recommended_schema_changes(original_risk_types: Counter[str]) -> list[str]:
+    return []
 
 
 def _compact_form_record_lines(index: int, record: dict[str, Any]) -> list[str]:

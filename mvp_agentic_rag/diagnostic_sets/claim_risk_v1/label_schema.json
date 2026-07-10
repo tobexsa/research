@@ -11,7 +11,8 @@
     "contradiction",
     "insufficient_evidence",
     "no_new_evidence",
-    "repairable_missing_hop"
+    "repairable_missing_hop",
+    "answer_extraction_failure"
   ],
   "required_review_fields": [
     "claim_support",
