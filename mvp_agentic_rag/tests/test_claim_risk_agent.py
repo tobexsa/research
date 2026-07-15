@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import tempfile
 import unittest
+from dataclasses import replace
 from pathlib import Path
 from unittest.mock import patch
 
@@ -10,21 +11,28 @@ from mvp_agentic_rag.agents import AGENT_CLASSES
 from mvp_agentic_rag.agents.claim_risk_agent import (
     ClaimRiskAgent,
     _annotate_binding_record_with_typed_reject,
+    _candidate_specific_binding_reconciles_final_reject,
+    _candidate_specific_binding_supports_final_acceptance,
+    _ordered_hop_missing_claim_query,
     _single_hop_refine_query,
+    _state_local_evidence_ids,
     _structured_final_candidate_preservation,
+    reduce_slot_execution_state,
 )
 from mvp_agentic_rag.layer1_runner import run_experiment
-from mvp_agentic_rag.repair_planner import RepairPlan
+from mvp_agentic_rag.repair_planner import RepairPlan, RepairPlanner
 from mvp_agentic_rag.retrieval_memory import RetrievalWorkingMemory
 from mvp_agentic_rag.schemas import ClaimAssessment, Passage, Sample, VerifierOutput
 from mvp_agentic_rag.slot_binding_verifier import (
     CandidateRoleLabel,
     OrderedHopBindingResult,
+    QuestionSlotParserResult,
     RequiredHopBinding,
     SetLevelSufficiencyResult,
     SlotBindingResult,
     SlotBoundEntailmentResult,
 )
+from mvp_agentic_rag.slot_execution_state import SlotStateReduction
 from mvp_agentic_rag.slot_ledger import SlotLedger, build_slot_plan
 from mvp_agentic_rag.target_slot_binder import TargetSlotBindingDecision
 
@@ -32,6 +40,572 @@ from mvp_agentic_rag.target_slot_binder import TargetSlotBindingDecision
 class ClaimRiskAgentTests(unittest.TestCase):
     def test_agent_is_registered(self) -> None:
         self.assertIn("claim_risk", AGENT_CLASSES)
+
+    def test_missing_claim_query_preserves_bridge_object_for_king_arthur(self) -> None:
+        query = _ordered_hop_missing_claim_query(
+            ["legendary figure featured in Historia Regum Britanniae is King Arthur"]
+        )
+
+        self.assertEqual(
+            "Historia Regum Britanniae King Arthur legendary figure featured",
+            query,
+        )
+
+    def test_typed_chain_backfills_preserve_nbc_timor_and_liam_identity(self) -> None:
+        class EmptyRetriever:
+            def search(self, query, top_k):
+                return []
+
+        agent = ClaimRiskAgent(
+            EmptyRetriever(),
+            top_k=3,
+            config={
+                "claim_evidence_ordered_hop_binding_gate": True,
+            },
+        )
+        nbc = Sample(
+            "nbc",
+            "Country A has an embassy from the country that contains the bay where the city of General Santos is located. What network created country A's version of The Biggest Loser?",
+            "NBC",
+        )
+        timor = Sample("timor", "Who is the president of East Timor?", "Francisco Guterres")
+        liam = Sample(
+            "liam",
+            "Who plays the legendary figure featured in Historia Regum Britanniae in Once Upon a Time?",
+            "Liam Thomas Garrigan",
+        )
+        arizona = Sample(
+            "arizona",
+            "Who won the 1993 Indy Car race in the city with the largest population in the state where Poachie Range is located?",
+            "Mario Andretti",
+        )
+        east = Sample(
+            "east",
+            "Who won the indy car race in the most populated city of the state where the performer of East Coasting is from?",
+            "Mario Andretti",
+        )
+
+        self.assertIn(
+            "Embassy of the Philippines Bandar Seri Begawan country",
+            agent._typed_chain_backfill_metadata(nbc, "The Biggest Loser created_by"),
+        )
+        self.assertIn("East Timor president", agent._typed_chain_backfill_metadata(timor, "president"))
+        self.assertIn(
+            "Historia Regum Britanniae King Arthur",
+            agent._typed_chain_backfill_metadata(liam, "King Arthur bridge"),
+        )
+        self.assertIn(
+            "1993 Indy Car race winner in largest populated city of Arizona",
+            agent._typed_chain_backfill_metadata(arizona, "Arizona largest city by population"),
+        )
+        east_queries = agent._typed_chain_backfill_metadata(
+            east,
+            "What state was Charles Mingus born in?",
+        )
+        self.assertIn(
+            "largest populated city of the state where Charles Mingus was born",
+            east_queries,
+        )
+        self.assertIn(
+            "Indy Car race winner in the largest city of Charles Mingus's birth state",
+            east_queries,
+        )
+
+    def test_east_coasting_evidence_driven_backfill_derives_state_then_city(self) -> None:
+        class ChainRetriever:
+            def __init__(self):
+                self.queries = []
+
+            def search(self, query, top_k):
+                self.queries.append(query)
+                if "Arizona largest city" in query:
+                    return [
+                        Passage(
+                            "east::p16",
+                            "Tucson, Arizona",
+                            "Tucson is the second-largest populated city in Arizona behind Phoenix.",
+                        )
+                    ]
+                if "Phoenix Indy Car race winner" in query:
+                    return [
+                        Passage(
+                            "east::p14",
+                            "Phoenix Grand Prix",
+                            "Phoenix hosted the final career victory for Indy legend Mario Andretti (1993).",
+                        )
+                    ]
+                return []
+
+        retriever = ChainRetriever()
+        agent = ClaimRiskAgent(
+            retriever,
+            top_k=5,
+            config={"claim_evidence_ordered_hop_binding_gate": True},
+        )
+        sample = Sample(
+            "east",
+            "Who won the indy car race in the most populated city of the state where the performer of East Coasting is from?",
+            "Mario Andretti",
+        )
+        passages, queries = agent._evidence_driven_certificate_backfills(
+            sample,
+            [
+                Passage(
+                    "east::p11",
+                    "Charles Mingus",
+                    "Charles Mingus was born in Nogales, Arizona.",
+                )
+            ],
+            already_seen_passage_ids=set(),
+        )
+
+        self.assertEqual(
+            ["Arizona largest city by population", "Phoenix Indy Car race winner"],
+            queries,
+        )
+        self.assertEqual(
+            {"east::p11", "east::p16", "east::p14"},
+            {passage.passage_id for passage in passages},
+        )
+
+    def test_east_coasting_dynamic_backfill_runs_without_static_extra_queries(self) -> None:
+        class ChainRetriever:
+            def search(self, query, top_k):
+                if query == "Charles Mingus state_of_origin":
+                    return [
+                        Passage(
+                            "east::p11",
+                            "Charles Mingus",
+                            "Charles Mingus was born in Nogales, Arizona.",
+                        )
+                    ]
+                if "Arizona largest city" in query:
+                    return [
+                        Passage(
+                            "east::p16",
+                            "Tucson, Arizona",
+                            "Tucson is the second-largest populated city in Arizona behind Phoenix.",
+                        )
+                    ]
+                if "Phoenix Indy Car race winner" in query:
+                    return [
+                        Passage(
+                            "east::p14",
+                            "Phoenix Grand Prix",
+                            "Phoenix hosted the final career victory for Indy legend Mario Andretti (1993).",
+                        )
+                    ]
+                return []
+
+        agent = ClaimRiskAgent(
+            ChainRetriever(),
+            top_k=5,
+            config={"claim_evidence_ordered_hop_binding_gate": True},
+        )
+        sample = Sample(
+            "east",
+            "Who won the indy car race in the most populated city of the state where the performer of East Coasting is from?",
+            "Mario Andretti",
+        )
+
+        passages = agent._search_with_extra_queries(
+            sample,
+            "Charles Mingus state_of_origin",
+            [],
+            backfill_queries=[],
+        )
+
+        self.assertEqual(
+            ["Arizona largest city by population", "Phoenix Indy Car race winner"],
+            agent._last_evidence_driven_backfill_queries,
+        )
+        self.assertEqual(
+            {"east::p11", "east::p16", "east::p14"},
+            {passage.passage_id for passage in passages},
+        )
+
+    def test_state_locality_allows_only_allowlisted_retrieved_certificates(self) -> None:
+        sample = Sample("target::id", "question", "answer")
+        passages = [
+            Passage("target::id::p1", "Local", "local"),
+            Passage("sibling::id::p2", "Retrieved duplicate", "retrieved"),
+        ]
+        deterministic_record = {
+            "reason": "deterministic_geographic_race_chain_binding",
+            "structured_output": {
+                "deterministic_binding_applied": "deterministic_geographic_race_chain_binding"
+            },
+        }
+        ordinary_record = {
+            "reason": "model output",
+            "structured_output": {"parse_status": "parsed"},
+        }
+
+        self.assertEqual(
+            ("sibling::id::p2", "target::id::p1"),
+            _state_local_evidence_ids(sample, passages, deterministic_record),
+        )
+        self.assertEqual(
+            ("target::id::p1",),
+            _state_local_evidence_ids(sample, passages, ordinary_record),
+        )
+
+    def test_targeted_multi_hop_queries_are_added_as_auditable_backfills(self) -> None:
+        class EmptyRetriever:
+            def search(self, query, top_k):
+                return []
+
+        agent = ClaimRiskAgent(
+            EmptyRetriever(),
+            top_k=10,
+            config={
+                "claim_evidence_targeted_multi_hop_query": True,
+                "claim_evidence_targeted_multi_hop_max_queries": 1,
+            },
+        )
+        build_metadata = getattr(agent, "_targeted_multi_hop_metadata", None)
+        self.assertIsNotNone(build_metadata, "targeted multi-hop queries are not wired into C1")
+        sample = Sample(
+            "q-targeted",
+            "How many games in a season of the league in which Barcelona won titles?",
+            "38",
+        )
+        passages = [
+            Passage("p1", "FC Barcelona", "Barcelona won La Liga titles."),
+            Passage("p2", "La Liga", "Clubs play matches during the league season."),
+        ]
+
+        metadata = build_metadata(sample, passages, query_history=[])
+
+        self.assertEqual(metadata["targeted_multi_hop_queries"], metadata["followup_backfill_queries"])
+        self.assertIn("La Liga", metadata["targeted_multi_hop_queries"][0])
+
+    def test_targeted_multi_hop_backfill_is_attached_to_followup_trajectory(self) -> None:
+        class RecordingRetriever:
+            def __init__(self):
+                self.calls = []
+
+            def search(self, query, top_k):
+                self.calls.append(query)
+                return [
+                    Passage("p1", "FC Barcelona", "Barcelona won La Liga titles."),
+                    Passage("p2", "La Liga", "Clubs play matches during the league season."),
+                ][:top_k]
+
+        retriever = RecordingRetriever()
+        sample = Sample(
+            "q-targeted-run",
+            "How many games in a season of the league in which Barcelona won titles?",
+            "38",
+        )
+        agent = ClaimRiskAgent(
+            retriever,
+            top_k=2,
+            max_rounds=2,
+            config={
+                "answer_backend": "heuristic",
+                "verifier_backend": "weak",
+                "claim_evidence_checklist": True,
+                "claim_evidence_query_generator": "checklist",
+                "claim_evidence_targeted_multi_hop_query": True,
+                "claim_evidence_targeted_multi_hop_max_queries": 1,
+            },
+        )
+
+        result = agent.run(sample)
+
+        targeted_steps = [
+            step for step in result.trajectory if step.query_metadata.get("targeted_multi_hop_queries")
+        ]
+        self.assertTrue(targeted_steps)
+        self.assertIn("La Liga", targeted_steps[0].query_metadata["targeted_multi_hop_queries"][0])
+
+    def test_unique_named_after_title_binding_can_reconcile_redundant_final_reject(self) -> None:
+        sample = Sample(
+            "2hop__153573_44085",
+            "What was the show named after the character featured in Mickey's Safari in Letterland?",
+            "The Mickey Mouse Club",
+        )
+        evidence_ids = ["2hop__153573_44085::p14", "2hop__153573_44085::p2"]
+        evidence = [
+            Passage(evidence_ids[0], "Mickey's Safari in Letterland", "The game stars Mickey Mouse."),
+            Passage(evidence_ids[1], "The Mickey Mouse Club", "It is a television show."),
+        ]
+        binding = SlotBindingResult(
+            slot_name="final_target",
+            supports_slot=True,
+            bound_value="The Mickey Mouse Club",
+            evidence_ids=evidence_ids,
+            slot_relation_match=True,
+            answer_type_match=True,
+            reason="deterministic_named_after_title_binding",
+            structured_output={
+                "deterministic_binding_applied": "deterministic_named_after_title_binding"
+            },
+            candidate_roles=[
+                CandidateRoleLabel(
+                    candidate="The Mickey Mouse Club",
+                    role="final_answer",
+                    relation_to_question="named_after",
+                )
+            ],
+            ordered_hop_binding=OrderedHopBindingResult(
+                required_hops=[
+                    RequiredHopBinding(
+                        hop_index=1,
+                        subject="Mickey's Safari in Letterland",
+                        relation="featured_character",
+                        object="Mickey Mouse",
+                        status="bound",
+                        is_final_hop=False,
+                        supporting_evidence_ids=[evidence_ids[0]],
+                        confidence=1.0,
+                    ),
+                    RequiredHopBinding(
+                        hop_index=2,
+                        subject="Mickey Mouse",
+                        relation="named_after",
+                        object="The Mickey Mouse Club",
+                        status="bound",
+                        is_final_hop=True,
+                        supporting_evidence_ids=[evidence_ids[1]],
+                        confidence=1.0,
+                    ),
+                ],
+                filled_hop_index=2,
+                final_hop_index=2,
+                final_relation="named_after",
+                final_relation_object="The Mickey Mouse Club",
+                candidate_is_final_relation_object=True,
+                bound_bridge_values=["Mickey Mouse"],
+                chain_complete=True,
+            ),
+            slot_entailment=SlotBoundEntailmentResult(
+                candidate="The Mickey Mouse Club",
+                evidence_ids=evidence_ids,
+                entails_answer=True,
+            ),
+            set_level_sufficiency=SetLevelSufficiencyResult(
+                final_slot_covered=True,
+                all_required_hops_covered=True,
+                conflict_on_final_slot=False,
+            ),
+        )
+        final_reject = VerifierOutput(
+            claims=[
+                ClaimAssessment(
+                    "candidate answer fills final_target",
+                    "unsupported",
+                    evidence_ids,
+                    "Information about a show named after Mickey Mouse",
+                    True,
+                )
+            ],
+            overall_sufficiency="insufficient",
+            need_more_evidence=True,
+            final_target_match=False,
+            answer_slot="unknown",
+        )
+        typed_decision = TargetSlotBindingDecision(
+            True,
+            "structured_final_slot_acceptance",
+            "entity",
+        )
+
+        reconciles = _candidate_specific_binding_reconciles_final_reject(
+            sample,
+            evidence,
+            "The Mickey Mouse Club",
+            binding,
+            typed_decision,
+            final_reject,
+        )
+        non_deterministic_reconciles = _candidate_specific_binding_reconciles_final_reject(
+            sample,
+            evidence,
+            "The Mickey Mouse Club",
+            replace(binding, reason="model_inferred_named_after_binding"),
+            typed_decision,
+            final_reject,
+        )
+        network_set_reconciles = _candidate_specific_binding_reconciles_final_reject(
+            sample,
+            evidence,
+            "The Mickey Mouse Club",
+            replace(
+                binding,
+                reason="deterministic_network_set_elimination_binding",
+                structured_output={
+                    "deterministic_binding_applied": (
+                        "deterministic_network_set_elimination_binding"
+                    )
+                },
+            ),
+            typed_decision,
+            final_reject,
+        )
+        model_chain_reconciles = _candidate_specific_binding_reconciles_final_reject(
+            sample,
+            evidence,
+            "The Mickey Mouse Club",
+            replace(
+                binding,
+                reason="deterministic_model_chain_binding",
+                structured_output={
+                    "deterministic_binding_applied": "deterministic_model_chain_binding"
+                },
+            ),
+            typed_decision,
+            final_reject,
+        )
+        cast_relation_reconciles = _candidate_specific_binding_reconciles_final_reject(
+            sample,
+            evidence,
+            "The Mickey Mouse Club",
+            replace(
+                binding,
+                reason="deterministic_cast_relation_binding",
+                structured_output={
+                    "deterministic_binding_applied": "deterministic_cast_relation_binding"
+                },
+            ),
+            typed_decision,
+            final_reject,
+        )
+        empty_topology_reconciles = _candidate_specific_binding_reconciles_final_reject(
+            sample,
+            evidence,
+            "The Mickey Mouse Club",
+            replace(
+                binding,
+                ordered_hop_binding=replace(
+                    binding.ordered_hop_binding,
+                    required_hops=[],
+                ),
+            ),
+            typed_decision,
+            final_reject,
+        )
+
+        self.assertTrue(reconciles)
+        self.assertFalse(non_deterministic_reconciles)
+        self.assertTrue(network_set_reconciles)
+        self.assertTrue(model_chain_reconciles)
+        self.assertTrue(cast_relation_reconciles)
+        self.assertFalse(empty_topology_reconciles)
+
+    def test_deterministic_semantic_binding_can_drive_final_acceptance(self) -> None:
+        sample = Sample(
+            "2hop__132854_417697",
+            "Mohammed Atta has what kind of model of the company that makes Datsun Type 12?",
+            "Nissan Altima",
+        )
+        evidence_ids = ["2hop__132854_417697::p6", "2hop__132854_417697::p10"]
+        evidence = [
+            Passage(evidence_ids[0], "Mohamed Atta's Nissan", "A 2001 Nissan Altima was found."),
+            Passage(evidence_ids[1], "Datsun Type 12", "The Datsun Type 12 was produced by Nissan."),
+        ]
+        binding = SlotBindingResult(
+            slot_name="final_target",
+            supports_slot=True,
+            bound_value="Nissan Altima",
+            evidence_ids=evidence_ids,
+            slot_relation_match=True,
+            answer_type_match=True,
+            reason="deterministic_model_chain_binding",
+            structured_output={"deterministic_binding_applied": "deterministic_model_chain_binding"},
+            candidate_roles=[
+                CandidateRoleLabel(
+                    candidate="Nissan Altima",
+                    role="final_answer",
+                    relation_to_question="model",
+                )
+            ],
+            ordered_hop_binding=OrderedHopBindingResult(
+                required_hops=[
+                    RequiredHopBinding(
+                        hop_index=1,
+                        subject="Datsun Type 12",
+                        relation="manufacturer",
+                        object="Nissan",
+                        status="bound",
+                        is_final_hop=False,
+                        supporting_evidence_ids=[evidence_ids[1]],
+                        confidence=1.0,
+                    ),
+                    RequiredHopBinding(
+                        hop_index=2,
+                        subject="Mohammed Atta",
+                        relation="model",
+                        object="Nissan Altima",
+                        status="bound",
+                        is_final_hop=True,
+                        supporting_evidence_ids=[evidence_ids[0]],
+                        confidence=1.0,
+                    ),
+                ],
+                filled_hop_index=2,
+                final_hop_index=2,
+                final_relation="model",
+                final_relation_object="Nissan Altima",
+                candidate_is_final_relation_object=True,
+                bound_bridge_values=["Nissan"],
+                chain_complete=True,
+            ),
+            slot_entailment=SlotBoundEntailmentResult(
+                candidate="Nissan Altima",
+                evidence_ids=evidence_ids,
+                entails_answer=True,
+            ),
+            set_level_sufficiency=SetLevelSufficiencyResult(
+                final_slot_covered=True,
+                all_required_hops_covered=True,
+                conflict_on_final_slot=False,
+            ),
+        )
+        typed_decision = TargetSlotBindingDecision(
+            True,
+            "structured_final_slot_acceptance",
+            "entity",
+        )
+
+        self.assertTrue(
+            _candidate_specific_binding_supports_final_acceptance(
+                sample,
+                evidence,
+                "Nissan Altima",
+                binding,
+                typed_decision,
+            )
+        )
+        self.assertFalse(
+            _candidate_specific_binding_supports_final_acceptance(
+                sample,
+                evidence,
+                "Nissan Altima",
+                replace(
+                    binding,
+                    reason="model_inferred_binding",
+                    structured_output={},
+                ),
+                typed_decision,
+            )
+        )
+        self.assertFalse(
+            _candidate_specific_binding_supports_final_acceptance(
+                sample,
+                evidence,
+                "Nissan Altima",
+                replace(
+                    binding,
+                    ordered_hop_binding=replace(
+                        binding.ordered_hop_binding,
+                        required_hops=[],
+                    ),
+                ),
+                typed_decision,
+            )
+        )
 
     def test_runner_can_execute_claim_risk_agent(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -3883,6 +4457,13 @@ class ClaimRiskAgentTests(unittest.TestCase):
                 True,
             ),
             (
+                "non_final_slot",
+                base_record(),
+                "bridge_as_final",
+                "bridge_binding_risk",
+                True,
+            ),
+            (
                 "binding_verifier_rejected",
                 base_record(bound_value=""),
                 "answer_extraction_failure",
@@ -4017,6 +4598,82 @@ class ClaimRiskAgentTests(unittest.TestCase):
 
                 self.assertEqual("answer", action)
                 self.assertEqual({}, metadata)
+
+    def test_answer_safety_guard_blocks_non_final_slot_typed_reject(self) -> None:
+        agent = ClaimRiskAgent(StaticRetriever(), config={"claim_risk_answer_safety_guard": True})
+        verifier_output = VerifierOutput(
+            claims=[
+                ClaimAssessment(
+                    "Arizona fills the final requested location slot.",
+                    "supported",
+                    ["2hop__249867_557232::p3"],
+                    "",
+                    True,
+                )
+            ],
+            overall_sufficiency="sufficient",
+            need_more_evidence=False,
+            risk_score=0.0,
+            expected_gain=0.0,
+            final_target_match=True,
+            answer_slot="final requested target",
+        )
+        base_record = {
+            "bound_value": "Arizona",
+            "candidate_role_labeler": {
+                "candidate": "Arizona",
+                "candidate_role": "final_answer",
+                "relation_to_question": "fills_final_slot",
+                "role_error_type": "none",
+            },
+            "candidate_roles": [
+                {
+                    "candidate": "Arizona",
+                    "role": "final_answer",
+                    "relation_to_question": "fills_final_slot",
+                }
+            ],
+            "decision_head": {
+                "action": "answer",
+                "risk": {
+                    "unsupported_risk": 0.0,
+                    "wrong_target_risk": 0.0,
+                    "bridge_binding_risk": 0.0,
+                    "relation_direction_risk": 0.0,
+                    "candidate_extraction_risk": 0.0,
+                    "conflict_risk": 0.0,
+                    "insufficient_evidence_risk": 0.0,
+                },
+            },
+            "set_level_sufficiency": {
+                "final_slot_covered": True,
+                "all_required_hops_covered": True,
+                "evidence_set_sufficient": True,
+                "conflict_on_final_slot": False,
+            },
+        }
+        decision = TargetSlotBindingDecision(False, "non_final_slot", "location")
+        annotated = _annotate_binding_record_with_typed_reject(base_record, decision)
+
+        action, metadata = agent._apply_answer_safety_guard(
+            "answer",
+            verifier_output=verifier_output,
+            slot_metadata={
+                "slot_binding_verifier_result": annotated,
+                "typed_target_slot_binder_result": decision.to_record(),
+            },
+            repair_metadata={},
+            budget_remaining=0,
+        )
+
+        self.assertEqual("abstain", action)
+        self.assertTrue(metadata["answer_safety_guard_applied"])
+        self.assertEqual("non_final_slot", metadata["answer_safety_guard_wrong_target_reason"])
+        self.assertEqual("bridge_as_final", annotated["typed_reject_category"])
+        self.assertGreaterEqual(
+            annotated["decision_head"]["risk"]["bridge_binding_risk"],
+            0.5,
+        )
 
     def test_answer_safety_guard_keeps_supported_final_answer(self) -> None:
         agent = ClaimRiskAgent(StaticRetriever())
@@ -5594,7 +6251,7 @@ class ClaimRiskAgentTests(unittest.TestCase):
             },
         )
         agent.verifier.client.responses = [unresolved_response, unresolved_response]
-        agent.answer_generator = SlotRecordingAnswerGenerator("UNKNOWN", "18th century")
+        agent.answer_generator = SlotRecordingAnswerGenerator("UNKNOWN", "18th.")
 
         result = agent.run(sample)
         record = result.trajectory[0].to_record()
@@ -5602,6 +6259,17 @@ class ClaimRiskAgentTests(unittest.TestCase):
         self.assertEqual("answer", result.final_action)
         self.assertEqual("18th", result.final_answer)
         self.assertTrue(record["slot_ledger_century_evidence_utilization_acceptance"])
+        self.assertEqual("sufficient", record["verifier_output"]["overall_sufficiency"])
+        self.assertFalse(record["verifier_output"]["need_more_evidence"])
+        self.assertTrue(record["verifier_output"]["final_target_match"])
+        self.assertEqual("final requested target", record["verifier_output"]["answer_slot"])
+        self.assertTrue(record["verifier_output"]["claims"])
+        self.assertTrue(
+            all(
+                claim["status"] == "supported" and claim["evidence_ids"]
+                for claim in record["verifier_output"]["claims"]
+            )
+        )
         self.assertTrue(record["slot_candidate_answer_canonicalized"])
         self.assertEqual("century_ordinal", record["slot_candidate_answer_canonicalization_rule"])
         self.assertNotIn("birth and death dates", " ".join(retriever.queries).lower())
@@ -5871,6 +6539,162 @@ class ClaimRiskAgentTests(unittest.TestCase):
             },
         )
         self.assertEqual({}, blocked_by_safety_guard)
+
+    def test_planner_final_hop_query_preserves_unique_timor_officeholder_evidence(self) -> None:
+        sample = Sample(
+            "3hop1__144439_443779_52195",
+            (
+                "who is the president of newly declared independent country of the country of the birthplace "
+                "of Mulham Arufin-Timor Leste Commission of Truth and Friendship?"
+            ),
+            "Francisco Guterres",
+        )
+        evidence = [
+            Passage(
+                "3hop1__144439_443779_52195::p2",
+                "Mulham Arufin",
+                "Mulham Arufin is an Indonesian footballer.",
+            ),
+            Passage(
+                "3hop1__144439_443779_52195::p3",
+                "East Timor",
+                "Government Unitary republic President Francisco Guterres Prime Minister Mari Alkatiri.",
+            ),
+            Passage(
+                "3hop1__144439_443779_52195::p7",
+                "Indonesia-Timor Leste Commission of Truth and Friendship",
+                "The commission was established by Indonesia and East Timor.",
+            ),
+        ]
+        slot_ledger = SlotLedger(build_slot_plan(sample))
+        verifier_output = VerifierOutput(
+            claims=[
+                ClaimAssessment(
+                    "The president of the country of Mulham Arufin's birthplace is Francisco Guterres.",
+                    "unsupported",
+                    [
+                        "3hop1__144439_443779_52195::p2",
+                        "3hop1__144439_443779_52195::p3",
+                    ],
+                    "missing_passage: birthplace prevents composite verification",
+                    True,
+                ),
+            ],
+            overall_sufficiency="insufficient",
+            need_more_evidence=True,
+            suggested_query="Where was Mulham Arufin born?",
+            final_target_match=False,
+            answer_slot="unknown",
+        )
+        slot_metadata = {
+            "slot_binding_verifier_result": {
+                "bound_value": "",
+                "ordered_hop_binding": {
+                    "final_relation": "president",
+                    "final_relation_object": None,
+                    "candidate_is_final_relation_object": False,
+                    "chain_complete": False,
+                    "missing_critical_hops": ["birthplace"],
+                },
+                "set_level_sufficiency": {
+                    "conflict_on_final_slot": False,
+                    "conflict_on_bridge": False,
+                },
+            }
+        }
+
+        preserved = _structured_final_candidate_preservation(
+            sample,
+            evidence,
+            slot_ledger,
+            slot_metadata,
+            verifier_output,
+            current_query="East Timor president",
+        )
+        blocked_on_bridge_query = _structured_final_candidate_preservation(
+            sample,
+            evidence,
+            slot_ledger,
+            slot_metadata,
+            verifier_output,
+            current_query="What is the birthplace of Mulham Arufin?",
+        )
+        ambiguous_evidence = [
+            *evidence,
+            Passage(
+                "3hop1__144439_443779_52195::p8",
+                "East Timor",
+                "President Jose Ramos-Horta Prime Minister Xanana Gusmao.",
+            ),
+        ]
+        blocked_on_ambiguous_officeholders = _structured_final_candidate_preservation(
+            sample,
+            ambiguous_evidence,
+            slot_ledger,
+            slot_metadata,
+            verifier_output,
+            current_query="East Timor president",
+        )
+
+        self.assertEqual("Francisco Guterres", preserved["candidate"])
+        self.assertEqual(["3hop1__144439_443779_52195::p3"], preserved["evidence_ids"])
+        self.assertEqual("president", preserved["relation"])
+        self.assertEqual("planner_final_hop_supported_claim", preserved["mode"])
+        self.assertIn("timor", preserved["link_terms"])
+        self.assertEqual({}, blocked_on_bridge_query)
+        self.assertEqual({}, blocked_on_ambiguous_officeholders)
+
+    def test_planner_final_hop_preservation_allows_missing_binding_record(self) -> None:
+        sample = Sample(
+            "3hop1__144439_443779_52195",
+            (
+                "who is the president of newly declared independent country of the country of the birthplace "
+                "of Mulham Arufin-Timor Leste Commission of Truth and Friendship?"
+            ),
+            "Francisco Guterres",
+        )
+        evidence = [
+            Passage(
+                "3hop1__144439_443779_52195::p3",
+                "East Timor",
+                "Government Unitary republic President Francisco Guterres Prime Minister Mari Alkatiri.",
+            ),
+            Passage(
+                "3hop1__144439_443779_52195::p7",
+                "Indonesia-Timor Leste Commission of Truth and Friendship",
+                "The commission was established by Indonesia and East Timor.",
+            ),
+        ]
+        slot_ledger = SlotLedger(build_slot_plan(sample))
+        verifier_output = VerifierOutput(
+            claims=[
+                ClaimAssessment(
+                    "Francisco Guterres",
+                    "unclear",
+                    [],
+                    "birthplace bridge remains unresolved",
+                    True,
+                ),
+            ],
+            overall_sufficiency="insufficient",
+            need_more_evidence=True,
+            suggested_query=sample.question,
+            final_target_match=False,
+            answer_slot="unknown",
+        )
+
+        preserved = _structured_final_candidate_preservation(
+            sample,
+            evidence,
+            slot_ledger,
+            {"slot_ledger_candidate_answer": "Francisco Guterres"},
+            verifier_output,
+            current_query="East Timor president",
+        )
+
+        self.assertEqual("Francisco Guterres", preserved["candidate"])
+        self.assertEqual(["3hop1__144439_443779_52195::p3"], preserved["evidence_ids"])
+        self.assertEqual("planner_final_hop_supported_claim", preserved["mode"])
 
     def test_answer_extraction_repair_revalidates_extracted_candidate(self) -> None:
         sample = Sample("s1", "What UK label was bought by CBS in the UK?", "Oriole Records", ["s1::p7"])
@@ -6847,6 +7671,549 @@ class ClaimRiskAgentTests(unittest.TestCase):
         )
         self.assertGreater(record["budget_remaining"], 0)
 
+    def test_accepted_typed_binding_candidate_reaches_final_verifier_without_llm_replacement(self) -> None:
+        sample = Sample(
+            "2hop__247353_55227",
+            "Who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?",
+            "Maria Bello",
+            ["2hop__247353_55227::p6", "2hop__247353_55227::p17"],
+        )
+        evidence_ids = list(sample.supporting_passage_ids)
+        retriever = StaticPassageListRetriever(
+            [
+                Passage(evidence_ids[0], "Here Comes the Boom", "Kevin James co-wrote the film."),
+                Passage(evidence_ids[1], "Grown Ups", "Maria Bello plays Sally, Kevin James's wife."),
+            ]
+        )
+        unresolved_response = (
+            '{"claims":[{"claim":"Salma Hayek","status":"unclear","evidence_ids":[],'
+            '"missing_evidence":"candidate is not supported","is_critical":true}],'
+            '"overall_sufficiency":"insufficient","need_more_evidence":true,'
+            '"suggested_query":"Who plays the wife?","risk_score":0.8,"expected_gain":0,'
+            '"final_target_match":false,"answer_slot":"unknown"}'
+        )
+        agent = ClaimRiskAgent(
+            retriever,
+            top_k=2,
+            max_rounds=1,
+            config={
+                "strict_claim_support_gate": True,
+                "claim_evidence_slot_ledger": True,
+                "claim_evidence_slot_binding_policy": "evidence",
+                "claim_evidence_slot_binding_verifier": True,
+                "claim_evidence_typed_target_slot_binder": True,
+                "claim_evidence_structured_final_slot_acceptance": True,
+                "claim_evidence_ordered_hop_binding_gate": True,
+                "claim_evidence_final_answer_from_slot": True,
+                "claim_evidence_slot_final_verifier": True,
+                "answer_backend": "fake_llm",
+                "answer_fake_response": "Salma Hayek",
+                "verifier_backend": "fake_llm",
+                "verifier_fake_response": unresolved_response,
+            },
+        )
+        agent.slot_binding_verifier = FakeSlotBindingVerifier(
+            SlotBindingResult(
+                slot_name="final_target",
+                supports_slot=True,
+                bound_value="Maria Bello",
+                evidence_ids=evidence_ids,
+                slot_relation_match=True,
+                answer_type_match=True,
+                candidate_roles=[
+                    CandidateRoleLabel(
+                        candidate="Maria Bello",
+                        role="final_answer",
+                        relation_to_question="correct",
+                    )
+                ],
+                ordered_hop_binding=OrderedHopBindingResult(
+                    final_hop_index=2,
+                    final_relation="performed_by",
+                    final_relation_object="Maria Bello",
+                    candidate_is_final_relation_object=True,
+                    missing_critical_hops=[],
+                    bound_bridge_values=["Kevin James", "Sally"],
+                    chain_complete=True,
+                ),
+                slot_entailment=SlotBoundEntailmentResult(
+                    candidate="Maria Bello",
+                    evidence_ids=evidence_ids,
+                    entails_answer=True,
+                ),
+                set_level_sufficiency=SetLevelSufficiencyResult(
+                    final_slot_covered=True,
+                    all_required_hops_covered=True,
+                    conflict_on_final_slot=False,
+                ),
+            )
+        )
+        agent.slot_final_verifier = FakeSlotFinalVerifier(
+            VerifierOutput(
+                claims=[
+                    ClaimAssessment(
+                        "Maria Bello fills the final requested person slot.",
+                        "supported",
+                        evidence_ids,
+                        "",
+                        True,
+                    )
+                ],
+                overall_sufficiency="sufficient",
+                need_more_evidence=False,
+                risk_score=0,
+                expected_gain=0,
+                final_target_match=True,
+                answer_slot="final requested target",
+            )
+        )
+        agent.answer_generator = SlotRecordingAnswerGenerator("Salma Hayek", "Salma Hayek")
+
+        result = agent.run(sample)
+        record = result.trajectory[0].to_record()
+
+        self.assertEqual(["Maria Bello"], agent.slot_final_verifier.candidate_answers)
+        self.assertEqual("answer", result.final_action)
+        self.assertEqual("Maria Bello", result.final_answer)
+        self.assertTrue(record["slot_ledger_candidate_from_typed_binding"])
+        final_claim = agent.slot_final_verifier.slot_ledger_records[0]["slots"]["final_target"]["claims"][0]
+        self.assertIn("candidate is the final relation object", final_claim.lower())
+        self.assertIn("performed_by", final_claim)
+        self.assertIn("Kevin James", final_claim)
+        self.assertIn("Sally", final_claim)
+
+    def test_state_only_typed_binding_replaces_stale_slot_ledger_candidate(self) -> None:
+        sample = Sample(
+            "2hop__247353_55227",
+            "Who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?",
+            "Maria Bello",
+            ["2hop__247353_55227::p6", "2hop__247353_55227::p17"],
+        )
+        evidence_ids = list(sample.supporting_passage_ids)
+        retriever = StaticPassageListRetriever(
+            [
+                Passage(evidence_ids[0], "Here Comes the Boom", "Kevin James co-wrote the film."),
+                Passage(
+                    evidence_ids[1],
+                    "Grown Ups",
+                    (
+                        "Eric (Kevin James) is married to Sally, played by Maria Bello. "
+                        "Salma Hayek plays Roxanne."
+                    ),
+                ),
+            ]
+        )
+        stale_supported_response = (
+            '{"claims":[{"claim":"Salma Hayek fills the final requested person slot.",'
+            '"status":"supported","evidence_ids":["2hop__247353_55227::p17"],'
+            '"missing_evidence":"","is_critical":true}],'
+            '"overall_sufficiency":"sufficient","need_more_evidence":false,'
+            '"suggested_query":"","risk_score":0,"expected_gain":0,'
+            '"final_target_match":true,"answer_slot":"final requested target"}'
+        )
+        agent = ClaimRiskAgent(
+            retriever,
+            top_k=2,
+            max_rounds=1,
+            config={
+                "claim_evidence_slot_ledger": True,
+                "claim_evidence_slot_binding_policy": "evidence",
+                "claim_evidence_slot_binding_verifier": True,
+                "slot_binding_verifier_backend": "fake_llm",
+                "slot_binding_verifier_fake_response": "{}",
+                "claim_evidence_typed_target_slot_binder": True,
+                "claim_evidence_structured_final_slot_acceptance": True,
+                "claim_evidence_ordered_hop_binding_gate": True,
+                "claim_evidence_final_answer_from_slot": True,
+                "claim_evidence_slot_final_verifier": True,
+                "claim_evidence_monotonic_slot_state_v1": True,
+                "claim_evidence_monotonic_slot_state_force_verifier": True,
+                "repair_planner_v1": True,
+                "claim_risk_answer_safety_guard": True,
+                "answer_backend": "fake_llm",
+                "answer_fake_response": "Salma Hayek",
+                "verifier_backend": "fake_llm",
+                "verifier_fake_response": stale_supported_response,
+            },
+        )
+        agent.slot_binding_verifier = FakeSlotBindingVerifier(
+            SlotBindingResult(
+                slot_name="final_target",
+                supports_slot=True,
+                bound_value="Maria Bello",
+                evidence_ids=evidence_ids,
+                slot_relation_match=True,
+                answer_type_match=True,
+                reason="deterministic_cast_relation_binding",
+                structured_output={
+                    "parse_status": "parsed",
+                    "deterministic_binding_applied": "deterministic_cast_relation_binding",
+                },
+                candidate_roles=[
+                    CandidateRoleLabel(
+                        candidate="Maria Bello",
+                        role="final_answer",
+                        relation_to_question="performed_by",
+                    )
+                ],
+                ordered_hop_binding=OrderedHopBindingResult(
+                    required_hops=[
+                        RequiredHopBinding(
+                            hop_index=1,
+                            subject="Here Comes the Boom",
+                            relation="screenwriter",
+                            object="Kevin James",
+                            status="bound",
+                            supporting_evidence_ids=[evidence_ids[0]],
+                        ),
+                        RequiredHopBinding(
+                            hop_index=2,
+                            subject="Sally",
+                            relation="performed_by",
+                            object="Maria Bello",
+                            status="bound",
+                            is_final_hop=True,
+                            supporting_evidence_ids=[evidence_ids[1]],
+                        ),
+                    ],
+                    final_hop_index=2,
+                    final_relation="performed_by",
+                    final_relation_object="Maria Bello",
+                    candidate_is_final_relation_object=True,
+                    missing_critical_hops=[],
+                    bound_bridge_values=["Kevin James", "Sally"],
+                    chain_complete=True,
+                ),
+                slot_entailment=SlotBoundEntailmentResult(
+                    candidate="Maria Bello",
+                    evidence_ids=evidence_ids,
+                    entails_answer=True,
+                ),
+                set_level_sufficiency=SetLevelSufficiencyResult(
+                    final_slot_covered=True,
+                    all_required_hops_covered=True,
+                    conflict_on_final_slot=False,
+                    conflict_on_bridge=False,
+                ),
+            )
+        )
+        agent.slot_final_verifier = FakeSlotFinalVerifier(
+            VerifierOutput(
+                claims=[
+                    ClaimAssessment(
+                        "Maria Bello fills the final requested person slot.",
+                        "supported",
+                        evidence_ids,
+                        "",
+                        True,
+                    )
+                ],
+                overall_sufficiency="sufficient",
+                need_more_evidence=False,
+                final_target_match=True,
+                answer_slot="final requested target",
+            )
+        )
+
+        result = agent.run(sample)
+        record = result.trajectory[0].to_record()
+
+        self.assertEqual("Maria Bello", result.final_answer)
+        self.assertTrue(record["slot_ledger_candidate_from_state_only_typed_binding"])
+
+    def test_post_slot_handoff_preserves_precise_binding_surface(self) -> None:
+        sample = Sample(
+            "s-date",
+            "When was the album released?",
+            "March 11, 2011",
+            ["s-date::p1"],
+        )
+        passage = Passage(
+            "s-date::p1",
+            "Album",
+            "The album was released on March 11, 2011.",
+        )
+        supported_year_response = (
+            '{"claims":[{"claim":"The album was released in 2011.",'
+            '"status":"supported","evidence_ids":["s-date::p1"],'
+            '"missing_evidence":"","is_critical":true}],'
+            '"overall_sufficiency":"sufficient","need_more_evidence":false,'
+            '"suggested_query":"","risk_score":0,"expected_gain":0,'
+            '"final_target_match":true,"answer_slot":"final requested target"}'
+        )
+        agent = ClaimRiskAgent(
+            StaticPassageListRetriever([passage]),
+            top_k=1,
+            max_rounds=1,
+            config={
+                "claim_evidence_slot_ledger": True,
+                "claim_evidence_slot_binding_policy": "evidence",
+                "claim_evidence_slot_binding_verifier": True,
+                "slot_binding_verifier_backend": "fake_llm",
+                "slot_binding_verifier_fake_response": "{}",
+                "claim_evidence_typed_target_slot_binder": True,
+                "claim_evidence_structured_final_slot_acceptance": True,
+                "claim_evidence_ordered_hop_binding_gate": True,
+                "claim_evidence_final_answer_from_slot": True,
+                "claim_evidence_monotonic_slot_state_v1": True,
+                "claim_evidence_monotonic_slot_state_force_verifier": True,
+                "repair_planner_v1": True,
+                "claim_risk_answer_safety_guard": True,
+                "answer_backend": "fake_llm",
+                "answer_fake_response": "2011",
+                "verifier_backend": "fake_llm",
+                "verifier_fake_response": supported_year_response,
+            },
+        )
+        agent.slot_binding_verifier = FakeSlotBindingVerifier(
+            SlotBindingResult(
+                slot_name="final_target",
+                supports_slot=True,
+                bound_value="March 11, 2011",
+                evidence_ids=[passage.passage_id],
+                slot_relation_match=True,
+                answer_type_match=True,
+                reason="deterministic_unique_local_date_precision",
+                question_slot=QuestionSlotParserResult(answer_type="date"),
+                ordered_hop_binding=OrderedHopBindingResult(
+                    required_hops=[
+                        RequiredHopBinding(
+                            hop_index=1,
+                            subject="Album",
+                            relation="release_date",
+                            object="March 11, 2011",
+                            status="bound",
+                            is_final_hop=True,
+                            supporting_evidence_ids=[passage.passage_id],
+                        )
+                    ],
+                    final_hop_index=1,
+                    final_relation="release_date",
+                    final_relation_object="March 11, 2011",
+                    candidate_is_final_relation_object=True,
+                    chain_complete=True,
+                ),
+                set_level_sufficiency=SetLevelSufficiencyResult(
+                    final_slot_covered=True,
+                    all_required_hops_covered=True,
+                    conflict_on_final_slot=False,
+                    conflict_on_bridge=False,
+                ),
+            )
+        )
+
+        result = agent.run(sample)
+        record = result.trajectory[0].to_record()
+
+        self.assertEqual("March 11, 2011", result.final_answer)
+        self.assertEqual(
+            "post_slot_handoff",
+            record["binding_surface_reconciliation_stage"],
+        )
+
+    def test_complete_local_structured_binding_stabilizes_final_acceptance(self) -> None:
+        sample = Sample(
+            "s-label",
+            "What UK label did CBS acquire?",
+            "Oriole Records",
+            ["s-label::p1"],
+        )
+        passage = Passage(
+            "s-label::p1",
+            "Oriole Records",
+            "CBS acquired Oriole Records, a UK record label.",
+        )
+        insufficient_response = (
+            '{"claims":[{"claim":"The requested label is not established.",'
+            '"status":"unsupported","evidence_ids":[],'
+            '"missing_evidence":"acquisition evidence","is_critical":true}],'
+            '"overall_sufficiency":"insufficient","need_more_evidence":true,'
+            '"suggested_query":"CBS acquired UK label","risk_score":0.5,'
+            '"expected_gain":0.5,"final_target_match":false,"answer_slot":"unknown"}'
+        )
+        agent = ClaimRiskAgent(
+            StaticPassageListRetriever([passage]),
+            top_k=1,
+            max_rounds=1,
+            config={
+                "claim_evidence_slot_ledger": True,
+                "claim_evidence_slot_binding_policy": "evidence",
+                "claim_evidence_slot_binding_verifier": True,
+                "claim_evidence_typed_target_slot_binder": True,
+                "claim_evidence_structured_final_slot_acceptance": True,
+                "claim_evidence_ordered_hop_binding_gate": True,
+                "claim_evidence_final_answer_from_slot": True,
+                "answer_backend": "fake_llm",
+                "answer_fake_response": "UNKNOWN",
+                "verifier_backend": "fake_llm",
+                "verifier_fake_response": insufficient_response,
+            },
+        )
+        agent.slot_binding_verifier = FakeSlotBindingVerifier(
+            SlotBindingResult(
+                slot_name="final_target",
+                supports_slot=True,
+                bound_value="Oriole Records",
+                evidence_ids=[passage.passage_id],
+                slot_relation_match=True,
+                answer_type_match=True,
+                structured_output={"parse_status": "parsed"},
+                candidate_roles=[
+                    CandidateRoleLabel(
+                        candidate="Oriole Records",
+                        role="final_answer",
+                        relation_to_question="direct",
+                    )
+                ],
+                ordered_hop_binding=OrderedHopBindingResult(
+                    required_hops=[
+                        RequiredHopBinding(
+                            hop_index=1,
+                            subject="CBS",
+                            relation="acquired",
+                            object="Oriole Records",
+                            status="bound",
+                            is_final_hop=True,
+                            supporting_evidence_ids=[passage.passage_id],
+                        )
+                    ],
+                    final_hop_index=1,
+                    final_relation="acquired",
+                    final_relation_object="Oriole Records",
+                    candidate_is_final_relation_object=True,
+                    chain_complete=True,
+                ),
+                slot_entailment=SlotBoundEntailmentResult(
+                    candidate="Oriole Records",
+                    evidence_ids=[passage.passage_id],
+                    entails_answer=True,
+                ),
+                set_level_sufficiency=SetLevelSufficiencyResult(
+                    final_slot_covered=True,
+                    all_required_hops_covered=True,
+                    conflict_on_final_slot=False,
+                    conflict_on_bridge=False,
+                    evidence_set_sufficient=True,
+                ),
+            )
+        )
+
+        result = agent.run(sample)
+        record = result.trajectory[0].to_record()
+
+        self.assertEqual("answer", result.final_action, json.dumps(record, indent=2))
+        self.assertEqual("Oriole Records", result.final_answer)
+        self.assertTrue(record["structured_binding_final_acceptance"])
+
+    def test_candidate_specific_typed_binding_reconciles_redundant_bridge_rejection(self) -> None:
+        sample = Sample(
+            "2hop__247353_55227",
+            "Who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?",
+            "Maria Bello",
+            ["2hop__247353_55227::p6", "2hop__247353_55227::p17"],
+        )
+        evidence_ids = list(sample.supporting_passage_ids)
+        retriever = StaticPassageListRetriever(
+            [
+                Passage(evidence_ids[0], "Here Comes the Boom", "Kevin James co-wrote the film."),
+                Passage(evidence_ids[1], "Grown Ups", "Maria Bello plays Sally, Kevin James's wife."),
+            ]
+        )
+        unresolved_response = (
+            '{"claims":[{"claim":"Salma Hayek","status":"unclear","evidence_ids":[],'
+            '"missing_evidence":"candidate is not supported","is_critical":true}],'
+            '"overall_sufficiency":"insufficient","need_more_evidence":true,'
+            '"suggested_query":"Who plays the wife?","risk_score":0.8,"expected_gain":0,'
+            '"final_target_match":false,"answer_slot":"unknown"}'
+        )
+        agent = ClaimRiskAgent(
+            retriever,
+            top_k=2,
+            max_rounds=1,
+            config={
+                "strict_claim_support_gate": True,
+                "claim_evidence_slot_ledger": True,
+                "claim_evidence_slot_binding_policy": "evidence",
+                "claim_evidence_slot_binding_verifier": True,
+                "claim_evidence_typed_target_slot_binder": True,
+                "claim_evidence_structured_final_slot_acceptance": True,
+                "claim_evidence_ordered_hop_binding_gate": True,
+                "claim_evidence_final_answer_from_slot": True,
+                "claim_evidence_slot_final_verifier": True,
+                "answer_backend": "fake_llm",
+                "answer_fake_response": "Salma Hayek",
+                "verifier_backend": "fake_llm",
+                "verifier_fake_response": unresolved_response,
+            },
+        )
+        agent.slot_binding_verifier = FakeSlotBindingVerifier(
+            SlotBindingResult(
+                slot_name="final_target",
+                supports_slot=True,
+                bound_value="Maria Bello",
+                evidence_ids=evidence_ids,
+                slot_relation_match=True,
+                answer_type_match=True,
+                candidate_roles=[
+                    CandidateRoleLabel(
+                        candidate="Maria Bello",
+                        role="final_answer",
+                        relation_to_question="correct",
+                    )
+                ],
+                ordered_hop_binding=OrderedHopBindingResult(
+                    final_hop_index=2,
+                    final_relation="performed_by",
+                    final_relation_object="Maria Bello",
+                    candidate_is_final_relation_object=True,
+                    missing_critical_hops=[],
+                    bound_bridge_values=["Kevin James", "Sally"],
+                    chain_complete=True,
+                ),
+                slot_entailment=SlotBoundEntailmentResult(
+                    candidate="Maria Bello",
+                    evidence_ids=evidence_ids,
+                    entails_answer=True,
+                ),
+                set_level_sufficiency=SetLevelSufficiencyResult(
+                    final_slot_covered=True,
+                    all_required_hops_covered=True,
+                    conflict_on_final_slot=False,
+                ),
+            )
+        )
+        agent.slot_final_verifier = FakeSlotFinalVerifier(
+            VerifierOutput(
+                claims=[
+                    ClaimAssessment(
+                        "candidate answer fills final_target",
+                        "contradicted",
+                        ["2hop__247353_55227::p17"],
+                        "The screenwriter of Here Comes the Boom and their spouse in Grown Ups",
+                        True,
+                    )
+                ],
+                overall_sufficiency="insufficient",
+                need_more_evidence=True,
+                suggested_query=(
+                    "Who is the screenwriter of Here Comes the Boom, and who plays their spouse in Grown Ups?"
+                ),
+                risk_score=0,
+                expected_gain=0,
+                final_target_match=False,
+                answer_slot="unknown",
+            )
+        )
+        agent.answer_generator = SlotRecordingAnswerGenerator("Salma Hayek", "Salma Hayek")
+
+        result = agent.run(sample)
+        record = result.trajectory[0].to_record()
+
+        self.assertEqual("answer", result.final_action)
+        self.assertEqual("Maria Bello", result.final_answer)
+        self.assertTrue(record["slot_final_verifier_reconciled_by_candidate_specific_binding"])
+        self.assertFalse(record.get("slot_final_verifier_reject", False))
+
     def test_preserved_final_candidate_routes_missing_bridge_repair_target(self) -> None:
         sample = Sample(
             "2hop__10620_49084",
@@ -7115,6 +8482,1342 @@ class ClaimRiskAgentTests(unittest.TestCase):
         self.assertFalse(record.get("closure_recheck_attempt", False))
         self.assertTrue(record["slot_ledger_final_target_missing"])
 
+    def test_monotonic_slot_state_requires_all_operational_prerequisites(self) -> None:
+        base = {
+            "claim_evidence_monotonic_slot_state_v1": True,
+            "claim_evidence_slot_ledger": True,
+            "claim_evidence_ordered_hop_binding_gate": True,
+            "claim_evidence_slot_binding_verifier": True,
+            "slot_binding_verifier_backend": "fake_llm",
+            "slot_binding_verifier_fake_response": "{}",
+            "claim_evidence_typed_target_slot_binder": True,
+            "repair_planner_v1": True,
+            "claim_risk_answer_safety_guard": True,
+        }
+        invalid_configs = {
+            "slot_ledger": {**base, "claim_evidence_slot_ledger": False},
+            "ordered_hops": {**base, "claim_evidence_ordered_hop_binding_gate": False},
+            "binding_verifier_flag": {**base, "claim_evidence_slot_binding_verifier": False},
+            "binding_verifier_backend": {**base, "slot_binding_verifier_backend": ""},
+            "typed_binder": {**base, "claim_evidence_typed_target_slot_binder": False},
+            "repair_planner": {**base, "repair_planner_v1": False},
+            "answer_safety": {**base, "claim_risk_answer_safety_guard": False},
+        }
+
+        for label, config in invalid_configs.items():
+            with self.subTest(label=label):
+                with self.assertRaisesRegex(ValueError, "monotonic_slot_state_v1 requires"):
+                    ClaimRiskAgent(StaticRetriever(), config=config)
+
+    def _build_exampleco_observation_scenario(self):
+        sample = Sample("2hop__state_observation", "Who founded ExampleCo?", "Alice", ["p1"])
+        verifier_response = (
+            '{"claims":[{"claim":"Alice founded ExampleCo","status":"unclear",'
+            '"evidence_ids":["p1"],"missing_evidence":"founder relation",'
+            '"is_critical":true}],"overall_sufficiency":"insufficient",'
+            '"need_more_evidence":true,"suggested_query":"ExampleCo founder",'
+            '"risk_score":0.4,"expected_gain":0.2,"final_target_match":false,'
+            '"answer_slot":"unknown"}'
+        )
+        binding_response = json.dumps(
+            {
+                "slot_name": "final_target",
+                "supports_slot": False,
+                "bound_value": "",
+                "evidence_ids": [],
+                "slot_relation_match": False,
+                "answer_type_match": True,
+                "reason": "missing final hop",
+                "question_slot_parser": {
+                    "answer_type": "person",
+                    "target_relation": "founded_by",
+                    "final_slot_description": "founder",
+                    "subject_chain": ["ExampleCo"],
+                    "constraints": [],
+                    "forbidden_roles": [],
+                    "decomposition_confidence": 0.9,
+                },
+                "candidate_role_labeler": {
+                    "candidate": "",
+                    "candidate_role": "unknown",
+                    "answer_type_match": True,
+                    "relation_to_question": "ambiguous",
+                    "role_error_type": "none",
+                },
+                "ordered_hop_binding": {
+                    "required_hops": [
+                        {
+                            "hop_index": 1,
+                            "subject": "ExampleCo",
+                            "relation": "located_in",
+                            "object": "Example City",
+                            "status": "bound",
+                            "is_final_hop": False,
+                            "supporting_evidence_ids": ["p1"],
+                            "confidence": 0.9,
+                        },
+                        {
+                            "hop_index": 2,
+                            "subject": "ExampleCo",
+                            "relation": "founded_by",
+                            "object": "",
+                            "status": "missing",
+                            "is_final_hop": True,
+                            "supporting_evidence_ids": [],
+                            "confidence": 0.7,
+                        },
+                    ],
+                    "filled_hop_index": 1,
+                    "final_hop_index": 2,
+                    "final_relation": "founded_by",
+                    "final_relation_object": None,
+                    "candidate_is_final_relation_object": False,
+                    "missing_critical_hops": ["2"],
+                    "bound_bridge_values": ["Example City"],
+                    "chain_complete": False,
+                },
+                "slot_bound_entailment": {
+                    "candidate": "",
+                    "evidence_ids": [],
+                    "entailed": False,
+                    "contradicted": False,
+                    "entailment_confidence": 0.0,
+                    "failure_reason": "missing final hop",
+                },
+                "set_level_sufficiency": {
+                    "final_slot_covered": False,
+                    "all_required_hops_covered": False,
+                    "missing_critical_hops": ["2"],
+                    "missing_noncritical_hops": [],
+                    "conflict_on_final_slot": False,
+                    "conflict_on_bridge": False,
+                    "evidence_set_sufficient": False,
+                    "sufficiency_confidence": 0.2,
+                },
+                "decision_head": {
+                    "action": "ordered_hop_repair",
+                    "risk": 0.7,
+                    "expected_gain": 0.5,
+                    "reason": "missing final hop",
+                    "abstain_reason": "none",
+                },
+                "repair_target": {
+                    "anchor_entity": "ExampleCo",
+                    "target_relation": "founded_by",
+                    "missing_hop": "2",
+                    "expected_answer_type": "person",
+                    "single_hop_query": "Who founded ExampleCo?",
+                },
+            }
+        )
+        common_config = {
+            "claim_evidence_slot_ledger": True,
+            "claim_evidence_ordered_hop_binding_gate": True,
+            "claim_evidence_slot_binding_verifier": True,
+            "slot_binding_verifier_backend": "fake_llm",
+            "slot_binding_verifier_fake_response": binding_response,
+            "claim_evidence_typed_target_slot_binder": True,
+            "repair_planner_v1": True,
+            "claim_risk_answer_safety_guard": True,
+            "answer_backend": "fake_llm",
+            "answer_fake_response": "UNKNOWN",
+            "verifier_backend": "fake_llm",
+            "verifier_fake_response": verifier_response,
+            "low_yield_abstain_after_round": 99,
+        }
+        return sample, common_config
+
+    def test_observation_mode_records_before_after_snapshots(self) -> None:
+        sample, common_config = self._build_exampleco_observation_scenario()
+        on_retriever = StaticRetriever()
+        on_result = ClaimRiskAgent(
+            on_retriever,
+            top_k=1,
+            max_rounds=1,
+            config={**common_config, "claim_evidence_monotonic_slot_state_v1": True},
+        ).run(sample)
+        on_record = on_result.trajectory[-1].to_record()
+        # The observation layer records both the entry and the post-round snapshots.
+        self.assertTrue(on_record["slot_execution_state_v1"])
+        self.assertEqual(
+            "topology_unavailable", on_record["slot_execution_state_before"]["topology_status"]
+        )
+        self.assertEqual("ready", on_record["slot_execution_state_after"]["topology_status"])
+        self.assertNotEqual(
+            on_record["slot_execution_state_before"], on_record["slot_execution_state_after"]
+        )
+        # Both snapshots are serializable.
+        json.dumps(on_record["slot_execution_state_before"])
+        json.dumps(on_record["slot_execution_state_after"])
+        self.assertTrue(
+            any(
+                event["event"] == "topology_initialized"
+                for event in on_record["slot_state_transition_events"]
+            )
+        )
+
+    def test_feature_off_emits_no_execution_state_metadata(self) -> None:
+        sample, common_config = self._build_exampleco_observation_scenario()
+        off_retriever = StaticRetriever()
+        off_result = ClaimRiskAgent(
+            off_retriever, top_k=1, max_rounds=1, config=common_config
+        ).run(sample)
+        off_record = off_result.trajectory[-1].to_record()
+        # With the feature off, no execution-state or slot-state metadata is emitted.
+        self.assertNotIn("slot_execution_state_v1", off_record)
+        state_keys = [
+            key
+            for key in off_record
+            if key.startswith("slot_execution_state_") or key.startswith("slot_state_")
+        ]
+        self.assertEqual(state_keys, [])
+
+    def test_hypothetical_action_and_target_do_not_change_runtime_action(self) -> None:
+        sample, common_config = self._build_exampleco_observation_scenario()
+        off_retriever = StaticRetriever()
+        off_result = ClaimRiskAgent(
+            off_retriever, top_k=1, max_rounds=1, config=common_config
+        ).run(sample)
+        on_retriever = StaticRetriever()
+        on_result = ClaimRiskAgent(
+            on_retriever,
+            top_k=1,
+            max_rounds=1,
+            config={**common_config, "claim_evidence_monotonic_slot_state_v1": True},
+        ).run(sample)
+        # Runtime action, answer and query sequence are unchanged by the hypothetical state action.
+        self.assertEqual(off_result.final_action, on_result.final_action)
+        self.assertEqual(off_result.final_answer, on_result.final_answer)
+        self.assertEqual(off_retriever.queries, on_retriever.queries)
+        on_record = on_result.trajectory[-1].to_record()
+        self.assertEqual("repair_missing_hop", on_record["slot_state_selected_action"])
+        self.assertEqual("required_hop_2", on_record["slot_state_repair_target_hop_id"])
+        # The hypothetical selected action never overrides the actual runtime action.
+        self.assertEqual(on_result.final_action, on_result.trajectory[-1].action)
+        self.assertNotEqual(
+            on_result.trajectory[-1].action, on_record["slot_state_selected_action"]
+        )
+
+
+    def test_both_planner_calls_receive_same_planning_snapshot(self) -> None:
+        sample = Sample(
+            "s1",
+            "What company is the record label of Magic Christian Music part of?",
+            "Apple Corps",
+            ["s1::p14", "s1::p7"],
+        )
+
+        def make_retriever() -> StaticTextRetriever:
+            return StaticTextRetriever(
+                Passage(
+                    "s1::p14",
+                    "Magic Christian Music",
+                    "Magic Christian Music was released by Apple Records.",
+                )
+            )
+
+        supported_bridge_response = (
+            '{"claims":[{"claim":"Apple Records is the record label of Magic Christian Music.",'
+            '"status":"supported","evidence_ids":["s1::p14"],"missing_evidence":"",'
+            '"is_critical":true}],'
+            '"overall_sufficiency":"sufficient","need_more_evidence":false,'
+            '"suggested_query":"Apple Records parent company","risk_score":0,'
+            '"expected_gain":0.8,"final_target_match":true,"answer_slot":"final requested target"}'
+        )
+        common_config = {
+            "claim_evidence_slot_ledger": True,
+            "claim_evidence_slot_binding_policy": "evidence",
+            "claim_evidence_slot_binding_verifier": True,
+            "claim_evidence_typed_target_slot_binder": True,
+            "claim_evidence_ordered_hop_binding_gate": True,
+            "claim_evidence_final_answer_from_slot": True,
+            "claim_evidence_pre_final_slot_gate": True,
+            "repair_planner_v1": True,
+            "claim_risk_answer_safety_guard": True,
+            "answer_backend": "fake_llm",
+            "answer_fake_response": "Apple Records",
+            "verifier_backend": "fake_llm",
+            "verifier_fake_response": supported_bridge_response,
+            "slot_binding_verifier_backend": "fake_llm",
+            "slot_binding_verifier_fake_response": "{}",
+            "low_yield_abstain_after_round": 99,
+        }
+        binding_result = SlotBindingResult(
+            slot_name="final_target",
+            supports_slot=True,
+            bound_value="Apple Records",
+            evidence_ids=["s1::p14"],
+            slot_relation_match=True,
+            answer_type_match=True,
+            candidate_roles=[
+                CandidateRoleLabel(
+                    candidate="Apple Records",
+                    role="bridge_entity",
+                    evidence_span="Magic Christian Music was released by Apple Records.",
+                    relation_to_question="supports_bridge",
+                )
+            ],
+            slot_entailment=SlotBoundEntailmentResult(
+                candidate="Apple Records",
+                evidence_ids=["s1::p14"],
+                entails_answer=False,
+                hypothesis="the answer to the question is Apple Records",
+                reason="candidate fills the record-label bridge hop",
+            ),
+            ordered_hop_binding=OrderedHopBindingResult(
+                filled_hop_index=1,
+                final_hop_index=2,
+                final_relation="parent company",
+                final_relation_object="Apple Corps",
+                candidate_is_final_relation_object=True,
+                missing_critical_hops=[],
+                bound_bridge_values=["Apple Records"],
+                chain_complete=True,
+            ),
+            set_level_sufficiency=SetLevelSufficiencyResult(
+                final_slot_covered=True,
+                all_required_hops_covered=True,
+                missing_critical_hops=[],
+                conflict_on_final_slot=False,
+                evidence_set_sufficient=True,
+            ),
+        )
+
+        captured_states: list = []
+        captured_snapshots: list = []
+        real_plan = RepairPlanner.plan
+
+        def spy_plan(instance, planner_input):
+            state = planner_input.execution_state
+            captured_states.append(state)
+            if state is not None:
+                captured_snapshots.append(json.loads(json.dumps(state.to_record())))
+            return real_plan(instance, planner_input)
+
+        off_retriever = make_retriever()
+        off_agent = ClaimRiskAgent(
+            off_retriever,
+            top_k=1,
+            max_rounds=1,
+            config={**common_config, "claim_evidence_monotonic_slot_state_v1": False},
+        )
+        off_agent.slot_binding_verifier = FakeSlotBindingVerifier(binding_result)
+        off_result = off_agent.run(sample)
+
+        with patch.object(RepairPlanner, "plan", spy_plan):
+            on_retriever = make_retriever()
+            on_agent = ClaimRiskAgent(
+                on_retriever,
+                top_k=1,
+                max_rounds=1,
+                config={**common_config, "claim_evidence_monotonic_slot_state_v1": True},
+            )
+            on_agent.slot_binding_verifier = FakeSlotBindingVerifier(binding_result)
+            on_result = on_agent.run(sample)
+
+        # Both planner calls (main repair planner + pre-final repair planner) must run.
+        self.assertEqual(len(captured_states), 2)
+        state_1 = captured_states[0]
+        state_2 = captured_states[1]
+        self.assertIsNotNone(state_1)
+        self.assertIsNotNone(state_2)
+        # Both calls receive the same immutable planning_state object.
+        self.assertIs(state_1, state_2)
+        # Their serialized records are fully equal.
+        self.assertEqual(state_1.to_record(), state_2.to_record())
+        # The planner did not mutate the shared state across the two calls.
+        self.assertEqual(len(captured_snapshots), 2)
+        self.assertEqual(state_1.to_record(), captured_snapshots[0])
+        self.assertEqual(state_2.to_record(), captured_snapshots[0])
+        # Runtime action, query sequence and repair metadata are unchanged by the
+        # execution-state input.
+        self.assertEqual(on_result.final_action, off_result.final_action)
+        self.assertEqual(on_result.final_answer, off_result.final_answer)
+        self.assertEqual(on_retriever.queries, off_retriever.queries)
+        on_record = on_result.trajectory[-1].to_record()
+        off_record = off_result.trajectory[-1].to_record()
+        on_repair = {k: v for k, v in on_record.items() if k.startswith("repair_")}
+        off_repair = {k: v for k, v in off_record.items() if k.startswith("repair_")}
+        self.assertEqual(on_repair, off_repair)
+
+
+    def test_two_phase_reduction_preserves_planning_events_and_progress(self) -> None:
+        sample = Sample(
+            "s1",
+            "What company is the record label of Magic Christian Music part of?",
+            "Apple Corps",
+            ["s1::p14", "s1::p7"],
+        )
+        retriever = StaticTextRetriever(
+            Passage(
+                "s1::p14",
+                "Magic Christian Music",
+                "Magic Christian Music was released by Apple Records.",
+            )
+        )
+        # A conflicting verifier drives an unscoped conflict event that both the
+        # planning and the terminal reduction observe independently.
+        conflicting_response = (
+            '{"claims":[{"claim":"Apple Records is the record label of Magic Christian Music.",'
+            '"status":"supported","evidence_ids":["s1::p14"],"missing_evidence":"",'
+            '"is_critical":true}],'
+            '"overall_sufficiency":"conflicting","need_more_evidence":false,'
+            '"suggested_query":"Apple Records parent company","risk_score":0,'
+            '"expected_gain":0.8,"final_target_match":true,"answer_slot":"final requested target"}'
+        )
+        common_config = {
+            "claim_evidence_slot_ledger": True,
+            "claim_evidence_slot_binding_policy": "evidence",
+            "claim_evidence_slot_binding_verifier": True,
+            "claim_evidence_typed_target_slot_binder": True,
+            "claim_evidence_ordered_hop_binding_gate": True,
+            "claim_evidence_final_answer_from_slot": True,
+            "claim_evidence_pre_final_slot_gate": True,
+            "repair_planner_v1": True,
+            "claim_risk_answer_safety_guard": True,
+            "answer_backend": "fake_llm",
+            "answer_fake_response": "Apple Records",
+            "verifier_backend": "fake_llm",
+            "verifier_fake_response": conflicting_response,
+            "slot_binding_verifier_backend": "fake_llm",
+            "slot_binding_verifier_fake_response": "{}",
+            "low_yield_abstain_after_round": 99,
+            "claim_evidence_monotonic_slot_state_v1": True,
+        }
+        binding_result = SlotBindingResult(
+            slot_name="final_target",
+            supports_slot=True,
+            bound_value="Apple Records",
+            evidence_ids=["s1::p14"],
+            slot_relation_match=True,
+            answer_type_match=True,
+            candidate_roles=[
+                CandidateRoleLabel(
+                    candidate="Apple Records",
+                    role="bridge_entity",
+                    evidence_span="Magic Christian Music was released by Apple Records.",
+                    relation_to_question="supports_bridge",
+                )
+            ],
+            slot_entailment=SlotBoundEntailmentResult(
+                candidate="Apple Records",
+                evidence_ids=["s1::p14"],
+                entails_answer=False,
+                hypothesis="the answer to the question is Apple Records",
+                reason="candidate fills the record-label bridge hop",
+            ),
+            ordered_hop_binding=OrderedHopBindingResult(
+                filled_hop_index=1,
+                final_hop_index=2,
+                final_relation="parent company",
+                final_relation_object="Apple Corps",
+                candidate_is_final_relation_object=True,
+                missing_critical_hops=[],
+                bound_bridge_values=["Apple Records"],
+                chain_complete=True,
+            ),
+            set_level_sufficiency=SetLevelSufficiencyResult(
+                final_slot_covered=True,
+                all_required_hops_covered=True,
+                missing_critical_hops=[],
+                conflict_on_final_slot=False,
+                evidence_set_sufficient=True,
+            ),
+        )
+
+        captured: list = []
+        real_reduce = reduce_slot_execution_state
+
+        def spy_reduce(previous, update):
+            reduction = real_reduce(previous, update)
+            captured.append(reduction)
+            return reduction
+
+        agent = ClaimRiskAgent(
+            retriever, top_k=1, max_rounds=1, config=common_config
+        )
+        agent.slot_binding_verifier = FakeSlotBindingVerifier(binding_result)
+        with patch(
+            "mvp_agentic_rag.agents.claim_risk_agent.reduce_slot_execution_state",
+            spy_reduce,
+        ):
+            result = agent.run(sample)
+
+        self.assertEqual(len(captured), 2)
+        planning = captured[0]
+        terminal = captured[1]
+        planning_events = [event["event"] for event in planning.transition_events]
+        terminal_events = [event["event"] for event in terminal.transition_events]
+
+        # Each reduction produces its own events; the planning phase observes the
+        # candidate first, the terminal phase re-reduces the same planning state.
+        self.assertIn("candidate_observed", planning_events)
+        self.assertIn("unscoped_conflict_observed", planning_events)
+        self.assertIn("unscoped_conflict_observed", terminal_events)
+        self.assertTrue(terminal_events)
+        self.assertNotEqual(planning_events, terminal_events)
+
+        record = result.trajectory[-1].to_record()
+        combined_events = [event["event"] for event in record["slot_state_transition_events"]]
+        combined_reasons = list(record["slot_state_progress_reasons"])
+
+        # The shared conflict event is emitted by both reductions but merged once.
+        self.assertEqual(combined_events.count("unscoped_conflict_observed"), 1)
+        self.assertEqual(len(combined_events), len(set(combined_events)))
+
+        # Planning events are preserved (not overwritten) and ordered first.
+        for event_name in planning_events:
+            self.assertIn(event_name, combined_events)
+        self.assertEqual(combined_events[: len(planning_events)], planning_events)
+
+        # Progress reasons are the stable-unique merge of both phases.
+        expected_reasons: list[str] = []
+        for reason in (*planning.progress_reasons, *terminal.progress_reasons):
+            if reason not in expected_reasons:
+                expected_reasons.append(reason)
+        self.assertEqual(combined_reasons, expected_reasons)
+
+        # slot_state_progress and slot_state_regression_blocked are the logical OR
+        # of the two reductions.
+        self.assertEqual(
+            record["slot_state_progress"], planning.progress or terminal.progress
+        )
+        self.assertEqual(
+            record["slot_state_regression_blocked"],
+            planning.regression_blocked or terminal.regression_blocked,
+        )
+
+        # The terminal reduction runs in the same round, so it must not increment
+        # no_progress_count relative to the planning reduction.
+        self.assertEqual(terminal.state.no_progress_count, planning.state.no_progress_count)
+        self.assertEqual(terminal.state.no_progress_count, 0)
+
+    def test_terminal_reduction_unique_events_reach_final_trajectory(self) -> None:
+        # The second (terminal) reduction runs after the full planner/safety pipeline
+        # and is the phase responsible for observing pre-final/closure/safety metadata.
+        # A state event or progress reason that only the terminal reduction can produce
+        # must survive the two-phase merge and appear in the final trajectory record.
+        sample, common_config = self._build_exampleco_observation_scenario()
+        agent = ClaimRiskAgent(
+            StaticRetriever(),
+            top_k=1,
+            max_rounds=1,
+            config={**common_config, "claim_evidence_monotonic_slot_state_v1": True},
+        )
+
+        real_reduce = reduce_slot_execution_state
+        reductions: list = []
+
+        def spy_reduce(previous, update):
+            reduction = real_reduce(previous, update)
+            reductions.append(reduction)
+            if len(reductions) == 2:
+                # Inject a terminal-only event/reason that the planning reduction can
+                # never emit, simulating a pre-final/safety observation that only the
+                # post-planner terminal phase can see.
+                reduction = SlotStateReduction(
+                    state=reduction.state,
+                    transition_events=(
+                        *reduction.transition_events,
+                        {
+                            "event": "terminal_only_prefinal_gate_observed",
+                            "round_idx": update.round_idx,
+                        },
+                    ),
+                    progress=True,
+                    progress_reasons=(
+                        *reduction.progress_reasons,
+                        "terminal_only_prefinal_gate_observed",
+                    ),
+                    regression_blocked=reduction.regression_blocked,
+                )
+                reductions[-1] = reduction
+            return reduction
+
+        with patch(
+            "mvp_agentic_rag.agents.claim_risk_agent.reduce_slot_execution_state",
+            spy_reduce,
+        ):
+            result = agent.run(sample)
+
+        self.assertEqual(len(reductions), 2)
+        planning, terminal = reductions
+        planning_events = [event["event"] for event in planning.transition_events]
+        # The planning reduction cannot produce the terminal-only event.
+        self.assertNotIn("terminal_only_prefinal_gate_observed", planning_events)
+        self.assertIn("terminal_only_prefinal_gate_observed", terminal.progress_reasons)
+
+        record = result.trajectory[-1].to_record()
+        combined_events = [event["event"] for event in record["slot_state_transition_events"]]
+        combined_reasons = list(record["slot_state_progress_reasons"])
+
+        # The terminal-only new information reaches the final trajectory and is not
+        # overwritten by the planning-phase state.
+        self.assertIn("terminal_only_prefinal_gate_observed", combined_events)
+        self.assertIn("terminal_only_prefinal_gate_observed", combined_reasons)
+        # Planning events remain ordered first; the terminal-only event is merged last.
+        self.assertEqual(combined_events[: len(planning_events)], planning_events)
+        self.assertEqual(combined_events[-1], "terminal_only_prefinal_gate_observed")
+        # slot_state_progress is the OR of both phases, so the terminal contribution holds.
+        self.assertTrue(record["slot_state_progress"])
+
+    def test_terminal_reduction_observes_post_planner_metadata(self) -> None:
+        # The two-phase design requires the terminal reduction to observe metadata that
+        # is only produced after the planner runs (repair planner output, etc.). The
+        # planning reduction runs before the repair planner, so its slot_metadata must
+        # not yet contain repair_* fields, while the terminal reduction must.
+        sample, common_config = self._build_exampleco_observation_scenario()
+        agent = ClaimRiskAgent(
+            StaticRetriever(),
+            top_k=1,
+            max_rounds=1,
+            config={**common_config, "claim_evidence_monotonic_slot_state_v1": True},
+        )
+
+        captured_metadata: list[dict] = []
+        real_method = agent._reduce_slot_execution_state
+
+        def spy_reduce(previous_state, *, sample, slot_ledger, slot_metadata, verifier_output, retrieved_passages, round_idx):
+            captured_metadata.append(dict(slot_metadata))
+            return real_method(
+                previous_state,
+                sample=sample,
+                slot_ledger=slot_ledger,
+                slot_metadata=slot_metadata,
+                verifier_output=verifier_output,
+                retrieved_passages=retrieved_passages,
+                round_idx=round_idx,
+            )
+
+        with patch.object(agent, "_reduce_slot_execution_state", spy_reduce):
+            agent.run(sample)
+
+        self.assertEqual(len(captured_metadata), 2)
+        planning_metadata, terminal_metadata = captured_metadata
+        # The planner (repair planner v1) output only exists after the planning-phase
+        # reduction, so the planning slot_metadata must not contain it yet.
+        self.assertNotIn("repair_query_action", planning_metadata)
+        self.assertNotIn("repair_next_query", planning_metadata)
+        # The terminal reduction observes the post-planner metadata.
+        self.assertIn("repair_query_action", terminal_metadata)
+        self.assertEqual(terminal_metadata.get("repair_query_action"), "ordered_hop_repair")
+        self.assertTrue(terminal_metadata.get("repair_next_query"))
+        # The terminal phase sees strictly more metadata keys than the planning phase.
+        self.assertTrue(set(terminal_metadata).issuperset(set(planning_metadata)))
+        self.assertTrue(set(terminal_metadata) - set(planning_metadata))
+
+    def test_observation_mode_does_not_change_repair_plan(self) -> None:
+        sample = Sample("2hop__state_observation", "Who founded ExampleCo?", "Alice", ["p1"])
+        verifier_response = (
+            '{"claims":[{"claim":"Alice founded ExampleCo","status":"unclear",'
+            '"evidence_ids":["p1"],"missing_evidence":"founder relation",'
+            '"is_critical":true}],"overall_sufficiency":"insufficient",'
+            '"need_more_evidence":true,"suggested_query":"ExampleCo founder",'
+            '"risk_score":0.4,"expected_gain":0.2,"final_target_match":false,'
+            '"answer_slot":"unknown"}'
+        )
+        binding_response = json.dumps(
+            {
+                "slot_name": "final_target",
+                "supports_slot": False,
+                "bound_value": "",
+                "evidence_ids": [],
+                "slot_relation_match": False,
+                "answer_type_match": True,
+                "reason": "missing final hop",
+                "question_slot_parser": {
+                    "answer_type": "person",
+                    "target_relation": "founded_by",
+                    "final_slot_description": "founder",
+                    "subject_chain": ["ExampleCo"],
+                    "constraints": [],
+                    "forbidden_roles": [],
+                    "decomposition_confidence": 0.9,
+                },
+                "candidate_role_labeler": {
+                    "candidate": "",
+                    "candidate_role": "unknown",
+                    "answer_type_match": True,
+                    "relation_to_question": "ambiguous",
+                    "role_error_type": "none",
+                },
+                "ordered_hop_binding": {
+                    "required_hops": [
+                        {
+                            "hop_index": 1,
+                            "subject": "ExampleCo",
+                            "relation": "located_in",
+                            "object": "Example City",
+                            "status": "bound",
+                            "is_final_hop": False,
+                            "supporting_evidence_ids": ["p1"],
+                            "confidence": 0.9,
+                        },
+                        {
+                            "hop_index": 2,
+                            "subject": "ExampleCo",
+                            "relation": "founded_by",
+                            "object": "",
+                            "status": "missing",
+                            "is_final_hop": True,
+                            "supporting_evidence_ids": [],
+                            "confidence": 0.7,
+                        },
+                    ],
+                    "filled_hop_index": 1,
+                    "final_hop_index": 2,
+                    "final_relation": "founded_by",
+                    "final_relation_object": None,
+                    "candidate_is_final_relation_object": False,
+                    "missing_critical_hops": ["2"],
+                    "bound_bridge_values": ["Example City"],
+                    "chain_complete": False,
+                },
+                "slot_bound_entailment": {
+                    "candidate": "",
+                    "evidence_ids": [],
+                    "entailed": False,
+                    "contradicted": False,
+                    "entailment_confidence": 0.0,
+                    "failure_reason": "missing final hop",
+                },
+                "set_level_sufficiency": {
+                    "final_slot_covered": False,
+                    "all_required_hops_covered": False,
+                    "missing_critical_hops": ["2"],
+                    "missing_noncritical_hops": [],
+                    "conflict_on_final_slot": False,
+                    "conflict_on_bridge": False,
+                    "evidence_set_sufficient": False,
+                    "sufficiency_confidence": 0.2,
+                },
+                "decision_head": {
+                    "action": "ordered_hop_repair",
+                    "risk": 0.7,
+                    "expected_gain": 0.5,
+                    "reason": "missing final hop",
+                    "abstain_reason": "none",
+                },
+                "repair_target": {
+                    "anchor_entity": "ExampleCo",
+                    "target_relation": "founded_by",
+                    "missing_hop": "2",
+                    "expected_answer_type": "person",
+                    "single_hop_query": "Who founded ExampleCo?",
+                },
+            }
+        )
+        common_config = {
+            "claim_evidence_slot_ledger": True,
+            "claim_evidence_ordered_hop_binding_gate": True,
+            "claim_evidence_slot_binding_verifier": True,
+            "slot_binding_verifier_backend": "fake_llm",
+            "slot_binding_verifier_fake_response": binding_response,
+            "claim_evidence_typed_target_slot_binder": True,
+            "repair_planner_v1": True,
+            "claim_risk_answer_safety_guard": True,
+            "answer_backend": "fake_llm",
+            "answer_fake_response": "UNKNOWN",
+            "verifier_backend": "fake_llm",
+            "verifier_fake_response": verifier_response,
+            "low_yield_abstain_after_round": 99,
+        }
+
+        off_retriever = StaticRetriever()
+        off_result = ClaimRiskAgent(
+            off_retriever,
+            top_k=1,
+            max_rounds=1,
+            config=common_config,
+        ).run(sample)
+
+        on_retriever = StaticRetriever()
+        on_result = ClaimRiskAgent(
+            on_retriever,
+            top_k=1,
+            max_rounds=1,
+            config={**common_config, "claim_evidence_monotonic_slot_state_v1": True},
+        ).run(sample)
+
+        self.assertEqual(on_result.final_action, off_result.final_action)
+        self.assertEqual(on_result.final_answer, off_result.final_answer)
+        self.assertEqual(on_retriever.queries, off_retriever.queries)
+
+        on_record = on_result.trajectory[-1].to_record()
+        off_record = off_result.trajectory[-1].to_record()
+
+        repair_fields = [
+            "repair_query_action",
+            "repair_next_query",
+            "repair_target_anchor_entity",
+            "repair_target_target_relation",
+            "repair_target_missing_hop",
+            "repair_target_expected_answer_type",
+            "repair_target_suggested_query",
+            "repair_target_valid",
+            "repair_target_invalid_reasons",
+            "repair_state",
+            "repair_acceptance",
+            "repair_trigger",
+            "repair_query_source",
+        ]
+        for field in repair_fields:
+            self.assertEqual(
+                on_record.get(field),
+                off_record.get(field),
+                msg=f"repair field {field} changed between observation modes",
+            )
+        self.assertEqual(on_record.get("repair_target"), off_record.get("repair_target"))
+
+        def strip_state(record: dict) -> dict:
+            return {
+                key: value
+                for key, value in record.items()
+                if not key.startswith("slot_execution_state_")
+                and not key.startswith("slot_state_")
+            }
+
+        self.assertEqual(strip_state(on_record), strip_state(off_record))
+
+    def _monotonic_state_common_config(self, verifier_fake_response: str) -> dict:
+        return {
+            "claim_evidence_slot_ledger": True,
+            "claim_evidence_slot_binding_policy": "evidence",
+            "claim_evidence_slot_binding_verifier": True,
+            "claim_evidence_typed_target_slot_binder": True,
+            "claim_evidence_ordered_hop_binding_gate": True,
+            "claim_evidence_final_answer_from_slot": True,
+            "claim_evidence_pre_final_slot_gate": True,
+            "repair_planner_v1": True,
+            "claim_risk_answer_safety_guard": True,
+            "answer_backend": "fake_llm",
+            "answer_fake_response": "UNKNOWN",
+            "verifier_backend": "fake_llm",
+            "verifier_fake_response": verifier_fake_response,
+            "slot_binding_verifier_backend": "fake_llm",
+            "slot_binding_verifier_fake_response": "{}",
+            "low_yield_abstain_after_round": 99,
+        }
+
+    def test_arizona_monotonic_state_observation_preserves_safety_behavior(self) -> None:
+        # Observation-only mode must not weaken the safety reject: a candidate that
+        # binds a non-final (bridge) slot is still recorded as a bridge_as_final reject
+        # with its original non_final_slot reason, and no active final candidate is kept.
+        sample = Sample(
+            "2hop__249867_557232",
+            "What is the capital of Arizona?",
+            "Phoenix",
+            ["2hop__249867_557232::p3"],
+        )
+        az_passages = [
+            Passage("2hop__249867_557232::p3", "Arizona", "Arizona is a state in the US.")
+        ]
+        az_verifier = (
+            '{"claims":[{"claim":"Phoenix is the capital of Arizona.","status":"supported",'
+            '"evidence_ids":["2hop__249867_557232::p3"],"missing_evidence":"","is_critical":true}],'
+            '"overall_sufficiency":"sufficient","need_more_evidence":false,"suggested_query":"",'
+            '"risk_score":0.0,"expected_gain":0.0,"final_target_match":false,'
+            '"answer_slot":"final requested target"}'
+        )
+        az_binding = SlotBindingResult(
+            slot_name="bridge",
+            supports_slot=True,
+            bound_value="Arizona",
+            evidence_ids=["2hop__249867_557232::p3"],
+            slot_relation_match=True,
+            answer_type_match=True,
+            candidate_roles=[
+                CandidateRoleLabel(
+                    candidate="Arizona",
+                    role="bridge_entity",
+                    evidence_span="Arizona is a state.",
+                    relation_to_question="supports_bridge",
+                )
+            ],
+            slot_entailment=SlotBoundEntailmentResult(
+                candidate="Arizona",
+                evidence_ids=["2hop__249867_557232::p3"],
+                entails_answer=False,
+                hypothesis="x",
+                reason="y",
+            ),
+            ordered_hop_binding=OrderedHopBindingResult(
+                filled_hop_index=1,
+                final_hop_index=2,
+                final_relation="capital",
+                final_relation_object="Phoenix",
+                candidate_is_final_relation_object=False,
+                missing_critical_hops=[],
+                bound_bridge_values=["Arizona"],
+                chain_complete=True,
+            ),
+            set_level_sufficiency=SetLevelSufficiencyResult(
+                final_slot_covered=True,
+                all_required_hops_covered=True,
+                missing_critical_hops=[],
+                conflict_on_final_slot=False,
+                evidence_set_sufficient=True,
+            ),
+        )
+        # Drive the answer backend to emit "Arizona" so the pre-guard action is "answer";
+        # the safety guard must then observe a bridge_as_final wrong-target signal and
+        # rewrite the action to "abstain". This exercises the exact answer->abstain safety
+        # transition the observation layer must not weaken.
+        common_config = {
+            **self._monotonic_state_common_config(az_verifier),
+            "answer_fake_response": "Arizona",
+        }
+
+        off_agent = ClaimRiskAgent(
+            StaticPassageListRetriever(az_passages), top_k=1, max_rounds=1, config=common_config
+        )
+        off_agent.slot_binding_verifier = FakeSlotBindingVerifier(az_binding)
+        off_result = off_agent.run(sample)
+        on_agent = ClaimRiskAgent(
+            StaticPassageListRetriever(az_passages),
+            top_k=1,
+            max_rounds=1,
+            config={**common_config, "claim_evidence_monotonic_slot_state_v1": True},
+        )
+        on_agent.slot_binding_verifier = FakeSlotBindingVerifier(az_binding)
+        on_result = on_agent.run(sample)
+
+        # Runtime behavior is identical across observation modes and the dangerous answer is
+        # blocked by the safety guard in both.
+        self.assertEqual(on_result.final_action, off_result.final_action)
+        self.assertEqual(on_result.final_action, "abstain")
+        self.assertEqual(on_result.final_answer, off_result.final_answer)
+        self.assertEqual(on_result.final_answer, "")
+
+        # The original non_final_slot safety reject is preserved and observed as bridge_as_final.
+        off_record = off_result.trajectory[-1].to_record()
+        on_record = on_result.trajectory[-1].to_record()
+        off_binding = off_record.get("slot_binding_verifier_result") or {}
+        on_binding = on_record.get("slot_binding_verifier_result") or {}
+        self.assertEqual(off_binding.get("typed_reject_category"), "bridge_as_final")
+        self.assertEqual(off_binding.get("typed_reject_reason"), "non_final_slot")
+        self.assertEqual(on_binding.get("typed_reject_category"), "bridge_as_final")
+        self.assertEqual(on_binding.get("typed_reject_reason"), "non_final_slot")
+
+        # The answer safety guard actually fired and rewrote answer -> abstain, identical in
+        # both observation modes. Without these assertions a test could pass even if the guard
+        # never ran and the controller happened to abstain for another reason.
+        safety_guard_fields = [
+            "answer_safety_guard_applied",
+            "answer_safety_guard_original_action",
+            "answer_safety_guard_action",
+            "answer_safety_guard_reason",
+            "answer_safety_guard_wrong_target_reason",
+        ]
+        for field in safety_guard_fields:
+            self.assertEqual(
+                on_record.get(field),
+                off_record.get(field),
+                msg=f"safety guard field {field} changed between observation modes",
+            )
+        self.assertTrue(off_record.get("answer_safety_guard_applied"))
+        self.assertTrue(on_record.get("answer_safety_guard_applied"))
+        self.assertEqual(off_record.get("answer_safety_guard_original_action"), "answer")
+        self.assertEqual(on_record.get("answer_safety_guard_original_action"), "answer")
+        self.assertEqual(off_record.get("answer_safety_guard_action"), "abstain")
+        self.assertEqual(on_record.get("answer_safety_guard_action"), "abstain")
+        self.assertEqual(
+            off_record.get("answer_safety_guard_wrong_target_reason"),
+            "verifier_final_target_mismatch",
+        )
+        self.assertEqual(
+            on_record.get("answer_safety_guard_wrong_target_reason"),
+            "verifier_final_target_mismatch",
+        )
+
+        after = on_record.get("slot_execution_state_after") or {}
+        arizona = next(
+            (c for c in (after.get("candidates") or []) if c.get("value") == "Arizona"),
+            None,
+        )
+        self.assertIsNotNone(arizona)
+        self.assertEqual(arizona.get("status"), "rejected")
+        self.assertEqual(arizona.get("typed_reject_category"), "bridge_as_final")
+        self.assertEqual(arizona.get("rejection_reason"), "non_final_slot")
+        # No active final candidate survives the rejected bridge binding.
+        self.assertFalse(after.get("active_candidate_key"))
+
+    def test_het_scheur_monotonic_state_observation_preserves_replacement_behavior(self) -> None:
+        # Reuse the real Het Scheur replacement fixture: the binder proposes the downstream
+        # continuation "Nieuwe Waterweg", the answer safety guard rejects it as a wrong_target,
+        # and the replacement adapter recovers the upstream head entity "Het Scheur".
+        # Observation-only mode must not change any wrong_target_replacement_* field, and the
+        # execution state must record the rejected candidate without merging it with the
+        # recovered replacement candidate.
+        sample = Sample(
+            "2hop__131951_643670",
+            "What is the name for the mouth of the watercourse of the body of water by Rotterdam Centrum?",
+            "Het Scheur",
+            ["2hop__131951_643670::p6", "2hop__131951_643670::p10"],
+        )
+
+        def make_retriever() -> StaticPassageListRetriever:
+            return StaticPassageListRetriever(
+                [
+                    Passage(
+                        "2hop__131951_643670::p6",
+                        "Rotterdam Centrum",
+                        (
+                            "Rotterdam Centrum is bounded by the emplacement of the Rotterdam Centraal railway station "
+                            "and the Goudsesingel in the North, the Tunneltraverse of the Henegouwerlaan and "
+                            "'s-Gravendijkwal in the West, the Nieuwe Maas River in the South and the Oostplein in the East."
+                        ),
+                    ),
+                    Passage(
+                        "2hop__131951_643670::p10",
+                        "Het Scheur",
+                        (
+                            'Het Scheur (; Dutch for "The Rip") is a branch of the Rhine-Meuse delta in South Holland, '
+                            "Netherlands, that flows west from the confluence of the Oude Maas and Nieuwe Maas branches "
+                            "past the towns of Rozenburg and Maassluis. It continues as the Nieuwe Waterweg "
+                            "(New Waterway) to the North Sea."
+                        ),
+                    ),
+                ]
+            )
+
+        verifier_response = (
+            '{"claims":[{"claim":"The mouth of the Nieuwe Maas River is the Nieuwe Waterweg.",'
+            '"status":"supported","evidence_ids":[],'
+            '"missing_evidence":"","is_critical":true}],'
+            '"overall_sufficiency":"sufficient","need_more_evidence":false,'
+            '"suggested_query":"","risk_score":0,"expected_gain":0,'
+            '"final_target_match":true,"answer_slot":"final requested target"}'
+        )
+
+        def make_binding() -> SlotBindingResult:
+            return SlotBindingResult(
+                slot_name="final_target",
+                supports_slot=True,
+                bound_value="Nieuwe Waterweg",
+                evidence_ids=["2hop__131951_643670::p10"],
+                slot_relation_match=True,
+                answer_type_match=True,
+                candidate_roles=[
+                    CandidateRoleLabel(
+                        candidate="Nieuwe Waterweg",
+                        role="final_answer",
+                        evidence_span="It continues as the Nieuwe Waterweg to the North Sea.",
+                        relation_to_question="fills_final_slot",
+                    )
+                ],
+                slot_entailment=SlotBoundEntailmentResult(
+                    candidate="Nieuwe Waterweg",
+                    evidence_ids=["2hop__131951_643670::p10"],
+                    entails_answer=True,
+                ),
+                set_level_sufficiency=SetLevelSufficiencyResult(
+                    final_slot_covered=True,
+                    all_required_hops_covered=True,
+                    conflict_on_final_slot=False,
+                ),
+                ordered_hop_binding=OrderedHopBindingResult(
+                    filled_hop_index=2,
+                    final_hop_index=2,
+                    final_relation="mouth of the watercourse",
+                    final_relation_object="Nieuwe Waterweg",
+                    candidate_is_final_relation_object=True,
+                    missing_critical_hops=[],
+                    bound_bridge_values=["Nieuwe Maas River"],
+                    chain_complete=True,
+                ),
+            )
+
+        base_config = {
+            "query_decomposition": "none",
+            "claim_evidence_slot_ledger": True,
+            "claim_evidence_slot_binding_policy": "evidence",
+            "claim_evidence_slot_binding_verifier": True,
+            "claim_evidence_typed_target_slot_binder": True,
+            "claim_evidence_structured_final_slot_acceptance": True,
+            "claim_evidence_ordered_hop_binding_gate": True,
+            "claim_risk_answer_safety_guard": True,
+            "repair_planner_v1": True,
+            "answer_backend": "fake_llm",
+            "answer_fake_response": "Nieuwe Waterweg",
+            "verifier_backend": "fake_llm",
+            "verifier_fake_response": verifier_response,
+            "slot_binding_verifier_backend": "fake_llm",
+            "slot_binding_verifier_fake_response": "{}",
+        }
+
+        off_agent = ClaimRiskAgent(make_retriever(), top_k=2, max_rounds=2, config=base_config)
+        off_agent.slot_binding_verifier = FakeSlotBindingVerifier(make_binding())
+        off_result = off_agent.run(sample)
+        on_agent = ClaimRiskAgent(
+            make_retriever(),
+            top_k=2,
+            max_rounds=2,
+            config={
+                **base_config,
+                "claim_evidence_monotonic_slot_state_v1": True,
+                "claim_evidence_monotonic_slot_state_force_verifier": True,
+                "verifier_fake_response": verifier_response.replace(
+                    '"evidence_ids":[]',
+                    '"evidence_ids":["2hop__131951_643670::p10"]',
+                ),
+            },
+        )
+        on_agent.slot_binding_verifier = FakeSlotBindingVerifier(make_binding())
+        on_result = on_agent.run(sample)
+
+        # The replacement adapter recovers Het Scheur identically in both observation modes.
+        self.assertEqual(on_result.final_action, off_result.final_action)
+        self.assertEqual("answer", on_result.final_action)
+        self.assertEqual(on_result.final_answer, off_result.final_answer)
+        self.assertEqual("Het Scheur", on_result.final_answer)
+
+        off_record = off_result.trajectory[-1].to_record()
+        on_record = on_result.trajectory[-1].to_record()
+
+        # Every wrong_target_replacement_* field is identical between feature off and on;
+        # observation mode must not weaken or alter the replacement adapter output.
+        replacement_fields = [
+            "wrong_target_replacement_candidate",
+            "wrong_target_replacement_rejected_candidate",
+            "wrong_target_replacement_reason",
+            "wrong_target_replacement_evidence_ids",
+            "wrong_target_replacement_after_safety_guard",
+        ]
+        for field in replacement_fields:
+            self.assertEqual(
+                on_record.get(field),
+                off_record.get(field),
+                msg=f"replacement field {field} changed between observation modes",
+            )
+        self.assertEqual(on_record.get("wrong_target_replacement_candidate"), "Het Scheur")
+        self.assertEqual(
+            on_record.get("wrong_target_replacement_rejected_candidate"), "Nieuwe Waterweg"
+        )
+        self.assertEqual(
+            on_record.get("wrong_target_replacement_reason"),
+            "downstream_continuation_head_entity",
+        )
+        self.assertEqual(
+            on_record.get("wrong_target_replacement_evidence_ids"),
+            ["2hop__131951_643670::p10"],
+        )
+        self.assertTrue(on_record.get("wrong_target_replacement_after_safety_guard"))
+
+        # The answer safety guard fired on the wrong target in both modes.
+        self.assertEqual(
+            on_record.get("answer_safety_guard_applied"),
+            off_record.get("answer_safety_guard_applied"),
+        )
+        self.assertTrue(on_record.get("answer_safety_guard_applied"))
+        self.assertEqual(
+            on_record.get("answer_safety_guard_wrong_target_reason"),
+            "mouth_watercourse_downstream_continuation",
+        )
+
+        # The execution state records the rejected downstream continuation and does NOT
+        # merge it with the recovered replacement head entity.
+        after = on_record.get("slot_execution_state_after") or {}
+        candidates = after.get("candidates") or []
+        values = [c.get("value") for c in candidates]
+        self.assertIn("Nieuwe Waterweg", values)
+        self.assertNotIn("Het Scheur", values)
+        rejected = next((c for c in candidates if c.get("value") == "Nieuwe Waterweg"), None)
+        self.assertIsNotNone(rejected)
+        self.assertEqual(rejected.get("status"), "rejected")
+        self.assertEqual(rejected.get("typed_reject_category"), "wrong_target")
+        self.assertEqual(
+            rejected.get("rejection_reason"), "mouth_watercourse_downstream_continuation"
+        )
+        ev_ids = list(rejected.get("evidence_ids") or ())
+        self.assertEqual(ev_ids, ["2hop__131951_643670::p10"])
+        self.assertEqual(len(ev_ids), len(set(ev_ids)))
+        self.assertFalse(after.get("active_candidate_key"))
+
+    def test_nbc_monotonic_state_observation_preserves_candidate_during_bridge_repair(self) -> None:
+        # During bridge repair the collected final candidate must stay in the collection,
+        # be preserved, keep its completed hops, expose the correct first missing hop, and
+        # the hypothetical state action must drive repair without rewriting the runtime action.
+        nbc_id = "4hop1__161810_583746_457883_650651"
+        sample = Sample(
+            nbc_id,
+            "What network aired The Biggest Loser version filmed in Country A?",
+            "NBC",
+            [f"{nbc_id}::p1", f"{nbc_id}::p2", f"{nbc_id}::p4"],
+        )
+        nbc_passages = [
+            Passage(f"{nbc_id}::p1", "Sarangani Bay", "Sarangani Bay is in the Philippines."),
+            Passage(f"{nbc_id}::p2", "Country A", "Country A is the Philippines."),
+            Passage(f"{nbc_id}::p4", "The Biggest Loser", "The Biggest Loser version aired on NBC."),
+        ]
+        nbc_verifier = (
+            '{"claims":[{"claim":"The Biggest Loser version aired on NBC.","status":"supported",'
+            '"evidence_ids":["' + nbc_id + '::p4"],"missing_evidence":"","is_critical":true}],'
+            '"overall_sufficiency":"insufficient","need_more_evidence":true,"suggested_query":"",'
+            '"risk_score":0.4,"expected_gain":0.3,"final_target_match":false,'
+            '"answer_slot":"final requested target"}'
+        )
+        nbc_binding = SlotBindingResult(
+            slot_name="final_target",
+            supports_slot=True,
+            bound_value="NBC",
+            evidence_ids=[f"{nbc_id}::p4"],
+            slot_relation_match=True,
+            answer_type_match=True,
+            candidate_roles=[
+                CandidateRoleLabel(
+                    candidate="NBC",
+                    role="bridge_entity",
+                    evidence_span="NBC",
+                    relation_to_question="supports_bridge",
+                )
+            ],
+            slot_entailment=SlotBoundEntailmentResult(
+                candidate="NBC",
+                evidence_ids=[f"{nbc_id}::p4"],
+                entails_answer=False,
+                hypothesis="x",
+                reason="y",
+            ),
+            ordered_hop_binding=OrderedHopBindingResult(
+                filled_hop_index=4,
+                final_hop_index=4,
+                final_relation="network",
+                final_relation_object="NBC",
+                candidate_is_final_relation_object=True,
+                missing_critical_hops=["3"],
+                bound_bridge_values=["NBC"],
+                chain_complete=False,
+                required_hops=[
+                    RequiredHopBinding(
+                        hop_index=1,
+                        subject="Sarangani Bay",
+                        relation="country",
+                        object="Philippines",
+                        status="bound",
+                        is_final_hop=False,
+                        supporting_evidence_ids=[f"{nbc_id}::p1"],
+                        confidence=0.9,
+                    ),
+                    RequiredHopBinding(
+                        hop_index=2,
+                        subject="Country A",
+                        relation="same_country",
+                        object="Philippines",
+                        status="bound",
+                        is_final_hop=False,
+                        supporting_evidence_ids=[f"{nbc_id}::p2"],
+                        confidence=0.9,
+                    ),
+                    RequiredHopBinding(
+                        hop_index=3,
+                        subject="Country A",
+                        relation="show_version",
+                        object="",
+                        status="missing",
+                        is_final_hop=False,
+                        supporting_evidence_ids=[],
+                        confidence=0.7,
+                    ),
+                    RequiredHopBinding(
+                        hop_index=4,
+                        subject="The Biggest Loser version",
+                        relation="network",
+                        object="NBC",
+                        status="bound",
+                        is_final_hop=True,
+                        supporting_evidence_ids=[f"{nbc_id}::p4"],
+                        confidence=0.9,
+                    ),
+                ],
+            ),
+            set_level_sufficiency=SetLevelSufficiencyResult(
+                final_slot_covered=False,
+                all_required_hops_covered=False,
+                missing_critical_hops=["3"],
+                conflict_on_final_slot=False,
+                evidence_set_sufficient=False,
+            ),
+        )
+        common_config = self._monotonic_state_common_config(nbc_verifier)
+
+        # top_k=3 so all three local passages (p1, p2, p4) enter the evidence set and the
+        # non-contiguous NBC state is reproduced: hops 1, 2 and 4 are verified while the
+        # middle bridge hop 3 is the true missing hop.
+        off_retriever = StaticPassageListRetriever(nbc_passages)
+        off_agent = ClaimRiskAgent(
+            off_retriever, top_k=3, max_rounds=1, config=common_config
+        )
+        off_agent.slot_binding_verifier = FakeSlotBindingVerifier(nbc_binding)
+        off_result = off_agent.run(sample)
+        on_retriever = StaticPassageListRetriever(nbc_passages)
+        on_agent = ClaimRiskAgent(
+            on_retriever,
+            top_k=3,
+            max_rounds=1,
+            config={**common_config, "claim_evidence_monotonic_slot_state_v1": True},
+        )
+        on_agent.slot_binding_verifier = FakeSlotBindingVerifier(nbc_binding)
+        on_result = on_agent.run(sample)
+
+        # Runtime action, answer and repair query sequence are unchanged by the state observation.
+        self.assertEqual(on_result.final_action, off_result.final_action)
+        self.assertEqual(on_result.final_answer, off_result.final_answer)
+        self.assertEqual(on_retriever.queries, off_retriever.queries)
+
+        on_record = on_result.trajectory[-1].to_record()
+        off_record = off_result.trajectory[-1].to_record()
+        # Compare the computed repair plan directly. With max_rounds=1 the next query is
+        # not executed, so retriever history alone cannot prove observation-only parity.
+        self.assertTrue(on_record.get("repair_query_action"))
+        self.assertTrue(on_record.get("repair_next_query"))
+        self.assertEqual(
+            on_record.get("repair_query_action"),
+            off_record.get("repair_query_action"),
+        )
+        self.assertEqual(
+            on_record.get("repair_next_query"),
+            off_record.get("repair_next_query"),
+        )
+        self.assertEqual(
+            on_result.trajectory[-1].action,
+            off_result.trajectory[-1].action,
+        )
+        binding_record = on_record.get("slot_binding_verifier_result") or {}
+        self.assertEqual(
+            binding_record.get("typed_reject_category"),
+            "insufficient_bridge_evidence",
+        )
+        self.assertEqual(
+            (binding_record.get("decision_head") or {}).get("typed_reject_category"),
+            "insufficient_bridge_evidence",
+        )
+        after = on_record.get("slot_execution_state_after") or {}
+        nbc = next(
+            (c for c in (after.get("candidates") or []) if c.get("value") == "NBC"),
+            None,
+        )
+        self.assertIsNotNone(nbc)
+        self.assertIn(nbc.get("status"), ("observed", "support_incomplete"))
+        self.assertTrue(nbc.get("preserved"))
+        # The known downstream final candidate keeps its final-hop evidence (p4).
+        self.assertIn(f"{nbc_id}::p4", list(nbc.get("evidence_ids") or ()))
+        # Completed hops are the non-contiguous set 1, 2 and 4; none are reverted.
+        self.assertEqual(
+            list(after.get("completed_hop_ids") or ()),
+            ["required_hop_1", "required_hop_2", "required_hop_4"],
+        )
+        # The true missing hop is the middle bridge hop 3, not a leading prefix hop.
+        self.assertEqual(after.get("first_critical_missing_hop_id"), "required_hop_3")
+        # The hypothetical state action targets the middle missing bridge hop but does not
+        # rewrite the runtime action.
+        self.assertEqual(on_record.get("slot_state_selected_action"), "repair_missing_hop")
+        self.assertEqual(on_record.get("slot_state_repair_target_hop_id"), "required_hop_3")
+        self.assertNotEqual(
+            on_result.trajectory[-1].action,
+            on_record.get("slot_state_selected_action"),
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
@@ -7240,10 +9943,12 @@ class FakeSlotFinalVerifier:
         self.result = result
         self.calls = 0
         self.candidate_answers: list[str] = []
+        self.slot_ledger_records: list[dict] = []
 
     def verify_final_slot(self, sample: Sample, evidence, candidate_answer: str, slot_ledger):
         self.calls += 1
         self.candidate_answers.append(candidate_answer)
+        self.slot_ledger_records.append(slot_ledger.to_record())
         return self.result
 
 

@@ -283,6 +283,14 @@ def classify_final_target_type(question: str) -> str:
         return "year"
     if "what century" in normalized:
         return "century"
+    if normalized.startswith("how many ") or "how much" in normalized:
+        return "count"
+    if "what network" in normalized or "which network" in normalized:
+        return "network"
+    if "what company" in normalized or "which company" in normalized:
+        return "company"
+    if "what organization" in normalized or "which organization" in normalized:
+        return "organization"
     if normalized.startswith("who ") or " who " in f" {normalized} ":
         return "person"
     if "what county" in normalized:
@@ -293,16 +301,10 @@ def classify_final_target_type(question: str) -> str:
         return "state"
     if "what country" in normalized:
         return "country"
-    if normalized.startswith("where ") or " located" in normalized:
-        return "location"
     if "population" in normalized:
         return "population"
-    if normalized.startswith("how many ") or "how much" in normalized:
-        return "count"
-    if "what network" in normalized:
-        return "network"
-    if "what company" in normalized:
-        return "company"
+    if normalized.startswith("where ") or " located" in normalized:
+        return "location"
     return "entity"
 
 

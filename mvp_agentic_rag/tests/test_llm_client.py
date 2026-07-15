@@ -1,7 +1,17 @@
 import json
+import http.client
+import os
 import unittest
+from io import BytesIO
+from unittest.mock import MagicMock, patch
+from urllib.error import HTTPError
 
-from mvp_agentic_rag.llm_client import FakeLLMClient, extract_message_content, prepare_messages
+from mvp_agentic_rag.llm_client import (
+    FakeLLMClient,
+    OpenAICompatibleClient,
+    extract_message_content,
+    prepare_messages,
+)
 from mvp_agentic_rag.prompts import build_answer_prompt, build_verifier_prompt
 from mvp_agentic_rag.schemas import Passage, Sample
 
@@ -40,6 +50,102 @@ class LLMClientTests(unittest.TestCase):
 
         self.assertEqual(messages[1]["content"], "Question?")
         self.assertEqual(prepared[1]["content"], "/no_think\nQuestion?")
+
+    def test_openai_compatible_completion_requests_json_and_preserves_finish_reason(self):
+        response = MagicMock()
+        response.__enter__.return_value = response
+        response.read.return_value = json.dumps(
+            {
+                "choices": [
+                    {
+                        "finish_reason": "stop",
+                        "message": {"content": '{"bound_value":"Paris"}'},
+                    }
+                ]
+            }
+        ).encode("utf-8")
+        client = OpenAICompatibleClient(
+            base_url="https://example.test/v1",
+            model="test-model",
+            api_key_env="TEST_API_KEY",
+            response_format="json_object",
+        )
+
+        with patch.dict(os.environ, {"TEST_API_KEY": "secret"}), patch(
+            "mvp_agentic_rag.llm_client.urllib.request.urlopen",
+            return_value=response,
+        ) as urlopen:
+            completion = client.complete_with_metadata([{"role": "user", "content": "Return JSON"}])
+
+        request_payload = json.loads(urlopen.call_args.args[0].data.decode("utf-8"))
+        self.assertEqual({"type": "json_object"}, request_payload["response_format"])
+        self.assertEqual('{"bound_value":"Paris"}', completion.content)
+        self.assertEqual("stop", completion.finish_reason)
+        self.assertTrue(completion.response_format_requested)
+        self.assertTrue(completion.response_format_applied)
+
+    def test_openai_compatible_completion_falls_back_when_json_format_is_unsupported(self):
+        unsupported = HTTPError(
+            "https://example.test/v1/chat/completions",
+            400,
+            "Bad Request",
+            {},
+            BytesIO(b'{"error":{"message":"response_format json_object is not supported"}}'),
+        )
+        response = MagicMock()
+        response.__enter__.return_value = response
+        response.read.return_value = json.dumps(
+            {
+                "choices": [
+                    {
+                        "finish_reason": "stop",
+                        "message": {"content": '{"bound_value":"Paris"}'},
+                    }
+                ]
+            }
+        ).encode("utf-8")
+        client = OpenAICompatibleClient(
+            base_url="https://example.test/v1",
+            model="test-model",
+            api_key_env="TEST_API_KEY",
+            response_format="json_object",
+        )
+
+        with patch.dict(os.environ, {"TEST_API_KEY": "secret"}), patch(
+            "mvp_agentic_rag.llm_client.urllib.request.urlopen",
+            side_effect=[unsupported, response],
+        ) as urlopen:
+            completion = client.complete_with_metadata([{"role": "user", "content": "Return JSON"}])
+
+        first_payload = json.loads(urlopen.call_args_list[0].args[0].data.decode("utf-8"))
+        second_payload = json.loads(urlopen.call_args_list[1].args[0].data.decode("utf-8"))
+        self.assertEqual({"type": "json_object"}, first_payload["response_format"])
+        self.assertNotIn("response_format", second_payload)
+        self.assertTrue(completion.response_format_requested)
+        self.assertFalse(completion.response_format_applied)
+
+    def test_openai_compatible_completion_retries_transient_disconnect(self):
+        response = MagicMock()
+        response.__enter__.return_value = response
+        response.read.return_value = json.dumps(
+            {"choices": [{"finish_reason": "stop", "message": {"content": "ok"}}]}
+        ).encode("utf-8")
+        client = OpenAICompatibleClient(
+            base_url="https://example.test/v1",
+            model="test-model",
+            api_key_env="TEST_API_KEY",
+            retry_attempts=1,
+            retry_backoff_seconds=0,
+        )
+
+        with patch.dict(os.environ, {"TEST_API_KEY": "secret"}), patch(
+            "mvp_agentic_rag.llm_client.urllib.request.urlopen",
+            side_effect=[http.client.RemoteDisconnected("connection closed"), response],
+        ) as urlopen:
+            completion = client.complete_with_metadata([{"role": "user", "content": "retry"}])
+
+        self.assertEqual("ok", completion.content)
+        self.assertEqual(2, urlopen.call_count)
 
     def test_prompt_builders_include_evidence_ids(self):
         sample = Sample("q1", "Question?", "Answer", ["p1"])

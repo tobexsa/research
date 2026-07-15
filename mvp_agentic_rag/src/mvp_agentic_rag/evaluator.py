@@ -231,12 +231,12 @@ def _evaluation_slices(items: list[dict]) -> dict[str, dict]:
             for value in step.get("retrieved_ids", [])
             if str(value or "").strip()
         }
-        if supporting_ids and supporting_ids.issubset(retrieved_ids):
+        gold_support_not_entailing = _gold_support_not_textually_entailing(item)
+        if supporting_ids and supporting_ids.issubset(retrieved_ids) and not gold_support_not_entailing:
             all_support_retrieved_ids.append(sample_id)
             if not candidates:
                 all_support_no_candidate_ids.append(sample_id)
 
-        gold_support_not_entailing = _gold_support_not_textually_entailing(item)
         if gold_support_not_entailing:
             non_entailing_gold_ids.append(sample_id)
         elif any(_answers_match(candidate, item.get("gold_answer", "")) for candidate in candidates):

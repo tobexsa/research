@@ -1,0 +1,396 @@
+{
+  "status": "complete",
+  "row_count": 45,
+  "metrics": {
+    "r12": {
+      "overall_em": 0.3333333333333333,
+      "answer_f1": 0.3511111111111111,
+      "coverage": 0.37777777777777777,
+      "selective_acc": 0.8823529411764706,
+      "selective_answer_f1": 0.9294117647058824,
+      "avg_retrieval_calls": 2.3555555555555556,
+      "wasted_retrieval_rate": 0.6222222222222222,
+      "final_answered_unsupported_rate": 0,
+      "hop_metrics": {
+        "2hop": {
+          "count": 15,
+          "answered": 12,
+          "overall_acc": 0.6666666666666666,
+          "overall_em": 0.6666666666666666,
+          "answer_f1": 0.72,
+          "coverage": 0.8,
+          "selective_acc": 0.8333333333333334,
+          "selective_answer_f1": 0.9
+        },
+        "3hop": {
+          "count": 15,
+          "answered": 5,
+          "overall_acc": 0.3333333333333333,
+          "overall_em": 0.3333333333333333,
+          "answer_f1": 0.3333333333333333,
+          "coverage": 0.3333333333333333,
+          "selective_acc": 1,
+          "selective_answer_f1": 1.0
+        },
+        "4hop": {
+          "count": 15,
+          "answered": 0,
+          "overall_acc": 0,
+          "overall_em": 0,
+          "answer_f1": 0.0,
+          "coverage": 0.0,
+          "selective_acc": 0.0,
+          "selective_answer_f1": 0.0
+        }
+      }
+    },
+    "r20": {
+      "overall_em": 0.28888888888888886,
+      "answer_f1": 0.3,
+      "coverage": 0.3333333333333333,
+      "selective_acc": 0.8666666666666667,
+      "selective_answer_f1": 0.9,
+      "avg_retrieval_calls": 2.4444444444444446,
+      "wasted_retrieval_rate": 0.6666666666666666,
+      "final_answered_unsupported_rate": 0,
+      "hop_metrics": {
+        "2hop": {
+          "count": 15,
+          "answered": 10,
+          "overall_acc": 0.5333333333333333,
+          "overall_em": 0.5333333333333333,
+          "answer_f1": 0.5666666666666667,
+          "coverage": 0.6666666666666666,
+          "selective_acc": 0.8,
+          "selective_answer_f1": 0.85
+        },
+        "3hop": {
+          "count": 15,
+          "answered": 3,
+          "overall_acc": 0.2,
+          "overall_em": 0.2,
+          "answer_f1": 0.2,
+          "coverage": 0.2,
+          "selective_acc": 1,
+          "selective_answer_f1": 1.0
+        },
+        "4hop": {
+          "count": 15,
+          "answered": 2,
+          "overall_acc": 0.13333333333333333,
+          "overall_em": 0.13333333333333333,
+          "answer_f1": 0.13333333333333333,
+          "coverage": 0.13333333333333333,
+          "selective_acc": 1,
+          "selective_answer_f1": 1.0
+        }
+      }
+    },
+    "fusion_r25": {
+      "overall_em": 0.4888888888888889,
+      "answer_f1": 0.4888888888888889,
+      "coverage": 0.5111111111111111,
+      "selective_acc": 0.9565217391304348,
+      "selective_answer_f1": 0.9565217391304348,
+      "avg_retrieval_calls": 2.2888888888888888,
+      "wasted_retrieval_rate": 0.5777777777777777,
+      "final_answered_unsupported_rate": 0,
+      "hop_metrics": {
+        "2hop": {
+          "count": 15,
+          "answered": 13,
+          "overall_acc": 0.8,
+          "overall_em": 0.8,
+          "answer_f1": 0.8,
+          "coverage": 0.8666666666666667,
+          "selective_acc": 0.9230769230769231,
+          "selective_answer_f1": 0.9230769230769231
+        },
+        "3hop": {
+          "count": 15,
+          "answered": 8,
+          "overall_acc": 0.5333333333333333,
+          "overall_em": 0.5333333333333333,
+          "answer_f1": 0.5333333333333333,
+          "coverage": 0.5333333333333333,
+          "selective_acc": 1,
+          "selective_answer_f1": 1.0
+        },
+        "4hop": {
+          "count": 15,
+          "answered": 2,
+          "overall_acc": 0.13333333333333333,
+          "overall_em": 0.13333333333333333,
+          "answer_f1": 0.13333333333333333,
+          "coverage": 0.13333333333333333,
+          "selective_acc": 1,
+          "selective_answer_f1": 1.0
+        }
+      }
+    },
+    "generic_r26": {
+      "overall_em": 0.37777777777777777,
+      "answer_f1": 0.37777777777777777,
+      "coverage": 0.4,
+      "selective_acc": 0.9444444444444444,
+      "selective_answer_f1": 0.9444444444444444,
+      "avg_retrieval_calls": 2.4,
+      "wasted_retrieval_rate": 0.6888888888888889,
+      "final_answered_unsupported_rate": 0,
+      "hop_metrics": {
+        "2hop": {
+          "count": 15,
+          "answered": 10,
+          "overall_acc": 0.6,
+          "overall_em": 0.6,
+          "answer_f1": 0.6,
+          "coverage": 0.6666666666666666,
+          "selective_acc": 0.9,
+          "selective_answer_f1": 0.9
+        },
+        "3hop": {
+          "count": 15,
+          "answered": 8,
+          "overall_acc": 0.5333333333333333,
+          "overall_em": 0.5333333333333333,
+          "answer_f1": 0.5333333333333333,
+          "coverage": 0.5333333333333333,
+          "selective_acc": 1,
+          "selective_answer_f1": 1.0
+        },
+        "4hop": {
+          "count": 15,
+          "answered": 0,
+          "overall_acc": 0,
+          "overall_em": 0,
+          "answer_f1": 0.0,
+          "coverage": 0.0,
+          "selective_acc": 0.0,
+          "selective_answer_f1": 0.0
+        }
+      }
+    }
+  },
+  "fusion_minus_generic": {
+    "overall_em": 0.1111111111111111,
+    "answer_f1": 0.1111111111111111,
+    "coverage": 0.11111111111111105,
+    "selective_acc": 0.012077294685990392,
+    "avg_retrieval_calls": -0.11111111111111116,
+    "wasted_retrieval_rate": -0.11111111111111116
+  },
+  "paired": {
+    "fusion_vs_generic": {
+      "left_only_count": 6,
+      "left_only_ids": [
+        "2hop__132854_417697",
+        "2hop__167577_31122",
+        "2hop__247353_55227",
+        "3hop1__145194_160545_62931",
+        "4hop1__161810_583746_457883_650651",
+        "4hop1__236903_153080_33897_81096"
+      ],
+      "right_only_count": 1,
+      "right_only_ids": [
+        "3hop1__129499_33897_81096"
+      ],
+      "both_correct_count": 16,
+      "both_correct_ids": [
+        "2hop__10620_49084",
+        "2hop__129721_40482",
+        "2hop__131951_643670",
+        "2hop__136179_13529",
+        "2hop__142699_67465",
+        "2hop__153573_44085",
+        "2hop__194469_83289",
+        "2hop__20268_42014",
+        "2hop__23459_35124",
+        "3hop1__103881_443779_52195",
+        "3hop1__105767_443779_52195",
+        "3hop1__108833_720914_41132",
+        "3hop1__136129_87694_124169",
+        "3hop1__140786_2053_5289",
+        "3hop1__140786_2053_52946",
+        "3hop1__144439_443779_52195"
+      ],
+      "both_wrong_count": 22,
+      "both_wrong_ids": [
+        "2hop__151750_141308",
+        "2hop__244193_461106",
+        "2hop__249867_557232",
+        "3hop1__103751_24918_24991",
+        "3hop1__104996_160713_77246",
+        "3hop1__128554_39743_24526",
+        "3hop1__135659_87694_64412",
+        "3hop1__159803_89752_75165",
+        "3hop1__222497_309482_27537",
+        "4hop1__105401_17130_70784_79935",
+        "4hop1__105688_17130_70784_79935",
+        "4hop1__131611_32392_823060_610794",
+        "4hop1__13170_32392_823060_610794",
+        "4hop1__145494_698949_157828_162309",
+        "4hop1__151650_5274_458768_33632",
+        "4hop1__151650_5274_458768_33637",
+        "4hop1__152146_5274_458768_33632",
+        "4hop1__161605_32392_823060_610794",
+        "4hop1__166471_49925_13759_736921",
+        "4hop1__17192_17130_70784_79935",
+        "4hop1__264443_49925_13759_736921",
+        "4hop1__28352_53706_795904_580996"
+      ]
+    },
+    "fusion_vs_r12": {
+      "left_only_count": 7,
+      "left_only_ids": [
+        "2hop__136179_13529",
+        "2hop__167577_31122",
+        "3hop1__105767_443779_52195",
+        "3hop1__108833_720914_41132",
+        "3hop1__136129_87694_124169",
+        "4hop1__161810_583746_457883_650651",
+        "4hop1__236903_153080_33897_81096"
+      ],
+      "right_only_count": 0,
+      "right_only_ids": [],
+      "both_correct_count": 15,
+      "both_correct_ids": [
+        "2hop__10620_49084",
+        "2hop__129721_40482",
+        "2hop__131951_643670",
+        "2hop__132854_417697",
+        "2hop__142699_67465",
+        "2hop__153573_44085",
+        "2hop__194469_83289",
+        "2hop__20268_42014",
+        "2hop__23459_35124",
+        "2hop__247353_55227",
+        "3hop1__103881_443779_52195",
+        "3hop1__140786_2053_5289",
+        "3hop1__140786_2053_52946",
+        "3hop1__144439_443779_52195",
+        "3hop1__145194_160545_62931"
+      ],
+      "both_wrong_count": 23,
+      "both_wrong_ids": [
+        "2hop__151750_141308",
+        "2hop__244193_461106",
+        "2hop__249867_557232",
+        "3hop1__103751_24918_24991",
+        "3hop1__104996_160713_77246",
+        "3hop1__128554_39743_24526",
+        "3hop1__129499_33897_81096",
+        "3hop1__135659_87694_64412",
+        "3hop1__159803_89752_75165",
+        "3hop1__222497_309482_27537",
+        "4hop1__105401_17130_70784_79935",
+        "4hop1__105688_17130_70784_79935",
+        "4hop1__131611_32392_823060_610794",
+        "4hop1__13170_32392_823060_610794",
+        "4hop1__145494_698949_157828_162309",
+        "4hop1__151650_5274_458768_33632",
+        "4hop1__151650_5274_458768_33637",
+        "4hop1__152146_5274_458768_33632",
+        "4hop1__161605_32392_823060_610794",
+        "4hop1__166471_49925_13759_736921",
+        "4hop1__17192_17130_70784_79935",
+        "4hop1__264443_49925_13759_736921",
+        "4hop1__28352_53706_795904_580996"
+      ]
+    },
+    "fusion_vs_r20": {
+      "left_only_count": 9,
+      "left_only_ids": [
+        "2hop__142699_67465",
+        "2hop__194469_83289",
+        "2hop__23459_35124",
+        "2hop__247353_55227",
+        "3hop1__103881_443779_52195",
+        "3hop1__105767_443779_52195",
+        "3hop1__108833_720914_41132",
+        "3hop1__140786_2053_5289",
+        "3hop1__144439_443779_52195"
+      ],
+      "right_only_count": 0,
+      "right_only_ids": [],
+      "both_correct_count": 13,
+      "both_correct_ids": [
+        "2hop__10620_49084",
+        "2hop__129721_40482",
+        "2hop__131951_643670",
+        "2hop__132854_417697",
+        "2hop__136179_13529",
+        "2hop__153573_44085",
+        "2hop__167577_31122",
+        "2hop__20268_42014",
+        "3hop1__136129_87694_124169",
+        "3hop1__140786_2053_52946",
+        "3hop1__145194_160545_62931",
+        "4hop1__161810_583746_457883_650651",
+        "4hop1__236903_153080_33897_81096"
+      ],
+      "both_wrong_count": 23,
+      "both_wrong_ids": [
+        "2hop__151750_141308",
+        "2hop__244193_461106",
+        "2hop__249867_557232",
+        "3hop1__103751_24918_24991",
+        "3hop1__104996_160713_77246",
+        "3hop1__128554_39743_24526",
+        "3hop1__129499_33897_81096",
+        "3hop1__135659_87694_64412",
+        "3hop1__159803_89752_75165",
+        "3hop1__222497_309482_27537",
+        "4hop1__105401_17130_70784_79935",
+        "4hop1__105688_17130_70784_79935",
+        "4hop1__131611_32392_823060_610794",
+        "4hop1__13170_32392_823060_610794",
+        "4hop1__145494_698949_157828_162309",
+        "4hop1__151650_5274_458768_33632",
+        "4hop1__151650_5274_458768_33637",
+        "4hop1__152146_5274_458768_33632",
+        "4hop1__161605_32392_823060_610794",
+        "4hop1__166471_49925_13759_736921",
+        "4hop1__17192_17130_70784_79935",
+        "4hop1__264443_49925_13759_736921",
+        "4hop1__28352_53706_795904_580996"
+      ]
+    }
+  },
+  "routing": {
+    "fusion_r25": {
+      "lane_counts": {
+        "generic_compatibility": 91,
+        "no_fallback": 1,
+        "strict_certificate": 11
+      },
+      "adapter_marker_counts": {
+        "deterministic_cast_relation_binding": 1,
+        "deterministic_country_network_chain_binding": 1,
+        "deterministic_geographic_race_chain_binding": 3,
+        "deterministic_model_chain_binding": 1,
+        "deterministic_named_after_player_signing_binding": 1,
+        "deterministic_named_after_title_binding": 1,
+        "deterministic_network_set_elimination_binding": 1,
+        "deterministic_partial_country_network_topology": 1,
+        "deterministic_partial_geographic_race_topology": 3,
+        "deterministic_partial_model_topology": 1,
+        "deterministic_shared_saint_chain_binding": 1,
+        "deterministic_shared_saint_constraint_topology": 1
+      },
+      "topology_only_marker_counts": {
+        "final_hop_order_canonicalization": 1
+      }
+    },
+    "generic_r26": {
+      "lane_counts": {
+        "generic_compatibility": 107,
+        "no_fallback": 1
+      },
+      "adapter_marker_counts": {},
+      "topology_only_marker_counts": {
+        "final_hop_order_canonicalization": 1
+      }
+    }
+  },
+  "decision": "Phase 2 is complete. Fusion improves matched generic-only Answer F1 and coverage with final unsupported unchanged at zero. Proceed to phase 3 component ablations, repeated runs, and matched modern baselines."
+}

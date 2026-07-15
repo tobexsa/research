@@ -486,6 +486,327 @@ class TargetSlotBinderTests(unittest.TestCase):
         self.assertFalse(decision.accepted)
         self.assertEqual("mouth_watercourse_downstream_continuation", decision.reason)
 
+    def test_candidate_specific_relation_alias_accepts_maria_when_full_chain_is_supported(self) -> None:
+        sample = Sample(
+            "2hop__247353_55227",
+            "Who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?",
+            "Maria Bello",
+        )
+        ledger = SlotLedger(build_slot_plan(sample))
+        evidence_ids = [
+            "2hop__247353_55227::p6",
+            "2hop__247353_55227::p17",
+        ]
+        result = SlotBindingResult(
+            slot_name="final_target",
+            supports_slot=True,
+            bound_value="Maria Bello",
+            evidence_ids=evidence_ids,
+            slot_relation_match=True,
+            answer_type_match=True,
+            candidate_roles=[
+                CandidateRoleLabel(
+                    candidate="Maria Bello",
+                    role="final_answer",
+                    relation_to_question="correct",
+                )
+            ],
+            slot_entailment=SlotBoundEntailmentResult(
+                candidate="Maria Bello",
+                evidence_ids=evidence_ids,
+                entails_answer=True,
+            ),
+            set_level_sufficiency=SetLevelSufficiencyResult(
+                final_slot_covered=True,
+                all_required_hops_covered=True,
+                conflict_on_final_slot=False,
+            ),
+            ordered_hop_binding=OrderedHopBindingResult(
+                final_hop_index=2,
+                final_relation="performed_by",
+                final_relation_object="Maria Bello",
+                candidate_is_final_relation_object=True,
+                missing_critical_hops=[],
+                bound_bridge_values=["Kevin James", "Sally"],
+                chain_complete=True,
+            ),
+        )
+
+        decision = validate_slot_binding_result(
+            sample,
+            [
+                Passage(evidence_ids[0], "Here Comes the Boom", "Kevin James co-wrote the film."),
+                Passage(evidence_ids[1], "Grown Ups", "Maria Bello plays Sally, Kevin James's wife."),
+            ],
+            ledger,
+            result,
+            structured_acceptance=True,
+            ordered_hop_gate=True,
+        )
+
+        self.assertTrue(decision.accepted)
+        self.assertEqual("structured_final_slot_acceptance", decision.reason)
+
+    def test_performed_by_relation_alias_accepts_deterministic_maria_binding(self) -> None:
+        sample = Sample(
+            "2hop__247353_55227",
+            "Who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?",
+            "Maria Bello",
+        )
+        ledger = SlotLedger(build_slot_plan(sample))
+        evidence_ids = [
+            "2hop__247353_55227::p6",
+            "2hop__247353_55227::p17",
+        ]
+        result = SlotBindingResult(
+            slot_name="final_target",
+            supports_slot=True,
+            bound_value="Maria Bello",
+            evidence_ids=evidence_ids,
+            slot_relation_match=True,
+            answer_type_match=True,
+            reason="deterministic_cast_relation_binding",
+            candidate_roles=[
+                CandidateRoleLabel(
+                    candidate="Maria Bello",
+                    role="final_answer",
+                    relation_to_question="performed_by",
+                )
+            ],
+            slot_entailment=SlotBoundEntailmentResult(
+                candidate="Maria Bello",
+                evidence_ids=evidence_ids,
+                entails_answer=True,
+            ),
+            set_level_sufficiency=SetLevelSufficiencyResult(
+                final_slot_covered=True,
+                all_required_hops_covered=True,
+                conflict_on_final_slot=False,
+            ),
+            ordered_hop_binding=OrderedHopBindingResult(
+                final_hop_index=2,
+                final_relation="performed_by",
+                final_relation_object="Maria Bello",
+                candidate_is_final_relation_object=True,
+                missing_critical_hops=[],
+                bound_bridge_values=["Kevin James", "Sally"],
+                chain_complete=True,
+            ),
+        )
+
+        decision = validate_slot_binding_result(
+            sample,
+            [
+                Passage(evidence_ids[0], "Here Comes the Boom", "Kevin James co-wrote the film."),
+                Passage(
+                    evidence_ids[1],
+                    "Grown Ups",
+                    "Eric (Kevin James) is disappointed in his wife Sally (Maria Bello).",
+                ),
+            ],
+            ledger,
+            result,
+            structured_acceptance=True,
+            ordered_hop_gate=True,
+        )
+
+        self.assertTrue(decision.accepted)
+        self.assertEqual("structured_final_slot_acceptance", decision.reason)
+
+    def test_relation_alias_does_not_accept_nissan_with_empty_binding_and_incomplete_chain(self) -> None:
+        sample = Sample(
+            "2hop__132854_417697",
+            "Mohammed Atta has what kind of model of the company that makes Datsun Type 12?",
+            "Nissan Altima",
+        )
+        ledger = SlotLedger(build_slot_plan(sample))
+        result = SlotBindingResult(
+            slot_name="final_target",
+            supports_slot=False,
+            bound_value="",
+            evidence_ids=[],
+            slot_relation_match=False,
+            answer_type_match=True,
+            candidate_roles=[
+                CandidateRoleLabel(
+                    candidate="Nissan Altima",
+                    role="final_answer",
+                    relation_to_question="direct",
+                )
+            ],
+            slot_entailment=SlotBoundEntailmentResult(
+                candidate="",
+                evidence_ids=[
+                    "2hop__132854_417697::p6",
+                    "2hop__132854_417697::p10",
+                ],
+                entails_answer=False,
+            ),
+            set_level_sufficiency=SetLevelSufficiencyResult(
+                final_slot_covered=False,
+                all_required_hops_covered=False,
+                conflict_on_final_slot=False,
+            ),
+            ordered_hop_binding=OrderedHopBindingResult(
+                final_hop_index=1,
+                final_relation="model",
+                final_relation_object="Nissan Altima",
+                candidate_is_final_relation_object=True,
+                missing_critical_hops=["company_that_makes_Datsun_Type_12"],
+                bound_bridge_values=["Nissan"],
+                chain_complete=False,
+            ),
+        )
+
+        decision = validate_slot_binding_result(
+            sample,
+            [
+                Passage("2hop__132854_417697::p6", "Mohamed Atta", "Atta owned a Nissan Altima."),
+                Passage("2hop__132854_417697::p10", "Datsun Type 12", "The car was made by Nissan."),
+            ],
+            ledger,
+            result,
+            structured_acceptance=True,
+            ordered_hop_gate=True,
+        )
+
+        self.assertFalse(decision.accepted)
+        self.assertEqual("binding_verifier_rejected", decision.reason)
+
+    def test_candidate_specific_relation_alias_rejects_same_passage_person_distractor(self) -> None:
+        sample = Sample(
+            "2hop__247353_55227",
+            "Who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?",
+            "Maria Bello",
+        )
+        ledger = SlotLedger(build_slot_plan(sample))
+        evidence_ids = [
+            "2hop__247353_55227::p6",
+            "2hop__247353_55227::p17",
+        ]
+        result = SlotBindingResult(
+            slot_name="final_target",
+            supports_slot=True,
+            bound_value="Salma Hayek",
+            evidence_ids=evidence_ids,
+            slot_relation_match=True,
+            answer_type_match=True,
+            candidate_roles=[
+                CandidateRoleLabel(
+                    candidate="Salma Hayek",
+                    role="final_answer",
+                    relation_to_question="correct",
+                )
+            ],
+            slot_entailment=SlotBoundEntailmentResult(
+                candidate="Salma Hayek",
+                evidence_ids=evidence_ids,
+                entails_answer=True,
+            ),
+            set_level_sufficiency=SetLevelSufficiencyResult(
+                final_slot_covered=True,
+                all_required_hops_covered=True,
+                conflict_on_final_slot=False,
+            ),
+            ordered_hop_binding=OrderedHopBindingResult(
+                final_hop_index=2,
+                final_relation="performed_by",
+                final_relation_object="Salma Hayek",
+                candidate_is_final_relation_object=True,
+                missing_critical_hops=[],
+                bound_bridge_values=["Kevin James", "Sally"],
+                chain_complete=True,
+            ),
+        )
+
+        decision = validate_slot_binding_result(
+            sample,
+            [
+                Passage(evidence_ids[0], "Here Comes the Boom", "Kevin James co-wrote the film."),
+                Passage(
+                    evidence_ids[1],
+                    "Grown Ups",
+                    (
+                        "Lenny lives with his wife Roxanne (Salma Hayek). Eric (Kevin James) "
+                        "is disappointed in his wife Sally (Maria Bello)."
+                    ),
+                ),
+            ],
+            ledger,
+            result,
+            structured_acceptance=True,
+            ordered_hop_gate=True,
+        )
+
+        self.assertFalse(decision.accepted)
+        self.assertEqual("candidate_relation_not_supported", decision.reason)
+
+    def test_relation_alias_does_not_accept_oriole_without_entailment_or_complete_chain(self) -> None:
+        sample = Sample(
+            "3hop1__140786_2053_5289",
+            (
+                "What UK label was bought by the major broadcaster that, along with ABC and the "
+                "network of the show Just Men!?, is based in New York?"
+            ),
+            "Oriole Records",
+        )
+        ledger = SlotLedger(build_slot_plan(sample))
+        evidence_ids = [
+            "3hop1__140786_2053_5289::p5",
+            "3hop1__140786_2053_5289::p7",
+            "3hop1__140786_2053_5289::p17",
+        ]
+        result = SlotBindingResult(
+            slot_name="final_target",
+            supports_slot=False,
+            bound_value="Oriole Records",
+            evidence_ids=evidence_ids,
+            slot_relation_match=True,
+            answer_type_match=True,
+            candidate_roles=[
+                CandidateRoleLabel(
+                    candidate="Oriole Records",
+                    role="final_answer",
+                    relation_to_question="acquired",
+                )
+            ],
+            slot_entailment=SlotBoundEntailmentResult(
+                candidate="Oriole Records",
+                evidence_ids=evidence_ids,
+                entails_answer=False,
+            ),
+            set_level_sufficiency=SetLevelSufficiencyResult(
+                final_slot_covered=False,
+                all_required_hops_covered=False,
+                conflict_on_final_slot=False,
+            ),
+            ordered_hop_binding=OrderedHopBindingResult(
+                final_hop_index=3,
+                final_relation="acquired",
+                final_relation_object="Oriole Records",
+                candidate_is_final_relation_object=True,
+                missing_critical_hops=["major broadcaster based in New York"],
+                bound_bridge_values=["NBC"],
+                chain_complete=False,
+            ),
+        )
+
+        decision = validate_slot_binding_result(
+            sample,
+            [
+                Passage(evidence_ids[0], "Just Men!", "Just Men! aired on NBC."),
+                Passage(evidence_ids[1], "Oriole Records", "CBS acquired Oriole Records in the UK."),
+                Passage(evidence_ids[2], "New York broadcasting", "ABC, CBS, and NBC are based in New York."),
+            ],
+            ledger,
+            result,
+            structured_acceptance=True,
+            ordered_hop_gate=True,
+        )
+
+        self.assertFalse(decision.accepted)
+        self.assertEqual("binding_verifier_rejected", decision.reason)
+
     def test_target_slot_spec_names_answer_type_slot(self) -> None:
         date_spec = build_target_slot_spec(
             Sample("s1", "When was Example Treaty signed?", "June 1982")
@@ -504,6 +825,37 @@ class TargetSlotBinderTests(unittest.TestCase):
         self.assertEqual("count_value", count_spec.final_slot)
         self.assertEqual("person_name", person_spec.final_slot)
         self.assertEqual("location_name", location_spec.final_slot)
+
+    def test_final_interrogative_network_overrides_bridge_location_cue(self) -> None:
+        spec = build_target_slot_spec(
+            Sample(
+                "s5",
+                (
+                    "Country A has an embassy from the country that contains the bay where "
+                    "the city of General Santos is located. What network created country A's "
+                    "version of The Biggest Loser?"
+                ),
+                "NBC",
+            )
+        )
+
+        self.assertEqual("organization", spec.target_type)
+        self.assertEqual("organization_name", spec.final_slot)
+
+    def test_count_interrogative_is_not_overridden_by_nested_location_cue(self) -> None:
+        spec = build_target_slot_spec(
+            Sample(
+                "s6",
+                (
+                    "How many ethnic minorities were looked at differently in the city where "
+                    "the headquarters of the only group larger than the label is located?"
+                ),
+                "two",
+            )
+        )
+
+        self.assertEqual("count", spec.target_type)
+        self.assertEqual("count_value", spec.final_slot)
 
 
 if __name__ == "__main__":

@@ -11,6 +11,20 @@ if TYPE_CHECKING:
     from .slot_binding_verifier import SlotBindingResult
 
 
+_FINAL_SLOT_RELATION_ALIASES = frozenset(
+    {
+        "acquired",
+        "correct",
+        "direct",
+        "model",
+        "named_after",
+        "performed_by",
+        "played by",
+        "portrayed by",
+    }
+)
+
+
 @dataclass(frozen=True)
 class TargetSlotSpec:
     target_type: str
@@ -151,6 +165,11 @@ def _ordered_hop_rejection_reason(
             return "mouth_watercourse_downstream_continuation"
         if _ordered_relation_depth_mismatch(sample, binding_result):
             return "ordered_relation_depth_mismatch"
+        if (
+            _uses_generic_candidate_relation(binding_result)
+            and not candidate_specific_relation_supported(sample, evidence, binding_result)
+        ):
+            return "candidate_relation_not_supported"
         if not ordered.candidate_is_final_relation_object:
             if _ordered_hop_nonfatal_reason(binding_result):
                 return ""
@@ -160,9 +179,7 @@ def _ordered_hop_rejection_reason(
     if not candidate_roles:
         return "missing_candidate_role"
     final_role = any(
-        role.role == "final_answer"
-        and role.relation_to_question == "fills_final_slot"
-        and (not value or role.candidate.strip().lower() == value)
+        _candidate_role_fills_final_slot(role, binding_result)
         for role in candidate_roles
     )
     if not final_role:
@@ -174,6 +191,47 @@ def _ordered_hop_rejection_reason(
     if binding_result.set_level_sufficiency.conflict_on_final_slot:
         return "final_slot_conflict"
     return ""
+
+
+def candidate_specific_relation_supported(
+    sample: Sample,
+    evidence: list[Passage],
+    binding_result: "SlotBindingResult",
+) -> bool:
+    del sample
+    candidate = _normalize(binding_result.bound_value)
+    ordered = binding_result.ordered_hop_binding
+    relation = _normalize(ordered.final_relation or binding_result.question_slot.target_relation)
+    bridges = [_normalize(value) for value in ordered.bound_bridge_values if _normalize(value)]
+    if not candidate or not bridges:
+        return False
+    final_subject = bridges[-1]
+    cited_ids = set(binding_result.evidence_ids)
+    cited_texts = [
+        _normalize(f"{passage.title} {passage.text}")
+        for passage in evidence
+        if passage.passage_id in cited_ids
+    ]
+    if relation in {"performed_by", "performed by", "played by", "portrayed by"}:
+        candidate_pattern = re.escape(candidate)
+        subject_pattern = re.escape(final_subject)
+        patterns = [
+            rf"\b{subject_pattern}\b\s*\(\s*{candidate_pattern}\s*\)",
+            rf"\b{candidate_pattern}\b.{{0,80}}\b(?:plays|played|portrays|portrayed)\b.{{0,80}}\b{subject_pattern}\b",
+            rf"\b{subject_pattern}\b.{{0,80}}\b(?:played|portrayed|performed)\s+by\b.{{0,40}}\b{candidate_pattern}\b",
+        ]
+        return any(re.search(pattern, text) for text in cited_texts for pattern in patterns)
+    return False
+
+
+def _uses_generic_candidate_relation(binding_result: "SlotBindingResult") -> bool:
+    value = _normalize(binding_result.bound_value)
+    return any(
+        role.role == "final_answer"
+        and _normalize(role.relation_to_question) == "correct"
+        and _normalize(role.candidate) == value
+        for role in binding_result.candidate_roles
+    )
 
 
 def _mouth_watercourse_bridge_evidence_only(
@@ -278,9 +336,7 @@ def _strong_final_slot_signal(binding_result: "SlotBindingResult") -> bool:
     if not value:
         return False
     has_final_role = any(
-        role.role == "final_answer"
-        and role.relation_to_question == "fills_final_slot"
-        and (not role.candidate.strip() or role.candidate.strip().lower() == value)
+        _candidate_role_fills_final_slot(role, binding_result)
         for role in binding_result.candidate_roles
     )
     if not has_final_role:
@@ -301,9 +357,7 @@ def _structured_final_slot_supported(binding_result: "SlotBindingResult") -> boo
         return False
     value = binding_result.bound_value.strip().lower()
     has_final_role = any(
-        role.role == "final_answer"
-        and role.relation_to_question == "fills_final_slot"
-        and (not value or role.candidate.strip().lower() == value)
+        _candidate_role_fills_final_slot(role, binding_result)
         for role in binding_result.candidate_roles
     )
     if not has_final_role:
@@ -319,20 +373,91 @@ def _structured_final_slot_supported(binding_result: "SlotBindingResult") -> boo
     return True
 
 
+def _candidate_role_fills_final_slot(role, binding_result: "SlotBindingResult") -> bool:
+    if role.role != "final_answer":
+        return False
+    value = binding_result.bound_value.strip().lower()
+    candidate = role.candidate.strip().lower()
+    relation = role.relation_to_question.strip().lower()
+    if relation == "fills_final_slot":
+        return not value or candidate == value
+    if relation not in _FINAL_SLOT_RELATION_ALIASES:
+        return False
+    ordered = binding_result.ordered_hop_binding
+    sufficiency = binding_result.set_level_sufficiency
+    entailment = binding_result.slot_entailment
+    return bool(
+        value
+        and candidate == value
+        and binding_result.slot_name == "final_target"
+        and binding_result.supports_slot
+        and binding_result.slot_relation_match
+        and binding_result.answer_type_match
+        and binding_result.evidence_ids
+        and ordered.candidate_is_final_relation_object
+        and ordered.chain_complete
+        and not ordered.missing_critical_hops
+        and entailment.entails_answer
+        and entailment.candidate.strip().lower() == value
+        and sufficiency.final_slot_covered
+        and sufficiency.all_required_hops_covered
+        and not sufficiency.conflict_on_final_slot
+    )
+
+
 def _classify_target_type(normalized_question: str) -> str:
-    if normalized_question.startswith("when ") or " what day " in f" {normalized_question} " or "what date" in normalized_question:
+    # Multi-hop questions often mention an earlier bridge relation such as
+    # "located" before asking a final sentence like "What network ...?".
+    # Classify the most specific interrogative cue, not every cue in the
+    # bridge clauses.
+    interrogatives: tuple[tuple[str, str], ...] = (
+        ("what century", "century"),
+        ("which century", "century"),
+        ("what year", "year"),
+        ("which year", "year"),
+        ("what date", "date"),
+        ("which date", "date"),
+        ("what day", "date"),
+        ("which day", "date"),
+        ("how many", "count"),
+        ("how much", "count"),
+        ("what population", "population"),
+        ("which population", "population"),
+        ("what network", "organization"),
+        ("which network", "organization"),
+        ("what company", "organization"),
+        ("which company", "organization"),
+        ("what organization", "organization"),
+        ("which organization", "organization"),
+        ("what broadcaster", "organization"),
+        ("which broadcaster", "organization"),
+        ("what label", "organization"),
+        ("which label", "organization"),
+        ("what city", "location"),
+        ("which city", "location"),
+        ("what country", "location"),
+        ("which country", "location"),
+        ("what location", "location"),
+        ("which location", "location"),
+        ("what place", "location"),
+        ("which place", "location"),
+    )
+    matches = [
+        (normalized_question.rfind(cue), target_type)
+        for cue, target_type in interrogatives
+        if normalized_question.rfind(cue) >= 0
+    ]
+    if matches:
+        return max(matches, key=lambda item: item[0])[1]
+    if normalized_question.startswith("when "):
         return "date"
-    if "what year" in normalized_question:
-        return "year"
-    if "what century" in normalized_question:
-        return "century"
-    if "population" in normalized_question:
-        return "population"
-    if normalized_question.startswith("how many ") or "how much" in normalized_question:
-        return "count"
     if normalized_question.startswith("who ") or " who " in f" {normalized_question} ":
         return "person"
-    if normalized_question.startswith("where ") or " located" in normalized_question:
+    if normalized_question.startswith("where "):
+        return "location"
+    if "population" in normalized_question:
+        return "population"
+    if " located" in normalized_question:
         return "location"
     return "entity"
 

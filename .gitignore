@@ -3,6 +3,7 @@ model/
 datasets/data/
 datasets/*.zip
 .tmp/
+.worktrees/
 papers/*.pdf
 
 # Runtime launch logs and process files.

@@ -6,7 +6,8 @@ from mvp_agentic_rag.repair_planner import (
     RepairPlannerInput,
     RepairTarget,
 )
-from mvp_agentic_rag.schemas import Sample, VerifierOutput
+from mvp_agentic_rag.schemas import Passage, Sample, VerifierOutput
+from mvp_agentic_rag.slot_execution_state import SlotExecutionState
 
 
 def test_repair_target_carries_risk_fields() -> None:
@@ -58,6 +59,26 @@ def test_planner_ignores_non_repair_decision_head() -> None:
     assert plan.started is False
     assert plan.action == ""
     assert plan.to_metadata() == {}
+
+
+def test_execution_state_input_is_observation_only() -> None:
+    sample = Sample("s1", "Who founded X?", "Ada")
+    verifier = VerifierOutput(claims=[], overall_sufficiency="sufficient", need_more_evidence=False)
+    slot_metadata = {"slot_binding_verifier_result": {"decision_head": {"action": "answer"}}}
+
+    without_state = RepairPlanner().plan(
+        RepairPlannerInput(sample=sample, verifier_output=verifier, slot_metadata=slot_metadata)
+    )
+    with_state = RepairPlanner().plan(
+        RepairPlannerInput(
+            sample=sample,
+            verifier_output=verifier,
+            slot_metadata=slot_metadata,
+            execution_state=SlotExecutionState.empty(sample.sample_id),
+        )
+    )
+
+    assert with_state == without_state
 
 
 def test_refine_parse_failure_can_fallback_to_planner_repair_target() -> None:
@@ -545,6 +566,137 @@ def test_timor_leste_president_suggested_query_overrides_valid_indonesia_preside
     assert metadata["repair_next_query"] == "Who is the president of East Timor?"
     assert "indonesia" not in metadata["repair_next_query"].lower()
     assert "birthplace" not in metadata["repair_next_query"].lower()
+
+
+def test_timor_leste_evidence_state_advances_repeated_birthplace_repair_to_final_hop() -> None:
+    sample = Sample(
+        "3hop1__144439_443779_52195",
+        (
+            "who is the president of newly declared independent country of the country of the birthplace "
+            "of Mulham Arufin-Timor Leste Commission of Truth and Friendship?"
+        ),
+        "Francisco Guterres",
+    )
+    verifier = VerifierOutput(
+        claims=[],
+        overall_sufficiency="insufficient",
+        need_more_evidence=True,
+        suggested_query="Where was Mulham Arufin born?",
+    )
+    slot_metadata = {
+        "slot_binding_verifier_result": {
+            "decision_head": {"action": "ordered_hop_repair"},
+            "repair_target": {
+                "anchor_entity": "Mulham Arufin",
+                "target_relation": "birth",
+                "missing_hop": "country",
+                "single_hop_query": "What is the country of birth of Mulham Arufin?",
+                "expected_answer_type": "person",
+            },
+            "ordered_hop_binding": {
+                "bound_bridge_values": ["East Timor"],
+                "missing_critical_hops": ["birthplace_of", "country_of"],
+                "final_relation": "president_of",
+                "required_hops": [],
+            },
+        }
+    }
+    retrieved = [
+        Passage(
+            "3hop1__144439_443779_52195::p2",
+            "Mulham Arufin",
+            "Mulham Arufin is an Indonesian footballer.",
+        ),
+        Passage(
+            "3hop1__144439_443779_52195::p7",
+            "Indonesia-Timor Leste Commission of Truth and Friendship",
+            "The commission was established jointly by Indonesia and East Timor.",
+        ),
+    ]
+
+    metadata = RepairPlanner().plan(
+        RepairPlannerInput(
+            sample=sample,
+            verifier_output=verifier,
+            slot_metadata=slot_metadata,
+            retrieved_passages=retrieved,
+            current_query="What is the birthplace of Mulham Arufin?",
+            round_idx=2,
+            budget_remaining=1,
+        )
+    ).to_metadata()
+    first_round_metadata = RepairPlanner().plan(
+        RepairPlannerInput(
+            sample=sample,
+            verifier_output=verifier,
+            slot_metadata=slot_metadata,
+            retrieved_passages=retrieved,
+            current_query=sample.question,
+            round_idx=1,
+            budget_remaining=2,
+        )
+    ).to_metadata()
+
+    assert metadata["repair_target_valid"] is True
+    assert metadata["repair_planner_replanned"] is True
+    assert metadata["repair_planner_replan_strategy"] == "timor_leste_president_evidence_state"
+    assert metadata["repair_target_anchor_entity"] == "East Timor"
+    assert metadata["repair_target_target_relation"] == "president"
+    assert metadata["repair_next_query"] == "East Timor president"
+    assert first_round_metadata["repair_next_query"] != "East Timor president"
+
+
+def test_model_chain_evidence_state_replans_to_owner_model_query() -> None:
+    sample = Sample(
+        "2hop__132854_417697",
+        "Mohammed Atta has what kind of model of the company that makes Datsun Type 12?",
+        "Nissan Altima",
+    )
+    verifier = VerifierOutput(
+        claims=[],
+        overall_sufficiency="insufficient",
+        need_more_evidence=True,
+        suggested_query="What company is associated with Mohammed Atta and produces the Datsun Type 12?",
+    )
+    slot_metadata = {
+        "slot_binding_verifier_result": {
+            "decision_head": {"action": "refine_query"},
+            "typed_reject_category": "verifier_parse_failure",
+            "repair_target": {
+                "anchor_entity": "Mohammed Atta",
+                "target_relation": "has_model_of_company",
+                "missing_hop": "company_that_makes_Datsun_Type_12",
+                "expected_answer_type": "entity",
+                "single_hop_query": "What company makes the Datsun Type 12?",
+            },
+        }
+    }
+
+    metadata = RepairPlanner().plan(
+        RepairPlannerInput(
+            sample=sample,
+            verifier_output=verifier,
+            slot_metadata=slot_metadata,
+            retrieved_passages=[
+                Passage(
+                    "2hop__132854_417697::p10",
+                    "Datsun Type 12",
+                    "The 1933 Datsun Type 12 was a small car produced by the Nissan corporation.",
+                )
+            ],
+            current_query=sample.question,
+            query_history=[sample.question],
+            budget_remaining=2,
+            config={"repair_planner_refine_fallback_v1": True},
+        )
+    ).to_metadata()
+
+    assert metadata["repair_started"] is True
+    assert metadata["repair_target_valid"] is True
+    assert metadata["repair_next_query"] == "What model of Nissan does Mohammed Atta have?"
+    assert metadata["repair_target_anchor_entity"] == "Mohammed Atta"
+    assert metadata["repair_target_target_relation"] == "model"
+    assert metadata["repair_planner_replan_strategy"] == "model_chain_evidence_state"
 
 
 def test_missing_claim_parser_replans_under_specified_query() -> None:

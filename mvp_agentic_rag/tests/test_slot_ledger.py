@@ -25,6 +25,31 @@ class SlotLedgerTests(unittest.TestCase):
         self.assertEqual("person", plan.final_target_type)
         self.assertEqual("final_target", plan.final_slot)
 
+    def test_network_final_question_is_not_overridden_by_bridge_location(self) -> None:
+        plan = build_slot_plan(
+            Sample(
+                "s-network",
+                (
+                    "Country A contains the bay where General Santos is located. "
+                    "What network created country A's version of The Biggest Loser?"
+                ),
+                "NBC",
+            )
+        )
+
+        self.assertEqual("network", plan.final_target_type)
+
+    def test_count_final_question_is_not_overridden_by_nested_location(self) -> None:
+        plan = build_slot_plan(
+            Sample(
+                "s-count",
+                "How many groups were discussed in the city where the label is located?",
+                "two",
+            )
+        )
+
+        self.assertEqual("count", plan.final_target_type)
+
     def test_binds_supported_final_target_claim_to_final_slot(self) -> None:
         sample = _sample("When did the rapper release Best Day Ever?")
         ledger = SlotLedger(build_slot_plan(sample))

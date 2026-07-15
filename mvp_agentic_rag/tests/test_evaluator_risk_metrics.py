@@ -400,12 +400,7 @@ class EvaluatorRiskMetricsTests(unittest.TestCase):
                     }
                 },
                 "cost": {"retrieval_calls": 1},
-                "trajectory": [
-                    {
-                        "retrieved_ids": ["p8", "p9", "p10"],
-                        "preserved_final_candidate": "22",
-                    }
-                ],
+                "trajectory": [{"retrieved_ids": ["p8", "p9", "p10"]}],
             },
             {
                 "id": "2hop__support_missing",
@@ -425,8 +420,8 @@ class EvaluatorRiskMetricsTests(unittest.TestCase):
         self.assertEqual(
             {
                 "count": 1,
-                "eligible_count": 4,
-                "rate": 0.25,
+                "eligible_count": 3,
+                "rate": 1 / 3,
                 "sample_ids": ["2hop__no_candidate"],
             },
             slices["all_support_retrieved_no_candidate"],

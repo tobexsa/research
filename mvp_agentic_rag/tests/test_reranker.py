@@ -40,3 +40,54 @@ class RerankerTests(unittest.TestCase):
             results = retriever.search("alpha answer", top_k=1)
 
         self.assertEqual(results[0].passage_id, "p2")
+
+    def test_dense_retriever_caches_identical_reranked_searches(self):
+        corpus = {
+            "p1": Passage("p1", "A", "alpha answer"),
+            "p2": Passage("p2", "B", "beta answer"),
+        }
+
+        class CountingEncoder:
+            def __init__(self):
+                self.calls = 0
+
+            def encode(self, texts):
+                import numpy as np
+
+                self.calls += 1
+                return np.ones((len(texts), 2), dtype="float32")
+
+        class CountingIndex:
+            def __init__(self):
+                self.calls = 0
+
+            def search(self, vector, top_k):
+                import numpy as np
+
+                self.calls += 1
+                return np.array([[2.0, 1.0]], dtype="float32"), np.array([[0, 1]])
+
+        class CountingReranker:
+            def __init__(self):
+                self.calls = 0
+
+            def rerank(self, query, passages, top_k):
+                self.calls += 1
+                return passages[:top_k]
+
+        retriever = DenseRetriever.__new__(DenseRetriever)
+        retriever.corpus = corpus
+        retriever.passage_ids = ["p1", "p2"]
+        retriever.rerank_top_n = 2
+        retriever.encoder = CountingEncoder()
+        retriever.index = CountingIndex()
+        retriever.reranker = CountingReranker()
+        retriever._search_cache = {}
+
+        first = retriever.search("alpha", top_k=1)
+        second = retriever.search("alpha", top_k=1)
+
+        self.assertEqual(first, second)
+        self.assertEqual(retriever.encoder.calls, 1)
+        self.assertEqual(retriever.index.calls, 1)
+        self.assertEqual(retriever.reranker.calls, 1)

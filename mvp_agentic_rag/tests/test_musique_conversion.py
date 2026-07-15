@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from mvp_agentic_rag.musique import build_balanced_mvp, build_stratified_subset
+from mvp_agentic_rag.musique import build_balanced_mvp, build_hop_proxy_splits, build_stratified_subset
 
 
 class MusiqueConversionTests(unittest.TestCase):
@@ -84,3 +84,110 @@ class MusiqueConversionTests(unittest.TestCase):
             [sample["id"] for sample in subset],
             ["2hop__0", "2hop__1", "3hop__0", "3hop__1", "4hop__0", "4hop__1"],
         )
+
+    def test_builds_2hop_proxy_splits_without_gold_decomposition_or_corpus_labels(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = root / "musique_ans_v1.0_dev.jsonl"
+            records = []
+            for sample_id in (
+                "2hop__1_2",
+                "2hop__2_3",
+                "2hop__4_5",
+                "2hop__6_7",
+                "2hop__8_9",
+                "2hop__10_11",
+            ):
+                records.append(
+                    {
+                        "id": sample_id,
+                        "question": f"Question {sample_id}?",
+                        "answer": f"Answer {sample_id}",
+                        "answer_aliases": [f"Alias {sample_id}"],
+                        "answerable": True,
+                        "question_decomposition": [
+                            {"id": sample_id.split("__", 1)[1].split("_")[0], "answer": "bridge"}
+                        ],
+                        "paragraphs": [
+                            {
+                                "idx": 0,
+                                "title": f"Support A {sample_id}",
+                                "paragraph_text": "First supporting paragraph.",
+                                "is_supporting": True,
+                            },
+                            {
+                                "idx": 1,
+                                "title": f"Support B {sample_id}",
+                                "paragraph_text": "Second supporting paragraph.",
+                                "is_supporting": True,
+                            },
+                            {
+                                "idx": 2,
+                                "title": f"Distractor {sample_id}",
+                                "paragraph_text": "Distractor paragraph.",
+                                "is_supporting": False,
+                            },
+                        ],
+                    }
+                )
+            records.append(
+                {
+                    "id": "3hop__100_101_102",
+                    "question": "Wrong hop?",
+                    "answer": "Wrong",
+                    "answerable": True,
+                    "paragraphs": [
+                        {"idx": idx, "title": "T", "paragraph_text": "P", "is_supporting": idx < 2}
+                        for idx in range(3)
+                    ],
+                }
+            )
+            source.write_text(
+                "\n".join(json.dumps(record) for record in records) + "\n",
+                encoding="utf-8",
+            )
+
+            summary = build_hop_proxy_splits(
+                source,
+                root / "proxy",
+                split_sizes={"smoke": 1, "dev": 2, "test": 2},
+                seed=7,
+                hop=2,
+                min_paragraphs=3,
+                max_paragraphs=3,
+            )
+
+            split_records = {}
+            for split in ("smoke", "dev", "test"):
+                split_records[split] = [
+                    json.loads(line)
+                    for line in (root / "proxy" / f"{split}.jsonl").read_text(encoding="utf-8").splitlines()
+                ]
+            corpus = [
+                json.loads(line)
+                for line in (root / "proxy" / "corpus.jsonl").read_text(encoding="utf-8").splitlines()
+            ]
+            manifest = json.loads((root / "proxy" / "manifest.json").read_text(encoding="utf-8"))
+
+        self.assertEqual(summary["samples_written"], 5)
+        self.assertEqual(summary["split_counts"], {"smoke": 1, "dev": 2, "test": 2})
+        self.assertEqual(manifest["hop"], 2)
+        self.assertEqual(manifest["gold_decomposition_in_model_facing_samples"], False)
+        self.assertEqual({record["hop"] for records in split_records.values() for record in records}, {2})
+        self.assertFalse(
+            any("question_decomposition" in record["metadata"] for records in split_records.values() for record in records)
+        )
+        self.assertFalse(any("is_supporting" in passage.get("metadata", {}) for passage in corpus))
+        self.assertEqual(len(corpus), 15)
+
+        dev_parts = {
+            part
+            for record in split_records["dev"]
+            for part in record["id"].split("__", 1)[1].split("_")
+        }
+        test_parts = {
+            part
+            for record in split_records["test"]
+            for part in record["id"].split("__", 1)[1].split("_")
+        }
+        self.assertFalse(dev_parts & test_parts)

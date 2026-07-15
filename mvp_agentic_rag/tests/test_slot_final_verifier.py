@@ -44,6 +44,8 @@ class SlotFinalVerifierTests(unittest.TestCase):
         prompt_text = "\n".join(message["content"] for message in client.calls[0])
         self.assertIn("narrow slot-aware final verifier", prompt_text)
         self.assertIn("Do not re-verify the full multi-hop chain", prompt_text)
+        self.assertIn("typed binding certificate", prompt_text)
+        self.assertIn("Do not reject solely because a bridge hop is not restated", prompt_text)
         self.assertIn("Final-target evidence only", prompt_text)
 
     def test_non_json_slot_final_verifier_uses_fallback(self) -> None:

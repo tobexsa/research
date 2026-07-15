@@ -82,12 +82,18 @@ def _tokens(text: str) -> list[str]:
 
 
 def _compact_century(text: str) -> str:
-    return re.sub(
+    compact = re.sub(
         r"\b(\d{1,2}(?:st|nd|rd|th))\s+century\b",
         r"\1",
         str(text or "").strip(),
         flags=re.IGNORECASE,
     )
+    match = re.fullmatch(
+        r"(\d{1,2}(?:st|nd|rd|th))[\s.,;:!?]*",
+        compact,
+        flags=re.IGNORECASE,
+    )
+    return match.group(1) if match else compact
 
 
 def _strip_type_prefix(tokens: list[str]) -> list[str]:
