@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import inspect
+from dataclasses import replace
 
 import pytest
 
@@ -16,9 +17,10 @@ from mvp_agentic_rag.state_controller import (
 )
 from mvp_agentic_rag.agents.claim_risk_agent import (
     ClaimRiskAgent,
+    _critical_ancestor_closure_complete,
     _structured_binding_supports_final_acceptance,
 )
-from mvp_agentic_rag.schemas import Sample, VerifierOutput
+from mvp_agentic_rag.schemas import ClaimAssessment, Sample, VerifierOutput
 from mvp_agentic_rag.schemas import Passage
 from mvp_agentic_rag.slot_binding_verifier import (
     OrderedHopBindingResult,
@@ -326,10 +328,12 @@ def _fusion_agent() -> ClaimRiskAgent:
 
 def test_fusion_generic_lane_preserves_legacy_terminal_action() -> None:
     agent = _fusion_agent()
+    binding = _surface_binding("Person X", "person", "p2")
 
     action, metadata = agent._apply_state_controller_terminal(
         "answer",
         state=_state(
+            missing=False,
             topology_diagnostic={
                 "primary_reason": "required_hops_present",
                 "secondary_reasons": [],
@@ -337,11 +341,228 @@ def test_fusion_generic_lane_preserves_legacy_terminal_action() -> None:
         ),
         repair_metadata={},
         budget_remaining=1,
+        preterminal_metadata={
+            "controller_policy_v1_original_action": "answer",
+        },
+        verifier_output=VerifierOutput(
+            claims=[
+                ClaimAssessment(
+                    claim="Person X",
+                    status="supported",
+                    evidence_ids=["p2"],
+                    is_critical=True,
+                )
+            ],
+            overall_sufficiency="sufficient",
+            need_more_evidence=False,
+        ),
+        binding_result=binding,
+        local_evidence_ids={"p2"},
     )
 
     assert action == "answer"
     assert metadata["semantic_fusion_lane"] == "generic_compatibility"
     assert metadata["state_controller_terminal_guard"] is False
+
+
+def test_fusion_generic_lane_blocks_r28_unsupported_terminal_handoff() -> None:
+    agent = _fusion_agent()
+    binding = SlotBindingResult(
+        supports_slot=False,
+        bound_value="",
+        evidence_ids=[],
+        slot_relation_match=False,
+        answer_type_match=False,
+        ordered_hop_binding=OrderedHopBindingResult(
+            required_hops=[
+                RequiredHopBinding(
+                    hop_index=1,
+                    hop_id="required_hop_1",
+                    subject="Company A",
+                    relation="located in",
+                    object="City A",
+                    status="bound",
+                    is_final_hop=False,
+                    supporting_evidence_ids=["p1"],
+                ),
+                RequiredHopBinding(
+                    hop_index=2,
+                    hop_id="required_hop_2",
+                    subject="City A",
+                    relation="founded by",
+                    object="",
+                    status="missing",
+                    is_final_hop=True,
+                    dependency_hop_ids=["required_hop_1"],
+                ),
+            ],
+            final_hop_index=2,
+            final_relation="founded by",
+            final_relation_object="",
+            candidate_is_final_relation_object=False,
+            missing_critical_hops=["required_hop_2"],
+            chain_complete=False,
+        ),
+        set_level_sufficiency=SetLevelSufficiencyResult(
+            final_slot_covered=False,
+            all_required_hops_covered=False,
+            missing_critical_hops=["required_hop_2"],
+            evidence_set_sufficient=False,
+        ),
+    )
+
+    action, metadata = agent._apply_state_controller_terminal(
+        "answer",
+        state=_state(
+            missing=True,
+            no_progress=2,
+            topology_diagnostic={
+                "primary_reason": "required_hops_present",
+                "secondary_reasons": [],
+            },
+        ),
+        repair_metadata={},
+        budget_remaining=0,
+        preterminal_metadata={
+            "controller_policy_v1_original_action": "abstain",
+        },
+        verifier_output=VerifierOutput(
+            claims=[
+                ClaimAssessment(
+                    claim="Person X",
+                    status="unclear",
+                    evidence_ids=[],
+                    missing_evidence="Verifier returned non-JSON after repair",
+                    is_critical=True,
+                )
+            ],
+            overall_sufficiency="unclear",
+            need_more_evidence=True,
+            risk_score=0.8,
+        ),
+        binding_result=binding,
+        local_evidence_ids={"p1"},
+    )
+
+    assert action == "abstain"
+    assert metadata["semantic_fusion_lane"] == "generic_compatibility"
+    assert metadata["state_controller_terminal_guard"] is True
+    assert metadata["state_controller_terminal_downgrade"] is True
+    assert set(metadata["state_controller_terminal_block_reasons"]) >= {
+        "controller_original_abstain",
+        "critical_gap",
+        "final_verifier_unclear_claim",
+        "final_verifier_needs_more_evidence",
+        "slot_binding_not_supported",
+        "final_slot_not_covered",
+        "critical_ancestor_closure_incomplete",
+    }
+
+
+def test_fusion_generic_lane_blocks_verified_final_with_unresolved_ancestor() -> None:
+    agent = _fusion_agent()
+    complete = _state(
+        missing=False,
+        topology_diagnostic={
+            "primary_reason": "required_hops_present",
+            "secondary_reasons": [],
+        },
+    )
+    upstream, downstream = complete.hops
+    broken = replace(
+        complete,
+        hops=(
+            replace(
+                upstream,
+                status="unresolved",
+                object_value="",
+                evidence_ids=(),
+            ),
+            downstream,
+        ),
+        first_critical_missing_hop_id="",
+        completed_hop_ids=("required_hop_2",),
+    )
+    binding = _surface_binding("Person X", "person", "p2")
+    binding = replace(
+        binding,
+        set_level_sufficiency=replace(
+            binding.set_level_sufficiency,
+            all_required_hops_covered=False,
+        ),
+    )
+
+    assert _critical_ancestor_closure_complete(broken) is False
+    action, metadata = agent._apply_state_controller_terminal(
+        "answer",
+        state=broken,
+        repair_metadata={},
+        budget_remaining=0,
+        preterminal_metadata={
+            "controller_policy_v1_original_action": "answer",
+        },
+        verifier_output=VerifierOutput(
+            claims=[
+                ClaimAssessment(
+                    claim="Person X",
+                    status="supported",
+                    evidence_ids=["p2"],
+                    is_critical=True,
+                )
+            ],
+            overall_sufficiency="sufficient",
+            need_more_evidence=False,
+        ),
+        binding_result=binding,
+        local_evidence_ids={"p2"},
+    )
+
+    assert action == "abstain"
+    assert "critical_ancestor_closure_incomplete" in metadata[
+        "state_controller_terminal_block_reasons"
+    ]
+
+
+def test_fusion_strict_certificate_keeps_complete_supported_answer() -> None:
+    agent = _fusion_agent()
+    binding = _surface_binding("Person X", "person", "p2")
+
+    action, metadata = agent._apply_state_controller_terminal(
+        "answer",
+        state=_state(
+            missing=False,
+            topology_diagnostic={
+                "primary_reason": "required_hops_present",
+                "secondary_reasons": [],
+                "deterministic_binding_applied": (
+                    "deterministic_shared_saint_constraint_topology"
+                ),
+            },
+        ),
+        repair_metadata={},
+        budget_remaining=0,
+        preterminal_metadata={
+            "controller_policy_v1_original_action": "abstain",
+        },
+        verifier_output=VerifierOutput(
+            claims=[
+                ClaimAssessment(
+                    claim="Person X",
+                    status="supported",
+                    evidence_ids=["p2"],
+                    is_critical=True,
+                )
+            ],
+            overall_sufficiency="sufficient",
+            need_more_evidence=False,
+        ),
+        binding_result=binding,
+        local_evidence_ids={"p2"},
+    )
+
+    assert action == "answer"
+    assert metadata["semantic_fusion_lane"] == "strict_certificate"
+    assert metadata["state_controller_terminal_guard"] is True
 
 
 def test_fusion_generic_lane_recovers_candidate_conflict_blocked_repair() -> None:

@@ -1,0 +1,45 @@
+{
+  "protocol_id": "semantic_nonleaking_musique_v1_20260716",
+  "purpose": "bounded_dev_execution_pilot_not_standard_dev_result",
+  "selection": "first opaque IDs per hop after sorting; labels used offline only",
+  "per_hop": 4,
+  "hop_counts": {
+    "2": 4,
+    "3": 4,
+    "4": 4
+  },
+  "runtime_rows": 12,
+  "label_rows": 12,
+  "corpus_rows": 240,
+  "source_assets": {
+    "runtime": {
+      "path": "data\\musique_standard_nonleaking_v1\\dev_runtime.jsonl",
+      "sha256": "E0C4B9A0A1B59999C53A96E0BCA323EA8EAB103CA064D4DE537E4C4D94329DA2",
+      "bytes": 2342627
+    },
+    "labels": {
+      "path": "data\\musique_standard_nonleaking_v1\\dev_labels.jsonl",
+      "sha256": "435D4B736A6E0E41FCAACDABB0E0DF506A5BB37F0CFCC7900836C4DEC8622150",
+      "bytes": 848682
+    },
+    "corpus": {
+      "path": "data\\musique_standard_nonleaking_v1\\dev_corpus.jsonl",
+      "sha256": "DF32B57B6545455D35EFE8940AFE1840FC7FFB956B743A83CFF88DF20CF2508F",
+      "bytes": 32767900
+    }
+  },
+  "outputs": {
+    "runtime": {
+      "path": "data\\musique_standard_nonleaking_v1_pilot12\\dev_pilot_runtime.jsonl",
+      "sha256": "BCB77328BD0DE352F2F6F03D58565EFA291EDCEACF647D30F15BC01F9B7F907C"
+    },
+    "labels": {
+      "path": "data\\musique_standard_nonleaking_v1_pilot12\\dev_pilot_labels.jsonl",
+      "sha256": "454DB3B333F464789B15774B0E889230628CA07928664027703C3DA47BA6C789"
+    },
+    "corpus": {
+      "path": "data\\musique_standard_nonleaking_v1_pilot12\\dev_pilot_corpus.jsonl",
+      "sha256": "56421F6B53BC4BED89C682598225B6989EF768F4C56BFFC938C23E8D02D6A47F"
+    }
+  }
+}

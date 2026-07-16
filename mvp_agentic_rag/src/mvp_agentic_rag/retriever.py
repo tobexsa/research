@@ -63,6 +63,34 @@ class LexicalRetriever:
         return self.search(sample.question, top_k)
 
 
+class ScopedLexicalRetriever:
+    """BM25-like retrieval restricted to runtime-safe per-question contexts."""
+
+    sample_aware = True
+
+    def __init__(self, corpus: dict[str, Passage]):
+        self.corpus = corpus
+        self._scoped: dict[tuple[str, ...], LexicalRetriever] = {}
+
+    def search(self, query: str, top_k: int) -> list[Passage]:
+        return LexicalRetriever(self.corpus).search(query, top_k)
+
+    def search_for_sample(self, sample: Sample, top_k: int, query: str | None = None) -> list[Passage]:
+        metadata = sample.metadata if isinstance(sample.metadata, dict) else {}
+        candidate_ids = tuple(
+            str(value)
+            for value in metadata.get("candidate_passage_ids", [])
+            if str(value) in self.corpus
+        )
+        if not candidate_ids:
+            raise ValueError("scoped_bm25 requires runtime-safe candidate_passage_ids")
+        scoped = self._scoped.get(candidate_ids)
+        if scoped is None:
+            scoped = LexicalRetriever({passage_id: self.corpus[passage_id] for passage_id in candidate_ids})
+            self._scoped[candidate_ids] = scoped
+        return scoped.search(query or sample.question, top_k)
+
+
 class OracleRetriever:
     sample_aware = True
 
@@ -212,6 +240,8 @@ def make_retriever(name: str, corpus: dict[str, Passage], config: dict | None = 
     normalized = name.lower()
     if normalized in {"bm25", "lexical"}:
         return LexicalRetriever(corpus)
+    if normalized in {"scoped_bm25", "scoped_lexical"}:
+        return ScopedLexicalRetriever(corpus)
     if normalized == "oracle":
         return OracleRetriever(corpus)
     if normalized == "dense":

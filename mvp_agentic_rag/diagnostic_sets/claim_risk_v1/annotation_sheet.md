@@ -1,0 +1,4731 @@
+# Claim-Risk Pilot Annotation Sheet
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__167577_31122::r1
+
+- sample_id: 2hop__167577_31122
+- risk_type: contradiction
+- oracle_action: disambiguate_conflict
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What century did the author of A Treatise Concerning the Principles of Human Knowledge live in?
+
+Gold answer: 18th
+
+Candidate answer: 18th century
+
+Claims:
+- c1: [contradicted] The author of A Treatise Concerning the Principles of Human Knowledge lived in the 18th century.
+
+Evidence:
+- 2hop__167577_31122::p10: A Treatise Concerning the Principles of Human Knowledge A Treatise Concerning the Principles of Human Knowledge (commonly called Treatise when referring to Berkeley's works) is a 1710 work, in English, by Irish Empiricist philosopher George Berkeley. This book largely seeks to refute the claims made by Berkeley's contemporary John Locke about the nature of human perception. Whilst, like all the Empiricist philosophers, both Locke and Berkeley agreed that we are having experiences, regardless of whether material objects exist, Berkeley sought to prove that the outside world (the world which causes the ideas one has within one's mind) is also composed "solely" of ideas. Berkeley did this by suggesting that "Ideas can only resemble Ideas" – the ment [truncated]
+- 2hop__167577_31122::p9: Humanism Eliot and her circle, who included her companion George Henry Lewes (the biographer of Goethe) and the abolitionist and social theorist Harriet Martineau, were much influenced by the positivism of Auguste Comte, whom Martineau had translated. Comte had proposed an atheistic culte founded on human principles – a secular Religion of Humanity (which worshiped the dead, since most humans who have ever lived are dead), complete with holidays and liturgy, modeled on the rituals of what was seen as a discredited and dilapidated Catholicism. Although Comte's English followers, like Eliot and Martineau, for the most part rejected the full gloomy panoply of his system, they liked the idea of a religio [truncated]
+- 2hop__167577_31122::p17: Humanism Religious humanism is an integration of humanist ethical philosophy with religious rituals and beliefs that centre on human needs, interests, and abilities. Though practitioners of religious humanism did not officially organise under the name of "humanism" until the late 19th and early 20th centuries, non-theistic religions paired with human-centred ethical philosophy have a long history. The Cult of Reason (French: Culte de la Raison) was a religion based on deism devised during the French Revolution by Jacques Hébert, Pierre Gaspard Chaumette and their supporters. In 1793 during the French Revolution, the cathedral Notre Dame de Paris was turned into a "Temple to Reason" and for a time Lad [truncated]
+
+Mining reason: `{"rule": "contradiction", "matched_fields": ["final_action", "trajectory[].verifier_output"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__136129_87694_124169::r2
+
+- sample_id: 3hop1__136129_87694_124169
+- risk_type: insufficient_evidence
+- oracle_action: abstain
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What year did the Governor of the city where the basilica named after the same saint as the one that Mantua Cathedral is dedicated to die?
+
+Gold answer: 1952
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Mantua Cathedral is dedicated to Saint Peter
+- c2: [supported] St. Peter's Basilica is named after Saint Peter
+- c3: [supported] The Governor of Vatican City died in 1952
+- c4: [supported] The city where St. Peter's Basilica is located is Vatican City
+
+Evidence:
+- 3hop1__603558_87694_124169::p12: St. Peter's Basilica The Papal Basilica of St. Peter in the Vatican (Italian: Basilica Papale di San Pietro in Vaticano), or simply St. Peter's Basilica (Latin: Basilica Sancti Petri), is an Italian Renaissance church in Vatican City, the papal enclave within the city of Rome.
+- 3hop1__136129_87694_124169::p9: St. Peter's Basilica The Papal Basilica of St. Peter in the Vatican (Italian: Basilica Papale di San Pietro in Vaticano), or simply St. Peter's Basilica (Latin: Basilica Sancti Petri), is an Italian Renaissance church in Vatican City, the papal enclave within the city of Rome.
+- 3hop1__135659_87694_64412::p0: St. Peter's Basilica The Papal Basilica of St. Peter in the Vatican (Italian: Basilica Papale di San Pietro in Vaticano), or simply St. Peter's Basilica (Latin: Basilica Sancti Petri), is an Italian Renaissance church in Vatican City, the papal enclave within the city of Rome.
+- 3hop1__135659_87694_64412::p18: Mantua Cathedral Mantua Cathedral () in Mantua, Lombardy, northern Italy, is a Roman Catholic cathedral dedicated to Saint Peter. It is the seat of the Bishop of Mantua.
+- 3hop1__136129_87694_124169::p19: Foligno Cathedral Foligno Cathedral () is a Roman Catholic cathedral situated on the Piazza della Repubblica in the center of Foligno, Italy. The cathedral, built on the site of an earlier basilica, is dedicated to the patron saint of the city, the martyr Felician of Foligno (San Feliciano), who was buried here in 251 AD. It is the seat of the Bishop of Foligno.
+
+Mining reason: `{"rule": "insufficient_evidence", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__128554_39743_24526::r3
+
+- sample_id: 3hop1__128554_39743_24526
+- risk_type: no_new_evidence
+- oracle_action: abstain
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What is the average winter daytime temperature in the region where Richmond is found, in the state where WIRR operates?
+
+Gold answer: upper 40s–lower 50s °F
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Richmond is located in Virginia
+- c2: [supported] WIRR operates in the state of Minnesota
+- c3: [supported] The average winter daytime temperature in the Piedmont region of Virginia is upper 40s–lower 50s °F (8–12 °C)
+
+Evidence:
+- 3hop1__128554_39743_24526::p6: Richmond, Virginia Richmond is located at 37°32′N 77°28′W﻿ / ﻿37.533°N 77.467°W﻿ / 37.533; -77.467 (37.538, −77.462). According to the United States Census Bureau, the city has a total area of 62 square miles (160 km2), of which 60 square miles (160 km2) is land and 2.7 square miles (7.0 km2) of it (4.3%) is water. The city is located in the Piedmont region of Virginia, at the highest navigable point of the James River. The Piedmont region is characterized by relatively low, rolling hills, and lies between the low, sea level Tidewater region and the Blue Ridge Mountains. Significant bodies of water in the region include the James River, the Appomattox River, and the Chickahominy River.
+- 3hop1__128554_39743_24526::p18: Richmond, Virginia The Greater Richmond area was named the third-best city for business by MarketWatch in September 2007, ranking behind only the Minneapolis and Denver areas and just above Boston. The area is home to six Fortune 500 companies: electric utility Dominion Resources; CarMax; Owens & Minor; Genworth Financial; MeadWestvaco; McKesson Medical-Surgical and Altria Group. However, only Dominion Resources and MeadWestvaco are headquartered within the city of Richmond; the others are located in the neighboring counties of Henrico and Hanover. In 2008, Altria moved its corporate HQ from New York City to Henrico County, adding another Fortune 500 corporation to Richmond's list. In February 2006, MeadWestva [truncated]
+- 4hop1__813171_153080_33897_81096::p1: Richmond, Virginia As of the census of 2000, there were 197,790 people, 84,549 households, and 43,627 families residing in the city. The population density was 3,292.6 people per square mile (1,271.3/km²). There were 92,282 housing units at an average density of 1,536.2 per square mile (593.1/km²). The racial makeup of the city was 38.3% White, 57.2% African American, 0.2% Native American, 1.3% Asian, 0.1% Pacific Islander, 1.5% from other races, and 1.5% from two or more races. Hispanic or Latino of any race were 2.6% of the population.
+- 3hop1__128554_39743_24526::p2: WIRR WIRR (90.9 FM) is a radio station licensed to Virginia, Minnesota, serving the Iron Range area. The station is owned by Minnesota Public Radio (MPR), and airs MPR's "Classical Music Network", originating from KSJN in Minneapolis/St. Paul.
+- 4hop3__794915_466199_695123_72134::p17: WIZE WIZE (1340 AM) — branded WIZE AM 1340 — is a commercial radio station in Springfield, Ohio owned by iHeartMedia, Inc. as part of their Dayton cluster. The station's main format is classic country targeted towards Springfield, and their transmitter - and former studios - are also located in Springfield.
+
+Mining reason: `{"rule": "no_new_evidence", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__249867_557232::r2
+
+- sample_id: 2hop__249867_557232
+- risk_type: repairable_missing_hop
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: Which country is the Desert Forest Golf Club located in?
+
+Gold answer: Maricopa County
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The Desert Forest Golf Club is located in Arizona.
+
+Evidence:
+- 4hop1__813171_153080_159767_81096::p2: Arizona Arizona ( (listen); Navajo: Hoozdo Hahoodzo Navajo pronunciation: [xòːztò xɑ̀xòːtsò]; O'odham: Alĭ ṣonak Uto-Aztecan pronunciation: [ˡaɺi ˡʂonak]) is a state in the southwestern region of the United States. It is also part of the Western and the Mountain states. It is the sixth largest and the 14th most populous of the 50 states. Its capital and largest city is Phoenix. Arizona shares the Four Corners region with Utah, Colorado, and New Mexico; its other neighboring states are Nevada and California to the west and the Mexican states of Sonora and Baja California to the south and southwest.
+- 4hop1__726152_153080_159767_81096::p0: Arizona Arizona ( (listen); Navajo: Hoozdo Hahoodzo Navajo pronunciation: [xòːztò xɑ̀xòːtsò]; O'odham: Alĭ ṣonak Uto-Aztecan pronunciation: [ˡaɺi ˡʂonak]) is a state in the southwestern region of the United States. It is also part of the Western and the Mountain states. It is the sixth largest and the 14th most populous of the 50 states. Its capital and largest city is Phoenix. Arizona shares the Four Corners region with Utah, Colorado, and New Mexico; its other neighboring states are Nevada and California to the west and the Mexican states of Sonora and Baja California to the south and southwest.
+- 4hop1__720201_153080_159767_81096::p16: Arizona Arizona ( (listen); Navajo: Hoozdo Hahoodzo Navajo pronunciation: [xòːztò xɑ̀xòːtsò]; O'odham: Alĭ ṣonak Uto-Aztecan pronunciation: [ˡaɺi ˡʂonak]) is a state in the southwestern region of the United States. It is also part of the Western and the Mountain states. It is the sixth largest and the 14th most populous of the 50 states. Its capital and largest city is Phoenix. Arizona shares the Four Corners region with Utah, Colorado, and New Mexico; its other neighboring states are Nevada and California to the west and the Mexican states of Sonora and Baja California to the south and southwest.
+- 2hop__249867_557232::p3: Desert Forest Golf Club Desert Forest Golf Club is a par-72 golf course and club located in Carefree, Arizona. The course is 7201 yards long and located underneath Black Mountain in the Sonoran desert.
+- 4hop1__131611_32392_823060_610794::p11: Ocean Forest Country Club Ocean Forest Country Club, also known as Ocean Forest Hotel and Country Club, is a historic country club and hotel located at Myrtle Beach in Horry County, South Carolina. The club and hotel were designed by an influential New York architect, Raymond Hood (1881-1934) and is an unusual example of Classical Revival architecture. Construction of the club began in 1926 and was completed in 1927. In addition to the hotel / club building, a 27-hole golf course was built in association with the club. It was designed by Robert White, a golf course designer and future president of the Professional Golfers' Association of America. The present 18-hole course dates to 1946.
+
+Mining reason: `{"rule": "repairable_missing_hop", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__144439_443779_52195::r2
+
+- sample_id: 3hop1__144439_443779_52195
+- risk_type: supported_answer
+- oracle_action: answer
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: who is the president of newly declared independent country of the country of the birthplace of Mulham Arufin–Timor Leste Commission of Truth and Friendship?
+
+Gold answer: Francisco Guterres
+
+Candidate answer: Francisco Guterres
+
+Claims:
+- c1: [supported] The president of the newly declared independent country of East Timor is Francisco Guterres.
+
+Evidence:
+- 3hop1__144439_443779_52195::p3: East Timor Democratic Republic of Timor - Leste Repúblika Demokrátika Timór Lorosa'e (Tetum) República Democrática de Timor - Leste (Portuguese) Flag Coat of arms Motto: Unidade, Acção, Progresso (Portuguese) Unidade, Asaun, Progresu (Tetum) (English: ``Unity, Action, Progress '') Anthem: Pátria (Portuguese) (English:`` Fatherland'') Capital and largest city Dili 8 ° 20 ′ S 125 ° 20 ′ E ﻿ / ﻿ 8.34 ° S 125.34 ° E ﻿ / - 8.34; 125.34 Coordinates: 8 ° 20 ′ S 125 ° 20 ′ E ﻿ / ﻿ 8.34 ° S 125.34 ° E ﻿ / - 8.34; 125.34 Official languages Tetum Portuguese National languages 15 languages (show) Atauru Baikeno Bekais Bunak Fataluku Galoli Habun Idalaka Kawaimina Kemak Makalero Makasae Makuva Mambai Tokodede Relig [truncated]
+- 3hop1__105767_443779_52195::p19: East Timor Democratic Republic of Timor - Leste Repúblika Demokrátika Timór Lorosa'e (Tetum) República Democrática de Timor - Leste (Portuguese) Flag Coat of arms Motto: Unidade, Acção, Progresso (Portuguese) Unidade, Asaun, Progresu (Tetum) (English: ``Unity, Action, Progress '') Anthem: Pátria (Portuguese) (English:`` Fatherland'') Capital and largest city Dili 8 ° 20 ′ S 125 ° 20 ′ E ﻿ / ﻿ 8.34 ° S 125.34 ° E ﻿ / - 8.34; 125.34 Coordinates: 8 ° 20 ′ S 125 ° 20 ′ E ﻿ / ﻿ 8.34 ° S 125.34 ° E ﻿ / - 8.34; 125.34 Official languages Tetum Portuguese National languages 15 languages (show) Atauru Baikeno Bekais Bunak Fataluku Galoli Habun Idalaka Kawaimina Kemak Makalero Makasae Makuva Mambai Tokodede Relig [truncated]
+- 3hop1__103881_443779_52195::p16: East Timor Democratic Republic of Timor - Leste Repúblika Demokrátika Timór Lorosa'e (Tetum) República Democrática de Timor - Leste (Portuguese) Flag Coat of arms Motto: Unidade, Acção, Progresso (Portuguese) Unidade, Asaun, Progresu (Tetum) (English: ``Unity, Action, Progress '') Anthem: Pátria (Portuguese) (English:`` Fatherland'') Capital and largest city Dili 8 ° 20 ′ S 125 ° 20 ′ E ﻿ / ﻿ 8.34 ° S 125.34 ° E ﻿ / - 8.34; 125.34 Coordinates: 8 ° 20 ′ S 125 ° 20 ′ E ﻿ / ﻿ 8.34 ° S 125.34 ° E ﻿ / - 8.34; 125.34 Official languages Tetum Portuguese National languages 15 languages (show) Atauru Baikeno Bekais Bunak Fataluku Galoli Habun Idalaka Kawaimina Kemak Makalero Makasae Makuva Mambai Tokodede Relig [truncated]
+- 3hop1__144439_443779_52195::p7: Indonesia–Timor Leste Commission of Truth and Friendship The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred around the independence referendum held in East Timor in 1999 and sought to find the "conclusive truth" behind the events. After holding private hearings and document reviews, the commission handed in the final report on July 15, 2008 to the presidents of both nations, and was fully endorsed by Indonesian President Susilo Bambang Yudhoyono, providing the first acknowledgement by the government of Indonesia of the human rights violations committe [truncated]
+- 3hop1__105767_443779_52195::p3: Indonesia–Timor Leste Commission of Truth and Friendship The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred around the independence referendum held in East Timor in 1999 and sought to find the "conclusive truth" behind the events. After holding private hearings and document reviews, the commission handed in the final report on July 15, 2008 to the presidents of both nations, and was fully endorsed by Indonesian President Susilo Bambang Yudhoyono, providing the first acknowledgement by the government of Indonesia of the human rights violations committe [truncated]
+
+Mining reason: `{"rule": "supported_answer", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "strong"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__13170_32392_823060_610794::r1
+
+- sample_id: 4hop1__13170_32392_823060_610794
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: In which county is the city sharing a border with the capitol of the first state to formally secede?
+
+Gold answer: Richland County
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The first state to formally secede from the United States was South Carolina.
+- c2: [unsupported] The capital of the first state to formally secede is Columbia.
+- c3: [unsupported] The city sharing a border with the capital of the first state to formally secede is in a specific county.
+
+Evidence:
+- 4hop1__777217_32392_823060_610794::p19: Confederate Arizona Confederate Arizona, commonly referred to as Arizona Territory, and officially the Territory of Arizona, was a territory claimed by the Confederate States of America during the American Civil War, between 1861 and 1865. Delegates to secession conventions had voted in March 1861 to secede from the New Mexico Territory and the United States, and seek to join the Confederacy. It consisted of the portion of the New Mexico Territory south of the 34th parallel, including parts of the modern states of New Mexico and Arizona. Its capital was Mesilla along the southern border. The Confederate territory overlapped the Arizona Territory later established by the Union government in 1863.
+- 4hop1__429751_32392_823060_610794::p14: Confederate Arizona Confederate Arizona, commonly referred to as Arizona Territory, and officially the Territory of Arizona, was a territory claimed by the Confederate States of America during the American Civil War, between 1861 and 1865. Delegates to secession conventions had voted in March 1861 to secede from the New Mexico Territory and the United States, and seek to join the Confederacy. It consisted of the portion of the New Mexico Territory south of the 34th parallel, including parts of the modern states of New Mexico and Arizona. Its capital was Mesilla along the southern border. The Confederate territory overlapped the Arizona Territory later established by the Union government in 1863.
+- 4hop1__13170_32392_823060_610794::p8: Confederate Arizona Confederate Arizona, commonly referred to as Arizona Territory, and officially the Territory of Arizona, was a territory claimed by the Confederate States of America during the American Civil War, between 1861 and 1865. Delegates to secession conventions had voted in March 1861 to secede from the New Mexico Territory and the United States, and seek to join the Confederacy. It consisted of the portion of the New Mexico Territory south of the 34th parallel, including parts of the modern states of New Mexico and Arizona. Its capital was Mesilla along the southern border. The Confederate territory overlapped the Arizona Territory later established by the Union government in 1863.
+- 3hop1__786067_228453_86925::p6: Intrall Intrall, or International Truck Alliance, is a Russo-British automotive company with headquarters in London, England, and manufacturing in Poland. At the end of 2003, the company acquired from Intrall Treasury factory of Daewoo Motor Poland in Lublin, then operating from January 2004 to 2007 years, called Intrall Poland. Under the new production in 2005, FSC Lublin and Honker models were produced under the "Intrall" brand. In 2006 the company acquired the rights to produce models of trucks of the Czech brand Praga. A brand-new commercial van/truck was developed called the "Intrall Lubo".
+- 2hop__628752_538661::p0: Inju: The Beast in the Shadow Inju: The Beast in the Shadow (French: Inju, la bête dans l'ombre) is a 2008 film by Barbet Schroeder. The film stars Benoît Magimel and Lika Minamoto and was filmed on location in Tokyo.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__145194_160545_62931::r1
+
+- sample_id: 3hop1__145194_160545_62931
+- risk_type: insufficient_evidence
+- oracle_action: abstain
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: The Beach was filmed in what location of the country that contains the birth city of Siddhi Savetsila?
+
+Gold answer: island Koh Phi Phi
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The Beach was filmed in Koh Phi Phi
+- c2: [supported] Siddhi Savetsila was born in Bangkok
+- c3: [supported] Bangkok is located in Thailand
+- c4: [supported] Koh Phi Phi is a location in Thailand
+
+Evidence:
+- 3hop1__465684_160545_62931::p14: The Beach (film) The Beach is a 2000 English - language drama film directed by Danny Boyle and based on the 1996 novel of the same name by Alex Garland, which was adapted for the film by John Hodge. The film stars Leonardo DiCaprio, Tilda Swinton, Virginie Ledoyen, Guillaume Canet, and Robert Carlyle. It was filmed on the Thai island Koh Phi Phi.
+- 3hop1__145194_160545_62931::p19: The Beach (film) The Beach is a 2000 English - language drama film directed by Danny Boyle and based on the 1996 novel of the same name by Alex Garland, which was adapted for the film by John Hodge. The film stars Leonardo DiCaprio, Tilda Swinton, Virginie Ledoyen, Guillaume Canet, and Robert Carlyle. It was filmed on the Thai island Koh Phi Phi.
+- 3hop1__145194_160545_62931::p9: Siddhi Savetsila Siddhi Savetsila was born in Bangkok. He comes from an aristocratic background. His father was a high-ranking official in the royal government. His paternal grandfather was Henry Alabaster who was the British consul in Siam during the reign of King Rama IV (Mongkut) and then served as an advisor to King Rama V (Chulalongkorn). His mother was an offspring of the influential Bunnag family, the daughter of Thet Bunnag (later Chao Phraya Suraphan Phisut), making him a direct descendant of Somdet Chao Phraya Borom Maha Prayurawongse.
+- 3hop1__145194_160545_62931::p18: Snow White and the Huntsman Principal photography took place in the United Kingdom. The beach scenes were predominantly filmed in Pembrokeshire, on the Marloes Sands beach near the village of Marloes between September 26 and 29, 2011. Though the beach was not closed to the public during filming, as filming progressed, certain parts were advised to be off limits. A computer - generated castle was set on nearby Gateholm island. A field above the beach was used for production purposes, and a special wooden ramp was built for vehicles and horses to access the beach. The film used academic consultants from the University of Chichester and the University of Oxford for back - up research on fairy tales and medieval battles. T [truncated]
+- 4hop3__668721_132409_371500_35031::p19: Kathmandu Kathmandu(/ˌkɑːtmɑːnˈduː/; Nepali pronunciation: [kɑʈʰmɑɳɖu]) is the capital and largest municipality of Nepal. It also hosts the headquarters of the South Asian Association for Regional Cooperation (SAARC). It is the only city of Nepal with the administrative status of Mahanagar (Metropolitan City), as compared to Upa-Mahanagar (Sub-Metropolitan City) or Nagar (City). Kathmandu is the core of Nepal's largest urban agglomeration located in the Kathmandu Valley consisting of Lalitpur, Kirtipur, Madhyapur Thimi, Bhaktapur and a number of smaller communities. Kathmandu is also known informally as "KTM" or the "tri-city". According to the 2011 census, Kathmandu Metropolitan City has a population [truncated]
+
+Mining reason: `{"rule": "insufficient_evidence", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__128554_39743_24526::r2
+
+- sample_id: 3hop1__128554_39743_24526
+- risk_type: no_new_evidence
+- oracle_action: abstain
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What is the average winter daytime temperature in the region where Richmond is found, in the state where WIRR operates?
+
+Gold answer: upper 40s–lower 50s °F
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Richmond is located in the Piedmont region of Virginia.
+- c2: [supported] WIRR operates in the state of Minnesota.
+- c3: [supported] The average winter daytime temperature in the Piedmont region is upper 40s–lower 50s °F (8–12 °C).
+
+Evidence:
+- 3hop1__128554_39743_24526::p16: Philadelphia The January daily average is 33.0 °F (0.6 °C), though, in a normal winter, the temperature frequently rises to 50 °F (10 °C) during thaws and dips to 10 °F (−12 °C) for 2 or 3 nights. July averages 78.1 °F (25.6 °C), although heat waves accompanied by high humidity and heat indices are frequent; highs reach or exceed 90 °F (32 °C) on 27 days of the year. The average window for freezing temperatures is November 6 thru April 2, allowing a growing season of 217 days. Early fall and late winter are generally dry; February's average of 2.64 inches (67 mm) makes it the area's driest month. The dewpoint in the summer averages between 59.1 °F (15 °C) to 64.5 °F (18 °C).
+- 3hop1__128554_39743_24526::p17: New York City Winters are cold and damp, and prevailing wind patterns that blow offshore minimize the moderating effects of the Atlantic Ocean; yet the Atlantic and the partial shielding from colder air by the Appalachians keep the city warmer in the winter than inland North American cities at similar or lesser latitudes such as Pittsburgh, Cincinnati, and Indianapolis. The daily mean temperature in January, the area's coldest month, is 32.6 °F (0.3 °C); however, temperatures usually drop to 10 °F (−12 °C) several times per winter, and reach 50 °F (10 °C) several days each winter month. Spring and autumn are unpredictable and can range from chilly to warm, although they are usually mild with low humidity. [truncated]
+- 3hop1__128554_39743_24526::p15: North Carolina In winter, the Piedmont is colder than the coast, with temperatures usually averaging in the upper 40s–lower 50s °F (8–12 °C) during the day and often dropping below the freezing point at night. The region averages around 3–5 in (8–13 cm) of snowfall annually in the Charlotte area, and slightly more north toward the Virginia border. The Piedmont is especially notorious for sleet and freezing rain. Freezing rain can be heavy enough to snarl traffic and break down trees and power lines. Annual precipitation and humidity are lower in the Piedmont than in the mountains or the coast, but even at its lowest, the average is 40 in (1,020 mm) per year.
+- 3hop1__128554_39743_24526::p2: WIRR WIRR (90.9 FM) is a radio station licensed to Virginia, Minnesota, serving the Iron Range area. The station is owned by Minnesota Public Radio (MPR), and airs MPR's "Classical Music Network", originating from KSJN in Minneapolis/St. Paul.
+- 3hop1__128554_39743_24526::p6: Richmond, Virginia Richmond is located at 37°32′N 77°28′W﻿ / ﻿37.533°N 77.467°W﻿ / 37.533; -77.467 (37.538, −77.462). According to the United States Census Bureau, the city has a total area of 62 square miles (160 km2), of which 60 square miles (160 km2) is land and 2.7 square miles (7.0 km2) of it (4.3%) is water. The city is located in the Piedmont region of Virginia, at the highest navigable point of the James River. The Piedmont region is characterized by relatively low, rolling hills, and lies between the low, sea level Tidewater region and the Blue Ridge Mountains. Significant bodies of water in the region include the James River, the Appomattox River, and the Chickahominy River.
+
+Mining reason: `{"rule": "no_new_evidence", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__145494_698949_157828_162309::r2
+
+- sample_id: 4hop1__145494_698949_157828_162309
+- risk_type: repairable_missing_hop
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: When did the country whose co-official language was used in the movie named after the place where Bela Linder died first attend the Olympics games as an independent team?
+
+Gold answer: 2016
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] 1920
+
+Evidence:
+- 4hop1__145494_698949_157828_162309::p0: Béla Linder Béla Linder (Majs, 10 February 1876 – Belgrade, 15 April 1962), Hungarian colonel of artillery, Secretary of War of Mihály Károlyi government, minister without portfolio of Dénes Berinkey government, military attaché of Hungarian Soviet Republic based in Vienna, finally the mayor of Pécs during the period of Serb occupation.
+- 2hop__857493_17335::p18: Death Mills Death Mills (or Die Todesmühlen) is a 1945 American film directed by Billy Wilder and produced by the United States Department of War. The film was intended for German audiences to educate them about the atrocities committed by the Nazi regime. For the German version, "Die Todesmühlen", Hanus Burger is credited as the writer and director, while Wilder supervised the editing. Wilder is credited with directing the English-language version.
+- 3hop1__662413_42197_18397::p2: World War II World War II (often abbreviated to WWII or WW2), also known as the Second World War, was a global war that lasted from 1939 to 1945, although conflicts reflecting the ideological clash between what would become the Allied and Axis blocs began earlier. The vast majority of the world's countries -- including all of the great powers -- eventually formed two opposing military alliances: the Allies and the Axis. It was the most global war in history; it directly involved more than 100 million people from over 30 countries. In a state of total war, the major participants threw their entire economic, industrial, and scientific capabilities behind the war effort, blurring the distinction between civ [truncated]
+- 4hop1__145494_698949_157828_162309::p14: Madagascar The Malagasy language is of Malayo-Polynesian origin and is generally spoken throughout the island. The numerous dialects of Malagasy, which are generally mutually intelligible, can be clustered under one of two subgroups: eastern Malagasy, spoken along the eastern forests and highlands including the Merina dialect of Antananarivo, and western Malagasy, spoken across the western coastal plains. French became the official language during the colonial period, when Madagascar came under the authority of France. In the first national Constitution of 1958, Malagasy and French were named the official languages of the Malagasy Republic. Madagascar is a francophone country, and French is mostly spok [truncated]
+- 4hop1__145494_698949_157828_162309::p15: Yugoslavia at the Olympics Federal Republic of Yugoslavia, formed as a joint state by only Montenegro and Serbia after the breakup of Yugoslavia, from 1992–2002 (due to UN ban allowed to compete as Independent Olympic Participants at the 1992 Summer Olympics and was not allowed to compete at 1994 Winter Olympics)Two of the successor nations (Croatia and Slovenia) began to compete as independent teams at the Olympics starting at the 1992 Winter Games and Bosnia and Herzegovina at the 1992 Summer Games and as of the 2008 Summer Olympics, all six successor nations, former socialist republics, have participated independently. Kosovo, a former autonomous province, made its Olympic debut as an independent national team at t [truncated]
+
+Mining reason: `{"rule": "repairable_missing_hop", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__20268_42014::r1
+
+- sample_id: 2hop__20268_42014
+- risk_type: supported_answer
+- oracle_action: answer
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: How many members in the seats of the organization that enacted the Directory of Public Worship into law are members of the Scottish Government?
+
+Gold answer: 2
+
+Candidate answer: 2
+
+Claims:
+- c1: [supported] The Scottish Parliament enacted the Directory of Public Worship into law.
+- c2: [supported] The Scottish Parliament has 131 seats.
+- c3: [supported] Of the 131 seats in the Scottish Parliament, 2 are occupied by members of the Scottish Government (the Lord Advocate and the Solicitor General for Scotland).
+
+Evidence:
+- 2hop__20268_42014::p1: Presbyterianism Presbyterian denominations that trace their heritage to the British Isles usually organise their church services inspired by the principles in the Directory of Public Worship, developed by the Westminster Assembly in the 1640s. This directory documented Reformed worship practices and theology adopted and developed over the preceding century by British Puritans, initially guided by John Calvin and John Knox. It was enacted as law by the Scottish Parliament, and became one of the foundational documents of Presbyterian church legislation elsewhere.
+- 2hop__20268_42014::p8: Scottish Parliament The debating chamber of the Scottish Parliament has seating arranged in a hemicycle, which reflects the desire to encourage consensus amongst elected members. There are 131 seats in the debating chamber. Of the total 131 seats, 129 are occupied by the Parliament's elected MSPs and 2 are seats for the Scottish Law Officers – the Lord Advocate and the Solicitor General for Scotland, who are not elected members of the Parliament but are members of the Scottish Government. As such the Law Officers may attend and speak in the plenary meetings of the Parliament but, as they are not elected MSPs, cannot vote. Members are able to sit anywhere in the debating chamber, but typically sit in their party [truncated]
+- 2hop__433694_20273::p3: Presbyterianism John Knox (1505–1572), a Scot who had spent time studying under Calvin in Geneva, returned to Scotland and urged his countrymen to reform the Church in line with Calvinist doctrines. After a period of religious convulsion and political conflict culminating in a victory for the Protestant party at the Siege of Leith the authority of the Church of Rome was abolished in favour of Reformation by the legislation of the Scottish Reformation Parliament in 1560. The Church was eventually organised by Andrew Melville along Presbyterian lines to become the national Church of Scotland. King James VI and I moved the Church of Scotland towards an episcopal form of government, and in 1637, James' successo [truncated]
+- 3hop2__92991_27069_76291::p0: National Assembly of Pakistan The National Assembly of Pakistan (Urdu: قومی اسمبلئ پاکستان ‬ ‎) is the lower house of the bicameral Majlis - e-Shura, which also comprises the President of Pakistan and Senate of Pakistan (upper house). The National Assembly and the Senate both convene at Parliament House in Islamabad. The National Assembly is a democratically elected body consisting of a total of 342 members who are referred to as Members of the National Assembly (MNAs), of which 272 are directly elected members and 70 reserved seats for women and religious minorities. A political party must secure 137 seats to obtain and preserve a majority.
+- 3hop1__92991_73181_68042::p6: National Assembly of Pakistan The National Assembly of Pakistan (Urdu: قومی اسمبلئ پاکستان ‬ ‎) is the lower house of the bicameral Majlis - e-Shura, which also comprises the President of Pakistan and Senate of Pakistan (upper house). The National Assembly and the Senate both convene at Parliament House in Islamabad. The National Assembly is a democratically elected body consisting of a total of 342 members who are referred to as Members of the National Assembly (MNAs), of which 272 are directly elected members and 70 reserved seats for women and religious minorities. A political party must secure 137 seats to obtain and preserve a majority.
+
+Mining reason: `{"rule": "supported_answer", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "strong"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__152146_5274_458768_33632::r2
+
+- sample_id: 4hop1__152146_5274_458768_33632
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What day is the Feast held in the city where the headquarters of the only group larger than Långa nätter's record label is located?
+
+Gold answer: May 4
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] The headquarters of the only group larger than Långa nätter's record label is located in Kathmandu.
+- c2: [unclear] The Feast held in Kathmandu is on 18 November.
+
+Evidence:
+- 4hop3__668721_132409_371500_35031::p19: Kathmandu Kathmandu(/ˌkɑːtmɑːnˈduː/; Nepali pronunciation: [kɑʈʰmɑɳɖu]) is the capital and largest municipality of Nepal. It also hosts the headquarters of the South Asian Association for Regional Cooperation (SAARC). It is the only city of Nepal with the administrative status of Mahanagar (Metropolitan City), as compared to Upa-Mahanagar (Sub-Metropolitan City) or Nagar (City). Kathmandu is the core of Nepal's largest urban agglomeration located in the Kathmandu Valley consisting of Lalitpur, Kirtipur, Madhyapur Thimi, Bhaktapur and a number of smaller communities. Kathmandu is also known informally as "KTM" or the "tri-city". According to the 2011 census, Kathmandu Metropolitan City has a population [truncated]
+- 3hop2__851134_613770_7713::p13: Kathmandu Kathmandu(/ˌkɑːtmɑːnˈduː/; Nepali pronunciation: [kɑʈʰmɑɳɖu]) is the capital and largest municipality of Nepal. It also hosts the headquarters of the South Asian Association for Regional Cooperation (SAARC). It is the only city of Nepal with the administrative status of Mahanagar (Metropolitan City), as compared to Upa-Mahanagar (Sub-Metropolitan City) or Nagar (City). Kathmandu is the core of Nepal's largest urban agglomeration located in the Kathmandu Valley consisting of Lalitpur, Kirtipur, Madhyapur Thimi, Bhaktapur and a number of smaller communities. Kathmandu is also known informally as "KTM" or the "tri-city". According to the 2011 census, Kathmandu Metropolitan City has a population [truncated]
+- 4hop3__673447_132409_371500_35031::p3: Kathmandu Kathmandu is located in the northwestern part of the Kathmandu Valley to the north of the Bagmati River and covers an area of 50.67 km2 (19.56 sq mi). The average elevation is 1,400 metres (4,600 ft) above sea level. The city is directly bounded by several other municipalities of the Kathmandu valley: south of the Bagmati by Lalitpur Sub-Metropolitan City (Patan) with which it today forms one urban area surrounded by a ring road, to the southwest by Kirtipur Municipality and to the east by Madyapur Thimi Municipality. To the north the urban area extends into several Village Development Committees. However, the urban agglomeration extends well beyond the neighboring municipalities, e. g. to B [truncated]
+- 4hop3__387712_132409_223216_35031::p11: Jakarta Jakarta (/ dʒ əˈkɑːrtə /, Indonesian pronunciation: (dʒaˈkarta)), officially the Special Capital Region of Jakarta, is the capital of Indonesia, which was formerly known as Batavia during Dutch East Indies and Sunda Kelapa during Sunda Kingdom. Located on the northwest coast of the world's most populous island of Java, Jakarta is the center of economics, culture and politics of Indonesia, with a population of 10,075,310 as of 2014. Greater Jakarta metropolitan area, which is known as Jabodetabek (a name formed by combining the initial syllables of Jakarta, Bogor, Depok, Tangerang and Bekasi), is the second largest urban agglomeration and 2nd largest city area in the world after Tokyo, with a [truncated]
+- 4hop1__152146_5274_458768_33632::p18: Our Lady of the Rosary The Feast of Our Lady of the Rosary, formerly known as Our Lady of Victory and Feast of the Holy Rosary, is a feast day of the Roman Catholic Church, celebrated on 7 October, the anniversary of the decisive victory of the combined fleet of the Holy League of 1571 over the Ottoman navy at the Battle of Lepanto.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__222497_309482_27537::r2
+
+- sample_id: 3hop1__222497_309482_27537
+- risk_type: no_new_evidence
+- oracle_action: abstain
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: Why did Roncalli leave the place where the composer of Al gran sole carico d'amore worked?
+
+Gold answer: for the conclave in Rome
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Roncalli left Venice to attend the conclave in Rome and was elected Pope.
+
+Evidence:
+- 2hop__478978_124498::p13: Buthrotum The first modern archaeological excavations began in 1928 when the Fascist government of Benito Mussolini's Italy sent an expedition to Buthrotum. The aim was geopolitical rather than scientific, aiming to extend Italian hegemony in the area. The leader was an Italian archaeologist, Luigi Maria Ugolini who despite the political aims of his mission was a good archaeologist. Ugolini died in 1936, but the excavations continued until 1943 and the Second World War. They uncovered the Hellenistic and Roman part of the city including the "Lion Gate" and the "Scaean Gate" (named by Ugolini for the famous gate at Troy mentioned in the Homeric Iliad).
+- 4hop1__767417_624859_355213_203322::p12: Eritrea In 1922, Benito Mussolini's rise to power in Italy brought profound changes to the colonial government in Italian Eritrea. After il Duce declared the birth of the Italian Empire in May 1936, Italian Eritrea (enlarged with northern Ethiopia's regions) and Italian Somaliland were merged with the just conquered Ethiopia in the new Italian East Africa (Africa Orientale Italiana) administrative territory. This Fascist period was characterized by imperial expansion in the name of a "new Roman Empire". Eritrea was chosen by the Italian government to be the industrial center of Italian East Africa.
+- 2hop__286093_361551::p15: Eritrea In 1922, Benito Mussolini's rise to power in Italy brought profound changes to the colonial government in Italian Eritrea. After il Duce declared the birth of the Italian Empire in May 1936, Italian Eritrea (enlarged with northern Ethiopia's regions) and Italian Somaliland were merged with the just conquered Ethiopia in the new Italian East Africa (Africa Orientale Italiana) administrative territory. This Fascist period was characterized by imperial expansion in the name of a "new Roman Empire". Eritrea was chosen by the Italian government to be the industrial center of Italian East Africa.
+- 3hop1__222497_309482_27537::p0: Al gran sole carico d'amore Al gran sole carico d'amore ("In the Bright Sunshine Heavy with Love") is an opera (designated as an 'azione scenica') with music by Luigi Nono, based mainly on plays by Bertolt Brecht, but also incorporating texts of Fidel Castro, Che Guevara, Karl Marx, and Vladimir Lenin. Nono himself and Yuri Lyubimov wrote the libretto. It premiered at the Teatro alla Scala on 4 April 1975, conducted by Claudio Abbado. Lyubimov directed the original production. The UK premiere was at the 32nd Edinburgh Festival in 1978. In addition to vocal soloists, chorus and orchestra, the work incorporates taped sounds. This work is a product of Nono's strong political activism through the mid-1970s.
+- 3hop1__222497_309482_27537::p12: Pope John XXIII Following the death of Pope Pius XII on 9 October 1958, Roncalli watched the live funeral on his last full day in Venice on 11 October. His journal was specifically concerned with the funeral and the abused state of the late pontiff's corpse. Roncalli left Venice for the conclave in Rome well aware that he was papabile,[b] and after eleven ballots, was elected to succeed the late Pius XII, so it came as no surprise to him, though he had arrived at the Vatican with a return train ticket to Venice.[citation needed]
+
+Mining reason: `{"rule": "no_new_evidence", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__249867_557232::r1
+
+- sample_id: 2hop__249867_557232
+- risk_type: repairable_missing_hop
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Which country is the Desert Forest Golf Club located in?
+
+Gold answer: Maricopa County
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The Desert Forest Golf Club is located in Arizona.
+
+Evidence:
+- 2hop__249867_557232::p3: Desert Forest Golf Club Desert Forest Golf Club is a par-72 golf course and club located in Carefree, Arizona. The course is 7201 yards long and located underneath Black Mountain in the Sonoran desert.
+- 4hop1__131611_32392_823060_610794::p11: Ocean Forest Country Club Ocean Forest Country Club, also known as Ocean Forest Hotel and Country Club, is a historic country club and hotel located at Myrtle Beach in Horry County, South Carolina. The club and hotel were designed by an influential New York architect, Raymond Hood (1881-1934) and is an unusual example of Classical Revival architecture. Construction of the club began in 1926 and was completed in 1927. In addition to the hotel / club building, a 27-hole golf course was built in association with the club. It was designed by Robert White, a golf course designer and future president of the Professional Golfers' Association of America. The present 18-hole course dates to 1946.
+- 4hop1__105688_17130_70784_79935::p5: Doha Doha (Arabic: الدوحة ‎ ‎, ad - Dawḥa or ad - Dōḥa, pronounced (addawħa), literally in MSA: ``the big tree '', locally:`` rounded bays'') is the capital city and most populous city of the State of Qatar. Doha has a population of 1,351,000 in a city proper with the population close to 1.5 million. The city is located on the coast of the Persian Gulf in the east of the country. It is Qatar's fastest growing city, with over 50% of the nation's population living in Doha or its surrounding suburbs, and it is also the economic center of the country.
+- 2hop__40270_11402::p11: Carson, California Carson is a city in Los Angeles County, California, located south of downtown Los Angeles and approximately 14 miles away from the Los Angeles International Airport. Incorporated on February 20, 1968, Carson is the newest municipality in the South Bay region of Metropolitan Los Angeles. As of the 2010 census, it had a population of 91,714.
+
+Mining reason: `{"rule": "repairable_missing_hop", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__194469_83289::r2
+
+- sample_id: 2hop__194469_83289
+- risk_type: supported_answer
+- oracle_action: answer
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: Who is the guy in the One Last Time video by the participant in The Listening Sessions?
+
+Gold answer: Matt Bennett
+
+Candidate answer: Matt Bennett
+
+Claims:
+- c1: [supported] The participant in The Listening Sessions is Ariana Grande.
+- c2: [supported] The guy in the One Last Time video is Matt Bennett.
+
+Evidence:
+- 2hop__194469_83289::p0: Twist and Shout Released on the Beatles' first UK album, Please Please Me (1963), the complete recording of which on February 11, 1963, was their first album session and is notable for 10 songs recorded in a mere 13 hours. Loosely based on the Isley Brothers version, ``Twist and Shout '', with John Lennon on lead vocals, was the last song recorded; producer George Martin knew Lennon's voice would suffer from the performance, so he left it until last, with only 15 minutes of scheduled recording time remaining.
+- 3hop2__57233_106716_56883::p10: Last Thing I Needed First Thing This Morning ``Last Thing I Needed First Thing This Morning ''is a song written by Gary P. Nunn and Donna Farar, and recorded by American country music artist Willie Nelson. It was released in October 1982 as the third single from his album Always on My Mind. The song reached number two on the Billboard Hot Country Singles chart and number one on the RPM Country Tracks chart in Canada.
+- 2hop__194469_83289::p7: The Listening Sessions The Listening Sessions was the first concert tour by American singer and actress Ariana Grande. The tour supported Grande's debut studio album, "Yours Truly", which was released September 3, 2013. The tour began on August 11, 2013 and concluded September 22, 2013 and showcased all of the material from Grande's debut studio album, with the exception of "Popular Song". The tour grossed $800,000 from 11 shows across North America. The tour was said to expand after the release of "Yours Truly", but failed to materialize due to Grande's acting schedule and recording sessions for her second studio album, "My Everything".
+- 2hop__194469_83289::p19: One Last Time (Ariana Grande song) The music video was filmed in early January 2015 and it also stars Matt Bennett, who was also Grande's co-star from the Nickelodeon sitcom Victorious. Max Landis also confirmed that one of the voices of the news reporters in the beginning of the video was actress Elizabeth Gillies, who also co-starred in Victorious with Grande and Bennett. Gillies previously appeared Grande's music video for her single ``Right There ''(2013). Around that time, Max Landis revealed`` One Last Time'' as Grande's next single after tweeting, ``Earth will pass catastrophically through the tail of the comet Eurydice in one week. Gather family and lovers close, one... last... time ''. The lyric video for`` One Last  [truncated]
+- 2hop__194469_83289::p11: Standing on a Beach The man featured on the album cover was not a member of the Cure; he was chosen because his appearance fit the desired aesthetic of the album. His name is John Button, and was at the time a retired fisherman. He also appeared in the music video for ``Killing an Arab ''. According to the band's 2005 biography by Jeff Apter, when asked why he agreed to lend his face to the band's media, Button's answer was,`` If I can help these youngsters break through, after all, why not?'' He also reportedly said that he would buy a player and listen to one of the band's songs ``out of curiosity, just to see ''.
+
+Mining reason: `{"rule": "supported_answer", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "strong"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__222497_309482_27537::r1
+
+- sample_id: 3hop1__222497_309482_27537
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: Why did Roncalli leave the place where the composer of Al gran sole carico d'amore worked?
+
+Gold answer: for the conclave in Rome
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Roncalli left Venice because he was elected Pope John XXIII.
+- c2: [supported] The composer of 'Al gran sole carico d'amore' is Luigi Nono.
+
+Evidence:
+- 3hop1__820301_720914_27537::p5: Pope John XXIII Following the death of Pope Pius XII on 9 October 1958, Roncalli watched the live funeral on his last full day in Venice on 11 October. His journal was specifically concerned with the funeral and the abused state of the late pontiff's corpse. Roncalli left Venice for the conclave in Rome well aware that he was papabile,[b] and after eleven ballots, was elected to succeed the late Pius XII, so it came as no surprise to him, though he had arrived at the Vatican with a return train ticket to Venice.[citation needed]
+- 3hop1__312146_720914_27537::p14: Pope John XXIII Following the death of Pope Pius XII on 9 October 1958, Roncalli watched the live funeral on his last full day in Venice on 11 October. His journal was specifically concerned with the funeral and the abused state of the late pontiff's corpse. Roncalli left Venice for the conclave in Rome well aware that he was papabile,[b] and after eleven ballots, was elected to succeed the late Pius XII, so it came as no surprise to him, though he had arrived at the Vatican with a return train ticket to Venice.[citation needed]
+- 3hop1__222497_309482_27537::p12: Pope John XXIII Following the death of Pope Pius XII on 9 October 1958, Roncalli watched the live funeral on his last full day in Venice on 11 October. His journal was specifically concerned with the funeral and the abused state of the late pontiff's corpse. Roncalli left Venice for the conclave in Rome well aware that he was papabile,[b] and after eleven ballots, was elected to succeed the late Pius XII, so it came as no surprise to him, though he had arrived at the Vatican with a return train ticket to Venice.[citation needed]
+- 3hop1__222497_309482_27537::p0: Al gran sole carico d'amore Al gran sole carico d'amore ("In the Bright Sunshine Heavy with Love") is an opera (designated as an 'azione scenica') with music by Luigi Nono, based mainly on plays by Bertolt Brecht, but also incorporating texts of Fidel Castro, Che Guevara, Karl Marx, and Vladimir Lenin. Nono himself and Yuri Lyubimov wrote the libretto. It premiered at the Teatro alla Scala on 4 April 1975, conducted by Claudio Abbado. Lyubimov directed the original production. The UK premiere was at the 32nd Edinburgh Festival in 1978. In addition to vocal soloists, chorus and orchestra, the work incorporates taped sounds. This work is a product of Nono's strong political activism through the mid-1970s.
+- 3hop1__28841_547811_80702::p13: Antonio Vivaldi Antonio Lucio Vivaldi (Italian: (anˈtɔːnjo ˈluːtʃo viˈvaldi); 4 March 1678 -- 28 July 1741) was an Italian Baroque musical composer, virtuoso violinist, teacher, and cleric. Born in Venice, he is recognized as one of the greatest Baroque composers, and his influence during his lifetime was widespread across Europe. He composed many instrumental concertos, for the violin and a variety of other instruments, as well as sacred choral works and more than forty operas. His best - known work is a series of violin concertos known as the Four Seasons.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__136129_87694_124169::r3
+
+- sample_id: 3hop1__136129_87694_124169
+- risk_type: no_new_evidence
+- oracle_action: abstain
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What year did the Governor of the city where the basilica named after the same saint as the one that Mantua Cathedral is dedicated to die?
+
+Gold answer: 1952
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Mantua Cathedral is dedicated to Saint Peter
+- c2: [supported] The basilica named after the same saint as Mantua Cathedral is St. Peter's Basilica
+- c3: [supported] The Governor of Vatican City died in 1952
+
+Evidence:
+- 3hop1__64957_87694_124169::p6: St. Peter's Basilica Old St. Peter's Basilica was the 4th - century church begun by the Emperor Constantine the Great between 319 and 333 AD. It was of typical basilical form, a wide nave and two aisles on each side and an apsidal end, with the addition of a transept or bema, giving the building the shape of a tau cross. It was over 103.6 metres (340 ft) long, and the entrance was preceded by a large colonnaded atrium. This church had been built over the small shrine believed to mark the burial place of St. Peter. It contained a very large number of burials and memorials, including those of most of the popes from St. Peter to the 15th century. Like all of the earliest churches in Rome, both this church and its s [truncated]
+- 3hop1__603558_87694_124169::p3: St. Peter's Basilica Old St. Peter's Basilica was the 4th - century church begun by the Emperor Constantine the Great between 319 and 333 AD. It was of typical basilical form, a wide nave and two aisles on each side and an apsidal end, with the addition of a transept or bema, giving the building the shape of a tau cross. It was over 103.6 metres (340 ft) long, and the entrance was preceded by a large colonnaded atrium. This church had been built over the small shrine believed to mark the burial place of St. Peter. It contained a very large number of burials and memorials, including those of most of the popes from St. Peter to the 15th century. Like all of the earliest churches in Rome, both this church and its s [truncated]
+- 3hop1__136129_87694_124169::p17: St. Peter's Basilica Old St. Peter's Basilica was the 4th - century church begun by the Emperor Constantine the Great between 319 and 333 AD. It was of typical basilical form, a wide nave and two aisles on each side and an apsidal end, with the addition of a transept or bema, giving the building the shape of a tau cross. It was over 103.6 metres (340 ft) long, and the entrance was preceded by a large colonnaded atrium. This church had been built over the small shrine believed to mark the burial place of St. Peter. It contained a very large number of burials and memorials, including those of most of the popes from St. Peter to the 15th century. Like all of the earliest churches in Rome, both this church and its s [truncated]
+- 4hop1__391525_49925_13759_736921::p3: Mary, mother of Jesus Despite Martin Luther's harsh polemics against his Roman Catholic opponents over issues concerning Mary and the saints, theologians appear to agree that Luther adhered to the Marian decrees of the ecumenical councils and dogmas of the church. He held fast to the belief that Mary was a perpetual virgin and the Theotokos or Mother of God. Special attention is given to the assertion that Luther, some three-hundred years before the dogmatization of the Immaculate Conception by Pope Pius IX in 1854, was a firm adherent of that view. Others maintain that Luther in later years changed his position on the Immaculate Conception, which, at that time was undefined in the Church, maintaining however the [truncated]
+- 4hop1__264443_49925_13759_736921::p3: Mary, mother of Jesus Despite Martin Luther's harsh polemics against his Roman Catholic opponents over issues concerning Mary and the saints, theologians appear to agree that Luther adhered to the Marian decrees of the ecumenical councils and dogmas of the church. He held fast to the belief that Mary was a perpetual virgin and the Theotokos or Mother of God. Special attention is given to the assertion that Luther, some three-hundred years before the dogmatization of the Immaculate Conception by Pope Pius IX in 1854, was a firm adherent of that view. Others maintain that Luther in later years changed his position on the Immaculate Conception, which, at that time was undefined in the Church, maintaining however the [truncated]
+
+Mining reason: `{"rule": "no_new_evidence", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__249867_557232::r2
+
+- sample_id: 2hop__249867_557232
+- risk_type: repairable_missing_hop
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Which country is the Desert Forest Golf Club located in?
+
+Gold answer: Maricopa County
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The Desert Forest Golf Club is located in Arizona.
+
+Evidence:
+- 4hop1__813171_153080_159767_81096::p2: Arizona Arizona ( (listen); Navajo: Hoozdo Hahoodzo Navajo pronunciation: [xòːztò xɑ̀xòːtsò]; O'odham: Alĭ ṣonak Uto-Aztecan pronunciation: [ˡaɺi ˡʂonak]) is a state in the southwestern region of the United States. It is also part of the Western and the Mountain states. It is the sixth largest and the 14th most populous of the 50 states. Its capital and largest city is Phoenix. Arizona shares the Four Corners region with Utah, Colorado, and New Mexico; its other neighboring states are Nevada and California to the west and the Mexican states of Sonora and Baja California to the south and southwest.
+- 4hop1__726152_153080_159767_81096::p0: Arizona Arizona ( (listen); Navajo: Hoozdo Hahoodzo Navajo pronunciation: [xòːztò xɑ̀xòːtsò]; O'odham: Alĭ ṣonak Uto-Aztecan pronunciation: [ˡaɺi ˡʂonak]) is a state in the southwestern region of the United States. It is also part of the Western and the Mountain states. It is the sixth largest and the 14th most populous of the 50 states. Its capital and largest city is Phoenix. Arizona shares the Four Corners region with Utah, Colorado, and New Mexico; its other neighboring states are Nevada and California to the west and the Mexican states of Sonora and Baja California to the south and southwest.
+- 4hop1__720201_153080_159767_81096::p16: Arizona Arizona ( (listen); Navajo: Hoozdo Hahoodzo Navajo pronunciation: [xòːztò xɑ̀xòːtsò]; O'odham: Alĭ ṣonak Uto-Aztecan pronunciation: [ˡaɺi ˡʂonak]) is a state in the southwestern region of the United States. It is also part of the Western and the Mountain states. It is the sixth largest and the 14th most populous of the 50 states. Its capital and largest city is Phoenix. Arizona shares the Four Corners region with Utah, Colorado, and New Mexico; its other neighboring states are Nevada and California to the west and the Mexican states of Sonora and Baja California to the south and southwest.
+- 2hop__249867_557232::p3: Desert Forest Golf Club Desert Forest Golf Club is a par-72 golf course and club located in Carefree, Arizona. The course is 7201 yards long and located underneath Black Mountain in the Sonoran desert.
+- 4hop1__131611_32392_823060_610794::p11: Ocean Forest Country Club Ocean Forest Country Club, also known as Ocean Forest Hotel and Country Club, is a historic country club and hotel located at Myrtle Beach in Horry County, South Carolina. The club and hotel were designed by an influential New York architect, Raymond Hood (1881-1934) and is an unusual example of Classical Revival architecture. Construction of the club began in 1926 and was completed in 1927. In addition to the hotel / club building, a 27-hole golf course was built in association with the club. It was designed by Robert White, a golf course designer and future president of the Professional Golfers' Association of America. The present 18-hole course dates to 1946.
+
+Mining reason: `{"rule": "repairable_missing_hop", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__20268_42014::r1
+
+- sample_id: 2hop__20268_42014
+- risk_type: supported_answer
+- oracle_action: answer
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: How many members in the seats of the organization that enacted the Directory of Public Worship into law are members of the Scottish Government?
+
+Gold answer: 2
+
+Candidate answer: 2
+
+Claims:
+- c1: [supported] The organization that enacted the Directory of Public Worship into law is the Scottish Parliament.
+- c2: [supported] The Scottish Parliament has 131 seats, with 129 occupied by elected MSPs and 2 for the Scottish Law Officers.
+- c3: [supported] The Scottish Law Officers (Lord Advocate and Solicitor General for Scotland) are members of the Scottish Government.
+- c4: [supported] The number of members in the seats of the organization that enacted the Directory of Public Worship into law who are members of the Scottish Government is 2.
+
+Evidence:
+- 2hop__20268_42014::p1: Presbyterianism Presbyterian denominations that trace their heritage to the British Isles usually organise their church services inspired by the principles in the Directory of Public Worship, developed by the Westminster Assembly in the 1640s. This directory documented Reformed worship practices and theology adopted and developed over the preceding century by British Puritans, initially guided by John Calvin and John Knox. It was enacted as law by the Scottish Parliament, and became one of the foundational documents of Presbyterian church legislation elsewhere.
+- 2hop__20268_42014::p8: Scottish Parliament The debating chamber of the Scottish Parliament has seating arranged in a hemicycle, which reflects the desire to encourage consensus amongst elected members. There are 131 seats in the debating chamber. Of the total 131 seats, 129 are occupied by the Parliament's elected MSPs and 2 are seats for the Scottish Law Officers – the Lord Advocate and the Solicitor General for Scotland, who are not elected members of the Parliament but are members of the Scottish Government. As such the Law Officers may attend and speak in the plenary meetings of the Parliament but, as they are not elected MSPs, cannot vote. Members are able to sit anywhere in the debating chamber, but typically sit in their party [truncated]
+- 2hop__433694_20273::p3: Presbyterianism John Knox (1505–1572), a Scot who had spent time studying under Calvin in Geneva, returned to Scotland and urged his countrymen to reform the Church in line with Calvinist doctrines. After a period of religious convulsion and political conflict culminating in a victory for the Protestant party at the Siege of Leith the authority of the Church of Rome was abolished in favour of Reformation by the legislation of the Scottish Reformation Parliament in 1560. The Church was eventually organised by Andrew Melville along Presbyterian lines to become the national Church of Scotland. King James VI and I moved the Church of Scotland towards an episcopal form of government, and in 1637, James' successo [truncated]
+- 3hop2__92991_27069_76291::p0: National Assembly of Pakistan The National Assembly of Pakistan (Urdu: قومی اسمبلئ پاکستان ‬ ‎) is the lower house of the bicameral Majlis - e-Shura, which also comprises the President of Pakistan and Senate of Pakistan (upper house). The National Assembly and the Senate both convene at Parliament House in Islamabad. The National Assembly is a democratically elected body consisting of a total of 342 members who are referred to as Members of the National Assembly (MNAs), of which 272 are directly elected members and 70 reserved seats for women and religious minorities. A political party must secure 137 seats to obtain and preserve a majority.
+- 3hop1__92991_73181_68042::p6: National Assembly of Pakistan The National Assembly of Pakistan (Urdu: قومی اسمبلئ پاکستان ‬ ‎) is the lower house of the bicameral Majlis - e-Shura, which also comprises the President of Pakistan and Senate of Pakistan (upper house). The National Assembly and the Senate both convene at Parliament House in Islamabad. The National Assembly is a democratically elected body consisting of a total of 342 members who are referred to as Members of the National Assembly (MNAs), of which 272 are directly elected members and 70 reserved seats for women and religious minorities. A political party must secure 137 seats to obtain and preserve a majority.
+
+Mining reason: `{"rule": "supported_answer", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "strong"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__17192_17130_70784_79935::r1
+
+- sample_id: 4hop1__17192_17130_70784_79935
+- risk_type: wrong_target
+- oracle_action: disambiguate_conflict
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: When was the region immediately north of the region where the country that secured southern Lebanon is located and the Persian Gulf created?
+
+Gold answer: 1930
+
+Candidate answer: 
+
+Claims:
+- c1: [contradicted] The country that secured southern Lebanon is located in the region immediately north of the Persian Gulf.
+- c2: [supported] The region immediately north of the Persian Gulf is the Arabian Sea.
+- c3: [contradicted] The region immediately north of Hertfordshire is the Persian Gulf.
+
+Evidence:
+- 4hop1__443274_17130_70784_61381::p2: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 4hop1__17192_17130_70784_79935::p2: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 4hop1__105401_17130_70784_79935::p12: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 4hop2__9988_158985_70784_61381::p9: Hertfordshire Hertfordshire is the county immediately north of London and is part of the East of England region, a mainly statistical unit. A significant minority of the population across all districts are City of London commuters. To the east is Essex, to the west is Buckinghamshire and to the north are Bedfordshire and Cambridgeshire.
+- 4hop2__9988_158279_70784_79935::p4: Hertfordshire Hertfordshire is the county immediately north of London and is part of the East of England region, a mainly statistical unit. A significant minority of the population across all districts are City of London commuters. To the east is Essex, to the west is Buckinghamshire and to the north are Bedfordshire and Cambridgeshire.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__105767_443779_52195::r3
+
+- sample_id: 3hop1__105767_443779_52195
+- risk_type: no_new_evidence
+- oracle_action: abstain
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: Who is the president of the newly declared independent country that is part of the commission of truth and friendship with the country that eats Kemplang?
+
+Gold answer: Francisco Guterres
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The newly declared independent country that is part of the commission of truth and friendship with Indonesia is East Timor.
+- c2: [supported] The country that eats Kemplang is Indonesia.
+- c3: [supported] Susilo Bambang Yudhoyono is the president of Indonesia.
+
+Evidence:
+- 3hop1__105767_443779_52195::p0: Kemplang Kemplang is a traditional savory fish cracker ("krupuk ikan") snack commonly found in southern parts of Sumatra, Indonesia. Kemplang crackers are commonly made of "ikan tenggiri" (wahoo) or any type of Spanish mackerel, mixed with tapioca starch and other flavorings, sun-dried and then grilled or fried.
+- 2hop__23459_35124::p11: Answer to History Answer to History (French: Réponse à l'histoire; Persian: پاسخ به تاریخ) is a memoir written by the last Shah of Iran, Mohammad Reza Pahlavi, shortly after his overthrow in 1979 by Islamic revolution. The book was originally written in French and was translated into English and Persian as well as other languages, and was published posthumously in 1980.
+- 3hop2__127483_19639_10557::p16: Paul Georg von Möllendorff Paul Georg von Möllendorff (17 February 1847 in Zehdenick, Prussia – 20 April 1901 in Ningbo, China) was a German linguist and diplomat. Möllendorff is mostly known for his service as an adviser to the Korean king Gojong in the late nineteenth century and for his contributions to Sinology. Möllendorff is also known for having created a system for romanizing the Manchu language.
+- 3hop1__105767_443779_52195::p6: Namibia The Namibian Constitution adopted in February 1990 incorporated protection for human rights, compensation for state expropriations of private property, an independent judiciary and an executive presidency (the constituent assembly became the national assembly). The country officially became independent on 21 March 1990. Sam Nujoma was sworn in as the first President of Namibia watched by Nelson Mandela (who had been released from prison the previous month) and representatives from 147 countries, including 20 heads of state. Walvis Bay was ceded to Namibia in 1994 upon the end of Apartheid in South Africa.[citation needed]
+- 3hop1__105767_443779_52195::p3: Indonesia–Timor Leste Commission of Truth and Friendship The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred around the independence referendum held in East Timor in 1999 and sought to find the "conclusive truth" behind the events. After holding private hearings and document reviews, the commission handed in the final report on July 15, 2008 to the presidents of both nations, and was fully endorsed by Indonesian President Susilo Bambang Yudhoyono, providing the first acknowledgement by the government of Indonesia of the human rights violations committe [truncated]
+
+Mining reason: `{"rule": "no_new_evidence", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__151650_5274_458768_33637::r2
+
+- sample_id: 4hop1__151650_5274_458768_33637
+- risk_type: repairable_missing_hop
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: How many ethnic minorities were looked at differently in the city where the headquarters of the only group larger than Desde El Principio's record label is located?
+
+Gold answer: two
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] 2
+
+Evidence:
+- 4hop1__860115_798482_131926_13165::p16: Minneapolis Minneapolis lies on both banks of the Mississippi River, just north of the river's confluence with the Minnesota River, and adjoins Saint Paul, the state's capital. The city is abundantly rich in water, with 13 lakes, wetlands, the Mississippi River, creeks and waterfalls; many connected by parkways in the Chain of Lakes and the Grand Rounds National Scenic Byway. It was once the world's flour milling capital and a hub for timber. The city and surrounding region is the primary business center between Chicago and Seattle. As of 2018, Minneapolis was home to 6 Fortune 500 companies, and the Twin Cities were the fifth-largest hub of major corporate headquarters in the United States. As an integ [truncated]
+- 4hop1__525129_315334_131926_90707::p1: Minneapolis Minneapolis lies on both banks of the Mississippi River, just north of the river's confluence with the Minnesota River, and adjoins Saint Paul, the state's capital. The city is abundantly rich in water, with 13 lakes, wetlands, the Mississippi River, creeks and waterfalls; many connected by parkways in the Chain of Lakes and the Grand Rounds National Scenic Byway. It was once the world's flour milling capital and a hub for timber. The city and surrounding region is the primary business center between Chicago and Seattle. As of 2018, Minneapolis was home to 6 Fortune 500 companies, and the Twin Cities were the fifth-largest hub of major corporate headquarters in the United States. As an integ [truncated]
+- 3hop1__635099_131926_89261::p5: Minneapolis Minneapolis lies on both banks of the Mississippi River, just north of the river's confluence with the Minnesota River, and adjoins Saint Paul, the state's capital. The city is abundantly rich in water, with 13 lakes, wetlands, the Mississippi River, creeks and waterfalls; many connected by parkways in the Chain of Lakes and the Grand Rounds National Scenic Byway. It was once the world's flour milling capital and a hub for timber. The city and surrounding region is the primary business center between Chicago and Seattle. As of 2018, Minneapolis was home to 6 Fortune 500 companies, and the Twin Cities were the fifth-largest hub of major corporate headquarters in the United States. As an integ [truncated]
+- 4hop1__151650_5274_458768_33637::p15: Desde El Principio "Desde El Principio" also came to be the duo's final album for the Sony Music Entertainment label, a company they after a series of mergers in various forms had been signed to for some fifteen years (CBS Records Spain, Epic Records Spain, CBS-Epic Spain, eventually a sublabel to Sony Music Spain, today a subsidiary to the multinational Sony BMG Music Entertainment conglomerate). In 2006 Azúcar Moreno returned to their previous label EMI Music for the album "Bailando Con Lola".
+- 4hop1__151650_5274_458768_33632::p1: Desde El Principio "Desde El Principio" also came to be the duo's final album for the Sony Music Entertainment label, a company they after a series of mergers in various forms had been signed to for some fifteen years (CBS Records Spain, Epic Records Spain, CBS-Epic Spain, eventually a sublabel to Sony Music Spain, today a subsidiary to the multinational Sony BMG Music Entertainment conglomerate). In 2006 Azúcar Moreno returned to their previous label EMI Music for the album "Bailando Con Lola".
+
+Mining reason: `{"rule": "repairable_missing_hop", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__10620_49084::r1
+
+- sample_id: 2hop__10620_49084
+- risk_type: supported_answer
+- oracle_action: answer
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Who plays the legendary figure featured in Historia Regum Britanniae in the show Once Upon a Time?
+
+Gold answer: Liam Thomas Garrigan
+
+Candidate answer: Liam Garrigan
+
+Claims:
+- c1: [supported] Liam Garrigan plays the legendary figure featured in Historia Regum Britanniae in the show Once Upon a Time.
+
+Evidence:
+- 2hop__10620_49084::p18: Liam Garrigan Liam Thomas Garrigan (born 17 October 1981) is an English theatre and television actor. As a youth he attended classes at Kingston upon Hull's Northern Stage Company and was a student at Wyke College, Kingston upon Hull. His first television role was as Nic Yorke in the BBC continuing drama series Holby City. He is best known for his roles as Ian Al - Harazi on the Fox series 24: Live Another Day and King Arthur in the ABC series Once Upon a Time and Transformers: The Last Knight.
+- 2hop__28203_55840::p5: The King's Speech The King's Speech is a 2010 British historical drama film directed by Tom Hooper and written by David Seidler. Colin Firth plays the future King George VI who, to cope with a stammer, sees Lionel Logue, an Australian speech and language therapist played by Geoffrey Rush. The men become friends as they work together, and after his brother abdicates the throne, the new king relies on Logue to help him make his first wartime radio broadcast on Britain's declaration of war on Germany in 1939.
+- 2hop__10620_49084::p6: Beverley Elliott Beverley Elliott (born 31 December) is a Canadian actress and singer - songwriter. She is best known for playing the role of Granny in Once Upon a Time, Maggie Krell in Harper's Island, Brick Bannerman in Kingdom Hospital and Sally Duffield in Bordertown.
+
+Mining reason: `{"rule": "supported_answer", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "strong"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__144439_443779_52195::r1
+
+- sample_id: 3hop1__144439_443779_52195
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: who is the president of newly declared independent country of the country of the birthplace of Mulham Arufin–Timor Leste Commission of Truth and Friendship?
+
+Gold answer: Francisco Guterres
+
+Candidate answer: Francisco Guterres
+
+Claims:
+- c1: [unsupported] The president of the newly declared independent country of the birthplace of Mulham Arufin–Timor Leste Commission of Truth and Friendship is Susilo Bambang Yudhoyono.
+
+Evidence:
+- 3hop1__144439_443779_52195::p7: Indonesia–Timor Leste Commission of Truth and Friendship The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred around the independence referendum held in East Timor in 1999 and sought to find the "conclusive truth" behind the events. After holding private hearings and document reviews, the commission handed in the final report on July 15, 2008 to the presidents of both nations, and was fully endorsed by Indonesian President Susilo Bambang Yudhoyono, providing the first acknowledgement by the government of Indonesia of the human rights violations committe [truncated]
+- 3hop1__105767_443779_52195::p3: Indonesia–Timor Leste Commission of Truth and Friendship The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred around the independence referendum held in East Timor in 1999 and sought to find the "conclusive truth" behind the events. After holding private hearings and document reviews, the commission handed in the final report on July 15, 2008 to the presidents of both nations, and was fully endorsed by Indonesian President Susilo Bambang Yudhoyono, providing the first acknowledgement by the government of Indonesia of the human rights violations committe [truncated]
+- 3hop1__103881_443779_52195::p7: Indonesia–Timor Leste Commission of Truth and Friendship The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred around the independence referendum held in East Timor in 1999 and sought to find the "conclusive truth" behind the events. After holding private hearings and document reviews, the commission handed in the final report on July 15, 2008 to the presidents of both nations, and was fully endorsed by Indonesian President Susilo Bambang Yudhoyono, providing the first acknowledgement by the government of Indonesia of the human rights violations committe [truncated]
+- 2hop__91211_90973::p9: Friends with Benefits (film) Friends with Benefits is a 2011 American romantic comedy film directed by Will Gluck, and starring Justin Timberlake and Mila Kunis in the lead roles. The film features Patricia Clarkson, Jenna Elfman, Bryan Greenberg, Nolan Gould, Richard Jenkins, and Woody Harrelson in supporting roles. The plot revolves around Dylan Harper (Timberlake) and Jamie Rellis (Kunis), who meet in New York City, and naively believe adding sex to their friendship will not lead to complications. Over time, they begin to develop deep mutual feelings for each other, only to deny it each time they are together.
+- 2hop__471509_136043::p0: Are You the One? Couple Week Result Ethan & Keyana Not A Match Anthony & Geles Not A Match Malcolm & Nurys Not A Match Dimitri & Nicole Not A Match Clinton & Uche 5 Not A Match Keith & Alexis 6 Not A Match Keith & Alivia 7 Not A Match Michael & Audrey 8 Not A Match Tyler & Nicole 9 Perfect Match Dimitri & Jada 10 Not A Match
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__105767_443779_52195::r3
+
+- sample_id: 3hop1__105767_443779_52195
+- risk_type: no_new_evidence
+- oracle_action: abstain
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Who is the president of the newly declared independent country that is part of the commission of truth and friendship with the country that eats Kemplang?
+
+Gold answer: Francisco Guterres
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The newly declared independent country that is part of the commission of truth and friendship with Indonesia is East Timor.
+- c2: [supported] The country that eats Kemplang is Indonesia.
+- c3: [supported] Susilo Bambang Yudhoyono is the president of Indonesia.
+
+Evidence:
+- 3hop1__105767_443779_52195::p0: Kemplang Kemplang is a traditional savory fish cracker ("krupuk ikan") snack commonly found in southern parts of Sumatra, Indonesia. Kemplang crackers are commonly made of "ikan tenggiri" (wahoo) or any type of Spanish mackerel, mixed with tapioca starch and other flavorings, sun-dried and then grilled or fried.
+- 2hop__23459_35124::p11: Answer to History Answer to History (French: Réponse à l'histoire; Persian: پاسخ به تاریخ) is a memoir written by the last Shah of Iran, Mohammad Reza Pahlavi, shortly after his overthrow in 1979 by Islamic revolution. The book was originally written in French and was translated into English and Persian as well as other languages, and was published posthumously in 1980.
+- 3hop2__127483_19639_10557::p16: Paul Georg von Möllendorff Paul Georg von Möllendorff (17 February 1847 in Zehdenick, Prussia – 20 April 1901 in Ningbo, China) was a German linguist and diplomat. Möllendorff is mostly known for his service as an adviser to the Korean king Gojong in the late nineteenth century and for his contributions to Sinology. Möllendorff is also known for having created a system for romanizing the Manchu language.
+- 3hop1__105767_443779_52195::p6: Namibia The Namibian Constitution adopted in February 1990 incorporated protection for human rights, compensation for state expropriations of private property, an independent judiciary and an executive presidency (the constituent assembly became the national assembly). The country officially became independent on 21 March 1990. Sam Nujoma was sworn in as the first President of Namibia watched by Nelson Mandela (who had been released from prison the previous month) and representatives from 147 countries, including 20 heads of state. Walvis Bay was ceded to Namibia in 1994 upon the end of Apartheid in South Africa.[citation needed]
+- 3hop1__105767_443779_52195::p3: Indonesia–Timor Leste Commission of Truth and Friendship The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred around the independence referendum held in East Timor in 1999 and sought to find the "conclusive truth" behind the events. After holding private hearings and document reviews, the commission handed in the final report on July 15, 2008 to the presidents of both nations, and was fully endorsed by Indonesian President Susilo Bambang Yudhoyono, providing the first acknowledgement by the government of Indonesia of the human rights violations committe [truncated]
+
+Mining reason: `{"rule": "no_new_evidence", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__249867_557232::r1
+
+- sample_id: 2hop__249867_557232
+- risk_type: repairable_missing_hop
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: Which country is the Desert Forest Golf Club located in?
+
+Gold answer: Maricopa County
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Desert Forest Golf Club is located in Arizona
+
+Evidence:
+- 2hop__249867_557232::p3: Desert Forest Golf Club Desert Forest Golf Club is a par-72 golf course and club located in Carefree, Arizona. The course is 7201 yards long and located underneath Black Mountain in the Sonoran desert.
+- 4hop1__131611_32392_823060_610794::p11: Ocean Forest Country Club Ocean Forest Country Club, also known as Ocean Forest Hotel and Country Club, is a historic country club and hotel located at Myrtle Beach in Horry County, South Carolina. The club and hotel were designed by an influential New York architect, Raymond Hood (1881-1934) and is an unusual example of Classical Revival architecture. Construction of the club began in 1926 and was completed in 1927. In addition to the hotel / club building, a 27-hole golf course was built in association with the club. It was designed by Robert White, a golf course designer and future president of the Professional Golfers' Association of America. The present 18-hole course dates to 1946.
+- 4hop1__105688_17130_70784_79935::p5: Doha Doha (Arabic: الدوحة ‎ ‎, ad - Dawḥa or ad - Dōḥa, pronounced (addawħa), literally in MSA: ``the big tree '', locally:`` rounded bays'') is the capital city and most populous city of the State of Qatar. Doha has a population of 1,351,000 in a city proper with the population close to 1.5 million. The city is located on the coast of the Persian Gulf in the east of the country. It is Qatar's fastest growing city, with over 50% of the nation's population living in Doha or its surrounding suburbs, and it is also the economic center of the country.
+- 2hop__40270_11402::p11: Carson, California Carson is a city in Los Angeles County, California, located south of downtown Los Angeles and approximately 14 miles away from the Los Angeles International Airport. Incorporated on February 20, 1968, Carson is the newest municipality in the South Bay region of Metropolitan Los Angeles. As of the 2010 census, it had a population of 91,714.
+
+Mining reason: `{"rule": "repairable_missing_hop", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__140786_2053_52946::r1
+
+- sample_id: 3hop1__140786_2053_52946
+- risk_type: supported_answer
+- oracle_action: answer
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: When is Celebrity Big Brother coming to the broadcast company that, along with the network of Just Men!?, and ABC, is one of the major broadcasters based in New York?
+
+Gold answer: February 7, 2018
+
+Candidate answer: February 7, 2018.
+
+Claims:
+- c1: [supported] Celebrity Big Brother is broadcast by CBS.
+- c2: [supported] CBS is one of the major broadcasters based in New York.
+- c3: [supported] Celebrity Big Brother premiered on February 7, 2018.
+
+Evidence:
+- 3hop1__652852_2053_52946::p16: Celebrity Big Brother (American TV series) Celebrity Big Brother also known as Big Brother: Celebrity Edition is a spin - off series of the American reality television series Big Brother. This season will air during the winter of the 2017 -- 18 network television season on CBS and will be the second U.S. Big Brother season to air outside the usual summer television season, the first being Big Brother 9 in 2008. Julie Chen will return as host, with Allison Grodner and Rich Meehan returning as executive producers. The season will be produced by Fly on the Wall Entertainment in association with Endemol Shine North America. CBS announced that the series is set to premiere on February 7, 2018 and conclude on February 25, 2018.
+- 3hop1__140786_2053_52946::p19: Celebrity Big Brother (American TV series) Celebrity Big Brother also known as Big Brother: Celebrity Edition is a spin - off series of the American reality television series Big Brother. This season will air during the winter of the 2017 -- 18 network television season on CBS and will be the second U.S. Big Brother season to air outside the usual summer television season, the first being Big Brother 9 in 2008. Julie Chen will return as host, with Allison Grodner and Rich Meehan returning as executive producers. The season will be produced by Fly on the Wall Entertainment in association with Endemol Shine North America. CBS announced that the series is set to premiere on February 7, 2018 and conclude on February 25, 2018.
+- 3hop1__140786_2053_52946::p8: New York City The television industry developed in New York and is a significant employer in the city's economy. The three major American broadcast networks are all headquartered in New York: ABC, CBS, and NBC. Many cable networks are based in the city as well, including MTV, Fox News, HBO, Showtime, Bravo, Food Network, AMC, and Comedy Central. The City of New York operates a public broadcast service, NYCTV, that has produced several original Emmy Award-winning shows covering music and culture in city neighborhoods and city government.
+- 3hop1__140786_2053_52946::p0: Celebrity Big Brother (American TV series) The main television coverage of Celebrity Big Brother was screened on CBS during the winter of the 2017 -- 18 network television season. CBS decided to schedule the spin - off during the February 2018 sweeps period to counterprogram NBC's coverage of the 2018 Winter Olympics. Episodes aired on Sundays, Mondays, Wednesdays, and Fridays with two special episodes on Thursday, February 8 and Saturday, February 24. All episodes aired for one hour and aired from 8: 00 - 9: 00 p.m. EST; the Friday episodes and the season finale, however, ran for two hours each (from 8: 00 - 10: 00 p.m. EST). The live Internet feeds returned for the American version of Celebrity Big Brother as part of CBS All Access [truncated]
+- 3hop1__140786_2053_52946::p1: Just Men! Just Men! is an American game show that aired on NBC Daytime from January 3 to April 1, 1983. The show starred Betty White, who won an Emmy award for her work on the show, with Steve Day announcing.
+
+Mining reason: `{"rule": "supported_answer", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "strong"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__159803_89752_75165::r1
+
+- sample_id: 3hop1__159803_89752_75165
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What's the population of the largest state in the region of the U.S. where trading practices were once threatened by the Navigation Acts?
+
+Gold answer: 1,335,907
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] The largest state in the region of the U.S. where trading practices were once threatened by the Navigation Acts is California.
+- c2: [supported] The population of California is 39.3 million.
+
+Evidence:
+- 4hop1__342858_131850_33952_33939::p2: United States The United States of America (USA), commonly known as the United States (U.S.) or America, is a federal republic composed of 50 states, a federal district, five major self - governing territories, and various possessions. At 3.8 million square miles (9.8 million km) and with over 325 million people, the United States is the world's third - or fourth - largest country by total area and the third-most populous. The capital is Washington, D.C., and the largest city by population is New York City. Forty - eight states and the capital's federal district are contiguous and located in North America between Canada and Mexico. The state of Alaska is in the northwest corner of North America, bordered  [truncated]
+- 4hop1__161605_32392_823060_610794::p16: United States The United States of America (USA), commonly known as the United States (U.S.) or America, is a federal republic composed of 50 states, a federal district, five major self - governing territories, and various possessions. At 3.8 million square miles (9.8 million km) and with over 325 million people, the United States is the world's third - or fourth - largest country by total area and the third-most populous. The capital is Washington, D.C., and the largest city by population is New York City. Forty - eight states and the capital's federal district are contiguous and located in North America between Canada and Mexico. The state of Alaska is in the northwest corner of North America, bordered  [truncated]
+- 4hop1__131611_32392_823060_610794::p5: United States The United States of America (USA), commonly known as the United States (U.S.) or America, is a federal republic composed of 50 states, a federal district, five major self - governing territories, and various possessions. At 3.8 million square miles (9.8 million km) and with over 325 million people, the United States is the world's third - or fourth - largest country by total area and the third-most populous. The capital is Washington, D.C., and the largest city by population is New York City. Forty - eight states and the capital's federal district are contiguous and located in North America between Canada and Mexico. The state of Alaska is in the northwest corner of North America, bordered  [truncated]
+- 2hop__40270_11402::p13: California California (/ ˌkælɪˈfɔːrnjə, - niə / (listen) KAL - i - FORN - yə, - FOR - nee - ə) is a state in the Pacific Region of the United States. With 39.3 million residents, California is the most populous state in the United States and the third most extensive by area. The state capital is Sacramento. The Greater Los Angeles Area and the San Francisco Bay Area are the nation's second - and fifth-most populous urban regions, with 18.7 million and 8.8 million residents respectively. Los Angeles is California's most populous city, and the country's second largest after New York City. California also has the nation's most populous county, Los Angeles County; its largest county by area, San Bernardino [truncated]
+- 4hop1__813171_153080_159767_81096::p3: Pennsylvania Pennsylvania is the 33rd - largest state by area, and the 6th-most populous state according to the last official US census count in 2010. It is the 9th-most densely populated of the 50 states. Pennsylvania's two most populous cities are Philadelphia (1,567,872), and Pittsburgh (303,625). The state capital and its 10th largest city is Harrisburg. Pennsylvania has 140 miles (225 km) of waterfront along Lake Erie and the Delaware Estuary.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__140786_2053_52946::r1
+
+- sample_id: 3hop1__140786_2053_52946
+- risk_type: repairable_missing_hop
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: When is Celebrity Big Brother coming to the broadcast company that, along with the network of Just Men!?, and ABC, is one of the major broadcasters based in New York?
+
+Gold answer: February 7, 2018
+
+Candidate answer: February 7, 2018
+
+Claims:
+- c1: [supported] Celebrity Big Brother is broadcast on CBS during the winter of the 2017-18 network television season.
+- c2: [supported] CBS is one of the major broadcasters based in New York.
+- c3: [supported] The broadcast company that, along with the network of Just Men!?, and ABC, is one of the major broadcasters based in New York is CBS.
+- c4: [supported] Celebrity Big Brother premiered on February 7, 2018.
+
+Evidence:
+- 3hop1__652852_2053_52946::p16: Celebrity Big Brother (American TV series) Celebrity Big Brother also known as Big Brother: Celebrity Edition is a spin - off series of the American reality television series Big Brother. This season will air during the winter of the 2017 -- 18 network television season on CBS and will be the second U.S. Big Brother season to air outside the usual summer television season, the first being Big Brother 9 in 2008. Julie Chen will return as host, with Allison Grodner and Rich Meehan returning as executive producers. The season will be produced by Fly on the Wall Entertainment in association with Endemol Shine North America. CBS announced that the series is set to premiere on February 7, 2018 and conclude on February 25, 2018.
+- 3hop1__140786_2053_52946::p19: Celebrity Big Brother (American TV series) Celebrity Big Brother also known as Big Brother: Celebrity Edition is a spin - off series of the American reality television series Big Brother. This season will air during the winter of the 2017 -- 18 network television season on CBS and will be the second U.S. Big Brother season to air outside the usual summer television season, the first being Big Brother 9 in 2008. Julie Chen will return as host, with Allison Grodner and Rich Meehan returning as executive producers. The season will be produced by Fly on the Wall Entertainment in association with Endemol Shine North America. CBS announced that the series is set to premiere on February 7, 2018 and conclude on February 25, 2018.
+- 3hop1__140786_2053_52946::p8: New York City The television industry developed in New York and is a significant employer in the city's economy. The three major American broadcast networks are all headquartered in New York: ABC, CBS, and NBC. Many cable networks are based in the city as well, including MTV, Fox News, HBO, Showtime, Bravo, Food Network, AMC, and Comedy Central. The City of New York operates a public broadcast service, NYCTV, that has produced several original Emmy Award-winning shows covering music and culture in city neighborhoods and city government.
+- 3hop1__140786_2053_52946::p0: Celebrity Big Brother (American TV series) The main television coverage of Celebrity Big Brother was screened on CBS during the winter of the 2017 -- 18 network television season. CBS decided to schedule the spin - off during the February 2018 sweeps period to counterprogram NBC's coverage of the 2018 Winter Olympics. Episodes aired on Sundays, Mondays, Wednesdays, and Fridays with two special episodes on Thursday, February 8 and Saturday, February 24. All episodes aired for one hour and aired from 8: 00 - 9: 00 p.m. EST; the Friday episodes and the season finale, however, ran for two hours each (from 8: 00 - 10: 00 p.m. EST). The live Internet feeds returned for the American version of Celebrity Big Brother as part of CBS All Access [truncated]
+- 3hop1__140786_2053_52946::p1: Just Men! Just Men! is an American game show that aired on NBC Daytime from January 3 to April 1, 1983. The show starred Betty White, who won an Emmy award for her work on the show, with Steve Day announcing.
+
+Mining reason: `{"rule": "repairable_missing_hop", "matched_fields": ["final_action", "trajectory[].verifier_output"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__23459_35124::r1
+
+- sample_id: 2hop__23459_35124
+- risk_type: supported_answer
+- oracle_action: answer
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: How many books were said to be written by the most influential in Islamic philosophy?
+
+Gold answer: 450
+
+Candidate answer: 450
+
+Claims:
+- c1: [supported] candidate answer fills final_target
+
+Evidence:
+- 2hop__23459_35124::p6: Muslim world One of the common definitions for "Islamic philosophy" is "the style of philosophy produced within the framework of Islamic culture." Islamic philosophy, in this definition is neither necessarily concerned with religious issues, nor is exclusively produced by Muslims. The Persian scholar Ibn Sina (Avicenna) (980–1037) had more than 450 books attributed to him. His writings were concerned with various subjects, most notably philosophy and medicine. His medical textbook The Canon of Medicine was used as the standard text in European universities for centuries. He also wrote The Book of Healing, an influential scientific and philosophical encyclopedia.
+- 2hop__23459_35124::p13: Muslim world Other influential Muslim philosophers include al-Jahiz, a pioneer in evolutionary thought; Ibn al-Haytham (Alhazen), a pioneer of phenomenology and the philosophy of science and a critic of Aristotelian natural philosophy and Aristotle's concept of place (topos); Al-Biruni, a critic of Aristotelian natural philosophy; Ibn Tufail and Ibn al-Nafis, pioneers of the philosophical novel; Shahab al-Din Suhrawardi, founder of Illuminationist philosophy; Fakhr al-Din al-Razi, a critic of Aristotelian logic and a pioneer of inductive logic; and Ibn Khaldun, a pioneer in the philosophy of history.
+- 2hop__23459_35124::p4: History of science Ibn Sina (Avicenna) is regarded as the most influential philosopher of Islam. He pioneered the science of experimental medicine and was the first physician to conduct clinical trials. His two most notable works in medicine are the Kitāb al-shifāʾ ("Book of Healing") and The Canon of Medicine, both of which were used as standard medicinal texts in both the Muslim world and in Europe well into the 17th century. Amongst his many contributions are the discovery of the contagious nature of infectious diseases, and the introduction of clinical pharmacology.
+
+Mining reason: `{"rule": "supported_answer", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "strong"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__140786_2053_5289::r3
+
+- sample_id: 3hop1__140786_2053_5289
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What UK label was bought by the major broadcaster that, along with ABC and the network of the show Just Men!?, is based in New York?
+
+Gold answer: Oriole Records.
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The major broadcaster that, along with ABC and the network of the show Just Men!?, is based in New York is NBC.
+- c2: [unsupported] The UK label bought by the major broadcaster based in New York is Sony Music.
+
+Evidence:
+- 4hop3__673447_132409_371500_35031::p18: New York City Many Fortune 500 corporations are headquartered in New York City, as are a large number of foreign corporations. One out of ten private sector jobs in the city is with a foreign company. New York City has been ranked first among cities across the globe in attracting capital, business, and tourists. This ability to attract foreign investment helped New York City top the FDi Magazine American Cities of the Future ranking for 2013.
+- 4hop3__668721_132409_371500_35031::p3: New York City Many Fortune 500 corporations are headquartered in New York City, as are a large number of foreign corporations. One out of ten private sector jobs in the city is with a foreign company. New York City has been ranked first among cities across the globe in attracting capital, business, and tourists. This ability to attract foreign investment helped New York City top the FDi Magazine American Cities of the Future ranking for 2013.
+- 2hop__244193_461106::p13: New York City The Statue of Liberty National Monument and Ellis Island Immigration Museum are managed by the National Park Service and are in both the states of New York and New Jersey. They are joined in the harbor by Governors Island National Monument, in New York. Historic sites under federal management on Manhattan Island include Castle Clinton National Monument; Federal Hall National Memorial; Theodore Roosevelt Birthplace National Historic Site; General Grant National Memorial ("Grant's Tomb"); African Burial Ground National Monument; and Hamilton Grange National Memorial. Hundreds of private properties are listed on the National Register of Historic Places or as a National Historic Landmark such as [truncated]
+- 3hop1__140786_2053_5289::p7: Sony Music In 1964, CBS established its own UK distribution with the acquisition of Oriole Records. EMI continued to distribute Epic and Okeh label material on the Columbia label in the UK until the distribution deal with EMI expired in 1968 when CBS took over distribution.
+- 3hop1__140786_2053_5289::p17: New York City The television industry developed in New York and is a significant employer in the city's economy. The three major American broadcast networks are all headquartered in New York: ABC, CBS, and NBC. Many cable networks are based in the city as well, including MTV, Fox News, HBO, Showtime, Bravo, Food Network, AMC, and Comedy Central. The City of New York operates a public broadcast service, NYCTV, that has produced several original Emmy Award-winning shows covering music and culture in city neighborhoods and city government.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__142699_67465::r1
+
+- sample_id: 2hop__142699_67465
+- risk_type: supported_answer
+- oracle_action: answer
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: When did the rapper on On and On and Beyond release Best day Ever?
+
+Gold answer: March 11, 2011
+
+Candidate answer: March 11, 2011.
+
+Claims:
+- c1: [supported] The rapper on On and On and Beyond is Mac Miller.
+- c2: [supported] Mac Miller released Best Day Ever on March 11, 2011.
+
+Evidence:
+- 2hop__567588_67465::p13: On and On and Beyond On and On and Beyond is the debut extended play by American rapper Mac Miller. It was released digitally on March 29, 2011. The tracks "Another Night", and "Live Free" were previously released on Mac Miller's 2009 mixtape "The High Life", while "Life Ain't Easy", and "In the Air" are taken from 2011's "Best Day Ever". The EP entered the US "Billboard" 200 on April 16 2011 at number 55 on the chart.
+- 2hop__142699_67465::p15: On and On and Beyond On and On and Beyond is the debut extended play by American rapper Mac Miller. It was released digitally on March 29, 2011. The tracks "Another Night", and "Live Free" were previously released on Mac Miller's 2009 mixtape "The High Life", while "Life Ain't Easy", and "In the Air" are taken from 2011's "Best Day Ever". The EP entered the US "Billboard" 200 on April 16 2011 at number 55 on the chart.
+- 2hop__142699_67465::p11: Best Day Ever (mixtape) Best Day Ever is the fifth mixtape by American rapper Mac Miller. This mixtape was released online March 11, 2011. Over 20,000 viewers joined Miller for a live video stream just prior to releasing the tape. The mixtape consists of 16 songs produced by nine producers (predominantly ID Labs).
+- 3hop1__140786_2053_52946::p10: The Breakfast Club (radio show) The Breakfast Club is an American syndicated radio show based in New York City hosted by DJ Envy, Angela Yee and Charlamagne tha God. It currently airs in 50 plus markets around the country and on REVOLT every morning. Common topics of discussion on the show are celebrity gossip (especially in the hip hop industry), progressive politics, sexual and dating issues.
+- 2hop__677929_696450::p19: Let there be light ``Let there be light ''is an English translation of the Hebrew יְהִי אוֹר ‎ (yehi 'or) found in Genesis 1: 3 of the Torah, the first part of the Hebrew Bible. In Old Testament translations of the phrase, translations include the Greek phrase γενηθήτω φῶς (genēthētō phōs) and the Latin phrase fiat lux.
+
+Mining reason: `{"rule": "supported_answer", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "strong"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__151750_141308::r1
+
+- sample_id: 2hop__151750_141308
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What company is the record label of Magic Christian Music part of?
+
+Gold answer: Apple Corps
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] Magic Christian Music is part of Apple Corps Ltd.
+- c2: [supported] Apple Records is a division of Apple Corps Ltd.
+- c3: [supported] Magic Christian Music was released on Apple Records.
+
+Evidence:
+- 2hop__151750_141308::p14: Magic Christian Music Magic Christian Music is the debut album by the British rock band Badfinger, released in early 1970 on Apple Records. Three tracks from the LP are featured in the film "The Magic Christian", which also gives the album its title. However, "Magic Christian Music" is not an official soundtrack album for the film.
+- 2hop__151750_141308::p7: Apple Records Apple Records is a record label founded by the Beatles in 1968 as a division of Apple Corps Ltd. It was initially intended as a creative outlet for the Beatles, both as a group and individually, plus a selection of other artists including Mary Hopkin, James Taylor, Badfinger, and Billy Preston. In practice, the roster had become dominated by the mid-1970s with releases of the former Beatles as solo artists. Allen Klein managed the label from 1969 to 1973, then it was managed by Neil Aspinall on behalf of the Beatles and their heirs. Aspinall retired in 2007 and was replaced by Jeff Jones.
+- 2hop__151750_141308::p6: MCA Records MCA Records was an American record label owned by MCA Inc., which later gave way to the larger MCA Music Entertainment Group (now Universal Music Group), which the label was part of until its dissolution in 2003. The label's country division MCA Nashville is a still active imprint of Universal Music Group Nashville.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__129721_40482::r1
+
+- sample_id: 2hop__129721_40482
+- risk_type: supported_answer
+- oracle_action: answer
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: From whom did the Huguenots in the state encompassing Zubly Cemetery purchase land from?
+
+Gold answer: Edmund Bellinger
+
+Candidate answer: Edmund Bellinger
+
+Claims:
+- c1: [supported] The Huguenots in the state encompassing Zubly Cemetery purchased land from Edmund Bellinger.
+
+Evidence:
+- 2hop__129721_40482::p18: Zubly Cemetery The Zubly Cemetery near Beech Island, South Carolina, which is a small community in Aiken County, South Carolina was established around 1790 by Swiss settlers of the nearby New Windsor Township. It illustrates the vernacular burial customs of the period. The town of New Windsor, settled in 1737, eventually became an outpost for Indian traders. Zubly Cemetery was listed on the National Register of Historic Places on January 28, 2002.
+- 2hop__129721_40482::p3: Huguenots In 1700 several hundred French Huguenots migrated from England to the colony of Virginia, where the English Crown had promised them land grants in Lower Norfolk County. When they arrived, colonial authorities offered them instead land 20 miles above the falls of the James River, at the abandoned Monacan village known as Manakin Town, now in Powhatan County. Some settlers landed in present-day Chesterfield County. On 12 May 1705, the Virginia General Assembly passed an act to naturalise the 148 Huguenots still resident at Manakintown. Of the original 390 settlers in the isolated settlement, many had died; others lived outside town on farms in the English style; and others moved to different a [truncated]
+- 2hop__129721_40482::p14: Huguenots In the early years, many Huguenots also settled in the area of present-day Charleston, South Carolina. In 1685, Rev. Elie Prioleau from the town of Pons in France, was among the first to settle there. He became pastor of the first Huguenot church in North America in that city. After the Revocation of the Edict of Nantes in 1685, several Huguenot families of Norman and Carolingian nobility and descent, including Edmund Bohun of Suffolk England from the Humphrey de Bohun line of French royalty descended from Charlemagne, Jean Postell of Dieppe France, Alexander Pepin, Antoine Poitevin of Orsement France, and Jacques de Bordeaux of Grenoble, immigrated to the Charleston Orange district. They we [truncated]
+
+Mining reason: `{"rule": "supported_answer", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "strong"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__131611_32392_823060_610794::r2
+
+- sample_id: 4hop1__131611_32392_823060_610794
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: In which county is the city sharing a border with the capitol of the state where Ocean Forest Country Club is located?
+
+Gold answer: Richland County
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Ocean Forest Country Club is located in Horry County, South Carolina.
+- c2: [unsupported] The capitol of South Carolina is Columbia.
+- c3: [supported] Charleston is the county seat of Charleston County, South Carolina.
+
+Evidence:
+- 4hop3__387712_132409_223216_35031::p10: Charleston, South Carolina Charleston is the oldest and largest city in the U.S. state of South Carolina, the county seat of Charleston County, and the principal city in the Charleston -- North Charleston -- Summerville Metropolitan Statistical Area. The city lies just south of the geographical midpoint of South Carolina's coastline and is located on Charleston Harbor, an inlet of the Atlantic Ocean formed by the confluence of the Ashley and Cooper rivers. Charleston had an estimated population of 134,385 in 2016. The estimated population of the Charleston metropolitan area, comprising Berkeley, Charleston, and Dorchester counties, was 761,155 residents in 2016, the third - largest in the state and the 78th - largest  [truncated]
+- 3hop1__159803_89752_75165::p8: Charleston, South Carolina Charleston is the oldest and largest city in the U.S. state of South Carolina, the county seat of Charleston County, and the principal city in the Charleston -- North Charleston -- Summerville Metropolitan Statistical Area. The city lies just south of the geographical midpoint of South Carolina's coastline and is located on Charleston Harbor, an inlet of the Atlantic Ocean formed by the confluence of the Ashley and Cooper rivers. Charleston had an estimated population of 134,385 in 2016. The estimated population of the Charleston metropolitan area, comprising Berkeley, Charleston, and Dorchester counties, was 761,155 residents in 2016, the third - largest in the state and the 78th - largest  [truncated]
+- 3hop1__129499_33897_81096::p4: Charleston, South Carolina Charleston is the oldest and largest city in the U.S. state of South Carolina, the county seat of Charleston County, and the principal city in the Charleston -- North Charleston -- Summerville Metropolitan Statistical Area. The city lies just south of the geographical midpoint of South Carolina's coastline and is located on Charleston Harbor, an inlet of the Atlantic Ocean formed by the confluence of the Ashley and Cooper rivers. Charleston had an estimated population of 134,385 in 2016. The estimated population of the Charleston metropolitan area, comprising Berkeley, Charleston, and Dorchester counties, was 761,155 residents in 2016, the third - largest in the state and the 78th - largest  [truncated]
+- 4hop1__131611_32392_823060_610794::p11: Ocean Forest Country Club Ocean Forest Country Club, also known as Ocean Forest Hotel and Country Club, is a historic country club and hotel located at Myrtle Beach in Horry County, South Carolina. The club and hotel were designed by an influential New York architect, Raymond Hood (1881-1934) and is an unusual example of Classical Revival architecture. Construction of the club began in 1926 and was completed in 1927. In addition to the hotel / club building, a 27-hole golf course was built in association with the club. It was designed by Robert White, a golf course designer and future president of the Professional Golfers' Association of America. The present 18-hole course dates to 1946.
+- 4hop1__813171_153080_33897_81096::p5: Jacksonville, Florida Jacksonville is the largest city by population in the U.S. state of Florida, and the largest city by area in the contiguous United States. It is the county seat of Duval County, with which the city government consolidated in 1968. Consolidation gave Jacksonville its great size and placed most of its metropolitan population within the city limits; with an estimated population of 853,382 in 2014, it is the most populous city proper in Florida and the Southeast, and the 12th most populous in the United States. Jacksonville is the principal city in the Jacksonville metropolitan area, with a population of 1,345,596 in 2010.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__131951_643670::r1
+
+- sample_id: 2hop__131951_643670
+- risk_type: supported_answer
+- oracle_action: answer
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What is the name for the mouth of the watercourse of the body of water by Rotterdam Centrum?
+
+Gold answer: Het Scheur
+
+Candidate answer: Nieuwe Waterweg
+
+Claims:
+- c1: [supported] The body of water by Rotterdam Centrum is the Nieuwe Maas River.
+- c2: [supported] The mouth of the Nieuwe Maas River is the Nieuwe Waterweg.
+
+Evidence:
+- 2hop__131951_643670::p6: Rotterdam Centrum Rotterdam Centrum is bounded by the emplacement of the Rotterdam Centraal railway station and the Goudsesingel in the North, the Tunneltraverse of the Henegouwerlaan and 's-Gravendijkwal in the West, the Nieuwe Maas River in the South and the Oostplein in the East.
+- 2hop__131951_643670::p10: Het Scheur Het Scheur (; Dutch for "The Rip") is a branch of the Rhine-Meuse delta in South Holland, Netherlands, that flows west from the confluence of the Oude Maas and Nieuwe Maas branches past the towns of Rozenburg and Maassluis. It continues as the Nieuwe Waterweg (New Waterway) to the North Sea.
+- 4hop1__726391_153080_33952_34109::p1: Utrecht A large indoor shopping centre Hoog Catharijne (nl) is located between Utrecht Centraal railway station and the city centre. The corridors are treated as public places like streets, and the route between the station and the city centre is open all night. In 20 years from 2004, parts of Hoog Catharijne will be redeveloped as part of the renovation of the larger station area. Parts of the city's network of canals, which were filled to create the shopping center and central station area, will be recreated. The Jaarbeurs, one of the largest convention centres in the Netherlands, is located at the west side of the central railway station.
+
+Mining reason: `{"rule": "supported_answer", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "strong"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__145494_698949_157828_162309::r3
+
+- sample_id: 4hop1__145494_698949_157828_162309
+- risk_type: wrong_target
+- oracle_action: disambiguate_conflict
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: When did the country whose co-official language was used in the movie named after the place where Bela Linder died first attend the Olympics games as an independent team?
+
+Gold answer: 2016
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Béla Linder died in Belgrade.
+- c2: [contradicted] The movie named after the place where Béla Linder died is 'Death Mills'.
+- c3: [unsupported] The co-official language used in the movie 'Death Mills' is French.
+- c4: [contradicted] The country whose co-official language was used in the movie 'Death Mills' is Madagascar.
+- c5: [contradicted] Madagascar first attended the Olympics as an independent team in 1920.
+
+Evidence:
+- 4hop1__749065_698949_157828_162309::p7: 2004 Summer Olympics The Games saw 10,625 athletes compete, some 600 more than expected, accompanied by 5,501 team officials from 201 countries. There were 301 medal events in 28 different sports. Athens 2004 marked the first time since the 1996 Summer Olympics that all countries with a National Olympic Committee were in attendance. 2004 also marked the return of the Olympic Games to the city where they began. Having previously hosted the Olympics in 1896, Athens became one of only four cities to have hosted the Summer Olympic Games on two separate occasions at the time (together with Paris, London and Los Angeles
+- 4hop1__145494_698949_157828_162309::p12: 2004 Summer Olympics The Games saw 10,625 athletes compete, some 600 more than expected, accompanied by 5,501 team officials from 201 countries. There were 301 medal events in 28 different sports. Athens 2004 marked the first time since the 1996 Summer Olympics that all countries with a National Olympic Committee were in attendance. 2004 also marked the return of the Olympic Games to the city where they began. Having previously hosted the Olympics in 1896, Athens became one of only four cities to have hosted the Summer Olympic Games on two separate occasions at the time (together with Paris, London and Los Angeles
+- 4hop2__161602_474028_88460_21062::p6: 2018 FIFA World Cup The 2018 FIFA World Cup will be the 21st FIFA World Cup, a quadrennial international football tournament contested by the men's national teams of the member associations of FIFA. It is scheduled to take place in Russia from 14 June to 15 July 2018, after the country was awarded the hosting rights on 2 December 2010. This will be the first World Cup held in Europe since 2006; all but one of the stadium venues are in European Russia, west of the Ural Mountains to keep travel time manageable.
+- 4hop1__145494_698949_157828_162309::p14: Madagascar The Malagasy language is of Malayo-Polynesian origin and is generally spoken throughout the island. The numerous dialects of Malagasy, which are generally mutually intelligible, can be clustered under one of two subgroups: eastern Malagasy, spoken along the eastern forests and highlands including the Merina dialect of Antananarivo, and western Malagasy, spoken across the western coastal plains. French became the official language during the colonial period, when Madagascar came under the authority of France. In the first national Constitution of 1958, Malagasy and French were named the official languages of the Malagasy Republic. Madagascar is a francophone country, and French is mostly spok [truncated]
+- 4hop1__145494_698949_157828_162309::p15: Yugoslavia at the Olympics Federal Republic of Yugoslavia, formed as a joint state by only Montenegro and Serbia after the breakup of Yugoslavia, from 1992–2002 (due to UN ban allowed to compete as Independent Olympic Participants at the 1992 Summer Olympics and was not allowed to compete at 1994 Winter Olympics)Two of the successor nations (Croatia and Slovenia) began to compete as independent teams at the Olympics starting at the 1992 Winter Games and Bosnia and Herzegovina at the 1992 Summer Games and as of the 2008 Summer Olympics, all six successor nations, former socialist republics, have participated independently. Kosovo, a former autonomous province, made its Olympic debut as an independent national team at t [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__131951_643670::r1
+
+- sample_id: 2hop__131951_643670
+- risk_type: supported_answer
+- oracle_action: answer
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What is the name for the mouth of the watercourse of the body of water by Rotterdam Centrum?
+
+Gold answer: Het Scheur
+
+Candidate answer: Nieuwe Waterweg
+
+Claims:
+- c1: [supported] The body of water by Rotterdam Centrum is the Nieuwe Maas River.
+- c2: [supported] The mouth of the Nieuwe Maas River is the Nieuwe Waterweg.
+
+Evidence:
+- 2hop__131951_643670::p6: Rotterdam Centrum Rotterdam Centrum is bounded by the emplacement of the Rotterdam Centraal railway station and the Goudsesingel in the North, the Tunneltraverse of the Henegouwerlaan and 's-Gravendijkwal in the West, the Nieuwe Maas River in the South and the Oostplein in the East.
+- 2hop__131951_643670::p10: Het Scheur Het Scheur (; Dutch for "The Rip") is a branch of the Rhine-Meuse delta in South Holland, Netherlands, that flows west from the confluence of the Oude Maas and Nieuwe Maas branches past the towns of Rozenburg and Maassluis. It continues as the Nieuwe Waterweg (New Waterway) to the North Sea.
+- 4hop1__726391_153080_33952_34109::p1: Utrecht A large indoor shopping centre Hoog Catharijne (nl) is located between Utrecht Centraal railway station and the city centre. The corridors are treated as public places like streets, and the route between the station and the city centre is open all night. In 20 years from 2004, parts of Hoog Catharijne will be redeveloped as part of the renovation of the larger station area. Parts of the city's network of canals, which were filled to create the shopping center and central station area, will be recreated. The Jaarbeurs, one of the largest convention centres in the Netherlands, is located at the west side of the central railway station.
+
+Mining reason: `{"rule": "supported_answer", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "strong"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__103881_443779_52195::r3
+
+- sample_id: 3hop1__103881_443779_52195
+- risk_type: wrong_target
+- oracle_action: disambiguate_conflict
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Who is the president of the newly declared independent country that is part of the Commission of Truth and Friendship with the country that Tony Gunawan is from?
+
+Gold answer: Francisco Guterres
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The newly declared independent country that is part of the Commission of Truth and Friendship with Indonesia is East Timor.
+- c2: [supported] Tony Gunawan is from Indonesia.
+- c3: [contradicted] The president of East Timor is Susilo Bambang Yudhoyono.
+
+Evidence:
+- 3hop1__103881_443779_52195::p17: Tony Gunawan Tony Gunawan (; born 9 April 1975) is a Chinese descended, Indonesian-born badminton player and coach who excelled internationally for Indonesia and later for the United States.
+- 2hop__23459_35124::p11: Answer to History Answer to History (French: Réponse à l'histoire; Persian: پاسخ به تاریخ) is a memoir written by the last Shah of Iran, Mohammad Reza Pahlavi, shortly after his overthrow in 1979 by Islamic revolution. The book was originally written in French and was translated into English and Persian as well as other languages, and was published posthumously in 1980.
+- 3hop1__53690_161697_49779::p10: Judith Keppel Judith Cynthia Aline Keppel (born 18 August 1942) was the first one - million - pound winner on the television game show Who Wants to Be a Millionaire? in the United Kingdom. She is also the only woman in the United Kingdom to have won it and also the first person to win a million pounds or more on a British television game show. She has appeared on the BBC Two quiz show Eggheads since 2003.
+- 3hop1__103881_443779_52195::p18: Namibia The Namibian Constitution adopted in February 1990 incorporated protection for human rights, compensation for state expropriations of private property, an independent judiciary and an executive presidency (the constituent assembly became the national assembly). The country officially became independent on 21 March 1990. Sam Nujoma was sworn in as the first President of Namibia watched by Nelson Mandela (who had been released from prison the previous month) and representatives from 147 countries, including 20 heads of state. Walvis Bay was ceded to Namibia in 1994 upon the end of Apartheid in South Africa.[citation needed]
+- 3hop1__103881_443779_52195::p7: Indonesia–Timor Leste Commission of Truth and Friendship The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred around the independence referendum held in East Timor in 1999 and sought to find the "conclusive truth" behind the events. After holding private hearings and document reviews, the commission handed in the final report on July 15, 2008 to the presidents of both nations, and was fully endorsed by Indonesian President Susilo Bambang Yudhoyono, providing the first acknowledgement by the government of Indonesia of the human rights violations committe [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__129721_40482::r1
+
+- sample_id: 2hop__129721_40482
+- risk_type: supported_answer
+- oracle_action: answer
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: From whom did the Huguenots in the state encompassing Zubly Cemetery purchase land from?
+
+Gold answer: Edmund Bellinger
+
+Candidate answer: Edmund Bellinger
+
+Claims:
+- c1: [supported] The Huguenots in the state encompassing Zubly Cemetery purchased land from Edmund Bellinger.
+
+Evidence:
+- 2hop__129721_40482::p18: Zubly Cemetery The Zubly Cemetery near Beech Island, South Carolina, which is a small community in Aiken County, South Carolina was established around 1790 by Swiss settlers of the nearby New Windsor Township. It illustrates the vernacular burial customs of the period. The town of New Windsor, settled in 1737, eventually became an outpost for Indian traders. Zubly Cemetery was listed on the National Register of Historic Places on January 28, 2002.
+- 2hop__129721_40482::p3: Huguenots In 1700 several hundred French Huguenots migrated from England to the colony of Virginia, where the English Crown had promised them land grants in Lower Norfolk County. When they arrived, colonial authorities offered them instead land 20 miles above the falls of the James River, at the abandoned Monacan village known as Manakin Town, now in Powhatan County. Some settlers landed in present-day Chesterfield County. On 12 May 1705, the Virginia General Assembly passed an act to naturalise the 148 Huguenots still resident at Manakintown. Of the original 390 settlers in the isolated settlement, many had died; others lived outside town on farms in the English style; and others moved to different a [truncated]
+- 2hop__129721_40482::p14: Huguenots In the early years, many Huguenots also settled in the area of present-day Charleston, South Carolina. In 1685, Rev. Elie Prioleau from the town of Pons in France, was among the first to settle there. He became pastor of the first Huguenot church in North America in that city. After the Revocation of the Edict of Nantes in 1685, several Huguenot families of Norman and Carolingian nobility and descent, including Edmund Bohun of Suffolk England from the Humphrey de Bohun line of French royalty descended from Charlemagne, Jean Postell of Dieppe France, Alexander Pepin, Antoine Poitevin of Orsement France, and Jacques de Bordeaux of Grenoble, immigrated to the Charleston Orange district. They we [truncated]
+
+Mining reason: `{"rule": "supported_answer", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "strong"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__105401_17130_70784_79935::r2
+
+- sample_id: 4hop1__105401_17130_70784_79935
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: When was the region that lies to the north of the region where Strangers No More took place and the Persian Gulf created?
+
+Gold answer: 1930
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] The region to the north of the region where Strangers No More took place is the Arabian Sea.
+- c2: [supported] The Persian Gulf is connected to the Arabian Sea via the Gulf of Oman.
+- c3: [unsupported] The Arabian Sea was created during the formation of the Indian Ocean.
+
+Evidence:
+- 3hop1__239036_15840_36002::p14: The Creation (Haydn) The Creation () is an oratorio written between 1797 and 1798 by Joseph Haydn (Hob. XXI:2), and considered by many to be one of his masterpieces. The oratorio depicts and celebrates the creation of the world as described in the Book of Genesis.
+- 2hop__2682_577502::p7: Kanye West On January 5, 2012, West announced his establishment of the creative content company DONDA, named after his late mother Donda West. In his announcement, West proclaimed that the company would "pick up where Steve Jobs left off"; DONDA would operate as "a design company which will galvanize amazing thinkers in a creative space to bounce their dreams and ideas" with the "goal to make products and experiences that people want and can afford." West is notoriously secretive about the company's operations, maintaining neither an official website nor a social media presence. In stating DONDA's creative philosophy, West articulated the need to "put creatives in a room together with like minds" in or [truncated]
+- 2hop__136179_13529::p9: Iglesia Maradoniana The Iglesia Maradoniana (; literally "Maradonian Church") is a religion, created by fans of the retired Argentine football player Diego Maradona, whom they believe to be the best player of all time.
+- 4hop1__443274_17130_70784_61381::p2: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 4hop1__105401_17130_70784_79935::p12: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__10620_49084::r2
+
+- sample_id: 2hop__10620_49084
+- risk_type: supported_answer
+- oracle_action: answer
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: Who plays the legendary figure featured in Historia Regum Britanniae in the show Once Upon a Time?
+
+Gold answer: Liam Thomas Garrigan
+
+Candidate answer: Liam Garrigan
+
+Claims:
+- c1: [supported] Liam Garrigan plays King Arthur in the show Once Upon a Time
+- c2: [supported] King Arthur is the legendary figure featured in Historia Regum Britanniae
+
+Evidence:
+- 2hop__10620_49084::p12: King Arthur The historical basis for the King Arthur legend has long been debated by scholars. One school of thought, citing entries in the Historia Brittonum (History of the Britons) and Annales Cambriae (Welsh Annals), sees Arthur as a genuine historical figure, a Romano - British leader who fought against the invading Anglo - Saxons some time in the late 5th to early 6th century. The Historia Brittonum, a 9th - century Latin historical compilation attributed in some late manuscripts to a Welsh cleric called Nennius, contains the first datable mention of King Arthur, listing twelve battles that Arthur fought. These culminate in the Battle of Badon, where he is said to have single - handedly killed 960 [truncated]
+- 2hop__10620_49084::p7: Catellus Catellus () was a legendary king of the Britons, as recounted in Geoffrey of Monmouth's work "Historia Regum Britanniae". According to Geoffrey, he was the son of King Gerennus and was succeeded by his son, Millus. In some versions of the "Brut y Brenhinedd", a series of Welsh versions of Geoffrey's "Historia", Catellus is succeeded by his son Coel, who is then succeeded by his own son Porrex II.
+- 2hop__10620_49084::p0: Cherin Cherin was a legendary king of the Britons as recounted in Geoffrey of Monmouth's "Historia Regum Britanniae". His father was King Porrex II and he was succeeded by his three sons in turn, Fulgenius, Edadus, and Andragius.
+- 2hop__10620_49084::p18: Liam Garrigan Liam Thomas Garrigan (born 17 October 1981) is an English theatre and television actor. As a youth he attended classes at Kingston upon Hull's Northern Stage Company and was a student at Wyke College, Kingston upon Hull. His first television role was as Nic Yorke in the BBC continuing drama series Holby City. He is best known for his roles as Ian Al - Harazi on the Fox series 24: Live Another Day and King Arthur in the ABC series Once Upon a Time and Transformers: The Last Knight.
+- 2hop__10620_49084::p6: Beverley Elliott Beverley Elliott (born 31 December) is a Canadian actress and singer - songwriter. She is best known for playing the role of Granny in Once Upon a Time, Maggie Krell in Harper's Island, Brick Bannerman in Kingdom Hospital and Sally Duffield in Bordertown.
+
+Mining reason: `{"rule": "supported_answer", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "strong"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__151650_5274_458768_33637::r2
+
+- sample_id: 4hop1__151650_5274_458768_33637
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: How many ethnic minorities were looked at differently in the city where the headquarters of the only group larger than Desde El Principio's record label is located?
+
+Gold answer: two
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] The headquarters of the only group larger than Desde El Principio's record label is located in Houston.
+- c2: [unclear] The city where the headquarters of the only group larger than Desde El Principio's record label is located has 2 ethnic minorities that were looked at differently.
+
+Evidence:
+- 4hop1__151650_5274_458768_33637::p15: Desde El Principio "Desde El Principio" also came to be the duo's final album for the Sony Music Entertainment label, a company they after a series of mergers in various forms had been signed to for some fifteen years (CBS Records Spain, Epic Records Spain, CBS-Epic Spain, eventually a sublabel to Sony Music Spain, today a subsidiary to the multinational Sony BMG Music Entertainment conglomerate). In 2006 Azúcar Moreno returned to their previous label EMI Music for the album "Bailando Con Lola".
+- 4hop1__151650_5274_458768_33632::p1: Desde El Principio "Desde El Principio" also came to be the duo's final album for the Sony Music Entertainment label, a company they after a series of mergers in various forms had been signed to for some fifteen years (CBS Records Spain, Epic Records Spain, CBS-Epic Spain, eventually a sublabel to Sony Music Spain, today a subsidiary to the multinational Sony BMG Music Entertainment conglomerate). In 2006 Azúcar Moreno returned to their previous label EMI Music for the album "Bailando Con Lola".
+- 2hop__151750_141308::p11: Desde El Principio "Desde El Principio" also came to be the duo's final album for the Sony Music Entertainment label, a company they after a series of mergers in various forms had been signed to for some fifteen years (CBS Records Spain, Epic Records Spain, CBS-Epic Spain, eventually a sublabel to Sony Music Spain, today a subsidiary to the multinational Sony BMG Music Entertainment conglomerate). In 2006 Azúcar Moreno returned to their previous label EMI Music for the album "Bailando Con Lola".
+- 4hop1__813171_153080_33897_81096::p18: Houston According to the 2010 Census, whites made up 51% of Houston's population; 26% of the total population were non-Hispanic whites. Blacks or African Americans made up 25% of Houston's population. American Indians made up 0.7% of the population. Asians made up 6% (1.7% Vietnamese, 1.3% Chinese, 1.3% Indian, 0.9% Pakistani, 0.4% Filipino, 0.3% Korean, 0.1% Japanese), while Pacific Islanders made up 0.1%. Individuals from some other race made up 15.2% of the city's population, of which 0.2% were non-Hispanic. Individuals from two or more races made up 3.3% of the city. At the 2000 Census, there were 1,953,631 people and the population density was 3,371.7 people per square mile (1,301.8/km²). The r [truncated]
+- 4hop1__567737_141375_458768_33637::p1: Santa Monica, California Around the start of the 20th century, a growing population of Asian Americans lived in or near Santa Monica and Venice. A Japanese fishing village was located near the Long Wharf while small numbers of Chinese lived or worked in both Santa Monica and Venice. The two ethnic minorities were often viewed differently by White Americans who were often well-disposed towards the Japanese but condescending towards the Chinese. The Japanese village fishermen were an integral economic part of the Santa Monica Bay community.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__136179_13529::r1
+
+- sample_id: 2hop__136179_13529
+- risk_type: supported_answer
+- oracle_action: answer
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: When was the player that Iglesia Maradoniana is named after signed by Barcelona?
+
+Gold answer: June 1982
+
+Candidate answer: June 1982
+
+Claims:
+- c1: [supported] Diego Maradona was signed by Barcelona in June 1982.
+
+Evidence:
+- 2hop__136179_13529::p9: Iglesia Maradoniana The Iglesia Maradoniana (; literally "Maradonian Church") is a religion, created by fans of the retired Argentine football player Diego Maradona, whom they believe to be the best player of all time.
+- 2hop__3739_13529::p16: FC Barcelona In June 1982, Diego Maradona was signed for a world record fee of £5 million from Boca Juniors. In the following season, under coach Luis, Barcelona won the Copa del Rey, beating Real Madrid. However, Maradona's time with Barcelona was short-lived and he soon left for Napoli. At the start of the 1984–85 season, Terry Venables was hired as manager and he won La Liga with noteworthy displays by German midfielder Bernd Schuster. The next season, he took the team to their second European Cup final, only to lose on penalties to Steaua Bucureşti during a dramatic evening in Seville.
+- 2hop__136179_13529::p4: FC Barcelona In June 1982, Diego Maradona was signed for a world record fee of £5 million from Boca Juniors. In the following season, under coach Luis, Barcelona won the Copa del Rey, beating Real Madrid. However, Maradona's time with Barcelona was short-lived and he soon left for Napoli. At the start of the 1984–85 season, Terry Venables was hired as manager and he won La Liga with noteworthy displays by German midfielder Bernd Schuster. The next season, he took the team to their second European Cup final, only to lose on penalties to Steaua Bucureşti during a dramatic evening in Seville.
+- 4hop1__88342_75218_128008_87812::p4: Jackie Robinson Robinson had an exceptional 10 - year MLB career. He was the recipient of the inaugural MLB Rookie of the Year Award in 1947, was an All - Star for six consecutive seasons from 1949 through 1954, and won the National League Most Valuable Player Award in 1949 -- the first black player so honored. Robinson played in six World Series and contributed to the Dodgers' 1955 World Series championship.
+- 3hop2__93066_88342_90766::p8: Jackie Robinson Robinson had an exceptional 10 - year MLB career. He was the recipient of the inaugural MLB Rookie of the Year Award in 1947, was an All - Star for six consecutive seasons from 1949 through 1954, and won the National League Most Valuable Player Award in 1949 -- the first black player so honored. Robinson played in six World Series and contributed to the Dodgers' 1955 World Series championship.
+
+Mining reason: `{"rule": "supported_answer", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "strong"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__17192_17130_70784_79935::r3
+
+- sample_id: 4hop1__17192_17130_70784_79935
+- risk_type: wrong_target
+- oracle_action: disambiguate_conflict
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: When was the region immediately north of the region where the country that secured southern Lebanon is located and the Persian Gulf created?
+
+Gold answer: 1930
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The country that secured southern Lebanon is Israel.
+- c2: [contradicted] The region immediately north of the region where Israel is located is Hertfordshire.
+- c3: [supported] The Persian Gulf is a body of water connected to the Arabian Sea via the Gulf of Oman.
+- c4: [unsupported] The region immediately north of the region where Israel is located and the Persian Gulf is created is the Arabian Sea.
+
+Evidence:
+- 4hop1__17192_17130_70784_79935::p4: Israel On 11 March 1978, a PLO guerilla raid from Lebanon led to the Coastal Road Massacre. Israel responded by launching an invasion of southern Lebanon to destroy the PLO bases south of the Litani River. Most PLO fighters withdrew, but Israel was able to secure southern Lebanon until a UN force and the Lebanese army could take over. The PLO soon resumed its policy of attacks against Israel. In the next few years, the PLO infiltrated the south and kept up a sporadic shelling across the border. Israel carried out numerous retaliatory attacks by air and on the ground.
+- 4hop2__71753_729371_70784_61381::p3: Hevel Eilot Regional Council Hevel Eilot Regional Council (, "Mo'atza Azorit Hevel Eilot") is a regional council in the Southern District of Israel, near the city of Eilat. It is the southernmost regional council in Israel.
+- 4hop2__71753_158985_70784_79935::p5: Hevel Eilot Regional Council Hevel Eilot Regional Council (, "Mo'atza Azorit Hevel Eilot") is a regional council in the Southern District of Israel, near the city of Eilat. It is the southernmost regional council in Israel.
+- 4hop1__443274_17130_70784_61381::p2: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 4hop1__17192_17130_70784_79935::p2: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__136179_13529::r1
+
+- sample_id: 2hop__136179_13529
+- risk_type: supported_answer
+- oracle_action: answer
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: When was the player that Iglesia Maradoniana is named after signed by Barcelona?
+
+Gold answer: June 1982
+
+Candidate answer: June 1982
+
+Claims:
+- c1: [supported] Diego Maradona was signed by Barcelona in June 1982.
+
+Evidence:
+- 2hop__136179_13529::p9: Iglesia Maradoniana The Iglesia Maradoniana (; literally "Maradonian Church") is a religion, created by fans of the retired Argentine football player Diego Maradona, whom they believe to be the best player of all time.
+- 2hop__3739_13529::p16: FC Barcelona In June 1982, Diego Maradona was signed for a world record fee of £5 million from Boca Juniors. In the following season, under coach Luis, Barcelona won the Copa del Rey, beating Real Madrid. However, Maradona's time with Barcelona was short-lived and he soon left for Napoli. At the start of the 1984–85 season, Terry Venables was hired as manager and he won La Liga with noteworthy displays by German midfielder Bernd Schuster. The next season, he took the team to their second European Cup final, only to lose on penalties to Steaua Bucureşti during a dramatic evening in Seville.
+- 2hop__136179_13529::p4: FC Barcelona In June 1982, Diego Maradona was signed for a world record fee of £5 million from Boca Juniors. In the following season, under coach Luis, Barcelona won the Copa del Rey, beating Real Madrid. However, Maradona's time with Barcelona was short-lived and he soon left for Napoli. At the start of the 1984–85 season, Terry Venables was hired as manager and he won La Liga with noteworthy displays by German midfielder Bernd Schuster. The next season, he took the team to their second European Cup final, only to lose on penalties to Steaua Bucureşti during a dramatic evening in Seville.
+- 4hop1__88342_75218_128008_87812::p4: Jackie Robinson Robinson had an exceptional 10 - year MLB career. He was the recipient of the inaugural MLB Rookie of the Year Award in 1947, was an All - Star for six consecutive seasons from 1949 through 1954, and won the National League Most Valuable Player Award in 1949 -- the first black player so honored. Robinson played in six World Series and contributed to the Dodgers' 1955 World Series championship.
+- 3hop2__93066_88342_90766::p8: Jackie Robinson Robinson had an exceptional 10 - year MLB career. He was the recipient of the inaugural MLB Rookie of the Year Award in 1947, was an All - Star for six consecutive seasons from 1949 through 1954, and won the National League Most Valuable Player Award in 1949 -- the first black player so honored. Robinson played in six World Series and contributed to the Dodgers' 1955 World Series championship.
+
+Mining reason: `{"rule": "supported_answer", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "strong"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__247353_55227::r2
+
+- sample_id: 2hop__247353_55227
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: Who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?
+
+Gold answer: Maria Bello
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] Salma Hayek plays the wife of Here Comes the Boom's screenwriter in Grown Ups.
+
+Evidence:
+- 2hop__247353_55227::p6: Here Comes the Boom Here Comes the Boom is a 2012 American comedy film directed by Frank Coraci, co-written, produced by and starring Kevin James. It was also written by Allan Loeb and Rock Reuben with music by Rupert Gregson-Williams. The film co-stars Henry Winkler and Salma Hayek. It was produced by Happy Madison Productions. The film was released in the United States on October 12, 2012 by Columbia Pictures. The film's title is taken from the song "Boom" by Christian nu metal band P.O.D.
+- 2hop__247353_55227::p17: Grown Ups (film) In 1978, five childhood friends win their junior high school basketball championship. Afterwards, they celebrate at a rented lake house. The friends' coach, whom they nickname ``Buzzer ''(Blake Clark), encourages them to live their lives in a similar way to how they played the game. Thirty years later, Lenny (Adam Sandler) has become an ambitious Hollywood talent agent with his wife, fashion designer Roxanne (Salma Hayek), and his three children -- daughter Becky (Alexys Nicole Sanchez) and two sons Greg (Jake Goldberg) and Keith (Cameron Boyce). The boys act very spoiled in his vicinity, much to his annoyance. Eric (Kevin James) claims he is now a co-owner of a lawn furniture company, but i [truncated]
+- 2hop__92590_43786::p2: Linwood Boomer Linwood Boomer (born October 9, 1955) is a Canadian - American television producer, writer, and former actor. He is known for playing the role of Adam Kendall on the drama Little House on the Prairie, and for creating the Fox sitcom Malcolm in the Middle.
+- 2hop__92590_43786::p16: Linwood Boomer Linwood Boomer (born October 9, 1955) is a Canadian - American television producer, writer, and former actor. He is well known for playing the role of Adam Kendall on the drama Little House on the Prairie, and for creating the Fox sitcom Malcolm in the Middle.
+- 2hop__91211_90973::p15: Bad Moms Amy Mitchell (Mila Kunis) is a married woman in the Chicago suburbs with two children, Jane (Oona Laurence) and Dylan (Emjay Anthony), who feels overworked and overcommitted. She works as a sales rep for a ``hip ''coffee company, prepares healthful, hand - packed lunches for her children, does most of their homework, goes to all of their extracurricular activities, and is active in her school's PTA, run by the domineering Gwendolyn James (Christina Applegate) and her cronies, Stacy (Jada Pinkett Smith) and Vicky (Annie Mumolo). When she catches her husband Mike (David Walton) cheating on her with a camgirl, Amy kicks him out and attempts to keep everything together.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__142699_67465::r1
+
+- sample_id: 2hop__142699_67465
+- risk_type: supported_answer
+- oracle_action: answer
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: When did the rapper on On and On and Beyond release Best day Ever?
+
+Gold answer: March 11, 2011
+
+Candidate answer: March 11, 2011.
+
+Claims:
+- c1: [supported] The rapper on On and On and Beyond is Mac Miller.
+- c2: [supported] Best Day Ever was released on March 11, 2011.
+
+Evidence:
+- 2hop__567588_67465::p13: On and On and Beyond On and On and Beyond is the debut extended play by American rapper Mac Miller. It was released digitally on March 29, 2011. The tracks "Another Night", and "Live Free" were previously released on Mac Miller's 2009 mixtape "The High Life", while "Life Ain't Easy", and "In the Air" are taken from 2011's "Best Day Ever". The EP entered the US "Billboard" 200 on April 16 2011 at number 55 on the chart.
+- 2hop__142699_67465::p15: On and On and Beyond On and On and Beyond is the debut extended play by American rapper Mac Miller. It was released digitally on March 29, 2011. The tracks "Another Night", and "Live Free" were previously released on Mac Miller's 2009 mixtape "The High Life", while "Life Ain't Easy", and "In the Air" are taken from 2011's "Best Day Ever". The EP entered the US "Billboard" 200 on April 16 2011 at number 55 on the chart.
+- 2hop__142699_67465::p11: Best Day Ever (mixtape) Best Day Ever is the fifth mixtape by American rapper Mac Miller. This mixtape was released online March 11, 2011. Over 20,000 viewers joined Miller for a live video stream just prior to releasing the tape. The mixtape consists of 16 songs produced by nine producers (predominantly ID Labs).
+- 3hop1__140786_2053_52946::p10: The Breakfast Club (radio show) The Breakfast Club is an American syndicated radio show based in New York City hosted by DJ Envy, Angela Yee and Charlamagne tha God. It currently airs in 50 plus markets around the country and on REVOLT every morning. Common topics of discussion on the show are celebrity gossip (especially in the hip hop industry), progressive politics, sexual and dating issues.
+- 2hop__677929_696450::p19: Let there be light ``Let there be light ''is an English translation of the Hebrew יְהִי אוֹר ‎ (yehi 'or) found in Genesis 1: 3 of the Torah, the first part of the Hebrew Bible. In Old Testament translations of the phrase, translations include the Greek phrase γενηθήτω φῶς (genēthētō phōs) and the Latin phrase fiat lux.
+
+Mining reason: `{"rule": "supported_answer", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "strong"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__244193_461106::r2
+
+- sample_id: 2hop__244193_461106
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What movement does the creator of the Washington Monument belong to?
+
+Gold answer: Greek Revival
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The creator of the Washington Monument is not mentioned in the provided evidence.
+
+Evidence:
+- 2hop__269766_43945::p1: The Age of Reason The Age of Reason; Being an Investigation of True and Fabulous Theology is a work by English and American political activist Thomas Paine, arguing for the philosophical position of Deism. It follows in the tradition of eighteenth-century British deism, and challenges institutionalized religion and the legitimacy of the Bible. It was published in three parts in 1794, 1795, and 1807.
+- 4hop1__31050_725495_49925_267352::p16: Presbyterianism Presbyterian history is part of the history of Christianity, but the beginning of Presbyterianism as a distinct movement occurred during the 16th - century Protestant Reformation. As the Catholic Church resisted the reformers, several different theological movements splintered from the Church and bore different denominations. Presbyterianism was especially influenced by the French theologian John Calvin, who is credited with the development of Reformed theology, and the work of John Knox, a Scotsman and a Roman Catholic Priest, who studied with Calvin in Geneva, Switzerland. He brought back Reformed teachings to Scotland. The Presbyterian church traces its ancestry back primarily to England  [truncated]
+- 2hop__244193_461106::p13: New York City The Statue of Liberty National Monument and Ellis Island Immigration Museum are managed by the National Park Service and are in both the states of New York and New Jersey. They are joined in the harbor by Governors Island National Monument, in New York. Historic sites under federal management on Manhattan Island include Castle Clinton National Monument; Federal Hall National Memorial; Theodore Roosevelt Birthplace National Historic Site; General Grant National Memorial ("Grant's Tomb"); African Burial Ground National Monument; and Hamilton Grange National Memorial. Hundreds of private properties are listed on the National Register of Historic Places or as a National Historic Landmark such as [truncated]
+- 2hop__244193_461106::p12: Lincoln Memorial The Lincoln Memorial is an American national memorial built to honor the 16th President of the United States, Abraham Lincoln. It is located on the western end of the National Mall in Washington, D.C., across from the Washington Monument. The architect was Henry Bacon; the designer of the primary statue – "Abraham Lincoln", 1920 – was Daniel Chester French; the Lincoln statue was carved by the Piccirilli Brothers; and the painter of the interior murals was Jules Guerin. Dedicated in May 1922, it is one of several memorials built to honor an American president. It has always been a major tourist attraction and since the 1930s has been a symbolic center focused on race relations.
+- 2hop__244193_461106::p4: Lincoln Memorial The Lincoln Memorial is an American national monument built to honor the 16th President of the United States, Abraham Lincoln. It is located on the western end of the National Mall in Washington, D.C., across from the Washington Monument. The architect was Henry Bacon; the designer of the primary statue -- Abraham Lincoln, 1920 -- was Daniel Chester French; the Lincoln statue was carved by the Piccirilli Brothers; and the painter of the interior murals was Jules Guerin. Dedicated in 1922, it is one of several monuments built to honor an American president. It has always been a major tourist attraction and since the 1930s has been a symbolic center focused on race relations.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__23459_35124::r1
+
+- sample_id: 2hop__23459_35124
+- risk_type: supported_answer
+- oracle_action: answer
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: How many books were said to be written by the most influential in Islamic philosophy?
+
+Gold answer: 450
+
+Candidate answer: 450
+
+Claims:
+- c1: [supported] candidate answer fills final_target
+
+Evidence:
+- 2hop__23459_35124::p6: Muslim world One of the common definitions for "Islamic philosophy" is "the style of philosophy produced within the framework of Islamic culture." Islamic philosophy, in this definition is neither necessarily concerned with religious issues, nor is exclusively produced by Muslims. The Persian scholar Ibn Sina (Avicenna) (980–1037) had more than 450 books attributed to him. His writings were concerned with various subjects, most notably philosophy and medicine. His medical textbook The Canon of Medicine was used as the standard text in European universities for centuries. He also wrote The Book of Healing, an influential scientific and philosophical encyclopedia.
+- 2hop__23459_35124::p13: Muslim world Other influential Muslim philosophers include al-Jahiz, a pioneer in evolutionary thought; Ibn al-Haytham (Alhazen), a pioneer of phenomenology and the philosophy of science and a critic of Aristotelian natural philosophy and Aristotle's concept of place (topos); Al-Biruni, a critic of Aristotelian natural philosophy; Ibn Tufail and Ibn al-Nafis, pioneers of the philosophical novel; Shahab al-Din Suhrawardi, founder of Illuminationist philosophy; Fakhr al-Din al-Razi, a critic of Aristotelian logic and a pioneer of inductive logic; and Ibn Khaldun, a pioneer in the philosophy of history.
+- 2hop__23459_35124::p4: History of science Ibn Sina (Avicenna) is regarded as the most influential philosopher of Islam. He pioneered the science of experimental medicine and was the first physician to conduct clinical trials. His two most notable works in medicine are the Kitāb al-shifāʾ ("Book of Healing") and The Canon of Medicine, both of which were used as standard medicinal texts in both the Muslim world and in Europe well into the 17th century. Amongst his many contributions are the discovery of the contagious nature of infectious diseases, and the introduction of clinical pharmacology.
+
+Mining reason: `{"rule": "supported_answer", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "strong"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__264443_49925_13759_736921::r2
+
+- sample_id: 4hop1__264443_49925_13759_736921
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Where is the district that the person who wanted to reform and address Edward Egan's religion preached a sermon on Marian devotion before his death located?
+
+Gold answer: Saxony-Anhalt
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The person who wanted to reform and address Edward Egan's religion is Martin Luther.
+- c2: [supported] Martin Luther preached a sermon on Marian devotion at Wittenberg before his death.
+- c3: [supported] Wittenberg is the district where Martin Luther preached the sermon on Marian devotion before his death.
+
+Evidence:
+- 4hop1__391525_49925_13759_736921::p3: Mary, mother of Jesus Despite Martin Luther's harsh polemics against his Roman Catholic opponents over issues concerning Mary and the saints, theologians appear to agree that Luther adhered to the Marian decrees of the ecumenical councils and dogmas of the church. He held fast to the belief that Mary was a perpetual virgin and the Theotokos or Mother of God. Special attention is given to the assertion that Luther, some three-hundred years before the dogmatization of the Immaculate Conception by Pope Pius IX in 1854, was a firm adherent of that view. Others maintain that Luther in later years changed his position on the Immaculate Conception, which, at that time was undefined in the Church, maintaining however the [truncated]
+- 4hop1__264443_49925_13759_736921::p3: Mary, mother of Jesus Despite Martin Luther's harsh polemics against his Roman Catholic opponents over issues concerning Mary and the saints, theologians appear to agree that Luther adhered to the Marian decrees of the ecumenical councils and dogmas of the church. He held fast to the belief that Mary was a perpetual virgin and the Theotokos or Mother of God. Special attention is given to the assertion that Luther, some three-hundred years before the dogmatization of the Immaculate Conception by Pope Pius IX in 1854, was a firm adherent of that view. Others maintain that Luther in later years changed his position on the Immaculate Conception, which, at that time was undefined in the Church, maintaining however the [truncated]
+- 4hop1__166471_49925_13759_736921::p14: Mary, mother of Jesus Despite Martin Luther's harsh polemics against his Roman Catholic opponents over issues concerning Mary and the saints, theologians appear to agree that Luther adhered to the Marian decrees of the ecumenical councils and dogmas of the church. He held fast to the belief that Mary was a perpetual virgin and the Theotokos or Mother of God. Special attention is given to the assertion that Luther, some three-hundred years before the dogmatization of the Immaculate Conception by Pope Pius IX in 1854, was a firm adherent of that view. Others maintain that Luther in later years changed his position on the Immaculate Conception, which, at that time was undefined in the Church, maintaining however the [truncated]
+- 4hop1__264443_49925_13759_736921::p6: James J. Egan James J. Egan, FAIA, (1839, Cork, Ireland—December 2, 1914, Chicago, Illinois) was an Irish-American architect and fellow of the American Institute of Architects practicing in Chicago, Illinois. He was a partner of the Chicago architectural firms Armstrong & Egan, Egan & Kirkland and Egan & Prindeville, which gained prominence designing Roman Catholic structures.
+- 4hop1__264443_49925_13759_736921::p15: Edward Egan Edward Michael Egan (April 2, 1932 – March 5, 2015) was an American Cardinal of the Roman Catholic Church. He served as Bishop of Bridgeport from 1988 to 2000, and as Archbishop of New York from 2000 to 2009. He was elevated to the cardinalate in 2001. He was the twelfth Bishop, ninth Archbishop, and seventh Cardinal of the See of New York.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__167577_31122::r1
+
+- sample_id: 2hop__167577_31122
+- risk_type: supported_answer
+- oracle_action: answer
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What century did the author of A Treatise Concerning the Principles of Human Knowledge live in?
+
+Gold answer: 18th
+
+Candidate answer: 18th century
+
+Claims:
+- c1: [supported] George Berkeley wrote A Treatise Concerning the Principles of Human Knowledge in the 18th century.
+
+Evidence:
+- 2hop__167577_31122::p10: A Treatise Concerning the Principles of Human Knowledge A Treatise Concerning the Principles of Human Knowledge (commonly called Treatise when referring to Berkeley's works) is a 1710 work, in English, by Irish Empiricist philosopher George Berkeley. This book largely seeks to refute the claims made by Berkeley's contemporary John Locke about the nature of human perception. Whilst, like all the Empiricist philosophers, both Locke and Berkeley agreed that we are having experiences, regardless of whether material objects exist, Berkeley sought to prove that the outside world (the world which causes the ideas one has within one's mind) is also composed "solely" of ideas. Berkeley did this by suggesting that "Ideas can only resemble Ideas" – the ment [truncated]
+- 2hop__167577_31122::p9: Humanism Eliot and her circle, who included her companion George Henry Lewes (the biographer of Goethe) and the abolitionist and social theorist Harriet Martineau, were much influenced by the positivism of Auguste Comte, whom Martineau had translated. Comte had proposed an atheistic culte founded on human principles – a secular Religion of Humanity (which worshiped the dead, since most humans who have ever lived are dead), complete with holidays and liturgy, modeled on the rituals of what was seen as a discredited and dilapidated Catholicism. Although Comte's English followers, like Eliot and Martineau, for the most part rejected the full gloomy panoply of his system, they liked the idea of a religio [truncated]
+- 2hop__167577_31122::p17: Humanism Religious humanism is an integration of humanist ethical philosophy with religious rituals and beliefs that centre on human needs, interests, and abilities. Though practitioners of religious humanism did not officially organise under the name of "humanism" until the late 19th and early 20th centuries, non-theistic religions paired with human-centred ethical philosophy have a long history. The Cult of Reason (French: Culte de la Raison) was a religion based on deism devised during the French Revolution by Jacques Hébert, Pierre Gaspard Chaumette and their supporters. In 1793 during the French Revolution, the cathedral Notre Dame de Paris was turned into a "Temple to Reason" and for a time Lad [truncated]
+
+Mining reason: `{"rule": "supported_answer", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "strong"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__132854_417697::r2
+
+- sample_id: 2hop__132854_417697
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Mohammed Atta has what kind of model of the company that makes Datsun Type 12?
+
+Gold answer: Nissan Altima
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] Mohammed Atta is associated with a company that makes Datsun Type 12
+
+Evidence:
+- 3hop2__222979_132477_40768::p19: Nissan Fuga The Nissan Fuga (Japanese: 日産・フーガ "Nissan Fūga") is a mid-size luxury sedan produced by Japanese automaker Nissan since October 2004. It is built on a wider, stretched wheelbase version of the Nissan FM platform. After the Nissan Cima and Nissan President were discontinued in August 2010, the Fuga became Nissan's flagship vehicle. In North America and Europe, the Fuga is sold as the second and third-generation Infiniti M (Q70 from 2014), where it has been the flagship of the Infiniti luxury division of Nissan since 2006.
+- 3hop2__132957_593597_40768::p7: Nissan Rogue The Nissan Rogue is a compact crossover SUV produced by the Japanese automaker Nissan. It made its debut in October 2007 for the 2008 model year. The current model, the second generation launched in 2013, is the North American version of the Nissan X-Trail. It is currently Nissan's best - selling vehicle in the United States.
+- 3hop2__132957_379231_40768::p12: Nissan Rogue The Nissan Rogue is a compact crossover SUV produced by the Japanese automaker Nissan. It made its debut in October 2007 for the 2008 model year. The current model, the second generation launched in 2013, is the North American version of the Nissan X-Trail. It is currently Nissan's best - selling vehicle in the United States.
+- 2hop__132854_417697::p10: Datsun Type 12 The 1933 Datsun Type 12 was a small car produced by the Nissan corporation. The name Datsun was used by DAT for their line of small cars. After the DAT corporation was absorbed into Nissan, these cars continued to be produced, and the original model name was maintained. The Type 12 was basically similar to the earlier 1932 Type 11, but had a larger engine.
+- 2hop__132854_417697::p16: Datsun Datsun (, ) is an automobile brand owned by Nissan. Datsun's original production run began in 1931. From 1958 to 1986, only vehicles exported by Nissan were identified as Datsun. By 1986 Nissan had phased out the Datsun name, but re-launched it in June 2013 as the brand for low-cost vehicles manufactured for emerging markets.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__145194_160545_62931::r1
+
+- sample_id: 3hop1__145194_160545_62931
+- risk_type: supported_answer
+- oracle_action: answer
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: The Beach was filmed in what location of the country that contains the birth city of Siddhi Savetsila?
+
+Gold answer: island Koh Phi Phi
+
+Candidate answer: Koh Phi Phi
+
+Claims:
+- c1: [supported] The Beach was filmed in Koh Phi Phi
+- c2: [supported] Siddhi Savetsila was born in Bangkok
+- c3: [supported] Bangkok is located in Thailand
+- c4: [supported] Koh Phi Phi is a location in Thailand
+
+Evidence:
+- 3hop1__465684_160545_62931::p14: The Beach (film) The Beach is a 2000 English - language drama film directed by Danny Boyle and based on the 1996 novel of the same name by Alex Garland, which was adapted for the film by John Hodge. The film stars Leonardo DiCaprio, Tilda Swinton, Virginie Ledoyen, Guillaume Canet, and Robert Carlyle. It was filmed on the Thai island Koh Phi Phi.
+- 3hop1__145194_160545_62931::p19: The Beach (film) The Beach is a 2000 English - language drama film directed by Danny Boyle and based on the 1996 novel of the same name by Alex Garland, which was adapted for the film by John Hodge. The film stars Leonardo DiCaprio, Tilda Swinton, Virginie Ledoyen, Guillaume Canet, and Robert Carlyle. It was filmed on the Thai island Koh Phi Phi.
+- 3hop1__145194_160545_62931::p9: Siddhi Savetsila Siddhi Savetsila was born in Bangkok. He comes from an aristocratic background. His father was a high-ranking official in the royal government. His paternal grandfather was Henry Alabaster who was the British consul in Siam during the reign of King Rama IV (Mongkut) and then served as an advisor to King Rama V (Chulalongkorn). His mother was an offspring of the influential Bunnag family, the daughter of Thet Bunnag (later Chao Phraya Suraphan Phisut), making him a direct descendant of Somdet Chao Phraya Borom Maha Prayurawongse.
+- 3hop1__145194_160545_62931::p18: Snow White and the Huntsman Principal photography took place in the United Kingdom. The beach scenes were predominantly filmed in Pembrokeshire, on the Marloes Sands beach near the village of Marloes between September 26 and 29, 2011. Though the beach was not closed to the public during filming, as filming progressed, certain parts were advised to be off limits. A computer - generated castle was set on nearby Gateholm island. A field above the beach was used for production purposes, and a special wooden ramp was built for vehicles and horses to access the beach. The film used academic consultants from the University of Chichester and the University of Oxford for back - up research on fairy tales and medieval battles. T [truncated]
+- 4hop3__668721_132409_371500_35031::p19: Kathmandu Kathmandu(/ˌkɑːtmɑːnˈduː/; Nepali pronunciation: [kɑʈʰmɑɳɖu]) is the capital and largest municipality of Nepal. It also hosts the headquarters of the South Asian Association for Regional Cooperation (SAARC). It is the only city of Nepal with the administrative status of Mahanagar (Metropolitan City), as compared to Upa-Mahanagar (Sub-Metropolitan City) or Nagar (City). Kathmandu is the core of Nepal's largest urban agglomeration located in the Kathmandu Valley consisting of Lalitpur, Kirtipur, Madhyapur Thimi, Bhaktapur and a number of smaller communities. Kathmandu is also known informally as "KTM" or the "tri-city". According to the 2011 census, Kathmandu Metropolitan City has a population [truncated]
+
+Mining reason: `{"rule": "supported_answer", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "strong"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__222497_309482_27537::r3
+
+- sample_id: 3hop1__222497_309482_27537
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Why did Roncalli leave the place where the composer of Al gran sole carico d'amore worked?
+
+Gold answer: for the conclave in Rome
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Roncalli left Venice because he was elected Pope John XXIII and needed to go to Rome for the conclave.
+- c2: [unclear] The composer of 'Al gran sole carico d'amore' worked in Venice.
+
+Evidence:
+- 2hop__38030_23241::p8: Estonia Estonia's constitution guarantees freedom of religion, separation of church and state, and individual rights to privacy of belief and religion. According to the Dentsu Communication Institute Inc, Estonia is one of the least religious countries in the world, with 75.7% of the population claiming to be irreligious. The Eurobarometer Poll 2005 found that only 16% of Estonians profess a belief in a god, the lowest belief of all countries studied (EU study). According to the Lutheran World Federation, the historic Lutheran denomination remains a large presence with 180,000 registered members.
+- 2hop__20268_42014::p5: Jehovah's Witnesses Jehovah's Witnesses believe their religion is a restoration of first-century Christianity. Doctrines of Jehovah's Witnesses are established by the Governing Body, which assumes responsibility for interpreting and applying scripture. The Governing Body does not issue any single, comprehensive "statement of faith", but prefers to express its doctrinal position in a variety of ways through publications published by the Watch Tower Society. Their publications teach that doctrinal changes and refinements result from a process of progressive revelation, in which God gradually reveals his will and purpose, and that such enlightenment or "new light" results from the application of reason and study,  [truncated]
+- 2hop__23459_35124::p11: Answer to History Answer to History (French: Réponse à l'histoire; Persian: پاسخ به تاریخ) is a memoir written by the last Shah of Iran, Mohammad Reza Pahlavi, shortly after his overthrow in 1979 by Islamic revolution. The book was originally written in French and was translated into English and Persian as well as other languages, and was published posthumously in 1980.
+- 3hop1__222497_309482_27537::p0: Al gran sole carico d'amore Al gran sole carico d'amore ("In the Bright Sunshine Heavy with Love") is an opera (designated as an 'azione scenica') with music by Luigi Nono, based mainly on plays by Bertolt Brecht, but also incorporating texts of Fidel Castro, Che Guevara, Karl Marx, and Vladimir Lenin. Nono himself and Yuri Lyubimov wrote the libretto. It premiered at the Teatro alla Scala on 4 April 1975, conducted by Claudio Abbado. Lyubimov directed the original production. The UK premiere was at the 32nd Edinburgh Festival in 1978. In addition to vocal soloists, chorus and orchestra, the work incorporates taped sounds. This work is a product of Nono's strong political activism through the mid-1970s.
+- 3hop1__222497_309482_27537::p12: Pope John XXIII Following the death of Pope Pius XII on 9 October 1958, Roncalli watched the live funeral on his last full day in Venice on 11 October. His journal was specifically concerned with the funeral and the abused state of the late pontiff's corpse. Roncalli left Venice for the conclave in Rome well aware that he was papabile,[b] and after eleven ballots, was elected to succeed the late Pius XII, so it came as no surprise to him, though he had arrived at the Vatican with a return train ticket to Venice.[citation needed]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__144439_443779_52195::r2
+
+- sample_id: 3hop1__144439_443779_52195
+- risk_type: supported_answer
+- oracle_action: answer
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: who is the president of newly declared independent country of the country of the birthplace of Mulham Arufin–Timor Leste Commission of Truth and Friendship?
+
+Gold answer: Francisco Guterres
+
+Candidate answer: Francisco Guterres
+
+Claims:
+- c1: [supported] Francisco Guterres is the president of East Timor.
+
+Evidence:
+- 3hop1__144439_443779_52195::p3: East Timor Democratic Republic of Timor - Leste Repúblika Demokrátika Timór Lorosa'e (Tetum) República Democrática de Timor - Leste (Portuguese) Flag Coat of arms Motto: Unidade, Acção, Progresso (Portuguese) Unidade, Asaun, Progresu (Tetum) (English: ``Unity, Action, Progress '') Anthem: Pátria (Portuguese) (English:`` Fatherland'') Capital and largest city Dili 8 ° 20 ′ S 125 ° 20 ′ E ﻿ / ﻿ 8.34 ° S 125.34 ° E ﻿ / - 8.34; 125.34 Coordinates: 8 ° 20 ′ S 125 ° 20 ′ E ﻿ / ﻿ 8.34 ° S 125.34 ° E ﻿ / - 8.34; 125.34 Official languages Tetum Portuguese National languages 15 languages (show) Atauru Baikeno Bekais Bunak Fataluku Galoli Habun Idalaka Kawaimina Kemak Makalero Makasae Makuva Mambai Tokodede Relig [truncated]
+- 3hop1__105767_443779_52195::p19: East Timor Democratic Republic of Timor - Leste Repúblika Demokrátika Timór Lorosa'e (Tetum) República Democrática de Timor - Leste (Portuguese) Flag Coat of arms Motto: Unidade, Acção, Progresso (Portuguese) Unidade, Asaun, Progresu (Tetum) (English: ``Unity, Action, Progress '') Anthem: Pátria (Portuguese) (English:`` Fatherland'') Capital and largest city Dili 8 ° 20 ′ S 125 ° 20 ′ E ﻿ / ﻿ 8.34 ° S 125.34 ° E ﻿ / - 8.34; 125.34 Coordinates: 8 ° 20 ′ S 125 ° 20 ′ E ﻿ / ﻿ 8.34 ° S 125.34 ° E ﻿ / - 8.34; 125.34 Official languages Tetum Portuguese National languages 15 languages (show) Atauru Baikeno Bekais Bunak Fataluku Galoli Habun Idalaka Kawaimina Kemak Makalero Makasae Makuva Mambai Tokodede Relig [truncated]
+- 3hop1__103881_443779_52195::p16: East Timor Democratic Republic of Timor - Leste Repúblika Demokrátika Timór Lorosa'e (Tetum) República Democrática de Timor - Leste (Portuguese) Flag Coat of arms Motto: Unidade, Acção, Progresso (Portuguese) Unidade, Asaun, Progresu (Tetum) (English: ``Unity, Action, Progress '') Anthem: Pátria (Portuguese) (English:`` Fatherland'') Capital and largest city Dili 8 ° 20 ′ S 125 ° 20 ′ E ﻿ / ﻿ 8.34 ° S 125.34 ° E ﻿ / - 8.34; 125.34 Coordinates: 8 ° 20 ′ S 125 ° 20 ′ E ﻿ / ﻿ 8.34 ° S 125.34 ° E ﻿ / - 8.34; 125.34 Official languages Tetum Portuguese National languages 15 languages (show) Atauru Baikeno Bekais Bunak Fataluku Galoli Habun Idalaka Kawaimina Kemak Makalero Makasae Makuva Mambai Tokodede Relig [truncated]
+- 3hop1__144439_443779_52195::p7: Indonesia–Timor Leste Commission of Truth and Friendship The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred around the independence referendum held in East Timor in 1999 and sought to find the "conclusive truth" behind the events. After holding private hearings and document reviews, the commission handed in the final report on July 15, 2008 to the presidents of both nations, and was fully endorsed by Indonesian President Susilo Bambang Yudhoyono, providing the first acknowledgement by the government of Indonesia of the human rights violations committe [truncated]
+- 3hop1__105767_443779_52195::p3: Indonesia–Timor Leste Commission of Truth and Friendship The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred around the independence referendum held in East Timor in 1999 and sought to find the "conclusive truth" behind the events. After holding private hearings and document reviews, the commission handed in the final report on July 15, 2008 to the presidents of both nations, and was fully endorsed by Indonesian President Susilo Bambang Yudhoyono, providing the first acknowledgement by the government of Indonesia of the human rights violations committe [truncated]
+
+Mining reason: `{"rule": "supported_answer", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "strong"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__151650_5274_458768_33632::r1
+
+- sample_id: 4hop1__151650_5274_458768_33632
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What day is the Feast in the city where the headquarters of the only group larger than Desde El Principio's record label held on?
+
+Gold answer: May 4
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] The headquarters of the only group larger than Desde El Principio's record label is located in a city where the Feast is held on a specific day.
+
+Evidence:
+- 4hop1__151650_5274_458768_33637::p15: Desde El Principio "Desde El Principio" also came to be the duo's final album for the Sony Music Entertainment label, a company they after a series of mergers in various forms had been signed to for some fifteen years (CBS Records Spain, Epic Records Spain, CBS-Epic Spain, eventually a sublabel to Sony Music Spain, today a subsidiary to the multinational Sony BMG Music Entertainment conglomerate). In 2006 Azúcar Moreno returned to their previous label EMI Music for the album "Bailando Con Lola".
+- 4hop1__151650_5274_458768_33632::p1: Desde El Principio "Desde El Principio" also came to be the duo's final album for the Sony Music Entertainment label, a company they after a series of mergers in various forms had been signed to for some fifteen years (CBS Records Spain, Epic Records Spain, CBS-Epic Spain, eventually a sublabel to Sony Music Spain, today a subsidiary to the multinational Sony BMG Music Entertainment conglomerate). In 2006 Azúcar Moreno returned to their previous label EMI Music for the album "Bailando Con Lola".
+- 2hop__151750_141308::p11: Desde El Principio "Desde El Principio" also came to be the duo's final album for the Sony Music Entertainment label, a company they after a series of mergers in various forms had been signed to for some fifteen years (CBS Records Spain, Epic Records Spain, CBS-Epic Spain, eventually a sublabel to Sony Music Spain, today a subsidiary to the multinational Sony BMG Music Entertainment conglomerate). In 2006 Azúcar Moreno returned to their previous label EMI Music for the album "Bailando Con Lola".
+- 3hop1__64957_87694_124169::p15: Dedication of Saints Peter and Paul The Dedication of the Basilicas of the Apostles Peter and Paul is a feast day on the liturgical calendar of the Catholic Church, which is celebrated on 18 November.
+- 4hop1__152146_5274_458768_33632::p18: Our Lady of the Rosary The Feast of Our Lady of the Rosary, formerly known as Our Lady of Victory and Feast of the Holy Rosary, is a feast day of the Roman Catholic Church, celebrated on 7 October, the anniversary of the decisive victory of the combined fleet of the Holy League of 1571 over the Ottoman navy at the Battle of Lepanto.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__153573_44085::r1
+
+- sample_id: 2hop__153573_44085
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What was the show named after the character featured in the video game Mickey's Safari in Letterland?
+
+Gold answer: The Mickey Mouse Club
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The show named after the character featured in the video game Mickey's Safari in Letterland is Metal Mickey.
+
+Evidence:
+- 2hop__153573_44085::p14: Mickey's Safari in Letterland Mickey's Safari in Letterland is a 1993 educational Nintendo Entertainment System video game starring the famous cartoon character Mickey Mouse. In this game, Mickey must collect all of the letters of the alphabet for his museum by going to six different territories (including places inspired by the Yukon and the Caribbean). There are three levels of difficulty.
+- 2hop__153573_44085::p9: Metal Mickey The character of Metal Mickey first appeared on British television in the ITV children's magazine show "The Saturday Banana," produced by Southern Television in 1978. Humphrey Barclay saw Mickey on Jimmy Savile's 'Jim'll Fix It' television show. Seeing the children chatting in the marketplace with the friendly robot, this led to the creation of the "Metal Mickey" television show. Within a month the pilot had been video-taped and shortly after this the series went live with its first six episodes. 41 episodes were made in total, broadcast over three separate seasons between September 1980 and January 1983. The show attracted viewing figures of around 12 million at its peak. Micky Dolenz, form [truncated]
+- 2hop__153573_44085::p2: The Mickey Mouse Club The Mickey Mouse Club is an American variety television show that aired intermittently from 1955 to 1996 and returned in 2017 to social media. Created by Walt Disney and produced by Walt Disney Productions, the program was first televised in 1955 by ABC, featuring a regular but ever - changing cast of mostly teen performers. ABC broadcast reruns weekday afternoons during the 1958 -- 1959 season, airing right after American Bandstand. The show was revived after its initial 1955 -- 1959 run on ABC, first from 1977 -- 1979 for first - run syndication, again from 1989 -- 1996 as The All - New Mickey Mouse Club (also known to fans as MMC from 1993 -- 1996) airing exclusively on cable television's [truncated]
+- 3hop2__49541_140875_51068::p3: High Feather High Feather is a 10-episode educational television show which ran on PBS in the 1980s; each episode was 30 minutes long. The program's name came from the Old English expression "High Fettle", meaning enjoying life and cheerfully doing the tasks of living. The heartfelt spirit of the show was captured in the lyrics to its theme song: "I'm in High Feather. Feel like the sun is shining on me. High Feather. I'm as free as I can be..."
+- 2hop__82669_768138::p19: It's Garry Shandling's Show The series' theme song was ``This is the Theme to Garry's Show '', sung by Los Angeles musician Bill Lynch. The song's lyrics are self - referential, explaining how the song came to be (`` Garry called me up and asked if I would write his theme song'') and asking what the listener thinks of it.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__108833_720914_41132::r3
+
+- sample_id: 3hop1__108833_720914_41132
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: How many times did the plague occur in the city where the painter of The Bacchanal of the Andrians died?
+
+Gold answer: 22
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The painter of The Bacchanal of the Andrians is Titian.
+- c2: [unclear] Titian died in Venice.
+- c3: [supported] The plague occurred in Venice 22 times between 1361 and 1528.
+
+Evidence:
+- 3hop1__820301_720914_27537::p11: Crucifixion (Titian) The Crucifixion is a life sized painting by the Venetian artist Titian, completed in 1558 and presently hanging in the sanctuary of the church of San Domenico, Ancona. Jesus Christ is shown crucified, with Saint Mary and Saint John standing either side of the cross in the "Stabat Mater" tradition. The kneeling figure is of Saint Dominic. The canvas was completed during Titian's fifth decade of painting, and is one of the works marking a shift toward his extensive exploration of tragedy and human suffering.
+- 3hop1__108833_720914_41132::p6: Black Death In 1466, perhaps 40,000 people died of the plague in Paris. During the 16th and 17th centuries, the plague was present in Paris around 30 per cent of the time. The Black Death ravaged Europe for three years before it continued on into Russia, where the disease was present somewhere in the country 25 times between 1350 to 1490. Plague epidemics ravaged London in 1563, 1593, 1603, 1625, 1636, and 1665, reducing its population by 10 to 30% during those years. Over 10% of Amsterdam's population died in 1623–25, and again in 1635–36, 1655, and 1664. Plague occurred in Venice 22 times between 1361 and 1528. The plague of 1576–77 killed 50,000 in Venice, almost a third of the population. Late outbr [truncated]
+- 3hop1__108833_720914_41132::p11: The Martyrdom of Saint Lawrence (Titian) The Martyrdom of Saint Lawrence is a 1558 painting by Titian, now in the church of I Gesuiti in Venice. It so impressed Philip II of Spain that he commissioned a second version in 1567 for the basilica at El Escorial.
+- 3hop1__108833_720914_41132::p0: The Bacchanal of the Andrians The Bacchanal of the Andrians is an oil painting by Titian. It is signed ".[aciebat]" and is dated to 1523–1526.
+- 3hop1__108833_720914_41132::p5: Black Death The Black Death, also known as the Great Plague, the Black Plague, or simply the Plague, was one of the most devastating pandemics in human history, resulting in the deaths of an estimated 75 to 200 million people in Eurasia and peaking in Europe from 1347 to 1351. The bacterium Yersinia pestis, which results in several forms of plague, is believed to have been the cause. The plague created a series of religious, social and economic upheavals, which had profound effects on the course of European history.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__153573_44085::r3
+
+- sample_id: 2hop__153573_44085
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What was the show named after the character featured in the video game Mickey's Safari in Letterland?
+
+Gold answer: The Mickey Mouse Club
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] The show named after the character featured in the video game Mickey's Safari in Letterland is 'Metal Mickey'.
+
+Evidence:
+- 2hop__153573_44085::p14: Mickey's Safari in Letterland Mickey's Safari in Letterland is a 1993 educational Nintendo Entertainment System video game starring the famous cartoon character Mickey Mouse. In this game, Mickey must collect all of the letters of the alphabet for his museum by going to six different territories (including places inspired by the Yukon and the Caribbean). There are three levels of difficulty.
+- 2hop__92590_43786::p18: The Washington Post The Washington Post is an American daily newspaper founded on December 6, 1877. It is the largest newspaper published in Washington, D.C., the capital city of the United States, and has a particular emphasis on national politics. Its slogan is ``Democracy Dies in Darkness. ''Daily broadsheet editions are printed for the District of Columbia, Maryland, and Virginia.
+- 2hop__23459_35124::p11: Answer to History Answer to History (French: Réponse à l'histoire; Persian: پاسخ به تاریخ) is a memoir written by the last Shah of Iran, Mohammad Reza Pahlavi, shortly after his overthrow in 1979 by Islamic revolution. The book was originally written in French and was translated into English and Persian as well as other languages, and was published posthumously in 1980.
+- 2hop__153573_44085::p9: Metal Mickey The character of Metal Mickey first appeared on British television in the ITV children's magazine show "The Saturday Banana," produced by Southern Television in 1978. Humphrey Barclay saw Mickey on Jimmy Savile's 'Jim'll Fix It' television show. Seeing the children chatting in the marketplace with the friendly robot, this led to the creation of the "Metal Mickey" television show. Within a month the pilot had been video-taped and shortly after this the series went live with its first six episodes. 41 episodes were made in total, broadcast over three separate seasons between September 1980 and January 1983. The show attracted viewing figures of around 12 million at its peak. Micky Dolenz, form [truncated]
+- 2hop__153573_44085::p2: The Mickey Mouse Club The Mickey Mouse Club is an American variety television show that aired intermittently from 1955 to 1996 and returned in 2017 to social media. Created by Walt Disney and produced by Walt Disney Productions, the program was first televised in 1955 by ABC, featuring a regular but ever - changing cast of mostly teen performers. ABC broadcast reruns weekday afternoons during the 1958 -- 1959 season, airing right after American Bandstand. The show was revived after its initial 1955 -- 1959 run on ABC, first from 1977 -- 1979 for first - run syndication, again from 1989 -- 1996 as The All - New Mickey Mouse Club (also known to fans as MMC from 1993 -- 1996) airing exclusively on cable television's [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__166471_49925_13759_736921::r1
+
+- sample_id: 4hop1__166471_49925_13759_736921
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: In what state is the district where the one who wanted to reform and address the institution behind the religion of Egidio Vagnozzi preached a sermon?
+
+Gold answer: Saxony-Anhalt
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Egidio Vagnozzi was an Italian Cardinal of the Catholic Church.
+- c2: [supported] The religion of Egidio Vagnozzi is Catholicism.
+- c3: [supported] The institution behind the religion of Egidio Vagnozzi is the Catholic Church.
+- c4: [unclear] The one who wanted to reform and address the institution behind the religion of Egidio Vagnozzi preached a sermon in a district.
+
+Evidence:
+- 4hop1__166471_49925_13759_736921::p8: Egidio Vagnozzi Egidio Vagnozzi (26 February 1906 – 26 December 1980) was an Italian Cardinal of the Catholic Church. He served as the second president of the Prefecture for the Economic Affairs of the Holy See from 1968 until his death, and was elevated to the cardinalate in 1967.
+- 3hop1__136129_87694_124169::p13: Boston Boston has been a noted religious center from its earliest days. The Roman Catholic Archdiocese of Boston serves nearly 300 parishes and is based in the Cathedral of the Holy Cross (1875) in the South End, while the Episcopal Diocese of Massachusetts, with the Cathedral Church of St. Paul (1819) as its episcopal seat, serves just under 200 congregations. Unitarian Universalism has its headquarters on Beacon Hill. The Christian Scientists are headquartered in Back Bay at the Mother Church (1894). The oldest church in Boston is First Church in Boston, founded in 1630. King's Chapel, the city's first Anglican church, was founded in 1686 and converted to Unitarianism in 1785. Other churches incl [truncated]
+- 2hop__677929_696450::p15: Federalism Some Christians argue that the earliest source of political federalism (or federalism in human institutions; in contrast to theological federalism) is the ecclesiastical federalism found in the Bible. They point to the structure of the early Christian Church as described (and prescribed, as believed by many) in the New Testament. In their arguments, this is particularly demonstrated in the Council of Jerusalem, described in Acts chapter 15, where the Apostles and elders gathered together to govern the Church; the Apostles being representatives of the universal Church, and elders being such for the local church. To this day, elements of federalism can be found in almost every Christian denomi [truncated]
+- 3hop2__92991_72083_76291::p6: Montana However, at the state level, the pattern of split ticket voting and divided government holds. Democrats currently hold one of the state's U.S. Senate seats, as well as four of the five statewide offices (Governor, Superintendent of Public Instruction, Secretary of State and State Auditor). The lone congressional district has been Republican since 1996 and in 2014 Steve Daines won one of the state's Senate seats for the GOP. The Legislative branch had split party control between the house and senate most years between 2004 and 2010, when the mid-term elections returned both branches to Republican control. The state Senate is, as of 2015, controlled by the Republicans 29 to 21, and the State H [truncated]
+- 3hop2__92991_27069_76291::p15: Montana However, at the state level, the pattern of split ticket voting and divided government holds. Democrats currently hold one of the state's U.S. Senate seats, as well as four of the five statewide offices (Governor, Superintendent of Public Instruction, Secretary of State and State Auditor). The lone congressional district has been Republican since 1996 and in 2014 Steve Daines won one of the state's Senate seats for the GOP. The Legislative branch had split party control between the house and senate most years between 2004 and 2010, when the mid-term elections returned both branches to Republican control. The state Senate is, as of 2015, controlled by the Republicans 29 to 21, and the State H [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__159803_89752_75165::r2
+
+- sample_id: 3hop1__159803_89752_75165
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What's the population of the largest state in the region of the U.S. where trading practices were once threatened by the Navigation Acts?
+
+Gold answer: 1,335,907
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The largest state in the region of the U.S. where trading practices were once threatened by the Navigation Acts is California.
+
+Evidence:
+- 4hop1__767417_624859_355213_203322::p4: Territorial evolution of the United States Regarding internal borders, while territories could shift wildly in size, once established a state has commonly remained within its borders, barring small changes due to river shifts. Only four states - Maine, Kentucky, Vermont, and West Virginia - have been created from land claimed by another state; all of the others were created from territories or directly from acquisitions. The last state of the contiguous United States, commonly called the ``lower 48, ''was admitted in 1912; the fiftieth and most recent state was admitted in 1959.
+- 4hop1__767417_624859_355213_203322::p17: Territorial evolution of the United States Regarding internal borders, while territories could shift wildly in size, once established a state has commonly remained within its borders, barring small changes due to river shifts. Only four states -- Maine, Kentucky, Vermont, and West Virginia -- have been created from land claimed by another state; all of the others were created from territories or directly from acquisitions. The last state of the contiguous United States, commonly called the ``lower 48, ''was admitted in 1912; the fiftieth and most recent state was admitted in 1959.
+- 4hop1__342858_131850_33952_33939::p2: United States The United States of America (USA), commonly known as the United States (U.S.) or America, is a federal republic composed of 50 states, a federal district, five major self - governing territories, and various possessions. At 3.8 million square miles (9.8 million km) and with over 325 million people, the United States is the world's third - or fourth - largest country by total area and the third-most populous. The capital is Washington, D.C., and the largest city by population is New York City. Forty - eight states and the capital's federal district are contiguous and located in North America between Canada and Mexico. The state of Alaska is in the northwest corner of North America, bordered  [truncated]
+- 4hop2__161602_426860_88460_21057::p3: Industrial Revolution During the late 18th an early 19th centuries when the UK and parts of Western Europe began to industrialise, the US was primarily an agricultural and natural resource producing and processing economy. The building of roads and canals, the introduction of steamboats and the building of railroads were important for handling agricultural and natural resource products in the large and sparsely populated country of the period.
+- 4hop1__94201_642284_131926_13165::p17: Military history of the United States In the Treaty of Paris after the Revolution, the British had ceded the lands between the Appalachian Mountains and the Mississippi River to the United States, without consulting the Shawnee, Cherokee, Choctaw and other smaller tribes who lived there. Because many of the tribes had fought as allies of the British, the United States compelled tribal leaders to sign away lands in postwar treaties, and began dividing these lands for settlement. This provoked a war in the Northwest Territory in which the U.S. forces performed poorly; the Battle of the Wabash in 1791 was the most severe defeat ever suffered by the United States at the hands of American Indians. President Washington dispatched a ne [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__104996_160713_77246::r3
+
+- sample_id: 3hop1__104996_160713_77246
+- risk_type: wrong_target
+- oracle_action: disambiguate_conflict
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What is the meaning of the word that is also a majority religion in the area that became India when the country that release Ankahi was created in Arabic dictionary?
+
+Gold answer: the country of India
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The country that released Ankahi is Pakistan.
+- c2: [supported] The area that became India is India itself.
+- c3: [contradicted] Islam is the majority religion in the area that became India.
+- c4: [unsupported] The meaning of the word 'Islam' in the Arabic dictionary is 'submission' or 'surrender'.
+
+Evidence:
+- 2hop__446324_620302::p14: Madrasa The term "Islamic education" means education in the light of Islam itself, which is rooted in the teachings of the Quran - holy book of Muslims. Islamic education and Muslim education are not the same. Because Islamic education has epistemological integration which is founded on Tawhid - Oneness or monotheism. For details Read "A Qur’anic Methodology for Integrating Knowledge and Education: Implications for Malaysia’s Islamic Education Strategy" written Tareq M Zayed  and "Knowledge of Shariah and Knowledge to Manage ‘Self’ and ‘System’: Integration of Islamic Epistemology with the Knowledge and Education" authored by Tareq M Zayed
+- 2hop__23459_35124::p12: Madrasa The term "Islamic education" means education in the light of Islam itself, which is rooted in the teachings of the Quran - holy book of Muslims. Islamic education and Muslim education are not the same. Because Islamic education has epistemological integration which is founded on Tawhid - Oneness or monotheism. For details Read "A Qur’anic Methodology for Integrating Knowledge and Education: Implications for Malaysia’s Islamic Education Strategy" written Tareq M Zayed  and "Knowledge of Shariah and Knowledge to Manage ‘Self’ and ‘System’: Integration of Islamic Epistemology with the Knowledge and Education" authored by Tareq M Zayed
+- 4hop1__636860_49925_13759_736921::p14: Abrahamic religions The Abrahamic religions, also referred to collectively as Abrahamism, are a group of Semitic - originated religious communities of faith that claim descent from the practices of the ancient Israelites and the worship of the God of Abraham. The term derives from a figure from the Bible known as Abraham. Abrahamic religion was able to spread globally through Christianity being adopted by the Roman Empire in the 4th century and the Islamic Empire from the 7th century onward. As a consequence, today the Abrahamic religions are one of the major divisions in comparative religion (along with Indian, Iranian, and East Asian religions). Judaism, Christianity, and Islam are the largest Abrahamic relig [truncated]
+- 3hop1__104996_160713_77246::p18: Culture of India According to the 2011 census, 79.8% of the population of India practice Hinduism. Islam (14.2%), Christianity (2.3%), Sikhism (1.7%), Buddhism (0.7%) and Jainism (0.4%) are the other major religions followed by the people of India. Many tribal religions, such as Sarnaism, are found in India, though these have been affected by major religions such as Hinduism, Buddhism, Islam and Christianity. Jainism, Zoroastrianism, Judaism, and the Bahá'í Faith are also influential but their numbers are smaller. Atheism and agnostics also have visible influence in India, along with a self-ascribed tolerance to other faiths. According to a study conducted by the Pew Research Centre, India will have world's  [truncated]
+- 3hop1__104996_160713_77246::p15: Islam in India Islam (Arabic: الإسلام) is the second-largest religion in India, with 14.2% of the country's population or approx. 200 million people identifying as adherents of Islam (2018 estimate). It makes India the country with the largest Muslim population outside Muslim-majority countries. The majority of Indian Muslims belong to the Sunni sect of Islam. The religion first arrived at the western coast of India when Arab traders as early as the 7th century CE came to coastal Malabar and Konkan-Gujarat. Cheraman Juma Mosque in Kerala is thought to be the first mosque in India, built in 629 CE by Malik Deenar. Following an expedition by the governor of Bahrain to Bharuch in the 7th century CE, immigrant [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__105688_17130_70784_79935::r2
+
+- sample_id: 4hop1__105688_17130_70784_79935
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: When was the region that lies to the north of where Eyal Golan is located and the Persian Gulf created?
+
+Gold answer: 1930
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] The region to the north of Eyal Golan is the Arabian Sea.
+- c2: [supported] The Persian Gulf is connected to the Arabian Sea via the Gulf of Oman.
+- c3: [unsupported] The Arabian Sea was created during the Miocene epoch.
+
+Evidence:
+- 4hop1__443274_17130_70784_61381::p2: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 4hop1__17192_17130_70784_79935::p2: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 4hop1__105401_17130_70784_79935::p12: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 3hop2__145209_20335_9331::p7: Bukovina A region of Moldavia during the Middle Ages, the territory of what became known as Bukovina was, from 1774 to 1918, an administrative division of the Habsburg Monarchy, the Austrian Empire, and Austria-Hungary. After World War I, Romania established its control over Bukovina. In 1940, the northern half of Bukovina was annexed by the Soviet Union in violation of the Molotov–Ribbentrop Pact, and currently is part of Ukraine.
+- 2hop__818302_25719::p11: Lower Lusatia Lower Lusatia (; ; ; ; ) is a historical region in Central Europe, stretching from the southeast of the German state of Brandenburg to the southwest of Lubusz Voivodeship in Poland. Like adjacent Upper Lusatia in the south, Lower Lusatia is a settlement area of the West Slavic Sorbs whose endangered Lower Sorbian language is related to Upper Sorbian and Polish.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__153573_44085::r2
+
+- sample_id: 2hop__153573_44085
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What was the show named after the character featured in the video game Mickey's Safari in Letterland?
+
+Gold answer: The Mickey Mouse Club
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The show named after the character featured in the video game Mickey's Safari in Letterland is 'Metal Mickey'.
+- c2: [supported] The character from the video game Mickey's Safari in Letterland is Mickey Mouse.
+
+Evidence:
+- 2hop__153573_44085::p14: Mickey's Safari in Letterland Mickey's Safari in Letterland is a 1993 educational Nintendo Entertainment System video game starring the famous cartoon character Mickey Mouse. In this game, Mickey must collect all of the letters of the alphabet for his museum by going to six different territories (including places inspired by the Yukon and the Caribbean). There are three levels of difficulty.
+- 2hop__153573_44085::p2: The Mickey Mouse Club The Mickey Mouse Club is an American variety television show that aired intermittently from 1955 to 1996 and returned in 2017 to social media. Created by Walt Disney and produced by Walt Disney Productions, the program was first televised in 1955 by ABC, featuring a regular but ever - changing cast of mostly teen performers. ABC broadcast reruns weekday afternoons during the 1958 -- 1959 season, airing right after American Bandstand. The show was revived after its initial 1955 -- 1959 run on ABC, first from 1977 -- 1979 for first - run syndication, again from 1989 -- 1996 as The All - New Mickey Mouse Club (also known to fans as MMC from 1993 -- 1996) airing exclusively on cable television's [truncated]
+- 2hop__153573_44085::p6: Phantom Blot The Phantom Blot is a fictional character featured in various media by The Walt Disney Company. He is an enemy of Mickey Mouse. He first appeared in the "Mickey Mouse" comic strip adventure "Mickey Mouse Outwits the Phantom Blot" by Floyd Gottfredson, which was published in the form of daily strips from May 20 to September 9, 1939.
+- 3hop2__49541_140875_51068::p3: High Feather High Feather is a 10-episode educational television show which ran on PBS in the 1980s; each episode was 30 minutes long. The program's name came from the Old English expression "High Fettle", meaning enjoying life and cheerfully doing the tasks of living. The heartfelt spirit of the show was captured in the lyrics to its theme song: "I'm in High Feather. Feel like the sun is shining on me. High Feather. I'm as free as I can be..."
+- 2hop__153573_44085::p9: Metal Mickey The character of Metal Mickey first appeared on British television in the ITV children's magazine show "The Saturday Banana," produced by Southern Television in 1978. Humphrey Barclay saw Mickey on Jimmy Savile's 'Jim'll Fix It' television show. Seeing the children chatting in the marketplace with the friendly robot, this led to the creation of the "Metal Mickey" television show. Within a month the pilot had been video-taped and shortly after this the series went live with its first six episodes. 41 episodes were made in total, broadcast over three separate seasons between September 1980 and January 1983. The show attracted viewing figures of around 12 million at its peak. Micky Dolenz, form [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__131611_32392_823060_610794::r3
+
+- sample_id: 4hop1__131611_32392_823060_610794
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: In which county is the city sharing a border with the capitol of the state where Ocean Forest Country Club is located?
+
+Gold answer: Richland County
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Ocean Forest Country Club is located in Horry County, South Carolina.
+- c2: [unsupported] The capitol of the state where Ocean Forest Country Club is located is Columbia, South Carolina.
+- c3: [unsupported] The city sharing a border with the capitol of South Carolina is Charleston.
+- c4: [supported] Charleston is located in Charleston County, South Carolina.
+
+Evidence:
+- 4hop1__131611_32392_823060_610794::p11: Ocean Forest Country Club Ocean Forest Country Club, also known as Ocean Forest Hotel and Country Club, is a historic country club and hotel located at Myrtle Beach in Horry County, South Carolina. The club and hotel were designed by an influential New York architect, Raymond Hood (1881-1934) and is an unusual example of Classical Revival architecture. Construction of the club began in 1926 and was completed in 1927. In addition to the hotel / club building, a 27-hole golf course was built in association with the club. It was designed by Robert White, a golf course designer and future president of the Professional Golfers' Association of America. The present 18-hole course dates to 1946.
+- 2hop__249867_557232::p3: Desert Forest Golf Club Desert Forest Golf Club is a par-72 golf course and club located in Carefree, Arizona. The course is 7201 yards long and located underneath Black Mountain in the Sonoran desert.
+- 4hop2__161602_426860_88460_21057::p8: Orenco Woods Nature Park Orenco Woods Nature Park is a park located in Hillsboro, Oregon, United States. The site was formerly nine-hole Orenco Woods Golf Course in the Orenco neighborhood owned by the Hillsboro Elks. The eastern edge is bounded by Cornelius Pass Road and the tracks for the MAX Blue Line form the northern boundary. Rock Creek flows through the site between Orchard Park upstream and Noble Woods Park downstream, with the Rock Creek Trail planned to connect all three parks.
+- 4hop1__813171_153080_33897_81096::p5: Jacksonville, Florida Jacksonville is the largest city by population in the U.S. state of Florida, and the largest city by area in the contiguous United States. It is the county seat of Duval County, with which the city government consolidated in 1968. Consolidation gave Jacksonville its great size and placed most of its metropolitan population within the city limits; with an estimated population of 853,382 in 2014, it is the most populous city proper in Florida and the Southeast, and the 12th most populous in the United States. Jacksonville is the principal city in the Jacksonville metropolitan area, with a population of 1,345,596 in 2010.
+- 4hop1__236903_153080_33897_81096::p4: Jacksonville, Florida Jacksonville is the largest city by population in the U.S. state of Florida, and the largest city by area in the contiguous United States. It is the county seat of Duval County, with which the city government consolidated in 1968. Consolidation gave Jacksonville its great size and placed most of its metropolitan population within the city limits; with an estimated population of 853,382 in 2014, it is the most populous city proper in Florida and the Southeast, and the 12th most populous in the United States. Jacksonville is the principal city in the Jacksonville metropolitan area, with a population of 1,345,596 in 2010.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__222497_309482_27537::r1
+
+- sample_id: 3hop1__222497_309482_27537
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Why did Roncalli leave the place where the composer of Al gran sole carico d'amore worked?
+
+Gold answer: for the conclave in Rome
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Roncalli left Venice because he was elected Pope John XXIII.
+- c2: [supported] The composer of 'Al gran sole carico d'amore' is Luigi Nono.
+- c3: [unclear] Luigi Nono worked in Venice.
+
+Evidence:
+- 3hop1__820301_720914_27537::p5: Pope John XXIII Following the death of Pope Pius XII on 9 October 1958, Roncalli watched the live funeral on his last full day in Venice on 11 October. His journal was specifically concerned with the funeral and the abused state of the late pontiff's corpse. Roncalli left Venice for the conclave in Rome well aware that he was papabile,[b] and after eleven ballots, was elected to succeed the late Pius XII, so it came as no surprise to him, though he had arrived at the Vatican with a return train ticket to Venice.[citation needed]
+- 3hop1__312146_720914_27537::p14: Pope John XXIII Following the death of Pope Pius XII on 9 October 1958, Roncalli watched the live funeral on his last full day in Venice on 11 October. His journal was specifically concerned with the funeral and the abused state of the late pontiff's corpse. Roncalli left Venice for the conclave in Rome well aware that he was papabile,[b] and after eleven ballots, was elected to succeed the late Pius XII, so it came as no surprise to him, though he had arrived at the Vatican with a return train ticket to Venice.[citation needed]
+- 3hop1__222497_309482_27537::p12: Pope John XXIII Following the death of Pope Pius XII on 9 October 1958, Roncalli watched the live funeral on his last full day in Venice on 11 October. His journal was specifically concerned with the funeral and the abused state of the late pontiff's corpse. Roncalli left Venice for the conclave in Rome well aware that he was papabile,[b] and after eleven ballots, was elected to succeed the late Pius XII, so it came as no surprise to him, though he had arrived at the Vatican with a return train ticket to Venice.[citation needed]
+- 3hop1__222497_309482_27537::p0: Al gran sole carico d'amore Al gran sole carico d'amore ("In the Bright Sunshine Heavy with Love") is an opera (designated as an 'azione scenica') with music by Luigi Nono, based mainly on plays by Bertolt Brecht, but also incorporating texts of Fidel Castro, Che Guevara, Karl Marx, and Vladimir Lenin. Nono himself and Yuri Lyubimov wrote the libretto. It premiered at the Teatro alla Scala on 4 April 1975, conducted by Claudio Abbado. Lyubimov directed the original production. The UK premiere was at the 32nd Edinburgh Festival in 1978. In addition to vocal soloists, chorus and orchestra, the work incorporates taped sounds. This work is a product of Nono's strong political activism through the mid-1970s.
+- 3hop1__28841_547811_80702::p13: Antonio Vivaldi Antonio Lucio Vivaldi (Italian: (anˈtɔːnjo ˈluːtʃo viˈvaldi); 4 March 1678 -- 28 July 1741) was an Italian Baroque musical composer, virtuoso violinist, teacher, and cleric. Born in Venice, he is recognized as one of the greatest Baroque composers, and his influence during his lifetime was widespread across Europe. He composed many instrumental concertos, for the violin and a variety of other instruments, as well as sacred choral works and more than forty operas. His best - known work is a series of violin concertos known as the Four Seasons.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__264443_49925_13759_736921::r1
+
+- sample_id: 4hop1__264443_49925_13759_736921
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Where is the district that the person who wanted to reform and address Edward Egan's religion preached a sermon on Marian devotion before his death located?
+
+Gold answer: Saxony-Anhalt
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] Edward Egan wanted to reform and address his religion.
+- c2: [unclear] The person who wanted to reform and address Edward Egan's religion preached a sermon on Marian devotion before his death.
+- c3: [unclear] The district where the person who wanted to reform and address Edward Egan's religion preached a sermon on Marian devotion before his death is located.
+
+Evidence:
+- 4hop1__264443_49925_13759_736921::p15: Edward Egan Edward Michael Egan (April 2, 1932 – March 5, 2015) was an American Cardinal of the Roman Catholic Church. He served as Bishop of Bridgeport from 1988 to 2000, and as Archbishop of New York from 2000 to 2009. He was elevated to the cardinalate in 2001. He was the twelfth Bishop, ninth Archbishop, and seventh Cardinal of the See of New York.
+- 4hop1__264443_49925_13759_736921::p6: James J. Egan James J. Egan, FAIA, (1839, Cork, Ireland—December 2, 1914, Chicago, Illinois) was an Irish-American architect and fellow of the American Institute of Architects practicing in Chicago, Illinois. He was a partner of the Chicago architectural firms Armstrong & Egan, Egan & Kirkland and Egan & Prindeville, which gained prominence designing Roman Catholic structures.
+- 3hop1__136129_87694_124169::p13: Boston Boston has been a noted religious center from its earliest days. The Roman Catholic Archdiocese of Boston serves nearly 300 parishes and is based in the Cathedral of the Holy Cross (1875) in the South End, while the Episcopal Diocese of Massachusetts, with the Cathedral Church of St. Paul (1819) as its episcopal seat, serves just under 200 congregations. Unitarian Universalism has its headquarters on Beacon Hill. The Christian Scientists are headquartered in Back Bay at the Mother Church (1894). The oldest church in Boston is First Church in Boston, founded in 1630. King's Chapel, the city's first Anglican church, was founded in 1686 and converted to Unitarianism in 1785. Other churches incl [truncated]
+- 3hop2__851134_613770_7713::p19: Haifa District Haifa District (, "Mehoz Ḥeifa"; ) is an administrative district surrounding the city of Haifa, Israel. The district is one of seven administrative districts of Israel, and its capital is Haifa. The district land area is 864 km (299.3 mi).
+- 4hop3__857_846_613770_7713::p16: Ghaziabad district, Uttar Pradesh Ghaziabad district (pronounced [ɣaːziːaːˈbaːd̪ ˈzɪlaː]) is a largely suburban district of Uttar Pradesh state in northern India of National Capital Region.  The city of Ghaziabad is the administrative headquarters of the district. This district is part of Meerut Division.  It has become a major bedroom community for Delhi.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__140786_2053_5289::r2
+
+- sample_id: 3hop1__140786_2053_5289
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What UK label was bought by the major broadcaster that, along with ABC and the network of the show Just Men!?, is based in New York?
+
+Gold answer: Oriole Records.
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] The major broadcaster that, along with ABC and the network of the show Just Men!?, is based in New York.
+- c2: [unclear] The UK label was bought by the major broadcaster based in New York.
+
+Evidence:
+- 3hop1__140786_2053_52946::p1: Just Men! Just Men! is an American game show that aired on NBC Daytime from January 3 to April 1, 1983. The show starred Betty White, who won an Emmy award for her work on the show, with Steve Day announcing.
+- 3hop1__140786_2053_5289::p5: Just Men! Just Men! is an American game show that aired on NBC Daytime from January 3 to April 1, 1983. The show starred Betty White, who won an Emmy award for her work on the show, with Steve Day announcing.
+- 3hop1__820301_720914_27537::p9: The Man from U.N.C.L.E. Originally, co-creator Sam Rolfe wanted to leave the meaning of U.N.C.L.E. ambiguous so it could refer to either ``Uncle Sam ''or the United Nations. Concerns by Metro - Goldwyn - Mayer's (MGM) legal department about using`` U.N.'' for commercial purposes resulted in the producers' clarification that U.N.C.L.E. was an acronym for the United Network Command for Law and Enforcement. Each episode had an ``acknowledgement ''to the U.N.C.L.E. in the end titles.
+- 3hop1__140786_2053_5289::p7: Sony Music In 1964, CBS established its own UK distribution with the acquisition of Oriole Records. EMI continued to distribute Epic and Okeh label material on the Columbia label in the UK until the distribution deal with EMI expired in 1968 when CBS took over distribution.
+- 3hop1__140786_2053_5289::p17: New York City The television industry developed in New York and is a significant employer in the city's economy. The three major American broadcast networks are all headquartered in New York: ABC, CBS, and NBC. Many cable networks are based in the city as well, including MTV, Fox News, HBO, Showtime, Bravo, Food Network, AMC, and Comedy Central. The City of New York operates a public broadcast service, NYCTV, that has produced several original Emmy Award-winning shows covering music and culture in city neighborhoods and city government.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__151650_5274_458768_33637::r1
+
+- sample_id: 4hop1__151650_5274_458768_33637
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: How many ethnic minorities were looked at differently in the city where the headquarters of the only group larger than Desde El Principio's record label is located?
+
+Gold answer: two
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] The headquarters of the only group larger than Desde El Principio's record label is located in Houston.
+- c2: [unclear] The city where the headquarters of the only group larger than Desde El Principio's record label is located has 2 ethnic minorities that were looked at differently.
+
+Evidence:
+- 4hop1__151650_5274_458768_33637::p15: Desde El Principio "Desde El Principio" also came to be the duo's final album for the Sony Music Entertainment label, a company they after a series of mergers in various forms had been signed to for some fifteen years (CBS Records Spain, Epic Records Spain, CBS-Epic Spain, eventually a sublabel to Sony Music Spain, today a subsidiary to the multinational Sony BMG Music Entertainment conglomerate). In 2006 Azúcar Moreno returned to their previous label EMI Music for the album "Bailando Con Lola".
+- 4hop1__151650_5274_458768_33632::p1: Desde El Principio "Desde El Principio" also came to be the duo's final album for the Sony Music Entertainment label, a company they after a series of mergers in various forms had been signed to for some fifteen years (CBS Records Spain, Epic Records Spain, CBS-Epic Spain, eventually a sublabel to Sony Music Spain, today a subsidiary to the multinational Sony BMG Music Entertainment conglomerate). In 2006 Azúcar Moreno returned to their previous label EMI Music for the album "Bailando Con Lola".
+- 2hop__151750_141308::p11: Desde El Principio "Desde El Principio" also came to be the duo's final album for the Sony Music Entertainment label, a company they after a series of mergers in various forms had been signed to for some fifteen years (CBS Records Spain, Epic Records Spain, CBS-Epic Spain, eventually a sublabel to Sony Music Spain, today a subsidiary to the multinational Sony BMG Music Entertainment conglomerate). In 2006 Azúcar Moreno returned to their previous label EMI Music for the album "Bailando Con Lola".
+- 4hop1__813171_153080_33897_81096::p18: Houston According to the 2010 Census, whites made up 51% of Houston's population; 26% of the total population were non-Hispanic whites. Blacks or African Americans made up 25% of Houston's population. American Indians made up 0.7% of the population. Asians made up 6% (1.7% Vietnamese, 1.3% Chinese, 1.3% Indian, 0.9% Pakistani, 0.4% Filipino, 0.3% Korean, 0.1% Japanese), while Pacific Islanders made up 0.1%. Individuals from some other race made up 15.2% of the city's population, of which 0.2% were non-Hispanic. Individuals from two or more races made up 3.3% of the city. At the 2000 Census, there were 1,953,631 people and the population density was 3,371.7 people per square mile (1,301.8/km²). The r [truncated]
+- 4hop1__567737_141375_458768_33637::p1: Santa Monica, California Around the start of the 20th century, a growing population of Asian Americans lived in or near Santa Monica and Venice. A Japanese fishing village was located near the Long Wharf while small numbers of Chinese lived or worked in both Santa Monica and Venice. The two ethnic minorities were often viewed differently by White Americans who were often well-disposed towards the Japanese but condescending towards the Chinese. The Japanese village fishermen were an integral economic part of the Santa Monica Bay community.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__236903_153080_33897_81096::r2
+
+- sample_id: 4hop1__236903_153080_33897_81096
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: Who won the indy car race in the most populated city of the state where the performer of East Coasting is from?
+
+Gold answer: Mario Andretti
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The most populated city of the state where the performer of East Coasting is from is Detroit.
+- c2: [supported] Detroit is in the state of Michigan.
+- c3: [unsupported] The Indy Car race in Detroit was won by a specific individual.
+
+Evidence:
+- 4hop1__236903_153080_33897_81096::p19: East Coasting East Coasting is an album by Charles Mingus, recorded and released in 1957. It was reissued on CD with bonus takes in 1993.
+- 2hop__247353_55227::p14: Greetings from the Shore Greetings From The Shore is a 2007 American coming-of-age romantic comedy film directed by Greg Chwerchak. The movie has played over 60 festivals, winning over 20 awards. It had its American theatrical release on September 12, 2008, on a limited basis.
+- 2hop__82669_768138::p9: End of the Line (Traveling Wilburys song) ``End of the Line ''is the last track from the Traveling Wilburys' first album, Volume 1, released in 1988. It was also issued as the band's second single, in January 1989. The song's riding - on - the - rails rhythm suggests its theme and the on - the - move nature of the group. It features all the Wilburys (excluding Bob Dylan, who was on tour at the time) as lead singers; George Harrison, Jeff Lynne and Roy Orbison sing the choruses in turn, while Tom Petty sings the verses. The song was mainly written by Harrison and was assigned to his publishing company. In keeping with the collaborative concept behind the Wilburys project, however, all five members received a songwriting credit.
+- 2hop__82910_75184::p8: Brian Bonsall Brian Eric Bonsall (born December 3, 1981) is an American rock musician, singer, guitarist and former child actor. He is perhaps best known for his roles as Andrew ``Andy ''Keaton, the youngest child on the NBC sitcom Family Ties from 1986 until 1989, and Alexander Rozhenko, the son of Worf and K'ehleyr, on Star Trek: The Next Generation from 1992 to 1994.
+- 4hop1__813171_153080_159767_81096::p2: Arizona Arizona ( (listen); Navajo: Hoozdo Hahoodzo Navajo pronunciation: [xòːztò xɑ̀xòːtsò]; O'odham: Alĭ ṣonak Uto-Aztecan pronunciation: [ˡaɺi ˡʂonak]) is a state in the southwestern region of the United States. It is also part of the Western and the Mountain states. It is the sixth largest and the 14th most populous of the 50 states. Its capital and largest city is Phoenix. Arizona shares the Four Corners region with Utah, Colorado, and New Mexico; its other neighboring states are Nevada and California to the west and the Mexican states of Sonora and Baja California to the south and southwest.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__108833_720914_41132::r2
+
+- sample_id: 3hop1__108833_720914_41132
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: How many times did the plague occur in the city where the painter of The Bacchanal of the Andrians died?
+
+Gold answer: 22
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The painter of The Bacchanal of the Andrians is Titian.
+- c2: [unclear] Titian died in Venice.
+- c3: [supported] The plague occurred in Venice 22 times between 1361 and 1528.
+
+Evidence:
+- 3hop1__108833_720914_41132::p0: The Bacchanal of the Andrians The Bacchanal of the Andrians is an oil painting by Titian. It is signed ".[aciebat]" and is dated to 1523–1526.
+- 3hop1__108833_720914_41132::p6: Black Death In 1466, perhaps 40,000 people died of the plague in Paris. During the 16th and 17th centuries, the plague was present in Paris around 30 per cent of the time. The Black Death ravaged Europe for three years before it continued on into Russia, where the disease was present somewhere in the country 25 times between 1350 to 1490. Plague epidemics ravaged London in 1563, 1593, 1603, 1625, 1636, and 1665, reducing its population by 10 to 30% during those years. Over 10% of Amsterdam's population died in 1623–25, and again in 1635–36, 1655, and 1664. Plague occurred in Venice 22 times between 1361 and 1528. The plague of 1576–77 killed 50,000 in Venice, almost a third of the population. Late outbr [truncated]
+- 3hop1__108833_720914_41132::p5: Black Death The Black Death, also known as the Great Plague, the Black Plague, or simply the Plague, was one of the most devastating pandemics in human history, resulting in the deaths of an estimated 75 to 200 million people in Eurasia and peaking in Europe from 1347 to 1351. The bacterium Yersinia pestis, which results in several forms of plague, is believed to have been the cause. The plague created a series of religious, social and economic upheavals, which had profound effects on the course of European history.
+- 3hop1__820301_720914_27537::p11: Crucifixion (Titian) The Crucifixion is a life sized painting by the Venetian artist Titian, completed in 1558 and presently hanging in the sanctuary of the church of San Domenico, Ancona. Jesus Christ is shown crucified, with Saint Mary and Saint John standing either side of the cross in the "Stabat Mater" tradition. The kneeling figure is of Saint Dominic. The canvas was completed during Titian's fifth decade of painting, and is one of the works marking a shift toward his extensive exploration of tragedy and human suffering.
+- 3hop1__64957_87694_124169::p13: Last Supper (del Castagno) The Last Supper (1445–1450) is a fresco by the Italian Renaissance artist Andrea del Castagno, located in the refectory of the convent of Sant'Apollonia, now the "Museo di Cenacolo di Sant'Apollonia", and accessed through a door on Via Ventisette Aprile at the corner with Santa Reparata, in Florence, region of Tuscany. The painting depicts Jesus and the Apostles during the Last Supper, with Judas, unlike all the other apostles, sitting separately on the near side of the table, as is common in depictions of the Last Supper in Christian art.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__194469_83289::r2
+
+- sample_id: 2hop__194469_83289
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Who is the guy in the One Last Time video by the participant in The Listening Sessions?
+
+Gold answer: Matt Bennett
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The participant in The Listening Sessions is Ariana Grande.
+- c2: [supported] The guy in the One Last Time video is Matt Bennett.
+
+Evidence:
+- 4hop2__161602_426860_88460_21034::p12: 2018 ACC Men's Basketball Tournament The 2018 ACC Men's Basketball Tournament was the postseason men's basketball tournament for the Atlantic Coast Conference held at Barclays Center in Brooklyn, New York from March 6 -- 10, 2018. It was the 65th annual edition of the tournament, and the second year in a row being held at Barclays Center. The Virginia Cavaliers entered the tournament as the top seed, with a 17 -- 1 conference record (28 -- 2 overall) under the guidance of Tony Bennett. UVA also began the tournament unanimously ranked No. 1 in the country in both major polls.
+- 2hop__286093_361551::p13: Andy Finch Andrew Joseph "Andy" Finch (born March 20, 1981) is an American snowboarder. His accomplishments include winning the overall U.S. Grand Prix Halfpipe Title in 2003 and 2004, taking first place in the Arctic Challenge in Norway in April 2004, winning the Vans Triple Crown in February 2004, winning the O’Neill Snowboard Jam in January 2005, and finishing in second place in Northstar Resort’s Vans Tahoe Cup. In addition, Finch competed in the 2006 Winter Olympics for the United States. He is living a now free retired life in Truckee ca and can be found Sierra Bible church on Brockway Road in Truckee California on Sundays. He attended Bullard High School in Fresno, California.
+- 2hop__28203_55840::p2: Taylor King Taylor King (born May 30, 1988) is an American retired professional basketball player. King played for the Villanova University Wildcats, where he played the forward position. King attended Mater Dei High School of Santa Ana, where he enjoyed a successful high school basketball career, posting the third highest career point total in California high school history.
+- 2hop__194469_83289::p19: One Last Time (Ariana Grande song) The music video was filmed in early January 2015 and it also stars Matt Bennett, who was also Grande's co-star from the Nickelodeon sitcom Victorious. Max Landis also confirmed that one of the voices of the news reporters in the beginning of the video was actress Elizabeth Gillies, who also co-starred in Victorious with Grande and Bennett. Gillies previously appeared Grande's music video for her single ``Right There ''(2013). Around that time, Max Landis revealed`` One Last Time'' as Grande's next single after tweeting, ``Earth will pass catastrophically through the tail of the comet Eurydice in one week. Gather family and lovers close, one... last... time ''. The lyric video for`` One Last  [truncated]
+- 2hop__194469_83289::p11: Standing on a Beach The man featured on the album cover was not a member of the Cure; he was chosen because his appearance fit the desired aesthetic of the album. His name is John Button, and was at the time a retired fisherman. He also appeared in the music video for ``Killing an Arab ''. According to the band's 2005 biography by Jeff Apter, when asked why he agreed to lend his face to the band's media, Button's answer was,`` If I can help these youngsters break through, after all, why not?'' He also reportedly said that he would buy a player and listen to one of the band's songs ``out of curiosity, just to see ''.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__136129_87694_124169::r3
+
+- sample_id: 3hop1__136129_87694_124169
+- risk_type: wrong_target
+- oracle_action: disambiguate_conflict
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What year did the Governor of the city where the basilica named after the same saint as the one that Mantua Cathedral is dedicated to die?
+
+Gold answer: 1952
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Mantua Cathedral is dedicated to Saint Peter.
+- c2: [supported] Foligno Cathedral is dedicated to Saint Felician.
+- c3: [supported] The Governor of Vatican City died in 1952.
+- c4: [contradicted] The basilica named after the same saint as Mantua Cathedral is the Foligno Cathedral.
+
+Evidence:
+- 3hop1__603558_87694_124169::p12: St. Peter's Basilica The Papal Basilica of St. Peter in the Vatican (Italian: Basilica Papale di San Pietro in Vaticano), or simply St. Peter's Basilica (Latin: Basilica Sancti Petri), is an Italian Renaissance church in Vatican City, the papal enclave within the city of Rome.
+- 3hop1__136129_87694_124169::p9: St. Peter's Basilica The Papal Basilica of St. Peter in the Vatican (Italian: Basilica Papale di San Pietro in Vaticano), or simply St. Peter's Basilica (Latin: Basilica Sancti Petri), is an Italian Renaissance church in Vatican City, the papal enclave within the city of Rome.
+- 3hop1__135659_87694_64412::p0: St. Peter's Basilica The Papal Basilica of St. Peter in the Vatican (Italian: Basilica Papale di San Pietro in Vaticano), or simply St. Peter's Basilica (Latin: Basilica Sancti Petri), is an Italian Renaissance church in Vatican City, the papal enclave within the city of Rome.
+- 3hop1__135659_87694_64412::p18: Mantua Cathedral Mantua Cathedral () in Mantua, Lombardy, northern Italy, is a Roman Catholic cathedral dedicated to Saint Peter. It is the seat of the Bishop of Mantua.
+- 3hop1__136129_87694_124169::p19: Foligno Cathedral Foligno Cathedral () is a Roman Catholic cathedral situated on the Piazza della Repubblica in the center of Foligno, Italy. The cathedral, built on the site of an earlier basilica, is dedicated to the patron saint of the city, the martyr Felician of Foligno (San Feliciano), who was buried here in 251 AD. It is the seat of the Bishop of Foligno.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__244193_461106::r3
+
+- sample_id: 2hop__244193_461106
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What movement does the creator of the Washington Monument belong to?
+
+Gold answer: Greek Revival
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The creator of the Washington Monument is unknown based on the provided evidence.
+
+Evidence:
+- 4hop1__31050_725495_49925_267352::p1: Bhoodan movement The Bhoodan Movement or $6 - Land Gift Movement, was a voluntary land reform movement in India, started by Acharya Vinoba Bhave in 1951 at Pochampally village in Telangana which is now known as Bhoodan Pochampally.
+- 2hop__286621_84856::p5: Dalit Buddhist movement The Dalit Buddhist movement (also known as Neo-Buddhist movement) is a socio - political movement by Dalits in India started by B.R. Ambedkar. It radically re-interpreted Buddhism and created a new school of Buddhism called Navayana. The movement has sought to be a socially and politically engaged form of Buddhism.
+- 2hop__244193_461106::p13: New York City The Statue of Liberty National Monument and Ellis Island Immigration Museum are managed by the National Park Service and are in both the states of New York and New Jersey. They are joined in the harbor by Governors Island National Monument, in New York. Historic sites under federal management on Manhattan Island include Castle Clinton National Monument; Federal Hall National Memorial; Theodore Roosevelt Birthplace National Historic Site; General Grant National Memorial ("Grant's Tomb"); African Burial Ground National Monument; and Hamilton Grange National Memorial. Hundreds of private properties are listed on the National Register of Historic Places or as a National Historic Landmark such as [truncated]
+- 2hop__244193_461106::p12: Lincoln Memorial The Lincoln Memorial is an American national memorial built to honor the 16th President of the United States, Abraham Lincoln. It is located on the western end of the National Mall in Washington, D.C., across from the Washington Monument. The architect was Henry Bacon; the designer of the primary statue – "Abraham Lincoln", 1920 – was Daniel Chester French; the Lincoln statue was carved by the Piccirilli Brothers; and the painter of the interior murals was Jules Guerin. Dedicated in May 1922, it is one of several memorials built to honor an American president. It has always been a major tourist attraction and since the 1930s has been a symbolic center focused on race relations.
+- 2hop__244193_461106::p4: Lincoln Memorial The Lincoln Memorial is an American national monument built to honor the 16th President of the United States, Abraham Lincoln. It is located on the western end of the National Mall in Washington, D.C., across from the Washington Monument. The architect was Henry Bacon; the designer of the primary statue -- Abraham Lincoln, 1920 -- was Daniel Chester French; the Lincoln statue was carved by the Piccirilli Brothers; and the painter of the interior murals was Jules Guerin. Dedicated in 1922, it is one of several monuments built to honor an American president. It has always been a major tourist attraction and since the 1930s has been a symbolic center focused on race relations.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__145494_698949_157828_162309::r3
+
+- sample_id: 4hop1__145494_698949_157828_162309
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: When did the country whose co-official language was used in the movie named after the place where Bela Linder died first attend the Olympics games as an independent team?
+
+Gold answer: 2016
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] The country whose co-official language was used in the movie named after the place where Béla Linder died first attended the Olympics games as an independent team
+
+Evidence:
+- 4hop1__749065_698949_157828_162309::p7: 2004 Summer Olympics The Games saw 10,625 athletes compete, some 600 more than expected, accompanied by 5,501 team officials from 201 countries. There were 301 medal events in 28 different sports. Athens 2004 marked the first time since the 1996 Summer Olympics that all countries with a National Olympic Committee were in attendance. 2004 also marked the return of the Olympic Games to the city where they began. Having previously hosted the Olympics in 1896, Athens became one of only four cities to have hosted the Summer Olympic Games on two separate occasions at the time (together with Paris, London and Los Angeles
+- 4hop1__145494_698949_157828_162309::p12: 2004 Summer Olympics The Games saw 10,625 athletes compete, some 600 more than expected, accompanied by 5,501 team officials from 201 countries. There were 301 medal events in 28 different sports. Athens 2004 marked the first time since the 1996 Summer Olympics that all countries with a National Olympic Committee were in attendance. 2004 also marked the return of the Olympic Games to the city where they began. Having previously hosted the Olympics in 1896, Athens became one of only four cities to have hosted the Summer Olympic Games on two separate occasions at the time (together with Paris, London and Los Angeles
+- 4hop2__161602_474028_88460_21062::p6: 2018 FIFA World Cup The 2018 FIFA World Cup will be the 21st FIFA World Cup, a quadrennial international football tournament contested by the men's national teams of the member associations of FIFA. It is scheduled to take place in Russia from 14 June to 15 July 2018, after the country was awarded the hosting rights on 2 December 2010. This will be the first World Cup held in Europe since 2006; all but one of the stadium venues are in European Russia, west of the Ural Mountains to keep travel time manageable.
+- 4hop1__145494_698949_157828_162309::p14: Madagascar The Malagasy language is of Malayo-Polynesian origin and is generally spoken throughout the island. The numerous dialects of Malagasy, which are generally mutually intelligible, can be clustered under one of two subgroups: eastern Malagasy, spoken along the eastern forests and highlands including the Merina dialect of Antananarivo, and western Malagasy, spoken across the western coastal plains. French became the official language during the colonial period, when Madagascar came under the authority of France. In the first national Constitution of 1958, Malagasy and French were named the official languages of the Malagasy Republic. Madagascar is a francophone country, and French is mostly spok [truncated]
+- 4hop1__145494_698949_157828_162309::p15: Yugoslavia at the Olympics Federal Republic of Yugoslavia, formed as a joint state by only Montenegro and Serbia after the breakup of Yugoslavia, from 1992–2002 (due to UN ban allowed to compete as Independent Olympic Participants at the 1992 Summer Olympics and was not allowed to compete at 1994 Winter Olympics)Two of the successor nations (Croatia and Slovenia) began to compete as independent teams at the Olympics starting at the 1992 Winter Games and Bosnia and Herzegovina at the 1992 Summer Games and as of the 2008 Summer Olympics, all six successor nations, former socialist republics, have participated independently. Kosovo, a former autonomous province, made its Olympic debut as an independent national team at t [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__128554_39743_24526::r1
+
+- sample_id: 3hop1__128554_39743_24526
+- risk_type: wrong_target
+- oracle_action: disambiguate_conflict
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What is the average winter daytime temperature in the region where Richmond is found, in the state where WIRR operates?
+
+Gold answer: upper 40s–lower 50s °F
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Richmond is located in the Piedmont region of Virginia.
+- c2: [supported] WIRR operates in Virginia, Minnesota.
+- c3: [supported] The average winter daytime temperature in the Piedmont region is in the upper 40s–lower 50s °F (8–12 °C).
+- c4: [contradicted] The average winter daytime temperature in the region where Richmond is found (Piedmont) is the same as the average winter daytime temperature in the state where WIRR operates (Minnesota).
+
+Evidence:
+- 3hop1__128554_39743_24526::p2: WIRR WIRR (90.9 FM) is a radio station licensed to Virginia, Minnesota, serving the Iron Range area. The station is owned by Minnesota Public Radio (MPR), and airs MPR's "Classical Music Network", originating from KSJN in Minneapolis/St. Paul.
+- 3hop1__128554_39743_24526::p6: Richmond, Virginia Richmond is located at 37°32′N 77°28′W﻿ / ﻿37.533°N 77.467°W﻿ / 37.533; -77.467 (37.538, −77.462). According to the United States Census Bureau, the city has a total area of 62 square miles (160 km2), of which 60 square miles (160 km2) is land and 2.7 square miles (7.0 km2) of it (4.3%) is water. The city is located in the Piedmont region of Virginia, at the highest navigable point of the James River. The Piedmont region is characterized by relatively low, rolling hills, and lies between the low, sea level Tidewater region and the Blue Ridge Mountains. Significant bodies of water in the region include the James River, the Appomattox River, and the Chickahominy River.
+- 3hop1__128554_39743_24526::p15: North Carolina In winter, the Piedmont is colder than the coast, with temperatures usually averaging in the upper 40s–lower 50s °F (8–12 °C) during the day and often dropping below the freezing point at night. The region averages around 3–5 in (8–13 cm) of snowfall annually in the Charlotte area, and slightly more north toward the Virginia border. The Piedmont is especially notorious for sleet and freezing rain. Freezing rain can be heavy enough to snarl traffic and break down trees and power lines. Annual precipitation and humidity are lower in the Piedmont than in the mountains or the coast, but even at its lowest, the average is 40 in (1,020 mm) per year.
+- 3hop1__128554_39743_24526::p16: Philadelphia The January daily average is 33.0 °F (0.6 °C), though, in a normal winter, the temperature frequently rises to 50 °F (10 °C) during thaws and dips to 10 °F (−12 °C) for 2 or 3 nights. July averages 78.1 °F (25.6 °C), although heat waves accompanied by high humidity and heat indices are frequent; highs reach or exceed 90 °F (32 °C) on 27 days of the year. The average window for freezing temperatures is November 6 thru April 2, allowing a growing season of 217 days. Early fall and late winter are generally dry; February's average of 2.64 inches (67 mm) makes it the area's driest month. The dewpoint in the summer averages between 59.1 °F (15 °C) to 64.5 °F (18 °C).
+- 3hop1__128554_39743_24526::p17: New York City Winters are cold and damp, and prevailing wind patterns that blow offshore minimize the moderating effects of the Atlantic Ocean; yet the Atlantic and the partial shielding from colder air by the Appalachians keep the city warmer in the winter than inland North American cities at similar or lesser latitudes such as Pittsburgh, Cincinnati, and Indianapolis. The daily mean temperature in January, the area's coldest month, is 32.6 °F (0.3 °C); however, temperatures usually drop to 10 °F (−12 °C) several times per winter, and reach 50 °F (10 °C) several days each winter month. Spring and autumn are unpredictable and can range from chilly to warm, although they are usually mild with low humidity. [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__244193_461106::r3
+
+- sample_id: 2hop__244193_461106
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What movement does the creator of the Washington Monument belong to?
+
+Gold answer: Greek Revival
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The creator of the Washington Monument is unknown based on the provided evidence.
+
+Evidence:
+- 4hop1__31050_725495_49925_267352::p1: Bhoodan movement The Bhoodan Movement or $6 - Land Gift Movement, was a voluntary land reform movement in India, started by Acharya Vinoba Bhave in 1951 at Pochampally village in Telangana which is now known as Bhoodan Pochampally.
+- 2hop__286621_84856::p5: Dalit Buddhist movement The Dalit Buddhist movement (also known as Neo-Buddhist movement) is a socio - political movement by Dalits in India started by B.R. Ambedkar. It radically re-interpreted Buddhism and created a new school of Buddhism called Navayana. The movement has sought to be a socially and politically engaged form of Buddhism.
+- 2hop__244193_461106::p13: New York City The Statue of Liberty National Monument and Ellis Island Immigration Museum are managed by the National Park Service and are in both the states of New York and New Jersey. They are joined in the harbor by Governors Island National Monument, in New York. Historic sites under federal management on Manhattan Island include Castle Clinton National Monument; Federal Hall National Memorial; Theodore Roosevelt Birthplace National Historic Site; General Grant National Memorial ("Grant's Tomb"); African Burial Ground National Monument; and Hamilton Grange National Memorial. Hundreds of private properties are listed on the National Register of Historic Places or as a National Historic Landmark such as [truncated]
+- 2hop__244193_461106::p12: Lincoln Memorial The Lincoln Memorial is an American national memorial built to honor the 16th President of the United States, Abraham Lincoln. It is located on the western end of the National Mall in Washington, D.C., across from the Washington Monument. The architect was Henry Bacon; the designer of the primary statue – "Abraham Lincoln", 1920 – was Daniel Chester French; the Lincoln statue was carved by the Piccirilli Brothers; and the painter of the interior murals was Jules Guerin. Dedicated in May 1922, it is one of several memorials built to honor an American president. It has always been a major tourist attraction and since the 1930s has been a symbolic center focused on race relations.
+- 2hop__244193_461106::p4: Lincoln Memorial The Lincoln Memorial is an American national monument built to honor the 16th President of the United States, Abraham Lincoln. It is located on the western end of the National Mall in Washington, D.C., across from the Washington Monument. The architect was Henry Bacon; the designer of the primary statue -- Abraham Lincoln, 1920 -- was Daniel Chester French; the Lincoln statue was carved by the Piccirilli Brothers; and the painter of the interior murals was Jules Guerin. Dedicated in 1922, it is one of several monuments built to honor an American president. It has always been a major tourist attraction and since the 1930s has been a symbolic center focused on race relations.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__166471_49925_13759_736921::r2
+
+- sample_id: 4hop1__166471_49925_13759_736921
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: In what state is the district where the one who wanted to reform and address the institution behind the religion of Egidio Vagnozzi preached a sermon?
+
+Gold answer: Saxony-Anhalt
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Egidio Vagnozzi is associated with a religion.
+- c2: [supported] The institution behind the religion of Egidio Vagnozzi is the Catholic Church.
+- c3: [unclear] The one who wanted to reform and address the institution behind the religion of Egidio Vagnozzi preached a sermon in a district.
+
+Evidence:
+- 4hop1__166471_49925_13759_736921::p8: Egidio Vagnozzi Egidio Vagnozzi (26 February 1906 – 26 December 1980) was an Italian Cardinal of the Catholic Church. He served as the second president of the Prefecture for the Economic Affairs of the Holy See from 1968 until his death, and was elevated to the cardinalate in 1967.
+- 2hop__677929_696450::p15: Federalism Some Christians argue that the earliest source of political federalism (or federalism in human institutions; in contrast to theological federalism) is the ecclesiastical federalism found in the Bible. They point to the structure of the early Christian Church as described (and prescribed, as believed by many) in the New Testament. In their arguments, this is particularly demonstrated in the Council of Jerusalem, described in Acts chapter 15, where the Apostles and elders gathered together to govern the Church; the Apostles being representatives of the universal Church, and elders being such for the local church. To this day, elements of federalism can be found in almost every Christian denomi [truncated]
+- 3hop1__136129_87694_124169::p13: Boston Boston has been a noted religious center from its earliest days. The Roman Catholic Archdiocese of Boston serves nearly 300 parishes and is based in the Cathedral of the Holy Cross (1875) in the South End, while the Episcopal Diocese of Massachusetts, with the Cathedral Church of St. Paul (1819) as its episcopal seat, serves just under 200 congregations. Unitarian Universalism has its headquarters on Beacon Hill. The Christian Scientists are headquartered in Back Bay at the Mother Church (1894). The oldest church in Boston is First Church in Boston, founded in 1630. King's Chapel, the city's first Anglican church, was founded in 1686 and converted to Unitarianism in 1785. Other churches incl [truncated]
+- 3hop2__92991_27069_76291::p5: Political party At the same time, the political party reached its modern form, with a membership disciplined through the use of a party whip and the implementation of efficient structures of control. The Home Rule League Party, campaigning for Home Rule for Ireland in the British Parliament was fundamentally changed by the great Irish political leader Charles Stewart Parnell in the 1880s. In 1882, he changed his party's name to the Irish Parliamentary Party and created a well-organized grass roots structure, introducing membership to replace "ad hoc" informal groupings. He created a new selection procedure to ensure the professional selection of party candidates committed to taking their seats, and in 1884  [truncated]
+- 3hop1__92991_73181_68042::p2: Political party At the same time, the political party reached its modern form, with a membership disciplined through the use of a party whip and the implementation of efficient structures of control. The Home Rule League Party, campaigning for Home Rule for Ireland in the British Parliament was fundamentally changed by the great Irish political leader Charles Stewart Parnell in the 1880s. In 1882, he changed his party's name to the Irish Parliamentary Party and created a well-organized grass roots structure, introducing membership to replace "ad hoc" informal groupings. He created a new selection procedure to ensure the professional selection of party candidates committed to taking their seats, and in 1884  [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__161810_583746_457883_650651::r1
+
+- sample_id: 4hop1__161810_583746_457883_650651
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Country A has an embassy from the country that contains the bay where the city of General Santos is located. What network created country A's version of The Biggest Loser?
+
+Gold answer: NBC
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The city of General Santos is located on the shores of Sarangani Bay.
+- c2: [supported] Sarangani Bay is located in the country that contains the city of General Santos.
+- c3: [unclear] The country that contains the bay where the city of General Santos is located is the same country that has an embassy from the country in question (country A).
+- c4: [unclear] The network that created country A's version of The Biggest Loser is the same network that created the original The Biggest Loser.
+
+Evidence:
+- 3hop2__326964_7707_7713::p17: Anzoátegui Anzoátegui State (, ) is one of the 23 component states of Venezuela, located in the northeastern region of the country. Anzoátegui is well known for its beaches that attract many visitors. Its coast consists of a single beach approximately 100 km long. Its capital is the city of Barcelona, and significant cities include Puerto la Cruz and El Tigre.
+- 4hop1__161810_583746_457883_650651::p10: The Biggest Loser (season 1) The Biggest Loser (season 1) is the first season of the NBC reality television series entitled "The Biggest Loser", which premiered on October 19, 2004. The show features overweight contestants competing to lose the largest percentage of their body weight and receive the title of 'Biggest Loser,' along with a $250,000 grand prize. The first season featured twelve contestants divided into two teams of six players. The teams were each led by a personal trainer, Bob Harper with the Blue Team and Jillian Michaels with the Red Team. The first season was hosted by Caroline Rhea.
+- 4hop1__161810_583746_457883_650651::p18: South Cotabato General Santos, located on the shores of Sarangani Bay, is the most populous city in the region, but is governed independently from the province. The province of Sarangani used to be part of South Cotabato until it was made an independent province in 1992.
+- 4hop2__567956_39078_8987_8974::p16: Embassy of Canada in Moscow The Embassy of Canada to Russia in Moscow is the diplomatic mission of Canada to Russia. Included in its mandate are the countries of Armenia and Uzbekistan. It also provides visa services to residents of Belarus, Kazakhstan, Kyrgyzstan and Tajikistan.
+- 4hop2__5206_39078_8987_8974::p14: Togo Togo (), officially the Togolese Republic (), is a country in West Africa bordered by Ghana to the west, Benin to the east and Burkina Faso to the north. The sovereign state extends south to the Gulf of Guinea, where its capital Lomé is located. Togo covers , making it one of the smallest countries in Africa, with a population of approximately /1e6 round 1 million.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__105688_17130_70784_79935::r2
+
+- sample_id: 4hop1__105688_17130_70784_79935
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: When was the region that lies to the north of where Eyal Golan is located and the Persian Gulf created?
+
+Gold answer: 1930
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] The region to the north of Eyal Golan is the Arabian Sea.
+- c2: [supported] The Persian Gulf is connected to the Arabian Sea via the Gulf of Oman.
+- c3: [unsupported] The Arabian Sea was created during the Miocene epoch.
+
+Evidence:
+- 4hop1__443274_17130_70784_61381::p2: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 4hop1__17192_17130_70784_79935::p2: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 4hop1__105401_17130_70784_79935::p12: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 3hop2__145209_20335_9331::p7: Bukovina A region of Moldavia during the Middle Ages, the territory of what became known as Bukovina was, from 1774 to 1918, an administrative division of the Habsburg Monarchy, the Austrian Empire, and Austria-Hungary. After World War I, Romania established its control over Bukovina. In 1940, the northern half of Bukovina was annexed by the Soviet Union in violation of the Molotov–Ribbentrop Pact, and currently is part of Ukraine.
+- 2hop__818302_25719::p11: Lower Lusatia Lower Lusatia (; ; ; ; ) is a historical region in Central Europe, stretching from the southeast of the German state of Brandenburg to the southwest of Lubusz Voivodeship in Poland. Like adjacent Upper Lusatia in the south, Lower Lusatia is a settlement area of the West Slavic Sorbs whose endangered Lower Sorbian language is related to Upper Sorbian and Polish.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__152146_5274_458768_33632::r1
+
+- sample_id: 4hop1__152146_5274_458768_33632
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What day is the Feast held in the city where the headquarters of the only group larger than Långa nätter's record label is located?
+
+Gold answer: May 4
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] The headquarters of the only group larger than Långa nätter's record label is located in Kathmandu.
+- c2: [unsupported] The Feast held in Kathmandu is on 18 November.
+
+Evidence:
+- 4hop3__668721_132409_371500_35031::p19: Kathmandu Kathmandu(/ˌkɑːtmɑːnˈduː/; Nepali pronunciation: [kɑʈʰmɑɳɖu]) is the capital and largest municipality of Nepal. It also hosts the headquarters of the South Asian Association for Regional Cooperation (SAARC). It is the only city of Nepal with the administrative status of Mahanagar (Metropolitan City), as compared to Upa-Mahanagar (Sub-Metropolitan City) or Nagar (City). Kathmandu is the core of Nepal's largest urban agglomeration located in the Kathmandu Valley consisting of Lalitpur, Kirtipur, Madhyapur Thimi, Bhaktapur and a number of smaller communities. Kathmandu is also known informally as "KTM" or the "tri-city". According to the 2011 census, Kathmandu Metropolitan City has a population [truncated]
+- 3hop2__851134_613770_7713::p13: Kathmandu Kathmandu(/ˌkɑːtmɑːnˈduː/; Nepali pronunciation: [kɑʈʰmɑɳɖu]) is the capital and largest municipality of Nepal. It also hosts the headquarters of the South Asian Association for Regional Cooperation (SAARC). It is the only city of Nepal with the administrative status of Mahanagar (Metropolitan City), as compared to Upa-Mahanagar (Sub-Metropolitan City) or Nagar (City). Kathmandu is the core of Nepal's largest urban agglomeration located in the Kathmandu Valley consisting of Lalitpur, Kirtipur, Madhyapur Thimi, Bhaktapur and a number of smaller communities. Kathmandu is also known informally as "KTM" or the "tri-city". According to the 2011 census, Kathmandu Metropolitan City has a population [truncated]
+- 4hop3__387712_132409_223216_35031::p11: Jakarta Jakarta (/ dʒ əˈkɑːrtə /, Indonesian pronunciation: (dʒaˈkarta)), officially the Special Capital Region of Jakarta, is the capital of Indonesia, which was formerly known as Batavia during Dutch East Indies and Sunda Kelapa during Sunda Kingdom. Located on the northwest coast of the world's most populous island of Java, Jakarta is the center of economics, culture and politics of Indonesia, with a population of 10,075,310 as of 2014. Greater Jakarta metropolitan area, which is known as Jabodetabek (a name formed by combining the initial syllables of Jakarta, Bogor, Depok, Tangerang and Bekasi), is the second largest urban agglomeration and 2nd largest city area in the world after Tokyo, with a [truncated]
+- 3hop1__64957_87694_124169::p15: Dedication of Saints Peter and Paul The Dedication of the Basilicas of the Apostles Peter and Paul is a feast day on the liturgical calendar of the Catholic Church, which is celebrated on 18 November.
+- 4hop1__152146_5274_458768_33632::p18: Our Lady of the Rosary The Feast of Our Lady of the Rosary, formerly known as Our Lady of Victory and Feast of the Holy Rosary, is a feast day of the Roman Catholic Church, celebrated on 7 October, the anniversary of the decisive victory of the combined fleet of the Holy League of 1571 over the Ottoman navy at the Battle of Lepanto.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__236903_153080_33897_81096::r3
+
+- sample_id: 4hop1__236903_153080_33897_81096
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: Who won the indy car race in the most populated city of the state where the performer of East Coasting is from?
+
+Gold answer: Mario Andretti
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] The most populated city of the state where the performer of East Coasting is from is Detroit.
+- c2: [unclear] The performer of East Coasting is from Michigan.
+- c3: [unsupported] The Indy Car race in Detroit was won by someone.
+
+Evidence:
+- 4hop1__236903_153080_33897_81096::p19: East Coasting East Coasting is an album by Charles Mingus, recorded and released in 1957. It was reissued on CD with bonus takes in 1993.
+- 4hop1__512794_508773_85832_745702::p18: Exploration of North America Italian navigator and explorer Giovanni Caboto (known in English as John Cabot) is credited with the discovery of continental North America on June 24, 1497, under the commission of Henry VII of England. Though the exact location of his discovery remains disputed, the Canadian and United Kingdom governments' official position is that he landed on the island of Newfoundland. The English presence through Giovanni Caboto was signaled in Juan de la Cosa's map of 1500.
+- 4hop1__455862_508773_85832_745702::p16: Exploration of North America Italian navigator and explorer Giovanni Caboto (known in English as John Cabot) is credited with the discovery of continental North America on June 24, 1497, under the commission of Henry VII of England. Though the exact location of his discovery remains disputed, the Canadian and United Kingdom governments' official position is that he landed on the island of Newfoundland. The English presence through Giovanni Caboto was signaled in Juan de la Cosa's map of 1500.
+- 4hop1__726391_153080_33952_34109::p12: Detroit Detroit (/dᵻˈtrɔɪt/) is the most populous city in the U.S. state of Michigan, the fourth-largest city in the Midwest and the largest city on the United States–Canada border. It is the seat of Wayne County, the most populous county in the state. Detroit's metropolitan area, known as Metro Detroit, is home to 5.3 million people, making it the fourteenth-most populous metropolitan area in the United States and the second-largest in the Midwestern United States (behind Chicago). It is a major port on the Detroit River, a strait that connects the Great Lakes system to the Saint Lawrence Seaway. The City of Detroit anchors the second-largest economic region in the Midwest, behind Chicago, and the  [truncated]
+- 3hop1__159803_89752_75165::p13: Detroit Detroit (/dᵻˈtrɔɪt/) is the most populous city in the U.S. state of Michigan, the fourth-largest city in the Midwest and the largest city on the United States–Canada border. It is the seat of Wayne County, the most populous county in the state. Detroit's metropolitan area, known as Metro Detroit, is home to 5.3 million people, making it the fourteenth-most populous metropolitan area in the United States and the second-largest in the Midwestern United States (behind Chicago). It is a major port on the Detroit River, a strait that connects the Great Lakes system to the Saint Lawrence Seaway. The City of Detroit anchors the second-largest economic region in the Midwest, behind Chicago, and the  [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__128554_39743_24526::r2
+
+- sample_id: 3hop1__128554_39743_24526
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What is the average winter daytime temperature in the region where Richmond is found, in the state where WIRR operates?
+
+Gold answer: upper 40s–lower 50s °F
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Richmond is located in the Piedmont region of Virginia.
+- c2: [supported] WIRR operates in the state of Minnesota.
+- c3: [supported] The average winter daytime temperature in the Piedmont region is in the upper 40s–lower 50s °F (8–12 °C).
+- c4: [supported] The average winter daytime temperature in the region where Richmond is found (Piedmont) is in the upper 40s–lower 50s °F (8–12 °C).
+- c5: [unsupported] The average winter daytime temperature in the state where WIRR operates (Minnesota) is not provided in the evidence.
+
+Evidence:
+- 3hop1__128554_39743_24526::p16: Philadelphia The January daily average is 33.0 °F (0.6 °C), though, in a normal winter, the temperature frequently rises to 50 °F (10 °C) during thaws and dips to 10 °F (−12 °C) for 2 or 3 nights. July averages 78.1 °F (25.6 °C), although heat waves accompanied by high humidity and heat indices are frequent; highs reach or exceed 90 °F (32 °C) on 27 days of the year. The average window for freezing temperatures is November 6 thru April 2, allowing a growing season of 217 days. Early fall and late winter are generally dry; February's average of 2.64 inches (67 mm) makes it the area's driest month. The dewpoint in the summer averages between 59.1 °F (15 °C) to 64.5 °F (18 °C).
+- 3hop1__128554_39743_24526::p17: New York City Winters are cold and damp, and prevailing wind patterns that blow offshore minimize the moderating effects of the Atlantic Ocean; yet the Atlantic and the partial shielding from colder air by the Appalachians keep the city warmer in the winter than inland North American cities at similar or lesser latitudes such as Pittsburgh, Cincinnati, and Indianapolis. The daily mean temperature in January, the area's coldest month, is 32.6 °F (0.3 °C); however, temperatures usually drop to 10 °F (−12 °C) several times per winter, and reach 50 °F (10 °C) several days each winter month. Spring and autumn are unpredictable and can range from chilly to warm, although they are usually mild with low humidity. [truncated]
+- 3hop1__128554_39743_24526::p15: North Carolina In winter, the Piedmont is colder than the coast, with temperatures usually averaging in the upper 40s–lower 50s °F (8–12 °C) during the day and often dropping below the freezing point at night. The region averages around 3–5 in (8–13 cm) of snowfall annually in the Charlotte area, and slightly more north toward the Virginia border. The Piedmont is especially notorious for sleet and freezing rain. Freezing rain can be heavy enough to snarl traffic and break down trees and power lines. Annual precipitation and humidity are lower in the Piedmont than in the mountains or the coast, but even at its lowest, the average is 40 in (1,020 mm) per year.
+- 3hop1__128554_39743_24526::p2: WIRR WIRR (90.9 FM) is a radio station licensed to Virginia, Minnesota, serving the Iron Range area. The station is owned by Minnesota Public Radio (MPR), and airs MPR's "Classical Music Network", originating from KSJN in Minneapolis/St. Paul.
+- 3hop1__128554_39743_24526::p6: Richmond, Virginia Richmond is located at 37°32′N 77°28′W﻿ / ﻿37.533°N 77.467°W﻿ / 37.533; -77.467 (37.538, −77.462). According to the United States Census Bureau, the city has a total area of 62 square miles (160 km2), of which 60 square miles (160 km2) is land and 2.7 square miles (7.0 km2) of it (4.3%) is water. The city is located in the Piedmont region of Virginia, at the highest navigable point of the James River. The Piedmont region is characterized by relatively low, rolling hills, and lies between the low, sea level Tidewater region and the Blue Ridge Mountains. Significant bodies of water in the region include the James River, the Appomattox River, and the Chickahominy River.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__194469_83289::r1
+
+- sample_id: 2hop__194469_83289
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Who is the guy in the One Last Time video by the participant in The Listening Sessions?
+
+Gold answer: Matt Bennett
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The guy in the One Last Time video is Matt Bennett.
+- c2: [unsupported] The participant in The Listening Sessions is Ariana Grande.
+
+Evidence:
+- 2hop__194469_83289::p19: One Last Time (Ariana Grande song) The music video was filmed in early January 2015 and it also stars Matt Bennett, who was also Grande's co-star from the Nickelodeon sitcom Victorious. Max Landis also confirmed that one of the voices of the news reporters in the beginning of the video was actress Elizabeth Gillies, who also co-starred in Victorious with Grande and Bennett. Gillies previously appeared Grande's music video for her single ``Right There ''(2013). Around that time, Max Landis revealed`` One Last Time'' as Grande's next single after tweeting, ``Earth will pass catastrophically through the tail of the comet Eurydice in one week. Gather family and lovers close, one... last... time ''. The lyric video for`` One Last  [truncated]
+- 2hop__194469_83289::p11: Standing on a Beach The man featured on the album cover was not a member of the Cure; he was chosen because his appearance fit the desired aesthetic of the album. His name is John Button, and was at the time a retired fisherman. He also appeared in the music video for ``Killing an Arab ''. According to the band's 2005 biography by Jeff Apter, when asked why he agreed to lend his face to the band's media, Button's answer was,`` If I can help these youngsters break through, after all, why not?'' He also reportedly said that he would buy a player and listen to one of the band's songs ``out of curiosity, just to see ''.
+- 2hop__73719_510545::p16: Zach McGowan Zachary Brendan McGowan (born May 5, 1980) is an American film and television actor and voice - over artist. He is known for his roles in television series Shameless as Jody, Agents of S.H.I.E.L.D. as Anton Ivanov / The Superior, Black Sails as Charles Vane, and The 100 as Roan. Other highlights include parts in the films Terminator Salvation, The Hunt for Eagle One, and the sequel The Hunt for Eagle One: Crash Point. He guest - starred in the television series Numbers, CSI: Miami, and Cold Case, with voice - over work for the Scream Awards, Animal Planet and the video games Tom Clancy's Ghost Recon: Future Soldier, Resident Evil: Operation Raccoon City, and Iron Man.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__161605_32392_823060_610794::r3
+
+- sample_id: 4hop1__161605_32392_823060_610794
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What county is the city that shares a border with the state capital of the state where Darlington County located in?
+
+Gold answer: Richland County
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Darlington County is located in South Carolina.
+- c2: [unsupported] The state capital of South Carolina is Columbia.
+- c3: [supported] Charleston is the county seat of Charleston County in South Carolina.
+- c4: [unclear] Charleston County shares a border with the state capital of South Carolina.
+
+Evidence:
+- 4hop3__387712_132409_223216_35031::p10: Charleston, South Carolina Charleston is the oldest and largest city in the U.S. state of South Carolina, the county seat of Charleston County, and the principal city in the Charleston -- North Charleston -- Summerville Metropolitan Statistical Area. The city lies just south of the geographical midpoint of South Carolina's coastline and is located on Charleston Harbor, an inlet of the Atlantic Ocean formed by the confluence of the Ashley and Cooper rivers. Charleston had an estimated population of 134,385 in 2016. The estimated population of the Charleston metropolitan area, comprising Berkeley, Charleston, and Dorchester counties, was 761,155 residents in 2016, the third - largest in the state and the 78th - largest  [truncated]
+- 3hop1__159803_89752_75165::p8: Charleston, South Carolina Charleston is the oldest and largest city in the U.S. state of South Carolina, the county seat of Charleston County, and the principal city in the Charleston -- North Charleston -- Summerville Metropolitan Statistical Area. The city lies just south of the geographical midpoint of South Carolina's coastline and is located on Charleston Harbor, an inlet of the Atlantic Ocean formed by the confluence of the Ashley and Cooper rivers. Charleston had an estimated population of 134,385 in 2016. The estimated population of the Charleston metropolitan area, comprising Berkeley, Charleston, and Dorchester counties, was 761,155 residents in 2016, the third - largest in the state and the 78th - largest  [truncated]
+- 3hop1__129499_33897_81096::p4: Charleston, South Carolina Charleston is the oldest and largest city in the U.S. state of South Carolina, the county seat of Charleston County, and the principal city in the Charleston -- North Charleston -- Summerville Metropolitan Statistical Area. The city lies just south of the geographical midpoint of South Carolina's coastline and is located on Charleston Harbor, an inlet of the Atlantic Ocean formed by the confluence of the Ashley and Cooper rivers. Charleston had an estimated population of 134,385 in 2016. The estimated population of the Charleston metropolitan area, comprising Berkeley, Charleston, and Dorchester counties, was 761,155 residents in 2016, the third - largest in the state and the 78th - largest  [truncated]
+- 4hop1__161605_32392_823060_610794::p11: Darlington County, South Carolina Darlington County is a county in the U.S. state of South Carolina. As of 2016, its estimated population was 67,234. Its county seat is Darlington. Hartsville is the largest city in the county. Darlington County is home to the Darlington Raceway, which hosts the annual NASCAR Southern 500. Darlington County is also home to Coker College in Hartsville. Darlington County was named by an act in March 1785.
+- 3hop1__159803_89752_75165::p2: Mecklenburg County, North Carolina Mecklenburg County is a county located on the border in the southwestern part of the state of North Carolina, in the United States. As of the 2010 census, the population was 919,628. It increased to 1,034,070 as of the 2015 estimate, making it the most populous county in North Carolina and the first county in the Carolinas to surpass 1 million in population. Its county seat and largest city is Charlotte.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__152146_5274_458768_33632::r3
+
+- sample_id: 4hop1__152146_5274_458768_33632
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What day is the Feast held in the city where the headquarters of the only group larger than Långa nätter's record label is located?
+
+Gold answer: May 4
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] The headquarters of the only group larger than Långa nätter's record label is located in Kathmandu.
+- c2: [unsupported] The Feast held in Kathmandu is on 18 November.
+- c3: [unsupported] The Feast held in Kathmandu is on 7 October.
+
+Evidence:
+- 4hop3__668721_132409_371500_35031::p19: Kathmandu Kathmandu(/ˌkɑːtmɑːnˈduː/; Nepali pronunciation: [kɑʈʰmɑɳɖu]) is the capital and largest municipality of Nepal. It also hosts the headquarters of the South Asian Association for Regional Cooperation (SAARC). It is the only city of Nepal with the administrative status of Mahanagar (Metropolitan City), as compared to Upa-Mahanagar (Sub-Metropolitan City) or Nagar (City). Kathmandu is the core of Nepal's largest urban agglomeration located in the Kathmandu Valley consisting of Lalitpur, Kirtipur, Madhyapur Thimi, Bhaktapur and a number of smaller communities. Kathmandu is also known informally as "KTM" or the "tri-city". According to the 2011 census, Kathmandu Metropolitan City has a population [truncated]
+- 3hop2__851134_613770_7713::p13: Kathmandu Kathmandu(/ˌkɑːtmɑːnˈduː/; Nepali pronunciation: [kɑʈʰmɑɳɖu]) is the capital and largest municipality of Nepal. It also hosts the headquarters of the South Asian Association for Regional Cooperation (SAARC). It is the only city of Nepal with the administrative status of Mahanagar (Metropolitan City), as compared to Upa-Mahanagar (Sub-Metropolitan City) or Nagar (City). Kathmandu is the core of Nepal's largest urban agglomeration located in the Kathmandu Valley consisting of Lalitpur, Kirtipur, Madhyapur Thimi, Bhaktapur and a number of smaller communities. Kathmandu is also known informally as "KTM" or the "tri-city". According to the 2011 census, Kathmandu Metropolitan City has a population [truncated]
+- 4hop1__525129_315334_131926_90707::p2: Kathmandu The Bagmati River which flows through Kathmandu is considered a holy river both by Hindus and Buddhists, and many Hindu temples are located on the banks of this river. The importance of the Bagmati also lies in the fact that Hindus are cremated on its banks, and Kirants are buried in the hills by its side. According to the Nepali Hindu tradition, the dead body must be dipped three times into the Bagmati before cremation. The chief mourner (usually the first son) who lights the funeral pyre must take a holy riverwater bath immediately after cremation. Many relatives who join the funeral procession also take bath in the Bagmati River or sprinkle the holy water on their bodies at the end of cre [truncated]
+- 4hop3__387712_132409_223216_35031::p11: Jakarta Jakarta (/ dʒ əˈkɑːrtə /, Indonesian pronunciation: (dʒaˈkarta)), officially the Special Capital Region of Jakarta, is the capital of Indonesia, which was formerly known as Batavia during Dutch East Indies and Sunda Kelapa during Sunda Kingdom. Located on the northwest coast of the world's most populous island of Java, Jakarta is the center of economics, culture and politics of Indonesia, with a population of 10,075,310 as of 2014. Greater Jakarta metropolitan area, which is known as Jabodetabek (a name formed by combining the initial syllables of Jakarta, Bogor, Depok, Tangerang and Bekasi), is the second largest urban agglomeration and 2nd largest city area in the world after Tokyo, with a [truncated]
+- 4hop1__152146_5274_458768_33632::p18: Our Lady of the Rosary The Feast of Our Lady of the Rosary, formerly known as Our Lady of Victory and Feast of the Holy Rosary, is a feast day of the Roman Catholic Church, celebrated on 7 October, the anniversary of the decisive victory of the combined fleet of the Holy League of 1571 over the Ottoman navy at the Battle of Lepanto.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__135659_87694_64412::r2
+
+- sample_id: 3hop1__135659_87694_64412
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: When did the place where St for whom the Mantua Cathedral was named for basilica the head of the catholic religion is located in become its own country?
+
+Gold answer: 11 February 1929
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The Mantua Cathedral is dedicated to Saint Peter.
+- c2: [supported] The Mantua Cathedral is the seat of the Bishop of Mantua.
+- c3: [unclear] The place where St Peter, for whom the Mantua Cathedral was named, is located, became its own country.
+
+Evidence:
+- 3hop1__135659_87694_64412::p18: Mantua Cathedral Mantua Cathedral () in Mantua, Lombardy, northern Italy, is a Roman Catholic cathedral dedicated to Saint Peter. It is the seat of the Bishop of Mantua.
+- 3hop1__497845_629431_64412::p18: Vatican City The name Vatican city was first used in the Lateran Treaty, signed on 11 February 1929, which established the modern city - state. The name is taken from Vatican Hill, the geographic location of the state. ``Vatican ''is derived from the name of an Etruscan settlement, Vatica or Vaticum meaning garden, located in the general area the Romans called vaticanus ager,`` Vatican territory''.
+- 3hop1__135659_87694_64412::p19: Vatican City The name Vatican city was first used in the Lateran Treaty, signed on 11 February 1929, which established the modern city - state. The name is taken from Vatican Hill, the geographic location of the state. ``Vatican ''is derived from the name of an Etruscan settlement, Vatica or Vaticum meaning garden, located in the general area the Romans called vaticanus ager,`` Vatican territory''.
+- 3hop1__136129_87694_124169::p19: Foligno Cathedral Foligno Cathedral () is a Roman Catholic cathedral situated on the Piazza della Repubblica in the center of Foligno, Italy. The cathedral, built on the site of an earlier basilica, is dedicated to the patron saint of the city, the martyr Felician of Foligno (San Feliciano), who was buried here in 251 AD. It is the seat of the Bishop of Foligno.
+- 3hop1__135659_87694_64412::p16: Foligno Cathedral Foligno Cathedral () is a Roman Catholic cathedral situated on the Piazza della Repubblica in the center of Foligno, Italy. The cathedral, built on the site of an earlier basilica, is dedicated to the patron saint of the city, the martyr Felician of Foligno (San Feliciano), who was buried here in 251 AD. It is the seat of the Bishop of Foligno.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__132854_417697::r3
+
+- sample_id: 2hop__132854_417697
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Mohammed Atta has what kind of model of the company that makes Datsun Type 12?
+
+Gold answer: Nissan Altima
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] Mohammed Atta is associated with a company that makes Datsun Type 12
+
+Evidence:
+- 3hop2__222979_132477_40768::p19: Nissan Fuga The Nissan Fuga (Japanese: 日産・フーガ "Nissan Fūga") is a mid-size luxury sedan produced by Japanese automaker Nissan since October 2004. It is built on a wider, stretched wheelbase version of the Nissan FM platform. After the Nissan Cima and Nissan President were discontinued in August 2010, the Fuga became Nissan's flagship vehicle. In North America and Europe, the Fuga is sold as the second and third-generation Infiniti M (Q70 from 2014), where it has been the flagship of the Infiniti luxury division of Nissan since 2006.
+- 3hop2__132957_379231_40768::p3: Datsun Datsun (, ) is an automobile brand owned by Nissan. Datsun's original production run began in 1931. From 1958 to 1986, only vehicles exported by Nissan were identified as Datsun. By 1986 Nissan had phased out the Datsun name, but re-launched it in June 2013 as the brand for low-cost vehicles manufactured for emerging markets.
+- 3hop2__132957_133264_40768::p13: Datsun Datsun (, ) is an automobile brand owned by Nissan. Datsun's original production run began in 1931. From 1958 to 1986, only vehicles exported by Nissan were identified as Datsun. By 1986 Nissan had phased out the Datsun name, but re-launched it in June 2013 as the brand for low-cost vehicles manufactured for emerging markets.
+- 2hop__132854_417697::p10: Datsun Type 12 The 1933 Datsun Type 12 was a small car produced by the Nissan corporation. The name Datsun was used by DAT for their line of small cars. After the DAT corporation was absorbed into Nissan, these cars continued to be produced, and the original model name was maintained. The Type 12 was basically similar to the earlier 1932 Type 11, but had a larger engine.
+- 2hop__132854_417697::p16: Datsun Datsun (, ) is an automobile brand owned by Nissan. Datsun's original production run began in 1931. From 1958 to 1986, only vehicles exported by Nissan were identified as Datsun. By 1986 Nissan had phased out the Datsun name, but re-launched it in June 2013 as the brand for low-cost vehicles manufactured for emerging markets.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__236903_153080_33897_81096::r1
+
+- sample_id: 4hop1__236903_153080_33897_81096
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Who won the indy car race in the most populated city of the state where the performer of East Coasting is from?
+
+Gold answer: Mario Andretti
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] The most populated city of the state where the performer of 'East Coasting' is from is Detroit.
+- c2: [unsupported] The Indy Car race in Detroit was won by a specific individual.
+
+Evidence:
+- 4hop1__726391_153080_33952_34109::p12: Detroit Detroit (/dᵻˈtrɔɪt/) is the most populous city in the U.S. state of Michigan, the fourth-largest city in the Midwest and the largest city on the United States–Canada border. It is the seat of Wayne County, the most populous county in the state. Detroit's metropolitan area, known as Metro Detroit, is home to 5.3 million people, making it the fourteenth-most populous metropolitan area in the United States and the second-largest in the Midwestern United States (behind Chicago). It is a major port on the Detroit River, a strait that connects the Great Lakes system to the Saint Lawrence Seaway. The City of Detroit anchors the second-largest economic region in the Midwest, behind Chicago, and the  [truncated]
+- 3hop1__159803_89752_75165::p13: Detroit Detroit (/dᵻˈtrɔɪt/) is the most populous city in the U.S. state of Michigan, the fourth-largest city in the Midwest and the largest city on the United States–Canada border. It is the seat of Wayne County, the most populous county in the state. Detroit's metropolitan area, known as Metro Detroit, is home to 5.3 million people, making it the fourteenth-most populous metropolitan area in the United States and the second-largest in the Midwestern United States (behind Chicago). It is a major port on the Detroit River, a strait that connects the Great Lakes system to the Saint Lawrence Seaway. The City of Detroit anchors the second-largest economic region in the Midwest, behind Chicago, and the  [truncated]
+- 3hop1__129499_33897_81096::p15: Danny Kelley Danny Kelley (born 1964 in Orange City, Florida) is an American stock car racing driver. He is a former competitor in the ARCA Racing Series.
+- 4hop1__726152_153080_33897_81096::p13: Richmond, Virginia Auto racing is also popular in the area. The Richmond International Raceway (RIR) has hosted NASCAR Sprint Cup races since 1953, as well as the Capital City 400 from 1962 − 1980. RIR also hosted IndyCar's Suntrust Indy Challenge from 2001 − 2009. Another track, Southside Speedway, has operated since 1959 and sits just southwest of Richmond in Chesterfield County. This .333-mile (0.536 km) oval short-track has become known as the "Toughest Track in the South" and "The Action Track", and features weekly stock car racing on Friday nights. Southside Speedway has acted as the breeding grounds for many past NASCAR legends including Richard Petty, Bobby Allison and Darrell Waltrip, and claims to be [truncated]
+- 4hop1__720201_153080_159767_81096::p7: Richmond, Virginia Auto racing is also popular in the area. The Richmond International Raceway (RIR) has hosted NASCAR Sprint Cup races since 1953, as well as the Capital City 400 from 1962 − 1980. RIR also hosted IndyCar's Suntrust Indy Challenge from 2001 − 2009. Another track, Southside Speedway, has operated since 1959 and sits just southwest of Richmond in Chesterfield County. This .333-mile (0.536 km) oval short-track has become known as the "Toughest Track in the South" and "The Action Track", and features weekly stock car racing on Friday nights. Southside Speedway has acted as the breeding grounds for many past NASCAR legends including Richard Petty, Bobby Allison and Darrell Waltrip, and claims to be [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__13170_32392_823060_610794::r2
+
+- sample_id: 4hop1__13170_32392_823060_610794
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: In which county is the city sharing a border with the capitol of the first state to formally secede?
+
+Gold answer: Richland County
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The first state to formally secede from the United States was South Carolina.
+- c2: [unsupported] The capitol of the first state to formally secede is Columbia.
+- c3: [unsupported] The city sharing a border with the capitol of the first state to formally secede is Mesilla.
+- c4: [unsupported] Mesilla is located in Doña Ana County, New Mexico.
+
+Evidence:
+- 4hop1__777217_32392_823060_610794::p19: Confederate Arizona Confederate Arizona, commonly referred to as Arizona Territory, and officially the Territory of Arizona, was a territory claimed by the Confederate States of America during the American Civil War, between 1861 and 1865. Delegates to secession conventions had voted in March 1861 to secede from the New Mexico Territory and the United States, and seek to join the Confederacy. It consisted of the portion of the New Mexico Territory south of the 34th parallel, including parts of the modern states of New Mexico and Arizona. Its capital was Mesilla along the southern border. The Confederate territory overlapped the Arizona Territory later established by the Union government in 1863.
+- 4hop1__429751_32392_823060_610794::p14: Confederate Arizona Confederate Arizona, commonly referred to as Arizona Territory, and officially the Territory of Arizona, was a territory claimed by the Confederate States of America during the American Civil War, between 1861 and 1865. Delegates to secession conventions had voted in March 1861 to secede from the New Mexico Territory and the United States, and seek to join the Confederacy. It consisted of the portion of the New Mexico Territory south of the 34th parallel, including parts of the modern states of New Mexico and Arizona. Its capital was Mesilla along the southern border. The Confederate territory overlapped the Arizona Territory later established by the Union government in 1863.
+- 4hop1__13170_32392_823060_610794::p8: Confederate Arizona Confederate Arizona, commonly referred to as Arizona Territory, and officially the Territory of Arizona, was a territory claimed by the Confederate States of America during the American Civil War, between 1861 and 1865. Delegates to secession conventions had voted in March 1861 to secede from the New Mexico Territory and the United States, and seek to join the Confederacy. It consisted of the portion of the New Mexico Territory south of the 34th parallel, including parts of the modern states of New Mexico and Arizona. Its capital was Mesilla along the southern border. The Confederate territory overlapped the Arizona Territory later established by the Union government in 1863.
+- 3hop1__786067_228453_86925::p6: Intrall Intrall, or International Truck Alliance, is a Russo-British automotive company with headquarters in London, England, and manufacturing in Poland. At the end of 2003, the company acquired from Intrall Treasury factory of Daewoo Motor Poland in Lublin, then operating from January 2004 to 2007 years, called Intrall Poland. Under the new production in 2005, FSC Lublin and Honker models were produced under the "Intrall" brand. In 2006 the company acquired the rights to produce models of trucks of the Czech brand Praga. A brand-new commercial van/truck was developed called the "Intrall Lubo".
+- 2hop__628752_538661::p0: Inju: The Beast in the Shadow Inju: The Beast in the Shadow (French: Inju, la bête dans l'ombre) is a 2008 film by Barbet Schroeder. The film stars Benoît Magimel and Lika Minamoto and was filmed on location in Tokyo.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__151750_141308::r2
+
+- sample_id: 2hop__151750_141308
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What company is the record label of Magic Christian Music part of?
+
+Gold answer: Apple Corps
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] Magic Christian Music is part of Apple Corps Ltd.
+- c2: [supported] Apple Records is a division of Apple Corps Ltd.
+- c3: [supported] Magic Christian Music is released on Apple Records.
+
+Evidence:
+- 2hop__151750_141308::p7: Apple Records Apple Records is a record label founded by the Beatles in 1968 as a division of Apple Corps Ltd. It was initially intended as a creative outlet for the Beatles, both as a group and individually, plus a selection of other artists including Mary Hopkin, James Taylor, Badfinger, and Billy Preston. In practice, the roster had become dominated by the mid-1970s with releases of the former Beatles as solo artists. Allen Klein managed the label from 1969 to 1973, then it was managed by Neil Aspinall on behalf of the Beatles and their heirs. Aspinall retired in 2007 and was replaced by Jeff Jones.
+- 4hop1__151650_5274_458768_33637::p8: Sony Music Sony Music Entertainment Inc. (sometimes known as Sony Music or by the initials, SME) is an American music corporation managed and operated by Sony Corporation of America (SCA), a subsidiary of Japanese conglomerate Sony Corporation. In 1929, the enterprise was first founded as American Record Corporation (ARC) and, in 1938, was renamed Columbia Recording Corporation, following ARC's acquisition by CBS. In 1966, the company was reorganized to become CBS Records. In 1987, Sony Corporation of Japan bought the company, and in 1991, renamed it SME. It is the world's second largest recorded music company, after Universal Music Group.
+- 4hop1__151650_5274_458768_33632::p7: Sony Music Sony Music Entertainment Inc. (sometimes known as Sony Music or by the initials, SME) is an American music corporation managed and operated by Sony Corporation of America (SCA), a subsidiary of Japanese conglomerate Sony Corporation. In 1929, the enterprise was first founded as American Record Corporation (ARC) and, in 1938, was renamed Columbia Recording Corporation, following ARC's acquisition by CBS. In 1966, the company was reorganized to become CBS Records. In 1987, Sony Corporation of Japan bought the company, and in 1991, renamed it SME. It is the world's second largest recorded music company, after Universal Music Group.
+- 2hop__151750_141308::p14: Magic Christian Music Magic Christian Music is the debut album by the British rock band Badfinger, released in early 1970 on Apple Records. Three tracks from the LP are featured in the film "The Magic Christian", which also gives the album its title. However, "Magic Christian Music" is not an official soundtrack album for the film.
+- 2hop__151750_141308::p6: MCA Records MCA Records was an American record label owned by MCA Inc., which later gave way to the larger MCA Music Entertainment Group (now Universal Music Group), which the label was part of until its dissolution in 2003. The label's country division MCA Nashville is a still active imprint of Universal Music Group Nashville.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__28352_53706_795904_580996::r3
+
+- sample_id: 4hop1__28352_53706_795904_580996
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What shares a border with the city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works?
+
+Gold answer: Rio Linda
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The planes were originally going to California on 9/11.
+- c2: [unclear] The person who went to the state where the planes were originally going on 9/11 during the gold rush works.
+- c3: [unclear] The city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works shares a border with Ohio.
+
+Evidence:
+- 2hop__132854_417697::p3: September 11 attacks At 9:42 am, the Federal Aviation Administration (FAA) grounded all civilian aircraft within the continental U.S., and civilian aircraft already in flight were told to land immediately. All international civilian aircraft were either turned back or redirected to airports in Canada or Mexico, and were banned from landing on United States territory for three days. The attacks created widespread confusion among news organizations and air traffic controllers. Among the unconfirmed and often contradictory news reports aired throughout the day, one of the most prevalent said a car bomb had been detonated at the U.S. State Department's headquarters in Washington, D.C. Another jet—Delta Air Lines Fli [truncated]
+- 4hop1__28352_53706_795904_580996::p10: War on Terror On the morning of 11 September 2001, 19 men affiliated with al-Qaeda hijacked four airliners all bound for California. Once the hijackers assumed control of the airliners, they told the passengers that they had the bomb on board and would spare the lives of passengers and crew once their demands were met – no passenger and crew actually suspected that they would use the airliners as suicide weapons since it had never happened before in history. The hijackers – members of al-Qaeda's Hamburg cell – intentionally crashed two airliners into the Twin Towers of the World Trade Center in New York City. Both buildings collapsed within two hours from fire damage related to the crashes, destroying nea [truncated]
+- 4hop1__28352_53706_795904_580996::p17: Klondike Gold Rush The Klondike Gold Rush was a migration by an estimated 100,000 prospectors to the Klondike region of the Yukon in north - western Canada between 1896 and 1899. Gold was discovered there by local miners on August 16, 1896, and, when news reached Seattle and San Francisco the following year, it triggered a stampede of prospectors. Some became wealthy, but the majority went in vain. It has been immortalized in photographs, books, films, and artifacts.
+- 2hop__593633_82341::p0: Capital punishment in the United States Previous post-Furman mass clemencies took place in 1986 in New Mexico, when Governor Toney Anaya commuted all death sentences because of his personal opposition to the death penalty. In 1991, outgoing Ohio Governor Dick Celeste commuted the sentences of eight prisoners, among them all four women on the state's death row. And during his two terms (1979–1987) as Florida's Governor, Bob Graham, although a strong death penalty supporter who had overseen the first post-Furman involuntary execution as well as 15 others, agreed to commute the sentences of six people on the grounds of "possible innocence" or "disproportionality."
+- 2hop__2682_577502::p12: Capital punishment in the United States Previous post-Furman mass clemencies took place in 1986 in New Mexico, when Governor Toney Anaya commuted all death sentences because of his personal opposition to the death penalty. In 1991, outgoing Ohio Governor Dick Celeste commuted the sentences of eight prisoners, among them all four women on the state's death row. And during his two terms (1979–1987) as Florida's Governor, Bob Graham, although a strong death penalty supporter who had overseen the first post-Furman involuntary execution as well as 15 others, agreed to commute the sentences of six people on the grounds of "possible innocence" or "disproportionality."
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__136129_87694_124169::r2
+
+- sample_id: 3hop1__136129_87694_124169
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What year did the Governor of the city where the basilica named after the same saint as the one that Mantua Cathedral is dedicated to die?
+
+Gold answer: 1952
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Mantua Cathedral is dedicated to Saint Peter
+- c2: [supported] Foligno Cathedral is dedicated to Saint Felician
+- c3: [supported] The Governor of Vatican City died in 1952
+- c4: [unsupported] The city where the basilica named after the same saint as Mantua Cathedral is located is Vatican City
+
+Evidence:
+- 3hop1__603558_87694_124169::p5: Foligno Cathedral Foligno Cathedral () is a Roman Catholic cathedral situated on the Piazza della Repubblica in the center of Foligno, Italy. The cathedral, built on the site of an earlier basilica, is dedicated to the patron saint of the city, the martyr Felician of Foligno (San Feliciano), who was buried here in 251 AD. It is the seat of the Bishop of Foligno.
+- 3hop1__136129_87694_124169::p19: Foligno Cathedral Foligno Cathedral () is a Roman Catholic cathedral situated on the Piazza della Repubblica in the center of Foligno, Italy. The cathedral, built on the site of an earlier basilica, is dedicated to the patron saint of the city, the martyr Felician of Foligno (San Feliciano), who was buried here in 251 AD. It is the seat of the Bishop of Foligno.
+- 3hop1__135659_87694_64412::p16: Foligno Cathedral Foligno Cathedral () is a Roman Catholic cathedral situated on the Piazza della Repubblica in the center of Foligno, Italy. The cathedral, built on the site of an earlier basilica, is dedicated to the patron saint of the city, the martyr Felician of Foligno (San Feliciano), who was buried here in 251 AD. It is the seat of the Bishop of Foligno.
+- 2hop__28203_55840::p4: George V George V (George Frederick Ernest Albert; 3 June 1865 -- 20 January 1936) was King of the United Kingdom and the British Dominions, and Emperor of India, from 6 May 1910 until his death in 1936.
+- 2hop__153573_44085::p3: List of incidents at Disneyland Resort On November 26, 2016, a 40 - year - old man jumped to his death from the Mickey & Friends Parking Structure just after 2: 00 a.m. He was rushed to UC Irvine Medical Center and pronounced dead at 3: 08 a.m.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__136129_87694_124169::r1
+
+- sample_id: 3hop1__136129_87694_124169
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What year did the Governor of the city where the basilica named after the same saint as the one that Mantua Cathedral is dedicated to die?
+
+Gold answer: 1952
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Mantua Cathedral is dedicated to Saint Peter
+- c2: [supported] The Governor of Vatican City died in 1952
+- c3: [unclear] The basilica named after the same saint as Mantua Cathedral is located in Vatican City
+
+Evidence:
+- 3hop1__135659_87694_64412::p18: Mantua Cathedral Mantua Cathedral () in Mantua, Lombardy, northern Italy, is a Roman Catholic cathedral dedicated to Saint Peter. It is the seat of the Bishop of Mantua.
+- 3hop1__136129_87694_124169::p19: Foligno Cathedral Foligno Cathedral () is a Roman Catholic cathedral situated on the Piazza della Repubblica in the center of Foligno, Italy. The cathedral, built on the site of an earlier basilica, is dedicated to the patron saint of the city, the martyr Felician of Foligno (San Feliciano), who was buried here in 251 AD. It is the seat of the Bishop of Foligno.
+- 3hop1__135659_87694_64412::p16: Foligno Cathedral Foligno Cathedral () is a Roman Catholic cathedral situated on the Piazza della Repubblica in the center of Foligno, Italy. The cathedral, built on the site of an earlier basilica, is dedicated to the patron saint of the city, the martyr Felician of Foligno (San Feliciano), who was buried here in 251 AD. It is the seat of the Bishop of Foligno.
+- 3hop1__64957_87694_124169::p1: Governor of Vatican City The post of Governor of Vatican City (Governatore dello Stato della Città del Vaticano in Italian) was held by Marchese Camillo Serafini from the foundation of the state in 1929 until his death in 1952. No successor was appointed, and the post itself was not mentioned in the Fundamental Law of Vatican City State issued by Pope John Paul II on 26 November 2000, which entered into force on 22 February 2001.
+- 3hop1__603558_87694_124169::p17: Governor of Vatican City The post of Governor of Vatican City (Governatore dello Stato della Città del Vaticano in Italian) was held by Marchese Camillo Serafini from the foundation of the state in 1929 until his death in 1952. No successor was appointed, and the post itself was not mentioned in the Fundamental Law of Vatican City State issued by Pope John Paul II on 26 November 2000, which entered into force on 22 February 2001.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__135659_87694_64412::r2
+
+- sample_id: 3hop1__135659_87694_64412
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: When did the place where St for whom the Mantua Cathedral was named for basilica the head of the catholic religion is located in become its own country?
+
+Gold answer: 11 February 1929
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The Mantua Cathedral is dedicated to Saint Peter.
+- c2: [supported] The Mantua Cathedral is the seat of the Bishop of Mantua.
+- c3: [unclear] The question is asking about the date when the place where Saint Peter (for whom the Mantua Cathedral was named) is located became its own country.
+
+Evidence:
+- 3hop2__145209_20335_9331::p15: County of Gorizia While the Lienz area was administrated with the Tyrolean crown land, the "inner county" of Gorizia remained an Imperial State of the Holy Roman Empire ruled by the Inner Austrian Archdukes as part of the Austrian Circle, governed by a "capitano". Its territory included the Isonzo Valley down to Aquileia, the area of Cormons and Duino, and the former Venetian fortress of Gradisca, which was conquered by Imperial troops in 1511. Monfalcone formed a Venetian exclave in the county from 1420 to 1797. In 1647 Emperor Ferdinand III separated the "Principality of Gradisca" from Gorizia for his courtier Johann Anton von Eggenberg, until in 1747 both were again merged to form the Princely County of Go [truncated]
+- 3hop1__135659_87694_64412::p18: Mantua Cathedral Mantua Cathedral () in Mantua, Lombardy, northern Italy, is a Roman Catholic cathedral dedicated to Saint Peter. It is the seat of the Bishop of Mantua.
+- 2hop__286093_361551::p15: Eritrea In 1922, Benito Mussolini's rise to power in Italy brought profound changes to the colonial government in Italian Eritrea. After il Duce declared the birth of the Italian Empire in May 1936, Italian Eritrea (enlarged with northern Ethiopia's regions) and Italian Somaliland were merged with the just conquered Ethiopia in the new Italian East Africa (Africa Orientale Italiana) administrative territory. This Fascist period was characterized by imperial expansion in the name of a "new Roman Empire". Eritrea was chosen by the Italian government to be the industrial center of Italian East Africa.
+- 3hop1__136129_87694_124169::p19: Foligno Cathedral Foligno Cathedral () is a Roman Catholic cathedral situated on the Piazza della Repubblica in the center of Foligno, Italy. The cathedral, built on the site of an earlier basilica, is dedicated to the patron saint of the city, the martyr Felician of Foligno (San Feliciano), who was buried here in 251 AD. It is the seat of the Bishop of Foligno.
+- 3hop1__135659_87694_64412::p16: Foligno Cathedral Foligno Cathedral () is a Roman Catholic cathedral situated on the Piazza della Repubblica in the center of Foligno, Italy. The cathedral, built on the site of an earlier basilica, is dedicated to the patron saint of the city, the martyr Felician of Foligno (San Feliciano), who was buried here in 251 AD. It is the seat of the Bishop of Foligno.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__136129_87694_124169::r1
+
+- sample_id: 3hop1__136129_87694_124169
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What year did the Governor of the city where the basilica named after the same saint as the one that Mantua Cathedral is dedicated to die?
+
+Gold answer: 1952
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Mantua Cathedral is dedicated to Saint Peter
+- c2: [supported] The basilica in Foligno is dedicated to Saint Felician of Foligno (San Feliciano)
+- c3: [supported] The Governor of Vatican City died in 1952
+- c4: [unsupported] The city where the basilica named after the same saint as Mantua Cathedral is located is Foligno
+- c5: [unsupported] The Governor of the city where the basilica named after the same saint as Mantua Cathedral is located died in 1952
+
+Evidence:
+- 3hop1__135659_87694_64412::p18: Mantua Cathedral Mantua Cathedral () in Mantua, Lombardy, northern Italy, is a Roman Catholic cathedral dedicated to Saint Peter. It is the seat of the Bishop of Mantua.
+- 3hop1__136129_87694_124169::p19: Foligno Cathedral Foligno Cathedral () is a Roman Catholic cathedral situated on the Piazza della Repubblica in the center of Foligno, Italy. The cathedral, built on the site of an earlier basilica, is dedicated to the patron saint of the city, the martyr Felician of Foligno (San Feliciano), who was buried here in 251 AD. It is the seat of the Bishop of Foligno.
+- 3hop1__135659_87694_64412::p16: Foligno Cathedral Foligno Cathedral () is a Roman Catholic cathedral situated on the Piazza della Repubblica in the center of Foligno, Italy. The cathedral, built on the site of an earlier basilica, is dedicated to the patron saint of the city, the martyr Felician of Foligno (San Feliciano), who was buried here in 251 AD. It is the seat of the Bishop of Foligno.
+- 3hop1__64957_87694_124169::p1: Governor of Vatican City The post of Governor of Vatican City (Governatore dello Stato della Città del Vaticano in Italian) was held by Marchese Camillo Serafini from the foundation of the state in 1929 until his death in 1952. No successor was appointed, and the post itself was not mentioned in the Fundamental Law of Vatican City State issued by Pope John Paul II on 26 November 2000, which entered into force on 22 February 2001.
+- 3hop1__603558_87694_124169::p17: Governor of Vatican City The post of Governor of Vatican City (Governatore dello Stato della Città del Vaticano in Italian) was held by Marchese Camillo Serafini from the foundation of the state in 1929 until his death in 1952. No successor was appointed, and the post itself was not mentioned in the Fundamental Law of Vatican City State issued by Pope John Paul II on 26 November 2000, which entered into force on 22 February 2001.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__13170_32392_823060_610794::r2
+
+- sample_id: 4hop1__13170_32392_823060_610794
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: In which county is the city sharing a border with the capitol of the first state to formally secede?
+
+Gold answer: Richland County
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The first state to formally secede from the United States was South Carolina.
+- c2: [unsupported] The capital of the first state to formally secede is Columbia.
+- c3: [unsupported] The city sharing a border with the capital of the first state to formally secede is in a specific county.
+
+Evidence:
+- 4hop1__777217_32392_823060_610794::p19: Confederate Arizona Confederate Arizona, commonly referred to as Arizona Territory, and officially the Territory of Arizona, was a territory claimed by the Confederate States of America during the American Civil War, between 1861 and 1865. Delegates to secession conventions had voted in March 1861 to secede from the New Mexico Territory and the United States, and seek to join the Confederacy. It consisted of the portion of the New Mexico Territory south of the 34th parallel, including parts of the modern states of New Mexico and Arizona. Its capital was Mesilla along the southern border. The Confederate territory overlapped the Arizona Territory later established by the Union government in 1863.
+- 4hop1__429751_32392_823060_610794::p14: Confederate Arizona Confederate Arizona, commonly referred to as Arizona Territory, and officially the Territory of Arizona, was a territory claimed by the Confederate States of America during the American Civil War, between 1861 and 1865. Delegates to secession conventions had voted in March 1861 to secede from the New Mexico Territory and the United States, and seek to join the Confederacy. It consisted of the portion of the New Mexico Territory south of the 34th parallel, including parts of the modern states of New Mexico and Arizona. Its capital was Mesilla along the southern border. The Confederate territory overlapped the Arizona Territory later established by the Union government in 1863.
+- 4hop1__13170_32392_823060_610794::p8: Confederate Arizona Confederate Arizona, commonly referred to as Arizona Territory, and officially the Territory of Arizona, was a territory claimed by the Confederate States of America during the American Civil War, between 1861 and 1865. Delegates to secession conventions had voted in March 1861 to secede from the New Mexico Territory and the United States, and seek to join the Confederacy. It consisted of the portion of the New Mexico Territory south of the 34th parallel, including parts of the modern states of New Mexico and Arizona. Its capital was Mesilla along the southern border. The Confederate territory overlapped the Arizona Territory later established by the Union government in 1863.
+- 3hop1__786067_228453_86925::p6: Intrall Intrall, or International Truck Alliance, is a Russo-British automotive company with headquarters in London, England, and manufacturing in Poland. At the end of 2003, the company acquired from Intrall Treasury factory of Daewoo Motor Poland in Lublin, then operating from January 2004 to 2007 years, called Intrall Poland. Under the new production in 2005, FSC Lublin and Honker models were produced under the "Intrall" brand. In 2006 the company acquired the rights to produce models of trucks of the Czech brand Praga. A brand-new commercial van/truck was developed called the "Intrall Lubo".
+- 2hop__628752_538661::p0: Inju: The Beast in the Shadow Inju: The Beast in the Shadow (French: Inju, la bête dans l'ombre) is a 2008 film by Barbet Schroeder. The film stars Benoît Magimel and Lika Minamoto and was filmed on location in Tokyo.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__103751_24918_24991::r3
+
+- sample_id: 3hop1__103751_24918_24991
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What went down after the Soviet President visiting the country of origin of Ethella Chupryk while the protests were taking place departed from the Kremlin?
+
+Gold answer: Soviet flag
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The Soviet President visiting the country of origin of Ethella Chupryk while the protests were taking place departed from the Kremlin.
+- c2: [unclear] Dissolution of the Soviet Union went down after the Soviet President visiting the country of origin of Ethella Chupryk while the protests were taking place departed from the Kremlin.
+
+Evidence:
+- 3hop1__103751_24918_24991::p19: Kremlin, Wisconsin Kremlin is an unincorporated community located in the town of Pembine, Marinette County, Wisconsin, United States. Kremlin is located on the Canadian National Railway southeast of Niagara.
+- 3hop1__103751_24918_24991::p2: Kremlin Senate The Kremlin Senate () is a building within the grounds of the Moscow Kremlin in Russia. Initially constructed from 1776 to 1787, it originally housed the Moscow branch of the Governing Senate, the highest judiciary and legislative office of Imperial Russia. Currently, it houses the Russian presidential administration and is a highly secured and restricted area closed to the public. At present, only the southern corner façade, opposite the Tsar Cannon can be viewed.
+- 3hop1__103751_24918_24991::p13: List of Moscow Kremlin towers The following is a list of towers of Moscow Kremlin. The Kremlin Wall is a defensive wall that surrounds the Moscow Kremlin, recognizable by the characteristic notches and its towers. The original walls were likely a simple wooden fence with guard towers built in 1156. The Kremlin is flanked by 19 towers with a 20th, the Koutafia Tower, not part of its walls.
+- 3hop1__103751_24918_24991::p11: Dissolution of the Soviet Union In late February, large public rallies took place in Kiev to protest the election laws, on the eve of the March 26 elections to the USSR Congress of People's Deputies, and to call for the resignation of the first secretary of the Communist Party of Ukraine, Volodymyr Scherbytsky, lampooned as "the mastodon of stagnation." The demonstrations coincided with a visit to Ukraine by Soviet President Gorbachev. On February 26, 1989, between 20,000 and 30,000 people participated in an unsanctioned ecumenical memorial service in Lviv, marking the anniversary of the death of 19th Century Ukrainian artist and nationalist Taras Shevchenko.
+- 2hop__244193_461106::p7: Dissolution of the Soviet Union Beginning in February 1988, the Democratic Movement of Moldova (formerly Moldavia) organized public meetings, demonstrations, and song festivals, which gradually grew in size and intensity. In the streets, the center of public manifestations was the Stephen the Great Monument in Chişinău, and the adjacent park harboring Aleea Clasicilor (The "Alee of the Classics [of the Literature]"). On January 15, 1988, in a tribute to Mihai Eminescu at his bust on the Aleea Clasicilor, Anatol Şalaru submitted a proposal to continue the meetings. In the public discourse, the movement called for national awakening, freedom of speech, revival of Moldavian traditions, and for attainment of official status fo [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__105767_443779_52195::r2
+
+- sample_id: 3hop1__105767_443779_52195
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Who is the president of the newly declared independent country that is part of the commission of truth and friendship with the country that eats Kemplang?
+
+Gold answer: Francisco Guterres
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] East Timor is the newly declared independent country that is part of the commission of truth and friendship with Indonesia.
+- c2: [supported] The country that eats Kemplang is Indonesia.
+
+Evidence:
+- 3hop1__105767_443779_52195::p0: Kemplang Kemplang is a traditional savory fish cracker ("krupuk ikan") snack commonly found in southern parts of Sumatra, Indonesia. Kemplang crackers are commonly made of "ikan tenggiri" (wahoo) or any type of Spanish mackerel, mixed with tapioca starch and other flavorings, sun-dried and then grilled or fried.
+- 4hop2__161602_426860_88460_18966::p7: Hokkien There are many Hokkien speakers among overseas Chinese in Southeast Asia as well as in the United States. Many ethnic Han Chinese emigrants to the region were Hoklo from southern Fujian, and brought the language to what is now Burma (Myanmar), Indonesia (the former Dutch East Indies) and present day Malaysia and Singapore (formerly Malaya and the British Straits Settlements). Many of the Hokkien dialects of this region are highly similar to Taiwanese and Amoy. Hokkien is reportedly the native language of up to 98.5% of the Chinese Filipino in the Philippines, among which is known locally as Lan-nang or Lán-lâng-oē ("Our people’s language"). Hokkien speakers form the largest group of Chinese  [truncated]
+- 3hop1__93963_170667_18967::p14: Hokkien There are many Hokkien speakers among overseas Chinese in Southeast Asia as well as in the United States. Many ethnic Han Chinese emigrants to the region were Hoklo from southern Fujian, and brought the language to what is now Burma (Myanmar), Indonesia (the former Dutch East Indies) and present day Malaysia and Singapore (formerly Malaya and the British Straits Settlements). Many of the Hokkien dialects of this region are highly similar to Taiwanese and Amoy. Hokkien is reportedly the native language of up to 98.5% of the Chinese Filipino in the Philippines, among which is known locally as Lan-nang or Lán-lâng-oē ("Our people’s language"). Hokkien speakers form the largest group of Chinese  [truncated]
+- 3hop1__105767_443779_52195::p6: Namibia The Namibian Constitution adopted in February 1990 incorporated protection for human rights, compensation for state expropriations of private property, an independent judiciary and an executive presidency (the constituent assembly became the national assembly). The country officially became independent on 21 March 1990. Sam Nujoma was sworn in as the first President of Namibia watched by Nelson Mandela (who had been released from prison the previous month) and representatives from 147 countries, including 20 heads of state. Walvis Bay was ceded to Namibia in 1994 upon the end of Apartheid in South Africa.[citation needed]
+- 3hop1__105767_443779_52195::p3: Indonesia–Timor Leste Commission of Truth and Friendship The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred around the independence referendum held in East Timor in 1999 and sought to find the "conclusive truth" behind the events. After holding private hearings and document reviews, the commission handed in the final report on July 15, 2008 to the presidents of both nations, and was fully endorsed by Indonesian President Susilo Bambang Yudhoyono, providing the first acknowledgement by the government of Indonesia of the human rights violations committe [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__247353_55227::r2
+
+- sample_id: 2hop__247353_55227
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?
+
+Gold answer: Maria Bello
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] Salma Hayek plays the wife of Here Comes the Boom's screenwriter in Grown Ups.
+
+Evidence:
+- 2hop__247353_55227::p6: Here Comes the Boom Here Comes the Boom is a 2012 American comedy film directed by Frank Coraci, co-written, produced by and starring Kevin James. It was also written by Allan Loeb and Rock Reuben with music by Rupert Gregson-Williams. The film co-stars Henry Winkler and Salma Hayek. It was produced by Happy Madison Productions. The film was released in the United States on October 12, 2012 by Columbia Pictures. The film's title is taken from the song "Boom" by Christian nu metal band P.O.D.
+- 2hop__247353_55227::p17: Grown Ups (film) In 1978, five childhood friends win their junior high school basketball championship. Afterwards, they celebrate at a rented lake house. The friends' coach, whom they nickname ``Buzzer ''(Blake Clark), encourages them to live their lives in a similar way to how they played the game. Thirty years later, Lenny (Adam Sandler) has become an ambitious Hollywood talent agent with his wife, fashion designer Roxanne (Salma Hayek), and his three children -- daughter Becky (Alexys Nicole Sanchez) and two sons Greg (Jake Goldberg) and Keith (Cameron Boyce). The boys act very spoiled in his vicinity, much to his annoyance. Eric (Kevin James) claims he is now a co-owner of a lawn furniture company, but i [truncated]
+- 2hop__92590_43786::p2: Linwood Boomer Linwood Boomer (born October 9, 1955) is a Canadian - American television producer, writer, and former actor. He is known for playing the role of Adam Kendall on the drama Little House on the Prairie, and for creating the Fox sitcom Malcolm in the Middle.
+- 2hop__92590_43786::p16: Linwood Boomer Linwood Boomer (born October 9, 1955) is a Canadian - American television producer, writer, and former actor. He is well known for playing the role of Adam Kendall on the drama Little House on the Prairie, and for creating the Fox sitcom Malcolm in the Middle.
+- 2hop__91211_90973::p15: Bad Moms Amy Mitchell (Mila Kunis) is a married woman in the Chicago suburbs with two children, Jane (Oona Laurence) and Dylan (Emjay Anthony), who feels overworked and overcommitted. She works as a sales rep for a ``hip ''coffee company, prepares healthful, hand - packed lunches for her children, does most of their homework, goes to all of their extracurricular activities, and is active in her school's PTA, run by the domineering Gwendolyn James (Christina Applegate) and her cronies, Stacy (Jada Pinkett Smith) and Vicky (Annie Mumolo). When she catches her husband Mike (David Walton) cheating on her with a camgirl, Amy kicks him out and attempts to keep everything together.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__140786_2053_5289::r1
+
+- sample_id: 3hop1__140786_2053_5289
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What UK label was bought by the major broadcaster that, along with ABC and the network of the show Just Men!?, is based in New York?
+
+Gold answer: Oriole Records.
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The major broadcaster that is based in New York is CBS.
+- c2: [supported] The UK label bought by CBS is Oriole Records.
+- c3: [unclear] The network of the show Just Men! is based in New York.
+
+Evidence:
+- 3hop1__652852_2053_52946::p10: New York City The television industry developed in New York and is a significant employer in the city's economy. The three major American broadcast networks are all headquartered in New York: ABC, CBS, and NBC. Many cable networks are based in the city as well, including MTV, Fox News, HBO, Showtime, Bravo, Food Network, AMC, and Comedy Central. The City of New York operates a public broadcast service, NYCTV, that has produced several original Emmy Award-winning shows covering music and culture in city neighborhoods and city government.
+- 3hop1__140786_2053_52946::p8: New York City The television industry developed in New York and is a significant employer in the city's economy. The three major American broadcast networks are all headquartered in New York: ABC, CBS, and NBC. Many cable networks are based in the city as well, including MTV, Fox News, HBO, Showtime, Bravo, Food Network, AMC, and Comedy Central. The City of New York operates a public broadcast service, NYCTV, that has produced several original Emmy Award-winning shows covering music and culture in city neighborhoods and city government.
+- 3hop1__140786_2053_5289::p17: New York City The television industry developed in New York and is a significant employer in the city's economy. The three major American broadcast networks are all headquartered in New York: ABC, CBS, and NBC. Many cable networks are based in the city as well, including MTV, Fox News, HBO, Showtime, Bravo, Food Network, AMC, and Comedy Central. The City of New York operates a public broadcast service, NYCTV, that has produced several original Emmy Award-winning shows covering music and culture in city neighborhoods and city government.
+- 3hop1__140786_2053_5289::p7: Sony Music In 1964, CBS established its own UK distribution with the acquisition of Oriole Records. EMI continued to distribute Epic and Okeh label material on the Columbia label in the UK until the distribution deal with EMI expired in 1968 when CBS took over distribution.
+- 2hop__151750_141308::p7: Apple Records Apple Records is a record label founded by the Beatles in 1968 as a division of Apple Corps Ltd. It was initially intended as a creative outlet for the Beatles, both as a group and individually, plus a selection of other artists including Mary Hopkin, James Taylor, Badfinger, and Billy Preston. In practice, the roster had become dominated by the mid-1970s with releases of the former Beatles as solo artists. Allen Klein managed the label from 1969 to 1973, then it was managed by Neil Aspinall on behalf of the Beatles and their heirs. Aspinall retired in 2007 and was replaced by Jeff Jones.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__247353_55227::r3
+
+- sample_id: 2hop__247353_55227
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?
+
+Gold answer: Maria Bello
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] Salma Hayek plays the wife of Here Comes the Boom's screenwriter in Grown Ups.
+
+Evidence:
+- 2hop__247353_55227::p17: Grown Ups (film) In 1978, five childhood friends win their junior high school basketball championship. Afterwards, they celebrate at a rented lake house. The friends' coach, whom they nickname ``Buzzer ''(Blake Clark), encourages them to live their lives in a similar way to how they played the game. Thirty years later, Lenny (Adam Sandler) has become an ambitious Hollywood talent agent with his wife, fashion designer Roxanne (Salma Hayek), and his three children -- daughter Becky (Alexys Nicole Sanchez) and two sons Greg (Jake Goldberg) and Keith (Cameron Boyce). The boys act very spoiled in his vicinity, much to his annoyance. Eric (Kevin James) claims he is now a co-owner of a lawn furniture company, but i [truncated]
+- 2hop__23459_35124::p11: Answer to History Answer to History (French: Réponse à l'histoire; Persian: پاسخ به تاریخ) is a memoir written by the last Shah of Iran, Mohammad Reza Pahlavi, shortly after his overthrow in 1979 by Islamic revolution. The book was originally written in French and was translated into English and Persian as well as other languages, and was published posthumously in 1980.
+- 2hop__91211_90973::p4: List of Family Guy cast members Mila Kunis voices Meg Griffin. Kunis won the role after auditions and a slight rewrite of the character, in part due to her performance on That '70s Show. MacFarlane called Kunis back after her first audition, instructing her to speak slower, and then told her to come back another time and enunciate more. Once she claimed that she had it under control, MacFarlane hired her. Kunis described her character as ``the scapegoat ''. She further explained,`` Meg gets picked on a lot. But it's funny. It's like the middle child. She is constantly in the state of being an awkward 14 - year - old, when you're kind of going through puberty and what - not. She's just in a perpetual mode of humiliation. An [truncated]
+- 2hop__247353_55227::p6: Here Comes the Boom Here Comes the Boom is a 2012 American comedy film directed by Frank Coraci, co-written, produced by and starring Kevin James. It was also written by Allan Loeb and Rock Reuben with music by Rupert Gregson-Williams. The film co-stars Henry Winkler and Salma Hayek. It was produced by Happy Madison Productions. The film was released in the United States on October 12, 2012 by Columbia Pictures. The film's title is taken from the song "Boom" by Christian nu metal band P.O.D.
+- 3hop2__140194_16797_51068::p5: Sally Struthers Sally Anne Struthers (born July 28, 1947) is an American actress, spokeswoman and activist. She played the roles of Gloria Stivic, the daughter of Archie and Edith Bunker (played by Carroll O'Connor and Jean Stapleton) on All in the Family, for which she won two Emmy awards, and Babette on Gilmore Girls. She was the voice of Charlene Sinclair on the ABC sitcom Dinosaurs and Rebecca Cunningham on the Disney animated series TaleSpin.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__135659_87694_64412::r3
+
+- sample_id: 3hop1__135659_87694_64412
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: When did the place where St for whom the Mantua Cathedral was named for basilica the head of the catholic religion is located in become its own country?
+
+Gold answer: 11 February 1929
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] St. Peter is the patron saint of Mantua.
+- c2: [supported] The Mantua Cathedral is dedicated to St. Peter.
+- c3: [supported] St. Peter's Basilica is located in Vatican City.
+- c4: [supported] Vatican City became its own country in 1929.
+
+Evidence:
+- 3hop1__64957_87694_124169::p6: St. Peter's Basilica Old St. Peter's Basilica was the 4th - century church begun by the Emperor Constantine the Great between 319 and 333 AD. It was of typical basilical form, a wide nave and two aisles on each side and an apsidal end, with the addition of a transept or bema, giving the building the shape of a tau cross. It was over 103.6 metres (340 ft) long, and the entrance was preceded by a large colonnaded atrium. This church had been built over the small shrine believed to mark the burial place of St. Peter. It contained a very large number of burials and memorials, including those of most of the popes from St. Peter to the 15th century. Like all of the earliest churches in Rome, both this church and its s [truncated]
+- 3hop1__603558_87694_124169::p3: St. Peter's Basilica Old St. Peter's Basilica was the 4th - century church begun by the Emperor Constantine the Great between 319 and 333 AD. It was of typical basilical form, a wide nave and two aisles on each side and an apsidal end, with the addition of a transept or bema, giving the building the shape of a tau cross. It was over 103.6 metres (340 ft) long, and the entrance was preceded by a large colonnaded atrium. This church had been built over the small shrine believed to mark the burial place of St. Peter. It contained a very large number of burials and memorials, including those of most of the popes from St. Peter to the 15th century. Like all of the earliest churches in Rome, both this church and its s [truncated]
+- 3hop1__136129_87694_124169::p17: St. Peter's Basilica Old St. Peter's Basilica was the 4th - century church begun by the Emperor Constantine the Great between 319 and 333 AD. It was of typical basilical form, a wide nave and two aisles on each side and an apsidal end, with the addition of a transept or bema, giving the building the shape of a tau cross. It was over 103.6 metres (340 ft) long, and the entrance was preceded by a large colonnaded atrium. This church had been built over the small shrine believed to mark the burial place of St. Peter. It contained a very large number of burials and memorials, including those of most of the popes from St. Peter to the 15th century. Like all of the earliest churches in Rome, both this church and its s [truncated]
+- 3hop1__135659_87694_64412::p18: Mantua Cathedral Mantua Cathedral () in Mantua, Lombardy, northern Italy, is a Roman Catholic cathedral dedicated to Saint Peter. It is the seat of the Bishop of Mantua.
+- 3hop1__135659_87694_64412::p16: Foligno Cathedral Foligno Cathedral () is a Roman Catholic cathedral situated on the Piazza della Repubblica in the center of Foligno, Italy. The cathedral, built on the site of an earlier basilica, is dedicated to the patron saint of the city, the martyr Felician of Foligno (San Feliciano), who was buried here in 251 AD. It is the seat of the Bishop of Foligno.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__244193_461106::r1
+
+- sample_id: 2hop__244193_461106
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What movement does the creator of the Washington Monument belong to?
+
+Gold answer: Greek Revival
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The creator of the Washington Monument is associated with the Lincoln Memorial.
+
+Evidence:
+- 2hop__244193_461106::p12: Lincoln Memorial The Lincoln Memorial is an American national memorial built to honor the 16th President of the United States, Abraham Lincoln. It is located on the western end of the National Mall in Washington, D.C., across from the Washington Monument. The architect was Henry Bacon; the designer of the primary statue – "Abraham Lincoln", 1920 – was Daniel Chester French; the Lincoln statue was carved by the Piccirilli Brothers; and the painter of the interior murals was Jules Guerin. Dedicated in May 1922, it is one of several memorials built to honor an American president. It has always been a major tourist attraction and since the 1930s has been a symbolic center focused on race relations.
+- 2hop__244193_461106::p4: Lincoln Memorial The Lincoln Memorial is an American national monument built to honor the 16th President of the United States, Abraham Lincoln. It is located on the western end of the National Mall in Washington, D.C., across from the Washington Monument. The architect was Henry Bacon; the designer of the primary statue -- Abraham Lincoln, 1920 -- was Daniel Chester French; the Lincoln statue was carved by the Piccirilli Brothers; and the painter of the interior murals was Jules Guerin. Dedicated in 1922, it is one of several monuments built to honor an American president. It has always been a major tourist attraction and since the 1930s has been a symbolic center focused on race relations.
+- 2hop__244193_461106::p13: New York City The Statue of Liberty National Monument and Ellis Island Immigration Museum are managed by the National Park Service and are in both the states of New York and New Jersey. They are joined in the harbor by Governors Island National Monument, in New York. Historic sites under federal management on Manhattan Island include Castle Clinton National Monument; Federal Hall National Memorial; Theodore Roosevelt Birthplace National Historic Site; General Grant National Memorial ("Grant's Tomb"); African Burial Ground National Monument; and Hamilton Grange National Memorial. Hundreds of private properties are listed on the National Register of Historic Places or as a National Historic Landmark such as [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__236903_153080_33897_81096::r2
+
+- sample_id: 4hop1__236903_153080_33897_81096
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Who won the indy car race in the most populated city of the state where the performer of East Coasting is from?
+
+Gold answer: Mario Andretti
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The most populated city of the state where the performer of East Coasting is from is Detroit.
+- c2: [supported] Detroit is in the state of Michigan.
+- c3: [unsupported] The Indy Car race in Detroit was won by a specific person.
+
+Evidence:
+- 4hop1__236903_153080_33897_81096::p19: East Coasting East Coasting is an album by Charles Mingus, recorded and released in 1957. It was reissued on CD with bonus takes in 1993.
+- 2hop__247353_55227::p14: Greetings from the Shore Greetings From The Shore is a 2007 American coming-of-age romantic comedy film directed by Greg Chwerchak. The movie has played over 60 festivals, winning over 20 awards. It had its American theatrical release on September 12, 2008, on a limited basis.
+- 2hop__82669_768138::p9: End of the Line (Traveling Wilburys song) ``End of the Line ''is the last track from the Traveling Wilburys' first album, Volume 1, released in 1988. It was also issued as the band's second single, in January 1989. The song's riding - on - the - rails rhythm suggests its theme and the on - the - move nature of the group. It features all the Wilburys (excluding Bob Dylan, who was on tour at the time) as lead singers; George Harrison, Jeff Lynne and Roy Orbison sing the choruses in turn, while Tom Petty sings the verses. The song was mainly written by Harrison and was assigned to his publishing company. In keeping with the collaborative concept behind the Wilburys project, however, all five members received a songwriting credit.
+- 2hop__82910_75184::p8: Brian Bonsall Brian Eric Bonsall (born December 3, 1981) is an American rock musician, singer, guitarist and former child actor. He is perhaps best known for his roles as Andrew ``Andy ''Keaton, the youngest child on the NBC sitcom Family Ties from 1986 until 1989, and Alexander Rozhenko, the son of Worf and K'ehleyr, on Star Trek: The Next Generation from 1992 to 1994.
+- 4hop1__813171_153080_159767_81096::p2: Arizona Arizona ( (listen); Navajo: Hoozdo Hahoodzo Navajo pronunciation: [xòːztò xɑ̀xòːtsò]; O'odham: Alĭ ṣonak Uto-Aztecan pronunciation: [ˡaɺi ˡʂonak]) is a state in the southwestern region of the United States. It is also part of the Western and the Mountain states. It is the sixth largest and the 14th most populous of the 50 states. Its capital and largest city is Phoenix. Arizona shares the Four Corners region with Utah, Colorado, and New Mexico; its other neighboring states are Nevada and California to the west and the Mexican states of Sonora and Baja California to the south and southwest.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__131611_32392_823060_610794::r1
+
+- sample_id: 4hop1__131611_32392_823060_610794
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: In which county is the city sharing a border with the capitol of the state where Ocean Forest Country Club is located?
+
+Gold answer: Richland County
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Ocean Forest Country Club is located in Horry County, South Carolina.
+- c2: [unsupported] The capitol of South Carolina is Columbia.
+- c3: [unclear] The city sharing a border with Columbia, South Carolina, is located in a specific county.
+
+Evidence:
+- 4hop1__131611_32392_823060_610794::p11: Ocean Forest Country Club Ocean Forest Country Club, also known as Ocean Forest Hotel and Country Club, is a historic country club and hotel located at Myrtle Beach in Horry County, South Carolina. The club and hotel were designed by an influential New York architect, Raymond Hood (1881-1934) and is an unusual example of Classical Revival architecture. Construction of the club began in 1926 and was completed in 1927. In addition to the hotel / club building, a 27-hole golf course was built in association with the club. It was designed by Robert White, a golf course designer and future president of the Professional Golfers' Association of America. The present 18-hole course dates to 1946.
+- 4hop1__813171_153080_33897_81096::p5: Jacksonville, Florida Jacksonville is the largest city by population in the U.S. state of Florida, and the largest city by area in the contiguous United States. It is the county seat of Duval County, with which the city government consolidated in 1968. Consolidation gave Jacksonville its great size and placed most of its metropolitan population within the city limits; with an estimated population of 853,382 in 2014, it is the most populous city proper in Florida and the Southeast, and the 12th most populous in the United States. Jacksonville is the principal city in the Jacksonville metropolitan area, with a population of 1,345,596 in 2010.
+- 4hop1__236903_153080_33897_81096::p4: Jacksonville, Florida Jacksonville is the largest city by population in the U.S. state of Florida, and the largest city by area in the contiguous United States. It is the county seat of Duval County, with which the city government consolidated in 1968. Consolidation gave Jacksonville its great size and placed most of its metropolitan population within the city limits; with an estimated population of 853,382 in 2014, it is the most populous city proper in Florida and the Southeast, and the 12th most populous in the United States. Jacksonville is the principal city in the Jacksonville metropolitan area, with a population of 1,345,596 in 2010.
+- 3hop1__786067_228453_86925::p6: Intrall Intrall, or International Truck Alliance, is a Russo-British automotive company with headquarters in London, England, and manufacturing in Poland. At the end of 2003, the company acquired from Intrall Treasury factory of Daewoo Motor Poland in Lublin, then operating from January 2004 to 2007 years, called Intrall Poland. Under the new production in 2005, FSC Lublin and Honker models were produced under the "Intrall" brand. In 2006 the company acquired the rights to produce models of trucks of the Czech brand Praga. A brand-new commercial van/truck was developed called the "Intrall Lubo".
+- 2hop__628752_538661::p0: Inju: The Beast in the Shadow Inju: The Beast in the Shadow (French: Inju, la bête dans l'ombre) is a 2008 film by Barbet Schroeder. The film stars Benoît Magimel and Lika Minamoto and was filmed on location in Tokyo.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__264443_49925_13759_736921::r3
+
+- sample_id: 4hop1__264443_49925_13759_736921
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Where is the district that the person who wanted to reform and address Edward Egan's religion preached a sermon on Marian devotion before his death located?
+
+Gold answer: Saxony-Anhalt
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The person who wanted to reform and address Edward Egan's religion is Martin Luther.
+- c2: [supported] Martin Luther preached a sermon on Marian devotion before his death.
+- c3: [unsupported] The district where Martin Luther preached a sermon on Marian devotion before his death is Wittenberg.
+
+Evidence:
+- 4hop1__860115_798482_131926_13165::p16: Minneapolis Minneapolis lies on both banks of the Mississippi River, just north of the river's confluence with the Minnesota River, and adjoins Saint Paul, the state's capital. The city is abundantly rich in water, with 13 lakes, wetlands, the Mississippi River, creeks and waterfalls; many connected by parkways in the Chain of Lakes and the Grand Rounds National Scenic Byway. It was once the world's flour milling capital and a hub for timber. The city and surrounding region is the primary business center between Chicago and Seattle. As of 2018, Minneapolis was home to 6 Fortune 500 companies, and the Twin Cities were the fifth-largest hub of major corporate headquarters in the United States. As an integ [truncated]
+- 4hop1__525129_315334_131926_90707::p1: Minneapolis Minneapolis lies on both banks of the Mississippi River, just north of the river's confluence with the Minnesota River, and adjoins Saint Paul, the state's capital. The city is abundantly rich in water, with 13 lakes, wetlands, the Mississippi River, creeks and waterfalls; many connected by parkways in the Chain of Lakes and the Grand Rounds National Scenic Byway. It was once the world's flour milling capital and a hub for timber. The city and surrounding region is the primary business center between Chicago and Seattle. As of 2018, Minneapolis was home to 6 Fortune 500 companies, and the Twin Cities were the fifth-largest hub of major corporate headquarters in the United States. As an integ [truncated]
+- 3hop1__635099_131926_89261::p5: Minneapolis Minneapolis lies on both banks of the Mississippi River, just north of the river's confluence with the Minnesota River, and adjoins Saint Paul, the state's capital. The city is abundantly rich in water, with 13 lakes, wetlands, the Mississippi River, creeks and waterfalls; many connected by parkways in the Chain of Lakes and the Grand Rounds National Scenic Byway. It was once the world's flour milling capital and a hub for timber. The city and surrounding region is the primary business center between Chicago and Seattle. As of 2018, Minneapolis was home to 6 Fortune 500 companies, and the Twin Cities were the fifth-largest hub of major corporate headquarters in the United States. As an integ [truncated]
+- 4hop1__264443_49925_13759_736921::p15: Edward Egan Edward Michael Egan (April 2, 1932 – March 5, 2015) was an American Cardinal of the Roman Catholic Church. He served as Bishop of Bridgeport from 1988 to 2000, and as Archbishop of New York from 2000 to 2009. He was elevated to the cardinalate in 2001. He was the twelfth Bishop, ninth Archbishop, and seventh Cardinal of the See of New York.
+- 4hop1__264443_49925_13759_736921::p6: James J. Egan James J. Egan, FAIA, (1839, Cork, Ireland—December 2, 1914, Chicago, Illinois) was an Irish-American architect and fellow of the American Institute of Architects practicing in Chicago, Illinois. He was a partner of the Chicago architectural firms Armstrong & Egan, Egan & Kirkland and Egan & Prindeville, which gained prominence designing Roman Catholic structures.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__152146_5274_458768_33632::r3
+
+- sample_id: 4hop1__152146_5274_458768_33632
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What day is the Feast held in the city where the headquarters of the only group larger than Långa nätter's record label is located?
+
+Gold answer: May 4
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] The headquarters of the only group larger than Långa nätter's record label is located in Kathmandu.
+- c2: [unclear] The Feast held in Kathmandu is on 18 November.
+
+Evidence:
+- 4hop3__668721_132409_371500_35031::p19: Kathmandu Kathmandu(/ˌkɑːtmɑːnˈduː/; Nepali pronunciation: [kɑʈʰmɑɳɖu]) is the capital and largest municipality of Nepal. It also hosts the headquarters of the South Asian Association for Regional Cooperation (SAARC). It is the only city of Nepal with the administrative status of Mahanagar (Metropolitan City), as compared to Upa-Mahanagar (Sub-Metropolitan City) or Nagar (City). Kathmandu is the core of Nepal's largest urban agglomeration located in the Kathmandu Valley consisting of Lalitpur, Kirtipur, Madhyapur Thimi, Bhaktapur and a number of smaller communities. Kathmandu is also known informally as "KTM" or the "tri-city". According to the 2011 census, Kathmandu Metropolitan City has a population [truncated]
+- 3hop2__851134_613770_7713::p13: Kathmandu Kathmandu(/ˌkɑːtmɑːnˈduː/; Nepali pronunciation: [kɑʈʰmɑɳɖu]) is the capital and largest municipality of Nepal. It also hosts the headquarters of the South Asian Association for Regional Cooperation (SAARC). It is the only city of Nepal with the administrative status of Mahanagar (Metropolitan City), as compared to Upa-Mahanagar (Sub-Metropolitan City) or Nagar (City). Kathmandu is the core of Nepal's largest urban agglomeration located in the Kathmandu Valley consisting of Lalitpur, Kirtipur, Madhyapur Thimi, Bhaktapur and a number of smaller communities. Kathmandu is also known informally as "KTM" or the "tri-city". According to the 2011 census, Kathmandu Metropolitan City has a population [truncated]
+- 4hop3__673447_132409_371500_35031::p3: Kathmandu Kathmandu is located in the northwestern part of the Kathmandu Valley to the north of the Bagmati River and covers an area of 50.67 km2 (19.56 sq mi). The average elevation is 1,400 metres (4,600 ft) above sea level. The city is directly bounded by several other municipalities of the Kathmandu valley: south of the Bagmati by Lalitpur Sub-Metropolitan City (Patan) with which it today forms one urban area surrounded by a ring road, to the southwest by Kirtipur Municipality and to the east by Madyapur Thimi Municipality. To the north the urban area extends into several Village Development Committees. However, the urban agglomeration extends well beyond the neighboring municipalities, e. g. to B [truncated]
+- 4hop3__387712_132409_223216_35031::p11: Jakarta Jakarta (/ dʒ əˈkɑːrtə /, Indonesian pronunciation: (dʒaˈkarta)), officially the Special Capital Region of Jakarta, is the capital of Indonesia, which was formerly known as Batavia during Dutch East Indies and Sunda Kelapa during Sunda Kingdom. Located on the northwest coast of the world's most populous island of Java, Jakarta is the center of economics, culture and politics of Indonesia, with a population of 10,075,310 as of 2014. Greater Jakarta metropolitan area, which is known as Jabodetabek (a name formed by combining the initial syllables of Jakarta, Bogor, Depok, Tangerang and Bekasi), is the second largest urban agglomeration and 2nd largest city area in the world after Tokyo, with a [truncated]
+- 4hop1__152146_5274_458768_33632::p18: Our Lady of the Rosary The Feast of Our Lady of the Rosary, formerly known as Our Lady of Victory and Feast of the Holy Rosary, is a feast day of the Roman Catholic Church, celebrated on 7 October, the anniversary of the decisive victory of the combined fleet of the Holy League of 1571 over the Ottoman navy at the Battle of Lepanto.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__166471_49925_13759_736921::r3
+
+- sample_id: 4hop1__166471_49925_13759_736921
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: In what state is the district where the one who wanted to reform and address the institution behind the religion of Egidio Vagnozzi preached a sermon?
+
+Gold answer: Saxony-Anhalt
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] Egidio Vagnozzi wanted to reform and address the institution behind the religion of Egidio Vagnozzi.
+- c2: [unclear] The one who wanted to reform and address the institution behind the religion of Egidio Vagnozzi preached a sermon.
+- c3: [unclear] The district where the one who wanted to reform and address the institution behind the religion of Egidio Vagnozzi preached a sermon is located in a specific state.
+
+Evidence:
+- 4hop1__166471_49925_13759_736921::p8: Egidio Vagnozzi Egidio Vagnozzi (26 February 1906 – 26 December 1980) was an Italian Cardinal of the Catholic Church. He served as the second president of the Prefecture for the Economic Affairs of the Holy See from 1968 until his death, and was elevated to the cardinalate in 1967.
+- 4hop1__264443_49925_13759_736921::p2: Pope Paul VI Upon his election to the papacy, Montini took the pontifical name Paul VI (the first to take the name "Paul" since 1605) to indicate a renewed worldwide mission to spread the message of Christ, following the example of Apostle St. Paul.[citation needed] He re-convened the Second Vatican Council, which was automatically closed with the death of John XXIII, and gave it priority and direction. After the council had concluded its work, Paul VI took charge of the interpretation and implementation of its mandates, often walking a thin line between the conflicting expectations of various groups within Catholicism. The magnitude and depth of the reforms affecting all fields of Church life during his [truncated]
+- 4hop1__166471_49925_13759_736921::p17: Pope Paul VI Upon his election to the papacy, Montini took the pontifical name Paul VI (the first to take the name "Paul" since 1605) to indicate a renewed worldwide mission to spread the message of Christ, following the example of Apostle St. Paul.[citation needed] He re-convened the Second Vatican Council, which was automatically closed with the death of John XXIII, and gave it priority and direction. After the council had concluded its work, Paul VI took charge of the interpretation and implementation of its mandates, often walking a thin line between the conflicting expectations of various groups within Catholicism. The magnitude and depth of the reforms affecting all fields of Church life during his [truncated]
+- 3hop1__857_846_7769::p11: Qing dynasty In the wake of these external defeats, the Guangxu Emperor initiated the Hundred Days' Reform of 1898. Newer, more radical advisers such as Kang Youwei were given positions of influence. The emperor issued a series of edicts and plans were made to reorganize the bureaucracy, restructure the school system, and appoint new officials. Opposition from the bureaucracy was immediate and intense. Although she had been involved in the initial reforms, the empress dowager stepped in to call them off, arrested and executed several reformers, and took over day-to-day control of policy. Yet many of the plans stayed in place, and the goals of reform were implanted.
+- 4hop1__391525_49925_13759_736921::p18: Marian reforms The Marian reforms of 107 BC were a group of military reforms initiated by Gaius Marius, a statesman and general of the Roman Republic.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__131611_32392_823060_610794::r1
+
+- sample_id: 4hop1__131611_32392_823060_610794
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: In which county is the city sharing a border with the capitol of the state where Ocean Forest Country Club is located?
+
+Gold answer: Richland County
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Ocean Forest Country Club is located in Horry County, South Carolina.
+- c2: [unsupported] The capitol of the state where Ocean Forest Country Club is located is Columbia, South Carolina.
+- c3: [unsupported] The city sharing a border with the capitol of South Carolina is Columbia.
+
+Evidence:
+- 4hop1__131611_32392_823060_610794::p11: Ocean Forest Country Club Ocean Forest Country Club, also known as Ocean Forest Hotel and Country Club, is a historic country club and hotel located at Myrtle Beach in Horry County, South Carolina. The club and hotel were designed by an influential New York architect, Raymond Hood (1881-1934) and is an unusual example of Classical Revival architecture. Construction of the club began in 1926 and was completed in 1927. In addition to the hotel / club building, a 27-hole golf course was built in association with the club. It was designed by Robert White, a golf course designer and future president of the Professional Golfers' Association of America. The present 18-hole course dates to 1946.
+- 4hop1__813171_153080_33897_81096::p5: Jacksonville, Florida Jacksonville is the largest city by population in the U.S. state of Florida, and the largest city by area in the contiguous United States. It is the county seat of Duval County, with which the city government consolidated in 1968. Consolidation gave Jacksonville its great size and placed most of its metropolitan population within the city limits; with an estimated population of 853,382 in 2014, it is the most populous city proper in Florida and the Southeast, and the 12th most populous in the United States. Jacksonville is the principal city in the Jacksonville metropolitan area, with a population of 1,345,596 in 2010.
+- 4hop1__236903_153080_33897_81096::p4: Jacksonville, Florida Jacksonville is the largest city by population in the U.S. state of Florida, and the largest city by area in the contiguous United States. It is the county seat of Duval County, with which the city government consolidated in 1968. Consolidation gave Jacksonville its great size and placed most of its metropolitan population within the city limits; with an estimated population of 853,382 in 2014, it is the most populous city proper in Florida and the Southeast, and the 12th most populous in the United States. Jacksonville is the principal city in the Jacksonville metropolitan area, with a population of 1,345,596 in 2010.
+- 3hop1__786067_228453_86925::p6: Intrall Intrall, or International Truck Alliance, is a Russo-British automotive company with headquarters in London, England, and manufacturing in Poland. At the end of 2003, the company acquired from Intrall Treasury factory of Daewoo Motor Poland in Lublin, then operating from January 2004 to 2007 years, called Intrall Poland. Under the new production in 2005, FSC Lublin and Honker models were produced under the "Intrall" brand. In 2006 the company acquired the rights to produce models of trucks of the Czech brand Praga. A brand-new commercial van/truck was developed called the "Intrall Lubo".
+- 2hop__628752_538661::p0: Inju: The Beast in the Shadow Inju: The Beast in the Shadow (French: Inju, la bête dans l'ombre) is a 2008 film by Barbet Schroeder. The film stars Benoît Magimel and Lika Minamoto and was filmed on location in Tokyo.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__153573_44085::r3
+
+- sample_id: 2hop__153573_44085
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What was the show named after the character featured in the video game Mickey's Safari in Letterland?
+
+Gold answer: The Mickey Mouse Club
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] The show named after the character featured in the video game Mickey's Safari in Letterland is 'Metal Mickey'.
+
+Evidence:
+- 2hop__153573_44085::p14: Mickey's Safari in Letterland Mickey's Safari in Letterland is a 1993 educational Nintendo Entertainment System video game starring the famous cartoon character Mickey Mouse. In this game, Mickey must collect all of the letters of the alphabet for his museum by going to six different territories (including places inspired by the Yukon and the Caribbean). There are three levels of difficulty.
+- 2hop__92590_43786::p18: The Washington Post The Washington Post is an American daily newspaper founded on December 6, 1877. It is the largest newspaper published in Washington, D.C., the capital city of the United States, and has a particular emphasis on national politics. Its slogan is ``Democracy Dies in Darkness. ''Daily broadsheet editions are printed for the District of Columbia, Maryland, and Virginia.
+- 2hop__23459_35124::p11: Answer to History Answer to History (French: Réponse à l'histoire; Persian: پاسخ به تاریخ) is a memoir written by the last Shah of Iran, Mohammad Reza Pahlavi, shortly after his overthrow in 1979 by Islamic revolution. The book was originally written in French and was translated into English and Persian as well as other languages, and was published posthumously in 1980.
+- 2hop__153573_44085::p9: Metal Mickey The character of Metal Mickey first appeared on British television in the ITV children's magazine show "The Saturday Banana," produced by Southern Television in 1978. Humphrey Barclay saw Mickey on Jimmy Savile's 'Jim'll Fix It' television show. Seeing the children chatting in the marketplace with the friendly robot, this led to the creation of the "Metal Mickey" television show. Within a month the pilot had been video-taped and shortly after this the series went live with its first six episodes. 41 episodes were made in total, broadcast over three separate seasons between September 1980 and January 1983. The show attracted viewing figures of around 12 million at its peak. Micky Dolenz, form [truncated]
+- 2hop__153573_44085::p2: The Mickey Mouse Club The Mickey Mouse Club is an American variety television show that aired intermittently from 1955 to 1996 and returned in 2017 to social media. Created by Walt Disney and produced by Walt Disney Productions, the program was first televised in 1955 by ABC, featuring a regular but ever - changing cast of mostly teen performers. ABC broadcast reruns weekday afternoons during the 1958 -- 1959 season, airing right after American Bandstand. The show was revived after its initial 1955 -- 1959 run on ABC, first from 1977 -- 1979 for first - run syndication, again from 1989 -- 1996 as The All - New Mickey Mouse Club (also known to fans as MMC from 1993 -- 1996) airing exclusively on cable television's [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__166471_49925_13759_736921::r3
+
+- sample_id: 4hop1__166471_49925_13759_736921
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: In what state is the district where the one who wanted to reform and address the institution behind the religion of Egidio Vagnozzi preached a sermon?
+
+Gold answer: Saxony-Anhalt
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Egidio Vagnozzi is associated with a religious institution.
+- c2: [unclear] The one who wanted to reform and address the institution behind the religion of Egidio Vagnozzi is associated with a district.
+- c3: [unclear] The district where the one who wanted to reform and address the institution behind the religion of Egidio Vagnozzi preached a sermon is located in a specific state.
+
+Evidence:
+- 4hop1__166471_49925_13759_736921::p8: Egidio Vagnozzi Egidio Vagnozzi (26 February 1906 – 26 December 1980) was an Italian Cardinal of the Catholic Church. He served as the second president of the Prefecture for the Economic Affairs of the Holy See from 1968 until his death, and was elevated to the cardinalate in 1967.
+- 2hop__677929_696450::p15: Federalism Some Christians argue that the earliest source of political federalism (or federalism in human institutions; in contrast to theological federalism) is the ecclesiastical federalism found in the Bible. They point to the structure of the early Christian Church as described (and prescribed, as believed by many) in the New Testament. In their arguments, this is particularly demonstrated in the Council of Jerusalem, described in Acts chapter 15, where the Apostles and elders gathered together to govern the Church; the Apostles being representatives of the universal Church, and elders being such for the local church. To this day, elements of federalism can be found in almost every Christian denomi [truncated]
+- 3hop1__136129_87694_124169::p13: Boston Boston has been a noted religious center from its earliest days. The Roman Catholic Archdiocese of Boston serves nearly 300 parishes and is based in the Cathedral of the Holy Cross (1875) in the South End, while the Episcopal Diocese of Massachusetts, with the Cathedral Church of St. Paul (1819) as its episcopal seat, serves just under 200 congregations. Unitarian Universalism has its headquarters on Beacon Hill. The Christian Scientists are headquartered in Back Bay at the Mother Church (1894). The oldest church in Boston is First Church in Boston, founded in 1630. King's Chapel, the city's first Anglican church, was founded in 1686 and converted to Unitarianism in 1785. Other churches incl [truncated]
+- 2hop__20268_42014::p5: Jehovah's Witnesses Jehovah's Witnesses believe their religion is a restoration of first-century Christianity. Doctrines of Jehovah's Witnesses are established by the Governing Body, which assumes responsibility for interpreting and applying scripture. The Governing Body does not issue any single, comprehensive "statement of faith", but prefers to express its doctrinal position in a variety of ways through publications published by the Watch Tower Society. Their publications teach that doctrinal changes and refinements result from a process of progressive revelation, in which God gradually reveals his will and purpose, and that such enlightenment or "new light" results from the application of reason and study,  [truncated]
+- 3hop2__92991_72083_76291::p6: Montana However, at the state level, the pattern of split ticket voting and divided government holds. Democrats currently hold one of the state's U.S. Senate seats, as well as four of the five statewide offices (Governor, Superintendent of Public Instruction, Secretary of State and State Auditor). The lone congressional district has been Republican since 1996 and in 2014 Steve Daines won one of the state's Senate seats for the GOP. The Legislative branch had split party control between the house and senate most years between 2004 and 2010, when the mid-term elections returned both branches to Republican control. The state Senate is, as of 2015, controlled by the Republicans 29 to 21, and the State H [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__129499_33897_81096::r1
+
+- sample_id: 3hop1__129499_33897_81096
+- risk_type: wrong_target
+- oracle_action: disambiguate_conflict
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: Who won the 1993 Indy Car race in the city with the largest population in the state where Poachie Range is located?
+
+Gold answer: Mario Andretti
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Poachie Range is located in Arizona
+- c2: [unsupported] The city with the largest population in Arizona is Phoenix
+- c3: [unsupported] The 1993 Indy Car race was held in Phoenix, Arizona
+- c4: [contradicted] Richmond, Virginia, is the city with the largest population in the state where Poachie Range is located
+- c5: [unsupported] The 1993 Indy Car race in Phoenix, Arizona, was won by someone
+
+Evidence:
+- 3hop1__129499_33897_81096::p1: Poachie Range The Poachie Range is a moderate length mountain range and massif in southeast Mohave County, Arizona, and the extreme southwest corner of Yavapai County; the range also abuts the northeast corner of La Paz County. The Poachie Range massif is bordered by the south-flowing Big Sandy River on its west, and the west-flowing Santa Maria River on its south; both rivers converge at the Poachie Range's southwest at Alamo Lake, the Alamo Lake State Park.
+- 4hop1__813171_153080_33897_81096::p5: Jacksonville, Florida Jacksonville is the largest city by population in the U.S. state of Florida, and the largest city by area in the contiguous United States. It is the county seat of Duval County, with which the city government consolidated in 1968. Consolidation gave Jacksonville its great size and placed most of its metropolitan population within the city limits; with an estimated population of 853,382 in 2014, it is the most populous city proper in Florida and the Southeast, and the 12th most populous in the United States. Jacksonville is the principal city in the Jacksonville metropolitan area, with a population of 1,345,596 in 2010.
+- 4hop1__236903_153080_33897_81096::p4: Jacksonville, Florida Jacksonville is the largest city by population in the U.S. state of Florida, and the largest city by area in the contiguous United States. It is the county seat of Duval County, with which the city government consolidated in 1968. Consolidation gave Jacksonville its great size and placed most of its metropolitan population within the city limits; with an estimated population of 853,382 in 2014, it is the most populous city proper in Florida and the Southeast, and the 12th most populous in the United States. Jacksonville is the principal city in the Jacksonville metropolitan area, with a population of 1,345,596 in 2010.
+- 4hop1__726152_153080_33897_81096::p13: Richmond, Virginia Auto racing is also popular in the area. The Richmond International Raceway (RIR) has hosted NASCAR Sprint Cup races since 1953, as well as the Capital City 400 from 1962 − 1980. RIR also hosted IndyCar's Suntrust Indy Challenge from 2001 − 2009. Another track, Southside Speedway, has operated since 1959 and sits just southwest of Richmond in Chesterfield County. This .333-mile (0.536 km) oval short-track has become known as the "Toughest Track in the South" and "The Action Track", and features weekly stock car racing on Friday nights. Southside Speedway has acted as the breeding grounds for many past NASCAR legends including Richard Petty, Bobby Allison and Darrell Waltrip, and claims to be [truncated]
+- 4hop1__720201_153080_159767_81096::p7: Richmond, Virginia Auto racing is also popular in the area. The Richmond International Raceway (RIR) has hosted NASCAR Sprint Cup races since 1953, as well as the Capital City 400 from 1962 − 1980. RIR also hosted IndyCar's Suntrust Indy Challenge from 2001 − 2009. Another track, Southside Speedway, has operated since 1959 and sits just southwest of Richmond in Chesterfield County. This .333-mile (0.536 km) oval short-track has become known as the "Toughest Track in the South" and "The Action Track", and features weekly stock car racing on Friday nights. Southside Speedway has acted as the breeding grounds for many past NASCAR legends including Richard Petty, Bobby Allison and Darrell Waltrip, and claims to be [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__247353_55227::r1
+
+- sample_id: 2hop__247353_55227
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?
+
+Gold answer: Maria Bello
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] Salma Hayek plays the wife of Here Comes the Boom's screenwriter in Grown Ups.
+
+Evidence:
+- 2hop__247353_55227::p17: Grown Ups (film) In 1978, five childhood friends win their junior high school basketball championship. Afterwards, they celebrate at a rented lake house. The friends' coach, whom they nickname ``Buzzer ''(Blake Clark), encourages them to live their lives in a similar way to how they played the game. Thirty years later, Lenny (Adam Sandler) has become an ambitious Hollywood talent agent with his wife, fashion designer Roxanne (Salma Hayek), and his three children -- daughter Becky (Alexys Nicole Sanchez) and two sons Greg (Jake Goldberg) and Keith (Cameron Boyce). The boys act very spoiled in his vicinity, much to his annoyance. Eric (Kevin James) claims he is now a co-owner of a lawn furniture company, but i [truncated]
+- 2hop__247353_55227::p6: Here Comes the Boom Here Comes the Boom is a 2012 American comedy film directed by Frank Coraci, co-written, produced by and starring Kevin James. It was also written by Allan Loeb and Rock Reuben with music by Rupert Gregson-Williams. The film co-stars Henry Winkler and Salma Hayek. It was produced by Happy Madison Productions. The film was released in the United States on October 12, 2012 by Columbia Pictures. The film's title is taken from the song "Boom" by Christian nu metal band P.O.D.
+- 3hop2__140194_16797_51068::p5: Sally Struthers Sally Anne Struthers (born July 28, 1947) is an American actress, spokeswoman and activist. She played the roles of Gloria Stivic, the daughter of Archie and Edith Bunker (played by Carroll O'Connor and Jean Stapleton) on All in the Family, for which she won two Emmy awards, and Babette on Gilmore Girls. She was the voice of Charlene Sinclair on the ABC sitcom Dinosaurs and Rebecca Cunningham on the Disney animated series TaleSpin.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__152146_5274_458768_33632::r2
+
+- sample_id: 4hop1__152146_5274_458768_33632
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What day is the Feast held in the city where the headquarters of the only group larger than Långa nätter's record label is located?
+
+Gold answer: May 4
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] The headquarters of the only group larger than Långa nätter's record label is located in Kathmandu.
+- c2: [unclear] The Feast held in Kathmandu is on 18 November.
+
+Evidence:
+- 4hop3__668721_132409_371500_35031::p19: Kathmandu Kathmandu(/ˌkɑːtmɑːnˈduː/; Nepali pronunciation: [kɑʈʰmɑɳɖu]) is the capital and largest municipality of Nepal. It also hosts the headquarters of the South Asian Association for Regional Cooperation (SAARC). It is the only city of Nepal with the administrative status of Mahanagar (Metropolitan City), as compared to Upa-Mahanagar (Sub-Metropolitan City) or Nagar (City). Kathmandu is the core of Nepal's largest urban agglomeration located in the Kathmandu Valley consisting of Lalitpur, Kirtipur, Madhyapur Thimi, Bhaktapur and a number of smaller communities. Kathmandu is also known informally as "KTM" or the "tri-city". According to the 2011 census, Kathmandu Metropolitan City has a population [truncated]
+- 3hop2__851134_613770_7713::p13: Kathmandu Kathmandu(/ˌkɑːtmɑːnˈduː/; Nepali pronunciation: [kɑʈʰmɑɳɖu]) is the capital and largest municipality of Nepal. It also hosts the headquarters of the South Asian Association for Regional Cooperation (SAARC). It is the only city of Nepal with the administrative status of Mahanagar (Metropolitan City), as compared to Upa-Mahanagar (Sub-Metropolitan City) or Nagar (City). Kathmandu is the core of Nepal's largest urban agglomeration located in the Kathmandu Valley consisting of Lalitpur, Kirtipur, Madhyapur Thimi, Bhaktapur and a number of smaller communities. Kathmandu is also known informally as "KTM" or the "tri-city". According to the 2011 census, Kathmandu Metropolitan City has a population [truncated]
+- 4hop3__673447_132409_371500_35031::p3: Kathmandu Kathmandu is located in the northwestern part of the Kathmandu Valley to the north of the Bagmati River and covers an area of 50.67 km2 (19.56 sq mi). The average elevation is 1,400 metres (4,600 ft) above sea level. The city is directly bounded by several other municipalities of the Kathmandu valley: south of the Bagmati by Lalitpur Sub-Metropolitan City (Patan) with which it today forms one urban area surrounded by a ring road, to the southwest by Kirtipur Municipality and to the east by Madyapur Thimi Municipality. To the north the urban area extends into several Village Development Committees. However, the urban agglomeration extends well beyond the neighboring municipalities, e. g. to B [truncated]
+- 4hop3__387712_132409_223216_35031::p11: Jakarta Jakarta (/ dʒ əˈkɑːrtə /, Indonesian pronunciation: (dʒaˈkarta)), officially the Special Capital Region of Jakarta, is the capital of Indonesia, which was formerly known as Batavia during Dutch East Indies and Sunda Kelapa during Sunda Kingdom. Located on the northwest coast of the world's most populous island of Java, Jakarta is the center of economics, culture and politics of Indonesia, with a population of 10,075,310 as of 2014. Greater Jakarta metropolitan area, which is known as Jabodetabek (a name formed by combining the initial syllables of Jakarta, Bogor, Depok, Tangerang and Bekasi), is the second largest urban agglomeration and 2nd largest city area in the world after Tokyo, with a [truncated]
+- 4hop1__152146_5274_458768_33632::p18: Our Lady of the Rosary The Feast of Our Lady of the Rosary, formerly known as Our Lady of Victory and Feast of the Holy Rosary, is a feast day of the Roman Catholic Church, celebrated on 7 October, the anniversary of the decisive victory of the combined fleet of the Holy League of 1571 over the Ottoman navy at the Battle of Lepanto.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__28352_53706_795904_580996::r1
+
+- sample_id: 4hop1__28352_53706_795904_580996
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What shares a border with the city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works?
+
+Gold answer: Rio Linda
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The planes were originally going to California on 9/11.
+- c2: [unclear] The city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works is in the United States.
+- c3: [supported] The Klondike Gold Rush occurred in north-western Canada.
+- c4: [supported] The Canada–United States border is the longest international border in the world.
+- c5: [unclear] The city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works shares a border with Canada.
+
+Evidence:
+- 2hop__132854_417697::p3: September 11 attacks At 9:42 am, the Federal Aviation Administration (FAA) grounded all civilian aircraft within the continental U.S., and civilian aircraft already in flight were told to land immediately. All international civilian aircraft were either turned back or redirected to airports in Canada or Mexico, and were banned from landing on United States territory for three days. The attacks created widespread confusion among news organizations and air traffic controllers. Among the unconfirmed and often contradictory news reports aired throughout the day, one of the most prevalent said a car bomb had been detonated at the U.S. State Department's headquarters in Washington, D.C. Another jet—Delta Air Lines Fli [truncated]
+- 4hop1__28352_53706_795904_580996::p10: War on Terror On the morning of 11 September 2001, 19 men affiliated with al-Qaeda hijacked four airliners all bound for California. Once the hijackers assumed control of the airliners, they told the passengers that they had the bomb on board and would spare the lives of passengers and crew once their demands were met – no passenger and crew actually suspected that they would use the airliners as suicide weapons since it had never happened before in history. The hijackers – members of al-Qaeda's Hamburg cell – intentionally crashed two airliners into the Twin Towers of the World Trade Center in New York City. Both buildings collapsed within two hours from fire damage related to the crashes, destroying nea [truncated]
+- 4hop1__28352_53706_795904_580996::p17: Klondike Gold Rush The Klondike Gold Rush was a migration by an estimated 100,000 prospectors to the Klondike region of the Yukon in north - western Canada between 1896 and 1899. Gold was discovered there by local miners on August 16, 1896, and, when news reached Seattle and San Francisco the following year, it triggered a stampede of prospectors. Some became wealthy, but the majority went in vain. It has been immortalized in photographs, books, films, and artifacts.
+- 4hop1__463635_624859_355213_203322::p10: Canada–United States border The Canada -- United States border (French: Frontière entre le Canada et les États - Unis), officially known as the International Boundary, is the longest international border in the world between two countries. It is shared between Canada and the United States, the second - and fourth - largest countries by area, respectively. The terrestrial boundary (including portions of maritime boundaries in the Great Lakes, and on the Atlantic, Pacific, and Arctic coasts) is 8,891 kilometres (5,525 mi) long, of which 2,475 kilometres (1,538 mi) is Canada's border with Alaska. Eight Canadian provinces and territories (Yukon, British Columbia, Alberta, Saskatchewan, Manitoba, Ontario, Quebec, and New Br [truncated]
+- 4hop1__43565_624859_355213_203322::p8: Canada–United States border The Canada -- United States border (French: Frontière entre le Canada et les États - Unis), officially known as the International Boundary, is the longest international border in the world between two countries. It is shared between Canada and the United States, the second - and fourth - largest countries by area, respectively. The terrestrial boundary (including portions of maritime boundaries in the Great Lakes, and on the Atlantic, Pacific, and Arctic coasts) is 8,891 kilometres (5,525 mi) long, of which 2,475 kilometres (1,538 mi) is Canada's border with Alaska. Eight Canadian provinces and territories (Yukon, British Columbia, Alberta, Saskatchewan, Manitoba, Ontario, Quebec, and New Br [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__104996_160713_77246::r2
+
+- sample_id: 3hop1__104996_160713_77246
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What is the meaning of the word that is also a majority religion in the area that became India when the country that release Ankahi was created in Arabic dictionary?
+
+Gold answer: the country of India
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The word that is also a majority religion in the area that became India when the country that released Ankahi was created is Islam.
+
+Evidence:
+- 2hop__37656_36240::p1: Tonsure Tonsure (/ ˈtɒnʃər /) is the practice of cutting or shaving some or all of the hair on the scalp, as a sign of religious devotion or humility. The term originates from the Latin word tōnsūra (meaning ``clipping ''or`` shearing'') and referred to a specific practice in medieval Catholicism, abandoned by papal order in 1972. Tonsure can also refer to the secular practice of shaving all or part of the scalp to show support or sympathy, or to designate mourning. Current usage more generally refers to cutting or shaving for monks, devotees, or mystics of any religion as a symbol of their renunciation of worldly fashion and esteem.
+- 2hop__677929_696450::p17: Fire and brimstone Fire and brimstone (or, alternatively, brimstone and fire) is an idiomatic expression of referring to God's wrath in the Hebrew Bible (Old Testament) and the New Testament. In the Bible, it often appears in reference to the fate of the unfaithful. Brimstone, an archaic term synonymous with sulfur, evokes the acrid odor of sulphur dioxide given off by lightning strikes. Lightning was understood as divine punishment by many ancient religions; the association of sulphur with God's retribution is common in the Bible. The English phrase ``fire and brimstone ''originates in the King James Bible.
+- 4hop3__160230_470287_345497_72134::p13: One-to-many (data model) In systems analysis, a one - to - many relationship is a type of cardinality that refers to the relationship between two entities (see also entity -- relationship model) A and B in which an element of A may be linked to many elements of B, but a member of B is linked to only one element of A. For instance, think of A as mothers, and B as children. A mother can have several children, but a child can have only one biological mother.
+- 3hop1__104996_160713_77246::p18: Culture of India According to the 2011 census, 79.8% of the population of India practice Hinduism. Islam (14.2%), Christianity (2.3%), Sikhism (1.7%), Buddhism (0.7%) and Jainism (0.4%) are the other major religions followed by the people of India. Many tribal religions, such as Sarnaism, are found in India, though these have been affected by major religions such as Hinduism, Buddhism, Islam and Christianity. Jainism, Zoroastrianism, Judaism, and the Bahá'í Faith are also influential but their numbers are smaller. Atheism and agnostics also have visible influence in India, along with a self-ascribed tolerance to other faiths. According to a study conducted by the Pew Research Centre, India will have world's  [truncated]
+- 3hop1__104996_160713_77246::p15: Islam in India Islam (Arabic: الإسلام) is the second-largest religion in India, with 14.2% of the country's population or approx. 200 million people identifying as adherents of Islam (2018 estimate). It makes India the country with the largest Muslim population outside Muslim-majority countries. The majority of Indian Muslims belong to the Sunni sect of Islam. The religion first arrived at the western coast of India when Arab traders as early as the 7th century CE came to coastal Malabar and Konkan-Gujarat. Cheraman Juma Mosque in Kerala is thought to be the first mosque in India, built in 629 CE by Malik Deenar. Following an expedition by the governor of Bahrain to Bharuch in the 7th century CE, immigrant [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__28352_53706_795904_580996::r2
+
+- sample_id: 4hop1__28352_53706_795904_580996
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What shares a border with the city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works?
+
+Gold answer: Rio Linda
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The planes were originally going to California on 9/11.
+- c2: [unclear] The person who went to the state where the planes were originally going on 9/11 during the gold rush works.
+- c3: [unclear] The city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works shares a border with Ohio.
+
+Evidence:
+- 2hop__132854_417697::p3: September 11 attacks At 9:42 am, the Federal Aviation Administration (FAA) grounded all civilian aircraft within the continental U.S., and civilian aircraft already in flight were told to land immediately. All international civilian aircraft were either turned back or redirected to airports in Canada or Mexico, and were banned from landing on United States territory for three days. The attacks created widespread confusion among news organizations and air traffic controllers. Among the unconfirmed and often contradictory news reports aired throughout the day, one of the most prevalent said a car bomb had been detonated at the U.S. State Department's headquarters in Washington, D.C. Another jet—Delta Air Lines Fli [truncated]
+- 4hop1__28352_53706_795904_580996::p10: War on Terror On the morning of 11 September 2001, 19 men affiliated with al-Qaeda hijacked four airliners all bound for California. Once the hijackers assumed control of the airliners, they told the passengers that they had the bomb on board and would spare the lives of passengers and crew once their demands were met – no passenger and crew actually suspected that they would use the airliners as suicide weapons since it had never happened before in history. The hijackers – members of al-Qaeda's Hamburg cell – intentionally crashed two airliners into the Twin Towers of the World Trade Center in New York City. Both buildings collapsed within two hours from fire damage related to the crashes, destroying nea [truncated]
+- 4hop1__28352_53706_795904_580996::p17: Klondike Gold Rush The Klondike Gold Rush was a migration by an estimated 100,000 prospectors to the Klondike region of the Yukon in north - western Canada between 1896 and 1899. Gold was discovered there by local miners on August 16, 1896, and, when news reached Seattle and San Francisco the following year, it triggered a stampede of prospectors. Some became wealthy, but the majority went in vain. It has been immortalized in photographs, books, films, and artifacts.
+- 2hop__593633_82341::p0: Capital punishment in the United States Previous post-Furman mass clemencies took place in 1986 in New Mexico, when Governor Toney Anaya commuted all death sentences because of his personal opposition to the death penalty. In 1991, outgoing Ohio Governor Dick Celeste commuted the sentences of eight prisoners, among them all four women on the state's death row. And during his two terms (1979–1987) as Florida's Governor, Bob Graham, although a strong death penalty supporter who had overseen the first post-Furman involuntary execution as well as 15 others, agreed to commute the sentences of six people on the grounds of "possible innocence" or "disproportionality."
+- 2hop__2682_577502::p12: Capital punishment in the United States Previous post-Furman mass clemencies took place in 1986 in New Mexico, when Governor Toney Anaya commuted all death sentences because of his personal opposition to the death penalty. In 1991, outgoing Ohio Governor Dick Celeste commuted the sentences of eight prisoners, among them all four women on the state's death row. And during his two terms (1979–1987) as Florida's Governor, Bob Graham, although a strong death penalty supporter who had overseen the first post-Furman involuntary execution as well as 15 others, agreed to commute the sentences of six people on the grounds of "possible innocence" or "disproportionality."
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__104996_160713_77246::r1
+
+- sample_id: 3hop1__104996_160713_77246
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What is the meaning of the word that is also a majority religion in the area that became India when the country that release Ankahi was created in Arabic dictionary?
+
+Gold answer: the country of India
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The word that is also a majority religion in the area that became India when the country that released Ankahi was created is Islam.
+
+Evidence:
+- 3hop1__248929_160713_77246::p3: Islam in India Islam (Arabic: الإسلام) is the second-largest religion in India, with 14.2% of the country's population or approx. 200 million people identifying as adherents of Islam (2018 estimate). It makes India the country with the largest Muslim population outside Muslim-majority countries. The majority of Indian Muslims belong to the Sunni sect of Islam. The religion first arrived at the western coast of India when Arab traders as early as the 7th century CE came to coastal Malabar and Konkan-Gujarat. Cheraman Juma Mosque in Kerala is thought to be the first mosque in India, built in 629 CE by Malik Deenar. Following an expedition by the governor of Bahrain to Bharuch in the 7th century CE, immigrant [truncated]
+- 3hop1__104996_160713_77246::p15: Islam in India Islam (Arabic: الإسلام) is the second-largest religion in India, with 14.2% of the country's population or approx. 200 million people identifying as adherents of Islam (2018 estimate). It makes India the country with the largest Muslim population outside Muslim-majority countries. The majority of Indian Muslims belong to the Sunni sect of Islam. The religion first arrived at the western coast of India when Arab traders as early as the 7th century CE came to coastal Malabar and Konkan-Gujarat. Cheraman Juma Mosque in Kerala is thought to be the first mosque in India, built in 629 CE by Malik Deenar. Following an expedition by the governor of Bahrain to Bharuch in the 7th century CE, immigrant [truncated]
+- 3hop1__104996_160713_77246::p18: Culture of India According to the 2011 census, 79.8% of the population of India practice Hinduism. Islam (14.2%), Christianity (2.3%), Sikhism (1.7%), Buddhism (0.7%) and Jainism (0.4%) are the other major religions followed by the people of India. Many tribal religions, such as Sarnaism, are found in India, though these have been affected by major religions such as Hinduism, Buddhism, Islam and Christianity. Jainism, Zoroastrianism, Judaism, and the Bahá'í Faith are also influential but their numbers are smaller. Atheism and agnostics also have visible influence in India, along with a self-ascribed tolerance to other faiths. According to a study conducted by the Pew Research Centre, India will have world's  [truncated]
+- 2hop__677929_696450::p17: Fire and brimstone Fire and brimstone (or, alternatively, brimstone and fire) is an idiomatic expression of referring to God's wrath in the Hebrew Bible (Old Testament) and the New Testament. In the Bible, it often appears in reference to the fate of the unfaithful. Brimstone, an archaic term synonymous with sulfur, evokes the acrid odor of sulphur dioxide given off by lightning strikes. Lightning was understood as divine punishment by many ancient religions; the association of sulphur with God's retribution is common in the Bible. The English phrase ``fire and brimstone ''originates in the King James Bible.
+- 2hop__37656_36240::p1: Tonsure Tonsure (/ ˈtɒnʃər /) is the practice of cutting or shaving some or all of the hair on the scalp, as a sign of religious devotion or humility. The term originates from the Latin word tōnsūra (meaning ``clipping ''or`` shearing'') and referred to a specific practice in medieval Catholicism, abandoned by papal order in 1972. Tonsure can also refer to the secular practice of shaving all or part of the scalp to show support or sympathy, or to designate mourning. Current usage more generally refers to cutting or shaving for monks, devotees, or mystics of any religion as a symbol of their renunciation of worldly fashion and esteem.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__159803_89752_75165::r1
+
+- sample_id: 3hop1__159803_89752_75165
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What's the population of the largest state in the region of the U.S. where trading practices were once threatened by the Navigation Acts?
+
+Gold answer: 1,335,907
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] The largest state in the region of the U.S. where trading practices were once threatened by the Navigation Acts is California.
+- c2: [supported] The population of California is 39.3 million.
+
+Evidence:
+- 4hop1__342858_131850_33952_33939::p2: United States The United States of America (USA), commonly known as the United States (U.S.) or America, is a federal republic composed of 50 states, a federal district, five major self - governing territories, and various possessions. At 3.8 million square miles (9.8 million km) and with over 325 million people, the United States is the world's third - or fourth - largest country by total area and the third-most populous. The capital is Washington, D.C., and the largest city by population is New York City. Forty - eight states and the capital's federal district are contiguous and located in North America between Canada and Mexico. The state of Alaska is in the northwest corner of North America, bordered  [truncated]
+- 4hop1__161605_32392_823060_610794::p16: United States The United States of America (USA), commonly known as the United States (U.S.) or America, is a federal republic composed of 50 states, a federal district, five major self - governing territories, and various possessions. At 3.8 million square miles (9.8 million km) and with over 325 million people, the United States is the world's third - or fourth - largest country by total area and the third-most populous. The capital is Washington, D.C., and the largest city by population is New York City. Forty - eight states and the capital's federal district are contiguous and located in North America between Canada and Mexico. The state of Alaska is in the northwest corner of North America, bordered  [truncated]
+- 4hop1__131611_32392_823060_610794::p5: United States The United States of America (USA), commonly known as the United States (U.S.) or America, is a federal republic composed of 50 states, a federal district, five major self - governing territories, and various possessions. At 3.8 million square miles (9.8 million km) and with over 325 million people, the United States is the world's third - or fourth - largest country by total area and the third-most populous. The capital is Washington, D.C., and the largest city by population is New York City. Forty - eight states and the capital's federal district are contiguous and located in North America between Canada and Mexico. The state of Alaska is in the northwest corner of North America, bordered  [truncated]
+- 2hop__40270_11402::p13: California California (/ ˌkælɪˈfɔːrnjə, - niə / (listen) KAL - i - FORN - yə, - FOR - nee - ə) is a state in the Pacific Region of the United States. With 39.3 million residents, California is the most populous state in the United States and the third most extensive by area. The state capital is Sacramento. The Greater Los Angeles Area and the San Francisco Bay Area are the nation's second - and fifth-most populous urban regions, with 18.7 million and 8.8 million residents respectively. Los Angeles is California's most populous city, and the country's second largest after New York City. California also has the nation's most populous county, Los Angeles County; its largest county by area, San Bernardino [truncated]
+- 4hop1__813171_153080_159767_81096::p3: Pennsylvania Pennsylvania is the 33rd - largest state by area, and the 6th-most populous state according to the last official US census count in 2010. It is the 9th-most densely populated of the 50 states. Pennsylvania's two most populous cities are Philadelphia (1,567,872), and Pittsburgh (303,625). The state capital and its 10th largest city is Harrisburg. Pennsylvania has 140 miles (225 km) of waterfront along Lake Erie and the Delaware Estuary.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__161605_32392_823060_610794::r3
+
+- sample_id: 4hop1__161605_32392_823060_610794
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What county is the city that shares a border with the state capital of the state where Darlington County located in?
+
+Gold answer: Richland County
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Darlington County is located in South Carolina
+- c2: [unsupported] The state capital of South Carolina is Columbia
+- c3: [unclear] The city that shares a border with the state capital of South Carolina is located in Charleston County
+
+Evidence:
+- 4hop1__161605_32392_823060_610794::p11: Darlington County, South Carolina Darlington County is a county in the U.S. state of South Carolina. As of 2016, its estimated population was 67,234. Its county seat is Darlington. Hartsville is the largest city in the county. Darlington County is home to the Darlington Raceway, which hosts the annual NASCAR Southern 500. Darlington County is also home to Coker College in Hartsville. Darlington County was named by an act in March 1785.
+- 4hop1__161605_32392_823060_610794::p4: National Register of Historic Places listings in Darlington County, South Carolina This is intended to be a complete list of the properties and districts on the National Register of Historic Places in Darlington County, South Carolina, United States. The locations of National Register properties and districts for which the latitude and longitude coordinates are included below, may be seen in a map.
+- 4hop1__161605_32392_823060_610794::p9: Darlington United Methodist Church Darlington United Methodist Church is located in Darlington, Maryland. It is a pre Civil War structure, built in 1852, with white siding, large windows, and many historically original architecture. It is a church within the Baltimore Washington Conference of the United Methodist Church. It is also one of two churches part of the Darlington Methodist Charge, the other being Dublin United Methodist Church in Street, Maryland. Prior to July 2014, the church shared pastors with Rock Run United Methodist Church, located in nearby Level, Maryland. There was a third sister church, Thomas Run Church which closed its doors in 1945.
+- 3hop1__159803_89752_75165::p2: Mecklenburg County, North Carolina Mecklenburg County is a county located on the border in the southwestern part of the state of North Carolina, in the United States. As of the 2010 census, the population was 919,628. It increased to 1,034,070 as of the 2015 estimate, making it the most populous county in North Carolina and the first county in the Carolinas to surpass 1 million in population. Its county seat and largest city is Charlotte.
+- 4hop1__720201_153080_159767_81096::p6: Savannah, Georgia Savannah (/ səˈvænə /) is the oldest city in the U.S. state of Georgia and is the county seat of Chatham County. Established in 1733 on the Savannah River, the city of Savannah became the British colonial capital of the Province of Georgia and later the first state capital of Georgia. A strategic port city in the American Revolution and during the American Civil War, Savannah is today an industrial center and an important Atlantic seaport. It is Georgia's fifth - largest city and third - largest metropolitan area.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__153573_44085::r1
+
+- sample_id: 2hop__153573_44085
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What was the show named after the character featured in the video game Mickey's Safari in Letterland?
+
+Gold answer: The Mickey Mouse Club
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The show named after the character featured in the video game Mickey's Safari in Letterland is Metal Mickey.
+
+Evidence:
+- 2hop__153573_44085::p14: Mickey's Safari in Letterland Mickey's Safari in Letterland is a 1993 educational Nintendo Entertainment System video game starring the famous cartoon character Mickey Mouse. In this game, Mickey must collect all of the letters of the alphabet for his museum by going to six different territories (including places inspired by the Yukon and the Caribbean). There are three levels of difficulty.
+- 2hop__153573_44085::p9: Metal Mickey The character of Metal Mickey first appeared on British television in the ITV children's magazine show "The Saturday Banana," produced by Southern Television in 1978. Humphrey Barclay saw Mickey on Jimmy Savile's 'Jim'll Fix It' television show. Seeing the children chatting in the marketplace with the friendly robot, this led to the creation of the "Metal Mickey" television show. Within a month the pilot had been video-taped and shortly after this the series went live with its first six episodes. 41 episodes were made in total, broadcast over three separate seasons between September 1980 and January 1983. The show attracted viewing figures of around 12 million at its peak. Micky Dolenz, form [truncated]
+- 2hop__153573_44085::p2: The Mickey Mouse Club The Mickey Mouse Club is an American variety television show that aired intermittently from 1955 to 1996 and returned in 2017 to social media. Created by Walt Disney and produced by Walt Disney Productions, the program was first televised in 1955 by ABC, featuring a regular but ever - changing cast of mostly teen performers. ABC broadcast reruns weekday afternoons during the 1958 -- 1959 season, airing right after American Bandstand. The show was revived after its initial 1955 -- 1959 run on ABC, first from 1977 -- 1979 for first - run syndication, again from 1989 -- 1996 as The All - New Mickey Mouse Club (also known to fans as MMC from 1993 -- 1996) airing exclusively on cable television's [truncated]
+- 3hop2__49541_140875_51068::p3: High Feather High Feather is a 10-episode educational television show which ran on PBS in the 1980s; each episode was 30 minutes long. The program's name came from the Old English expression "High Fettle", meaning enjoying life and cheerfully doing the tasks of living. The heartfelt spirit of the show was captured in the lyrics to its theme song: "I'm in High Feather. Feel like the sun is shining on me. High Feather. I'm as free as I can be..."
+- 2hop__82669_768138::p19: It's Garry Shandling's Show The series' theme song was ``This is the Theme to Garry's Show '', sung by Los Angeles musician Bill Lynch. The song's lyrics are self - referential, explaining how the song came to be (`` Garry called me up and asked if I would write his theme song'') and asking what the listener thinks of it.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__145494_698949_157828_162309::r1
+
+- sample_id: 4hop1__145494_698949_157828_162309
+- risk_type: wrong_target
+- oracle_action: disambiguate_conflict
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: When did the country whose co-official language was used in the movie named after the place where Bela Linder died first attend the Olympics games as an independent team?
+
+Gold answer: 2016
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] The country whose co-official language was used in the movie named after the place where Bela Linder died is Madagascar.
+- c2: [contradicted] Madagascar first attended the Olympics as an independent team in 1920.
+
+Evidence:
+- 4hop1__749065_698949_157828_162309::p18: Yugoslavia at the Olympics Federal Republic of Yugoslavia, formed as a joint state by only Montenegro and Serbia after the breakup of Yugoslavia, from 1992–2002 (due to UN ban allowed to compete as Independent Olympic Participants at the 1992 Summer Olympics and was not allowed to compete at 1994 Winter Olympics)Two of the successor nations (Croatia and Slovenia) began to compete as independent teams at the Olympics starting at the 1992 Winter Games and Bosnia and Herzegovina at the 1992 Summer Games and as of the 2008 Summer Olympics, all six successor nations, former socialist republics, have participated independently. Kosovo, a former autonomous province, made its Olympic debut as an independent national team at t [truncated]
+- 4hop1__145494_698949_157828_162309::p15: Yugoslavia at the Olympics Federal Republic of Yugoslavia, formed as a joint state by only Montenegro and Serbia after the breakup of Yugoslavia, from 1992–2002 (due to UN ban allowed to compete as Independent Olympic Participants at the 1992 Summer Olympics and was not allowed to compete at 1994 Winter Olympics)Two of the successor nations (Croatia and Slovenia) began to compete as independent teams at the Olympics starting at the 1992 Winter Games and Bosnia and Herzegovina at the 1992 Summer Games and as of the 2008 Summer Olympics, all six successor nations, former socialist republics, have participated independently. Kosovo, a former autonomous province, made its Olympic debut as an independent national team at t [truncated]
+- 3hop1__105767_443779_52195::p1: Estonia Sport plays an important role in Estonian culture. After declaring independence from Russia in 1918, Estonia first competed as a nation at the 1920 Summer Olympics, although the National Olympic Committee was established in 1923. Estonian athletes took part of the Olympic Games until the country was annexed by the Soviet Union in 1940. The 1980 Summer Olympics Sailing regatta was held in the capital city Tallinn. After regaining independence in 1991, Estonia has participated in all Olympics. Estonia has won most of its medals in athletics, weightlifting, wrestling and cross-country skiing. Estonia has had very good success at the Olympic games given the country's small population. Estonia's  [truncated]
+- 4hop1__749065_698949_157828_162309::p17: Madagascar The Malagasy language is of Malayo-Polynesian origin and is generally spoken throughout the island. The numerous dialects of Malagasy, which are generally mutually intelligible, can be clustered under one of two subgroups: eastern Malagasy, spoken along the eastern forests and highlands including the Merina dialect of Antananarivo, and western Malagasy, spoken across the western coastal plains. French became the official language during the colonial period, when Madagascar came under the authority of France. In the first national Constitution of 1958, Malagasy and French were named the official languages of the Malagasy Republic. Madagascar is a francophone country, and French is mostly spok [truncated]
+- 4hop1__145494_698949_157828_162309::p14: Madagascar The Malagasy language is of Malayo-Polynesian origin and is generally spoken throughout the island. The numerous dialects of Malagasy, which are generally mutually intelligible, can be clustered under one of two subgroups: eastern Malagasy, spoken along the eastern forests and highlands including the Merina dialect of Antananarivo, and western Malagasy, spoken across the western coastal plains. French became the official language during the colonial period, when Madagascar came under the authority of France. In the first national Constitution of 1958, Malagasy and French were named the official languages of the Malagasy Republic. Madagascar is a francophone country, and French is mostly spok [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__151750_141308::r2
+
+- sample_id: 2hop__151750_141308
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What company is the record label of Magic Christian Music part of?
+
+Gold answer: Apple Corps
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] Magic Christian Music is part of Apple Corps Ltd.
+- c2: [supported] Apple Records is a division of Apple Corps Ltd.
+- c3: [supported] Magic Christian Music was released on Apple Records.
+
+Evidence:
+- 2hop__151750_141308::p7: Apple Records Apple Records is a record label founded by the Beatles in 1968 as a division of Apple Corps Ltd. It was initially intended as a creative outlet for the Beatles, both as a group and individually, plus a selection of other artists including Mary Hopkin, James Taylor, Badfinger, and Billy Preston. In practice, the roster had become dominated by the mid-1970s with releases of the former Beatles as solo artists. Allen Klein managed the label from 1969 to 1973, then it was managed by Neil Aspinall on behalf of the Beatles and their heirs. Aspinall retired in 2007 and was replaced by Jeff Jones.
+- 4hop1__151650_5274_458768_33637::p8: Sony Music Sony Music Entertainment Inc. (sometimes known as Sony Music or by the initials, SME) is an American music corporation managed and operated by Sony Corporation of America (SCA), a subsidiary of Japanese conglomerate Sony Corporation. In 1929, the enterprise was first founded as American Record Corporation (ARC) and, in 1938, was renamed Columbia Recording Corporation, following ARC's acquisition by CBS. In 1966, the company was reorganized to become CBS Records. In 1987, Sony Corporation of Japan bought the company, and in 1991, renamed it SME. It is the world's second largest recorded music company, after Universal Music Group.
+- 4hop1__151650_5274_458768_33632::p7: Sony Music Sony Music Entertainment Inc. (sometimes known as Sony Music or by the initials, SME) is an American music corporation managed and operated by Sony Corporation of America (SCA), a subsidiary of Japanese conglomerate Sony Corporation. In 1929, the enterprise was first founded as American Record Corporation (ARC) and, in 1938, was renamed Columbia Recording Corporation, following ARC's acquisition by CBS. In 1966, the company was reorganized to become CBS Records. In 1987, Sony Corporation of Japan bought the company, and in 1991, renamed it SME. It is the world's second largest recorded music company, after Universal Music Group.
+- 2hop__151750_141308::p14: Magic Christian Music Magic Christian Music is the debut album by the British rock band Badfinger, released in early 1970 on Apple Records. Three tracks from the LP are featured in the film "The Magic Christian", which also gives the album its title. However, "Magic Christian Music" is not an official soundtrack album for the film.
+- 2hop__151750_141308::p6: MCA Records MCA Records was an American record label owned by MCA Inc., which later gave way to the larger MCA Music Entertainment Group (now Universal Music Group), which the label was part of until its dissolution in 2003. The label's country division MCA Nashville is a still active imprint of Universal Music Group Nashville.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__151650_5274_458768_33632::r1
+
+- sample_id: 4hop1__151650_5274_458768_33632
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What day is the Feast in the city where the headquarters of the only group larger than Desde El Principio's record label held on?
+
+Gold answer: May 4
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] The headquarters of the only group larger than Desde El Principio's record label is located in a city where the Feast is held on a specific day.
+
+Evidence:
+- 4hop1__151650_5274_458768_33637::p15: Desde El Principio "Desde El Principio" also came to be the duo's final album for the Sony Music Entertainment label, a company they after a series of mergers in various forms had been signed to for some fifteen years (CBS Records Spain, Epic Records Spain, CBS-Epic Spain, eventually a sublabel to Sony Music Spain, today a subsidiary to the multinational Sony BMG Music Entertainment conglomerate). In 2006 Azúcar Moreno returned to their previous label EMI Music for the album "Bailando Con Lola".
+- 4hop1__151650_5274_458768_33632::p1: Desde El Principio "Desde El Principio" also came to be the duo's final album for the Sony Music Entertainment label, a company they after a series of mergers in various forms had been signed to for some fifteen years (CBS Records Spain, Epic Records Spain, CBS-Epic Spain, eventually a sublabel to Sony Music Spain, today a subsidiary to the multinational Sony BMG Music Entertainment conglomerate). In 2006 Azúcar Moreno returned to their previous label EMI Music for the album "Bailando Con Lola".
+- 2hop__151750_141308::p11: Desde El Principio "Desde El Principio" also came to be the duo's final album for the Sony Music Entertainment label, a company they after a series of mergers in various forms had been signed to for some fifteen years (CBS Records Spain, Epic Records Spain, CBS-Epic Spain, eventually a sublabel to Sony Music Spain, today a subsidiary to the multinational Sony BMG Music Entertainment conglomerate). In 2006 Azúcar Moreno returned to their previous label EMI Music for the album "Bailando Con Lola".
+- 3hop1__64957_87694_124169::p15: Dedication of Saints Peter and Paul The Dedication of the Basilicas of the Apostles Peter and Paul is a feast day on the liturgical calendar of the Catholic Church, which is celebrated on 18 November.
+- 4hop1__152146_5274_458768_33632::p18: Our Lady of the Rosary The Feast of Our Lady of the Rosary, formerly known as Our Lady of Victory and Feast of the Holy Rosary, is a feast day of the Roman Catholic Church, celebrated on 7 October, the anniversary of the decisive victory of the combined fleet of the Holy League of 1571 over the Ottoman navy at the Battle of Lepanto.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__135659_87694_64412::r1
+
+- sample_id: 3hop1__135659_87694_64412
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: When did the place where St for whom the Mantua Cathedral was named for basilica the head of the catholic religion is located in become its own country?
+
+Gold answer: 11 February 1929
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The Mantua Cathedral is dedicated to Saint Peter.
+- c2: [supported] The Mantua Cathedral is the seat of the Bishop of Mantua.
+- c3: [supported] The place where St Peter, for whom the Mantua Cathedral was named, is located in Mantua, Lombardy, northern Italy.
+- c4: [unclear] Mantua became its own country.
+
+Evidence:
+- 3hop1__135659_87694_64412::p18: Mantua Cathedral Mantua Cathedral () in Mantua, Lombardy, northern Italy, is a Roman Catholic cathedral dedicated to Saint Peter. It is the seat of the Bishop of Mantua.
+- 3hop1__136129_87694_124169::p19: Foligno Cathedral Foligno Cathedral () is a Roman Catholic cathedral situated on the Piazza della Repubblica in the center of Foligno, Italy. The cathedral, built on the site of an earlier basilica, is dedicated to the patron saint of the city, the martyr Felician of Foligno (San Feliciano), who was buried here in 251 AD. It is the seat of the Bishop of Foligno.
+- 3hop1__135659_87694_64412::p16: Foligno Cathedral Foligno Cathedral () is a Roman Catholic cathedral situated on the Piazza della Repubblica in the center of Foligno, Italy. The cathedral, built on the site of an earlier basilica, is dedicated to the patron saint of the city, the martyr Felician of Foligno (San Feliciano), who was buried here in 251 AD. It is the seat of the Bishop of Foligno.
+- 3hop1__145194_160545_62931::p0: Blue Hawaii Presley arrived in Hawaii on March 18, 1961, to prepare for a charity concert that he was performing on March 25 to raise funds for the Arizona Memorial at Pearl Harbor. He arrived at the recording studio on March 21 to start the recording of the film's soundtrack. Three weeks later, location filming had finished, including scenes at Waikiki Beach, Diamond Head, Mount Tantalus, and Hanauma Bay, a volcanic crater that is open to the sea, near the bedroom community of Hawaii Kai, a few miles away from Waikiki. Following location filming, the crew returned to the Paramount lot to finish other scenes for the film. Presley would relax during filming by giving karate demonstrations with his friend [truncated]
+- 2hop__770487_494646::p4: Buckingham Palace Buckingham Palace (UK: ) is the London residence and administrative headquarters of the monarch of the United Kingdom. Located in the City of Westminster, the palace is often at the centre of state occasions and royal hospitality. It has been a focal point for the British people at times of national rejoicing and mourning.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__161810_583746_457883_650651::r2
+
+- sample_id: 4hop1__161810_583746_457883_650651
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Country A has an embassy from the country that contains the bay where the city of General Santos is located. What network created country A's version of The Biggest Loser?
+
+Gold answer: NBC
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The network that created country A's version of The Biggest Loser is NBC.
+- c2: [supported] General Santos is located on Sarangani Bay.
+- c3: [supported] Sarangani Bay is located in the Philippines.
+
+Evidence:
+- 4hop1__161810_583746_457883_650651::p11: Sarangani Bay Sarangani Bay is a bay located on the southern tip of Mindanao in the Philippines. It opens up to the Celebes Sea on the Pacific Ocean. General Santos City, one of the Philippines most important cities and ports, is located at the head of the bay, making the bay one of the busiest and often the sight of shipping accidents. The province of Sarangani, created in 1992, is named after the bay.
+- 3hop2__851134_613770_7713::p9: Port Blair Port Blair (pronunciation (help info)) is the capital of the Andaman and Nicobar Islands, a union territory of India situated in the Bay of Bengal. It is also the local administrative sub-division (tehsil) of the islands, the headquarters for the district of South Andaman, and is the territory's only notified town. It houses the headquarters of the Andaman and Nicobar Police and the Andaman and Nicobar Command, the first integrated tri-command of the armed forces of India.
+- 2hop__770487_494646::p8: Port Blair Port Blair (pronunciation (help info)) is the capital of the Andaman and Nicobar Islands, a union territory of India situated in the Bay of Bengal. It is also the local administrative sub-division (tehsil) of the islands, the headquarters for the district of South Andaman, and is the territory's only notified town. It houses the headquarters of the Andaman and Nicobar Police and the Andaman and Nicobar Command, the first integrated tri-command of the armed forces of India.
+- 4hop1__161810_583746_457883_650651::p18: South Cotabato General Santos, located on the shores of Sarangani Bay, is the most populous city in the region, but is governed independently from the province. The province of Sarangani used to be part of South Cotabato until it was made an independent province in 1992.
+- 4hop1__161810_583746_457883_650651::p10: The Biggest Loser (season 1) The Biggest Loser (season 1) is the first season of the NBC reality television series entitled "The Biggest Loser", which premiered on October 19, 2004. The show features overweight contestants competing to lose the largest percentage of their body weight and receive the title of 'Biggest Loser,' along with a $250,000 grand prize. The first season featured twelve contestants divided into two teams of six players. The teams were each led by a personal trainer, Bob Harper with the Blue Team and Jillian Michaels with the Red Team. The first season was hosted by Caroline Rhea.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__17192_17130_70784_79935::r2
+
+- sample_id: 4hop1__17192_17130_70784_79935
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: When was the region immediately north of the region where the country that secured southern Lebanon is located and the Persian Gulf created?
+
+Gold answer: 1930
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The country that secured southern Lebanon is located in the region immediately north of the Persian Gulf.
+- c2: [unsupported] The region immediately north of the region where the country that secured southern Lebanon is located is the Persian Gulf.
+- c3: [unsupported] The Persian Gulf was created when the region immediately north of the region where the country that secured southern Lebanon is located was formed.
+
+Evidence:
+- 4hop1__443274_17130_70784_61381::p2: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 4hop1__17192_17130_70784_79935::p2: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 4hop1__105401_17130_70784_79935::p12: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 4hop2__5206_39078_8987_8974::p14: Togo Togo (), officially the Togolese Republic (), is a country in West Africa bordered by Ghana to the west, Benin to the east and Burkina Faso to the north. The sovereign state extends south to the Gulf of Guinea, where its capital Lomé is located. Togo covers , making it one of the smallest countries in Africa, with a population of approximately /1e6 round 1 million.
+- 4hop1__443274_17130_70784_79935::p3: Togo Togo (), officially the Togolese Republic (), is a country in West Africa bordered by Ghana to the west, Benin to the east and Burkina Faso to the north. The sovereign state extends south to the Gulf of Guinea, where its capital Lomé is located. Togo covers , making it one of the smallest countries in Africa, with a population of approximately /1e6 round 1 million.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__17192_17130_70784_79935::r1
+
+- sample_id: 4hop1__17192_17130_70784_79935
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: When was the region immediately north of the region where the country that secured southern Lebanon is located and the Persian Gulf created?
+
+Gold answer: 1930
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] The country that secured southern Lebanon is located immediately south of the region where the Arabian Sea is located.
+- c2: [supported] The Persian Gulf is connected to the Arabian Sea through the Gulf of Oman.
+- c3: [unclear] The region immediately north of the Arabian Sea is the same as the region immediately north of the country that secured southern Lebanon.
+
+Evidence:
+- 4hop1__443274_17130_70784_61381::p2: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 4hop1__17192_17130_70784_79935::p2: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 4hop1__105401_17130_70784_79935::p12: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 4hop2__9988_158985_70784_61381::p9: Hertfordshire Hertfordshire is the county immediately north of London and is part of the East of England region, a mainly statistical unit. A significant minority of the population across all districts are City of London commuters. To the east is Essex, to the west is Buckinghamshire and to the north are Bedfordshire and Cambridgeshire.
+- 4hop2__9988_158279_70784_79935::p4: Hertfordshire Hertfordshire is the county immediately north of London and is part of the East of England region, a mainly statistical unit. A significant minority of the population across all districts are City of London commuters. To the east is Essex, to the west is Buckinghamshire and to the north are Bedfordshire and Cambridgeshire.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__108833_720914_41132::r1
+
+- sample_id: 3hop1__108833_720914_41132
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: How many times did the plague occur in the city where the painter of The Bacchanal of the Andrians died?
+
+Gold answer: 22
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The painter of The Bacchanal of the Andrians is Titian.
+- c2: [unclear] Titian died in Venice.
+- c3: [supported] The plague occurred in Venice 22 times between 1361 and 1528.
+
+Evidence:
+- 3hop1__108833_720914_41132::p0: The Bacchanal of the Andrians The Bacchanal of the Andrians is an oil painting by Titian. It is signed ".[aciebat]" and is dated to 1523–1526.
+- 3hop1__108833_720914_41132::p5: Black Death The Black Death, also known as the Great Plague, the Black Plague, or simply the Plague, was one of the most devastating pandemics in human history, resulting in the deaths of an estimated 75 to 200 million people in Eurasia and peaking in Europe from 1347 to 1351. The bacterium Yersinia pestis, which results in several forms of plague, is believed to have been the cause. The plague created a series of religious, social and economic upheavals, which had profound effects on the course of European history.
+- 2hop__62951_64006::p7: Black Death The Black Death, also known as the Great Plague, the Black Plague, or simply the Plague, was one of the most devastating pandemics in human history, resulting in the deaths of an estimated 75 to 200 million people in Eurasia and peaking in Europe from 1347 to 1351. The bacterium Yersinia pestis, which results in several forms of plague, is believed to have been the cause. The plague created a series of religious, social and economic upheavals, which had profound effects on the course of European history.
+- 3hop1__108833_720914_41132::p6: Black Death In 1466, perhaps 40,000 people died of the plague in Paris. During the 16th and 17th centuries, the plague was present in Paris around 30 per cent of the time. The Black Death ravaged Europe for three years before it continued on into Russia, where the disease was present somewhere in the country 25 times between 1350 to 1490. Plague epidemics ravaged London in 1563, 1593, 1603, 1625, 1636, and 1665, reducing its population by 10 to 30% during those years. Over 10% of Amsterdam's population died in 1623–25, and again in 1635–36, 1655, and 1664. Plague occurred in Venice 22 times between 1361 and 1528. The plague of 1576–77 killed 50,000 in Venice, almost a third of the population. Late outbr [truncated]
+- 2hop__31124_31122::p11: The Death of Procris The Death of Procris, A Satyr mourning over a Nymph or simply A Mythological Subject are names given to an unsigned, undated panel painting in the National Gallery in London, United Kingdom, securely attributed to Piero di Cosimo (who never signed his works). Its date is uncertain, and its subject has been a matter of dispute. The name "The Death of Procris" (Italian: "Morte di Procri") has been used since the 19th century, and is supposed to have been inspired by Ovid's tale of the death of Procris at the hands of her husband Cephalus, in "Metamorphoses" VII. The National Gallery has rejected this title since at least Cecil Gould's catalogue of 1951, since when it has preferred to describe  [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__108833_720914_41132::r3
+
+- sample_id: 3hop1__108833_720914_41132
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: How many times did the plague occur in the city where the painter of The Bacchanal of the Andrians died?
+
+Gold answer: 22
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The painter of The Bacchanal of the Andrians is Titian.
+- c2: [unclear] Titian died in Venice.
+- c3: [supported] The plague occurred in Venice 22 times between 1361 and 1528.
+
+Evidence:
+- 3hop1__108833_720914_41132::p0: The Bacchanal of the Andrians The Bacchanal of the Andrians is an oil painting by Titian. It is signed ".[aciebat]" and is dated to 1523–1526.
+- 3hop1__108833_720914_41132::p6: Black Death In 1466, perhaps 40,000 people died of the plague in Paris. During the 16th and 17th centuries, the plague was present in Paris around 30 per cent of the time. The Black Death ravaged Europe for three years before it continued on into Russia, where the disease was present somewhere in the country 25 times between 1350 to 1490. Plague epidemics ravaged London in 1563, 1593, 1603, 1625, 1636, and 1665, reducing its population by 10 to 30% during those years. Over 10% of Amsterdam's population died in 1623–25, and again in 1635–36, 1655, and 1664. Plague occurred in Venice 22 times between 1361 and 1528. The plague of 1576–77 killed 50,000 in Venice, almost a third of the population. Late outbr [truncated]
+- 3hop1__108833_720914_41132::p5: Black Death The Black Death, also known as the Great Plague, the Black Plague, or simply the Plague, was one of the most devastating pandemics in human history, resulting in the deaths of an estimated 75 to 200 million people in Eurasia and peaking in Europe from 1347 to 1351. The bacterium Yersinia pestis, which results in several forms of plague, is believed to have been the cause. The plague created a series of religious, social and economic upheavals, which had profound effects on the course of European history.
+- 2hop__31124_31122::p11: The Death of Procris The Death of Procris, A Satyr mourning over a Nymph or simply A Mythological Subject are names given to an unsigned, undated panel painting in the National Gallery in London, United Kingdom, securely attributed to Piero di Cosimo (who never signed his works). Its date is uncertain, and its subject has been a matter of dispute. The name "The Death of Procris" (Italian: "Morte di Procri") has been used since the 19th century, and is supposed to have been inspired by Ovid's tale of the death of Procris at the hands of her husband Cephalus, in "Metamorphoses" VII. The National Gallery has rejected this title since at least Cecil Gould's catalogue of 1951, since when it has preferred to describe  [truncated]
+- 3hop2__127483_79978_10557::p7: Septimius Severus Septimius Severus (; ; 11 April 145 – 4 February 211), also known as Severus, was Roman emperor from 193 to 211. He was born in Leptis Magna in the Roman province of Africa. As a young man he advanced through the "cursus honorum"—the customary succession of offices—under the reigns of Marcus Aurelius and Commodus. Severus seized power after the death of Emperor Pertinax in 193 during the Year of the Five Emperors.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__132854_417697::r1
+
+- sample_id: 2hop__132854_417697
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: Mohammed Atta has what kind of model of the company that makes Datsun Type 12?
+
+Gold answer: Nissan Altima
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] Mohammed Atta has a model of the company that makes Datsun Type 12
+
+Evidence:
+- 2hop__132854_417697::p10: Datsun Type 12 The 1933 Datsun Type 12 was a small car produced by the Nissan corporation. The name Datsun was used by DAT for their line of small cars. After the DAT corporation was absorbed into Nissan, these cars continued to be produced, and the original model name was maintained. The Type 12 was basically similar to the earlier 1932 Type 11, but had a larger engine.
+- 3hop2__132957_133264_40768::p13: Datsun Datsun (, ) is an automobile brand owned by Nissan. Datsun's original production run began in 1931. From 1958 to 1986, only vehicles exported by Nissan were identified as Datsun. By 1986 Nissan had phased out the Datsun name, but re-launched it in June 2013 as the brand for low-cost vehicles manufactured for emerging markets.
+- 2hop__132854_417697::p16: Datsun Datsun (, ) is an automobile brand owned by Nissan. Datsun's original production run began in 1931. From 1958 to 1986, only vehicles exported by Nissan were identified as Datsun. By 1986 Nissan had phased out the Datsun name, but re-launched it in June 2013 as the brand for low-cost vehicles manufactured for emerging markets.
+- 4hop1__443274_17130_70784_79935::p2: Alghanim Industries Alghanim Industries is one of the largest privately owned companies in the Persian Gulf region, predominantly in Kuwait. A multinational company in outlook with operations in 40 countries, Alghanim Industries is a multibillion-dollar conglomerate with more than 30 businesses. They also fund projects and provide loans for non-UAE/Middle East countries. Alghanim Industries claimed that it collected revenues of $2.5 billion in 2009, although has not disclosed its financial standing since.
+- 4hop1__443274_17130_70784_61381::p19: Alghanim Industries Alghanim Industries is one of the largest privately owned companies in the Persian Gulf region, predominantly in Kuwait. A multinational company in outlook with operations in 40 countries, Alghanim Industries is a multibillion-dollar conglomerate with more than 30 businesses. They also fund projects and provide loans for non-UAE/Middle East countries. Alghanim Industries claimed that it collected revenues of $2.5 billion in 2009, although has not disclosed its financial standing since.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__161810_583746_457883_650651::r1
+
+- sample_id: 4hop1__161810_583746_457883_650651
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: Country A has an embassy from the country that contains the bay where the city of General Santos is located. What network created country A's version of The Biggest Loser?
+
+Gold answer: NBC
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The city of General Santos is located on the shores of Sarangani Bay.
+- c2: [supported] Sarangani Bay is located in the country that contains the city of General Santos.
+- c3: [unclear] The country that contains the bay where the city of General Santos is located is the same country that has an embassy from the country in question.
+- c4: [unsupported] The network that created country A's version of The Biggest Loser is NBC.
+
+Evidence:
+- 3hop2__326964_7707_7713::p17: Anzoátegui Anzoátegui State (, ) is one of the 23 component states of Venezuela, located in the northeastern region of the country. Anzoátegui is well known for its beaches that attract many visitors. Its coast consists of a single beach approximately 100 km long. Its capital is the city of Barcelona, and significant cities include Puerto la Cruz and El Tigre.
+- 4hop1__161810_583746_457883_650651::p10: The Biggest Loser (season 1) The Biggest Loser (season 1) is the first season of the NBC reality television series entitled "The Biggest Loser", which premiered on October 19, 2004. The show features overweight contestants competing to lose the largest percentage of their body weight and receive the title of 'Biggest Loser,' along with a $250,000 grand prize. The first season featured twelve contestants divided into two teams of six players. The teams were each led by a personal trainer, Bob Harper with the Blue Team and Jillian Michaels with the Red Team. The first season was hosted by Caroline Rhea.
+- 4hop1__161810_583746_457883_650651::p18: South Cotabato General Santos, located on the shores of Sarangani Bay, is the most populous city in the region, but is governed independently from the province. The province of Sarangani used to be part of South Cotabato until it was made an independent province in 1992.
+- 4hop2__567956_39078_8987_8974::p16: Embassy of Canada in Moscow The Embassy of Canada to Russia in Moscow is the diplomatic mission of Canada to Russia. Included in its mandate are the countries of Armenia and Uzbekistan. It also provides visa services to residents of Belarus, Kazakhstan, Kyrgyzstan and Tajikistan.
+- 4hop2__5206_39078_8987_8974::p14: Togo Togo (), officially the Togolese Republic (), is a country in West Africa bordered by Ghana to the west, Benin to the east and Burkina Faso to the north. The sovereign state extends south to the Gulf of Guinea, where its capital Lomé is located. Togo covers , making it one of the smallest countries in Africa, with a population of approximately /1e6 round 1 million.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__166471_49925_13759_736921::r2
+
+- sample_id: 4hop1__166471_49925_13759_736921
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: In what state is the district where the one who wanted to reform and address the institution behind the religion of Egidio Vagnozzi preached a sermon?
+
+Gold answer: Saxony-Anhalt
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Egidio Vagnozzi is associated with the Catholic Church.
+- c2: [unsupported] The one who wanted to reform and address the institution behind the religion of Egidio Vagnozzi is Father Flynn.
+- c3: [supported] Father Flynn preached a sermon in the Bronx, New York.
+- c4: [supported] The district where Father Flynn preached a sermon is in New York.
+
+Evidence:
+- 4hop1__570103_49925_13759_736921::p15: Doubt (2008 film) In 1964 at a Catholic church in The Bronx, New York Father Flynn gives a sermon on the nature of doubt, noting that like faith, doubt can be a unifying force. Sister Aloysius, the strict principal of the parish school, becomes concerned when she sees a boy pull away from Father Flynn in the school courtyard. At dinner, she asks her fellow nuns if they know why Father Flynn would preach about doubt, and instructs them to be alert to a possible problem in the school.
+- 4hop1__264443_49925_13759_736921::p12: Doubt (2008 film) In 1964 at a Catholic church in The Bronx, New York Father Flynn gives a sermon on the nature of doubt, noting that like faith, doubt can be a unifying force. Sister Aloysius, the strict principal of the parish school, becomes concerned when she sees a boy pull away from Father Flynn in the school courtyard. At dinner, she asks her fellow nuns if they know why Father Flynn would preach about doubt, and instructs them to be alert to a possible problem in the school.
+- 4hop1__166471_49925_13759_736921::p9: Doubt (2008 film) In 1964 at a Catholic church in The Bronx, New York Father Flynn gives a sermon on the nature of doubt, noting that like faith, doubt can be a unifying force. Sister Aloysius, the strict principal of the parish school, becomes concerned when she sees a boy pull away from Father Flynn in the school courtyard. At dinner, she asks her fellow nuns if they know why Father Flynn would preach about doubt, and instructs them to be alert to a possible problem in the school.
+- 4hop1__166471_49925_13759_736921::p8: Egidio Vagnozzi Egidio Vagnozzi (26 February 1906 – 26 December 1980) was an Italian Cardinal of the Catholic Church. He served as the second president of the Prefecture for the Economic Affairs of the Holy See from 1968 until his death, and was elevated to the cardinalate in 1967.
+- 3hop1__136129_87694_124169::p13: Boston Boston has been a noted religious center from its earliest days. The Roman Catholic Archdiocese of Boston serves nearly 300 parishes and is based in the Cathedral of the Holy Cross (1875) in the South End, while the Episcopal Diocese of Massachusetts, with the Cathedral Church of St. Paul (1819) as its episcopal seat, serves just under 200 congregations. Unitarian Universalism has its headquarters on Beacon Hill. The Christian Scientists are headquartered in Back Bay at the Mother Church (1894). The oldest church in Boston is First Church in Boston, founded in 1630. King's Chapel, the city's first Anglican church, was founded in 1686 and converted to Unitarianism in 1785. Other churches incl [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__247353_55227::r1
+
+- sample_id: 2hop__247353_55227
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: Who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?
+
+Gold answer: Maria Bello
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] Salma Hayek plays the wife of Here Comes the Boom's screenwriter in Grown Ups.
+
+Evidence:
+- 2hop__247353_55227::p17: Grown Ups (film) In 1978, five childhood friends win their junior high school basketball championship. Afterwards, they celebrate at a rented lake house. The friends' coach, whom they nickname ``Buzzer ''(Blake Clark), encourages them to live their lives in a similar way to how they played the game. Thirty years later, Lenny (Adam Sandler) has become an ambitious Hollywood talent agent with his wife, fashion designer Roxanne (Salma Hayek), and his three children -- daughter Becky (Alexys Nicole Sanchez) and two sons Greg (Jake Goldberg) and Keith (Cameron Boyce). The boys act very spoiled in his vicinity, much to his annoyance. Eric (Kevin James) claims he is now a co-owner of a lawn furniture company, but i [truncated]
+- 2hop__247353_55227::p6: Here Comes the Boom Here Comes the Boom is a 2012 American comedy film directed by Frank Coraci, co-written, produced by and starring Kevin James. It was also written by Allan Loeb and Rock Reuben with music by Rupert Gregson-Williams. The film co-stars Henry Winkler and Salma Hayek. It was produced by Happy Madison Productions. The film was released in the United States on October 12, 2012 by Columbia Pictures. The film's title is taken from the song "Boom" by Christian nu metal band P.O.D.
+- 3hop2__140194_16797_51068::p5: Sally Struthers Sally Anne Struthers (born July 28, 1947) is an American actress, spokeswoman and activist. She played the roles of Gloria Stivic, the daughter of Archie and Edith Bunker (played by Carroll O'Connor and Jean Stapleton) on All in the Family, for which she won two Emmy awards, and Babette on Gilmore Girls. She was the voice of Charlene Sinclair on the ABC sitcom Dinosaurs and Rebecca Cunningham on the Disney animated series TaleSpin.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__103751_24918_24991::r1
+
+- sample_id: 3hop1__103751_24918_24991
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What went down after the Soviet President visiting the country of origin of Ethella Chupryk while the protests were taking place departed from the Kremlin?
+
+Gold answer: Soviet flag
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] What went down after the Soviet President visiting the country of origin of Ethella Chupryk while the protests were taking place departed from the Kremlin?
+
+Evidence:
+- 3hop1__103751_24918_24991::p11: Dissolution of the Soviet Union In late February, large public rallies took place in Kiev to protest the election laws, on the eve of the March 26 elections to the USSR Congress of People's Deputies, and to call for the resignation of the first secretary of the Communist Party of Ukraine, Volodymyr Scherbytsky, lampooned as "the mastodon of stagnation." The demonstrations coincided with a visit to Ukraine by Soviet President Gorbachev. On February 26, 1989, between 20,000 and 30,000 people participated in an unsanctioned ecumenical memorial service in Lviv, marking the anniversary of the death of 19th Century Ukrainian artist and nationalist Taras Shevchenko.
+- 2hop__244193_461106::p7: Dissolution of the Soviet Union Beginning in February 1988, the Democratic Movement of Moldova (formerly Moldavia) organized public meetings, demonstrations, and song festivals, which gradually grew in size and intensity. In the streets, the center of public manifestations was the Stephen the Great Monument in Chişinău, and the adjacent park harboring Aleea Clasicilor (The "Alee of the Classics [of the Literature]"). On January 15, 1988, in a tribute to Mihai Eminescu at his bust on the Aleea Clasicilor, Anatol Şalaru submitted a proposal to continue the meetings. In the public discourse, the movement called for national awakening, freedom of speech, revival of Moldavian traditions, and for attainment of official status fo [truncated]
+- 2hop__5658_25002::p17: Dissolution of the Soviet Union The "Jeltoqsan" (Kazakh for "December") of 1986 were riots in Alma-Ata, Kazakhstan, sparked by Gorbachev's dismissal of Dinmukhamed Konayev, the First Secretary of the Communist Party of Kazakhstan and an ethnic Kazakh, who was replaced with Gennady Kolbin, an outsider from the Russian SFSR. Demonstrations started in the morning of December 17, 1986, with 200 to 300 students in front of the Central Committee building on Brezhnev Square protesting Konayev's dismissal and replacement by a Russian. Protesters swelled to 1,000 to 5,000 as other students joined the crowd. The CPK Central Committee ordered troops from the Ministry of Internal Affairs, druzhiniki (volunteers), cadets, policemen, an [truncated]
+- 2hop__132854_417697::p3: September 11 attacks At 9:42 am, the Federal Aviation Administration (FAA) grounded all civilian aircraft within the continental U.S., and civilian aircraft already in flight were told to land immediately. All international civilian aircraft were either turned back or redirected to airports in Canada or Mexico, and were banned from landing on United States territory for three days. The attacks created widespread confusion among news organizations and air traffic controllers. Among the unconfirmed and often contradictory news reports aired throughout the day, one of the most prevalent said a car bomb had been detonated at the U.S. State Department's headquarters in Washington, D.C. Another jet—Delta Air Lines Fli [truncated]
+- 3hop1__108833_720914_41132::p5: Black Death The Black Death, also known as the Great Plague, the Black Plague, or simply the Plague, was one of the most devastating pandemics in human history, resulting in the deaths of an estimated 75 to 200 million people in Eurasia and peaking in Europe from 1347 to 1351. The bacterium Yersinia pestis, which results in several forms of plague, is believed to have been the cause. The plague created a series of religious, social and economic upheavals, which had profound effects on the course of European history.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__236903_153080_33897_81096::r3
+
+- sample_id: 4hop1__236903_153080_33897_81096
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Who won the indy car race in the most populated city of the state where the performer of East Coasting is from?
+
+Gold answer: Mario Andretti
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] The most populated city of the state where the performer of East Coasting is from is Detroit.
+- c2: [unclear] The performer of East Coasting is from Michigan.
+- c3: [unsupported] The Indy Car race in Detroit was won by a specific individual.
+
+Evidence:
+- 4hop1__236903_153080_33897_81096::p19: East Coasting East Coasting is an album by Charles Mingus, recorded and released in 1957. It was reissued on CD with bonus takes in 1993.
+- 4hop1__512794_508773_85832_745702::p18: Exploration of North America Italian navigator and explorer Giovanni Caboto (known in English as John Cabot) is credited with the discovery of continental North America on June 24, 1497, under the commission of Henry VII of England. Though the exact location of his discovery remains disputed, the Canadian and United Kingdom governments' official position is that he landed on the island of Newfoundland. The English presence through Giovanni Caboto was signaled in Juan de la Cosa's map of 1500.
+- 4hop1__455862_508773_85832_745702::p16: Exploration of North America Italian navigator and explorer Giovanni Caboto (known in English as John Cabot) is credited with the discovery of continental North America on June 24, 1497, under the commission of Henry VII of England. Though the exact location of his discovery remains disputed, the Canadian and United Kingdom governments' official position is that he landed on the island of Newfoundland. The English presence through Giovanni Caboto was signaled in Juan de la Cosa's map of 1500.
+- 4hop1__726391_153080_33952_34109::p12: Detroit Detroit (/dᵻˈtrɔɪt/) is the most populous city in the U.S. state of Michigan, the fourth-largest city in the Midwest and the largest city on the United States–Canada border. It is the seat of Wayne County, the most populous county in the state. Detroit's metropolitan area, known as Metro Detroit, is home to 5.3 million people, making it the fourteenth-most populous metropolitan area in the United States and the second-largest in the Midwestern United States (behind Chicago). It is a major port on the Detroit River, a strait that connects the Great Lakes system to the Saint Lawrence Seaway. The City of Detroit anchors the second-largest economic region in the Midwest, behind Chicago, and the  [truncated]
+- 3hop1__159803_89752_75165::p13: Detroit Detroit (/dᵻˈtrɔɪt/) is the most populous city in the U.S. state of Michigan, the fourth-largest city in the Midwest and the largest city on the United States–Canada border. It is the seat of Wayne County, the most populous county in the state. Detroit's metropolitan area, known as Metro Detroit, is home to 5.3 million people, making it the fourteenth-most populous metropolitan area in the United States and the second-largest in the Midwestern United States (behind Chicago). It is a major port on the Detroit River, a strait that connects the Great Lakes system to the Saint Lawrence Seaway. The City of Detroit anchors the second-largest economic region in the Midwest, behind Chicago, and the  [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__13170_32392_823060_610794::r1
+
+- sample_id: 4hop1__13170_32392_823060_610794
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: In which county is the city sharing a border with the capitol of the first state to formally secede?
+
+Gold answer: Richland County
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The first state to formally secede from the United States was South Carolina.
+- c2: [unsupported] The capital of the first state to formally secede is Columbia.
+- c3: [unsupported] The city sharing a border with the capital of the first state to formally secede is located in a specific county.
+
+Evidence:
+- 4hop1__777217_32392_823060_610794::p19: Confederate Arizona Confederate Arizona, commonly referred to as Arizona Territory, and officially the Territory of Arizona, was a territory claimed by the Confederate States of America during the American Civil War, between 1861 and 1865. Delegates to secession conventions had voted in March 1861 to secede from the New Mexico Territory and the United States, and seek to join the Confederacy. It consisted of the portion of the New Mexico Territory south of the 34th parallel, including parts of the modern states of New Mexico and Arizona. Its capital was Mesilla along the southern border. The Confederate territory overlapped the Arizona Territory later established by the Union government in 1863.
+- 4hop1__429751_32392_823060_610794::p14: Confederate Arizona Confederate Arizona, commonly referred to as Arizona Territory, and officially the Territory of Arizona, was a territory claimed by the Confederate States of America during the American Civil War, between 1861 and 1865. Delegates to secession conventions had voted in March 1861 to secede from the New Mexico Territory and the United States, and seek to join the Confederacy. It consisted of the portion of the New Mexico Territory south of the 34th parallel, including parts of the modern states of New Mexico and Arizona. Its capital was Mesilla along the southern border. The Confederate territory overlapped the Arizona Territory later established by the Union government in 1863.
+- 4hop1__13170_32392_823060_610794::p8: Confederate Arizona Confederate Arizona, commonly referred to as Arizona Territory, and officially the Territory of Arizona, was a territory claimed by the Confederate States of America during the American Civil War, between 1861 and 1865. Delegates to secession conventions had voted in March 1861 to secede from the New Mexico Territory and the United States, and seek to join the Confederacy. It consisted of the portion of the New Mexico Territory south of the 34th parallel, including parts of the modern states of New Mexico and Arizona. Its capital was Mesilla along the southern border. The Confederate territory overlapped the Arizona Territory later established by the Union government in 1863.
+- 3hop1__786067_228453_86925::p6: Intrall Intrall, or International Truck Alliance, is a Russo-British automotive company with headquarters in London, England, and manufacturing in Poland. At the end of 2003, the company acquired from Intrall Treasury factory of Daewoo Motor Poland in Lublin, then operating from January 2004 to 2007 years, called Intrall Poland. Under the new production in 2005, FSC Lublin and Honker models were produced under the "Intrall" brand. In 2006 the company acquired the rights to produce models of trucks of the Czech brand Praga. A brand-new commercial van/truck was developed called the "Intrall Lubo".
+- 2hop__628752_538661::p0: Inju: The Beast in the Shadow Inju: The Beast in the Shadow (French: Inju, la bête dans l'ombre) is a 2008 film by Barbet Schroeder. The film stars Benoît Magimel and Lika Minamoto and was filmed on location in Tokyo.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__151650_5274_458768_33637::r3
+
+- sample_id: 4hop1__151650_5274_458768_33637
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: How many ethnic minorities were looked at differently in the city where the headquarters of the only group larger than Desde El Principio's record label is located?
+
+Gold answer: two
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] The headquarters of the only group larger than Desde El Principio's record label is located in a city where ethnic minorities were looked at differently.
+- c2: [unclear] The city where the headquarters of the only group larger than Desde El Principio's record label is located has ethnic minorities that were looked at differently.
+
+Evidence:
+- 2hop__5658_25002::p4: Slavs Former Soviet states, as well as countries that used to be satellite states or territories of the Warsaw Pact, have numerous minority Slavic populations, many of whom are originally from the Russian SFSR, Ukrainian SSR and Byelorussian SSR. As of now, Kazakhstan has the largest Slavic minority population with most being Russians (Ukrainians, Belarusians and Poles are present as well but in much smaller numbers).
+- 4hop1__813171_153080_33897_81096::p18: Houston According to the 2010 Census, whites made up 51% of Houston's population; 26% of the total population were non-Hispanic whites. Blacks or African Americans made up 25% of Houston's population. American Indians made up 0.7% of the population. Asians made up 6% (1.7% Vietnamese, 1.3% Chinese, 1.3% Indian, 0.9% Pakistani, 0.4% Filipino, 0.3% Korean, 0.1% Japanese), while Pacific Islanders made up 0.1%. Individuals from some other race made up 15.2% of the city's population, of which 0.2% were non-Hispanic. Individuals from two or more races made up 3.3% of the city. At the 2000 Census, there were 1,953,631 people and the population density was 3,371.7 people per square mile (1,301.8/km²). The r [truncated]
+- 2hop__62951_64006::p0: Black people From the years 1500 to 1850, an estimated 3.5 million captives were forcibly shipped from West/Central Africa to Brazil; the territory received the highest number of slaves of any country in the Americas. Scholars estimate that more than half of the Brazilian population is at least in part descended from these individuals. Brazil has the largest population of Afro-descendants outside of Africa. In contrast to the US, during the slavery period and after, the Portuguese colonial government and later Brazilian government did not pass formal anti-miscegenation or segregation laws. As in other Latin countries, intermarriage was prevalent during the colonial period and continued afterward. In addi [truncated]
+- 4hop1__151650_5274_458768_33637::p15: Desde El Principio "Desde El Principio" also came to be the duo's final album for the Sony Music Entertainment label, a company they after a series of mergers in various forms had been signed to for some fifteen years (CBS Records Spain, Epic Records Spain, CBS-Epic Spain, eventually a sublabel to Sony Music Spain, today a subsidiary to the multinational Sony BMG Music Entertainment conglomerate). In 2006 Azúcar Moreno returned to their previous label EMI Music for the album "Bailando Con Lola".
+- 4hop1__151650_5274_458768_33632::p1: Desde El Principio "Desde El Principio" also came to be the duo's final album for the Sony Music Entertainment label, a company they after a series of mergers in various forms had been signed to for some fifteen years (CBS Records Spain, Epic Records Spain, CBS-Epic Spain, eventually a sublabel to Sony Music Spain, today a subsidiary to the multinational Sony BMG Music Entertainment conglomerate). In 2006 Azúcar Moreno returned to their previous label EMI Music for the album "Bailando Con Lola".
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__222497_309482_27537::r2
+
+- sample_id: 3hop1__222497_309482_27537
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Why did Roncalli leave the place where the composer of Al gran sole carico d'amore worked?
+
+Gold answer: for the conclave in Rome
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Roncalli left Venice for the conclave in Rome after the death of Pope Pius XII.
+- c2: [supported] The composer of Al gran sole carico d'amore is Luigi Nono.
+- c3: [unclear] Luigi Nono worked in Venice.
+
+Evidence:
+- 2hop__478978_124498::p13: Buthrotum The first modern archaeological excavations began in 1928 when the Fascist government of Benito Mussolini's Italy sent an expedition to Buthrotum. The aim was geopolitical rather than scientific, aiming to extend Italian hegemony in the area. The leader was an Italian archaeologist, Luigi Maria Ugolini who despite the political aims of his mission was a good archaeologist. Ugolini died in 1936, but the excavations continued until 1943 and the Second World War. They uncovered the Hellenistic and Roman part of the city including the "Lion Gate" and the "Scaean Gate" (named by Ugolini for the famous gate at Troy mentioned in the Homeric Iliad).
+- 4hop1__767417_624859_355213_203322::p12: Eritrea In 1922, Benito Mussolini's rise to power in Italy brought profound changes to the colonial government in Italian Eritrea. After il Duce declared the birth of the Italian Empire in May 1936, Italian Eritrea (enlarged with northern Ethiopia's regions) and Italian Somaliland were merged with the just conquered Ethiopia in the new Italian East Africa (Africa Orientale Italiana) administrative territory. This Fascist period was characterized by imperial expansion in the name of a "new Roman Empire". Eritrea was chosen by the Italian government to be the industrial center of Italian East Africa.
+- 2hop__286093_361551::p15: Eritrea In 1922, Benito Mussolini's rise to power in Italy brought profound changes to the colonial government in Italian Eritrea. After il Duce declared the birth of the Italian Empire in May 1936, Italian Eritrea (enlarged with northern Ethiopia's regions) and Italian Somaliland were merged with the just conquered Ethiopia in the new Italian East Africa (Africa Orientale Italiana) administrative territory. This Fascist period was characterized by imperial expansion in the name of a "new Roman Empire". Eritrea was chosen by the Italian government to be the industrial center of Italian East Africa.
+- 3hop1__222497_309482_27537::p0: Al gran sole carico d'amore Al gran sole carico d'amore ("In the Bright Sunshine Heavy with Love") is an opera (designated as an 'azione scenica') with music by Luigi Nono, based mainly on plays by Bertolt Brecht, but also incorporating texts of Fidel Castro, Che Guevara, Karl Marx, and Vladimir Lenin. Nono himself and Yuri Lyubimov wrote the libretto. It premiered at the Teatro alla Scala on 4 April 1975, conducted by Claudio Abbado. Lyubimov directed the original production. The UK premiere was at the 32nd Edinburgh Festival in 1978. In addition to vocal soloists, chorus and orchestra, the work incorporates taped sounds. This work is a product of Nono's strong political activism through the mid-1970s.
+- 3hop1__222497_309482_27537::p12: Pope John XXIII Following the death of Pope Pius XII on 9 October 1958, Roncalli watched the live funeral on his last full day in Venice on 11 October. His journal was specifically concerned with the funeral and the abused state of the late pontiff's corpse. Roncalli left Venice for the conclave in Rome well aware that he was papabile,[b] and after eleven ballots, was elected to succeed the late Pius XII, so it came as no surprise to him, though he had arrived at the Vatican with a return train ticket to Venice.[citation needed]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__161810_583746_457883_650651::r2
+
+- sample_id: 4hop1__161810_583746_457883_650651
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: Country A has an embassy from the country that contains the bay where the city of General Santos is located. What network created country A's version of The Biggest Loser?
+
+Gold answer: NBC
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The country that contains the bay where General Santos is located is the Philippines.
+- c2: [unsupported] Country A is the Philippines.
+- c3: [unclear] The network that created the Philippines' version of The Biggest Loser is NBC.
+
+Evidence:
+- 4hop1__161810_583746_457883_650651::p11: Sarangani Bay Sarangani Bay is a bay located on the southern tip of Mindanao in the Philippines. It opens up to the Celebes Sea on the Pacific Ocean. General Santos City, one of the Philippines most important cities and ports, is located at the head of the bay, making the bay one of the busiest and often the sight of shipping accidents. The province of Sarangani, created in 1992, is named after the bay.
+- 3hop2__851134_613770_7713::p9: Port Blair Port Blair (pronunciation (help info)) is the capital of the Andaman and Nicobar Islands, a union territory of India situated in the Bay of Bengal. It is also the local administrative sub-division (tehsil) of the islands, the headquarters for the district of South Andaman, and is the territory's only notified town. It houses the headquarters of the Andaman and Nicobar Police and the Andaman and Nicobar Command, the first integrated tri-command of the armed forces of India.
+- 2hop__770487_494646::p8: Port Blair Port Blair (pronunciation (help info)) is the capital of the Andaman and Nicobar Islands, a union territory of India situated in the Bay of Bengal. It is also the local administrative sub-division (tehsil) of the islands, the headquarters for the district of South Andaman, and is the territory's only notified town. It houses the headquarters of the Andaman and Nicobar Police and the Andaman and Nicobar Command, the first integrated tri-command of the armed forces of India.
+- 4hop1__161810_583746_457883_650651::p18: South Cotabato General Santos, located on the shores of Sarangani Bay, is the most populous city in the region, but is governed independently from the province. The province of Sarangani used to be part of South Cotabato until it was made an independent province in 1992.
+- 4hop1__161810_583746_457883_650651::p10: The Biggest Loser (season 1) The Biggest Loser (season 1) is the first season of the NBC reality television series entitled "The Biggest Loser", which premiered on October 19, 2004. The show features overweight contestants competing to lose the largest percentage of their body weight and receive the title of 'Biggest Loser,' along with a $250,000 grand prize. The first season featured twelve contestants divided into two teams of six players. The teams were each led by a personal trainer, Bob Harper with the Blue Team and Jillian Michaels with the Red Team. The first season was hosted by Caroline Rhea.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__28352_53706_795904_580996::r3
+
+- sample_id: 4hop1__28352_53706_795904_580996
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What shares a border with the city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works?
+
+Gold answer: Rio Linda
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The planes were originally going to California on 9/11.
+- c2: [unclear] The city where the person who went to the state where the planes were originally going on 9/11 during the gold rush is located.
+- c3: [unclear] Pennsylvania shares a border with the city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works.
+
+Evidence:
+- 4hop1__28352_53706_795904_580996::p10: War on Terror On the morning of 11 September 2001, 19 men affiliated with al-Qaeda hijacked four airliners all bound for California. Once the hijackers assumed control of the airliners, they told the passengers that they had the bomb on board and would spare the lives of passengers and crew once their demands were met – no passenger and crew actually suspected that they would use the airliners as suicide weapons since it had never happened before in history. The hijackers – members of al-Qaeda's Hamburg cell – intentionally crashed two airliners into the Twin Towers of the World Trade Center in New York City. Both buildings collapsed within two hours from fire damage related to the crashes, destroying nea [truncated]
+- 2hop__132854_417697::p3: September 11 attacks At 9:42 am, the Federal Aviation Administration (FAA) grounded all civilian aircraft within the continental U.S., and civilian aircraft already in flight were told to land immediately. All international civilian aircraft were either turned back or redirected to airports in Canada or Mexico, and were banned from landing on United States territory for three days. The attacks created widespread confusion among news organizations and air traffic controllers. Among the unconfirmed and often contradictory news reports aired throughout the day, one of the most prevalent said a car bomb had been detonated at the U.S. State Department's headquarters in Washington, D.C. Another jet—Delta Air Lines Fli [truncated]
+- 4hop1__28352_53706_795904_580996::p17: Klondike Gold Rush The Klondike Gold Rush was a migration by an estimated 100,000 prospectors to the Klondike region of the Yukon in north - western Canada between 1896 and 1899. Gold was discovered there by local miners on August 16, 1896, and, when news reached Seattle and San Francisco the following year, it triggered a stampede of prospectors. Some became wealthy, but the majority went in vain. It has been immortalized in photographs, books, films, and artifacts.
+- 4hop3__673447_132409_371500_35031::p18: New York City Many Fortune 500 corporations are headquartered in New York City, as are a large number of foreign corporations. One out of ten private sector jobs in the city is with a foreign company. New York City has been ranked first among cities across the globe in attracting capital, business, and tourists. This ability to attract foreign investment helped New York City top the FDi Magazine American Cities of the Future ranking for 2013.
+- 4hop3__668721_132409_371500_35031::p3: New York City Many Fortune 500 corporations are headquartered in New York City, as are a large number of foreign corporations. One out of ten private sector jobs in the city is with a foreign company. New York City has been ranked first among cities across the globe in attracting capital, business, and tourists. This ability to attract foreign investment helped New York City top the FDi Magazine American Cities of the Future ranking for 2013.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__105767_443779_52195::r1
+
+- sample_id: 3hop1__105767_443779_52195
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Who is the president of the newly declared independent country that is part of the commission of truth and friendship with the country that eats Kemplang?
+
+Gold answer: Francisco Guterres
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The newly declared independent country that is part of the commission of truth and friendship with Indonesia is East Timor.
+- c2: [unclear] The country that eats Kemplang is Indonesia.
+
+Evidence:
+- 3hop1__144439_443779_52195::p7: Indonesia–Timor Leste Commission of Truth and Friendship The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred around the independence referendum held in East Timor in 1999 and sought to find the "conclusive truth" behind the events. After holding private hearings and document reviews, the commission handed in the final report on July 15, 2008 to the presidents of both nations, and was fully endorsed by Indonesian President Susilo Bambang Yudhoyono, providing the first acknowledgement by the government of Indonesia of the human rights violations committe [truncated]
+- 3hop1__105767_443779_52195::p3: Indonesia–Timor Leste Commission of Truth and Friendship The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred around the independence referendum held in East Timor in 1999 and sought to find the "conclusive truth" behind the events. After holding private hearings and document reviews, the commission handed in the final report on July 15, 2008 to the presidents of both nations, and was fully endorsed by Indonesian President Susilo Bambang Yudhoyono, providing the first acknowledgement by the government of Indonesia of the human rights violations committe [truncated]
+- 3hop1__103881_443779_52195::p7: Indonesia–Timor Leste Commission of Truth and Friendship The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred around the independence referendum held in East Timor in 1999 and sought to find the "conclusive truth" behind the events. After holding private hearings and document reviews, the commission handed in the final report on July 15, 2008 to the presidents of both nations, and was fully endorsed by Indonesian President Susilo Bambang Yudhoyono, providing the first acknowledgement by the government of Indonesia of the human rights violations committe [truncated]
+- 3hop1__105767_443779_52195::p6: Namibia The Namibian Constitution adopted in February 1990 incorporated protection for human rights, compensation for state expropriations of private property, an independent judiciary and an executive presidency (the constituent assembly became the national assembly). The country officially became independent on 21 March 1990. Sam Nujoma was sworn in as the first President of Namibia watched by Nelson Mandela (who had been released from prison the previous month) and representatives from 147 countries, including 20 heads of state. Walvis Bay was ceded to Namibia in 1994 upon the end of Apartheid in South Africa.[citation needed]
+- 3hop1__103881_443779_52195::p18: Namibia The Namibian Constitution adopted in February 1990 incorporated protection for human rights, compensation for state expropriations of private property, an independent judiciary and an executive presidency (the constituent assembly became the national assembly). The country officially became independent on 21 March 1990. Sam Nujoma was sworn in as the first President of Namibia watched by Nelson Mandela (who had been released from prison the previous month) and representatives from 147 countries, including 20 heads of state. Walvis Bay was ceded to Namibia in 1994 upon the end of Apartheid in South Africa.[citation needed]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__159803_89752_75165::r2
+
+- sample_id: 3hop1__159803_89752_75165
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What's the population of the largest state in the region of the U.S. where trading practices were once threatened by the Navigation Acts?
+
+Gold answer: 1,335,907
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The largest state in the region of the U.S. where trading practices were once threatened by the Navigation Acts is California.
+
+Evidence:
+- 4hop1__767417_624859_355213_203322::p4: Territorial evolution of the United States Regarding internal borders, while territories could shift wildly in size, once established a state has commonly remained within its borders, barring small changes due to river shifts. Only four states - Maine, Kentucky, Vermont, and West Virginia - have been created from land claimed by another state; all of the others were created from territories or directly from acquisitions. The last state of the contiguous United States, commonly called the ``lower 48, ''was admitted in 1912; the fiftieth and most recent state was admitted in 1959.
+- 4hop1__767417_624859_355213_203322::p17: Territorial evolution of the United States Regarding internal borders, while territories could shift wildly in size, once established a state has commonly remained within its borders, barring small changes due to river shifts. Only four states -- Maine, Kentucky, Vermont, and West Virginia -- have been created from land claimed by another state; all of the others were created from territories or directly from acquisitions. The last state of the contiguous United States, commonly called the ``lower 48, ''was admitted in 1912; the fiftieth and most recent state was admitted in 1959.
+- 4hop1__342858_131850_33952_33939::p2: United States The United States of America (USA), commonly known as the United States (U.S.) or America, is a federal republic composed of 50 states, a federal district, five major self - governing territories, and various possessions. At 3.8 million square miles (9.8 million km) and with over 325 million people, the United States is the world's third - or fourth - largest country by total area and the third-most populous. The capital is Washington, D.C., and the largest city by population is New York City. Forty - eight states and the capital's federal district are contiguous and located in North America between Canada and Mexico. The state of Alaska is in the northwest corner of North America, bordered  [truncated]
+- 4hop2__161602_426860_88460_21057::p3: Industrial Revolution During the late 18th an early 19th centuries when the UK and parts of Western Europe began to industrialise, the US was primarily an agricultural and natural resource producing and processing economy. The building of roads and canals, the introduction of steamboats and the building of railroads were important for handling agricultural and natural resource products in the large and sparsely populated country of the period.
+- 4hop1__94201_642284_131926_13165::p17: Military history of the United States In the Treaty of Paris after the Revolution, the British had ceded the lands between the Appalachian Mountains and the Mississippi River to the United States, without consulting the Shawnee, Cherokee, Choctaw and other smaller tribes who lived there. Because many of the tribes had fought as allies of the British, the United States compelled tribal leaders to sign away lands in postwar treaties, and began dividing these lands for settlement. This provoked a war in the Northwest Territory in which the U.S. forces performed poorly; the Battle of the Wabash in 1791 was the most severe defeat ever suffered by the United States at the hands of American Indians. President Washington dispatched a ne [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__244193_461106::r1
+
+- sample_id: 2hop__244193_461106
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What movement does the creator of the Washington Monument belong to?
+
+Gold answer: Greek Revival
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The creator of the Washington Monument is associated with the Lincoln Memorial.
+
+Evidence:
+- 2hop__244193_461106::p12: Lincoln Memorial The Lincoln Memorial is an American national memorial built to honor the 16th President of the United States, Abraham Lincoln. It is located on the western end of the National Mall in Washington, D.C., across from the Washington Monument. The architect was Henry Bacon; the designer of the primary statue – "Abraham Lincoln", 1920 – was Daniel Chester French; the Lincoln statue was carved by the Piccirilli Brothers; and the painter of the interior murals was Jules Guerin. Dedicated in May 1922, it is one of several memorials built to honor an American president. It has always been a major tourist attraction and since the 1930s has been a symbolic center focused on race relations.
+- 2hop__244193_461106::p4: Lincoln Memorial The Lincoln Memorial is an American national monument built to honor the 16th President of the United States, Abraham Lincoln. It is located on the western end of the National Mall in Washington, D.C., across from the Washington Monument. The architect was Henry Bacon; the designer of the primary statue -- Abraham Lincoln, 1920 -- was Daniel Chester French; the Lincoln statue was carved by the Piccirilli Brothers; and the painter of the interior murals was Jules Guerin. Dedicated in 1922, it is one of several monuments built to honor an American president. It has always been a major tourist attraction and since the 1930s has been a symbolic center focused on race relations.
+- 2hop__244193_461106::p13: New York City The Statue of Liberty National Monument and Ellis Island Immigration Museum are managed by the National Park Service and are in both the states of New York and New Jersey. They are joined in the harbor by Governors Island National Monument, in New York. Historic sites under federal management on Manhattan Island include Castle Clinton National Monument; Federal Hall National Memorial; Theodore Roosevelt Birthplace National Historic Site; General Grant National Memorial ("Grant's Tomb"); African Burial Ground National Monument; and Hamilton Grange National Memorial. Hundreds of private properties are listed on the National Register of Historic Places or as a National Historic Landmark such as [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__151750_141308::r3
+
+- sample_id: 2hop__151750_141308
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What company is the record label of Magic Christian Music part of?
+
+Gold answer: Apple Corps
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] Magic Christian Music is part of Apple Corps Ltd.
+- c2: [supported] Apple Records is a division of Apple Corps Ltd.
+- c3: [supported] Magic Christian Music is released on Apple Records.
+
+Evidence:
+- 2hop__151750_141308::p7: Apple Records Apple Records is a record label founded by the Beatles in 1968 as a division of Apple Corps Ltd. It was initially intended as a creative outlet for the Beatles, both as a group and individually, plus a selection of other artists including Mary Hopkin, James Taylor, Badfinger, and Billy Preston. In practice, the roster had become dominated by the mid-1970s with releases of the former Beatles as solo artists. Allen Klein managed the label from 1969 to 1973, then it was managed by Neil Aspinall on behalf of the Beatles and their heirs. Aspinall retired in 2007 and was replaced by Jeff Jones.
+- 4hop1__151650_5274_458768_33637::p8: Sony Music Sony Music Entertainment Inc. (sometimes known as Sony Music or by the initials, SME) is an American music corporation managed and operated by Sony Corporation of America (SCA), a subsidiary of Japanese conglomerate Sony Corporation. In 1929, the enterprise was first founded as American Record Corporation (ARC) and, in 1938, was renamed Columbia Recording Corporation, following ARC's acquisition by CBS. In 1966, the company was reorganized to become CBS Records. In 1987, Sony Corporation of Japan bought the company, and in 1991, renamed it SME. It is the world's second largest recorded music company, after Universal Music Group.
+- 4hop1__151650_5274_458768_33632::p7: Sony Music Sony Music Entertainment Inc. (sometimes known as Sony Music or by the initials, SME) is an American music corporation managed and operated by Sony Corporation of America (SCA), a subsidiary of Japanese conglomerate Sony Corporation. In 1929, the enterprise was first founded as American Record Corporation (ARC) and, in 1938, was renamed Columbia Recording Corporation, following ARC's acquisition by CBS. In 1966, the company was reorganized to become CBS Records. In 1987, Sony Corporation of Japan bought the company, and in 1991, renamed it SME. It is the world's second largest recorded music company, after Universal Music Group.
+- 2hop__151750_141308::p14: Magic Christian Music Magic Christian Music is the debut album by the British rock band Badfinger, released in early 1970 on Apple Records. Three tracks from the LP are featured in the film "The Magic Christian", which also gives the album its title. However, "Magic Christian Music" is not an official soundtrack album for the film.
+- 2hop__151750_141308::p6: MCA Records MCA Records was an American record label owned by MCA Inc., which later gave way to the larger MCA Music Entertainment Group (now Universal Music Group), which the label was part of until its dissolution in 2003. The label's country division MCA Nashville is a still active imprint of Universal Music Group Nashville.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__264443_49925_13759_736921::r2
+
+- sample_id: 4hop1__264443_49925_13759_736921
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: Where is the district that the person who wanted to reform and address Edward Egan's religion preached a sermon on Marian devotion before his death located?
+
+Gold answer: Saxony-Anhalt
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The person who wanted to reform and address Edward Egan's religion is Pope Paul VI.
+- c2: [supported] Pope Paul VI preached a sermon on Marian devotion before his death.
+- c3: [unsupported] The district where Pope Paul VI preached a sermon on Marian devotion before his death is Haifa District.
+
+Evidence:
+- 4hop1__264443_49925_13759_736921::p15: Edward Egan Edward Michael Egan (April 2, 1932 – March 5, 2015) was an American Cardinal of the Roman Catholic Church. He served as Bishop of Bridgeport from 1988 to 2000, and as Archbishop of New York from 2000 to 2009. He was elevated to the cardinalate in 2001. He was the twelfth Bishop, ninth Archbishop, and seventh Cardinal of the See of New York.
+- 4hop1__264443_49925_13759_736921::p2: Pope Paul VI Upon his election to the papacy, Montini took the pontifical name Paul VI (the first to take the name "Paul" since 1605) to indicate a renewed worldwide mission to spread the message of Christ, following the example of Apostle St. Paul.[citation needed] He re-convened the Second Vatican Council, which was automatically closed with the death of John XXIII, and gave it priority and direction. After the council had concluded its work, Paul VI took charge of the interpretation and implementation of its mandates, often walking a thin line between the conflicting expectations of various groups within Catholicism. The magnitude and depth of the reforms affecting all fields of Church life during his [truncated]
+- 4hop1__166471_49925_13759_736921::p17: Pope Paul VI Upon his election to the papacy, Montini took the pontifical name Paul VI (the first to take the name "Paul" since 1605) to indicate a renewed worldwide mission to spread the message of Christ, following the example of Apostle St. Paul.[citation needed] He re-convened the Second Vatican Council, which was automatically closed with the death of John XXIII, and gave it priority and direction. After the council had concluded its work, Paul VI took charge of the interpretation and implementation of its mandates, often walking a thin line between the conflicting expectations of various groups within Catholicism. The magnitude and depth of the reforms affecting all fields of Church life during his [truncated]
+- 3hop1__857_846_7769::p11: Qing dynasty In the wake of these external defeats, the Guangxu Emperor initiated the Hundred Days' Reform of 1898. Newer, more radical advisers such as Kang Youwei were given positions of influence. The emperor issued a series of edicts and plans were made to reorganize the bureaucracy, restructure the school system, and appoint new officials. Opposition from the bureaucracy was immediate and intense. Although she had been involved in the initial reforms, the empress dowager stepped in to call them off, arrested and executed several reformers, and took over day-to-day control of policy. Yet many of the plans stayed in place, and the goals of reform were implanted.
+- 4hop1__264443_49925_13759_736921::p6: James J. Egan James J. Egan, FAIA, (1839, Cork, Ireland—December 2, 1914, Chicago, Illinois) was an Irish-American architect and fellow of the American Institute of Architects practicing in Chicago, Illinois. He was a partner of the Chicago architectural firms Armstrong & Egan, Egan & Kirkland and Egan & Prindeville, which gained prominence designing Roman Catholic structures.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__132854_417697::r3
+
+- sample_id: 2hop__132854_417697
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: Mohammed Atta has what kind of model of the company that makes Datsun Type 12?
+
+Gold answer: Nissan Altima
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] Mohammed Atta is associated with a company that makes Datsun Type 12
+
+Evidence:
+- 2hop__132854_417697::p6: Mohamed Atta's Nissan ]A 2001 Nissan Altima, 1N4DL01D81C212547 is the VIN of a blue rental car belonging to Alamo Rent a Car, that was found in the Portland International Jetport parking lot, following the September 11, 2001 attacks. It was issued a Massachusetts license plate 3335 VI.
+- 3hop2__222979_132477_40768::p19: Nissan Fuga The Nissan Fuga (Japanese: 日産・フーガ "Nissan Fūga") is a mid-size luxury sedan produced by Japanese automaker Nissan since October 2004. It is built on a wider, stretched wheelbase version of the Nissan FM platform. After the Nissan Cima and Nissan President were discontinued in August 2010, the Fuga became Nissan's flagship vehicle. In North America and Europe, the Fuga is sold as the second and third-generation Infiniti M (Q70 from 2014), where it has been the flagship of the Infiniti luxury division of Nissan since 2006.
+- 3hop2__132957_133264_40768::p13: Datsun Datsun (, ) is an automobile brand owned by Nissan. Datsun's original production run began in 1931. From 1958 to 1986, only vehicles exported by Nissan were identified as Datsun. By 1986 Nissan had phased out the Datsun name, but re-launched it in June 2013 as the brand for low-cost vehicles manufactured for emerging markets.
+- 2hop__132854_417697::p10: Datsun Type 12 The 1933 Datsun Type 12 was a small car produced by the Nissan corporation. The name Datsun was used by DAT for their line of small cars. After the DAT corporation was absorbed into Nissan, these cars continued to be produced, and the original model name was maintained. The Type 12 was basically similar to the earlier 1932 Type 11, but had a larger engine.
+- 2hop__132854_417697::p16: Datsun Datsun (, ) is an automobile brand owned by Nissan. Datsun's original production run began in 1931. From 1958 to 1986, only vehicles exported by Nissan were identified as Datsun. By 1986 Nissan had phased out the Datsun name, but re-launched it in June 2013 as the brand for low-cost vehicles manufactured for emerging markets.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__105688_17130_70784_79935::r1
+
+- sample_id: 4hop1__105688_17130_70784_79935
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: When was the region that lies to the north of where Eyal Golan is located and the Persian Gulf created?
+
+Gold answer: 1930
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] The region to the north of Eyal Golan is the Arabian Sea.
+- c2: [supported] The Arabian Sea is connected to the Persian Gulf via the Gulf of Oman.
+- c3: [supported] The Arabian Sea was historically known as the Persian Sea.
+- c4: [unsupported] The creation date of the Arabian Sea is not provided in the evidence.
+
+Evidence:
+- 4hop1__443274_17130_70784_61381::p2: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 4hop1__17192_17130_70784_79935::p2: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 4hop1__105401_17130_70784_79935::p12: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 3hop2__145209_20335_9331::p7: Bukovina A region of Moldavia during the Middle Ages, the territory of what became known as Bukovina was, from 1774 to 1918, an administrative division of the Habsburg Monarchy, the Austrian Empire, and Austria-Hungary. After World War I, Romania established its control over Bukovina. In 1940, the northern half of Bukovina was annexed by the Soviet Union in violation of the Molotov–Ribbentrop Pact, and currently is part of Ukraine.
+- 2hop__818302_25719::p11: Lower Lusatia Lower Lusatia (; ; ; ; ) is a historical region in Central Europe, stretching from the southeast of the German state of Brandenburg to the southwest of Lubusz Voivodeship in Poland. Like adjacent Upper Lusatia in the south, Lower Lusatia is a settlement area of the West Slavic Sorbs whose endangered Lower Sorbian language is related to Upper Sorbian and Polish.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__144439_443779_52195::r1
+
+- sample_id: 3hop1__144439_443779_52195
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: who is the president of newly declared independent country of the country of the birthplace of Mulham Arufin–Timor Leste Commission of Truth and Friendship?
+
+Gold answer: Francisco Guterres
+
+Candidate answer: Francisco Guterres
+
+Claims:
+- c1: [unclear] The president of the newly declared independent country of the birthplace of Mulham Arufin is the president of East Timor.
+
+Evidence:
+- 3hop1__144439_443779_52195::p7: Indonesia–Timor Leste Commission of Truth and Friendship The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred around the independence referendum held in East Timor in 1999 and sought to find the "conclusive truth" behind the events. After holding private hearings and document reviews, the commission handed in the final report on July 15, 2008 to the presidents of both nations, and was fully endorsed by Indonesian President Susilo Bambang Yudhoyono, providing the first acknowledgement by the government of Indonesia of the human rights violations committe [truncated]
+- 3hop1__105767_443779_52195::p3: Indonesia–Timor Leste Commission of Truth and Friendship The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred around the independence referendum held in East Timor in 1999 and sought to find the "conclusive truth" behind the events. After holding private hearings and document reviews, the commission handed in the final report on July 15, 2008 to the presidents of both nations, and was fully endorsed by Indonesian President Susilo Bambang Yudhoyono, providing the first acknowledgement by the government of Indonesia of the human rights violations committe [truncated]
+- 3hop1__103881_443779_52195::p7: Indonesia–Timor Leste Commission of Truth and Friendship The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred around the independence referendum held in East Timor in 1999 and sought to find the "conclusive truth" behind the events. After holding private hearings and document reviews, the commission handed in the final report on July 15, 2008 to the presidents of both nations, and was fully endorsed by Indonesian President Susilo Bambang Yudhoyono, providing the first acknowledgement by the government of Indonesia of the human rights violations committe [truncated]
+- 2hop__91211_90973::p9: Friends with Benefits (film) Friends with Benefits is a 2011 American romantic comedy film directed by Will Gluck, and starring Justin Timberlake and Mila Kunis in the lead roles. The film features Patricia Clarkson, Jenna Elfman, Bryan Greenberg, Nolan Gould, Richard Jenkins, and Woody Harrelson in supporting roles. The plot revolves around Dylan Harper (Timberlake) and Jamie Rellis (Kunis), who meet in New York City, and naively believe adding sex to their friendship will not lead to complications. Over time, they begin to develop deep mutual feelings for each other, only to deny it each time they are together.
+- 2hop__471509_136043::p0: Are You the One? Couple Week Result Ethan & Keyana Not A Match Anthony & Geles Not A Match Malcolm & Nurys Not A Match Dimitri & Nicole Not A Match Clinton & Uche 5 Not A Match Keith & Alexis 6 Not A Match Keith & Alivia 7 Not A Match Michael & Audrey 8 Not A Match Tyler & Nicole 9 Perfect Match Dimitri & Jada 10 Not A Match
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__103881_443779_52195::r1
+
+- sample_id: 3hop1__103881_443779_52195
+- risk_type: wrong_target
+- oracle_action: disambiguate_conflict
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Who is the president of the newly declared independent country that is part of the Commission of Truth and Friendship with the country that Tony Gunawan is from?
+
+Gold answer: Francisco Guterres
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The newly declared independent country that is part of the Commission of Truth and Friendship with Indonesia is East Timor.
+- c2: [contradicted] The president of East Timor during the time of the Commission of Truth and Friendship was Susilo Bambang Yudhoyono.
+- c3: [supported] Tony Gunawan is from Indonesia.
+
+Evidence:
+- 3hop1__144439_443779_52195::p7: Indonesia–Timor Leste Commission of Truth and Friendship The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred around the independence referendum held in East Timor in 1999 and sought to find the "conclusive truth" behind the events. After holding private hearings and document reviews, the commission handed in the final report on July 15, 2008 to the presidents of both nations, and was fully endorsed by Indonesian President Susilo Bambang Yudhoyono, providing the first acknowledgement by the government of Indonesia of the human rights violations committe [truncated]
+- 3hop1__105767_443779_52195::p3: Indonesia–Timor Leste Commission of Truth and Friendship The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred around the independence referendum held in East Timor in 1999 and sought to find the "conclusive truth" behind the events. After holding private hearings and document reviews, the commission handed in the final report on July 15, 2008 to the presidents of both nations, and was fully endorsed by Indonesian President Susilo Bambang Yudhoyono, providing the first acknowledgement by the government of Indonesia of the human rights violations committe [truncated]
+- 3hop1__103881_443779_52195::p7: Indonesia–Timor Leste Commission of Truth and Friendship The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred around the independence referendum held in East Timor in 1999 and sought to find the "conclusive truth" behind the events. After holding private hearings and document reviews, the commission handed in the final report on July 15, 2008 to the presidents of both nations, and was fully endorsed by Indonesian President Susilo Bambang Yudhoyono, providing the first acknowledgement by the government of Indonesia of the human rights violations committe [truncated]
+- 3hop1__105767_443779_52195::p6: Namibia The Namibian Constitution adopted in February 1990 incorporated protection for human rights, compensation for state expropriations of private property, an independent judiciary and an executive presidency (the constituent assembly became the national assembly). The country officially became independent on 21 March 1990. Sam Nujoma was sworn in as the first President of Namibia watched by Nelson Mandela (who had been released from prison the previous month) and representatives from 147 countries, including 20 heads of state. Walvis Bay was ceded to Namibia in 1994 upon the end of Apartheid in South Africa.[citation needed]
+- 3hop1__103881_443779_52195::p18: Namibia The Namibian Constitution adopted in February 1990 incorporated protection for human rights, compensation for state expropriations of private property, an independent judiciary and an executive presidency (the constituent assembly became the national assembly). The country officially became independent on 21 March 1990. Sam Nujoma was sworn in as the first President of Namibia watched by Nelson Mandela (who had been released from prison the previous month) and representatives from 147 countries, including 20 heads of state. Walvis Bay was ceded to Namibia in 1994 upon the end of Apartheid in South Africa.[citation needed]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__129499_33897_81096::r1
+
+- sample_id: 3hop1__129499_33897_81096
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Who won the 1993 Indy Car race in the city with the largest population in the state where Poachie Range is located?
+
+Gold answer: Mario Andretti
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Poachie Range is located in Arizona
+- c2: [unsupported] The city with the largest population in Arizona is Phoenix
+- c3: [unsupported] The 1993 Indy Car race was held in Phoenix, Arizona
+- c4: [supported] Richmond, Virginia hosted an IndyCar race in 2009
+- c5: [supported] Jacksonville, Florida is the largest city in Florida by population
+
+Evidence:
+- 3hop1__129499_33897_81096::p1: Poachie Range The Poachie Range is a moderate length mountain range and massif in southeast Mohave County, Arizona, and the extreme southwest corner of Yavapai County; the range also abuts the northeast corner of La Paz County. The Poachie Range massif is bordered by the south-flowing Big Sandy River on its west, and the west-flowing Santa Maria River on its south; both rivers converge at the Poachie Range's southwest at Alamo Lake, the Alamo Lake State Park.
+- 4hop1__813171_153080_33897_81096::p5: Jacksonville, Florida Jacksonville is the largest city by population in the U.S. state of Florida, and the largest city by area in the contiguous United States. It is the county seat of Duval County, with which the city government consolidated in 1968. Consolidation gave Jacksonville its great size and placed most of its metropolitan population within the city limits; with an estimated population of 853,382 in 2014, it is the most populous city proper in Florida and the Southeast, and the 12th most populous in the United States. Jacksonville is the principal city in the Jacksonville metropolitan area, with a population of 1,345,596 in 2010.
+- 4hop1__236903_153080_33897_81096::p4: Jacksonville, Florida Jacksonville is the largest city by population in the U.S. state of Florida, and the largest city by area in the contiguous United States. It is the county seat of Duval County, with which the city government consolidated in 1968. Consolidation gave Jacksonville its great size and placed most of its metropolitan population within the city limits; with an estimated population of 853,382 in 2014, it is the most populous city proper in Florida and the Southeast, and the 12th most populous in the United States. Jacksonville is the principal city in the Jacksonville metropolitan area, with a population of 1,345,596 in 2010.
+- 4hop1__726152_153080_33897_81096::p13: Richmond, Virginia Auto racing is also popular in the area. The Richmond International Raceway (RIR) has hosted NASCAR Sprint Cup races since 1953, as well as the Capital City 400 from 1962 − 1980. RIR also hosted IndyCar's Suntrust Indy Challenge from 2001 − 2009. Another track, Southside Speedway, has operated since 1959 and sits just southwest of Richmond in Chesterfield County. This .333-mile (0.536 km) oval short-track has become known as the "Toughest Track in the South" and "The Action Track", and features weekly stock car racing on Friday nights. Southside Speedway has acted as the breeding grounds for many past NASCAR legends including Richard Petty, Bobby Allison and Darrell Waltrip, and claims to be [truncated]
+- 4hop1__720201_153080_159767_81096::p7: Richmond, Virginia Auto racing is also popular in the area. The Richmond International Raceway (RIR) has hosted NASCAR Sprint Cup races since 1953, as well as the Capital City 400 from 1962 − 1980. RIR also hosted IndyCar's Suntrust Indy Challenge from 2001 − 2009. Another track, Southside Speedway, has operated since 1959 and sits just southwest of Richmond in Chesterfield County. This .333-mile (0.536 km) oval short-track has become known as the "Toughest Track in the South" and "The Action Track", and features weekly stock car racing on Friday nights. Southside Speedway has acted as the breeding grounds for many past NASCAR legends including Richard Petty, Bobby Allison and Darrell Waltrip, and claims to be [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__17192_17130_70784_79935::r3
+
+- sample_id: 4hop1__17192_17130_70784_79935
+- risk_type: wrong_target
+- oracle_action: disambiguate_conflict
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: When was the region immediately north of the region where the country that secured southern Lebanon is located and the Persian Gulf created?
+
+Gold answer: 1930
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The country that secured southern Lebanon is Israel.
+- c2: [contradicted] The region immediately north of Israel is the Persian Gulf.
+- c3: [contradicted] The Persian Gulf was created in 334 BC.
+
+Evidence:
+- 4hop1__17192_17130_70784_79935::p4: Israel On 11 March 1978, a PLO guerilla raid from Lebanon led to the Coastal Road Massacre. Israel responded by launching an invasion of southern Lebanon to destroy the PLO bases south of the Litani River. Most PLO fighters withdrew, but Israel was able to secure southern Lebanon until a UN force and the Lebanese army could take over. The PLO soon resumed its policy of attacks against Israel. In the next few years, the PLO infiltrated the south and kept up a sporadic shelling across the border. Israel carried out numerous retaliatory attacks by air and on the ground.
+- 3hop2__84553_90098_10557::p8: Iran In 334 BC, Alexander the Great invaded the Achaemenid Empire, defeating the last Achaemenid emperor, Darius III, at the Battle of Issus. Following the premature death of Alexander, Iran came under the control of the Hellenistic Seleucid Empire. In the middle of the 2nd century BC, the Parthian Empire rose to become the main power in Iran, and the century-long geopolitical arch-rivalry between Romans and Parthians began, culminating in the Roman–Parthian Wars. The Parthian Empire continued as a feudal monarchy for nearly five centuries, until 224 CE, when it was succeeded by the Sassanid Empire. Together with their neighboring arch-rival, the Roman-Byzantines, they made up the world's two mos [truncated]
+- 3hop2__127483_19639_10557::p14: Armenia Several bronze-era states flourished in the area of Greater Armenia, including the Hittite Empire (at the height of its power), Mitanni (South-Western historical Armenia), and Hayasa-Azzi (1500–1200 BC). The Nairi people (12th to 9th centuries BC) and the Kingdom of Urartu (1000–600 BC) successively established their sovereignty over the Armenian Highland. Each of the aforementioned nations and tribes participated in the ethnogenesis of the Armenian people. A large cuneiform lapidary inscription found in Yerevan established that the modern capital of Armenia was founded in the summer of 782 BC by King Argishti I. Yerevan is the world's oldest city to have documented the exact date of its fou [truncated]
+- 4hop1__342858_131850_33952_33939::p2: United States The United States of America (USA), commonly known as the United States (U.S.) or America, is a federal republic composed of 50 states, a federal district, five major self - governing territories, and various possessions. At 3.8 million square miles (9.8 million km) and with over 325 million people, the United States is the world's third - or fourth - largest country by total area and the third-most populous. The capital is Washington, D.C., and the largest city by population is New York City. Forty - eight states and the capital's federal district are contiguous and located in North America between Canada and Mexico. The state of Alaska is in the northwest corner of North America, bordered  [truncated]
+- 4hop1__17192_17130_70784_79935::p2: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__131611_32392_823060_610794::r3
+
+- sample_id: 4hop1__131611_32392_823060_610794
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: In which county is the city sharing a border with the capitol of the state where Ocean Forest Country Club is located?
+
+Gold answer: Richland County
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Ocean Forest Country Club is located in Horry County, South Carolina.
+- c2: [unsupported] The capitol of the state where Ocean Forest Country Club is located is Columbia, South Carolina.
+- c3: [unsupported] The city sharing a border with the capitol of South Carolina is Charleston.
+- c4: [supported] Charleston is located in Charleston County, South Carolina.
+
+Evidence:
+- 4hop1__131611_32392_823060_610794::p11: Ocean Forest Country Club Ocean Forest Country Club, also known as Ocean Forest Hotel and Country Club, is a historic country club and hotel located at Myrtle Beach in Horry County, South Carolina. The club and hotel were designed by an influential New York architect, Raymond Hood (1881-1934) and is an unusual example of Classical Revival architecture. Construction of the club began in 1926 and was completed in 1927. In addition to the hotel / club building, a 27-hole golf course was built in association with the club. It was designed by Robert White, a golf course designer and future president of the Professional Golfers' Association of America. The present 18-hole course dates to 1946.
+- 2hop__249867_557232::p3: Desert Forest Golf Club Desert Forest Golf Club is a par-72 golf course and club located in Carefree, Arizona. The course is 7201 yards long and located underneath Black Mountain in the Sonoran desert.
+- 4hop2__161602_426860_88460_21057::p8: Orenco Woods Nature Park Orenco Woods Nature Park is a park located in Hillsboro, Oregon, United States. The site was formerly nine-hole Orenco Woods Golf Course in the Orenco neighborhood owned by the Hillsboro Elks. The eastern edge is bounded by Cornelius Pass Road and the tracks for the MAX Blue Line form the northern boundary. Rock Creek flows through the site between Orchard Park upstream and Noble Woods Park downstream, with the Rock Creek Trail planned to connect all three parks.
+- 4hop1__813171_153080_33897_81096::p5: Jacksonville, Florida Jacksonville is the largest city by population in the U.S. state of Florida, and the largest city by area in the contiguous United States. It is the county seat of Duval County, with which the city government consolidated in 1968. Consolidation gave Jacksonville its great size and placed most of its metropolitan population within the city limits; with an estimated population of 853,382 in 2014, it is the most populous city proper in Florida and the Southeast, and the 12th most populous in the United States. Jacksonville is the principal city in the Jacksonville metropolitan area, with a population of 1,345,596 in 2010.
+- 4hop1__236903_153080_33897_81096::p4: Jacksonville, Florida Jacksonville is the largest city by population in the U.S. state of Florida, and the largest city by area in the contiguous United States. It is the county seat of Duval County, with which the city government consolidated in 1968. Consolidation gave Jacksonville its great size and placed most of its metropolitan population within the city limits; with an estimated population of 853,382 in 2014, it is the most populous city proper in Florida and the Southeast, and the 12th most populous in the United States. Jacksonville is the principal city in the Jacksonville metropolitan area, with a population of 1,345,596 in 2010.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__247353_55227::r3
+
+- sample_id: 2hop__247353_55227
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: Who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?
+
+Gold answer: Maria Bello
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] Salma Hayek plays the wife of Here Comes the Boom's screenwriter in Grown Ups.
+
+Evidence:
+- 2hop__247353_55227::p17: Grown Ups (film) In 1978, five childhood friends win their junior high school basketball championship. Afterwards, they celebrate at a rented lake house. The friends' coach, whom they nickname ``Buzzer ''(Blake Clark), encourages them to live their lives in a similar way to how they played the game. Thirty years later, Lenny (Adam Sandler) has become an ambitious Hollywood talent agent with his wife, fashion designer Roxanne (Salma Hayek), and his three children -- daughter Becky (Alexys Nicole Sanchez) and two sons Greg (Jake Goldberg) and Keith (Cameron Boyce). The boys act very spoiled in his vicinity, much to his annoyance. Eric (Kevin James) claims he is now a co-owner of a lawn furniture company, but i [truncated]
+- 2hop__23459_35124::p11: Answer to History Answer to History (French: Réponse à l'histoire; Persian: پاسخ به تاریخ) is a memoir written by the last Shah of Iran, Mohammad Reza Pahlavi, shortly after his overthrow in 1979 by Islamic revolution. The book was originally written in French and was translated into English and Persian as well as other languages, and was published posthumously in 1980.
+- 2hop__91211_90973::p4: List of Family Guy cast members Mila Kunis voices Meg Griffin. Kunis won the role after auditions and a slight rewrite of the character, in part due to her performance on That '70s Show. MacFarlane called Kunis back after her first audition, instructing her to speak slower, and then told her to come back another time and enunciate more. Once she claimed that she had it under control, MacFarlane hired her. Kunis described her character as ``the scapegoat ''. She further explained,`` Meg gets picked on a lot. But it's funny. It's like the middle child. She is constantly in the state of being an awkward 14 - year - old, when you're kind of going through puberty and what - not. She's just in a perpetual mode of humiliation. An [truncated]
+- 2hop__247353_55227::p6: Here Comes the Boom Here Comes the Boom is a 2012 American comedy film directed by Frank Coraci, co-written, produced by and starring Kevin James. It was also written by Allan Loeb and Rock Reuben with music by Rupert Gregson-Williams. The film co-stars Henry Winkler and Salma Hayek. It was produced by Happy Madison Productions. The film was released in the United States on October 12, 2012 by Columbia Pictures. The film's title is taken from the song "Boom" by Christian nu metal band P.O.D.
+- 3hop2__140194_16797_51068::p5: Sally Struthers Sally Anne Struthers (born July 28, 1947) is an American actress, spokeswoman and activist. She played the roles of Gloria Stivic, the daughter of Archie and Edith Bunker (played by Carroll O'Connor and Jean Stapleton) on All in the Family, for which she won two Emmy awards, and Babette on Gilmore Girls. She was the voice of Charlene Sinclair on the ABC sitcom Dinosaurs and Rebecca Cunningham on the Disney animated series TaleSpin.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__28352_53706_795904_580996::r2
+
+- sample_id: 4hop1__28352_53706_795904_580996
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What shares a border with the city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works?
+
+Gold answer: Rio Linda
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The planes were originally going to California on 9/11.
+- c2: [unclear] The person who went to the state where the planes were originally going on 9/11 during the gold rush works.
+- c3: [unclear] The city where the person who went to the state where the planes were originally going on 9/11 during the gold rush works shares a border with Ohio.
+
+Evidence:
+- 2hop__132854_417697::p3: September 11 attacks At 9:42 am, the Federal Aviation Administration (FAA) grounded all civilian aircraft within the continental U.S., and civilian aircraft already in flight were told to land immediately. All international civilian aircraft were either turned back or redirected to airports in Canada or Mexico, and were banned from landing on United States territory for three days. The attacks created widespread confusion among news organizations and air traffic controllers. Among the unconfirmed and often contradictory news reports aired throughout the day, one of the most prevalent said a car bomb had been detonated at the U.S. State Department's headquarters in Washington, D.C. Another jet—Delta Air Lines Fli [truncated]
+- 4hop1__28352_53706_795904_580996::p10: War on Terror On the morning of 11 September 2001, 19 men affiliated with al-Qaeda hijacked four airliners all bound for California. Once the hijackers assumed control of the airliners, they told the passengers that they had the bomb on board and would spare the lives of passengers and crew once their demands were met – no passenger and crew actually suspected that they would use the airliners as suicide weapons since it had never happened before in history. The hijackers – members of al-Qaeda's Hamburg cell – intentionally crashed two airliners into the Twin Towers of the World Trade Center in New York City. Both buildings collapsed within two hours from fire damage related to the crashes, destroying nea [truncated]
+- 4hop1__28352_53706_795904_580996::p17: Klondike Gold Rush The Klondike Gold Rush was a migration by an estimated 100,000 prospectors to the Klondike region of the Yukon in north - western Canada between 1896 and 1899. Gold was discovered there by local miners on August 16, 1896, and, when news reached Seattle and San Francisco the following year, it triggered a stampede of prospectors. Some became wealthy, but the majority went in vain. It has been immortalized in photographs, books, films, and artifacts.
+- 2hop__593633_82341::p0: Capital punishment in the United States Previous post-Furman mass clemencies took place in 1986 in New Mexico, when Governor Toney Anaya commuted all death sentences because of his personal opposition to the death penalty. In 1991, outgoing Ohio Governor Dick Celeste commuted the sentences of eight prisoners, among them all four women on the state's death row. And during his two terms (1979–1987) as Florida's Governor, Bob Graham, although a strong death penalty supporter who had overseen the first post-Furman involuntary execution as well as 15 others, agreed to commute the sentences of six people on the grounds of "possible innocence" or "disproportionality."
+- 2hop__2682_577502::p12: Capital punishment in the United States Previous post-Furman mass clemencies took place in 1986 in New Mexico, when Governor Toney Anaya commuted all death sentences because of his personal opposition to the death penalty. In 1991, outgoing Ohio Governor Dick Celeste commuted the sentences of eight prisoners, among them all four women on the state's death row. And during his two terms (1979–1987) as Florida's Governor, Bob Graham, although a strong death penalty supporter who had overseen the first post-Furman involuntary execution as well as 15 others, agreed to commute the sentences of six people on the grounds of "possible innocence" or "disproportionality."
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__244193_461106::r2
+
+- sample_id: 2hop__244193_461106
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What movement does the creator of the Washington Monument belong to?
+
+Gold answer: Greek Revival
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The creator of the Washington Monument is not mentioned in the provided evidence.
+
+Evidence:
+- 2hop__269766_43945::p1: The Age of Reason The Age of Reason; Being an Investigation of True and Fabulous Theology is a work by English and American political activist Thomas Paine, arguing for the philosophical position of Deism. It follows in the tradition of eighteenth-century British deism, and challenges institutionalized religion and the legitimacy of the Bible. It was published in three parts in 1794, 1795, and 1807.
+- 4hop1__31050_725495_49925_267352::p16: Presbyterianism Presbyterian history is part of the history of Christianity, but the beginning of Presbyterianism as a distinct movement occurred during the 16th - century Protestant Reformation. As the Catholic Church resisted the reformers, several different theological movements splintered from the Church and bore different denominations. Presbyterianism was especially influenced by the French theologian John Calvin, who is credited with the development of Reformed theology, and the work of John Knox, a Scotsman and a Roman Catholic Priest, who studied with Calvin in Geneva, Switzerland. He brought back Reformed teachings to Scotland. The Presbyterian church traces its ancestry back primarily to England  [truncated]
+- 2hop__244193_461106::p13: New York City The Statue of Liberty National Monument and Ellis Island Immigration Museum are managed by the National Park Service and are in both the states of New York and New Jersey. They are joined in the harbor by Governors Island National Monument, in New York. Historic sites under federal management on Manhattan Island include Castle Clinton National Monument; Federal Hall National Memorial; Theodore Roosevelt Birthplace National Historic Site; General Grant National Memorial ("Grant's Tomb"); African Burial Ground National Monument; and Hamilton Grange National Memorial. Hundreds of private properties are listed on the National Register of Historic Places or as a National Historic Landmark such as [truncated]
+- 2hop__244193_461106::p12: Lincoln Memorial The Lincoln Memorial is an American national memorial built to honor the 16th President of the United States, Abraham Lincoln. It is located on the western end of the National Mall in Washington, D.C., across from the Washington Monument. The architect was Henry Bacon; the designer of the primary statue – "Abraham Lincoln", 1920 – was Daniel Chester French; the Lincoln statue was carved by the Piccirilli Brothers; and the painter of the interior murals was Jules Guerin. Dedicated in May 1922, it is one of several memorials built to honor an American president. It has always been a major tourist attraction and since the 1930s has been a symbolic center focused on race relations.
+- 2hop__244193_461106::p4: Lincoln Memorial The Lincoln Memorial is an American national monument built to honor the 16th President of the United States, Abraham Lincoln. It is located on the western end of the National Mall in Washington, D.C., across from the Washington Monument. The architect was Henry Bacon; the designer of the primary statue -- Abraham Lincoln, 1920 -- was Daniel Chester French; the Lincoln statue was carved by the Piccirilli Brothers; and the painter of the interior murals was Jules Guerin. Dedicated in 1922, it is one of several monuments built to honor an American president. It has always been a major tourist attraction and since the 1930s has been a symbolic center focused on race relations.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__151650_5274_458768_33632::r2
+
+- sample_id: 4hop1__151650_5274_458768_33632
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What day is the Feast in the city where the headquarters of the only group larger than Desde El Principio's record label held on?
+
+Gold answer: May 4
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The headquarters of the only group larger than Desde El Principio's record label is Sony BMG Music Entertainment.
+- c2: [unclear] The Feast in the city where the headquarters of the only group larger than Desde El Principio's record label is held on 18 November.
+
+Evidence:
+- 2hop__75207_365216::p7: International Day of the World's Indigenous Peoples The International Day of the World's Indigenous People's is observed on 9 August each year to promote and protect the rights of the world's indigenous population. This event also recognizes the achievements and contributions that indigenous people make to improve world issues such as environmental protection. It was first pronounced by the General Assembly of the United Nations in December 1994, marking the day of the first meeting of the UN Working Group on Indigenous Populations of the Subcommission on the Promotion and Protection of Human Rights, in 1982.
+- 3hop1__462960_160545_34751::p18: Oldest people Rank Name Sex Birth date Death date Age Place of death or residence Jeanne Calment 21 February 1875 4 August 1997 122 years, 164 days France Sarah Knauss 24 September 1880 30 December 1999 119 years, 97 days United States Lucy Hannah 16 July 1875 21 March 1993 117 years, 248 days United States Marie - Louise Meilleur 29 August 1880 16 April 1998 117 years, 230 days Canada 5 Violet Brown 10 March 1900 15 September 2017 117 years, 189 days Jamaica 6 Emma Morano 29 November 1899 15 April 2017 117 years, 137 days Italy 7 Nabi Tajima 4 August 1900 Living 7004428270000000000 ♠ 117 years, 93 days Japan 8 Misao Okawa 5 March 1898 1 April 2015 117 years, 27 days Japan 9 María Capovilla 14 September 1 [truncated]
+- 4hop1__608132_508773_85832_745702::p17: Christmas Although the month and date of Jesus' birth are unknown, by the early - to - mid fourth century the Western Christian Church had placed Christmas on December 25, a date that was later adopted in the East. Today, most Christians celebrate on December 25 in the Gregorian calendar, which has been adopted almost universally in the civil calendars used in countries throughout the world. However, some Eastern Christian Churches celebrate Christmas on December 25 of the older Julian calendar, which currently corresponds to January 7 in the Gregorian calendar, the day after the Western Christian Church celebrates the Epiphany. This is not a disagreement over the date of Christmas as such, but rather [truncated]
+- 4hop1__151650_5274_458768_33637::p15: Desde El Principio "Desde El Principio" also came to be the duo's final album for the Sony Music Entertainment label, a company they after a series of mergers in various forms had been signed to for some fifteen years (CBS Records Spain, Epic Records Spain, CBS-Epic Spain, eventually a sublabel to Sony Music Spain, today a subsidiary to the multinational Sony BMG Music Entertainment conglomerate). In 2006 Azúcar Moreno returned to their previous label EMI Music for the album "Bailando Con Lola".
+- 4hop1__151650_5274_458768_33632::p1: Desde El Principio "Desde El Principio" also came to be the duo's final album for the Sony Music Entertainment label, a company they after a series of mergers in various forms had been signed to for some fifteen years (CBS Records Spain, Epic Records Spain, CBS-Epic Spain, eventually a sublabel to Sony Music Spain, today a subsidiary to the multinational Sony BMG Music Entertainment conglomerate). In 2006 Azúcar Moreno returned to their previous label EMI Music for the album "Bailando Con Lola".
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__140786_2053_5289::r1
+
+- sample_id: 3hop1__140786_2053_5289
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What UK label was bought by the major broadcaster that, along with ABC and the network of the show Just Men!?, is based in New York?
+
+Gold answer: Oriole Records.
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The major broadcaster that is based in New York is ABC.
+- c2: [unclear] The network of the show Just Men! is based in New York.
+- c3: [unsupported] The UK label bought by the major broadcaster based in New York is Sony Music.
+
+Evidence:
+- 3hop1__652852_2053_52946::p10: New York City The television industry developed in New York and is a significant employer in the city's economy. The three major American broadcast networks are all headquartered in New York: ABC, CBS, and NBC. Many cable networks are based in the city as well, including MTV, Fox News, HBO, Showtime, Bravo, Food Network, AMC, and Comedy Central. The City of New York operates a public broadcast service, NYCTV, that has produced several original Emmy Award-winning shows covering music and culture in city neighborhoods and city government.
+- 3hop1__140786_2053_52946::p8: New York City The television industry developed in New York and is a significant employer in the city's economy. The three major American broadcast networks are all headquartered in New York: ABC, CBS, and NBC. Many cable networks are based in the city as well, including MTV, Fox News, HBO, Showtime, Bravo, Food Network, AMC, and Comedy Central. The City of New York operates a public broadcast service, NYCTV, that has produced several original Emmy Award-winning shows covering music and culture in city neighborhoods and city government.
+- 3hop1__140786_2053_5289::p17: New York City The television industry developed in New York and is a significant employer in the city's economy. The three major American broadcast networks are all headquartered in New York: ABC, CBS, and NBC. Many cable networks are based in the city as well, including MTV, Fox News, HBO, Showtime, Bravo, Food Network, AMC, and Comedy Central. The City of New York operates a public broadcast service, NYCTV, that has produced several original Emmy Award-winning shows covering music and culture in city neighborhoods and city government.
+- 3hop1__140786_2053_5289::p7: Sony Music In 1964, CBS established its own UK distribution with the acquisition of Oriole Records. EMI continued to distribute Epic and Okeh label material on the Columbia label in the UK until the distribution deal with EMI expired in 1968 when CBS took over distribution.
+- 2hop__151750_141308::p7: Apple Records Apple Records is a record label founded by the Beatles in 1968 as a division of Apple Corps Ltd. It was initially intended as a creative outlet for the Beatles, both as a group and individually, plus a selection of other artists including Mary Hopkin, James Taylor, Badfinger, and Billy Preston. In practice, the roster had become dominated by the mid-1970s with releases of the former Beatles as solo artists. Allen Klein managed the label from 1969 to 1973, then it was managed by Neil Aspinall on behalf of the Beatles and their heirs. Aspinall retired in 2007 and was replaced by Jeff Jones.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__108833_720914_41132::r2
+
+- sample_id: 3hop1__108833_720914_41132
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: How many times did the plague occur in the city where the painter of The Bacchanal of the Andrians died?
+
+Gold answer: 22
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The painter of The Bacchanal of the Andrians is Titian.
+- c2: [unclear] Titian died in Venice.
+- c3: [supported] The plague occurred in Venice 22 times between 1361 and 1528.
+
+Evidence:
+- 3hop1__820301_720914_27537::p11: Crucifixion (Titian) The Crucifixion is a life sized painting by the Venetian artist Titian, completed in 1558 and presently hanging in the sanctuary of the church of San Domenico, Ancona. Jesus Christ is shown crucified, with Saint Mary and Saint John standing either side of the cross in the "Stabat Mater" tradition. The kneeling figure is of Saint Dominic. The canvas was completed during Titian's fifth decade of painting, and is one of the works marking a shift toward his extensive exploration of tragedy and human suffering.
+- 2hop__31124_31122::p11: The Death of Procris The Death of Procris, A Satyr mourning over a Nymph or simply A Mythological Subject are names given to an unsigned, undated panel painting in the National Gallery in London, United Kingdom, securely attributed to Piero di Cosimo (who never signed his works). Its date is uncertain, and its subject has been a matter of dispute. The name "The Death of Procris" (Italian: "Morte di Procri") has been used since the 19th century, and is supposed to have been inspired by Ovid's tale of the death of Procris at the hands of her husband Cephalus, in "Metamorphoses" VII. The National Gallery has rejected this title since at least Cecil Gould's catalogue of 1951, since when it has preferred to describe  [truncated]
+- 3hop1__108833_720914_41132::p6: Black Death In 1466, perhaps 40,000 people died of the plague in Paris. During the 16th and 17th centuries, the plague was present in Paris around 30 per cent of the time. The Black Death ravaged Europe for three years before it continued on into Russia, where the disease was present somewhere in the country 25 times between 1350 to 1490. Plague epidemics ravaged London in 1563, 1593, 1603, 1625, 1636, and 1665, reducing its population by 10 to 30% during those years. Over 10% of Amsterdam's population died in 1623–25, and again in 1635–36, 1655, and 1664. Plague occurred in Venice 22 times between 1361 and 1528. The plague of 1576–77 killed 50,000 in Venice, almost a third of the population. Late outbr [truncated]
+- 3hop1__108833_720914_41132::p0: The Bacchanal of the Andrians The Bacchanal of the Andrians is an oil painting by Titian. It is signed ".[aciebat]" and is dated to 1523–1526.
+- 3hop1__108833_720914_41132::p5: Black Death The Black Death, also known as the Great Plague, the Black Plague, or simply the Plague, was one of the most devastating pandemics in human history, resulting in the deaths of an estimated 75 to 200 million people in Eurasia and peaking in Europe from 1347 to 1351. The bacterium Yersinia pestis, which results in several forms of plague, is believed to have been the cause. The plague created a series of religious, social and economic upheavals, which had profound effects on the course of European history.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__151750_141308::r3
+
+- sample_id: 2hop__151750_141308
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What company is the record label of Magic Christian Music part of?
+
+Gold answer: Apple Corps
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] Magic Christian Music is part of Apple Corps Ltd.
+- c2: [supported] Apple Records is a division of Apple Corps Ltd.
+- c3: [supported] Magic Christian Music was released on Apple Records.
+
+Evidence:
+- 2hop__151750_141308::p14: Magic Christian Music Magic Christian Music is the debut album by the British rock band Badfinger, released in early 1970 on Apple Records. Three tracks from the LP are featured in the film "The Magic Christian", which also gives the album its title. However, "Magic Christian Music" is not an official soundtrack album for the film.
+- 2hop__151750_141308::p7: Apple Records Apple Records is a record label founded by the Beatles in 1968 as a division of Apple Corps Ltd. It was initially intended as a creative outlet for the Beatles, both as a group and individually, plus a selection of other artists including Mary Hopkin, James Taylor, Badfinger, and Billy Preston. In practice, the roster had become dominated by the mid-1970s with releases of the former Beatles as solo artists. Allen Klein managed the label from 1969 to 1973, then it was managed by Neil Aspinall on behalf of the Beatles and their heirs. Aspinall retired in 2007 and was replaced by Jeff Jones.
+- 2hop__151750_141308::p10: Come and Get It (Badfinger song) ``Come and Get It ''is a song composed by Paul McCartney for the 1969 film The Magic Christian. The song was performed by Badfinger, produced by McCartney and issued as a single 5 December 1969 in the UK, and 12 January 1970 in the US on the Beatles' Apple label.
+- 4hop1__31050_725495_49925_267352::p11: Catholic Church in Lesotho Many Christians still practice their traditional cultural beliefs and rituals along with Christianity. The Catholic Church has fused some aspects of local culture into its services. For example, the singing of hymns during services has developed into a local and traditional way of singing (a repetitive call and response style) in Sesotho, the indigenous language, as well as English. In addition priests are seen dressed in local dress during services.
+- 2hop__151750_141308::p6: MCA Records MCA Records was an American record label owned by MCA Inc., which later gave way to the larger MCA Music Entertainment Group (now Universal Music Group), which the label was part of until its dissolution in 2003. The label's country division MCA Nashville is a still active imprint of Universal Music Group Nashville.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__264443_49925_13759_736921::r1
+
+- sample_id: 4hop1__264443_49925_13759_736921
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: Where is the district that the person who wanted to reform and address Edward Egan's religion preached a sermon on Marian devotion before his death located?
+
+Gold answer: Saxony-Anhalt
+
+Candidate answer: 
+
+Claims:
+- c1: [unclear] Edward Egan wanted to reform and address his religion.
+- c2: [unclear] The person who wanted to reform and address Edward Egan's religion preached a sermon on Marian devotion before his death.
+- c3: [unclear] The district where the person who wanted to reform and address Edward Egan's religion preached a sermon on Marian devotion before his death is located.
+
+Evidence:
+- 4hop1__264443_49925_13759_736921::p15: Edward Egan Edward Michael Egan (April 2, 1932 – March 5, 2015) was an American Cardinal of the Roman Catholic Church. He served as Bishop of Bridgeport from 1988 to 2000, and as Archbishop of New York from 2000 to 2009. He was elevated to the cardinalate in 2001. He was the twelfth Bishop, ninth Archbishop, and seventh Cardinal of the See of New York.
+- 4hop1__264443_49925_13759_736921::p6: James J. Egan James J. Egan, FAIA, (1839, Cork, Ireland—December 2, 1914, Chicago, Illinois) was an Irish-American architect and fellow of the American Institute of Architects practicing in Chicago, Illinois. He was a partner of the Chicago architectural firms Armstrong & Egan, Egan & Kirkland and Egan & Prindeville, which gained prominence designing Roman Catholic structures.
+- 3hop1__136129_87694_124169::p13: Boston Boston has been a noted religious center from its earliest days. The Roman Catholic Archdiocese of Boston serves nearly 300 parishes and is based in the Cathedral of the Holy Cross (1875) in the South End, while the Episcopal Diocese of Massachusetts, with the Cathedral Church of St. Paul (1819) as its episcopal seat, serves just under 200 congregations. Unitarian Universalism has its headquarters on Beacon Hill. The Christian Scientists are headquartered in Back Bay at the Mother Church (1894). The oldest church in Boston is First Church in Boston, founded in 1630. King's Chapel, the city's first Anglican church, was founded in 1686 and converted to Unitarianism in 1785. Other churches incl [truncated]
+- 3hop2__851134_613770_7713::p19: Haifa District Haifa District (, "Mehoz Ḥeifa"; ) is an administrative district surrounding the city of Haifa, Israel. The district is one of seven administrative districts of Israel, and its capital is Haifa. The district land area is 864 km (299.3 mi).
+- 4hop3__857_846_613770_7713::p16: Ghaziabad district, Uttar Pradesh Ghaziabad district (pronounced [ɣaːziːaːˈbaːd̪ ˈzɪlaː]) is a largely suburban district of Uttar Pradesh state in northern India of National Capital Region.  The city of Ghaziabad is the administrative headquarters of the district. This district is part of Meerut Division.  It has become a major bedroom community for Delhi.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__108833_720914_41132::r1
+
+- sample_id: 3hop1__108833_720914_41132
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: How many times did the plague occur in the city where the painter of The Bacchanal of the Andrians died?
+
+Gold answer: 22
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The painter of The Bacchanal of the Andrians is Titian.
+- c2: [unclear] Titian died in Venice.
+- c3: [supported] The plague occurred in Venice 22 times between 1361 and 1528.
+
+Evidence:
+- 3hop1__108833_720914_41132::p0: The Bacchanal of the Andrians The Bacchanal of the Andrians is an oil painting by Titian. It is signed ".[aciebat]" and is dated to 1523–1526.
+- 3hop1__108833_720914_41132::p5: Black Death The Black Death, also known as the Great Plague, the Black Plague, or simply the Plague, was one of the most devastating pandemics in human history, resulting in the deaths of an estimated 75 to 200 million people in Eurasia and peaking in Europe from 1347 to 1351. The bacterium Yersinia pestis, which results in several forms of plague, is believed to have been the cause. The plague created a series of religious, social and economic upheavals, which had profound effects on the course of European history.
+- 2hop__62951_64006::p7: Black Death The Black Death, also known as the Great Plague, the Black Plague, or simply the Plague, was one of the most devastating pandemics in human history, resulting in the deaths of an estimated 75 to 200 million people in Eurasia and peaking in Europe from 1347 to 1351. The bacterium Yersinia pestis, which results in several forms of plague, is believed to have been the cause. The plague created a series of religious, social and economic upheavals, which had profound effects on the course of European history.
+- 3hop1__108833_720914_41132::p6: Black Death In 1466, perhaps 40,000 people died of the plague in Paris. During the 16th and 17th centuries, the plague was present in Paris around 30 per cent of the time. The Black Death ravaged Europe for three years before it continued on into Russia, where the disease was present somewhere in the country 25 times between 1350 to 1490. Plague epidemics ravaged London in 1563, 1593, 1603, 1625, 1636, and 1665, reducing its population by 10 to 30% during those years. Over 10% of Amsterdam's population died in 1623–25, and again in 1635–36, 1655, and 1664. Plague occurred in Venice 22 times between 1361 and 1528. The plague of 1576–77 killed 50,000 in Venice, almost a third of the population. Late outbr [truncated]
+- 2hop__31124_31122::p11: The Death of Procris The Death of Procris, A Satyr mourning over a Nymph or simply A Mythological Subject are names given to an unsigned, undated panel painting in the National Gallery in London, United Kingdom, securely attributed to Piero di Cosimo (who never signed his works). Its date is uncertain, and its subject has been a matter of dispute. The name "The Death of Procris" (Italian: "Morte di Procri") has been used since the 19th century, and is supposed to have been inspired by Ovid's tale of the death of Procris at the hands of her husband Cephalus, in "Metamorphoses" VII. The National Gallery has rejected this title since at least Cecil Gould's catalogue of 1951, since when it has preferred to describe  [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__103751_24918_24991::r1
+
+- sample_id: 3hop1__103751_24918_24991
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What went down after the Soviet President visiting the country of origin of Ethella Chupryk while the protests were taking place departed from the Kremlin?
+
+Gold answer: Soviet flag
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The Soviet President visiting the country of origin of Ethella Chupryk while the protests were taking place departed from the Kremlin.
+- c2: [unclear] The Dissolution of the Soviet Union occurred after the Soviet President visited the country of origin of Ethella Chupryk while the protests were taking place and departed from the Kremlin.
+
+Evidence:
+- 3hop1__103751_24918_24991::p11: Dissolution of the Soviet Union In late February, large public rallies took place in Kiev to protest the election laws, on the eve of the March 26 elections to the USSR Congress of People's Deputies, and to call for the resignation of the first secretary of the Communist Party of Ukraine, Volodymyr Scherbytsky, lampooned as "the mastodon of stagnation." The demonstrations coincided with a visit to Ukraine by Soviet President Gorbachev. On February 26, 1989, between 20,000 and 30,000 people participated in an unsanctioned ecumenical memorial service in Lviv, marking the anniversary of the death of 19th Century Ukrainian artist and nationalist Taras Shevchenko.
+- 2hop__244193_461106::p7: Dissolution of the Soviet Union Beginning in February 1988, the Democratic Movement of Moldova (formerly Moldavia) organized public meetings, demonstrations, and song festivals, which gradually grew in size and intensity. In the streets, the center of public manifestations was the Stephen the Great Monument in Chişinău, and the adjacent park harboring Aleea Clasicilor (The "Alee of the Classics [of the Literature]"). On January 15, 1988, in a tribute to Mihai Eminescu at his bust on the Aleea Clasicilor, Anatol Şalaru submitted a proposal to continue the meetings. In the public discourse, the movement called for national awakening, freedom of speech, revival of Moldavian traditions, and for attainment of official status fo [truncated]
+- 2hop__5658_25002::p17: Dissolution of the Soviet Union The "Jeltoqsan" (Kazakh for "December") of 1986 were riots in Alma-Ata, Kazakhstan, sparked by Gorbachev's dismissal of Dinmukhamed Konayev, the First Secretary of the Communist Party of Kazakhstan and an ethnic Kazakh, who was replaced with Gennady Kolbin, an outsider from the Russian SFSR. Demonstrations started in the morning of December 17, 1986, with 200 to 300 students in front of the Central Committee building on Brezhnev Square protesting Konayev's dismissal and replacement by a Russian. Protesters swelled to 1,000 to 5,000 as other students joined the crowd. The CPK Central Committee ordered troops from the Ministry of Internal Affairs, druzhiniki (volunteers), cadets, policemen, an [truncated]
+- 2hop__132854_417697::p3: September 11 attacks At 9:42 am, the Federal Aviation Administration (FAA) grounded all civilian aircraft within the continental U.S., and civilian aircraft already in flight were told to land immediately. All international civilian aircraft were either turned back or redirected to airports in Canada or Mexico, and were banned from landing on United States territory for three days. The attacks created widespread confusion among news organizations and air traffic controllers. Among the unconfirmed and often contradictory news reports aired throughout the day, one of the most prevalent said a car bomb had been detonated at the U.S. State Department's headquarters in Washington, D.C. Another jet—Delta Air Lines Fli [truncated]
+- 3hop1__108833_720914_41132::p5: Black Death The Black Death, also known as the Great Plague, the Black Plague, or simply the Plague, was one of the most devastating pandemics in human history, resulting in the deaths of an estimated 75 to 200 million people in Eurasia and peaking in Europe from 1347 to 1351. The bacterium Yersinia pestis, which results in several forms of plague, is believed to have been the cause. The plague created a series of religious, social and economic upheavals, which had profound effects on the course of European history.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__132854_417697::r1
+
+- sample_id: 2hop__132854_417697
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Mohammed Atta has what kind of model of the company that makes Datsun Type 12?
+
+Gold answer: Nissan Altima
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] Mohammed Atta has a model of the company that makes Datsun Type 12
+
+Evidence:
+- 2hop__132854_417697::p10: Datsun Type 12 The 1933 Datsun Type 12 was a small car produced by the Nissan corporation. The name Datsun was used by DAT for their line of small cars. After the DAT corporation was absorbed into Nissan, these cars continued to be produced, and the original model name was maintained. The Type 12 was basically similar to the earlier 1932 Type 11, but had a larger engine.
+- 3hop2__132957_133264_40768::p13: Datsun Datsun (, ) is an automobile brand owned by Nissan. Datsun's original production run began in 1931. From 1958 to 1986, only vehicles exported by Nissan were identified as Datsun. By 1986 Nissan had phased out the Datsun name, but re-launched it in June 2013 as the brand for low-cost vehicles manufactured for emerging markets.
+- 2hop__132854_417697::p16: Datsun Datsun (, ) is an automobile brand owned by Nissan. Datsun's original production run began in 1931. From 1958 to 1986, only vehicles exported by Nissan were identified as Datsun. By 1986 Nissan had phased out the Datsun name, but re-launched it in June 2013 as the brand for low-cost vehicles manufactured for emerging markets.
+- 4hop1__443274_17130_70784_79935::p2: Alghanim Industries Alghanim Industries is one of the largest privately owned companies in the Persian Gulf region, predominantly in Kuwait. A multinational company in outlook with operations in 40 countries, Alghanim Industries is a multibillion-dollar conglomerate with more than 30 businesses. They also fund projects and provide loans for non-UAE/Middle East countries. Alghanim Industries claimed that it collected revenues of $2.5 billion in 2009, although has not disclosed its financial standing since.
+- 4hop1__443274_17130_70784_61381::p19: Alghanim Industries Alghanim Industries is one of the largest privately owned companies in the Persian Gulf region, predominantly in Kuwait. A multinational company in outlook with operations in 40 countries, Alghanim Industries is a multibillion-dollar conglomerate with more than 30 businesses. They also fund projects and provide loans for non-UAE/Middle East countries. Alghanim Industries claimed that it collected revenues of $2.5 billion in 2009, although has not disclosed its financial standing since.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__153573_44085::r2
+
+- sample_id: 2hop__153573_44085
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What was the show named after the character featured in the video game Mickey's Safari in Letterland?
+
+Gold answer: The Mickey Mouse Club
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The show named after the character featured in the video game Mickey's Safari in Letterland is Metal Mickey.
+- c2: [unsupported] Mickey's Safari in Letterland features a character named Metal Mickey.
+
+Evidence:
+- 2hop__153573_44085::p14: Mickey's Safari in Letterland Mickey's Safari in Letterland is a 1993 educational Nintendo Entertainment System video game starring the famous cartoon character Mickey Mouse. In this game, Mickey must collect all of the letters of the alphabet for his museum by going to six different territories (including places inspired by the Yukon and the Caribbean). There are three levels of difficulty.
+- 2hop__153573_44085::p2: The Mickey Mouse Club The Mickey Mouse Club is an American variety television show that aired intermittently from 1955 to 1996 and returned in 2017 to social media. Created by Walt Disney and produced by Walt Disney Productions, the program was first televised in 1955 by ABC, featuring a regular but ever - changing cast of mostly teen performers. ABC broadcast reruns weekday afternoons during the 1958 -- 1959 season, airing right after American Bandstand. The show was revived after its initial 1955 -- 1959 run on ABC, first from 1977 -- 1979 for first - run syndication, again from 1989 -- 1996 as The All - New Mickey Mouse Club (also known to fans as MMC from 1993 -- 1996) airing exclusively on cable television's [truncated]
+- 2hop__153573_44085::p6: Phantom Blot The Phantom Blot is a fictional character featured in various media by The Walt Disney Company. He is an enemy of Mickey Mouse. He first appeared in the "Mickey Mouse" comic strip adventure "Mickey Mouse Outwits the Phantom Blot" by Floyd Gottfredson, which was published in the form of daily strips from May 20 to September 9, 1939.
+- 3hop2__49541_140875_51068::p3: High Feather High Feather is a 10-episode educational television show which ran on PBS in the 1980s; each episode was 30 minutes long. The program's name came from the Old English expression "High Fettle", meaning enjoying life and cheerfully doing the tasks of living. The heartfelt spirit of the show was captured in the lyrics to its theme song: "I'm in High Feather. Feel like the sun is shining on me. High Feather. I'm as free as I can be..."
+- 2hop__153573_44085::p9: Metal Mickey The character of Metal Mickey first appeared on British television in the ITV children's magazine show "The Saturday Banana," produced by Southern Television in 1978. Humphrey Barclay saw Mickey on Jimmy Savile's 'Jim'll Fix It' television show. Seeing the children chatting in the marketplace with the friendly robot, this led to the creation of the "Metal Mickey" television show. Within a month the pilot had been video-taped and shortly after this the series went live with its first six episodes. 41 episodes were made in total, broadcast over three separate seasons between September 1980 and January 1983. The show attracted viewing figures of around 12 million at its peak. Micky Dolenz, form [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__105767_443779_52195::r2
+
+- sample_id: 3hop1__105767_443779_52195
+- risk_type: wrong_target
+- oracle_action: disambiguate_conflict
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: Who is the president of the newly declared independent country that is part of the commission of truth and friendship with the country that eats Kemplang?
+
+Gold answer: Francisco Guterres
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The newly declared independent country that is part of the commission of truth and friendship with Indonesia is East Timor.
+- c2: [supported] The country that eats Kemplang is Indonesia.
+- c3: [contradicted] The president of East Timor is Susilo Bambang Yudhoyono.
+
+Evidence:
+- 3hop1__105767_443779_52195::p0: Kemplang Kemplang is a traditional savory fish cracker ("krupuk ikan") snack commonly found in southern parts of Sumatra, Indonesia. Kemplang crackers are commonly made of "ikan tenggiri" (wahoo) or any type of Spanish mackerel, mixed with tapioca starch and other flavorings, sun-dried and then grilled or fried.
+- 4hop2__161602_426860_88460_18966::p7: Hokkien There are many Hokkien speakers among overseas Chinese in Southeast Asia as well as in the United States. Many ethnic Han Chinese emigrants to the region were Hoklo from southern Fujian, and brought the language to what is now Burma (Myanmar), Indonesia (the former Dutch East Indies) and present day Malaysia and Singapore (formerly Malaya and the British Straits Settlements). Many of the Hokkien dialects of this region are highly similar to Taiwanese and Amoy. Hokkien is reportedly the native language of up to 98.5% of the Chinese Filipino in the Philippines, among which is known locally as Lan-nang or Lán-lâng-oē ("Our people’s language"). Hokkien speakers form the largest group of Chinese  [truncated]
+- 3hop1__93963_170667_18967::p14: Hokkien There are many Hokkien speakers among overseas Chinese in Southeast Asia as well as in the United States. Many ethnic Han Chinese emigrants to the region were Hoklo from southern Fujian, and brought the language to what is now Burma (Myanmar), Indonesia (the former Dutch East Indies) and present day Malaysia and Singapore (formerly Malaya and the British Straits Settlements). Many of the Hokkien dialects of this region are highly similar to Taiwanese and Amoy. Hokkien is reportedly the native language of up to 98.5% of the Chinese Filipino in the Philippines, among which is known locally as Lan-nang or Lán-lâng-oē ("Our people’s language"). Hokkien speakers form the largest group of Chinese  [truncated]
+- 3hop1__105767_443779_52195::p6: Namibia The Namibian Constitution adopted in February 1990 incorporated protection for human rights, compensation for state expropriations of private property, an independent judiciary and an executive presidency (the constituent assembly became the national assembly). The country officially became independent on 21 March 1990. Sam Nujoma was sworn in as the first President of Namibia watched by Nelson Mandela (who had been released from prison the previous month) and representatives from 147 countries, including 20 heads of state. Walvis Bay was ceded to Namibia in 1994 upon the end of Apartheid in South Africa.[citation needed]
+- 3hop1__105767_443779_52195::p3: Indonesia–Timor Leste Commission of Truth and Friendship The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred around the independence referendum held in East Timor in 1999 and sought to find the "conclusive truth" behind the events. After holding private hearings and document reviews, the commission handed in the final report on July 15, 2008 to the presidents of both nations, and was fully endorsed by Indonesian President Susilo Bambang Yudhoyono, providing the first acknowledgement by the government of Indonesia of the human rights violations committe [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__161810_583746_457883_650651::r3
+
+- sample_id: 4hop1__161810_583746_457883_650651
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: Country A has an embassy from the country that contains the bay where the city of General Santos is located. What network created country A's version of The Biggest Loser?
+
+Gold answer: NBC
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The country that contains the bay where General Santos is located is the Philippines.
+- c2: [unclear] The Philippines has an embassy in Country A.
+- c3: [unclear] The network that created country A's version of The Biggest Loser is NBC.
+
+Evidence:
+- 3hop1__786067_228453_86925::p17: Reduced level The most common and convenient datum which is internationally accepted is mean sea level. Countries take their nearby sea levels as datum planes for calculations of Reduced levels. For example, Pakistan takes sea near Karachi as its datum while India takes sea near Mumbai as its datum for calculation of Reduced levels of different places in their respective countries. The term Reduced Level is denoted shortly by 'RL'. National survey departments of each country determines RL's of significantly important locations or points. These points are called as permanent benchmarks and this survey process is known as Great Trigonometrical Surveying (GTS). The permanent bench marks act as reference poin [truncated]
+- 4hop2__161324_14670_8987_8529::p1: Palestinian territories Palestinian territories and occupied Palestinian territories (OPT or oPt) are terms often used to describe the West Bank (including East Jerusalem) and the Gaza Strip, which are occupied or otherwise under the control of Israel. Israeli governments have maintained that the area involved is within territorial dispute. The extent of the territories, while subject to future negotiations, have frequently been defined by the Green Line.
+- 2hop__31124_31122::p3: Pub Other subjects that lent themselves to visual depiction included the name of battles (e.g. Trafalgar), explorers, local notables, discoveries, sporting heroes and members of the royal family. Some pub signs are in the form of a pictorial pun or rebus. For example, a pub in Crowborough, East Sussex called The Crow and Gate has an image of a crow with gates as wings.
+- 4hop1__161810_583746_457883_650651::p18: South Cotabato General Santos, located on the shores of Sarangani Bay, is the most populous city in the region, but is governed independently from the province. The province of Sarangani used to be part of South Cotabato until it was made an independent province in 1992.
+- 4hop1__161810_583746_457883_650651::p10: The Biggest Loser (season 1) The Biggest Loser (season 1) is the first season of the NBC reality television series entitled "The Biggest Loser", which premiered on October 19, 2004. The show features overweight contestants competing to lose the largest percentage of their body weight and receive the title of 'Biggest Loser,' along with a $250,000 grand prize. The first season featured twelve contestants divided into two teams of six players. The teams were each led by a personal trainer, Bob Harper with the Blue Team and Jillian Michaels with the Red Team. The first season was hosted by Caroline Rhea.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__103751_24918_24991::r2
+
+- sample_id: 3hop1__103751_24918_24991
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What went down after the Soviet President visiting the country of origin of Ethella Chupryk while the protests were taking place departed from the Kremlin?
+
+Gold answer: Soviet flag
+
+Candidate answer: 
+
+Claims:
+- c1: [unsupported] The Soviet President visiting the country of origin of Ethella Chupryk while the protests were taking place departed from the Kremlin, and the dissolution of the Soviet Union went down after that.
+
+Evidence:
+- 3hop1__103751_24918_24991::p10: Ethella Chupryk Ethella Chupryk (Hungarian: Etelka Csuprik, Ukrainian: Етелла Чуприк, "Etella Chupryk", born 1964) is a Ukrainian pianist and Assistant Professor of piano at the Mykola Lysenko National Music Academy in Lviv, Ukraine.
+- 3hop1__103751_24918_24991::p11: Dissolution of the Soviet Union In late February, large public rallies took place in Kiev to protest the election laws, on the eve of the March 26 elections to the USSR Congress of People's Deputies, and to call for the resignation of the first secretary of the Communist Party of Ukraine, Volodymyr Scherbytsky, lampooned as "the mastodon of stagnation." The demonstrations coincided with a visit to Ukraine by Soviet President Gorbachev. On February 26, 1989, between 20,000 and 30,000 people participated in an unsanctioned ecumenical memorial service in Lviv, marking the anniversary of the death of 19th Century Ukrainian artist and nationalist Taras Shevchenko.
+- 2hop__244193_461106::p7: Dissolution of the Soviet Union Beginning in February 1988, the Democratic Movement of Moldova (formerly Moldavia) organized public meetings, demonstrations, and song festivals, which gradually grew in size and intensity. In the streets, the center of public manifestations was the Stephen the Great Monument in Chişinău, and the adjacent park harboring Aleea Clasicilor (The "Alee of the Classics [of the Literature]"). On January 15, 1988, in a tribute to Mihai Eminescu at his bust on the Aleea Clasicilor, Anatol Şalaru submitted a proposal to continue the meetings. In the public discourse, the movement called for national awakening, freedom of speech, revival of Moldavian traditions, and for attainment of official status fo [truncated]
+- 2hop__61924_712629::p10: Elizabeth II Elizabeth II (Elizabeth Alexandra Mary; born 21 April 1926) has been Queen of the United Kingdom, Canada, Australia, and New Zealand since 6 February 1952. Additionally, she is Head of the Commonwealth and Queen of 12 countries that have become independent since her accession: Jamaica, Barbados, the Bahamas, Grenada, Papua New Guinea, Solomon Islands, Tuvalu, Saint Lucia, Saint Vincent and the Grenadines, Belize, Antigua and Barbuda, and Saint Kitts and Nevis.
+- 3hop2__140194_16797_51068::p8: Elizabeth II When her father died in February 1952, she became Head of the Commonwealth and queen regnant of seven independent Commonwealth countries: the United Kingdom, Canada, Australia, New Zealand, South Africa, Pakistan, and Ceylon. She has reigned through major constitutional changes, such as devolution in the United Kingdom, Canadian patriation, and the decolonisation of Africa. Between 1956 and 1992, the number of her realms varied as territories gained independence and realms, including South Africa, Pakistan, and Ceylon (renamed Sri Lanka), became republics. Her many historic visits and meetings include a state visit to the Republic of Ireland and visits to or from five popes. Significant even [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__105401_17130_70784_79935::r1
+
+- sample_id: 4hop1__105401_17130_70784_79935
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: When was the region that lies to the north of the region where Strangers No More took place and the Persian Gulf created?
+
+Gold answer: 1930
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The region to the north of the Persian Gulf is the Arabian Sea.
+- c2: [unclear] The Persian Gulf was created during the Pleistocene epoch due to the lowering of sea levels.
+
+Evidence:
+- 4hop1__443274_17130_70784_61381::p2: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 4hop1__17192_17130_70784_79935::p2: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 4hop1__105401_17130_70784_79935::p12: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 3hop2__145209_20335_9331::p7: Bukovina A region of Moldavia during the Middle Ages, the territory of what became known as Bukovina was, from 1774 to 1918, an administrative division of the Habsburg Monarchy, the Austrian Empire, and Austria-Hungary. After World War I, Romania established its control over Bukovina. In 1940, the northern half of Bukovina was annexed by the Soviet Union in violation of the Molotov–Ribbentrop Pact, and currently is part of Ukraine.
+- 2hop__818302_25719::p11: Lower Lusatia Lower Lusatia (; ; ; ; ) is a historical region in Central Europe, stretching from the southeast of the German state of Brandenburg to the southwest of Lubusz Voivodeship in Poland. Like adjacent Upper Lusatia in the south, Lower Lusatia is a settlement area of the West Slavic Sorbs whose endangered Lower Sorbian language is related to Upper Sorbian and Polish.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__166471_49925_13759_736921::r1
+
+- sample_id: 4hop1__166471_49925_13759_736921
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: In what state is the district where the one who wanted to reform and address the institution behind the religion of Egidio Vagnozzi preached a sermon?
+
+Gold answer: Saxony-Anhalt
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Egidio Vagnozzi was an Italian Cardinal of the Catholic Church.
+- c2: [supported] The religion of Egidio Vagnozzi is Catholicism.
+- c3: [supported] The institution behind the religion of Egidio Vagnozzi is the Catholic Church.
+- c4: [unclear] The one who wanted to reform and address the institution behind the religion of Egidio Vagnozzi preached a sermon in a district.
+
+Evidence:
+- 4hop1__166471_49925_13759_736921::p8: Egidio Vagnozzi Egidio Vagnozzi (26 February 1906 – 26 December 1980) was an Italian Cardinal of the Catholic Church. He served as the second president of the Prefecture for the Economic Affairs of the Holy See from 1968 until his death, and was elevated to the cardinalate in 1967.
+- 3hop1__136129_87694_124169::p13: Boston Boston has been a noted religious center from its earliest days. The Roman Catholic Archdiocese of Boston serves nearly 300 parishes and is based in the Cathedral of the Holy Cross (1875) in the South End, while the Episcopal Diocese of Massachusetts, with the Cathedral Church of St. Paul (1819) as its episcopal seat, serves just under 200 congregations. Unitarian Universalism has its headquarters on Beacon Hill. The Christian Scientists are headquartered in Back Bay at the Mother Church (1894). The oldest church in Boston is First Church in Boston, founded in 1630. King's Chapel, the city's first Anglican church, was founded in 1686 and converted to Unitarianism in 1785. Other churches incl [truncated]
+- 2hop__677929_696450::p15: Federalism Some Christians argue that the earliest source of political federalism (or federalism in human institutions; in contrast to theological federalism) is the ecclesiastical federalism found in the Bible. They point to the structure of the early Christian Church as described (and prescribed, as believed by many) in the New Testament. In their arguments, this is particularly demonstrated in the Council of Jerusalem, described in Acts chapter 15, where the Apostles and elders gathered together to govern the Church; the Apostles being representatives of the universal Church, and elders being such for the local church. To this day, elements of federalism can be found in almost every Christian denomi [truncated]
+- 3hop2__92991_72083_76291::p6: Montana However, at the state level, the pattern of split ticket voting and divided government holds. Democrats currently hold one of the state's U.S. Senate seats, as well as four of the five statewide offices (Governor, Superintendent of Public Instruction, Secretary of State and State Auditor). The lone congressional district has been Republican since 1996 and in 2014 Steve Daines won one of the state's Senate seats for the GOP. The Legislative branch had split party control between the house and senate most years between 2004 and 2010, when the mid-term elections returned both branches to Republican control. The state Senate is, as of 2015, controlled by the Republicans 29 to 21, and the State H [truncated]
+- 3hop2__92991_27069_76291::p15: Montana However, at the state level, the pattern of split ticket voting and divided government holds. Democrats currently hold one of the state's U.S. Senate seats, as well as four of the five statewide offices (Governor, Superintendent of Public Instruction, Secretary of State and State Auditor). The lone congressional district has been Republican since 1996 and in 2014 Steve Daines won one of the state's Senate seats for the GOP. The Legislative branch had split party control between the house and senate most years between 2004 and 2010, when the mid-term elections returned both branches to Republican control. The state Senate is, as of 2015, controlled by the Republicans 29 to 21, and the State H [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__105401_17130_70784_79935::r1
+
+- sample_id: 4hop1__105401_17130_70784_79935
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: When was the region that lies to the north of the region where Strangers No More took place and the Persian Gulf created?
+
+Gold answer: 1930
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The region to the north of the Persian Gulf is the Arabian Sea.
+- c2: [unclear] The Persian Gulf was created during the Pleistocene epoch due to the lowering of sea levels.
+
+Evidence:
+- 4hop1__443274_17130_70784_61381::p2: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 4hop1__17192_17130_70784_79935::p2: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 4hop1__105401_17130_70784_79935::p12: Arabian Sea The Arabian Sea is a region of the northern Indian Ocean bounded on the northeast and east by the Indian Peninsula on the west by Somalia and the Arabian Peninsula, on the north by Pakistan and Iran and on the South by the Maldives. Historically the sea has been known by other names including the Erythraean Sea and the Persian Sea. Its total area is 3,862,000 km (1,491,000 sq mi) and its maximum depth is 4,652 metres (15,262 ft). The Gulf of Aden is in the southwest, connecting the Arabian Sea to the Red Sea through the strait of Bab - el - Mandeb, and the Gulf of Oman is in the northwest, connecting it to the Persian Gulf.
+- 3hop2__145209_20335_9331::p7: Bukovina A region of Moldavia during the Middle Ages, the territory of what became known as Bukovina was, from 1774 to 1918, an administrative division of the Habsburg Monarchy, the Austrian Empire, and Austria-Hungary. After World War I, Romania established its control over Bukovina. In 1940, the northern half of Bukovina was annexed by the Soviet Union in violation of the Molotov–Ribbentrop Pact, and currently is part of Ukraine.
+- 2hop__818302_25719::p11: Lower Lusatia Lower Lusatia (; ; ; ; ) is a historical region in Central Europe, stretching from the southeast of the German state of Brandenburg to the southwest of Lubusz Voivodeship in Poland. Like adjacent Upper Lusatia in the south, Lower Lusatia is a settlement area of the West Slavic Sorbs whose endangered Lower Sorbian language is related to Upper Sorbian and Polish.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__161605_32392_823060_610794::r2
+
+- sample_id: 4hop1__161605_32392_823060_610794
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What county is the city that shares a border with the state capital of the state where Darlington County located in?
+
+Gold answer: Richland County
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Darlington County is located in South Carolina
+- c2: [unsupported] The state capital of South Carolina is Columbia
+- c3: [unclear] The city that shares a border with the state capital of South Carolina is located in a county
+
+Evidence:
+- 4hop1__463635_624859_355213_203322::p10: Canada–United States border The Canada -- United States border (French: Frontière entre le Canada et les États - Unis), officially known as the International Boundary, is the longest international border in the world between two countries. It is shared between Canada and the United States, the second - and fourth - largest countries by area, respectively. The terrestrial boundary (including portions of maritime boundaries in the Great Lakes, and on the Atlantic, Pacific, and Arctic coasts) is 8,891 kilometres (5,525 mi) long, of which 2,475 kilometres (1,538 mi) is Canada's border with Alaska. Eight Canadian provinces and territories (Yukon, British Columbia, Alberta, Saskatchewan, Manitoba, Ontario, Quebec, and New Br [truncated]
+- 4hop1__43565_624859_355213_203322::p8: Canada–United States border The Canada -- United States border (French: Frontière entre le Canada et les États - Unis), officially known as the International Boundary, is the longest international border in the world between two countries. It is shared between Canada and the United States, the second - and fourth - largest countries by area, respectively. The terrestrial boundary (including portions of maritime boundaries in the Great Lakes, and on the Atlantic, Pacific, and Arctic coasts) is 8,891 kilometres (5,525 mi) long, of which 2,475 kilometres (1,538 mi) is Canada's border with Alaska. Eight Canadian provinces and territories (Yukon, British Columbia, Alberta, Saskatchewan, Manitoba, Ontario, Quebec, and New Br [truncated]
+- 4hop1__131611_32392_823060_610794::p15: Canada–United States border The Canada -- United States border (French: Frontière entre le Canada et les États - Unis), officially known as the International Boundary, is the longest international border in the world between two countries. It is shared between Canada and the United States, the second - and fourth - largest countries by area, respectively. The terrestrial boundary (including portions of maritime boundaries in the Great Lakes, and on the Atlantic, Pacific, and Arctic coasts) is 8,891 kilometres (5,525 mi) long, of which 2,475 kilometres (1,538 mi) is Canada's border with Alaska. Eight Canadian provinces and territories (Yukon, British Columbia, Alberta, Saskatchewan, Manitoba, Ontario, Quebec, and New Br [truncated]
+- 4hop1__161605_32392_823060_610794::p11: Darlington County, South Carolina Darlington County is a county in the U.S. state of South Carolina. As of 2016, its estimated population was 67,234. Its county seat is Darlington. Hartsville is the largest city in the county. Darlington County is home to the Darlington Raceway, which hosts the annual NASCAR Southern 500. Darlington County is also home to Coker College in Hartsville. Darlington County was named by an act in March 1785.
+- 3hop1__159803_89752_75165::p2: Mecklenburg County, North Carolina Mecklenburg County is a county located on the border in the southwestern part of the state of North Carolina, in the United States. As of the 2010 census, the population was 919,628. It increased to 1,034,070 as of the 2015 estimate, making it the most populous county in North Carolina and the first county in the Carolinas to surpass 1 million in population. Its county seat and largest city is Charlotte.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__145494_698949_157828_162309::r2
+
+- sample_id: 4hop1__145494_698949_157828_162309
+- risk_type: wrong_target
+- oracle_action: disambiguate_conflict
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: When did the country whose co-official language was used in the movie named after the place where Bela Linder died first attend the Olympics games as an independent team?
+
+Gold answer: 2016
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Béla Linder died in Belgrade.
+- c2: [contradicted] The movie named after the place where Béla Linder died is 'Death Mills'.
+- c3: [unsupported] The co-official language used in the movie 'Death Mills' is French.
+- c4: [unsupported] The country whose co-official language was used in the movie 'Death Mills' first attended the Olympics as an independent team in 1920.
+
+Evidence:
+- 4hop1__145494_698949_157828_162309::p0: Béla Linder Béla Linder (Majs, 10 February 1876 – Belgrade, 15 April 1962), Hungarian colonel of artillery, Secretary of War of Mihály Károlyi government, minister without portfolio of Dénes Berinkey government, military attaché of Hungarian Soviet Republic based in Vienna, finally the mayor of Pécs during the period of Serb occupation.
+- 3hop1__662413_42197_18397::p2: World War II World War II (often abbreviated to WWII or WW2), also known as the Second World War, was a global war that lasted from 1939 to 1945, although conflicts reflecting the ideological clash between what would become the Allied and Axis blocs began earlier. The vast majority of the world's countries -- including all of the great powers -- eventually formed two opposing military alliances: the Allies and the Axis. It was the most global war in history; it directly involved more than 100 million people from over 30 countries. In a state of total war, the major participants threw their entire economic, industrial, and scientific capabilities behind the war effort, blurring the distinction between civ [truncated]
+- 2hop__857493_17335::p18: Death Mills Death Mills (or Die Todesmühlen) is a 1945 American film directed by Billy Wilder and produced by the United States Department of War. The film was intended for German audiences to educate them about the atrocities committed by the Nazi regime. For the German version, "Die Todesmühlen", Hanus Burger is credited as the writer and director, while Wilder supervised the editing. Wilder is credited with directing the English-language version.
+- 4hop1__145494_698949_157828_162309::p14: Madagascar The Malagasy language is of Malayo-Polynesian origin and is generally spoken throughout the island. The numerous dialects of Malagasy, which are generally mutually intelligible, can be clustered under one of two subgroups: eastern Malagasy, spoken along the eastern forests and highlands including the Merina dialect of Antananarivo, and western Malagasy, spoken across the western coastal plains. French became the official language during the colonial period, when Madagascar came under the authority of France. In the first national Constitution of 1958, Malagasy and French were named the official languages of the Malagasy Republic. Madagascar is a francophone country, and French is mostly spok [truncated]
+- 4hop1__145494_698949_157828_162309::p15: Yugoslavia at the Olympics Federal Republic of Yugoslavia, formed as a joint state by only Montenegro and Serbia after the breakup of Yugoslavia, from 1992–2002 (due to UN ban allowed to compete as Independent Olympic Participants at the 1992 Summer Olympics and was not allowed to compete at 1994 Winter Olympics)Two of the successor nations (Croatia and Slovenia) began to compete as independent teams at the Olympics starting at the 1992 Winter Games and Bosnia and Herzegovina at the 1992 Summer Games and as of the 2008 Summer Olympics, all six successor nations, former socialist republics, have participated independently. Kosovo, a former autonomous province, made its Olympic debut as an independent national team at t [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__129499_33897_81096::r3
+
+- sample_id: 3hop1__129499_33897_81096
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: Who won the 1993 Indy Car race in the city with the largest population in the state where Poachie Range is located?
+
+Gold answer: Mario Andretti
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Poachie Range is located in Arizona
+- c2: [supported] The city with the largest population in Arizona is Phoenix
+- c3: [unclear] The 1993 Indy Car race was held in Phoenix, Arizona
+
+Evidence:
+- 3hop1__129499_33897_81096::p1: Poachie Range The Poachie Range is a moderate length mountain range and massif in southeast Mohave County, Arizona, and the extreme southwest corner of Yavapai County; the range also abuts the northeast corner of La Paz County. The Poachie Range massif is bordered by the south-flowing Big Sandy River on its west, and the west-flowing Santa Maria River on its south; both rivers converge at the Poachie Range's southwest at Alamo Lake, the Alamo Lake State Park.
+- 4hop1__726152_153080_159767_81096::p0: Arizona Arizona ( (listen); Navajo: Hoozdo Hahoodzo Navajo pronunciation: [xòːztò xɑ̀xòːtsò]; O'odham: Alĭ ṣonak Uto-Aztecan pronunciation: [ˡaɺi ˡʂonak]) is a state in the southwestern region of the United States. It is also part of the Western and the Mountain states. It is the sixth largest and the 14th most populous of the 50 states. Its capital and largest city is Phoenix. Arizona shares the Four Corners region with Utah, Colorado, and New Mexico; its other neighboring states are Nevada and California to the west and the Mexican states of Sonora and Baja California to the south and southwest.
+- 4hop1__720201_153080_159767_81096::p16: Arizona Arizona ( (listen); Navajo: Hoozdo Hahoodzo Navajo pronunciation: [xòːztò xɑ̀xòːtsò]; O'odham: Alĭ ṣonak Uto-Aztecan pronunciation: [ˡaɺi ˡʂonak]) is a state in the southwestern region of the United States. It is also part of the Western and the Mountain states. It is the sixth largest and the 14th most populous of the 50 states. Its capital and largest city is Phoenix. Arizona shares the Four Corners region with Utah, Colorado, and New Mexico; its other neighboring states are Nevada and California to the west and the Mexican states of Sonora and Baja California to the south and southwest.
+- 4hop1__813171_153080_33897_81096::p5: Jacksonville, Florida Jacksonville is the largest city by population in the U.S. state of Florida, and the largest city by area in the contiguous United States. It is the county seat of Duval County, with which the city government consolidated in 1968. Consolidation gave Jacksonville its great size and placed most of its metropolitan population within the city limits; with an estimated population of 853,382 in 2014, it is the most populous city proper in Florida and the Southeast, and the 12th most populous in the United States. Jacksonville is the principal city in the Jacksonville metropolitan area, with a population of 1,345,596 in 2010.
+- 4hop1__236903_153080_33897_81096::p4: Jacksonville, Florida Jacksonville is the largest city by population in the U.S. state of Florida, and the largest city by area in the contiguous United States. It is the county seat of Duval County, with which the city government consolidated in 1968. Consolidation gave Jacksonville its great size and placed most of its metropolitan population within the city limits; with an estimated population of 853,382 in 2014, it is the most populous city proper in Florida and the Southeast, and the 12th most populous in the United States. Jacksonville is the principal city in the Jacksonville metropolitan area, with a population of 1,345,596 in 2010.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__129499_33897_81096::r2
+
+- sample_id: 3hop1__129499_33897_81096
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: Who won the 1993 Indy Car race in the city with the largest population in the state where Poachie Range is located?
+
+Gold answer: Mario Andretti
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Poachie Range is located in Arizona
+- c2: [unclear] The city with the largest population in Arizona is Phoenix
+- c3: [supported] Mario Andretti won the 1993 Indy Car race in Phoenix
+
+Evidence:
+- 4hop1__720201_153080_159767_81096::p4: Desert Diamond West Valley Phoenix Grand Prix After a hiatus of eleven years, the race was revived by the Verizon IndyCar Series in 2016. It was held on Saturday night under the lights. Long considered a popular Indy car track, Phoenix has a rich history of open wheel races, including a spectacular crash involving Johnny Rutherford (1980), and the final career victory for Indy legend Mario Andretti (1993).
+- 4hop1__236903_153080_33897_81096::p14: Desert Diamond West Valley Phoenix Grand Prix After a hiatus of eleven years, the race was revived by the Verizon IndyCar Series in 2016. It was held on Saturday night under the lights. Long considered a popular Indy car track, Phoenix has a rich history of open wheel races, including a spectacular crash involving Johnny Rutherford (1980), and the final career victory for Indy legend Mario Andretti (1993).
+- 3hop1__129499_33897_81096::p16: Desert Diamond West Valley Phoenix Grand Prix After a hiatus of eleven years, the race was revived by the Verizon IndyCar Series in 2016. It was held on Saturday night under the lights. Long considered a popular Indy car track, Phoenix has a rich history of open wheel races, including a spectacular crash involving Johnny Rutherford (1980), and the final career victory for Indy legend Mario Andretti (1993).
+- 3hop1__129499_33897_81096::p1: Poachie Range The Poachie Range is a moderate length mountain range and massif in southeast Mohave County, Arizona, and the extreme southwest corner of Yavapai County; the range also abuts the northeast corner of La Paz County. The Poachie Range massif is bordered by the south-flowing Big Sandy River on its west, and the west-flowing Santa Maria River on its south; both rivers converge at the Poachie Range's southwest at Alamo Lake, the Alamo Lake State Park.
+- 4hop1__813171_153080_33897_81096::p5: Jacksonville, Florida Jacksonville is the largest city by population in the U.S. state of Florida, and the largest city by area in the contiguous United States. It is the county seat of Duval County, with which the city government consolidated in 1968. Consolidation gave Jacksonville its great size and placed most of its metropolitan population within the city limits; with an estimated population of 853,382 in 2014, it is the most populous city proper in Florida and the Southeast, and the 12th most populous in the United States. Jacksonville is the principal city in the Jacksonville metropolitan area, with a population of 1,345,596 in 2010.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__194469_83289::r1
+
+- sample_id: 2hop__194469_83289
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: Who is the guy in the One Last Time video by the participant in The Listening Sessions?
+
+Gold answer: Matt Bennett
+
+Candidate answer: Matt Bennett
+
+Claims:
+- c1: [unsupported] The participant in The Listening Sessions is Ariana Grande.
+- c2: [supported] The guy in the One Last Time video is Matt Bennett.
+
+Evidence:
+- 2hop__194469_83289::p19: One Last Time (Ariana Grande song) The music video was filmed in early January 2015 and it also stars Matt Bennett, who was also Grande's co-star from the Nickelodeon sitcom Victorious. Max Landis also confirmed that one of the voices of the news reporters in the beginning of the video was actress Elizabeth Gillies, who also co-starred in Victorious with Grande and Bennett. Gillies previously appeared Grande's music video for her single ``Right There ''(2013). Around that time, Max Landis revealed`` One Last Time'' as Grande's next single after tweeting, ``Earth will pass catastrophically through the tail of the comet Eurydice in one week. Gather family and lovers close, one... last... time ''. The lyric video for`` One Last  [truncated]
+- 2hop__194469_83289::p11: Standing on a Beach The man featured on the album cover was not a member of the Cure; he was chosen because his appearance fit the desired aesthetic of the album. His name is John Button, and was at the time a retired fisherman. He also appeared in the music video for ``Killing an Arab ''. According to the band's 2005 biography by Jeff Apter, when asked why he agreed to lend his face to the band's media, Button's answer was,`` If I can help these youngsters break through, after all, why not?'' He also reportedly said that he would buy a player and listen to one of the band's songs ``out of curiosity, just to see ''.
+- 2hop__73719_510545::p16: Zach McGowan Zachary Brendan McGowan (born May 5, 1980) is an American film and television actor and voice - over artist. He is known for his roles in television series Shameless as Jody, Agents of S.H.I.E.L.D. as Anton Ivanov / The Superior, Black Sails as Charles Vane, and The 100 as Roan. Other highlights include parts in the films Terminator Salvation, The Hunt for Eagle One, and the sequel The Hunt for Eagle One: Crash Point. He guest - starred in the television series Numbers, CSI: Miami, and Cold Case, with voice - over work for the Scream Awards, Animal Planet and the video games Tom Clancy's Ghost Recon: Future Soldier, Resident Evil: Operation Raccoon City, and Iron Man.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__161605_32392_823060_610794::r2
+
+- sample_id: 4hop1__161605_32392_823060_610794
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think
+
+Question: What county is the city that shares a border with the state capital of the state where Darlington County located in?
+
+Gold answer: Richland County
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Darlington County is located in South Carolina
+- c2: [unsupported] The state capital of South Carolina is Columbia
+- c3: [supported] Charleston is the county seat of Charleston County in South Carolina
+- c4: [unclear] Charleston County shares a border with the state capital of South Carolina
+
+Evidence:
+- 4hop1__161605_32392_823060_610794::p11: Darlington County, South Carolina Darlington County is a county in the U.S. state of South Carolina. As of 2016, its estimated population was 67,234. Its county seat is Darlington. Hartsville is the largest city in the county. Darlington County is home to the Darlington Raceway, which hosts the annual NASCAR Southern 500. Darlington County is also home to Coker College in Hartsville. Darlington County was named by an act in March 1785.
+- 3hop1__159803_89752_75165::p8: Charleston, South Carolina Charleston is the oldest and largest city in the U.S. state of South Carolina, the county seat of Charleston County, and the principal city in the Charleston -- North Charleston -- Summerville Metropolitan Statistical Area. The city lies just south of the geographical midpoint of South Carolina's coastline and is located on Charleston Harbor, an inlet of the Atlantic Ocean formed by the confluence of the Ashley and Cooper rivers. Charleston had an estimated population of 134,385 in 2016. The estimated population of the Charleston metropolitan area, comprising Berkeley, Charleston, and Dorchester counties, was 761,155 residents in 2016, the third - largest in the state and the 78th - largest  [truncated]
+- 3hop1__129499_33897_81096::p4: Charleston, South Carolina Charleston is the oldest and largest city in the U.S. state of South Carolina, the county seat of Charleston County, and the principal city in the Charleston -- North Charleston -- Summerville Metropolitan Statistical Area. The city lies just south of the geographical midpoint of South Carolina's coastline and is located on Charleston Harbor, an inlet of the Atlantic Ocean formed by the confluence of the Ashley and Cooper rivers. Charleston had an estimated population of 134,385 in 2016. The estimated population of the Charleston metropolitan area, comprising Berkeley, Charleston, and Dorchester counties, was 761,155 residents in 2016, the third - largest in the state and the 78th - largest  [truncated]
+- 3hop1__159803_89752_75165::p2: Mecklenburg County, North Carolina Mecklenburg County is a county located on the border in the southwestern part of the state of North Carolina, in the United States. As of the 2010 census, the population was 919,628. It increased to 1,034,070 as of the 2015 estimate, making it the most populous county in North Carolina and the first county in the Carolinas to surpass 1 million in population. Its county seat and largest city is Charlotte.
+- 4hop1__720201_153080_159767_81096::p6: Savannah, Georgia Savannah (/ səˈvænə /) is the oldest city in the U.S. state of Georgia and is the county seat of Chatham County. Established in 1733 on the Savannah River, the city of Savannah became the British colonial capital of the Province of Georgia and later the first state capital of Georgia. A strategic port city in the American Revolution and during the American Civil War, Savannah is today an industrial center and an important Atlantic seaport. It is Georgia's fifth - largest city and third - largest metropolitan area.
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__161605_32392_823060_610794::r1
+
+- sample_id: 4hop1__161605_32392_823060_610794
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: What county is the city that shares a border with the state capital of the state where Darlington County located in?
+
+Gold answer: Richland County
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] Darlington County is located in South Carolina
+- c2: [unsupported] The state capital of South Carolina is Columbia
+- c3: [unclear] The city that shares a border with the state capital of South Carolina is located in Darlington County
+- c4: [unclear] Mecklenburg County is the county of the city that shares a border with the state capital of South Carolina
+
+Evidence:
+- 4hop1__161605_32392_823060_610794::p11: Darlington County, South Carolina Darlington County is a county in the U.S. state of South Carolina. As of 2016, its estimated population was 67,234. Its county seat is Darlington. Hartsville is the largest city in the county. Darlington County is home to the Darlington Raceway, which hosts the annual NASCAR Southern 500. Darlington County is also home to Coker College in Hartsville. Darlington County was named by an act in March 1785.
+- 3hop1__159803_89752_75165::p2: Mecklenburg County, North Carolina Mecklenburg County is a county located on the border in the southwestern part of the state of North Carolina, in the United States. As of the 2010 census, the population was 919,628. It increased to 1,034,070 as of the 2015 estimate, making it the most populous county in North Carolina and the first county in the Carolinas to surpass 1 million in population. Its county seat and largest city is Charlotte.
+- 4hop1__720201_153080_159767_81096::p6: Savannah, Georgia Savannah (/ səˈvænə /) is the oldest city in the U.S. state of Georgia and is the county seat of Chatham County. Established in 1733 on the Savannah River, the city of Savannah became the British colonial capital of the Province of Georgia and later the first state capital of Georgia. A strategic port city in the American Revolution and during the American Civil War, Savannah is today an industrial center and an important Atlantic seaport. It is Georgia's fifth - largest city and third - largest metropolitan area.
+- 4hop3__387712_132409_223216_35031::p4: Oklahoma City Oklahoma City is the capital and largest city of the state of Oklahoma. The county seat of Oklahoma County, the city ranks 27th among United States cities in population. The population grew following the 2010 Census, with the population estimated to have increased to 620,602 as of July 2014. As of 2014, the Oklahoma City metropolitan area had a population of 1,322,429, and the Oklahoma City-Shawnee Combined Statistical Area had a population of 1,459,758 (Chamber of Commerce) residents, making it Oklahoma's largest metropolitan area. Oklahoma City's city limits extend into Canadian, Cleveland, and Pottawatomie counties, though much of those areas outside of the core Oklahoma County area are s [truncated]
+- 3hop1__129499_33897_81096::p0: Oklahoma City Oklahoma City is the capital and largest city of the state of Oklahoma. The county seat of Oklahoma County, the city ranks 27th among United States cities in population. The population grew following the 2010 Census, with the population estimated to have increased to 620,602 as of July 2014. As of 2014, the Oklahoma City metropolitan area had a population of 1,322,429, and the Oklahoma City-Shawnee Combined Statistical Area had a population of 1,459,758 (Chamber of Commerce) residents, making it Oklahoma's largest metropolitan area. Oklahoma City's city limits extend into Canadian, Cleveland, and Pottawatomie counties, though much of those areas outside of the core Oklahoma County area are s [truncated]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding", "repair_query_quality_bucket"], "confidence": "medium"}`
+
+## Record layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__105767_443779_52195::r1
+
+- sample_id: 3hop1__105767_443779_52195
+- risk_type: wrong_target
+- oracle_action: repair_missing_hop
+- source_run: layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think
+
+Question: Who is the president of the newly declared independent country that is part of the commission of truth and friendship with the country that eats Kemplang?
+
+Gold answer: Francisco Guterres
+
+Candidate answer: 
+
+Claims:
+- c1: [supported] The newly declared independent country that is part of the commission of truth and friendship with Indonesia is East Timor.
+- c2: [unclear] The country that eats Kemplang is Indonesia.
+- c3: [supported] Susilo Bambang Yudhoyono is the president of Indonesia.
+
+Evidence:
+- 3hop1__144439_443779_52195::p7: Indonesia–Timor Leste Commission of Truth and Friendship The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred around the independence referendum held in East Timor in 1999 and sought to find the "conclusive truth" behind the events. After holding private hearings and document reviews, the commission handed in the final report on July 15, 2008 to the presidents of both nations, and was fully endorsed by Indonesian President Susilo Bambang Yudhoyono, providing the first acknowledgement by the government of Indonesia of the human rights violations committe [truncated]
+- 3hop1__105767_443779_52195::p3: Indonesia–Timor Leste Commission of Truth and Friendship The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred around the independence referendum held in East Timor in 1999 and sought to find the "conclusive truth" behind the events. After holding private hearings and document reviews, the commission handed in the final report on July 15, 2008 to the presidents of both nations, and was fully endorsed by Indonesian President Susilo Bambang Yudhoyono, providing the first acknowledgement by the government of Indonesia of the human rights violations committe [truncated]
+- 3hop1__103881_443779_52195::p7: Indonesia–Timor Leste Commission of Truth and Friendship The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred around the independence referendum held in East Timor in 1999 and sought to find the "conclusive truth" behind the events. After holding private hearings and document reviews, the commission handed in the final report on July 15, 2008 to the presidents of both nations, and was fully endorsed by Indonesian President Susilo Bambang Yudhoyono, providing the first acknowledgement by the government of Indonesia of the human rights violations committe [truncated]
+- 3hop1__105767_443779_52195::p6: Namibia The Namibian Constitution adopted in February 1990 incorporated protection for human rights, compensation for state expropriations of private property, an independent judiciary and an executive presidency (the constituent assembly became the national assembly). The country officially became independent on 21 March 1990. Sam Nujoma was sworn in as the first President of Namibia watched by Nelson Mandela (who had been released from prison the previous month) and representatives from 147 countries, including 20 heads of state. Walvis Bay was ceded to Namibia in 1994 upon the end of Apartheid in South Africa.[citation needed]
+- 3hop1__103881_443779_52195::p18: Namibia The Namibian Constitution adopted in February 1990 incorporated protection for human rights, compensation for state expropriations of private property, an independent judiciary and an executive presidency (the constituent assembly became the national assembly). The country officially became independent on 21 March 1990. Sam Nujoma was sworn in as the first President of Namibia watched by Nelson Mandela (who had been released from prison the previous month) and representatives from 147 countries, including 20 heads of state. Walvis Bay was ceded to Namibia in 1994 upon the end of Apartheid in South Africa.[citation needed]
+
+Mining reason: `{"rule": "wrong_target", "matched_fields": ["final_action", "trajectory[].verifier_output", "ordered_hop_binding"], "confidence": "medium"}`

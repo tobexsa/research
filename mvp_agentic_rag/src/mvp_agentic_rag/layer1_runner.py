@@ -22,6 +22,15 @@ def run_experiment(config: dict, progress_writer=None) -> dict:
     with _OutputDirLock(output_dir):
         trajectories_path = output_dir / "trajectories.jsonl"
         samples = load_samples(dataset_path)
+        non_leaking_runtime = bool(config.get("non_leaking_runtime_v1", False))
+        predictions_only = bool(config.get("predictions_only", False))
+        evaluation_labels_path = config.get("evaluation_labels_path")
+        if non_leaking_runtime:
+            _assert_non_leaking_samples(samples)
+            if predictions_only and evaluation_labels_path:
+                raise ValueError("predictions-only non-leaking runs must not load evaluation labels")
+            if not predictions_only and not evaluation_labels_path:
+                raise ValueError("non-leaking metric runs require evaluation_labels_path")
         if int(config.get("limit_samples", 0) or 0) > 0:
             samples = samples[: int(config["limit_samples"])]
         corpus = load_corpus(corpus_path)
@@ -54,7 +63,8 @@ def run_experiment(config: dict, progress_writer=None) -> dict:
         completed_keys = _load_completed_keys(trajectories_path)
         completed = 0
         skipped = 0
-        retriever = make_retriever(retriever_name, corpus, config)
+        runtime_config = _runtime_config(config) if non_leaking_runtime else config
+        retriever = make_retriever(retriever_name, corpus, runtime_config)
         with trajectories_path.open("a", encoding="utf-8", newline="\n") as handle:
             for sample in samples:
                 for method in methods:
@@ -62,7 +72,12 @@ def run_experiment(config: dict, progress_writer=None) -> dict:
                     if key in completed_keys:
                         skipped += 1
                         continue
-                    agent = AGENT_CLASSES[method](retriever, top_k=top_k, max_rounds=max_rounds, config=config)
+                    agent = AGENT_CLASSES[method](
+                        retriever,
+                        top_k=top_k,
+                        max_rounds=max_rounds,
+                        config=runtime_config,
+                    )
                     result = agent.run(sample)
                     handle.write(json.dumps(result.to_record(), ensure_ascii=False, sort_keys=True) + "\n")
                     handle.flush()
@@ -79,21 +94,30 @@ def run_experiment(config: dict, progress_writer=None) -> dict:
             reporter.finish(completed=completed, skipped=skipped)
 
         run_name = str(config.get("run_name", output_dir.name))
-        metrics = write_metrics(output_dir, run_name)
         result = {"completed": completed, "skipped": skipped, "output_dir": str(output_dir)}
-        if bool(config.get("write_result_table", True)):
+        if predictions_only:
+            predictions_path = _write_predictions(trajectories_path, output_dir / "predictions.jsonl")
+            result["predictions"] = str(predictions_path)
+            metrics = None
+        else:
+            metrics = write_metrics(
+                output_dir,
+                run_name,
+                evaluation_labels_path=evaluation_labels_path,
+            )
+        if metrics is not None and bool(config.get("write_result_table", True)):
             table_path = write_metrics_markdown(metrics, output_dir / "run_summary.md")
             result["result_table"] = str(table_path)
             if reporter is not None:
                 reporter.write_line(f"result_table: {table_path}")
             else:
                 _emit(f"result_table: {table_path}")
-        if bool(config.get("print_result_summary", True)):
+        if metrics is not None and bool(config.get("print_result_summary", True)):
             if reporter is not None:
                 emit_tui_result_summary(metrics, reporter.write_line)
             else:
                 emit_tui_result_summary(metrics, _emit)
-        if bool(config.get("write_result_plot", False)):
+        if metrics is not None and bool(config.get("write_result_plot", False)):
             plot_path = write_metrics_svg(metrics, output_dir / "result_summary.svg")
             result["result_plot"] = str(plot_path)
             if reporter is not None:
@@ -101,6 +125,58 @@ def run_experiment(config: dict, progress_writer=None) -> dict:
             else:
                 _emit(f"result_plot: {plot_path}")
         return result
+
+
+def _runtime_config(config: dict) -> dict:
+    excluded = {
+        "evaluation_labels_path",
+        "submission_map_path",
+        "official_source_path",
+    }
+    return {key: value for key, value in config.items() if key not in excluded}
+
+
+def _assert_non_leaking_samples(samples) -> None:
+    allowed_metadata = {"runtime_contract", "candidate_passage_ids"}
+    for sample in samples:
+        if sample.gold_answer:
+            raise ValueError(f"non-leaking runtime sample contains gold answer: {sample.sample_id}")
+        if sample.supporting_passage_ids:
+            raise ValueError(f"non-leaking runtime sample contains support labels: {sample.sample_id}")
+        if sample.hop is not None:
+            raise ValueError(f"non-leaking runtime sample contains hop label: {sample.sample_id}")
+        unexpected = set(sample.metadata) - allowed_metadata
+        if unexpected:
+            raise ValueError(
+                f"non-leaking runtime sample contains unexpected metadata {sorted(unexpected)}: "
+                f"{sample.sample_id}"
+            )
+        if not sample.metadata.get("candidate_passage_ids"):
+            raise ValueError(f"non-leaking runtime sample has no candidate passages: {sample.sample_id}")
+
+
+def _write_predictions(trajectory_path: Path, output_path: Path) -> Path:
+    with trajectory_path.open("r", encoding="utf-8") as source, output_path.open(
+        "w", encoding="utf-8", newline="\n"
+    ) as target:
+        for line in source:
+            if not line.strip():
+                continue
+            record = json.loads(line)
+            target.write(
+                json.dumps(
+                    {
+                        "id": str(record.get("id") or ""),
+                        "method": str(record.get("method") or ""),
+                        "prediction": str(record.get("final_answer") or ""),
+                        "action": str(record.get("final_action") or ""),
+                    },
+                    ensure_ascii=False,
+                    sort_keys=True,
+                )
+                + "\n"
+            )
+    return output_path
 
 
 class _OutputDirLock:

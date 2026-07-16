@@ -1,0 +1,13 @@
+{
+  "diagnostic_count": 172,
+  "prediction_count": 172,
+  "prediction_coverage_rate": 1.0,
+  "source_run_override": "layer1_siliconflow_qwen3_14b_repair_planner_stratified45_v1_3_5_20260708",
+  "source_runs": [
+    "layer1_siliconflow_qwen3_14b_repair_planner_stratified45_v1_3_5_20260708"
+  ],
+  "terminal_carry_forward": true,
+  "terminal_carry_forward_count": 4,
+  "unmatched_by_reason": {},
+  "unmatched_count": 0
+}

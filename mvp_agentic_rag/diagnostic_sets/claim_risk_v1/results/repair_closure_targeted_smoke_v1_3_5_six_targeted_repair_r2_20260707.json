@@ -1,0 +1,296 @@
+{
+  "run_dir": "runs\\layer1_siliconflow_qwen3_14b_repair_closure_targeted_runtime_smoke_v1_3_5_six_targeted_repair_r2_20260707",
+  "config": "configs/layer1_siliconflow_qwen3_14b_repair_closure_targeted_runtime_smoke_v1_3_5_six_targeted_repair_r2_20260707.yaml",
+  "dataset": "diagnostic_sets/claim_risk_v1/repair_closure_targeted_runtime_smoke_v1_3_5_20260707.jsonl",
+  "run_summary": "runs\\layer1_siliconflow_qwen3_14b_repair_closure_targeted_runtime_smoke_v1_3_5_six_targeted_repair_r2_20260707\\run_summary.md",
+  "aggregate_metrics": {
+    "count": 6,
+    "overall_acc": 0.3333,
+    "answer_f1": 0.7111,
+    "coverage": 0.8333,
+    "selective_acc": 0.4,
+    "selective_answer_f1": 0.8533,
+    "avg_retrieval_calls": 1.8333,
+    "wasted_retrieval_rate": 0.5,
+    "answered_unsupported_rate": 1,
+    "final_answered_unsupported_rate": 0.2,
+    "cost_normalized_acc": 0.1818,
+    "cost_normalized_f1": 0.3879
+  },
+  "checks": {
+    "sample_count": 6,
+    "completed_all_samples": true,
+    "old_easy_liam_answered": true,
+    "century_easy_case_answered": true,
+    "listening_sessions_answered": true,
+    "koh_phi_phi_answered": true,
+    "koh_phi_phi_answer_extraction_repair_success": true,
+    "koh_phi_phi_slot_ledger_fallback_used": true,
+    "timor_leste_answered": true,
+    "timor_keyword_repair_query_used": true,
+    "no_friendship_person_query": true,
+    "wrong_target_sample_blocked": true,
+    "wrong_target_safety_guard_or_typed_reject_present": true
+  },
+  "rows": [
+    {
+      "id": "2hop__10620_49084",
+      "final_action": "answer",
+      "final_answer": "Liam Garrigan",
+      "gold_answer": "Liam Thomas Garrigan",
+      "rounds": 2,
+      "queries": [
+        "Who plays the legendary figure featured in Historia Regum Britanniae in the show Once Upon a Time?",
+        "King Arthur legendary figure featured in Historia Regum Britanniae"
+      ],
+      "actions": [
+        "refine_missing_hop",
+        "answer"
+      ],
+      "repair_next_queries": [
+        "King Arthur legendary figure featured in Historia Regum Britanniae",
+        "King Arthur legendary figure featured in Historia Regum Britanniae"
+      ],
+      "repair_actions": [
+        "refine_missing_hop",
+        "refine_missing_hop"
+      ],
+      "typed_categories": [
+        {
+          "round": 1,
+          "category": "empty_binding",
+          "reason": "binding_verifier_rejected",
+          "decision_action": "refine_missing_hop"
+        },
+        {
+          "round": 2,
+          "category": "verifier_parse_failure",
+          "reason": "binding_verifier_rejected",
+          "decision_action": "abstain"
+        }
+      ],
+      "answer_safety_guard_rounds": [],
+      "answer_extraction_repair_rounds": [],
+      "answer_extraction_repair_success_rounds": [],
+      "answer_extraction_slot_ledger_fallback_rounds": [],
+      "generic_refine_cleanup_rounds": [],
+      "century_evidence_acceptance_rounds": [],
+      "slot_candidates": [
+        "Liam Garrigan"
+      ]
+    },
+    {
+      "id": "2hop__167577_31122",
+      "final_action": "answer",
+      "final_answer": "18th century",
+      "gold_answer": "18th",
+      "rounds": 1,
+      "queries": [
+        "What century did the author of A Treatise Concerning the Principles of Human Knowledge live in?"
+      ],
+      "actions": [
+        "answer"
+      ],
+      "repair_next_queries": [],
+      "repair_actions": [],
+      "typed_categories": [],
+      "answer_safety_guard_rounds": [],
+      "answer_extraction_repair_rounds": [],
+      "answer_extraction_repair_success_rounds": [],
+      "answer_extraction_slot_ledger_fallback_rounds": [],
+      "generic_refine_cleanup_rounds": [],
+      "century_evidence_acceptance_rounds": [
+        1
+      ],
+      "slot_candidates": [
+        "18th century"
+      ]
+    },
+    {
+      "id": "2hop__194469_83289",
+      "final_action": "answer",
+      "final_answer": "Matt Bennett",
+      "gold_answer": "Matt Bennett",
+      "rounds": 2,
+      "queries": [
+        "Who is the guy in the One Last Time video by the participant in The Listening Sessions?",
+        "The Listening Sessions participant"
+      ],
+      "actions": [
+        "ordered_hop_repair",
+        "answer"
+      ],
+      "repair_next_queries": [
+        "The Listening Sessions participant",
+        "The Listening Sessions participant"
+      ],
+      "repair_actions": [
+        "ordered_hop_repair",
+        "ordered_hop_repair"
+      ],
+      "typed_categories": [
+        {
+          "round": 1,
+          "category": "empty_binding",
+          "reason": "binding_verifier_rejected",
+          "decision_action": "ordered_hop_repair"
+        }
+      ],
+      "answer_safety_guard_rounds": [],
+      "answer_extraction_repair_rounds": [],
+      "answer_extraction_repair_success_rounds": [],
+      "answer_extraction_slot_ledger_fallback_rounds": [],
+      "generic_refine_cleanup_rounds": [],
+      "century_evidence_acceptance_rounds": [],
+      "slot_candidates": [
+        "Matt Bennett"
+      ]
+    },
+    {
+      "id": "3hop1__145194_160545_62931",
+      "final_action": "answer",
+      "final_answer": "Koh Phi Phi",
+      "gold_answer": "island Koh Phi Phi",
+      "rounds": 2,
+      "queries": [
+        "The Beach was filmed in what location of the country that contains the birth city of Siddhi Savetsila?",
+        "What country is Bangkok located in?"
+      ],
+      "actions": [
+        "refine_query",
+        "answer"
+      ],
+      "repair_next_queries": [
+        "The Beach was filmed in what location of the country that contains the birth city of Siddhi Savetsila?"
+      ],
+      "repair_actions": [
+        "answer_extraction_repair"
+      ],
+      "typed_categories": [
+        {
+          "round": 2,
+          "category": "answer_extraction_failure",
+          "reason": "binding_verifier_rejected",
+          "decision_action": "answer_extraction_repair"
+        }
+      ],
+      "answer_safety_guard_rounds": [],
+      "answer_extraction_repair_rounds": [
+        2
+      ],
+      "answer_extraction_repair_success_rounds": [
+        2
+      ],
+      "answer_extraction_slot_ledger_fallback_rounds": [
+        2
+      ],
+      "generic_refine_cleanup_rounds": [],
+      "century_evidence_acceptance_rounds": [],
+      "slot_candidates": [
+        "Koh Phi Phi",
+        "Koh Phi Phi"
+      ]
+    },
+    {
+      "id": "3hop1__144439_443779_52195",
+      "final_action": "answer",
+      "final_answer": "Francisco Guterres",
+      "gold_answer": "Francisco Guterres",
+      "rounds": 2,
+      "queries": [
+        "who is the president of newly declared independent country of the country of the birthplace of Mulham Arufin–Timor Leste Commission of Truth and Friendship?",
+        "East Timor president"
+      ],
+      "actions": [
+        "partial_chain_next_hop_repair",
+        "answer"
+      ],
+      "repair_next_queries": [
+        "East Timor president",
+        "East Timor president"
+      ],
+      "repair_actions": [
+        "partial_chain_next_hop_repair",
+        "partial_chain_next_hop_repair"
+      ],
+      "typed_categories": [
+        {
+          "round": 1,
+          "category": "empty_binding",
+          "reason": "binding_verifier_rejected",
+          "decision_action": "ordered_hop_repair"
+        },
+        {
+          "round": 2,
+          "category": "verifier_parse_failure",
+          "reason": "binding_verifier_rejected",
+          "decision_action": "abstain"
+        }
+      ],
+      "answer_safety_guard_rounds": [],
+      "answer_extraction_repair_rounds": [],
+      "answer_extraction_repair_success_rounds": [],
+      "answer_extraction_slot_ledger_fallback_rounds": [],
+      "generic_refine_cleanup_rounds": [],
+      "century_evidence_acceptance_rounds": [],
+      "slot_candidates": [
+        "Francisco Guterres"
+      ]
+    },
+    {
+      "id": "2hop__131951_643670",
+      "final_action": "abstain",
+      "final_answer": "",
+      "gold_answer": "Het Scheur",
+      "rounds": 2,
+      "queries": [
+        "What is the name for the mouth of the watercourse of the body of water by Rotterdam Centrum?",
+        "Nieuwe Maas River mouth of the watercourse"
+      ],
+      "actions": [
+        "ordered_hop_repair",
+        "abstain"
+      ],
+      "repair_next_queries": [
+        "Nieuwe Maas River mouth of the watercourse",
+        "Nieuwe Maas River mouth of the watercourse"
+      ],
+      "repair_actions": [
+        "ordered_hop_repair",
+        "ordered_hop_repair"
+      ],
+      "typed_categories": [
+        {
+          "round": 1,
+          "category": "wrong_target",
+          "reason": "mouth_watercourse_downstream_continuation",
+          "decision_action": "ordered_hop_repair"
+        },
+        {
+          "round": 2,
+          "category": "wrong_target",
+          "reason": "mouth_watercourse_downstream_continuation",
+          "decision_action": "abstain"
+        }
+      ],
+      "answer_safety_guard_rounds": [
+        2
+      ],
+      "answer_extraction_repair_rounds": [],
+      "answer_extraction_repair_success_rounds": [],
+      "answer_extraction_slot_ledger_fallback_rounds": [],
+      "generic_refine_cleanup_rounds": [],
+      "century_evidence_acceptance_rounds": [],
+      "slot_candidates": [
+        "Nieuwe Waterweg",
+        "Nieuwe Waterweg"
+      ]
+    }
+  ],
+  "takeaway": "Koh Phi Phi answer_extraction_repair now closes: 3hop1__145194_160545_62931 answers Koh Phi Phi with slot-ledger fallback after binding parser failure. Five of six targeted samples answer, and the known wrong-target Nieuwe Waterweg sample remains blocked. Exact overall_acc remains low because several correct/near-correct answers differ by alias or surface form, and final_answered_unsupported_rate remains 0.2, so this still is not full-runtime readiness.",
+  "notes": [
+    "This is a six-sample targeted runtime smoke, not a full batch or full runtime run.",
+    "The Koh Phi Phi fix is intentionally narrow: repaired verifier sufficient + binding parser empty/non-JSON + local slot-ledger final evidence supports the repaired candidate.",
+    "2hop__131951_643670 remains abstain with wrong_target typed reject / safety guard, preserving the unsafe-answer guard behavior."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "status": "complete",
+  "valid": true,
+  "trajectory": "runs\\layer1_siliconflow_qwen3_14b_nonleaking_musique_dev_pilot12_adapter_20260716_s1\\trajectories.jsonl",
+  "trajectory_sha256": "E1AE6CE5E1B5AAFAEB11DD71EFEB2EE952C3F2A273FB803FD58155801745EC17",
+  "row_count": 12,
+  "unique_runtime_ids": 12,
+  "novelty_steps_checked": 32,
+  "labels_checked": true,
+  "violation_count": 0,
+  "violations": []
+}

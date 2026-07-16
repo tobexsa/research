@@ -348,9 +348,47 @@ def load_trajectory_records(path: str | Path) -> list[dict]:
     return records
 
 
-def write_metrics(run_dir: str | Path, run_name: str) -> dict:
+def join_evaluation_labels(records: list[dict], labels_path: str | Path) -> list[dict]:
+    labels = load_trajectory_records(labels_path)
+    labels_by_id = {str(label.get("id") or ""): label for label in labels}
+    if len(labels_by_id) != len(labels):
+        raise ValueError("evaluation labels contain duplicate ids")
+    record_ids = [str(record.get("id") or "") for record in records]
+    if len(set(record_ids)) != len(record_ids):
+        # Multiple methods are valid; require each method/id key to be unique.
+        keys = [(str(record.get("id") or ""), str(record.get("method") or "")) for record in records]
+        if len(set(keys)) != len(keys):
+            raise ValueError("trajectory records contain duplicate method/id keys")
+    missing = sorted(set(record_ids) - set(labels_by_id))
+    extra = sorted(set(labels_by_id) - set(record_ids))
+    if missing or extra:
+        raise ValueError(f"evaluation label id mismatch: missing={missing[:5]} extra={extra[:5]}")
+    joined = []
+    for record in records:
+        label = labels_by_id[str(record.get("id") or "")]
+        current = dict(record)
+        current["gold_answer"] = str(label.get("answer") or label.get("gold_answer") or "")
+        current["supporting_passage_ids"] = [
+            str(value) for value in label.get("supporting_passage_ids", [])
+        ]
+        current["hop"] = label.get("hop")
+        current["subset"] = str(label.get("subset") or "dev")
+        current["sample_metadata"] = dict(label.get("metadata") or {})
+        joined.append(current)
+    return joined
+
+
+def write_metrics(
+    run_dir: str | Path,
+    run_name: str,
+    *,
+    evaluation_labels_path: str | Path | None = None,
+) -> dict:
     run_dir = Path(run_dir)
-    metrics = evaluate_records(load_trajectory_records(run_dir / "trajectories.jsonl"), run_name)
+    records = load_trajectory_records(run_dir / "trajectories.jsonl")
+    if evaluation_labels_path:
+        records = join_evaluation_labels(records, evaluation_labels_path)
+    metrics = evaluate_records(records, run_name)
     (run_dir / "metrics.json").write_text(json.dumps(metrics, ensure_ascii=False, indent=2), encoding="utf-8")
     lines = [f"# Metrics: {run_name}", ""]
     for method, values in metrics["methods"].items():

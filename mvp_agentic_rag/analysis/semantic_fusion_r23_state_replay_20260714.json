@@ -1,0 +1,1467 @@
+{
+  "source": "runs\\layer1_siliconflow_qwen3_14b_semantic_fusion_gain_loss12_20260714_r23\\trajectories.jsonl",
+  "row_count": 12,
+  "event_counts": {
+    "bridge_identity_propagated": 1,
+    "candidate_contradiction_not_hop_conflict": 3,
+    "candidate_observed": 15,
+    "candidate_state_updated": 3,
+    "conflict_scope_mismatch_ignored": 5,
+    "hop_schema_drift_ignored": 7,
+    "hop_state_updated": 14,
+    "hop_update_resolved": 14,
+    "hop_update_unmapped": 7,
+    "missing_requirement_rejected": 4,
+    "missing_requirement_resolved": 21,
+    "sentinel_candidate_ignored": 4,
+    "topology_initialized": 11,
+    "topology_revision_applied": 1,
+    "topology_update_rejected": 10,
+    "unscoped_conflict_observed": 4,
+    "unscoped_typed_reject_observed": 4
+  },
+  "phase_event_counts": {
+    "planning:bridge_identity_propagated": 1,
+    "planning:candidate_contradiction_not_hop_conflict": 1,
+    "planning:candidate_observed": 11,
+    "planning:conflict_scope_mismatch_ignored": 1,
+    "planning:hop_state_updated": 6,
+    "planning:hop_update_resolved": 6,
+    "planning:missing_requirement_rejected": 1,
+    "planning:missing_requirement_resolved": 9,
+    "planning:sentinel_candidate_ignored": 2,
+    "planning:topology_initialized": 11,
+    "planning:topology_revision_applied": 1,
+    "planning:topology_update_rejected": 10,
+    "planning:unscoped_conflict_observed": 1,
+    "planning:unscoped_typed_reject_observed": 2,
+    "terminal:candidate_contradiction_not_hop_conflict": 2,
+    "terminal:candidate_observed": 4,
+    "terminal:candidate_state_updated": 3,
+    "terminal:conflict_scope_mismatch_ignored": 4,
+    "terminal:hop_schema_drift_ignored": 7,
+    "terminal:hop_state_updated": 8,
+    "terminal:hop_update_resolved": 8,
+    "terminal:hop_update_unmapped": 7,
+    "terminal:missing_requirement_rejected": 3,
+    "terminal:missing_requirement_resolved": 12,
+    "terminal:sentinel_candidate_ignored": 2,
+    "terminal:unscoped_conflict_observed": 3,
+    "terminal:unscoped_typed_reject_observed": 2
+  },
+  "same_round_topology_update_rejected": 0,
+  "unsafe_failure_candidate_transitions": 0,
+  "structured_legacy_requirement_items": 0,
+  "structured_requirement_objects_after_replay": 13,
+  "topology_revision_applied_samples": [
+    "4hop1__236903_153080_33897_81096"
+  ],
+  "samples": [
+    {
+      "id": "2hop__136179_13529",
+      "final_answer": "June 1982",
+      "final_action": "answer",
+      "topology_version": 1,
+      "topology_fingerprint": "b95dbc8a382d5892193887f2b17257a7fdbc46c39e447753f94d8292c7665194",
+      "hop_count": 2,
+      "verified_hop_count": 2,
+      "candidate_values": [
+        "June 1982"
+      ],
+      "candidate_statuses": [
+        "verified"
+      ],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "candidate_observed",
+          "candidate": "June 1982",
+          "round_idx": 1
+        }
+      ]
+    },
+    {
+      "id": "2hop__167577_31122",
+      "final_answer": "18th",
+      "final_action": "answer",
+      "topology_version": 1,
+      "topology_fingerprint": "9995624aa87429aff79dbcde00c9e64cbd5be743d98d0426b3af32da55185c76",
+      "hop_count": 2,
+      "verified_hop_count": 2,
+      "candidate_values": [
+        "18th",
+        "18th century",
+        "George Berkeley"
+      ],
+      "candidate_statuses": [
+        "verified",
+        "rejected",
+        "observed"
+      ],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "candidate_observed",
+          "candidate": "18th century",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "candidate_observed",
+          "candidate": "George Berkeley",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "candidate_observed",
+          "candidate": "18th",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 1,
+          "incoming_topology_fingerprint": "A Treatise Concerning the Principles of Human Knowledge --author--> George Berkeley --century_of_event--> 18th",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_state_updated",
+          "hop_id": "required_hop_1",
+          "from": "verified",
+          "to": "verified",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "unique_typed_identity",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_state_updated",
+          "hop_id": "required_hop_2",
+          "from": "verified",
+          "to": "verified",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_resolved",
+          "hop_id": "required_hop_2",
+          "reason": "unique_typed_identity",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "candidate_state_updated",
+          "candidate": "18th",
+          "from": "observed",
+          "to": "rejected",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 1,
+          "incoming_topology_fingerprint": "A Treatise Concerning the Principles of Human Knowledge -> author -> George Berkeley -> century_of_event -> 18th",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "candidate_state_updated",
+          "candidate": "18th",
+          "from": "rejected",
+          "to": "verified",
+          "reason": "strict_binding_clears_stale_rejection",
+          "round_idx": 3
+        }
+      ]
+    },
+    {
+      "id": "3hop1__136129_87694_124169",
+      "final_answer": "1952",
+      "final_action": "answer",
+      "topology_version": 1,
+      "topology_fingerprint": "acf0b71fc82389c4db4519c2affc36897ee6c9292ceaa073f4d0109a59b2f534",
+      "hop_count": 3,
+      "verified_hop_count": 3,
+      "candidate_values": [
+        "1952"
+      ],
+      "candidate_statuses": [
+        "verified"
+      ],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_2",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_2",
+            "anchor_entity": "St. Peter's Basilica",
+            "anchor_entity_id": "st_peter_s_basilica",
+            "anchor_entity_type": "",
+            "canonical_relation": "located_in",
+            "expected_object_type": "city",
+            "missing_component": "object",
+            "suggested_query": "What city is the basilica dedicated to Saint Peter located in?",
+            "raw_hint": "located_in"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_2",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_2",
+            "anchor_entity": "St. Peter's Basilica",
+            "anchor_entity_id": "st_peter_s_basilica",
+            "anchor_entity_type": "",
+            "canonical_relation": "located_in",
+            "expected_object_type": "city",
+            "missing_component": "object",
+            "suggested_query": "What city is the basilica dedicated to Saint Peter located in?",
+            "raw_hint": "located_in"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "hop_state_updated",
+          "hop_id": "required_hop_2",
+          "from": "unresolved",
+          "to": "verified",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "hop_update_resolved",
+          "hop_id": "required_hop_2",
+          "reason": "explicit_hop_id",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "hop_state_updated",
+          "hop_id": "required_hop_3",
+          "from": "unresolved",
+          "to": "verified",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "hop_update_resolved",
+          "hop_id": "required_hop_3",
+          "reason": "explicit_hop_id",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "candidate_observed",
+          "candidate": "1952",
+          "round_idx": 2
+        }
+      ]
+    },
+    {
+      "id": "4hop1__161810_583746_457883_650651",
+      "final_answer": "NBC",
+      "final_action": "answer",
+      "topology_version": 1,
+      "topology_fingerprint": "88d49db5aacd0a3b2df664bb1ed75f85505ca37b002e74488206cd127b9b5330",
+      "hop_count": 4,
+      "verified_hop_count": 4,
+      "candidate_values": [
+        "NBC"
+      ],
+      "candidate_statuses": [
+        "verified"
+      ],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_2",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_2",
+            "anchor_entity": "Sarangani Bay",
+            "anchor_entity_id": "sarangani_bay",
+            "anchor_entity_type": "",
+            "canonical_relation": "located_in",
+            "expected_object_type": "country",
+            "missing_component": "object",
+            "suggested_query": "Sarangani Bay country",
+            "raw_hint": "located_in"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_2",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_2",
+            "anchor_entity": "Sarangani Bay",
+            "anchor_entity_id": "sarangani_bay",
+            "anchor_entity_type": "",
+            "canonical_relation": "located_in",
+            "expected_object_type": "country",
+            "missing_component": "object",
+            "suggested_query": "Sarangani Bay country",
+            "raw_hint": "located_in"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "hop_state_updated",
+          "hop_id": "required_hop_2",
+          "from": "unresolved",
+          "to": "verified",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "hop_update_resolved",
+          "hop_id": "required_hop_2",
+          "reason": "explicit_hop_id",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "hop_state_updated",
+          "hop_id": "required_hop_3",
+          "from": "unresolved",
+          "to": "verified",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "hop_update_resolved",
+          "hop_id": "required_hop_3",
+          "reason": "explicit_hop_id",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "hop_state_updated",
+          "hop_id": "required_hop_4",
+          "from": "unresolved",
+          "to": "verified",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "hop_update_resolved",
+          "hop_id": "required_hop_4",
+          "reason": "explicit_hop_id",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "candidate_observed",
+          "candidate": "NBC",
+          "round_idx": 2
+        }
+      ]
+    },
+    {
+      "id": "4hop1__236903_153080_33897_81096",
+      "final_answer": "Mario Andretti",
+      "final_action": "answer",
+      "topology_version": 2,
+      "topology_fingerprint": "f9472a77b0235cb4720764e20700ad0c7c0d00de4fc3c22085181c1723e6b1df",
+      "hop_count": 4,
+      "verified_hop_count": 4,
+      "candidate_values": [
+        "Mario Andretti"
+      ],
+      "candidate_statuses": [
+        "verified"
+      ],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_1",
+            "anchor_entity": "East Coasting",
+            "anchor_entity_id": "east_coasting",
+            "anchor_entity_type": "",
+            "canonical_relation": "performer",
+            "expected_object_type": "person",
+            "missing_component": "object",
+            "suggested_query": "East Coasting performer",
+            "raw_hint": "performer"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_1",
+            "anchor_entity": "East Coasting",
+            "anchor_entity_id": "east_coasting",
+            "anchor_entity_type": "",
+            "canonical_relation": "performer",
+            "expected_object_type": "person",
+            "missing_component": "object",
+            "suggested_query": "East Coasting performer",
+            "raw_hint": "performer"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "hop_state_updated",
+          "hop_id": "required_hop_1",
+          "from": "unresolved",
+          "to": "verified",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "hop_update_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "explicit_hop_id",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "bridge_identity_propagated",
+          "from_hop_id": "required_hop_1",
+          "to_hop_id": "required_hop_2",
+          "entity_id": "charles_mingus",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_2",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_2",
+            "anchor_entity": "Charles Mingus",
+            "anchor_entity_id": "charles_mingus",
+            "anchor_entity_type": "",
+            "canonical_relation": "state_of_origin",
+            "expected_object_type": "state",
+            "missing_component": "object",
+            "suggested_query": "What state was Charles Mingus born in?",
+            "raw_hint": "state_of_origin"
+          },
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_2",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_2",
+            "anchor_entity": "Charles Mingus",
+            "anchor_entity_id": "charles_mingus",
+            "anchor_entity_type": "",
+            "canonical_relation": "state_of_origin",
+            "expected_object_type": "state",
+            "missing_component": "object",
+            "suggested_query": "What state was Charles Mingus born in?",
+            "raw_hint": "state_of_origin"
+          },
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "topology_revision_applied",
+          "reason": "deterministic_geographic_race_chain_binding",
+          "from_topology_version": 1,
+          "to_topology_version": 2,
+          "old_topology_fingerprint": "64bd247373ee24ba9909e1bb2adbe1f1d32e35c0ac427e28a4dd764ec1cd54bf",
+          "new_topology_fingerprint": "f9472a77b0235cb4720764e20700ad0c7c0d00de4fc3c22085181c1723e6b1df",
+          "round_idx": 3
+        },
+        {
+          "phase": "planning",
+          "event": "candidate_observed",
+          "candidate": "Mario Andretti",
+          "round_idx": 3
+        }
+      ]
+    },
+    {
+      "id": "2hop__142699_67465",
+      "final_answer": "2011",
+      "final_action": "answer",
+      "topology_version": 1,
+      "topology_fingerprint": "01035e419b98a5c917be8eff08137cb85b891c429be876d0b9ad62a1adc849d8",
+      "hop_count": 3,
+      "verified_hop_count": 3,
+      "candidate_values": [
+        "2011",
+        "March 11, 2011"
+      ],
+      "candidate_statuses": [
+        "observed",
+        "rejected"
+      ],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "candidate_observed",
+          "candidate": "March 11, 2011",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "candidate_observed",
+          "candidate": "2011",
+          "round_idx": 1
+        }
+      ]
+    },
+    {
+      "id": "2hop__194469_83289",
+      "final_answer": "Matt Bennett",
+      "final_action": "answer",
+      "topology_version": 1,
+      "topology_fingerprint": "8e3aa60b81d381c838fe67c09b3b2628fcaa10160410d3c2f2b3277fd84f6a8a",
+      "hop_count": 3,
+      "verified_hop_count": 2,
+      "candidate_values": [
+        "Matt Bennett"
+      ],
+      "candidate_statuses": [
+        "verified"
+      ],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "participated_in",
+          "reason": "hop_binding_expected_type_mismatch",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {
+            "component": "expected_object_type",
+            "expected": "entity",
+            "observed": "person"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_3",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_3",
+            "anchor_entity": "One Last Time",
+            "anchor_entity_id": "one_last_time",
+            "anchor_entity_type": "",
+            "canonical_relation": "features",
+            "expected_object_type": "person",
+            "missing_component": "object",
+            "suggested_query": "Who is the guy in the One Last Time video?",
+            "raw_hint": "features"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "participated_in",
+          "reason": "hop_binding_expected_type_mismatch",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {
+            "component": "expected_object_type",
+            "expected": "entity",
+            "observed": "person"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_3",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_3",
+            "anchor_entity": "One Last Time",
+            "anchor_entity_id": "one_last_time",
+            "anchor_entity_type": "",
+            "canonical_relation": "features",
+            "expected_object_type": "person",
+            "missing_component": "object",
+            "suggested_query": "Who is the guy in the One Last Time video?",
+            "raw_hint": "features"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 1,
+          "incoming_topology_fingerprint": "participant_in, music_video_of, features",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "1|participant_in_the_listening_sessions|participant_in|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "1|participant_in_the_listening_sessions|participant_in|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "2|ariana_grande|music_video_of|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "2|ariana_grande|music_video_of|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_state_updated",
+          "hop_id": "required_hop_3",
+          "from": "support_incomplete",
+          "to": "verified",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_resolved",
+          "hop_id": "required_hop_3",
+          "reason": "unique_typed_identity",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "unique_dependency_frontier",
+          "requirement": {
+            "target_hop_id": "",
+            "anchor_entity": "",
+            "anchor_entity_id": "",
+            "anchor_entity_type": "",
+            "canonical_relation": "",
+            "expected_object_type": "",
+            "missing_component": "object",
+            "suggested_query": "",
+            "raw_hint": "The participant in The Listening Sessions"
+          },
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "candidate_observed",
+          "candidate": "Matt Bennett",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 1,
+          "incoming_topology_fingerprint": "The participant in The Listening Sessions -> participant_in -> Ariana Grande -> music_video_performer -> One Last Time (Ariana Grande song) -> music_video_cast -> Matt Bennett",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "1|participant_in_the_listening_sessions|participant_in|entity|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "1|participant_in_the_listening_sessions|participant_in|entity|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "2|ariana_grande|music_video_performer|entity|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "2|ariana_grande|music_video_performer|entity|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "3|one_last_time_ariana_grande_song|music_video_cast|entity|final",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "3|one_last_time_ariana_grande_song|music_video_cast|entity|final",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "candidate_state_updated",
+          "candidate": "Matt Bennett",
+          "from": "support_incomplete",
+          "to": "verified",
+          "round_idx": 3
+        }
+      ]
+    },
+    {
+      "id": "2hop__23459_35124",
+      "final_answer": "More than 450",
+      "final_action": "answer",
+      "topology_version": 1,
+      "topology_fingerprint": "1cdc3b06810101b586697bdf33f1220df1faca1fb1716b3db97d8461ccf669ef",
+      "hop_count": 1,
+      "verified_hop_count": 1,
+      "candidate_values": [
+        "More than 450"
+      ],
+      "candidate_statuses": [
+        "verified"
+      ],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_1",
+            "anchor_entity": "most_influential_in_islamic_philosophy",
+            "anchor_entity_id": "most_influential_in_islamic_philosophy",
+            "anchor_entity_type": "",
+            "canonical_relation": "author",
+            "expected_object_type": "count",
+            "missing_component": "object",
+            "suggested_query": "How many books were said to be written by the most influential in Islamic philosophy?",
+            "raw_hint": "written_by"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_1",
+            "anchor_entity": "most_influential_in_islamic_philosophy",
+            "anchor_entity_id": "most_influential_in_islamic_philosophy",
+            "anchor_entity_type": "",
+            "canonical_relation": "author",
+            "expected_object_type": "count",
+            "missing_component": "object",
+            "suggested_query": "How many books were said to be written by the most influential in Islamic philosophy?",
+            "raw_hint": "written_by"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 1,
+          "incoming_topology_fingerprint": "the_most_influential_in_islamic_philosophy_written_by_more_than_450_books",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_state_updated",
+          "hop_id": "required_hop_1",
+          "from": "support_incomplete",
+          "to": "verified",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "unique_typed_identity",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "candidate_observed",
+          "candidate": "More than 450",
+          "round_idx": 2
+        }
+      ]
+    },
+    {
+      "id": "2hop__247353_55227",
+      "final_answer": "",
+      "final_action": "abstain",
+      "topology_version": 0,
+      "topology_fingerprint": "",
+      "hop_count": 0,
+      "verified_hop_count": 0,
+      "candidate_values": [
+        "Maria Bello",
+        "Salma Hayek"
+      ],
+      "candidate_statuses": [
+        "verified",
+        "observed"
+      ],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "candidate_observed",
+          "candidate": "Maria Bello",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "candidate_observed",
+          "candidate": "Salma Hayek",
+          "round_idx": 2
+        }
+      ]
+    },
+    {
+      "id": "3hop1__103881_443779_52195",
+      "final_answer": "",
+      "final_action": "abstain",
+      "topology_version": 1,
+      "topology_fingerprint": "fc377786a1833b76a26970386deaced85ac4704185aaf7137e77998d6263a1eb",
+      "hop_count": 3,
+      "verified_hop_count": 2,
+      "candidate_values": [],
+      "candidate_statuses": [],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_3",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_3",
+            "anchor_entity": "East Timor",
+            "anchor_entity_id": "east_timor",
+            "anchor_entity_type": "",
+            "canonical_relation": "president",
+            "expected_object_type": "person",
+            "missing_component": "object",
+            "suggested_query": "Who is the president of East Timor?",
+            "raw_hint": "president_of"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "conflict_scope_mismatch_ignored",
+          "candidate_hop_ids": [
+            "required_hop_1",
+            "required_hop_2"
+          ],
+          "evidence_ids": [
+            "3hop1__103881_443779_52195::p7",
+            "3hop1__105767_443779_52195::p3",
+            "3hop1__144439_443779_52195::p7"
+          ],
+          "claim": "The president of East Timor during the Commission of Truth and Friendship is Susilo Bambang Yudhoyono.",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "candidate_contradiction_not_hop_conflict",
+          "candidate_hop_ids": [
+            "required_hop_1",
+            "required_hop_2"
+          ],
+          "evidence_ids": [
+            "3hop1__103881_443779_52195::p7",
+            "3hop1__105767_443779_52195::p3",
+            "3hop1__144439_443779_52195::p7"
+          ],
+          "hypothesis": "The answer to the question is Susilo Bambang Yudhoyono.",
+          "reason": "",
+          "failure_reason": "The evidence mentions the Indonesian president, not the president of East Timor.",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "unscoped_conflict_observed",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_3",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_3",
+            "anchor_entity": "East Timor",
+            "anchor_entity_id": "east_timor",
+            "anchor_entity_type": "",
+            "canonical_relation": "president",
+            "expected_object_type": "person",
+            "missing_component": "object",
+            "suggested_query": "Who is the president of East Timor?",
+            "raw_hint": "president_of"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "conflict_scope_mismatch_ignored",
+          "candidate_hop_ids": [
+            "required_hop_1",
+            "required_hop_2"
+          ],
+          "evidence_ids": [
+            "3hop1__103881_443779_52195::p7",
+            "3hop1__105767_443779_52195::p3",
+            "3hop1__144439_443779_52195::p7"
+          ],
+          "claim": "The president of East Timor during the Commission of Truth and Friendship is Susilo Bambang Yudhoyono.",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "candidate_contradiction_not_hop_conflict",
+          "candidate_hop_ids": [
+            "required_hop_1",
+            "required_hop_2"
+          ],
+          "evidence_ids": [
+            "3hop1__103881_443779_52195::p7",
+            "3hop1__105767_443779_52195::p3",
+            "3hop1__144439_443779_52195::p7"
+          ],
+          "hypothesis": "The answer to the question is Susilo Bambang Yudhoyono.",
+          "reason": "",
+          "failure_reason": "The evidence mentions the Indonesian president, not the president of East Timor.",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_conflict_observed",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 1,
+          "incoming_topology_fingerprint": "Tony_Gunawan_from_Indonesia_has_commission_of_truth_and_friendship_with_East_Timor_president_of_East_Timor_missing",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_3",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_3",
+            "anchor_entity": "East Timor",
+            "anchor_entity_id": "east_timor",
+            "anchor_entity_type": "",
+            "canonical_relation": "president",
+            "expected_object_type": "person",
+            "missing_component": "object",
+            "suggested_query": "Who is the president of East Timor?",
+            "raw_hint": "president_of"
+          },
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "conflict_scope_mismatch_ignored",
+          "candidate_hop_ids": [
+            "required_hop_1",
+            "required_hop_2"
+          ],
+          "evidence_ids": [
+            "3hop1__103881_443779_52195::p7",
+            "3hop1__105767_443779_52195::p3",
+            "3hop1__144439_443779_52195::p7"
+          ],
+          "claim": "The president of East Timor during the time of the Commission of Truth and Friendship is Susilo Bambang Yudhoyono.",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_conflict_observed",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 1,
+          "incoming_topology_fingerprint": "Tony_Gunawan_from_Indonesia_Indonesia_commission_of_truth_and_friendship_with_East_Timor_East_Timor_president_of",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "2|indonesia|commission_of_truth_and_friendship_with|entity|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "2|indonesia|commission_of_truth_and_friendship_with|entity|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_3",
+          "reason": "unique_typed_frontier_match",
+          "requirement": {
+            "target_hop_id": "",
+            "anchor_entity": "",
+            "anchor_entity_id": "",
+            "anchor_entity_type": "",
+            "canonical_relation": "president",
+            "expected_object_type": "",
+            "missing_component": "object",
+            "suggested_query": "",
+            "raw_hint": "president_of"
+          },
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "conflict_scope_mismatch_ignored",
+          "candidate_hop_ids": [
+            "required_hop_1",
+            "required_hop_2"
+          ],
+          "evidence_ids": [
+            "3hop1__103881_443779_52195::p7",
+            "3hop1__105767_443779_52195::p3",
+            "3hop1__144439_443779_52195::p7"
+          ],
+          "claim": "The president of East Timor during the time of the Commission of Truth and Friendship is Susilo Bambang Yudhoyono.",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "candidate_contradiction_not_hop_conflict",
+          "candidate_hop_ids": [
+            "required_hop_1",
+            "required_hop_2"
+          ],
+          "evidence_ids": [
+            "3hop1__103881_443779_52195::p7",
+            "3hop1__105767_443779_52195::p3",
+            "3hop1__144439_443779_52195::p7"
+          ],
+          "hypothesis": "The answer to the question is Susilo Bambang Yudhoyono",
+          "reason": "",
+          "failure_reason": "The evidence mentions the Indonesian president, not the president of East Timor.",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_conflict_observed",
+          "round_idx": 3
+        }
+      ]
+    },
+    {
+      "id": "3hop1__140786_2053_5289",
+      "final_answer": "",
+      "final_action": "abstain",
+      "topology_version": 1,
+      "topology_fingerprint": "413f686c06195a269d501496e1d1602e481d85253843870d9e0d823c98236590",
+      "hop_count": 2,
+      "verified_hop_count": 2,
+      "candidate_values": [
+        "Oriole Records"
+      ],
+      "candidate_statuses": [
+        "verified"
+      ],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_2",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_2",
+            "anchor_entity": "major broadcaster",
+            "anchor_entity_id": "major_broadcaster",
+            "anchor_entity_type": "",
+            "canonical_relation": "acquired",
+            "expected_object_type": "entity",
+            "missing_component": "object",
+            "suggested_query": "What UK label was acquired by the major broadcaster based in New York?",
+            "raw_hint": "acquired"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_2",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_2",
+            "anchor_entity": "major broadcaster",
+            "anchor_entity_id": "major_broadcaster",
+            "anchor_entity_type": "",
+            "canonical_relation": "acquired",
+            "expected_object_type": "entity",
+            "missing_component": "object",
+            "suggested_query": "What UK label was acquired by the major broadcaster based in New York?",
+            "raw_hint": "acquired"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 1,
+          "incoming_topology_fingerprint": "major broadcaster -> based in -> New York; network of the show Just Men!? -> based in -> New York; major broadcaster -> acquired -> Oriole Records",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "2|network_of_the_show_just_men|headquarters_location|city|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "2|network_of_the_show_just_men|headquarters_location|city|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "network",
+          "reason": "hop_binding_relation_mismatch",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {
+            "component": "relation",
+            "expected": "acquired",
+            "observed": "network"
+          },
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "acquired",
+          "reason": "unknown_target_hop_id",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "conflict_scope_mismatch_ignored",
+          "candidate_hop_ids": [],
+          "evidence_ids": [
+            "3hop1__140786_2053_5289::p7"
+          ],
+          "claim": "The UK label bought by the major broadcaster based in New York is Sony Music.",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 1,
+          "incoming_topology_fingerprint": "major_broadcaster_based_in_new_york_acquired_uk_label",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_state_updated",
+          "hop_id": "required_hop_1",
+          "from": "verified",
+          "to": "verified",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "unique_typed_identity",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_state_updated",
+          "hop_id": "required_hop_2",
+          "from": "support_incomplete",
+          "to": "verified",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_resolved",
+          "hop_id": "required_hop_2",
+          "reason": "unique_typed_identity",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "candidate_observed",
+          "candidate": "Oriole Records",
+          "round_idx": 3
+        }
+      ]
+    },
+    {
+      "id": "3hop1__144439_443779_52195",
+      "final_answer": "Francisco Guterres",
+      "final_action": "answer",
+      "topology_version": 1,
+      "topology_fingerprint": "d6a20b89f56c65daa5d42abce1f04ea9b1290b8ce3ab983d5774f132bfaaf540",
+      "hop_count": 3,
+      "verified_hop_count": 3,
+      "candidate_values": [
+        "Francisco Guterres"
+      ],
+      "candidate_statuses": [
+        "rejected"
+      ],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_3",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_3",
+            "anchor_entity": "East Timor",
+            "anchor_entity_id": "east_timor",
+            "anchor_entity_type": "",
+            "canonical_relation": "president",
+            "expected_object_type": "person",
+            "missing_component": "object",
+            "suggested_query": "Who is the president of East Timor?",
+            "raw_hint": "president"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_3",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_3",
+            "anchor_entity": "East Timor",
+            "anchor_entity_id": "east_timor",
+            "anchor_entity_type": "",
+            "canonical_relation": "president",
+            "expected_object_type": "person",
+            "missing_component": "object",
+            "suggested_query": "Who is the president of East Timor?",
+            "raw_hint": "president"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 1,
+          "incoming_topology_fingerprint": "mulham_arufin_birthplace_east_timor_president",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_state_updated",
+          "hop_id": "required_hop_1",
+          "from": "verified",
+          "to": "verified",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "unique_typed_identity",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_state_updated",
+          "hop_id": "required_hop_3",
+          "from": "support_incomplete",
+          "to": "verified",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_resolved",
+          "hop_id": "required_hop_3",
+          "reason": "unique_typed_identity",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "candidate_observed",
+          "candidate": "Francisco Guterres",
+          "round_idx": 2
+        }
+      ]
+    }
+  ]
+}

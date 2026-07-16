@@ -1,0 +1,289 @@
+{
+  "run_dir": "runs\\layer1_siliconflow_qwen3_14b_repair_closure_targeted_runtime_smoke_v1_3_5_four_fixes_r4_20260707",
+  "sample_count": 6,
+  "category_counts": {
+    "empty_binding": 4,
+    "verifier_parse_failure": 3,
+    "answer_extraction_failure": 1,
+    "wrong_target": 1
+  },
+  "checks": {
+    "answer_extraction_failure_live_path": false,
+    "typed_reject_blocks_repair_acceptance": false,
+    "wrong_target_or_parse_fallback_blocks_unsafe_final": false,
+    "generic_refine_query_single_hop_cleanup": true,
+    "targeted_runtime_smoke_passed": false
+  },
+  "rows": [
+    {
+      "id": "2hop__10620_49084",
+      "final_action": "answer",
+      "final_answer": "Liam Garrigan",
+      "gold_answer": "Liam Thomas Garrigan",
+      "rounds": 2,
+      "queries": [
+        "Who plays the legendary figure featured in Historia Regum Britanniae in the show Once Upon a Time?",
+        "King Arthur 1"
+      ],
+      "actions": [
+        "refine_missing_hop",
+        "answer"
+      ],
+      "repair_actions": [
+        "refine_missing_hop",
+        "refine_missing_hop"
+      ],
+      "answer_extraction_repair_attempt_rounds": [],
+      "answer_safety_guard_rounds": [],
+      "wrong_target_carry_forward_rounds": [],
+      "parse_failure_wrong_target_rounds": [],
+      "generic_refine_query_cleanup_rounds": [],
+      "typed_categories": [
+        {
+          "round": 1,
+          "category": "empty_binding",
+          "reason": "binding_verifier_rejected"
+        }
+      ],
+      "repair_acceptance_by_round": [
+        {
+          "round": 1,
+          "acceptance": "superseded",
+          "state": "repair_superseded_by_final_answer",
+          "closed": "repair_superseded_by_final_answer",
+          "typed_passed": false,
+          "action": "refine_missing_hop"
+        },
+        {
+          "round": 2,
+          "acceptance": "accepted",
+          "state": "repair_accepted",
+          "closed": "accepted_final",
+          "typed_passed": true,
+          "action": "answer"
+        }
+      ]
+    },
+    {
+      "id": "2hop__167577_31122",
+      "final_action": "answer",
+      "final_answer": "18th century",
+      "gold_answer": "18th",
+      "rounds": 1,
+      "queries": [
+        "What century did the author of A Treatise Concerning the Principles of Human Knowledge live in?"
+      ],
+      "actions": [
+        "answer"
+      ],
+      "repair_actions": [],
+      "answer_extraction_repair_attempt_rounds": [],
+      "answer_safety_guard_rounds": [],
+      "wrong_target_carry_forward_rounds": [],
+      "parse_failure_wrong_target_rounds": [],
+      "generic_refine_query_cleanup_rounds": [],
+      "typed_categories": [],
+      "repair_acceptance_by_round": []
+    },
+    {
+      "id": "2hop__194469_83289",
+      "final_action": "abstain",
+      "final_answer": "",
+      "gold_answer": "Matt Bennett",
+      "rounds": 3,
+      "queries": [
+        "Who is the guy in the One Last Time video by the participant in The Listening Sessions?",
+        "Matt Bennett participant",
+        "Matt Bennett is the guy in the One Last Time video"
+      ],
+      "actions": [
+        "ordered_hop_repair",
+        "ordered_hop_repair",
+        "abstain"
+      ],
+      "repair_actions": [
+        "ordered_hop_repair",
+        "ordered_hop_repair",
+        "ordered_hop_repair"
+      ],
+      "answer_extraction_repair_attempt_rounds": [],
+      "answer_safety_guard_rounds": [],
+      "wrong_target_carry_forward_rounds": [],
+      "parse_failure_wrong_target_rounds": [],
+      "generic_refine_query_cleanup_rounds": [],
+      "typed_categories": [
+        {
+          "round": 1,
+          "category": "empty_binding",
+          "reason": "binding_verifier_rejected"
+        },
+        {
+          "round": 2,
+          "category": "empty_binding",
+          "reason": "binding_verifier_rejected"
+        },
+        {
+          "round": 3,
+          "category": "verifier_parse_failure",
+          "reason": "binding_verifier_rejected"
+        }
+      ],
+      "repair_acceptance_by_round": [
+        {
+          "round": 1,
+          "acceptance": "unresolved",
+          "state": "repair_unresolved_terminal",
+          "closed": "repair_unresolved_terminal",
+          "typed_passed": false,
+          "action": "ordered_hop_repair"
+        },
+        {
+          "round": 2,
+          "acceptance": "unresolved",
+          "state": "repair_unresolved_terminal",
+          "closed": "repair_unresolved_terminal",
+          "typed_passed": false,
+          "action": "ordered_hop_repair"
+        },
+        {
+          "round": 3,
+          "acceptance": "rejected",
+          "state": "repair_failed",
+          "closed": "repair_rejected",
+          "typed_passed": false,
+          "action": "abstain"
+        }
+      ]
+    },
+    {
+      "id": "3hop1__145194_160545_62931",
+      "final_action": "abstain",
+      "final_answer": "",
+      "gold_answer": "island Koh Phi Phi",
+      "rounds": 1,
+      "queries": [
+        "The Beach was filmed in what location of the country that contains the birth city of Siddhi Savetsila?"
+      ],
+      "actions": [
+        "abstain"
+      ],
+      "repair_actions": [
+        "answer_extraction_repair"
+      ],
+      "answer_extraction_repair_attempt_rounds": [],
+      "answer_safety_guard_rounds": [],
+      "wrong_target_carry_forward_rounds": [],
+      "parse_failure_wrong_target_rounds": [],
+      "generic_refine_query_cleanup_rounds": [],
+      "typed_categories": [
+        {
+          "round": 1,
+          "category": "answer_extraction_failure",
+          "reason": "binding_verifier_rejected"
+        }
+      ],
+      "repair_acceptance_by_round": [
+        {
+          "round": 1,
+          "acceptance": "unresolved",
+          "state": "repair_unresolved_terminal",
+          "closed": "repair_unresolved_terminal",
+          "typed_passed": false,
+          "action": "abstain"
+        }
+      ]
+    },
+    {
+      "id": "3hop1__144439_443779_52195",
+      "final_action": "answer",
+      "final_answer": "Francisco Guterres",
+      "gold_answer": "Francisco Guterres",
+      "rounds": 3,
+      "queries": [
+        "who is the president of newly declared independent country of the country of the birthplace of Mulham Arufin–Timor Leste Commission of Truth and Friendship?",
+        "Who is the current president of the newly declared independent country associated with it?",
+        "East Timor president"
+      ],
+      "actions": [
+        "refine_query",
+        "partial_chain_next_hop_repair",
+        "answer"
+      ],
+      "repair_actions": [
+        "partial_chain_next_hop_repair",
+        "partial_chain_next_hop_repair"
+      ],
+      "answer_extraction_repair_attempt_rounds": [],
+      "answer_safety_guard_rounds": [],
+      "wrong_target_carry_forward_rounds": [],
+      "parse_failure_wrong_target_rounds": [],
+      "generic_refine_query_cleanup_rounds": [
+        2
+      ],
+      "typed_categories": [
+        {
+          "round": 1,
+          "category": "verifier_parse_failure",
+          "reason": "binding_verifier_rejected"
+        },
+        {
+          "round": 2,
+          "category": "empty_binding",
+          "reason": "binding_verifier_rejected"
+        },
+        {
+          "round": 3,
+          "category": "verifier_parse_failure",
+          "reason": "binding_verifier_rejected"
+        }
+      ],
+      "repair_acceptance_by_round": [
+        {
+          "round": 2,
+          "acceptance": "superseded",
+          "state": "repair_superseded_by_final_answer",
+          "closed": "repair_superseded_by_final_answer",
+          "typed_passed": false,
+          "action": "partial_chain_next_hop_repair"
+        },
+        {
+          "round": 3,
+          "acceptance": "accepted",
+          "state": "repair_accepted",
+          "closed": "accepted_final",
+          "typed_passed": true,
+          "action": "answer"
+        }
+      ]
+    },
+    {
+      "id": "2hop__131951_643670",
+      "final_action": "answer",
+      "final_answer": "Nieuwe Waterweg",
+      "gold_answer": "Het Scheur",
+      "rounds": 1,
+      "queries": [
+        "What is the name for the mouth of the watercourse of the body of water by Rotterdam Centrum?"
+      ],
+      "actions": [
+        "answer"
+      ],
+      "repair_actions": [],
+      "answer_extraction_repair_attempt_rounds": [],
+      "answer_safety_guard_rounds": [],
+      "wrong_target_carry_forward_rounds": [],
+      "parse_failure_wrong_target_rounds": [
+        1
+      ],
+      "generic_refine_query_cleanup_rounds": [],
+      "typed_categories": [
+        {
+          "round": 1,
+          "category": "wrong_target",
+          "reason": "mouth_watercourse_downstream_continuation"
+        }
+      ],
+      "repair_acceptance_by_round": []
+    }
+  ]
+}

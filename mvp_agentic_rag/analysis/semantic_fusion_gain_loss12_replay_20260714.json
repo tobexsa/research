@@ -1,0 +1,566 @@
+{
+  "gate_count": 12,
+  "gain_count": 5,
+  "loss_count": 7,
+  "lane_step_counts": {
+    "generic_compatibility": 18,
+    "no_fallback": 1,
+    "strict_certificate": 8
+  },
+  "router_input_contract": "SlotExecutionState only; no sample/gold fields",
+  "records": [
+    {
+      "sample_id": "2hop__136179_13529",
+      "group": "gain",
+      "hop": 2,
+      "gold_answer": "June 1982",
+      "r12_answer": "",
+      "r12_correct": false,
+      "r20_answer": "June 1982",
+      "r20_correct": true,
+      "lane_trace": [
+        {
+          "round": 1,
+          "action": "answer",
+          "lane": "strict_certificate",
+          "reason": "trusted_runtime_certificate",
+          "strict_certificate_reason": "deterministic_named_after_player_signing_binding",
+          "metadata": {
+            "topology_status": "ready",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": true
+          }
+        }
+      ]
+    },
+    {
+      "sample_id": "2hop__167577_31122",
+      "group": "gain",
+      "hop": 2,
+      "gold_answer": "18th",
+      "r12_answer": "",
+      "r12_correct": false,
+      "r20_answer": "18th",
+      "r20_correct": true,
+      "lane_trace": [
+        {
+          "round": 1,
+          "action": "ordered_hop_repair",
+          "lane": "generic_compatibility",
+          "reason": "valid_topology_without_strict_certificate",
+          "strict_certificate_reason": "",
+          "metadata": {
+            "topology_status": "ready",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [
+              "ambiguous_target_mapping"
+            ],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": false
+          }
+        },
+        {
+          "round": 2,
+          "action": "answer",
+          "lane": "generic_compatibility",
+          "reason": "valid_topology_without_strict_certificate",
+          "strict_certificate_reason": "",
+          "metadata": {
+            "topology_status": "ready",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": false
+          }
+        }
+      ]
+    },
+    {
+      "sample_id": "3hop1__136129_87694_124169",
+      "group": "gain",
+      "hop": 3,
+      "gold_answer": "1952",
+      "r12_answer": "",
+      "r12_correct": false,
+      "r20_answer": "1952",
+      "r20_correct": true,
+      "lane_trace": [
+        {
+          "round": 1,
+          "action": "ordered_hop_repair",
+          "lane": "strict_certificate",
+          "reason": "trusted_runtime_certificate",
+          "strict_certificate_reason": "deterministic_shared_saint_constraint_topology",
+          "metadata": {
+            "topology_status": "ready",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": false
+          }
+        },
+        {
+          "round": 2,
+          "action": "answer",
+          "lane": "strict_certificate",
+          "reason": "trusted_runtime_certificate",
+          "strict_certificate_reason": "deterministic_shared_saint_chain_binding",
+          "metadata": {
+            "topology_status": "ready",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": false
+          }
+        }
+      ]
+    },
+    {
+      "sample_id": "4hop1__161810_583746_457883_650651",
+      "group": "gain",
+      "hop": 4,
+      "gold_answer": "NBC",
+      "r12_answer": "",
+      "r12_correct": false,
+      "r20_answer": "NBC",
+      "r20_correct": true,
+      "lane_trace": [
+        {
+          "round": 1,
+          "action": "ordered_hop_repair",
+          "lane": "strict_certificate",
+          "reason": "trusted_runtime_certificate",
+          "strict_certificate_reason": "deterministic_partial_country_network_topology",
+          "metadata": {
+            "topology_status": "ready",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": false
+          }
+        },
+        {
+          "round": 2,
+          "action": "answer",
+          "lane": "strict_certificate",
+          "reason": "trusted_runtime_certificate",
+          "strict_certificate_reason": "deterministic_country_network_chain_binding",
+          "metadata": {
+            "topology_status": "ready",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": false
+          }
+        }
+      ]
+    },
+    {
+      "sample_id": "4hop1__236903_153080_33897_81096",
+      "group": "gain",
+      "hop": 4,
+      "gold_answer": "Mario Andretti",
+      "r12_answer": "",
+      "r12_correct": false,
+      "r20_answer": "Mario Andretti",
+      "r20_correct": true,
+      "lane_trace": [
+        {
+          "round": 1,
+          "action": "ordered_hop_repair",
+          "lane": "strict_certificate",
+          "reason": "trusted_runtime_certificate",
+          "strict_certificate_reason": "deterministic_partial_geographic_race_topology",
+          "metadata": {
+            "topology_status": "ready",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [
+              "ambiguous_target_mapping",
+              "hop_binding_failure",
+              "sentinel_candidate_ignored"
+            ],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": true
+          }
+        },
+        {
+          "round": 2,
+          "action": "ordered_hop_repair",
+          "lane": "strict_certificate",
+          "reason": "trusted_runtime_certificate",
+          "strict_certificate_reason": "deterministic_partial_geographic_race_topology",
+          "metadata": {
+            "topology_status": "ready",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [
+              "ambiguous_target_mapping",
+              "sentinel_candidate_ignored"
+            ],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": true
+          }
+        },
+        {
+          "round": 3,
+          "action": "answer",
+          "lane": "strict_certificate",
+          "reason": "trusted_runtime_certificate",
+          "strict_certificate_reason": "deterministic_geographic_race_chain_binding",
+          "metadata": {
+            "topology_status": "ready",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": true
+          }
+        }
+      ]
+    },
+    {
+      "sample_id": "2hop__142699_67465",
+      "group": "loss",
+      "hop": 2,
+      "gold_answer": "March 11, 2011",
+      "r12_answer": "March 11, 2011.",
+      "r12_correct": true,
+      "r20_answer": "2011",
+      "r20_correct": false,
+      "lane_trace": [
+        {
+          "round": 1,
+          "action": "answer",
+          "lane": "generic_compatibility",
+          "reason": "valid_topology_without_strict_certificate",
+          "strict_certificate_reason": "",
+          "metadata": {
+            "topology_status": "ready",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": false
+          }
+        }
+      ]
+    },
+    {
+      "sample_id": "2hop__194469_83289",
+      "group": "loss",
+      "hop": 2,
+      "gold_answer": "Matt Bennett",
+      "r12_answer": "Matt Bennett",
+      "r12_correct": true,
+      "r20_answer": "",
+      "r20_correct": false,
+      "lane_trace": [
+        {
+          "round": 1,
+          "action": "ordered_hop_repair",
+          "lane": "generic_compatibility",
+          "reason": "valid_topology_without_strict_certificate",
+          "strict_certificate_reason": "",
+          "metadata": {
+            "topology_status": "ready",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [
+              "hop_binding_expected_type_mismatch"
+            ],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": false
+          }
+        },
+        {
+          "round": 2,
+          "action": "refine_query",
+          "lane": "generic_compatibility",
+          "reason": "valid_topology_without_strict_certificate",
+          "strict_certificate_reason": "",
+          "metadata": {
+            "topology_status": "ready",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": false
+          }
+        },
+        {
+          "round": 3,
+          "action": "abstain",
+          "lane": "generic_compatibility",
+          "reason": "valid_topology_without_strict_certificate",
+          "strict_certificate_reason": "",
+          "metadata": {
+            "topology_status": "ready",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": false
+          }
+        }
+      ]
+    },
+    {
+      "sample_id": "2hop__23459_35124",
+      "group": "loss",
+      "hop": 2,
+      "gold_answer": "450",
+      "r12_answer": "450",
+      "r12_correct": true,
+      "r20_answer": "",
+      "r20_correct": false,
+      "lane_trace": [
+        {
+          "round": 1,
+          "action": "ordered_hop_repair",
+          "lane": "generic_compatibility",
+          "reason": "valid_topology_without_strict_certificate",
+          "strict_certificate_reason": "",
+          "metadata": {
+            "topology_status": "ready",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [
+              "hop_binding_failure"
+            ],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": false
+          }
+        },
+        {
+          "round": 2,
+          "action": "refine_query",
+          "lane": "generic_compatibility",
+          "reason": "valid_topology_without_strict_certificate",
+          "strict_certificate_reason": "",
+          "metadata": {
+            "topology_status": "ready",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [
+              "hop_binding_failure"
+            ],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": false
+          }
+        },
+        {
+          "round": 3,
+          "action": "abstain",
+          "lane": "generic_compatibility",
+          "reason": "valid_topology_without_strict_certificate",
+          "strict_certificate_reason": "",
+          "metadata": {
+            "topology_status": "ready",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [
+              "hop_binding_failure"
+            ],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": false
+          }
+        }
+      ]
+    },
+    {
+      "sample_id": "2hop__247353_55227",
+      "group": "loss",
+      "hop": 2,
+      "gold_answer": "Maria Bello",
+      "r12_answer": "Maria Bello",
+      "r12_correct": true,
+      "r20_answer": "",
+      "r20_correct": false,
+      "lane_trace": [
+        {
+          "round": 1,
+          "action": "refine_query",
+          "lane": "generic_compatibility",
+          "reason": "valid_topology_without_strict_certificate",
+          "strict_certificate_reason": "",
+          "metadata": {
+            "topology_status": "topology_unavailable",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [
+              "hop_binding_failure"
+            ],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": false
+          }
+        },
+        {
+          "round": 2,
+          "action": "refine_query",
+          "lane": "generic_compatibility",
+          "reason": "valid_topology_without_strict_certificate",
+          "strict_certificate_reason": "",
+          "metadata": {
+            "topology_status": "topology_unavailable",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [
+              "hop_binding_failure"
+            ],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": false
+          }
+        },
+        {
+          "round": 3,
+          "action": "abstain",
+          "lane": "generic_compatibility",
+          "reason": "valid_topology_without_strict_certificate",
+          "strict_certificate_reason": "",
+          "metadata": {
+            "topology_status": "topology_unavailable",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [
+              "hop_binding_failure"
+            ],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": false
+          }
+        }
+      ]
+    },
+    {
+      "sample_id": "3hop1__103881_443779_52195",
+      "group": "loss",
+      "hop": 3,
+      "gold_answer": "Francisco Guterres",
+      "r12_answer": "Francisco Guterres",
+      "r12_correct": true,
+      "r20_answer": "",
+      "r20_correct": false,
+      "lane_trace": [
+        {
+          "round": 1,
+          "action": "abstain",
+          "lane": "no_fallback",
+          "reason": "hard_conflict",
+          "strict_certificate_reason": "",
+          "metadata": {
+            "topology_status": "ready",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [
+              "ambiguous_target_mapping"
+            ],
+            "conflict_hop_ids": [
+              "required_hop_1",
+              "required_hop_2"
+            ],
+            "evidence_certificate_binding": false
+          }
+        }
+      ]
+    },
+    {
+      "sample_id": "3hop1__140786_2053_5289",
+      "group": "loss",
+      "hop": 3,
+      "gold_answer": "Oriole Records.",
+      "r12_answer": "Oriole Records",
+      "r12_correct": true,
+      "r20_answer": "",
+      "r20_correct": false,
+      "lane_trace": [
+        {
+          "round": 1,
+          "action": "ordered_hop_repair",
+          "lane": "generic_compatibility",
+          "reason": "valid_topology_without_strict_certificate",
+          "strict_certificate_reason": "",
+          "metadata": {
+            "topology_status": "ready",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": false
+          }
+        },
+        {
+          "round": 2,
+          "action": "refine_query",
+          "lane": "generic_compatibility",
+          "reason": "valid_topology_without_strict_certificate",
+          "strict_certificate_reason": "",
+          "metadata": {
+            "topology_status": "ready",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": false
+          }
+        },
+        {
+          "round": 3,
+          "action": "abstain",
+          "lane": "generic_compatibility",
+          "reason": "valid_topology_without_strict_certificate",
+          "strict_certificate_reason": "",
+          "metadata": {
+            "topology_status": "ready",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": false
+          }
+        }
+      ]
+    },
+    {
+      "sample_id": "3hop1__144439_443779_52195",
+      "group": "loss",
+      "hop": 3,
+      "gold_answer": "Francisco Guterres",
+      "r12_answer": "Francisco Guterres",
+      "r12_correct": true,
+      "r20_answer": "",
+      "r20_correct": false,
+      "lane_trace": [
+        {
+          "round": 1,
+          "action": "ordered_hop_repair",
+          "lane": "generic_compatibility",
+          "reason": "valid_topology_without_strict_certificate",
+          "strict_certificate_reason": "",
+          "metadata": {
+            "topology_status": "ready",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": false
+          }
+        },
+        {
+          "round": 2,
+          "action": "ordered_hop_repair",
+          "lane": "generic_compatibility",
+          "reason": "valid_topology_without_strict_certificate",
+          "strict_certificate_reason": "",
+          "metadata": {
+            "topology_status": "ready",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [
+              "ambiguous_target_mapping"
+            ],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": false
+          }
+        },
+        {
+          "round": 3,
+          "action": "abstain",
+          "lane": "generic_compatibility",
+          "reason": "valid_topology_without_strict_certificate",
+          "strict_certificate_reason": "",
+          "metadata": {
+            "topology_status": "ready",
+            "topology_primary_reason": "required_hops_present",
+            "topology_secondary_reasons": [],
+            "conflict_hop_ids": [],
+            "evidence_certificate_binding": false
+          }
+        }
+      ]
+    }
+  ],
+  "interpretation": "This replay audits separability and safety signals only. It does not claim a fused answer because the live fusion changes which verifier protocol is called before later state exists."
+}

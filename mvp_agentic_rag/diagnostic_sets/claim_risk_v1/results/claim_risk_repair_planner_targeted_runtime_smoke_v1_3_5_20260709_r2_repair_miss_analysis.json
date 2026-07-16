@@ -1,0 +1,12 @@
+{
+  "case_examples": [],
+  "examples_by_primary_reason": {},
+  "feature_counts": {},
+  "joined_step_count": 0,
+  "missing_step_count": 0,
+  "prediction_count": 12,
+  "primary_reason_counts": {},
+  "repair_missing_hop_to_abstain_count": 0,
+  "total_gold_count": 120,
+  "trajectory_record_count": 6
+}

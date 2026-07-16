@@ -1,0 +1,15 @@
+{
+  "diagnostic_count": 172,
+  "prediction_count": 162,
+  "prediction_coverage_rate": 0.9418604651162791,
+  "source_run_override": "layer1_siliconflow_qwen3_14b_repair_target_validator_stratified45_v1_3_5_experiment_b_20260708",
+  "source_runs": [
+    "layer1_siliconflow_qwen3_14b_repair_target_validator_stratified45_v1_3_5_experiment_b_20260708"
+  ],
+  "terminal_carry_forward": false,
+  "terminal_carry_forward_count": 0,
+  "unmatched_by_reason": {
+    "unmatched_round_mismatch": 10
+  },
+  "unmatched_count": 10
+}

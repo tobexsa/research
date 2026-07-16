@@ -14,7 +14,11 @@ class AgenticRagBaselineAgent(BaseAgent):
         self.policy = RiskPolicy()
 
     def run(self, sample: Sample):
-        ledger = EvidenceLedger(sample=sample, budget_remaining=self.max_rounds)
+        ledger = EvidenceLedger(
+            sample=sample,
+            budget_remaining=self.max_rounds,
+            use_gold_support_gain=not bool(self.config.get("non_leaking_runtime_v1", False)),
+        )
         query = sample.question
         steps = []
         action = "abstain"
@@ -25,6 +29,15 @@ class AgenticRagBaselineAgent(BaseAgent):
             gain = ledger.add_retrieved(passages)
             answer = self.answer_from(sample, ledger.retrieved_passages)
             verifier_output = self.verifier.verify(sample, ledger.retrieved_passages, answer)
+            if not ledger.use_gold_support_gain:
+                ledger.accept_verifier_evidence(
+                    [
+                        evidence_id
+                        for claim in verifier_output.claims
+                        if claim.status == "supported"
+                        for evidence_id in claim.evidence_ids
+                    ]
+                )
             budget_remaining = self.max_rounds - round_idx
             action = self.policy.decide(verifier_output, budget_remaining, gain)
             steps.append(

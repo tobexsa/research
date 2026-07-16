@@ -1,0 +1,96 @@
+{
+  "run_dir": "runs\\layer1_siliconflow_qwen3_14b_repair_closure_targeted_runtime_smoke_v1_3_5_failure_repair_r4_20260707",
+  "config": "configs/layer1_siliconflow_qwen3_14b_repair_closure_targeted_runtime_smoke_v1_3_5_failure_repair_r4_20260707.yaml",
+  "dataset": "diagnostic_sets/claim_risk_v1/repair_closure_targeted_runtime_smoke_v1_3_5_failure_repair_r1_20260707.jsonl",
+  "run_summary": "runs\\layer1_siliconflow_qwen3_14b_repair_closure_targeted_runtime_smoke_v1_3_5_failure_repair_r4_20260707\\run_summary.md",
+  "checks": {
+    "sample_count": 3,
+    "all_three_final_answered": true,
+    "listening_sessions_repair_query_used": true,
+    "timor_keyword_repair_query_used": true,
+    "no_friendship_person_query": true,
+    "century_answer_recovered": true
+  },
+  "rows": [
+    {
+      "id": "2hop__167577_31122",
+      "final_action": "answer",
+      "final_answer": "18th century",
+      "gold_answer": "18th",
+      "rounds": 2,
+      "queries": [
+        "What century did the author of A Treatise Concerning the Principles of Human Knowledge live in?",
+        "What were the birth and death dates of George Berkeley?"
+      ],
+      "actions": [
+        "refine_query",
+        "answer"
+      ],
+      "repair_next_queries": [],
+      "repair_actions": [],
+      "century_evidence_utilization_rounds": [],
+      "slot_candidates": [
+        "18th century",
+        "18th century"
+      ]
+    },
+    {
+      "id": "2hop__194469_83289",
+      "final_action": "answer",
+      "final_answer": "Matt Bennett",
+      "gold_answer": "Matt Bennett",
+      "rounds": 2,
+      "queries": [
+        "Who is the guy in the One Last Time video by the participant in The Listening Sessions?",
+        "The Listening Sessions participant"
+      ],
+      "actions": [
+        "ordered_hop_repair",
+        "answer"
+      ],
+      "repair_next_queries": [
+        "The Listening Sessions participant",
+        "The Listening Sessions participant"
+      ],
+      "repair_actions": [
+        "ordered_hop_repair",
+        "ordered_hop_repair"
+      ],
+      "century_evidence_utilization_rounds": [],
+      "slot_candidates": [
+        "Matt Bennett"
+      ]
+    },
+    {
+      "id": "3hop1__144439_443779_52195",
+      "final_action": "answer",
+      "final_answer": "Francisco Guterres",
+      "gold_answer": "Francisco Guterres",
+      "rounds": 2,
+      "queries": [
+        "who is the president of newly declared independent country of the country of the birthplace of Mulham Arufin鈥揟imor Leste Commission of Truth and Friendship?",
+        "East Timor president"
+      ],
+      "actions": [
+        "partial_chain_next_hop_repair",
+        "answer"
+      ],
+      "repair_next_queries": [
+        "East Timor president",
+        "East Timor president"
+      ],
+      "repair_actions": [
+        "partial_chain_next_hop_repair",
+        "partial_chain_next_hop_repair"
+      ],
+      "century_evidence_utilization_rounds": [],
+      "slot_candidates": [
+        "Francisco Guterres"
+      ]
+    }
+  ],
+  "notes": [
+    "Exact overall_acc is 0.6667 because 2hop__167577_31122 outputs \"18th century\" while gold is \"18th\"; answer_f1 captures the alias-level partial match.",
+    "This is a targeted 3-sample runtime smoke, not a full runtime readiness claim."
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "protocol_id": "semantic_adapter_generic_online_stability_v1_20260715",
+  "status": "frozen",
+  "frozen_date": "2026-07-15",
+  "parent_decision": "analysis/semantic_fusion_phase3_post_shared_certificate_decision_20260715.md",
+  "purpose": "Separate online certificate-completion variance from shared terminal-policy behavior before independent-repeat promotion to matched modern baselines.",
+  "primary_dataset": {
+    "path": "data/musique_mvp_stratified45.jsonl",
+    "sha256": "2B4A0DFAD40AC8B120FF59862FCBF216C5AD419EC7E2783E35534281653D63A5",
+    "required_rows": 45,
+    "required_unique_ids": 45
+  },
+  "variants": {
+    "adapter_only": {
+      "strict_certificate_acceptance": false,
+      "deterministic_bindings": true,
+      "terminal_policy": "shared_generic_fail_closed"
+    },
+    "generic_only": {
+      "strict_certificate_acceptance": false,
+      "deterministic_bindings": false,
+      "terminal_policy": "shared_generic_fail_closed"
+    }
+  },
+  "run_order": [
+    {
+      "position": 1,
+      "block": 1,
+      "id": "adapter_stability_s1",
+      "variant": "adapter_only",
+      "config": "configs/layer1_siliconflow_qwen3_14b_semantic_adapter_only_stability_stratified45_20260715_s1.yaml",
+      "config_sha256": "DE5A54A354E3F89EA88E418D5A6979E302DFA1E65CB2EF4449542F8CF00E1986",
+      "output_dir": "runs/layer1_siliconflow_qwen3_14b_semantic_adapter_only_stability_stratified45_20260715_s1"
+    },
+    {
+      "position": 2,
+      "block": 1,
+      "id": "generic_stability_s1",
+      "variant": "generic_only",
+      "config": "configs/layer1_siliconflow_qwen3_14b_semantic_generic_only_stability_stratified45_20260715_s1.yaml",
+      "config_sha256": "ACCF9356D7346C2A43B465A325606472E208070B8A7AE0FF01936EFD24C86C2D",
+      "output_dir": "runs/layer1_siliconflow_qwen3_14b_semantic_generic_only_stability_stratified45_20260715_s1"
+    },
+    {
+      "position": 3,
+      "block": 2,
+      "id": "generic_stability_s2",
+      "variant": "generic_only",
+      "config": "configs/layer1_siliconflow_qwen3_14b_semantic_generic_only_stability_stratified45_20260715_s2.yaml",
+      "config_sha256": "52A01927635A62690540A7AC7908A5B83C85DED057F749525298AD91FF43F95F",
+      "output_dir": "runs/layer1_siliconflow_qwen3_14b_semantic_generic_only_stability_stratified45_20260715_s2"
+    },
+    {
+      "position": 4,
+      "block": 2,
+      "id": "adapter_stability_s2",
+      "variant": "adapter_only",
+      "config": "configs/layer1_siliconflow_qwen3_14b_semantic_adapter_only_stability_stratified45_20260715_s2.yaml",
+      "config_sha256": "652D0115C5CF10A39C4583835A4FC81773239AAD90BE6F94D7EA1D8DF539AAED",
+      "output_dir": "runs/layer1_siliconflow_qwen3_14b_semantic_adapter_only_stability_stratified45_20260715_s2"
+    }
+  ],
+  "fresh_runs_per_variant": 2,
+  "optional_confirmatory_runs": 0,
+  "historical_primary_aggregation_allowed": false,
+  "certificate_layer": {
+    "complete_definition": [
+      "supports_slot_true",
+      "nonempty_local_binding_evidence",
+      "chain_complete_without_missing_critical_hops",
+      "final_slot_covered",
+      "all_required_hops_covered",
+      "evidence_set_sufficient",
+      "no_bridge_or_final_slot_conflict"
+    ],
+    "required_outputs": [
+      "adapter_marker_applications",
+      "ever_complete_certificate_rate",
+      "terminal_complete_certificate_rate",
+      "terminal_correct_certificate_rate",
+      "certificate_failure_categories",
+      "variant_mean_sample_sd_range",
+      "paired_block_deltas",
+      "per_case_completion_frequency_0_of_2_1_of_2_2_of_2"
+    ]
+  },
+  "terminal_policy_layer": {
+    "fixed_policy": "generic_compatibility_plus_shared_fail_closed_guard_with_strict_disabled",
+    "shared_replay_repeats": 3,
+    "required_outputs": [
+      "answer_abstain_counts",
+      "answer_given_complete_certificate",
+      "abstain_given_complete_certificate",
+      "answer_without_complete_certificate",
+      "terminal_guard_and_downgrade_counts",
+      "final_answered_unsupported",
+      "terminal_invariant_violations",
+      "unsafe_typed_state_transitions",
+      "within_stream_policy_determinism",
+      "per_case_action_stability"
+    ]
+  },
+  "required_performance_metrics": [
+    "overall_em",
+    "answer_f1",
+    "coverage",
+    "selective_acc",
+    "selective_answer_f1",
+    "avg_retrieval_calls",
+    "wasted_retrieval_rate",
+    "final_answered_unsupported_rate",
+    "hop_metrics"
+  ],
+  "hard_run_validity": [
+    "frozen_config_source_data_hashes_match",
+    "45_rows_45_unique_exact_membership",
+    "zero_skipped_no_remaining_lock",
+    "complete_finite_existing_metrics",
+    "final_answered_unsupported_zero",
+    "terminal_invariant_violations_zero",
+    "unsafe_typed_state_transitions_zero",
+    "shared_policy_replay_deterministic",
+    "live_strict_activation_zero",
+    "answer_without_complete_terminal_certificate_zero"
+  ],
+  "primary_pass_rule": [
+    "all_four_runs_valid",
+    "terminal_correct_certificate_adapter_minus_generic_positive_in_both_blocks",
+    "answer_f1_adapter_minus_generic_positive_in_both_blocks",
+    "aggregate_answer_f1_delta_positive",
+    "aggregate_coverage_delta_positive",
+    "answer_without_complete_certificate_zero_every_run",
+    "all_safety_counts_zero_every_run"
+  ],
+  "decision_branches": {
+    "pass": "pass_to_matched_modern_baselines",
+    "mixed_sign": "unstable_stop_no_extra_draw",
+    "certificate_only": "certificate_improves_without_stable_f1_stop_and_diagnose",
+    "f1_without_certificate": "f1_improves_without_certificate_mechanism_stop",
+    "safety_or_validity_failure": "safety_or_validity_failure_return_to_diagnosis",
+    "nonpositive": "nonpositive_adapter_effect_stop_or_return_to_idea"
+  },
+  "analyzer": {
+    "path": "scripts/analyze_online_stability_protocol.py",
+    "sha256": "BC9754F57437EB800F0970500E0952A8B5789C0743F8D226E4441383416C2356",
+    "test_path": "tests/test_analyze_online_stability_protocol.py",
+    "test_sha256": "07B538F048436D8FD3D68CF056CF7606DE8F5981F9DA921F8AAFA1C36738878E"
+  },
+  "historical_dry_run": {
+    "status": "dry_run_complete_nonprimary",
+    "path": "analysis/semantic_online_stability_protocol_historical_dryrun_20260715.json",
+    "sha256": "882A92B6561ABA0EA60C948AF805DCC33966CCFA0ADC427485AAD96F5A04526D"
+  },
+  "source_manifest": "analysis/semantic_online_stability_source_manifest_v1_20260715.json",
+  "mutation_rule": "Any change requires a new protocol version before further online calls; this frozen file must not be overwritten."
+}

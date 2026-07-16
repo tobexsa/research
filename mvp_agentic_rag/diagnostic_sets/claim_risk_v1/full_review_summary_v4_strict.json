@@ -1,0 +1,90 @@
+{
+  "annotated_count": 180,
+  "human_verified_count": 172,
+  "validate_record_pass_rate": 1.0,
+  "adjudication_needed_count": 0,
+  "adjudication_needed_rate": 0.0,
+  "excluded_count": 8,
+  "excluded_rate": 0.044444444444444446,
+  "schema_issue_count": 0,
+  "schema_issue_records": {},
+  "human_review_provenance_issue_count": 0,
+  "human_review_provenance_issue_records": [],
+  "risk_type_coverage": {
+    "supported_answer": 20,
+    "repairable_missing_hop": 133,
+    "insufficient_evidence": 8,
+    "answer_extraction_failure": 1,
+    "contradiction": 12,
+    "critical_gap": 4,
+    "wrong_target": 2
+  },
+  "valid_risk_type_coverage": {
+    "supported_answer": 20,
+    "repairable_missing_hop": 133,
+    "answer_extraction_failure": 1,
+    "contradiction": 12,
+    "critical_gap": 4,
+    "wrong_target": 2
+  },
+  "oracle_action_distribution": {
+    "answer": 21,
+    "repair_missing_hop": 133,
+    "abstain": 8,
+    "disambiguate_conflict": 14,
+    "refine_query": 4
+  },
+  "valid_oracle_action_distribution": {
+    "answer": 21,
+    "repair_missing_hop": 133,
+    "disambiguate_conflict": 14,
+    "refine_query": 4
+  },
+  "review_status_counts": {
+    "human_verified": 172,
+    "excluded": 8
+  },
+  "gate_checks": {
+    "annotated_count": {
+      "value": 180,
+      "threshold": ">= 120",
+      "passed": true
+    },
+    "human_verified_count": {
+      "value": 172,
+      "threshold": ">= 100",
+      "passed": true
+    },
+    "validate_record_pass_rate": {
+      "value": 1.0,
+      "threshold": ">= 0.90",
+      "passed": true
+    },
+    "schema_issue_count": {
+      "value": 0,
+      "threshold": "== 0",
+      "passed": true
+    },
+    "human_review_provenance_issue_count": {
+      "value": 0,
+      "threshold": "== 0",
+      "passed": true
+    },
+    "adjudication_needed_rate": {
+      "value": 0.0,
+      "threshold": "<= 0.25",
+      "passed": true
+    },
+    "excluded_rate": {
+      "value": 0.044444444444444446,
+      "threshold": "<= 0.35",
+      "passed": true
+    },
+    "represented_valid_risk_type_count": {
+      "value": 6,
+      "threshold": ">= 5",
+      "passed": true
+    }
+  },
+  "go_or_no_go_for_checkpoint_c": "go"
+}

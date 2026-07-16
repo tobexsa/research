@@ -239,7 +239,11 @@ class ClaimRiskAgent(BaseAgent):
         )
 
     def run(self, sample: Sample):
-        ledger = EvidenceLedger(sample=sample, budget_remaining=self.max_rounds)
+        ledger = EvidenceLedger(
+            sample=sample,
+            budget_remaining=self.max_rounds,
+            use_gold_support_gain=not bool(self.config.get("non_leaking_runtime_v1", False)),
+        )
         memory = RetrievalWorkingMemory(enabled=self.use_retrieval_memory)
         claim_memory = ClaimEvidenceMemory(
             enabled=self.use_claim_evidence_memory,
@@ -309,6 +313,15 @@ class ClaimRiskAgent(BaseAgent):
             )
             answer = self.answer_from(sample, ledger.retrieved_passages)
             verifier_output = self.verifier.verify(sample, ledger.retrieved_passages, answer)
+            if not ledger.use_gold_support_gain:
+                ledger.accept_verifier_evidence(
+                    [
+                        evidence_id
+                        for claim in verifier_output.claims
+                        if claim.status == "supported"
+                        for evidence_id in claim.evidence_ids
+                    ]
+                )
             claim_memory.update_from_verifier(verifier_output, source_query=query, round_idx=round_idx)
             evidence_checklist.update_from_verifier(verifier_output, source_query=query, round_idx=round_idx)
             budget_remaining = self.max_rounds - round_idx
@@ -1530,6 +1543,12 @@ class ClaimRiskAgent(BaseAgent):
                             **controller_policy_metadata,
                             **answer_safety_metadata,
                         },
+                        verifier_output=verifier_output,
+                        binding_result=round_binding_result,
+                        local_evidence_ids={
+                            passage.passage_id
+                            for passage in ledger.retrieved_passages
+                        },
                     )
                 combined_events = _stable_unique_records(
                     (*planning_reduction.transition_events, *terminal_reduction.transition_events)
@@ -2298,6 +2317,9 @@ class ClaimRiskAgent(BaseAgent):
         repair_metadata: dict,
         budget_remaining: int,
         preterminal_metadata: dict | None = None,
+        verifier_output: VerifierOutput | None = None,
+        binding_result: SlotBindingResult | None = None,
+        local_evidence_ids: set[str] | None = None,
     ) -> tuple[str, dict]:
         preterminal_metadata = dict(preterminal_metadata or {})
         fusion_metadata = {}
@@ -2354,6 +2376,42 @@ class ClaimRiskAgent(BaseAgent):
                         ),
                         "state_controller_terminal_recovery_query": repair_query,
                     }
+                if action == "answer":
+                    block_reasons = _generic_terminal_answer_block_reasons(
+                        state,
+                        preterminal_metadata=preterminal_metadata,
+                        verifier_output=verifier_output,
+                        binding_result=binding_result,
+                        local_evidence_ids=local_evidence_ids,
+                    )
+                    if block_reasons:
+                        decision = self.state_controller.decide(
+                            state,
+                            budget_remaining,
+                        )
+                        can_repair = bool(
+                            decision.action == "repair_missing_hop"
+                            and repair_query
+                            and repair_metadata.get("repair_target_valid") is not False
+                            and budget_remaining > 0
+                        )
+                        downgraded_action = "refine_query" if can_repair else "abstain"
+                        return downgraded_action, {
+                            **fusion_metadata,
+                            "state_controller_terminal_guard": True,
+                            "state_controller_terminal_original_action": action,
+                            "state_controller_terminal_action": downgraded_action,
+                            "state_controller_terminal_reason": (
+                                "generic_terminal_fail_closed"
+                            ),
+                            "state_controller_terminal_downgrade": True,
+                            "state_controller_terminal_downgrade_reason": (
+                                "generic_terminal_answer_not_authorized"
+                            ),
+                            "state_controller_terminal_block_reasons": list(
+                                block_reasons
+                            ),
+                        }
                 return action, {
                     **fusion_metadata,
                     "state_controller_terminal_guard": False,
@@ -3644,6 +3702,166 @@ def _slot_binding_verifier_allowed_target(target_type: str) -> bool:
 def _final_slot_from_slot_binding_verifier(slot_ledger: SlotLedger) -> bool:
     final_slot = slot_ledger.slots[slot_ledger.plan.final_slot]
     return "slot_binding_verifier" in final_slot.source_queries
+
+
+def _critical_ancestor_closure_complete(state: SlotExecutionState) -> bool:
+    critical_hops = [hop for hop in state.hops if hop.is_critical]
+    if not critical_hops:
+        return False
+    by_id = {hop.hop_id: hop for hop in state.hops}
+
+    def verified_with_ancestors(hop_id: str, visiting: frozenset[str]) -> bool:
+        if hop_id in visiting:
+            return False
+        hop = by_id.get(hop_id)
+        if hop is None or hop.status != "verified":
+            return False
+        next_visiting = visiting | {hop_id}
+        return all(
+            verified_with_ancestors(dependency_id, next_visiting)
+            for dependency_id in hop.dependency_hop_ids
+        )
+
+    return all(
+        verified_with_ancestors(hop.hop_id, frozenset())
+        for hop in critical_hops
+    )
+
+
+def _generic_terminal_answer_block_reasons(
+    state: SlotExecutionState,
+    *,
+    preterminal_metadata: dict,
+    verifier_output: VerifierOutput | None,
+    binding_result: SlotBindingResult | None,
+    local_evidence_ids: set[str] | None,
+) -> tuple[str, ...]:
+    reasons: set[str] = set()
+    local_ids = set(local_evidence_ids or ())
+    binding_complete = _binding_has_complete_local_certificate(
+        binding_result,
+        local_ids,
+    )
+    if preterminal_metadata.get("controller_policy_v1_original_action") == "abstain" or (
+        preterminal_metadata.get("answer_safety_guard_original_action") == "abstain"
+    ):
+        reasons.add("controller_original_abstain")
+    if state.conflict_hop_ids:
+        reasons.add("hard_conflict")
+    if state.first_critical_missing_hop_id and not binding_complete:
+        reasons.add("critical_gap")
+    if not _critical_ancestor_closure_complete(state) and not binding_complete:
+        reasons.add("critical_ancestor_closure_incomplete")
+
+    if verifier_output is None:
+        reasons.add("final_verifier_missing")
+    else:
+        if verifier_output.need_more_evidence:
+            reasons.add("final_verifier_needs_more_evidence")
+        if verifier_output.overall_sufficiency in {
+            "insufficient",
+            "unclear",
+            "unsupported",
+            "contradicted",
+        }:
+            reasons.add("final_verifier_not_sufficient")
+        for claim in verifier_output.claims:
+            if not claim.is_critical:
+                continue
+            if claim.status in {"unsupported", "contradicted", "unclear"}:
+                reasons.add(f"final_verifier_{claim.status}_claim")
+            claim_evidence_ids = {
+                str(value) for value in claim.evidence_ids if str(value)
+            }
+            if not claim_evidence_ids:
+                reasons.add("final_claim_missing_evidence")
+            elif local_ids and not _evidence_ids_match_local(
+                claim_evidence_ids,
+                local_ids,
+            ):
+                reasons.add("final_claim_nonlocal_evidence")
+
+    if binding_result is None:
+        reasons.add("slot_binding_missing")
+    else:
+        ordered = binding_result.ordered_hop_binding
+        set_level = binding_result.set_level_sufficiency
+        if not binding_result.supports_slot:
+            reasons.add("slot_binding_not_supported")
+        if not binding_result.evidence_ids:
+            reasons.add("slot_binding_missing_evidence")
+        elif local_ids and not _evidence_ids_match_local(
+            set(binding_result.evidence_ids),
+            local_ids,
+        ):
+            reasons.add("slot_binding_nonlocal_evidence")
+        if not ordered.chain_complete or ordered.missing_critical_hops:
+            reasons.add("slot_binding_chain_incomplete")
+        if not set_level.final_slot_covered:
+            reasons.add("final_slot_not_covered")
+        if not set_level.all_required_hops_covered:
+            reasons.add("required_hops_not_covered")
+        if not set_level.evidence_set_sufficient:
+            reasons.add("slot_evidence_set_insufficient")
+        if set_level.conflict_on_final_slot or set_level.conflict_on_bridge:
+            reasons.add("slot_binding_conflict")
+        entailment = binding_result.slot_entailment
+        entailment_has_signal = bool(
+            entailment.hypothesis
+            or entailment.candidate
+            or entailment.evidence_ids
+            or entailment.failure_reason not in {"", "unknown"}
+        )
+        if entailment.contradicted:
+            reasons.add("slot_entailment_contradicted")
+        elif entailment_has_signal and not entailment.entails_answer:
+            reasons.add("slot_entailment_not_established")
+
+    return tuple(sorted(reasons))
+
+
+def _binding_has_complete_local_certificate(
+    binding_result: SlotBindingResult | None,
+    local_evidence_ids: set[str],
+) -> bool:
+    if binding_result is None:
+        return False
+    ordered = binding_result.ordered_hop_binding
+    set_level = binding_result.set_level_sufficiency
+    evidence_ids = {str(value) for value in binding_result.evidence_ids if str(value)}
+    return bool(
+        binding_result.supports_slot
+        and evidence_ids
+        and (
+            not local_evidence_ids
+            or _evidence_ids_match_local(evidence_ids, local_evidence_ids)
+        )
+        and ordered.chain_complete
+        and not ordered.missing_critical_hops
+        and set_level.final_slot_covered
+        and set_level.all_required_hops_covered
+        and set_level.evidence_set_sufficient
+        and not set_level.conflict_on_final_slot
+        and not set_level.conflict_on_bridge
+    )
+
+
+def _evidence_ids_match_local(
+    evidence_ids: set[str],
+    local_evidence_ids: set[str],
+) -> bool:
+    if not evidence_ids:
+        return False
+    for evidence_id in evidence_ids:
+        if evidence_id in local_evidence_ids:
+            continue
+        if "::" not in evidence_id and any(
+            local_id.endswith(f"::{evidence_id}")
+            for local_id in local_evidence_ids
+        ):
+            continue
+        return False
+    return True
 
 
 def _ordered_hop_chain_complete_final_object(

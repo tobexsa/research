@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "repair": "generic_terminal_fail_closed_v1",
+  "runs": {
+    "r25": {
+      "terminal_invariant_violation_count": 0,
+      "counterfactual_answer_to_abstain_count": 0,
+      "samples": {}
+    },
+    "r26": {
+      "terminal_invariant_violation_count": 4,
+      "counterfactual_answer_to_abstain_count": 2,
+      "samples": {
+        "2hop__23459_35124": [
+          "terminal_answer_with_incomplete_chain",
+          "terminal_answer_without_ancestor_closure",
+          "terminal_answer_without_slot_support"
+        ],
+        "3hop1__140786_2053_5289": [
+          "terminal_answer_with_nonlocal_claim_evidence"
+        ]
+      }
+    },
+    "r27": {
+      "terminal_invariant_violation_count": 0,
+      "counterfactual_answer_to_abstain_count": 0,
+      "samples": {}
+    },
+    "r28": {
+      "terminal_invariant_violation_count": 9,
+      "counterfactual_answer_to_abstain_count": 2,
+      "samples": {
+        "2hop__167577_31122": [
+          "terminal_answer_without_slot_support"
+        ],
+        "4hop1__151650_5274_458768_33632": [
+          "terminal_answer_has_unsupported_claim",
+          "terminal_answer_needs_more_evidence",
+          "terminal_answer_overrides_abstain",
+          "terminal_answer_with_incomplete_chain",
+          "terminal_answer_with_uncovered_final_slot",
+          "terminal_answer_without_ancestor_closure",
+          "terminal_answer_without_claim_evidence",
+          "terminal_answer_without_slot_support"
+        ]
+      }
+    }
+  },
+  "local_gate": {
+    "focused": "281 passed, 27 subtests passed",
+    "full": "645 passed, 27 subtests passed",
+    "compileall": "passed",
+    "gold_or_sample_specific_source_logic": false
+  },
+  "decision": "Proceed only to the targeted offending-case paid probe."
+}

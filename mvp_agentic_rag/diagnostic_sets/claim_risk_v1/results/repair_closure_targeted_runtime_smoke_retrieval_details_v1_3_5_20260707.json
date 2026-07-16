@@ -1,0 +1,1338 @@
+{
+  "run_dir": "runs/layer1_siliconflow_qwen3_14b_repair_closure_targeted_runtime_smoke_v1_3_5_20260707",
+  "records": [
+    {
+      "id": "2hop__10620_49084",
+      "question": "Who plays the legendary figure featured in Historia Regum Britanniae in the show Once Upon a Time?",
+      "gold_answer": "Liam Thomas Garrigan",
+      "supporting_passage_ids": [
+        "2hop__10620_49084::p18",
+        "2hop__10620_49084::p2"
+      ],
+      "final_action": "answer",
+      "final_answer": "Liam Garrigan",
+      "rounds": [
+        {
+          "round": 1,
+          "query": "Who plays the legendary figure featured in Historia Regum Britanniae in the show Once Upon a Time?",
+          "query_source": "initial",
+          "action": "answer",
+          "budget_remaining": 2,
+          "evidence_gain": 0.5,
+          "retrieved_count": 3,
+          "gold_hits": [
+            "2hop__10620_49084::p18"
+          ],
+          "local_hits": [
+            "2hop__10620_49084::p18",
+            "2hop__10620_49084::p6"
+          ],
+          "retrieved": [
+            {
+              "rank": 1,
+              "id": "2hop__10620_49084::p18",
+              "title": "Liam Garrigan",
+              "is_gold_support": true,
+              "is_sample_local": true,
+              "used_by_verifier": true,
+              "used_by_slot_binding": true,
+              "text_snippet": "Liam Thomas Garrigan (born 17 October 1981) is an English theatre and television actor. As a youth he attended classes at Kingston upon Hull's Northern Stage Company and was a student at Wyke College, Kingston upon Hull. His first television role was as ..."
+            },
+            {
+              "rank": 2,
+              "id": "2hop__28203_55840::p5",
+              "title": "The King's Speech",
+              "is_gold_support": false,
+              "is_sample_local": false,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "The King's Speech is a 2010 British historical drama film directed by Tom Hooper and written by David Seidler. Colin Firth plays the future King George VI who, to cope with a stammer, sees Lionel Logue, an Australian speech and language therapist played by ..."
+            },
+            {
+              "rank": 3,
+              "id": "2hop__10620_49084::p6",
+              "title": "Beverley Elliott",
+              "is_gold_support": false,
+              "is_sample_local": true,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "Beverley Elliott (born 31 December) is a Canadian actress and singer - songwriter. She is best known for playing the role of Granny in Once Upon a Time, Maggie Krell in Harper's Island, Brick Bannerman in Kingdom Hospital and Sally Duffield in Bordertown."
+            }
+          ],
+          "verifier": {
+            "overall_sufficiency": "sufficient",
+            "need_more_evidence": false,
+            "final_target_match": true,
+            "answer_slot": "final requested target",
+            "suggested_query": "",
+            "claims": [
+              {
+                "status": "supported",
+                "evidence_ids": [
+                  "2hop__10620_49084::p18"
+                ],
+                "missing_evidence": "",
+                "claim": "Liam Garrigan plays the legendary figure featured in Historia Regum Britanniae in the show Once Upon a Time."
+              }
+            ]
+          },
+          "slot_binding": {
+            "bound_value": "Liam Garrigan",
+            "evidence_ids": [
+              "2hop__10620_49084::p18"
+            ],
+            "typed_reject_category": null,
+            "decision_action": "answer",
+            "candidate_role": "final_answer",
+            "relation_to_question": "fills_final_slot",
+            "typed_binder_accepted": true,
+            "typed_binder_reason": "structured_final_slot_acceptance"
+          },
+          "repair": {
+            "repair_query_action": null,
+            "repair_next_query": null,
+            "repair_state": null,
+            "repair_closed": null,
+            "repair_query_quality_bucket": null
+          },
+          "guard": {
+            "answer_safety_guard_applied": null,
+            "answer_safety_guard_reason": null,
+            "answer_safety_guard_wrong_target_reason": null
+          }
+        }
+      ],
+      "cumulative_retrieved_ids": [
+        "2hop__10620_49084::p18",
+        "2hop__28203_55840::p5",
+        "2hop__10620_49084::p6"
+      ],
+      "cumulative_gold_hits": [
+        "2hop__10620_49084::p18"
+      ]
+    },
+    {
+      "id": "2hop__167577_31122",
+      "question": "What century did the author of A Treatise Concerning the Principles of Human Knowledge live in?",
+      "gold_answer": "18th",
+      "supporting_passage_ids": [
+        "2hop__167577_31122::p10",
+        "2hop__167577_31122::p14"
+      ],
+      "final_action": "answer",
+      "final_answer": "18th century",
+      "rounds": [
+        {
+          "round": 1,
+          "query": "What century did the author of A Treatise Concerning the Principles of Human Knowledge live in?",
+          "query_source": "initial",
+          "action": "answer",
+          "budget_remaining": 2,
+          "evidence_gain": 0.5,
+          "retrieved_count": 3,
+          "gold_hits": [
+            "2hop__167577_31122::p10"
+          ],
+          "local_hits": [
+            "2hop__167577_31122::p10",
+            "2hop__167577_31122::p9",
+            "2hop__167577_31122::p17"
+          ],
+          "retrieved": [
+            {
+              "rank": 1,
+              "id": "2hop__167577_31122::p10",
+              "title": "A Treatise Concerning the Principles of Human Knowledge",
+              "is_gold_support": true,
+              "is_sample_local": true,
+              "used_by_verifier": true,
+              "used_by_slot_binding": true,
+              "text_snippet": "A Treatise Concerning the Principles of Human Knowledge (commonly called Treatise when referring to Berkeley's works) is a 1710 work, in English, by Irish Empiricist philosopher George Berkeley. This book largely seeks to refute the claims made by ..."
+            },
+            {
+              "rank": 2,
+              "id": "2hop__167577_31122::p9",
+              "title": "Humanism",
+              "is_gold_support": false,
+              "is_sample_local": true,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "Eliot and her circle, who included her companion George Henry Lewes (the biographer of Goethe) and the abolitionist and social theorist Harriet Martineau, were much influenced by the positivism of Auguste Comte, whom Martineau had translated. Comte had ..."
+            },
+            {
+              "rank": 3,
+              "id": "2hop__167577_31122::p17",
+              "title": "Humanism",
+              "is_gold_support": false,
+              "is_sample_local": true,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "Religious humanism is an integration of humanist ethical philosophy with religious rituals and beliefs that centre on human needs, interests, and abilities. Though practitioners of religious humanism did not officially organise under the name of \"humanism\" ..."
+            }
+          ],
+          "verifier": {
+            "overall_sufficiency": "sufficient",
+            "need_more_evidence": false,
+            "final_target_match": true,
+            "answer_slot": "final requested target",
+            "suggested_query": "",
+            "claims": [
+              {
+                "status": "supported",
+                "evidence_ids": [
+                  "2hop__167577_31122::p10"
+                ],
+                "missing_evidence": "",
+                "claim": "George Berkeley wrote A Treatise Concerning the Principles of Human Knowledge in the 18th century."
+              }
+            ]
+          },
+          "slot_binding": {
+            "bound_value": "18th century",
+            "evidence_ids": [
+              "2hop__167577_31122::p10"
+            ],
+            "typed_reject_category": null,
+            "decision_action": "answer",
+            "candidate_role": "final_answer",
+            "relation_to_question": "fills_final_slot",
+            "typed_binder_accepted": true,
+            "typed_binder_reason": "structured_final_slot_acceptance"
+          },
+          "repair": {
+            "repair_query_action": null,
+            "repair_next_query": null,
+            "repair_state": null,
+            "repair_closed": null,
+            "repair_query_quality_bucket": null
+          },
+          "guard": {
+            "answer_safety_guard_applied": null,
+            "answer_safety_guard_reason": null,
+            "answer_safety_guard_wrong_target_reason": null
+          }
+        }
+      ],
+      "cumulative_retrieved_ids": [
+        "2hop__167577_31122::p10",
+        "2hop__167577_31122::p9",
+        "2hop__167577_31122::p17"
+      ],
+      "cumulative_gold_hits": [
+        "2hop__167577_31122::p10"
+      ]
+    },
+    {
+      "id": "2hop__194469_83289",
+      "question": "Who is the guy in the One Last Time video by the participant in The Listening Sessions?",
+      "gold_answer": "Matt Bennett",
+      "supporting_passage_ids": [
+        "2hop__194469_83289::p7",
+        "2hop__194469_83289::p19"
+      ],
+      "final_action": "abstain",
+      "final_answer": "",
+      "rounds": [
+        {
+          "round": 1,
+          "query": "Who is the guy in the One Last Time video by the participant in The Listening Sessions?",
+          "query_source": "initial",
+          "action": "ordered_hop_repair",
+          "budget_remaining": 2,
+          "evidence_gain": 0.5,
+          "retrieved_count": 3,
+          "gold_hits": [
+            "2hop__194469_83289::p19"
+          ],
+          "local_hits": [
+            "2hop__194469_83289::p19",
+            "2hop__194469_83289::p11"
+          ],
+          "retrieved": [
+            {
+              "rank": 1,
+              "id": "2hop__194469_83289::p19",
+              "title": "One Last Time (Ariana Grande song)",
+              "is_gold_support": true,
+              "is_sample_local": true,
+              "used_by_verifier": true,
+              "used_by_slot_binding": true,
+              "text_snippet": "The music video was filmed in early January 2015 and it also stars Matt Bennett, who was also Grande's co-star from the Nickelodeon sitcom Victorious. Max Landis also confirmed that one of the voices of the news reporters in the beginning of the video was ..."
+            },
+            {
+              "rank": 2,
+              "id": "2hop__194469_83289::p11",
+              "title": "Standing on a Beach",
+              "is_gold_support": false,
+              "is_sample_local": true,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "The man featured on the album cover was not a member of the Cure; he was chosen because his appearance fit the desired aesthetic of the album. His name is John Button, and was at the time a retired fisherman. He also appeared in the music video for ..."
+            },
+            {
+              "rank": 3,
+              "id": "2hop__73719_510545::p16",
+              "title": "Zach McGowan",
+              "is_gold_support": false,
+              "is_sample_local": false,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "Zachary Brendan McGowan (born May 5, 1980) is an American film and television actor and voice - over artist. He is known for his roles in television series Shameless as Jody, Agents of S.H.I.E.L.D. as Anton Ivanov / The Superior, Black Sails as Charles ..."
+            }
+          ],
+          "verifier": {
+            "overall_sufficiency": "insufficient",
+            "need_more_evidence": true,
+            "final_target_match": false,
+            "answer_slot": "intermediate entity",
+            "suggested_query": "Who is the participant in The Listening Sessions?",
+            "claims": [
+              {
+                "status": "supported",
+                "evidence_ids": [
+                  "2hop__194469_83289::p19"
+                ],
+                "missing_evidence": "",
+                "claim": "The guy in the One Last Time video is Matt Bennett."
+              },
+              {
+                "status": "unclear",
+                "evidence_ids": [],
+                "missing_evidence": "missing_passage: Information about The Listening Sessions and its participant",
+                "claim": "The participant in The Listening Sessions is Matt Bennett."
+              }
+            ]
+          },
+          "slot_binding": {
+            "bound_value": "",
+            "evidence_ids": [
+              "2hop__194469_83289::p19"
+            ],
+            "typed_reject_category": "empty_binding",
+            "decision_action": "ordered_hop_repair",
+            "candidate_role": "bridge_entity",
+            "relation_to_question": "supports_bridge",
+            "typed_binder_accepted": false,
+            "typed_binder_reason": "binding_verifier_rejected"
+          },
+          "repair": {
+            "repair_query_action": "ordered_hop_repair",
+            "repair_next_query": "Matt Bennett participant",
+            "repair_state": "repair_unresolved_terminal",
+            "repair_closed": "repair_unresolved_terminal",
+            "repair_query_quality_bucket": "entity-only"
+          },
+          "guard": {
+            "answer_safety_guard_applied": null,
+            "answer_safety_guard_reason": null,
+            "answer_safety_guard_wrong_target_reason": null
+          }
+        },
+        {
+          "round": 2,
+          "query": "Matt Bennett participant",
+          "query_source": "slot_ledger",
+          "action": "ordered_hop_repair",
+          "budget_remaining": 1,
+          "evidence_gain": 0.0,
+          "retrieved_count": 5,
+          "gold_hits": [
+            "2hop__194469_83289::p19"
+          ],
+          "local_hits": [
+            "2hop__194469_83289::p19",
+            "2hop__194469_83289::p11"
+          ],
+          "retrieved": [
+            {
+              "rank": 1,
+              "id": "4hop2__161602_426860_88460_21034::p12",
+              "title": "2018 ACC Men's Basketball Tournament",
+              "is_gold_support": false,
+              "is_sample_local": false,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "The 2018 ACC Men's Basketball Tournament was the postseason men's basketball tournament for the Atlantic Coast Conference held at Barclays Center in Brooklyn, New York from March 6 -- 10, 2018. It was the 65th annual edition of the tournament, and the ..."
+            },
+            {
+              "rank": 2,
+              "id": "2hop__286093_361551::p13",
+              "title": "Andy Finch",
+              "is_gold_support": false,
+              "is_sample_local": false,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "Andrew Joseph \"Andy\" Finch (born March 20, 1981) is an American snowboarder. His accomplishments include winning the overall U.S. Grand Prix Halfpipe Title in 2003 and 2004, taking first place in the Arctic Challenge in Norway in April 2004, winning the ..."
+            },
+            {
+              "rank": 3,
+              "id": "2hop__28203_55840::p2",
+              "title": "Taylor King",
+              "is_gold_support": false,
+              "is_sample_local": false,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "Taylor King (born May 30, 1988) is an American retired professional basketball player. King played for the Villanova University Wildcats, where he played the forward position. King attended Mater Dei High School of Santa Ana, where he enjoyed a successful ..."
+            },
+            {
+              "rank": 4,
+              "id": "2hop__194469_83289::p19",
+              "title": "One Last Time (Ariana Grande song)",
+              "is_gold_support": true,
+              "is_sample_local": true,
+              "used_by_verifier": true,
+              "used_by_slot_binding": true,
+              "text_snippet": "The music video was filmed in early January 2015 and it also stars Matt Bennett, who was also Grande's co-star from the Nickelodeon sitcom Victorious. Max Landis also confirmed that one of the voices of the news reporters in the beginning of the video was ..."
+            },
+            {
+              "rank": 5,
+              "id": "2hop__194469_83289::p11",
+              "title": "Standing on a Beach",
+              "is_gold_support": false,
+              "is_sample_local": true,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "The man featured on the album cover was not a member of the Cure; he was chosen because his appearance fit the desired aesthetic of the album. His name is John Button, and was at the time a retired fisherman. He also appeared in the music video for ..."
+            }
+          ],
+          "verifier": {
+            "overall_sufficiency": "insufficient",
+            "need_more_evidence": true,
+            "final_target_match": false,
+            "answer_slot": "intermediate entity",
+            "suggested_query": "Who is the participant in The Listening Sessions?",
+            "claims": [
+              {
+                "status": "unsupported",
+                "evidence_ids": [
+                  "2hop__194469_83289::p19"
+                ],
+                "missing_evidence": "missing_passage: The participant in The Listening Sessions",
+                "claim": "The guy in the One Last Time video by the participant in The Listening Sessions is Matt Bennett."
+              }
+            ]
+          },
+          "slot_binding": {
+            "bound_value": "",
+            "evidence_ids": [
+              "2hop__194469_83289::p19"
+            ],
+            "typed_reject_category": "empty_binding",
+            "decision_action": "ordered_hop_repair",
+            "candidate_role": "bridge_entity",
+            "relation_to_question": "supports_bridge",
+            "typed_binder_accepted": false,
+            "typed_binder_reason": "binding_verifier_rejected"
+          },
+          "repair": {
+            "repair_query_action": "ordered_hop_repair",
+            "repair_next_query": "Matt Bennett is the guy in the One Last Time video",
+            "repair_state": "repair_unresolved_terminal",
+            "repair_closed": "repair_unresolved_terminal",
+            "repair_query_quality_bucket": "entity-only"
+          },
+          "guard": {
+            "answer_safety_guard_applied": null,
+            "answer_safety_guard_reason": null,
+            "answer_safety_guard_wrong_target_reason": null
+          }
+        },
+        {
+          "round": 3,
+          "query": "Matt Bennett is the guy in the One Last Time video",
+          "query_source": "slot_ledger",
+          "action": "abstain",
+          "budget_remaining": 0,
+          "evidence_gain": 0.0,
+          "retrieved_count": 5,
+          "gold_hits": [
+            "2hop__194469_83289::p19"
+          ],
+          "local_hits": [
+            "2hop__194469_83289::p19",
+            "2hop__194469_83289::p10",
+            "2hop__194469_83289::p11"
+          ],
+          "retrieved": [
+            {
+              "rank": 1,
+              "id": "2hop__194469_83289::p19",
+              "title": "One Last Time (Ariana Grande song)",
+              "is_gold_support": true,
+              "is_sample_local": true,
+              "used_by_verifier": true,
+              "used_by_slot_binding": false,
+              "text_snippet": "The music video was filmed in early January 2015 and it also stars Matt Bennett, who was also Grande's co-star from the Nickelodeon sitcom Victorious. Max Landis also confirmed that one of the voices of the news reporters in the beginning of the video was ..."
+            },
+            {
+              "rank": 2,
+              "id": "2hop__10620_49084::p18",
+              "title": "Liam Garrigan",
+              "is_gold_support": false,
+              "is_sample_local": false,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "Liam Thomas Garrigan (born 17 October 1981) is an English theatre and television actor. As a youth he attended classes at Kingston upon Hull's Northern Stage Company and was a student at Wyke College, Kingston upon Hull. His first television role was as ..."
+            },
+            {
+              "rank": 3,
+              "id": "2hop__194469_83289::p10",
+              "title": "...Baby One More Time (song)",
+              "is_gold_support": false,
+              "is_sample_local": true,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "``... Baby One More Time ''was released on October 23, 1998 through Jive Records. It reached number one in every country it charted in, including the United Kingdom, where it earned double - platinum certification from the British Phonographic Industry ..."
+            },
+            {
+              "rank": 4,
+              "id": "2hop__194469_83289::p11",
+              "title": "Standing on a Beach",
+              "is_gold_support": false,
+              "is_sample_local": true,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "The man featured on the album cover was not a member of the Cure; he was chosen because his appearance fit the desired aesthetic of the album. His name is John Button, and was at the time a retired fisherman. He also appeared in the music video for ..."
+            },
+            {
+              "rank": 5,
+              "id": "2hop__73719_510545::p16",
+              "title": "Zach McGowan",
+              "is_gold_support": false,
+              "is_sample_local": false,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "Zachary Brendan McGowan (born May 5, 1980) is an American film and television actor and voice - over artist. He is known for his roles in television series Shameless as Jody, Agents of S.H.I.E.L.D. as Anton Ivanov / The Superior, Black Sails as Charles ..."
+            }
+          ],
+          "verifier": {
+            "overall_sufficiency": "insufficient",
+            "need_more_evidence": true,
+            "final_target_match": false,
+            "answer_slot": "intermediate entity",
+            "suggested_query": "Who is the participant in The Listening Sessions?",
+            "claims": [
+              {
+                "status": "supported",
+                "evidence_ids": [
+                  "2hop__194469_83289::p19"
+                ],
+                "missing_evidence": "",
+                "claim": "The guy in the One Last Time video is Matt Bennett."
+              },
+              {
+                "status": "unclear",
+                "evidence_ids": [],
+                "missing_evidence": "missing_passage: Information about The Listening Sessions and its participants",
+                "claim": "The participant in The Listening Sessions is Matt Bennett."
+              }
+            ]
+          },
+          "slot_binding": {
+            "bound_value": "",
+            "evidence_ids": [],
+            "typed_reject_category": "empty_binding",
+            "decision_action": "abstain",
+            "candidate_role": "unknown",
+            "relation_to_question": "ambiguous",
+            "typed_binder_accepted": false,
+            "typed_binder_reason": "binding_verifier_rejected"
+          },
+          "repair": {
+            "repair_query_action": "ordered_hop_repair",
+            "repair_next_query": "Matt Bennett is the guy in the One Last Time video",
+            "repair_state": "repair_failed",
+            "repair_closed": "repair_rejected",
+            "repair_query_quality_bucket": "entity-only"
+          },
+          "guard": {
+            "answer_safety_guard_applied": null,
+            "answer_safety_guard_reason": null,
+            "answer_safety_guard_wrong_target_reason": null
+          }
+        }
+      ],
+      "cumulative_retrieved_ids": [
+        "2hop__194469_83289::p19",
+        "2hop__194469_83289::p11",
+        "2hop__73719_510545::p16",
+        "4hop2__161602_426860_88460_21034::p12",
+        "2hop__286093_361551::p13",
+        "2hop__28203_55840::p2",
+        "2hop__10620_49084::p18",
+        "2hop__194469_83289::p10"
+      ],
+      "cumulative_gold_hits": [
+        "2hop__194469_83289::p19"
+      ]
+    },
+    {
+      "id": "3hop1__145194_160545_62931",
+      "question": "The Beach was filmed in what location of the country that contains the birth city of Siddhi Savetsila?",
+      "gold_answer": "island Koh Phi Phi",
+      "supporting_passage_ids": [
+        "3hop1__145194_160545_62931::p9",
+        "3hop1__145194_160545_62931::p19",
+        "3hop1__145194_160545_62931::p5"
+      ],
+      "final_action": "abstain",
+      "final_answer": "",
+      "rounds": [
+        {
+          "round": 1,
+          "query": "The Beach was filmed in what location of the country that contains the birth city of Siddhi Savetsila?",
+          "query_source": "initial",
+          "action": "abstain",
+          "budget_remaining": 2,
+          "evidence_gain": 0.6666666666666666,
+          "retrieved_count": 5,
+          "gold_hits": [
+            "3hop1__145194_160545_62931::p19",
+            "3hop1__145194_160545_62931::p9"
+          ],
+          "local_hits": [
+            "3hop1__145194_160545_62931::p19",
+            "3hop1__145194_160545_62931::p9",
+            "3hop1__145194_160545_62931::p18"
+          ],
+          "retrieved": [
+            {
+              "rank": 1,
+              "id": "3hop1__465684_160545_62931::p14",
+              "title": "The Beach (film)",
+              "is_gold_support": false,
+              "is_sample_local": false,
+              "used_by_verifier": true,
+              "used_by_slot_binding": false,
+              "text_snippet": "The Beach is a 2000 English - language drama film directed by Danny Boyle and based on the 1996 novel of the same name by Alex Garland, which was adapted for the film by John Hodge. The film stars Leonardo DiCaprio, Tilda Swinton, Virginie Ledoyen, ..."
+            },
+            {
+              "rank": 2,
+              "id": "3hop1__145194_160545_62931::p19",
+              "title": "The Beach (film)",
+              "is_gold_support": true,
+              "is_sample_local": true,
+              "used_by_verifier": true,
+              "used_by_slot_binding": false,
+              "text_snippet": "The Beach is a 2000 English - language drama film directed by Danny Boyle and based on the 1996 novel of the same name by Alex Garland, which was adapted for the film by John Hodge. The film stars Leonardo DiCaprio, Tilda Swinton, Virginie Ledoyen, ..."
+            },
+            {
+              "rank": 3,
+              "id": "3hop1__145194_160545_62931::p9",
+              "title": "Siddhi Savetsila",
+              "is_gold_support": true,
+              "is_sample_local": true,
+              "used_by_verifier": true,
+              "used_by_slot_binding": false,
+              "text_snippet": "Siddhi Savetsila was born in Bangkok. He comes from an aristocratic background. His father was a high-ranking official in the royal government. His paternal grandfather was Henry Alabaster who was the British consul in Siam during the reign of King Rama IV ..."
+            },
+            {
+              "rank": 4,
+              "id": "3hop1__145194_160545_62931::p18",
+              "title": "Snow White and the Huntsman",
+              "is_gold_support": false,
+              "is_sample_local": true,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "Principal photography took place in the United Kingdom. The beach scenes were predominantly filmed in Pembrokeshire, on the Marloes Sands beach near the village of Marloes between September 26 and 29, 2011. Though the beach was not closed to the public ..."
+            },
+            {
+              "rank": 5,
+              "id": "4hop3__668721_132409_371500_35031::p19",
+              "title": "Kathmandu",
+              "is_gold_support": false,
+              "is_sample_local": false,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "Kathmandu(/ˌkɑːtmɑːnˈduː/; Nepali pronunciation: [kɑʈʰmɑɳɖu]) is the capital and largest municipality of Nepal. It also hosts the headquarters of the South Asian Association for Regional Cooperation (SAARC). It is the only city of Nepal with the ..."
+            }
+          ],
+          "verifier": {
+            "overall_sufficiency": "sufficient",
+            "need_more_evidence": false,
+            "final_target_match": true,
+            "answer_slot": "final requested target",
+            "suggested_query": "",
+            "claims": [
+              {
+                "status": "supported",
+                "evidence_ids": [
+                  "3hop1__465684_160545_62931::p14",
+                  "3hop1__145194_160545_62931::p19"
+                ],
+                "missing_evidence": "",
+                "claim": "The Beach was filmed in Koh Phi Phi"
+              },
+              {
+                "status": "supported",
+                "evidence_ids": [
+                  "3hop1__145194_160545_62931::p9"
+                ],
+                "missing_evidence": "",
+                "claim": "Siddhi Savetsila was born in Bangkok"
+              },
+              {
+                "status": "supported",
+                "evidence_ids": [
+                  "3hop1__145194_160545_62931::p9"
+                ],
+                "missing_evidence": "",
+                "claim": "Bangkok is located in Thailand"
+              },
+              {
+                "status": "supported",
+                "evidence_ids": [
+                  "3hop1__465684_160545_62931::p14",
+                  "3hop1__145194_160545_62931::p19"
+                ],
+                "missing_evidence": "",
+                "claim": "Koh Phi Phi is a location in Thailand"
+              }
+            ]
+          },
+          "slot_binding": {
+            "bound_value": "",
+            "evidence_ids": [],
+            "typed_reject_category": "empty_binding",
+            "decision_action": "abstain",
+            "candidate_role": "unknown",
+            "relation_to_question": "ambiguous",
+            "typed_binder_accepted": false,
+            "typed_binder_reason": "binding_verifier_rejected"
+          },
+          "repair": {
+            "repair_query_action": null,
+            "repair_next_query": null,
+            "repair_state": null,
+            "repair_closed": null,
+            "repair_query_quality_bucket": null
+          },
+          "guard": {
+            "answer_safety_guard_applied": null,
+            "answer_safety_guard_reason": null,
+            "answer_safety_guard_wrong_target_reason": null
+          }
+        }
+      ],
+      "cumulative_retrieved_ids": [
+        "3hop1__465684_160545_62931::p14",
+        "3hop1__145194_160545_62931::p19",
+        "3hop1__145194_160545_62931::p9",
+        "3hop1__145194_160545_62931::p18",
+        "4hop3__668721_132409_371500_35031::p19"
+      ],
+      "cumulative_gold_hits": [
+        "3hop1__145194_160545_62931::p19",
+        "3hop1__145194_160545_62931::p9"
+      ]
+    },
+    {
+      "id": "3hop1__144439_443779_52195",
+      "question": "who is the president of newly declared independent country of the country of the birthplace of Mulham Arufin–Timor Leste Commission of Truth and Friendship?",
+      "gold_answer": "Francisco Guterres",
+      "supporting_passage_ids": [
+        "3hop1__144439_443779_52195::p3",
+        "3hop1__144439_443779_52195::p2",
+        "3hop1__144439_443779_52195::p7"
+      ],
+      "final_action": "abstain",
+      "final_answer": "",
+      "rounds": [
+        {
+          "round": 1,
+          "query": "who is the president of newly declared independent country of the country of the birthplace of Mulham Arufin–Timor Leste Commission of Truth and Friendship?",
+          "query_source": "initial",
+          "action": "refine_query",
+          "budget_remaining": 2,
+          "evidence_gain": 0.3333333333333333,
+          "retrieved_count": 5,
+          "gold_hits": [
+            "3hop1__144439_443779_52195::p7"
+          ],
+          "local_hits": [
+            "3hop1__144439_443779_52195::p7"
+          ],
+          "retrieved": [
+            {
+              "rank": 1,
+              "id": "3hop1__144439_443779_52195::p7",
+              "title": "Indonesia–Timor Leste Commission of Truth and Friendship",
+              "is_gold_support": true,
+              "is_sample_local": true,
+              "used_by_verifier": true,
+              "used_by_slot_binding": false,
+              "text_snippet": "The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred ..."
+            },
+            {
+              "rank": 2,
+              "id": "3hop1__105767_443779_52195::p3",
+              "title": "Indonesia–Timor Leste Commission of Truth and Friendship",
+              "is_gold_support": false,
+              "is_sample_local": false,
+              "used_by_verifier": true,
+              "used_by_slot_binding": false,
+              "text_snippet": "The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred ..."
+            },
+            {
+              "rank": 3,
+              "id": "3hop1__103881_443779_52195::p7",
+              "title": "Indonesia–Timor Leste Commission of Truth and Friendship",
+              "is_gold_support": false,
+              "is_sample_local": false,
+              "used_by_verifier": true,
+              "used_by_slot_binding": false,
+              "text_snippet": "The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred ..."
+            },
+            {
+              "rank": 4,
+              "id": "2hop__91211_90973::p9",
+              "title": "Friends with Benefits (film)",
+              "is_gold_support": false,
+              "is_sample_local": false,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "Friends with Benefits is a 2011 American romantic comedy film directed by Will Gluck, and starring Justin Timberlake and Mila Kunis in the lead roles. The film features Patricia Clarkson, Jenna Elfman, Bryan Greenberg, Nolan Gould, Richard Jenkins, and ..."
+            },
+            {
+              "rank": 5,
+              "id": "2hop__471509_136043::p0",
+              "title": "Are You the One?",
+              "is_gold_support": false,
+              "is_sample_local": false,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "Couple Week Result Ethan & Keyana Not A Match Anthony & Geles Not A Match Malcolm & Nurys Not A Match Dimitri & Nicole Not A Match Clinton & Uche 5 Not A Match Keith & Alexis 6 Not A Match Keith & Alivia 7 Not A Match Michael & Audrey 8 Not A Match Tyler & ..."
+            }
+          ],
+          "verifier": {
+            "overall_sufficiency": "insufficient",
+            "need_more_evidence": true,
+            "final_target_match": false,
+            "answer_slot": "unknown",
+            "suggested_query": "What is the birthplace of Mulham Arufin, and who was the president of the newly declared independent country at the time?",
+            "claims": [
+              {
+                "status": "unsupported",
+                "evidence_ids": [
+                  "3hop1__144439_443779_52195::p7",
+                  "3hop1__105767_443779_52195::p3",
+                  "3hop1__103881_443779_52195::p7"
+                ],
+                "missing_evidence": "missing_passage: Information about the birthplace of Mulham Arufin and the president of the newly declared independent country of that birthplace.",
+                "claim": "The president of the newly declared independent country of the birthplace of Mulham Arufin–Timor Leste Commission of Truth and Friendship is Susilo Bambang Yudhoyono."
+              }
+            ]
+          },
+          "slot_binding": {
+            "bound_value": "",
+            "evidence_ids": [],
+            "typed_reject_category": "empty_binding",
+            "decision_action": "abstain",
+            "candidate_role": "unknown",
+            "relation_to_question": "ambiguous",
+            "typed_binder_accepted": false,
+            "typed_binder_reason": "binding_verifier_rejected"
+          },
+          "repair": {
+            "repair_query_action": null,
+            "repair_next_query": null,
+            "repair_state": null,
+            "repair_closed": null,
+            "repair_query_quality_bucket": null
+          },
+          "guard": {
+            "answer_safety_guard_applied": null,
+            "answer_safety_guard_reason": null,
+            "answer_safety_guard_wrong_target_reason": null
+          }
+        },
+        {
+          "round": 2,
+          "query": "What is the birthplace of Mulham Arufin, and who was the president of the newly declared independent country at the time? (person)",
+          "query_source": "slot_ledger",
+          "action": "refine_query",
+          "budget_remaining": 1,
+          "evidence_gain": 0.3333333333333333,
+          "retrieved_count": 5,
+          "gold_hits": [
+            "3hop1__144439_443779_52195::p2",
+            "3hop1__144439_443779_52195::p7"
+          ],
+          "local_hits": [
+            "3hop1__144439_443779_52195::p2",
+            "3hop1__144439_443779_52195::p7"
+          ],
+          "retrieved": [
+            {
+              "rank": 1,
+              "id": "3hop1__144439_443779_52195::p2",
+              "title": "Mulham Arufin",
+              "is_gold_support": true,
+              "is_sample_local": true,
+              "used_by_verifier": true,
+              "used_by_slot_binding": false,
+              "text_snippet": "Mulham Arufin (born November 17, 1990) is an Indonesian footballer who currently plays for Gresik United in the Indonesia Super League."
+            },
+            {
+              "rank": 2,
+              "id": "2hop__61924_712629::p10",
+              "title": "Elizabeth II",
+              "is_gold_support": false,
+              "is_sample_local": false,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "Elizabeth II (Elizabeth Alexandra Mary; born 21 April 1926) has been Queen of the United Kingdom, Canada, Australia, and New Zealand since 6 February 1952. Additionally, she is Head of the Commonwealth and Queen of 12 countries that have become independent ..."
+            },
+            {
+              "rank": 3,
+              "id": "3hop1__105767_443779_52195::p6",
+              "title": "Namibia",
+              "is_gold_support": false,
+              "is_sample_local": false,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "The Namibian Constitution adopted in February 1990 incorporated protection for human rights, compensation for state expropriations of private property, an independent judiciary and an executive presidency (the constituent assembly became the national ..."
+            },
+            {
+              "rank": 4,
+              "id": "2hop__6827_86319::p19",
+              "title": "Khwaja Abdul Ghani",
+              "is_gold_support": false,
+              "is_sample_local": false,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "Khwaja Abdul Ghani was the second son of Khwaja Alimullah, who consolidated the Khwaja family estate to become the first Nawab of the family. He inherited the estate from his father, which included the French \"kuthi\" at Kumartuli bought by Alimullah in ..."
+            },
+            {
+              "rank": 5,
+              "id": "3hop1__144439_443779_52195::p7",
+              "title": "Indonesia–Timor Leste Commission of Truth and Friendship",
+              "is_gold_support": true,
+              "is_sample_local": true,
+              "used_by_verifier": true,
+              "used_by_slot_binding": false,
+              "text_snippet": "The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred ..."
+            }
+          ],
+          "verifier": {
+            "overall_sufficiency": "insufficient",
+            "need_more_evidence": true,
+            "final_target_match": false,
+            "answer_slot": "unknown",
+            "suggested_query": "What is the birthplace of Mulham Arufin, and who is the current president of that country?",
+            "claims": [
+              {
+                "status": "unsupported",
+                "evidence_ids": [
+                  "3hop1__144439_443779_52195::p7",
+                  "3hop1__105767_443779_52195::p3",
+                  "3hop1__103881_443779_52195::p7"
+                ],
+                "missing_evidence": "missing_passage: Information about the birthplace of Mulham Arufin",
+                "claim": "The birthplace of Mulham Arufin is related to the Indonesia–Timor Leste Commission of Truth and Friendship."
+              },
+              {
+                "status": "unclear",
+                "evidence_ids": [
+                  "3hop1__144439_443779_52195::p7",
+                  "3hop1__105767_443779_52195::p3",
+                  "3hop1__103881_443779_52195::p7",
+                  "3hop1__144439_443779_52195::p2"
+                ],
+                "missing_evidence": "missing_passage: Information about the birthplace of Mulham Arufin and its associated country's president",
+                "claim": "The president of the newly declared independent country of the birthplace of Mulham Arufin is the same as the president of the country associated with the Indonesia–Timor Leste ..."
+              }
+            ]
+          },
+          "slot_binding": {
+            "bound_value": "",
+            "evidence_ids": [],
+            "typed_reject_category": "empty_binding",
+            "decision_action": "abstain",
+            "candidate_role": "unknown",
+            "relation_to_question": "ambiguous",
+            "typed_binder_accepted": false,
+            "typed_binder_reason": "binding_verifier_rejected"
+          },
+          "repair": {
+            "repair_query_action": null,
+            "repair_next_query": null,
+            "repair_state": null,
+            "repair_closed": null,
+            "repair_query_quality_bucket": null
+          },
+          "guard": {
+            "answer_safety_guard_applied": null,
+            "answer_safety_guard_reason": null,
+            "answer_safety_guard_wrong_target_reason": null
+          }
+        },
+        {
+          "round": 3,
+          "query": "What person answers Friendship?",
+          "query_source": "slot_ledger",
+          "action": "abstain",
+          "budget_remaining": 0,
+          "evidence_gain": 0.0,
+          "retrieved_count": 5,
+          "gold_hits": [
+            "3hop1__144439_443779_52195::p7"
+          ],
+          "local_hits": [
+            "3hop1__144439_443779_52195::p7"
+          ],
+          "retrieved": [
+            {
+              "rank": 1,
+              "id": "2hop__23459_35124::p11",
+              "title": "Answer to History",
+              "is_gold_support": false,
+              "is_sample_local": false,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "Answer to History (French: Réponse à l'histoire; Persian: پاسخ به تاریخ) is a memoir written by the last Shah of Iran, Mohammad Reza Pahlavi, shortly after his overthrow in 1979 by Islamic revolution. The book was originally written in French and was ..."
+            },
+            {
+              "rank": 2,
+              "id": "2hop__708145_30351::p17",
+              "title": "Friedrich Hayek",
+              "is_gold_support": false,
+              "is_sample_local": false,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "In 1984, he was appointed as a member of the Order of the Companions of Honour (CH) by Queen Elizabeth II of the United Kingdom on the advice of the British Prime Minister Margaret Thatcher for his \"services to the study of economics\". Hayek had hoped to ..."
+            },
+            {
+              "rank": 3,
+              "id": "4hop1__31050_725495_49925_267352::p15",
+              "title": "Peter Agricola",
+              "is_gold_support": false,
+              "is_sample_local": false,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "Peter Agricola (June 29, 1525 – July 5 or 7, 1585) was a German Renaissance humanist, educator, classical scholar and theologian, diplomat and statesman, disciple of Martin Luther, friend and collaborator of Philipp Melanchthon."
+            },
+            {
+              "rank": 4,
+              "id": "3hop1__144439_443779_52195::p7",
+              "title": "Indonesia–Timor Leste Commission of Truth and Friendship",
+              "is_gold_support": true,
+              "is_sample_local": true,
+              "used_by_verifier": true,
+              "used_by_slot_binding": false,
+              "text_snippet": "The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred ..."
+            },
+            {
+              "rank": 5,
+              "id": "3hop1__105767_443779_52195::p3",
+              "title": "Indonesia–Timor Leste Commission of Truth and Friendship",
+              "is_gold_support": false,
+              "is_sample_local": false,
+              "used_by_verifier": true,
+              "used_by_slot_binding": false,
+              "text_snippet": "The Indonesia–Timor Leste Commission on Truth and Friendship was a truth commission established jointly by the governments of Indonesia and East Timor in August 2005. The commission was officially created to investigate acts of violence that occurred ..."
+            }
+          ],
+          "verifier": {
+            "overall_sufficiency": "insufficient",
+            "need_more_evidence": true,
+            "final_target_match": false,
+            "answer_slot": "unknown",
+            "suggested_query": "Who is the president of Timor-Leste?",
+            "claims": [
+              {
+                "status": "unsupported",
+                "evidence_ids": [
+                  "3hop1__144439_443779_52195::p7",
+                  "3hop1__105767_443779_52195::p3",
+                  "3hop1__103881_443779_52195::p7"
+                ],
+                "missing_evidence": "missing_passage: The birthplace of Mulham Arufin and the president of the newly declared independent country of Timor-Leste.",
+                "claim": "The president of the newly declared independent country of the birthplace of Mulham Arufin–Timor Leste Commission of Truth and Friendship is UNKNOWN."
+              }
+            ]
+          },
+          "slot_binding": {
+            "bound_value": "",
+            "evidence_ids": [],
+            "typed_reject_category": "empty_binding",
+            "decision_action": "abstain",
+            "candidate_role": "unknown",
+            "relation_to_question": "ambiguous",
+            "typed_binder_accepted": false,
+            "typed_binder_reason": "binding_verifier_rejected"
+          },
+          "repair": {
+            "repair_query_action": null,
+            "repair_next_query": null,
+            "repair_state": null,
+            "repair_closed": null,
+            "repair_query_quality_bucket": null
+          },
+          "guard": {
+            "answer_safety_guard_applied": null,
+            "answer_safety_guard_reason": null,
+            "answer_safety_guard_wrong_target_reason": null
+          }
+        }
+      ],
+      "cumulative_retrieved_ids": [
+        "3hop1__144439_443779_52195::p7",
+        "3hop1__105767_443779_52195::p3",
+        "3hop1__103881_443779_52195::p7",
+        "2hop__91211_90973::p9",
+        "2hop__471509_136043::p0",
+        "3hop1__144439_443779_52195::p2",
+        "2hop__61924_712629::p10",
+        "3hop1__105767_443779_52195::p6",
+        "2hop__6827_86319::p19",
+        "2hop__23459_35124::p11",
+        "2hop__708145_30351::p17",
+        "4hop1__31050_725495_49925_267352::p15"
+      ],
+      "cumulative_gold_hits": [
+        "3hop1__144439_443779_52195::p7",
+        "3hop1__144439_443779_52195::p2"
+      ]
+    },
+    {
+      "id": "2hop__131951_643670",
+      "question": "What is the name for the mouth of the watercourse of the body of water by Rotterdam Centrum?",
+      "gold_answer": "Het Scheur",
+      "supporting_passage_ids": [
+        "2hop__131951_643670::p10",
+        "2hop__131951_643670::p6"
+      ],
+      "final_action": "answer",
+      "final_answer": "Nieuwe Waterweg",
+      "rounds": [
+        {
+          "round": 1,
+          "query": "What is the name for the mouth of the watercourse of the body of water by Rotterdam Centrum?",
+          "query_source": "initial",
+          "action": "ordered_hop_repair",
+          "budget_remaining": 2,
+          "evidence_gain": 1.0,
+          "retrieved_count": 3,
+          "gold_hits": [
+            "2hop__131951_643670::p6",
+            "2hop__131951_643670::p10"
+          ],
+          "local_hits": [
+            "2hop__131951_643670::p6",
+            "2hop__131951_643670::p10"
+          ],
+          "retrieved": [
+            {
+              "rank": 1,
+              "id": "2hop__131951_643670::p6",
+              "title": "Rotterdam Centrum",
+              "is_gold_support": true,
+              "is_sample_local": true,
+              "used_by_verifier": true,
+              "used_by_slot_binding": true,
+              "text_snippet": "Rotterdam Centrum is bounded by the emplacement of the Rotterdam Centraal railway station and the Goudsesingel in the North, the Tunneltraverse of the Henegouwerlaan and 's-Gravendijkwal in the West, the Nieuwe Maas River in the South and the Oostplein in ..."
+            },
+            {
+              "rank": 2,
+              "id": "2hop__131951_643670::p10",
+              "title": "Het Scheur",
+              "is_gold_support": true,
+              "is_sample_local": true,
+              "used_by_verifier": true,
+              "used_by_slot_binding": true,
+              "text_snippet": "Het Scheur (; Dutch for \"The Rip\") is a branch of the Rhine-Meuse delta in South Holland, Netherlands, that flows west from the confluence of the Oude Maas and Nieuwe Maas branches past the towns of Rozenburg and Maassluis. It continues as the Nieuwe ..."
+            },
+            {
+              "rank": 3,
+              "id": "4hop1__726391_153080_33952_34109::p1",
+              "title": "Utrecht",
+              "is_gold_support": false,
+              "is_sample_local": false,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "A large indoor shopping centre Hoog Catharijne (nl) is located between Utrecht Centraal railway station and the city centre. The corridors are treated as public places like streets, and the route between the station and the city centre is open all night. ..."
+            }
+          ],
+          "verifier": {
+            "overall_sufficiency": "sufficient",
+            "need_more_evidence": false,
+            "final_target_match": true,
+            "answer_slot": "final requested target",
+            "suggested_query": "",
+            "claims": [
+              {
+                "status": "supported",
+                "evidence_ids": [
+                  "2hop__131951_643670::p6"
+                ],
+                "missing_evidence": "",
+                "claim": "The body of water by Rotterdam Centrum is the Nieuwe Maas River."
+              },
+              {
+                "status": "supported",
+                "evidence_ids": [
+                  "2hop__131951_643670::p10"
+                ],
+                "missing_evidence": "",
+                "claim": "The mouth of the Nieuwe Maas River is the Nieuwe Waterweg."
+              }
+            ]
+          },
+          "slot_binding": {
+            "bound_value": "Nieuwe Waterweg",
+            "evidence_ids": [
+              "2hop__131951_643670::p6",
+              "2hop__131951_643670::p10"
+            ],
+            "typed_reject_category": "wrong_target",
+            "decision_action": "ordered_hop_repair",
+            "candidate_role": "distractor",
+            "relation_to_question": "local_support_only",
+            "typed_binder_accepted": false,
+            "typed_binder_reason": "mouth_watercourse_downstream_continuation"
+          },
+          "repair": {
+            "repair_query_action": "ordered_hop_repair",
+            "repair_next_query": "Nieuwe Maas River mouth of the watercourse",
+            "repair_state": "repair_superseded_by_final_answer",
+            "repair_closed": "repair_superseded_by_final_answer",
+            "repair_query_quality_bucket": "entity-only"
+          },
+          "guard": {
+            "answer_safety_guard_applied": null,
+            "answer_safety_guard_reason": null,
+            "answer_safety_guard_wrong_target_reason": null
+          }
+        },
+        {
+          "round": 2,
+          "query": "Nieuwe Maas River mouth of the watercourse",
+          "query_source": "slot_ledger",
+          "action": "answer",
+          "budget_remaining": 1,
+          "evidence_gain": 0.0,
+          "retrieved_count": 5,
+          "gold_hits": [
+            "2hop__131951_643670::p10",
+            "2hop__131951_643670::p6"
+          ],
+          "local_hits": [
+            "2hop__131951_643670::p10",
+            "2hop__131951_643670::p6"
+          ],
+          "retrieved": [
+            {
+              "rank": 1,
+              "id": "2hop__131951_643670::p10",
+              "title": "Het Scheur",
+              "is_gold_support": true,
+              "is_sample_local": true,
+              "used_by_verifier": true,
+              "used_by_slot_binding": false,
+              "text_snippet": "Het Scheur (; Dutch for \"The Rip\") is a branch of the Rhine-Meuse delta in South Holland, Netherlands, that flows west from the confluence of the Oude Maas and Nieuwe Maas branches past the towns of Rozenburg and Maassluis. It continues as the Nieuwe ..."
+            },
+            {
+              "rank": 2,
+              "id": "4hop1__860115_798482_131926_90707::p17",
+              "title": "Water supply and sanitation in South Africa",
+              "is_gold_support": false,
+              "is_sample_local": false,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "Total annual water withdrawal was estimated at 12.5 km3 in 2000, of which about 17% was for municipal water use. In the northern parts of the country, both surface water and groundwater resources are nearly fully developed and utilised. In the well - ..."
+            },
+            {
+              "rank": 3,
+              "id": "4hop1__860115_798482_131926_13165::p9",
+              "title": "Water supply and sanitation in South Africa",
+              "is_gold_support": false,
+              "is_sample_local": false,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "Total annual water withdrawal was estimated at 12.5 km3 in 2000, of which about 17% was for municipal water use. In the northern parts of the country, both surface water and groundwater resources are nearly fully developed and utilised. In the well - ..."
+            },
+            {
+              "rank": 4,
+              "id": "2hop__131951_643670::p6",
+              "title": "Rotterdam Centrum",
+              "is_gold_support": true,
+              "is_sample_local": true,
+              "used_by_verifier": true,
+              "used_by_slot_binding": false,
+              "text_snippet": "Rotterdam Centrum is bounded by the emplacement of the Rotterdam Centraal railway station and the Goudsesingel in the North, the Tunneltraverse of the Henegouwerlaan and 's-Gravendijkwal in the West, the Nieuwe Maas River in the South and the Oostplein in ..."
+            },
+            {
+              "rank": 5,
+              "id": "4hop1__726391_153080_33952_34109::p1",
+              "title": "Utrecht",
+              "is_gold_support": false,
+              "is_sample_local": false,
+              "used_by_verifier": false,
+              "used_by_slot_binding": false,
+              "text_snippet": "A large indoor shopping centre Hoog Catharijne (nl) is located between Utrecht Centraal railway station and the city centre. The corridors are treated as public places like streets, and the route between the station and the city centre is open all night. ..."
+            }
+          ],
+          "verifier": {
+            "overall_sufficiency": "sufficient",
+            "need_more_evidence": false,
+            "final_target_match": true,
+            "answer_slot": "final requested target",
+            "suggested_query": "",
+            "claims": [
+              {
+                "status": "supported",
+                "evidence_ids": [
+                  "2hop__131951_643670::p6"
+                ],
+                "missing_evidence": "",
+                "claim": "The body of water by Rotterdam Centrum is the Nieuwe Maas River."
+              },
+              {
+                "status": "supported",
+                "evidence_ids": [
+                  "2hop__131951_643670::p10"
+                ],
+                "missing_evidence": "",
+                "claim": "The mouth of the Nieuwe Maas River is the Nieuwe Waterweg."
+              }
+            ]
+          },
+          "slot_binding": {
+            "bound_value": "",
+            "evidence_ids": [],
+            "typed_reject_category": "empty_binding",
+            "decision_action": "abstain",
+            "candidate_role": "unknown",
+            "relation_to_question": "ambiguous",
+            "typed_binder_accepted": false,
+            "typed_binder_reason": "binding_verifier_rejected"
+          },
+          "repair": {
+            "repair_query_action": "ordered_hop_repair",
+            "repair_next_query": "Nieuwe Maas River mouth of the watercourse",
+            "repair_state": "repair_accepted",
+            "repair_closed": "accepted_final",
+            "repair_query_quality_bucket": "entity-only"
+          },
+          "guard": {
+            "answer_safety_guard_applied": null,
+            "answer_safety_guard_reason": null,
+            "answer_safety_guard_wrong_target_reason": null
+          }
+        }
+      ],
+      "cumulative_retrieved_ids": [
+        "2hop__131951_643670::p6",
+        "2hop__131951_643670::p10",
+        "4hop1__726391_153080_33952_34109::p1",
+        "4hop1__860115_798482_131926_90707::p17",
+        "4hop1__860115_798482_131926_13165::p9"
+      ],
+      "cumulative_gold_hits": [
+        "2hop__131951_643670::p6",
+        "2hop__131951_643670::p10"
+      ]
+    }
+  ]
+}

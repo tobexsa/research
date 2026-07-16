@@ -1,0 +1,85 @@
+{
+  "annotated_count": 60,
+  "valid_count": 50,
+  "validate_record_pass_rate": 1.0,
+  "adjudication_needed_count": 2,
+  "adjudication_needed_rate": 0.03333333333333333,
+  "excluded_count": 8,
+  "schema_issue_count": 0,
+  "schema_issue_records": {},
+  "guideline_issue_count": 2,
+  "risk_type_coverage": {
+    "supported_answer": 17,
+    "repairable_missing_hop": 14,
+    "wrong_target": 26,
+    "no_new_evidence": 1,
+    "critical_gap": 1,
+    "answer_extraction_failure": 1
+  },
+  "valid_risk_type_coverage": {
+    "supported_answer": 15,
+    "repairable_missing_hop": 13,
+    "wrong_target": 20,
+    "critical_gap": 1,
+    "answer_extraction_failure": 1
+  },
+  "hop_coverage": {
+    "2": 27,
+    "unknown": 33
+  },
+  "oracle_action_distribution": {
+    "answer": 18,
+    "repair_missing_hop": 24,
+    "abstain": 5,
+    "refine_query": 3,
+    "disambiguate_conflict": 10
+  },
+  "valid_oracle_action_distribution": {
+    "answer": 16,
+    "repair_missing_hop": 22,
+    "refine_query": 3,
+    "disambiguate_conflict": 9
+  },
+  "review_status_counts": {
+    "human_verified": 50,
+    "excluded": 8,
+    "adjudication_needed": 2
+  },
+  "reviewer_notes_summary": {
+    "notes_nonempty": 60,
+    "notes_drop_dataset_issue": 8,
+    "notes_need_fix_signal": 28
+  },
+  "recommended_schema_changes": [],
+  "original_risk_type_mappings": {
+    "supported_answer": 17,
+    "repairable_missing_hop": 14,
+    "wrong_target": 26,
+    "no_new_evidence": 1,
+    "critical_gap": 1,
+    "answer_extraction_failure": 1
+  },
+  "gate_checks": {
+    "annotated_count": {
+      "value": 60,
+      "threshold": ">= 30",
+      "passed": true
+    },
+    "adjudication_needed_rate": {
+      "value": 0.03333333333333333,
+      "threshold": "<= 0.25",
+      "passed": true
+    },
+    "validate_record_pass_rate": {
+      "value": 1.0,
+      "threshold": ">= 0.90",
+      "passed": true
+    },
+    "schema_issue_count": {
+      "value": 0,
+      "threshold": "== 0",
+      "passed": true
+    }
+  },
+  "go_or_no_go_for_full_batch": "go"
+}

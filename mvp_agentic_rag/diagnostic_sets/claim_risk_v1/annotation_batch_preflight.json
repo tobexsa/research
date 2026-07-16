@@ -1,0 +1,109 @@
+{
+  "total_count": 180,
+  "validate_record_pass_rate": 1.0,
+  "schema_issue_count": 0,
+  "schema_issue_records": {},
+  "duplicate_id_count": 0,
+  "duplicate_ids": [],
+  "available_risk_type_count": 3,
+  "represented_available_risk_type_count": 3,
+  "missing_available_risk_types": [],
+  "coverage_warnings": [
+    "answer_extraction_failure unavailable in candidate_pool_quality",
+    "critical_gap unavailable in candidate_pool_quality"
+  ],
+  "risk_type_coverage": {
+    "contradiction": 1,
+    "insufficient_evidence": 2,
+    "no_new_evidence": 6,
+    "repairable_missing_hop": 7,
+    "supported_answer": 20,
+    "wrong_target": 144
+  },
+  "available_risk_type_coverage": {
+    "supported_answer": 20,
+    "wrong_target": 179,
+    "repairable_missing_hop": 7,
+    "no_new_evidence": 6,
+    "insufficient_evidence": 2,
+    "contradiction": 1
+  },
+  "oracle_action_distribution": {
+    "disambiguate_conflict": 14,
+    "abstain": 8,
+    "repair_missing_hop": 138,
+    "answer": 20
+  },
+  "hop_coverage": {
+    "2": 52,
+    "unknown": 128
+  },
+  "gate_checks": {
+    "total_count_min": {
+      "value": 180,
+      "threshold": ">= 120",
+      "passed": true
+    },
+    "total_count_max": {
+      "value": 180,
+      "threshold": "<= 200",
+      "passed": true
+    },
+    "validate_record_pass_rate": {
+      "value": 1.0,
+      "threshold": ">= 0.90",
+      "passed": true
+    },
+    "schema_issue_count": {
+      "value": 0,
+      "threshold": "== 0",
+      "passed": true
+    },
+    "candidate_pool_quality_available": {
+      "value": true,
+      "threshold": "true",
+      "passed": true
+    },
+    "represented_available_risk_type_count": {
+      "value": 3,
+      "threshold": ">= 3",
+      "passed": true
+    },
+    "has_supported_answer_if_available": {
+      "value": 20,
+      "threshold": "> 0 when available",
+      "passed": true
+    },
+    "has_wrong_target_if_available": {
+      "value": 144,
+      "threshold": "> 0 when available",
+      "passed": true
+    },
+    "has_repairable_missing_hop_if_available": {
+      "value": 7,
+      "threshold": "> 0 when available",
+      "passed": true
+    },
+    "has_answer_extraction_failure_if_available": {
+      "value": 0,
+      "threshold": "not available",
+      "passed": true
+    },
+    "has_4hop_or_repairable_record": {
+      "value": true,
+      "threshold": "true",
+      "passed": true
+    },
+    "action_coverage_count": {
+      "value": 4,
+      "threshold": ">= 3",
+      "passed": true
+    },
+    "duplicate_id_count": {
+      "value": 0,
+      "threshold": "== 0",
+      "passed": true
+    }
+  },
+  "go_or_no_go_for_review": "go"
+}

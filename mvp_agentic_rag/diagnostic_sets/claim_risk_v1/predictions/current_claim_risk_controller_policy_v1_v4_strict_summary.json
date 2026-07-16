@@ -1,0 +1,24 @@
+{
+  "blocked_by_reason": {
+    "action_not_eligible": 30,
+    "budget_exhausted": 26,
+    "conflict_or_disambiguation_required": 4,
+    "repair_target_absent": 4
+  },
+  "changed_by_reason": {
+    "repair_signal_present_but_abstain": 34,
+    "repair_signal_present_but_refine_query": 22
+  },
+  "changed_count": 56,
+  "diagnostic_count": 120,
+  "missing_trajectory_step_count": 0,
+  "policy": "controller_policy_v1",
+  "policy_rules": [
+    "eligible action must be abstain or refine_query",
+    "repair signal must be present",
+    "budget_remaining must be greater than 0 when available",
+    "conflict/contradiction signal must be absent"
+  ],
+  "prediction_count": 120,
+  "unchanged_count": 64
+}

@@ -1,0 +1,80 @@
+{
+  "manifest_id": "semantic_adapter_generic_online_stability_source_manifest_v1_20260715",
+  "protocol_id": "semantic_adapter_generic_online_stability_v1_20260715",
+  "status": "frozen",
+  "files": [
+    {
+      "path": "data/musique_mvp_stratified45.jsonl",
+      "sha256": "2B4A0DFAD40AC8B120FF59862FCBF216C5AD419EC7E2783E35534281653D63A5"
+    },
+    {
+      "path": "data/musique_corpus.jsonl",
+      "sha256": "CA17EACA883ABBDE8020B11B5B09AFE1EA5423837D339E66A4CF2A6613F3B71C"
+    },
+    {
+      "path": "indexes/faiss_musique_bge_base_en_v1_5.index",
+      "sha256": "0F0F9EBBF885F72B8A9927486C0556373079F075D9F4D2097C1B81282CB4E45E"
+    },
+    {
+      "path": "indexes/faiss_musique_bge_base_en_v1_5_meta.pkl",
+      "sha256": "9E0A3970C5554B2672C0403E269C1980DB83C8E739C9F20E6C03B60741A1B862"
+    },
+    {
+      "path": "src/mvp_agentic_rag/agents/claim_risk_agent.py",
+      "sha256": "01B5F13CC75ADFE318970F2263514667FEDD357C5ABF0E15A7437D31DA7EE1D2"
+    },
+    {
+      "path": "src/mvp_agentic_rag/state_controller.py",
+      "sha256": "2D3A7C5F6985C0789603CF24D00505D7B34D3B72CA70E609B2624D0C1BF02F95"
+    },
+    {
+      "path": "src/mvp_agentic_rag/slot_execution_state.py",
+      "sha256": "7AB63A5AAA32D971701C58DDA0A51229B239A1DCC994447929DFB60BE98C3A9D"
+    },
+    {
+      "path": "src/mvp_agentic_rag/slot_binding_verifier.py",
+      "sha256": "4CE57D4CA376440038F97427C2BBDEBC704E10063D0BA7A30F21B11A152A4416"
+    },
+    {
+      "path": "src/mvp_agentic_rag/evaluator.py",
+      "sha256": "03593A74A9213A515855E82A33056B77D5D064436C87D9002DCDD9654EE38A10"
+    },
+    {
+      "path": "scripts/run_layer1_skeleton.py",
+      "sha256": "81ECF552E886E2682D3DB00536E4A9954C1BE4F722F3EBB9FA17CDBB303817DE"
+    },
+    {
+      "path": "scripts/replay_shared_certificate_terminal.py",
+      "sha256": "84A972085C4EFAD3D67D5206701B10EF1F7A225D7EC82ABA3E72A0EB28C2C8A9"
+    },
+    {
+      "path": "scripts/replay_typed_hop_state.py",
+      "sha256": "AAD08DFFF58CB22B1790CB151E17F6EA40F49C3D8F4BD755ED58A387D9849EE5"
+    },
+    {
+      "path": "scripts/analyze_online_stability_protocol.py",
+      "sha256": "BC9754F57437EB800F0970500E0952A8B5789C0743F8D226E4441383416C2356"
+    },
+    {
+      "path": "tests/test_analyze_online_stability_protocol.py",
+      "sha256": "07B538F048436D8FD3D68CF056CF7606DE8F5981F9DA921F8AAFA1C36738878E"
+    },
+    {
+      "path": "configs/layer1_siliconflow_qwen3_14b_semantic_adapter_only_stability_stratified45_20260715_s1.yaml",
+      "sha256": "DE5A54A354E3F89EA88E418D5A6979E302DFA1E65CB2EF4449542F8CF00E1986"
+    },
+    {
+      "path": "configs/layer1_siliconflow_qwen3_14b_semantic_generic_only_stability_stratified45_20260715_s1.yaml",
+      "sha256": "ACCF9356D7346C2A43B465A325606472E208070B8A7AE0FF01936EFD24C86C2D"
+    },
+    {
+      "path": "configs/layer1_siliconflow_qwen3_14b_semantic_generic_only_stability_stratified45_20260715_s2.yaml",
+      "sha256": "52A01927635A62690540A7AC7908A5B83C85DED057F749525298AD91FF43F95F"
+    },
+    {
+      "path": "configs/layer1_siliconflow_qwen3_14b_semantic_adapter_only_stability_stratified45_20260715_s2.yaml",
+      "sha256": "652D0115C5CF10A39C4583835A4FC81773239AAD90BE6F94D7EA1D8DF539AAED"
+    }
+  ],
+  "mutation_rule": "Any hash mismatch invalidates the unstarted or remaining run package and requires a new protocol version."
+}

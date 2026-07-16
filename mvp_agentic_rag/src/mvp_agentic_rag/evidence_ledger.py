@@ -8,6 +8,7 @@ from .schemas import Passage, Sample
 @dataclass
 class EvidenceLedger:
     sample: Sample
+    use_gold_support_gain: bool = True
     round: int = 0
     retrieved_passages: list[Passage] = field(default_factory=list)
     accepted_evidence_ids: list[str] = field(default_factory=list)
@@ -28,12 +29,30 @@ class EvidenceLedger:
             if passage.passage_id not in seen_passage_ids:
                 self.retrieved_passages.append(passage)
                 seen_passage_ids.add(passage.passage_id)
-            if passage.passage_id in self.sample.supporting_passage_ids and passage.passage_id not in before:
+            if (
+                self.use_gold_support_gain
+                and passage.passage_id in self.sample.supporting_passage_ids
+                and passage.passage_id not in before
+            ):
                 self.accepted_evidence_ids.append(passage.passage_id)
-        gained = len(set(self.accepted_evidence_ids) - before)
-        gain = gained / max(len(self.sample.supporting_passage_ids), 1)
+        if self.use_gold_support_gain:
+            gained = len(set(self.accepted_evidence_ids) - before)
+            gain = gained / max(len(self.sample.supporting_passage_ids), 1)
+        else:
+            gain = novelty
         self.evidence_gain_history.append(gain)
         self.retrieval_novelty_history.append(novelty)
         self.new_passage_count_history.append(len(new_passage_ids))
         self.duplicate_passage_count_history.append(duplicate_count)
         return gain
+
+    def accept_verifier_evidence(self, evidence_ids: list[str]) -> None:
+        """Record model-cited local evidence without consulting gold labels."""
+
+        retrieved_ids = {passage.passage_id for passage in self.retrieved_passages}
+        accepted = set(self.accepted_evidence_ids)
+        for evidence_id in evidence_ids:
+            normalized = str(evidence_id or "").strip()
+            if normalized and normalized in retrieved_ids and normalized not in accepted:
+                self.accepted_evidence_ids.append(normalized)
+                accepted.add(normalized)

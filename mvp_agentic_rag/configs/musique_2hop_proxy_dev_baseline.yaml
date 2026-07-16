@@ -1,0 +1,16 @@
+run_name: musique_2hop_proxy_dev_agentic_rag_baseline
+dataset: data/musique_2hop_proxy/dev.jsonl
+corpus: data/musique_2hop_proxy/corpus.jsonl
+output_dir: runs/musique_2hop_proxy_dev_agentic_rag_baseline
+retriever: dense
+index_path: indexes/faiss_musique_2hop_proxy.index
+meta_path: indexes/faiss_musique_2hop_proxy_meta.pkl
+embedding_backend: hashing
+methods: [agentic_rag_baseline]
+top_k: 5
+max_rounds: 3
+progress_every: 25
+progress_display: plain
+answer_backend: heuristic
+verifier_backend: weak
+query_decomposition: none

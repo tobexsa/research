@@ -51,6 +51,25 @@ class EvidenceLedgerNoveltyTests(unittest.TestCase):
         self.assertEqual(1, ledger.new_passage_count_history[-1])
         self.assertEqual(1, ledger.duplicate_passage_count_history[-1])
 
+    def test_non_leaking_gain_ignores_gold_support_labels(self) -> None:
+        passages = [Passage("p1", "t", "x"), Passage("p2", "t", "x")]
+        first = EvidenceLedger(
+            sample=Sample("s1", "q", "gold-a", ["p1"]),
+            use_gold_support_gain=False,
+        )
+        second = EvidenceLedger(
+            sample=Sample("s2", "q", "gold-b", ["p9"]),
+            use_gold_support_gain=False,
+        )
+
+        self.assertEqual(first.add_retrieved(passages), second.add_retrieved(passages))
+        self.assertEqual(1.0, first.evidence_gain_history[-1])
+        self.assertEqual([], first.accepted_evidence_ids)
+
+        first.accept_verifier_evidence(["p2", "not-retrieved", "p2"])
+
+        self.assertEqual(["p2"], first.accepted_evidence_ids)
+
 
 if __name__ == "__main__":
     unittest.main()

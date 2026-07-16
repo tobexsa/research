@@ -1,0 +1,956 @@
+{
+  "eligible_count": 5,
+  "parsed_count": 5,
+  "parse_success_rate": 1.0,
+  "correct_candidate_count": 3,
+  "correct_candidate_rate": 0.6,
+  "required_correct_count": 5,
+  "min_parse_success_rate": 0.9,
+  "passed": false,
+  "failure_reasons": [
+    "correct_candidate_count_below_required"
+  ],
+  "records": [
+    {
+      "id": "2hop__132854_417697",
+      "question": "Mohammed Atta has what kind of model of the company that makes Datsun Type 12?",
+      "gold_answer": "Nissan Altima",
+      "evidence_ids": [
+        "2hop__132854_417697::p6",
+        "2hop__132854_417697::p10"
+      ],
+      "candidate_values": [],
+      "candidate_match": false,
+      "parse_status": "parsed",
+      "attempt_count": 1,
+      "structured_output": {
+        "parse_status": "parsed",
+        "attempt_count": 1,
+        "attempts": [
+          {
+            "attempt": 1,
+            "kind": "primary",
+            "parse_ok": true,
+            "response_length": 2698,
+            "finish_reason": "stop",
+            "response_format_requested": true,
+            "response_format_applied": true
+          }
+        ]
+      },
+      "binding_result": {
+        "slot_name": "final_target",
+        "supports_slot": false,
+        "bound_value": "",
+        "evidence_ids": [],
+        "slot_relation_match": false,
+        "answer_type_match": false,
+        "reason": "The evidence does not provide a direct link between Mohammed Atta and the model of the company that makes Datsun Type 12.",
+        "question_slot": {
+          "answer_type": "entity",
+          "target_relation": "model",
+          "subject_chain": [
+            "Mohammed Atta"
+          ],
+          "constraints": [],
+          "forbidden_roles": []
+        },
+        "candidate_roles": [
+          {
+            "candidate": "Nissan Altima",
+            "role": "bridge_entity",
+            "evidence_span": "",
+            "relation_to_question": "ambiguous"
+          }
+        ],
+        "ordered_hop_binding": {
+          "required_hops": [],
+          "filled_hop_index": 0,
+          "final_hop_index": 0,
+          "final_relation": "model",
+          "final_relation_object": null,
+          "candidate_is_final_relation_object": false,
+          "missing_critical_hops": [
+            "company"
+          ],
+          "bound_bridge_values": [
+            "Nissan"
+          ],
+          "chain_complete": false
+        },
+        "slot_entailment": {
+          "question": "",
+          "final_slot": "final_target",
+          "candidate": "",
+          "evidence_ids": [
+            "2hop__132854_417697::p6",
+            "2hop__132854_417697::p10"
+          ],
+          "entails_answer": false,
+          "hypothesis": "Mohammed Atta has what kind of model of the company that makes Datsun Type 12? The answer is Nissan Altima.",
+          "reason": ""
+        },
+        "set_level_sufficiency": {
+          "final_slot_covered": false,
+          "all_required_hops_covered": false,
+          "missing_critical_hops": [
+            "company"
+          ],
+          "noncritical_gaps": [],
+          "conflict_on_final_slot": false,
+          "uncertainty": 1.0
+        },
+        "decision": {
+          "action": "refine_missing_hop",
+          "risk": {
+            "unsupported_risk": 0.0,
+            "wrong_target_risk": 0.0,
+            "bridge_binding_risk": 0.0,
+            "relation_direction_risk": 0.0,
+            "candidate_extraction_risk": 0.0,
+            "conflict_risk": 0.0,
+            "insufficient_evidence_risk": 0.0
+          },
+          "expected_gain": 0.0,
+          "reason": ""
+        },
+        "question_slot_parser": {
+          "answer_type": "entity",
+          "target_relation": "model",
+          "subject_chain": [
+            "Mohammed Atta"
+          ],
+          "constraints": [],
+          "forbidden_roles": [],
+          "final_slot_description": "answer_span requested by the question: mohammed atta has what kind of model of the company that makes datsun type 12?",
+          "decomposition_confidence": 0.0
+        },
+        "candidate_role_labeler": {
+          "candidate": "Nissan Altima",
+          "normalized_candidate": "Nissan Altima",
+          "candidate_role": "bridge_entity",
+          "answer_type_match": false,
+          "relation_to_question": "ambiguous",
+          "role_error_type": "bridge_as_final"
+        },
+        "slot_bound_entailment": {
+          "hypothesis": "Mohammed Atta has what kind of model of the company that makes Datsun Type 12? The answer is Nissan Altima.",
+          "entailed": false,
+          "contradicted": false,
+          "evidence_ids": [
+            "2hop__132854_417697::p6",
+            "2hop__132854_417697::p10"
+          ],
+          "entailment_confidence": 0.0,
+          "failure_reason": "The evidence does not provide a direct link between Mohammed Atta and the model of the company that makes Datsun Type 12."
+        },
+        "repair_target": {
+          "anchor_entity": "Mohammed Atta",
+          "target_relation": "model",
+          "missing_hop": "company",
+          "expected_answer_type": "entity",
+          "single_hop_query": "What company makes the Datsun Type 12?"
+        },
+        "decision_head": {
+          "action": "ordered_hop_repair",
+          "risk": {
+            "unsupported_risk": 0.0,
+            "wrong_target_risk": 0.0,
+            "bridge_binding_risk": 0.0,
+            "relation_direction_risk": 0.0,
+            "candidate_extraction_risk": 0.0,
+            "conflict_risk": 0.0,
+            "insufficient_evidence_risk": 0.0
+          },
+          "expected_gain": 0.0,
+          "abstain_reason": "none"
+        },
+        "structured_output": {
+          "parse_status": "parsed",
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "kind": "primary",
+              "parse_ok": true,
+              "response_length": 2698,
+              "finish_reason": "stop",
+              "response_format_requested": true,
+              "response_format_applied": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "2hop__153573_44085",
+      "question": "What was the show named after the character featured in the video game Mickey's Safari in Letterland?",
+      "gold_answer": "The Mickey Mouse Club",
+      "evidence_ids": [
+        "2hop__153573_44085::p2",
+        "2hop__153573_44085::p14"
+      ],
+      "candidate_values": [
+        "The Mickey Mouse Club"
+      ],
+      "candidate_match": true,
+      "parse_status": "parsed",
+      "attempt_count": 1,
+      "structured_output": {
+        "parse_status": "parsed",
+        "attempt_count": 1,
+        "attempts": [
+          {
+            "attempt": 1,
+            "kind": "primary",
+            "parse_ok": true,
+            "response_length": 2665,
+            "finish_reason": "stop",
+            "response_format_requested": true,
+            "response_format_applied": true
+          }
+        ]
+      },
+      "binding_result": {
+        "slot_name": "final_target",
+        "supports_slot": true,
+        "bound_value": "The Mickey Mouse Club",
+        "evidence_ids": [
+          "2hop__153573_44085::p2"
+        ],
+        "slot_relation_match": true,
+        "answer_type_match": true,
+        "reason": "The evidence indicates that the show named after the character Mickey Mouse, who is featured in the video game 'Mickey's Safari in Letterland,' is 'The Mickey Mouse Club.' This matches the question's target slot and is supported by the provided evidence.",
+        "question_slot": {
+          "answer_type": "entity",
+          "target_relation": "named_after",
+          "subject_chain": [
+            "Mickey's Safari in Letterland",
+            "character",
+            "show"
+          ],
+          "constraints": [],
+          "forbidden_roles": [
+            "bridge_entity",
+            "evidence_date",
+            "evidence_location",
+            "distractor"
+          ]
+        },
+        "candidate_roles": [
+          {
+            "candidate": "The Mickey Mouse Club",
+            "role": "final_answer",
+            "evidence_span": "",
+            "relation_to_question": "direct"
+          }
+        ],
+        "ordered_hop_binding": {
+          "required_hops": [],
+          "filled_hop_index": 0,
+          "final_hop_index": 1,
+          "final_relation": "named_after",
+          "final_relation_object": "The Mickey Mouse Club",
+          "candidate_is_final_relation_object": true,
+          "missing_critical_hops": [],
+          "bound_bridge_values": [
+            "Mickey Mouse"
+          ],
+          "chain_complete": true
+        },
+        "slot_entailment": {
+          "question": "",
+          "final_slot": "final_target",
+          "candidate": "The Mickey Mouse Club",
+          "evidence_ids": [
+            "2hop__153573_44085::p2"
+          ],
+          "entails_answer": true,
+          "hypothesis": "The answer to the question is The Mickey Mouse Club",
+          "reason": ""
+        },
+        "set_level_sufficiency": {
+          "final_slot_covered": true,
+          "all_required_hops_covered": true,
+          "missing_critical_hops": [],
+          "noncritical_gaps": [],
+          "conflict_on_final_slot": false,
+          "uncertainty": 1.0
+        },
+        "decision": {
+          "action": "answer",
+          "risk": {
+            "unsupported_risk": 0.0,
+            "wrong_target_risk": 0.0,
+            "bridge_binding_risk": 0.0,
+            "relation_direction_risk": 0.0,
+            "candidate_extraction_risk": 0.0,
+            "conflict_risk": 0.0,
+            "insufficient_evidence_risk": 0.0
+          },
+          "expected_gain": 1.0,
+          "reason": ""
+        },
+        "question_slot_parser": {
+          "answer_type": "entity",
+          "target_relation": "named_after",
+          "subject_chain": [
+            "Mickey's Safari in Letterland",
+            "character",
+            "show"
+          ],
+          "constraints": [],
+          "forbidden_roles": [
+            "bridge_entity",
+            "evidence_date",
+            "evidence_location",
+            "distractor"
+          ],
+          "final_slot_description": "the show named after the character featured in the video game Mickey's Safari in Letterland",
+          "decomposition_confidence": 0.8
+        },
+        "candidate_role_labeler": {
+          "candidate": "The Mickey Mouse Club",
+          "normalized_candidate": "The Mickey Mouse Club",
+          "candidate_role": "final_answer",
+          "answer_type_match": true,
+          "relation_to_question": "direct",
+          "role_error_type": "none"
+        },
+        "slot_bound_entailment": {
+          "hypothesis": "The answer to the question is The Mickey Mouse Club",
+          "entailed": true,
+          "contradicted": false,
+          "evidence_ids": [
+            "2hop__153573_44085::p2"
+          ],
+          "entailment_confidence": 0.9,
+          "failure_reason": "unknown"
+        },
+        "repair_target": {
+          "anchor_entity": "",
+          "target_relation": "",
+          "missing_hop": "",
+          "expected_answer_type": "entity",
+          "single_hop_query": ""
+        },
+        "decision_head": {
+          "action": "answer",
+          "risk": {
+            "unsupported_risk": 0.0,
+            "wrong_target_risk": 0.0,
+            "bridge_binding_risk": 0.0,
+            "relation_direction_risk": 0.0,
+            "candidate_extraction_risk": 0.0,
+            "conflict_risk": 0.0,
+            "insufficient_evidence_risk": 0.0
+          },
+          "expected_gain": 1.0,
+          "abstain_reason": "none"
+        },
+        "structured_output": {
+          "parse_status": "parsed",
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "kind": "primary",
+              "parse_ok": true,
+              "response_length": 2665,
+              "finish_reason": "stop",
+              "response_format_requested": true,
+              "response_format_applied": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "2hop__247353_55227",
+      "question": "Who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?",
+      "gold_answer": "Maria Bello",
+      "evidence_ids": [
+        "2hop__247353_55227::p6",
+        "2hop__247353_55227::p17"
+      ],
+      "candidate_values": [
+        "Salma Hayek"
+      ],
+      "candidate_match": false,
+      "parse_status": "parsed",
+      "attempt_count": 1,
+      "structured_output": {
+        "parse_status": "parsed",
+        "attempt_count": 1,
+        "attempts": [
+          {
+            "attempt": 1,
+            "kind": "primary",
+            "parse_ok": true,
+            "response_length": 4028,
+            "finish_reason": "stop",
+            "response_format_requested": true,
+            "response_format_applied": true
+          }
+        ]
+      },
+      "binding_result": {
+        "slot_name": "bridge_1",
+        "supports_slot": false,
+        "bound_value": "",
+        "evidence_ids": [],
+        "slot_relation_match": false,
+        "answer_type_match": false,
+        "reason": "Missing critical hops: screenwriter of 'Here Comes the Boom' and spouse of that screenwriter.",
+        "question_slot": {
+          "answer_type": "person",
+          "target_relation": "performed_by",
+          "subject_chain": [
+            "{'slot_name': 'bridge_1', 'target_type': 'person', 'target_relation': 'screenwriter', 'subject': 'Here Comes the Boom'}",
+            "{'slot_name': 'bridge_2', 'target_type': 'person', 'target_relation': 'spouse', 'subject': 'bridge_1'}",
+            "{'slot_name': 'final_target', 'target_type': 'person', 'target_relation': 'performed_by', 'subject': 'bridge_2'}"
+          ],
+          "constraints": [],
+          "forbidden_roles": []
+        },
+        "candidate_roles": [
+          {
+            "candidate": "Salma Hayek",
+            "role": "bridge_entity",
+            "evidence_span": "",
+            "relation_to_question": "ambiguous"
+          }
+        ],
+        "ordered_hop_binding": {
+          "required_hops": [
+            {
+              "hop_index": 0,
+              "subject": "Here Comes the Boom",
+              "relation": "",
+              "object": null,
+              "status": "missing",
+              "is_final_hop": false,
+              "supporting_evidence_ids": [],
+              "confidence": 0.0
+            },
+            {
+              "hop_index": 0,
+              "subject": "bridge_1",
+              "relation": "",
+              "object": null,
+              "status": "missing",
+              "is_final_hop": false,
+              "supporting_evidence_ids": [],
+              "confidence": 0.0
+            },
+            {
+              "hop_index": 0,
+              "subject": "bridge_2",
+              "relation": "",
+              "object": null,
+              "status": "missing",
+              "is_final_hop": false,
+              "supporting_evidence_ids": [],
+              "confidence": 0.0
+            }
+          ],
+          "filled_hop_index": 0,
+          "final_hop_index": 2,
+          "final_relation": "performed_by",
+          "final_relation_object": "Salma Hayek",
+          "candidate_is_final_relation_object": true,
+          "missing_critical_hops": [
+            "{'slot_name': 'bridge_1', 'target_type': 'person', 'target_relation': 'screenwriter', 'subject': 'Here Comes the Boom'}",
+            "{'slot_name': 'bridge_2', 'target_type': 'person', 'target_relation': 'spouse', 'subject': 'bridge_1'}"
+          ],
+          "bound_bridge_values": [],
+          "chain_complete": false
+        },
+        "slot_entailment": {
+          "question": "",
+          "final_slot": "final_target",
+          "candidate": "",
+          "evidence_ids": [],
+          "entails_answer": false,
+          "hypothesis": "The answer to the question is Salma Hayek",
+          "reason": ""
+        },
+        "set_level_sufficiency": {
+          "final_slot_covered": false,
+          "all_required_hops_covered": false,
+          "missing_critical_hops": [
+            "{'slot_name': 'bridge_1', 'target_type': 'person', 'target_relation': 'screenwriter', 'subject': 'Here Comes the Boom'}",
+            "{'slot_name': 'bridge_2', 'target_type': 'person', 'target_relation': 'spouse', 'subject': 'bridge_1'}"
+          ],
+          "noncritical_gaps": [],
+          "conflict_on_final_slot": false,
+          "uncertainty": 1.0
+        },
+        "decision": {
+          "action": "ordered_hop_repair",
+          "risk": {
+            "unsupported_risk": 0.0,
+            "wrong_target_risk": 0.0,
+            "bridge_binding_risk": 0.0,
+            "relation_direction_risk": 0.0,
+            "candidate_extraction_risk": 0.0,
+            "conflict_risk": 0.0,
+            "insufficient_evidence_risk": 1.0
+          },
+          "expected_gain": 1.0,
+          "reason": ""
+        },
+        "question_slot_parser": {
+          "answer_type": "person",
+          "target_relation": "performed_by",
+          "subject_chain": [
+            "{'slot_name': 'bridge_1', 'target_type': 'person', 'target_relation': 'screenwriter', 'subject': 'Here Comes the Boom'}",
+            "{'slot_name': 'bridge_2', 'target_type': 'person', 'target_relation': 'spouse', 'subject': 'bridge_1'}",
+            "{'slot_name': 'final_target', 'target_type': 'person', 'target_relation': 'performed_by', 'subject': 'bridge_2'}"
+          ],
+          "constraints": [],
+          "forbidden_roles": [],
+          "final_slot_description": "person_name requested by the question: who plays the wife of Here Comes the Boom's screenwriter in Grown Ups?",
+          "decomposition_confidence": 1.0
+        },
+        "candidate_role_labeler": {
+          "candidate": "Salma Hayek",
+          "normalized_candidate": "Salma Hayek",
+          "candidate_role": "bridge_entity",
+          "answer_type_match": true,
+          "relation_to_question": "ambiguous",
+          "role_error_type": "bridge_as_final"
+        },
+        "slot_bound_entailment": {
+          "hypothesis": "The answer to the question is Salma Hayek",
+          "entailed": false,
+          "contradicted": false,
+          "evidence_ids": [],
+          "entailment_confidence": 0.0,
+          "failure_reason": "missing_critical_hops"
+        },
+        "repair_target": {
+          "anchor_entity": "Here Comes the Boom",
+          "target_relation": "screenwriter",
+          "missing_hop": "screenwriter",
+          "expected_answer_type": "person",
+          "single_hop_query": "Who is the screenwriter of Here Comes the Boom?"
+        },
+        "decision_head": {
+          "action": "ordered_hop_repair",
+          "risk": {
+            "unsupported_risk": 0.0,
+            "wrong_target_risk": 0.0,
+            "bridge_binding_risk": 0.0,
+            "relation_direction_risk": 0.0,
+            "candidate_extraction_risk": 0.0,
+            "conflict_risk": 0.0,
+            "insufficient_evidence_risk": 1.0
+          },
+          "expected_gain": 1.0,
+          "abstain_reason": "none"
+        },
+        "structured_output": {
+          "parse_status": "parsed",
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "kind": "primary",
+              "parse_ok": true,
+              "response_length": 4028,
+              "finish_reason": "stop",
+              "response_format_requested": true,
+              "response_format_applied": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "3hop1__140786_2053_5289",
+      "question": "What UK label was bought by the major broadcaster that, along with ABC and the network of the show Just Men!?, is based in New York?",
+      "gold_answer": "Oriole Records.",
+      "evidence_ids": [
+        "3hop1__140786_2053_5289::p5",
+        "3hop1__140786_2053_5289::p7",
+        "3hop1__140786_2053_5289::p17"
+      ],
+      "candidate_values": [
+        "Oriole Records"
+      ],
+      "candidate_match": true,
+      "parse_status": "parsed",
+      "attempt_count": 1,
+      "structured_output": {
+        "parse_status": "parsed",
+        "attempt_count": 1,
+        "attempts": [
+          {
+            "attempt": 1,
+            "kind": "primary",
+            "parse_ok": true,
+            "response_length": 2991,
+            "finish_reason": "stop",
+            "response_format_requested": true,
+            "response_format_applied": true
+          }
+        ]
+      },
+      "binding_result": {
+        "slot_name": "final_target",
+        "supports_slot": true,
+        "bound_value": "Oriole Records",
+        "evidence_ids": [
+          "3hop1__140786_2053_5289::p7"
+        ],
+        "slot_relation_match": true,
+        "answer_type_match": true,
+        "reason": "The evidence directly supports the final answer 'Oriole Records' as the UK label acquired by CBS, which is the major broadcaster based in New York along with ABC and the network of the show Just Men!?.",
+        "question_slot": {
+          "answer_type": "entity",
+          "target_relation": "acquired",
+          "subject_chain": [
+            "UK label",
+            "major broadcaster",
+            "network of the show Just Men!?"
+          ],
+          "constraints": [
+            "based in New York",
+            "UK label"
+          ],
+          "forbidden_roles": [
+            "bridge_entity",
+            "evidence_date",
+            "evidence_location",
+            "distractor"
+          ]
+        },
+        "candidate_roles": [
+          {
+            "candidate": "Oriole Records",
+            "role": "final_answer",
+            "evidence_span": "",
+            "relation_to_question": "direct"
+          }
+        ],
+        "ordered_hop_binding": {
+          "required_hops": [],
+          "filled_hop_index": 0,
+          "final_hop_index": 2,
+          "final_relation": "acquired",
+          "final_relation_object": "Oriole Records",
+          "candidate_is_final_relation_object": true,
+          "missing_critical_hops": [],
+          "bound_bridge_values": [
+            "CBS",
+            "network of the show Just Men!?"
+          ],
+          "chain_complete": true
+        },
+        "slot_entailment": {
+          "question": "",
+          "final_slot": "final_target",
+          "candidate": "Oriole Records",
+          "evidence_ids": [
+            "3hop1__140786_2053_5289::p7"
+          ],
+          "entails_answer": true,
+          "hypothesis": "The answer to the question is Oriole Records.",
+          "reason": ""
+        },
+        "set_level_sufficiency": {
+          "final_slot_covered": true,
+          "all_required_hops_covered": true,
+          "missing_critical_hops": [],
+          "noncritical_gaps": [],
+          "conflict_on_final_slot": false,
+          "uncertainty": 1.0
+        },
+        "decision": {
+          "action": "answer",
+          "risk": {
+            "unsupported_risk": 0.0,
+            "wrong_target_risk": 0.0,
+            "bridge_binding_risk": 0.0,
+            "relation_direction_risk": 0.0,
+            "candidate_extraction_risk": 0.0,
+            "conflict_risk": 0.0,
+            "insufficient_evidence_risk": 0.0
+          },
+          "expected_gain": 1.0,
+          "reason": "The evidence directly supports the final answer 'Oriole Records' as the UK label acquired by CBS, which is the major broadcaster based in New York along with ABC and the network of the show Just Men!?."
+        },
+        "question_slot_parser": {
+          "answer_type": "entity",
+          "target_relation": "acquired",
+          "subject_chain": [
+            "UK label",
+            "major broadcaster",
+            "network of the show Just Men!?"
+          ],
+          "constraints": [
+            "based in New York",
+            "UK label"
+          ],
+          "forbidden_roles": [
+            "bridge_entity",
+            "evidence_date",
+            "evidence_location",
+            "distractor"
+          ],
+          "final_slot_description": "answer_span requested by the question: what UK label was bought by the major broadcaster that, along with ABC and the network of the show Just Men!?, is based in New York?",
+          "decomposition_confidence": 0.8
+        },
+        "candidate_role_labeler": {
+          "candidate": "Oriole Records",
+          "normalized_candidate": "Oriole Records",
+          "candidate_role": "final_answer",
+          "answer_type_match": true,
+          "relation_to_question": "direct",
+          "role_error_type": "none"
+        },
+        "slot_bound_entailment": {
+          "hypothesis": "The answer to the question is Oriole Records.",
+          "entailed": true,
+          "contradicted": false,
+          "evidence_ids": [
+            "3hop1__140786_2053_5289::p7"
+          ],
+          "entailment_confidence": 0.9,
+          "failure_reason": "unknown"
+        },
+        "repair_target": {
+          "anchor_entity": "CBS",
+          "target_relation": "acquired",
+          "missing_hop": "UK label",
+          "expected_answer_type": "entity",
+          "single_hop_query": "What UK label was acquired by CBS?"
+        },
+        "decision_head": {
+          "action": "answer",
+          "risk": {
+            "unsupported_risk": 0.0,
+            "wrong_target_risk": 0.0,
+            "bridge_binding_risk": 0.0,
+            "relation_direction_risk": 0.0,
+            "candidate_extraction_risk": 0.0,
+            "conflict_risk": 0.0,
+            "insufficient_evidence_risk": 0.0
+          },
+          "expected_gain": 1.0,
+          "abstain_reason": "none"
+        },
+        "structured_output": {
+          "parse_status": "parsed",
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "kind": "primary",
+              "parse_ok": true,
+              "response_length": 2991,
+              "finish_reason": "stop",
+              "response_format_requested": true,
+              "response_format_applied": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "3hop1__144439_443779_52195",
+      "question": "who is the president of newly declared independent country of the country of the birthplace of Mulham Arufin–Timor Leste Commission of Truth and Friendship?",
+      "gold_answer": "Francisco Guterres",
+      "evidence_ids": [
+        "3hop1__144439_443779_52195::p2",
+        "3hop1__144439_443779_52195::p3",
+        "3hop1__144439_443779_52195::p7"
+      ],
+      "candidate_values": [
+        "Francisco Guterres"
+      ],
+      "candidate_match": true,
+      "parse_status": "parsed",
+      "attempt_count": 1,
+      "structured_output": {
+        "parse_status": "parsed",
+        "attempt_count": 1,
+        "attempts": [
+          {
+            "attempt": 1,
+            "kind": "primary",
+            "parse_ok": true,
+            "response_length": 3882,
+            "finish_reason": "stop",
+            "response_format_requested": true,
+            "response_format_applied": true
+          }
+        ]
+      },
+      "binding_result": {
+        "slot_name": "bridge_1",
+        "supports_slot": false,
+        "bound_value": "",
+        "evidence_ids": [],
+        "slot_relation_match": false,
+        "answer_type_match": false,
+        "reason": "The evidence does not provide the birthplace of Mulham Arufin–Timor Leste Commission of Truth and Friendship, which is required to determine the president of the newly declared independent country of that birthplace.",
+        "question_slot": {
+          "answer_type": "person",
+          "target_relation": "president",
+          "subject_chain": [
+            "{'slot_name': 'bridge_1', 'target_relation': 'birthplace', 'subject': 'Mulham Arufin–Timor Leste Commission of Truth and Friendship'}",
+            "{'slot_name': 'final_target', 'target_relation': 'president', 'subject': 'newly declared independent country of the country of the birthplace of Mulham Arufin–Timor Leste Commission of Truth and Friendship'}"
+          ],
+          "constraints": [],
+          "forbidden_roles": []
+        },
+        "candidate_roles": [
+          {
+            "candidate": "Francisco Guterres",
+            "role": "final_answer",
+            "evidence_span": "",
+            "relation_to_question": "direct"
+          }
+        ],
+        "ordered_hop_binding": {
+          "required_hops": [
+            {
+              "hop_index": 0,
+              "subject": "Mulham Arufin–Timor Leste Commission of Truth and Friendship",
+              "relation": "",
+              "object": null,
+              "status": "missing",
+              "is_final_hop": false,
+              "supporting_evidence_ids": [],
+              "confidence": 0.0
+            },
+            {
+              "hop_index": 0,
+              "subject": "newly declared independent country of the country of the birthplace of Mulham Arufin–Timor Leste Commission of Truth and Friendship",
+              "relation": "",
+              "object": null,
+              "status": "missing",
+              "is_final_hop": false,
+              "supporting_evidence_ids": [],
+              "confidence": 0.0
+            }
+          ],
+          "filled_hop_index": 0,
+          "final_hop_index": 1,
+          "final_relation": "president",
+          "final_relation_object": "Francisco Guterres",
+          "candidate_is_final_relation_object": true,
+          "missing_critical_hops": [],
+          "bound_bridge_values": [],
+          "chain_complete": false
+        },
+        "slot_entailment": {
+          "question": "",
+          "final_slot": "final_target",
+          "candidate": "",
+          "evidence_ids": [
+            "3hop1__144439_443779_52195::p3"
+          ],
+          "entails_answer": false,
+          "hypothesis": "The answer to the question is Francisco Guterres.",
+          "reason": ""
+        },
+        "set_level_sufficiency": {
+          "final_slot_covered": false,
+          "all_required_hops_covered": false,
+          "missing_critical_hops": [
+            "{'slot_name': 'bridge_1', 'target_relation': 'birthplace', 'subject': 'Mulham Arufin–Timor Leste Commission of Truth and Friendship'}"
+          ],
+          "noncritical_gaps": [],
+          "conflict_on_final_slot": false,
+          "uncertainty": 1.0
+        },
+        "decision": {
+          "action": "refine_missing_hop",
+          "risk": {
+            "unsupported_risk": 0.0,
+            "wrong_target_risk": 0.0,
+            "bridge_binding_risk": 0.0,
+            "relation_direction_risk": 0.0,
+            "candidate_extraction_risk": 0.0,
+            "conflict_risk": 0.0,
+            "insufficient_evidence_risk": 0.0
+          },
+          "expected_gain": 0.0,
+          "reason": ""
+        },
+        "question_slot_parser": {
+          "answer_type": "person",
+          "target_relation": "president",
+          "subject_chain": [
+            "{'slot_name': 'bridge_1', 'target_relation': 'birthplace', 'subject': 'Mulham Arufin–Timor Leste Commission of Truth and Friendship'}",
+            "{'slot_name': 'final_target', 'target_relation': 'president', 'subject': 'newly declared independent country of the country of the birthplace of Mulham Arufin–Timor Leste Commission of Truth and Friendship'}"
+          ],
+          "constraints": [],
+          "forbidden_roles": [],
+          "final_slot_description": "person_name requested by the question: who is the president of newly declared independent country of the country of the birthplace of Mulham Arufin–Timor Leste Commission of Truth and Friendship?",
+          "decomposition_confidence": 0.0
+        },
+        "candidate_role_labeler": {
+          "candidate": "Francisco Guterres",
+          "normalized_candidate": "francisco guterres",
+          "candidate_role": "final_answer",
+          "answer_type_match": true,
+          "relation_to_question": "direct",
+          "role_error_type": "none"
+        },
+        "slot_bound_entailment": {
+          "hypothesis": "The answer to the question is Francisco Guterres.",
+          "entailed": false,
+          "contradicted": false,
+          "evidence_ids": [
+            "3hop1__144439_443779_52195::p3"
+          ],
+          "entailment_confidence": 0.0,
+          "failure_reason": "The evidence does not provide a direct link to the birthplace of Mulham Arufin–Timor Leste Commission of Truth and Friendship."
+        },
+        "repair_target": {
+          "anchor_entity": "Mulham Arufin–Timor Leste Commission of Truth and Friendship",
+          "target_relation": "birthplace",
+          "missing_hop": "birthplace",
+          "expected_answer_type": "location",
+          "single_hop_query": "What is the birthplace of Mulham Arufin–Timor Leste Commission of Truth and Friendship?"
+        },
+        "decision_head": {
+          "action": "refine_missing_hop",
+          "risk": {
+            "unsupported_risk": 0.0,
+            "wrong_target_risk": 0.0,
+            "bridge_binding_risk": 0.0,
+            "relation_direction_risk": 0.0,
+            "candidate_extraction_risk": 0.0,
+            "conflict_risk": 0.0,
+            "insufficient_evidence_risk": 0.0
+          },
+          "expected_gain": 0.0,
+          "abstain_reason": "none"
+        },
+        "structured_output": {
+          "parse_status": "parsed",
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "kind": "primary",
+              "parse_ok": true,
+              "response_length": 3882,
+              "finish_reason": "stop",
+              "response_format_requested": true,
+              "response_format_applied": true
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "config": "configs/layer1_siliconflow_qwen3_14b_all_support_acceptance_targeted7_v1_3_5_20260710_r2_structured_output.yaml",
+  "dataset": "data/musique_all_support_acceptance_targeted7_20260710.jsonl",
+  "corpus": "data/musique_corpus.jsonl"
+}

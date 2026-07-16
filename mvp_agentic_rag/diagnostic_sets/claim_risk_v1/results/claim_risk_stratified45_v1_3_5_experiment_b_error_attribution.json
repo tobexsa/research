@@ -1,0 +1,332 @@
+{
+  "correct_action_count": 43,
+  "error_count": 129,
+  "grouped_errors": {
+    "by_claims_source": {
+      "verifier_output": 129
+    },
+    "by_hop": {
+      "2": 37,
+      "unknown": 92
+    },
+    "by_mining_reason_rule": {
+      "insufficient_evidence": 1,
+      "no_new_evidence": 4,
+      "repairable_missing_hop": 3,
+      "supported_answer": 9,
+      "wrong_target": 112
+    },
+    "by_risk_type": {
+      "contradiction": 12,
+      "critical_gap": 3,
+      "repairable_missing_hop": 104,
+      "supported_answer": 8,
+      "wrong_target": 2
+    },
+    "by_source_run": {
+      "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think": 68,
+      "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think": 61
+    }
+  },
+  "matched_records": 162,
+  "matrix_rows": [
+    {
+      "count": 6,
+      "evidence": {
+        "claims_sources": {
+          "verifier_output": 6
+        },
+        "mining_rules": {
+          "repairable_missing_hop": 1,
+          "supported_answer": 5
+        },
+        "risk_types": {
+          "supported_answer": 6
+        },
+        "source_runs": {
+          "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think": 3,
+          "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think": 3
+        }
+      },
+      "example_ids": [
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__140786_2053_52946::r1",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__140786_2053_52946::r1",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__23459_35124::r1",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__142699_67465::r1",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__142699_67465::r1"
+      ],
+      "gold_action": "answer",
+      "predicted_action": "refine_query",
+      "root_cause": "generic_action_mismatch"
+    },
+    {
+      "count": 2,
+      "evidence": {
+        "claims_sources": {
+          "verifier_output": 2
+        },
+        "mining_rules": {
+          "supported_answer": 2
+        },
+        "risk_types": {
+          "supported_answer": 2
+        },
+        "source_runs": {
+          "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think": 1,
+          "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think": 1
+        }
+      },
+      "example_ids": [
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__10620_49084::r1",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__10620_49084::r2"
+      ],
+      "gold_action": "answer",
+      "predicted_action": "repair_missing_hop",
+      "root_cause": "unnecessary_repair"
+    },
+    {
+      "count": 8,
+      "evidence": {
+        "claims_sources": {
+          "verifier_output": 8
+        },
+        "mining_rules": {
+          "supported_answer": 2,
+          "wrong_target": 6
+        },
+        "risk_types": {
+          "contradiction": 6,
+          "wrong_target": 2
+        },
+        "source_runs": {
+          "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think": 3,
+          "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think": 5
+        }
+      },
+      "example_ids": [
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__131951_643670::r1",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__145494_698949_157828_162309::r3",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__131951_643670::r1",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__17192_17130_70784_79935::r3",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__104996_160713_77246::r3"
+      ],
+      "gold_action": "disambiguate_conflict",
+      "predicted_action": "abstain",
+      "root_cause": "generic_action_mismatch"
+    },
+    {
+      "count": 1,
+      "evidence": {
+        "claims_sources": {
+          "verifier_output": 1
+        },
+        "mining_rules": {
+          "wrong_target": 1
+        },
+        "risk_types": {
+          "contradiction": 1
+        },
+        "source_runs": {
+          "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think": 1
+        }
+      },
+      "example_ids": [
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__103881_443779_52195::r3"
+      ],
+      "gold_action": "disambiguate_conflict",
+      "predicted_action": "missing_prediction",
+      "root_cause": "missing_prediction"
+    },
+    {
+      "count": 4,
+      "evidence": {
+        "claims_sources": {
+          "verifier_output": 4
+        },
+        "mining_rules": {
+          "wrong_target": 4
+        },
+        "risk_types": {
+          "contradiction": 4
+        },
+        "source_runs": {
+          "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think": 2,
+          "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think": 2
+        }
+      },
+      "example_ids": [
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__129499_33897_81096::r1",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__145494_698949_157828_162309::r1",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__103881_443779_52195::r1",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__145494_698949_157828_162309::r2"
+      ],
+      "gold_action": "disambiguate_conflict",
+      "predicted_action": "refine_query",
+      "root_cause": "generic_action_mismatch"
+    },
+    {
+      "count": 1,
+      "evidence": {
+        "claims_sources": {
+          "verifier_output": 1
+        },
+        "mining_rules": {
+          "wrong_target": 1
+        },
+        "risk_types": {
+          "contradiction": 1
+        },
+        "source_runs": {
+          "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think": 1
+        }
+      },
+      "example_ids": [
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__17192_17130_70784_79935::r1"
+      ],
+      "gold_action": "disambiguate_conflict",
+      "predicted_action": "repair_missing_hop",
+      "root_cause": "generic_action_mismatch"
+    },
+    {
+      "count": 3,
+      "evidence": {
+        "claims_sources": {
+          "verifier_output": 3
+        },
+        "mining_rules": {
+          "repairable_missing_hop": 1,
+          "wrong_target": 2
+        },
+        "risk_types": {
+          "critical_gap": 3
+        },
+        "source_runs": {
+          "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think": 2,
+          "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think": 1
+        }
+      },
+      "example_ids": [
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__151650_5274_458768_33637::r2",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__145494_698949_157828_162309::r3",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__152146_5274_458768_33632::r3"
+      ],
+      "gold_action": "refine_query",
+      "predicted_action": "abstain",
+      "root_cause": "generic_action_mismatch"
+    },
+    {
+      "count": 36,
+      "evidence": {
+        "claims_sources": {
+          "verifier_output": 36
+        },
+        "mining_rules": {
+          "no_new_evidence": 1,
+          "wrong_target": 35
+        },
+        "risk_types": {
+          "repairable_missing_hop": 36
+        },
+        "source_runs": {
+          "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think": 19,
+          "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think": 17
+        }
+      },
+      "example_ids": [
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__136129_87694_124169::r3",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__140786_2053_5289::r3",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__151650_5274_458768_33637::r2",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__132854_417697::r2",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__222497_309482_27537::r3"
+      ],
+      "gold_action": "repair_missing_hop",
+      "predicted_action": "abstain",
+      "root_cause": "repair_opportunity_missed"
+    },
+    {
+      "count": 2,
+      "evidence": {
+        "claims_sources": {
+          "verifier_output": 2
+        },
+        "mining_rules": {
+          "wrong_target": 2
+        },
+        "risk_types": {
+          "repairable_missing_hop": 2
+        },
+        "source_runs": {
+          "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think": 2
+        }
+      },
+      "example_ids": [
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__151750_141308::r1",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__194469_83289::r2"
+      ],
+      "gold_action": "repair_missing_hop",
+      "predicted_action": "answer",
+      "root_cause": "generic_action_mismatch"
+    },
+    {
+      "count": 9,
+      "evidence": {
+        "claims_sources": {
+          "verifier_output": 9
+        },
+        "mining_rules": {
+          "no_new_evidence": 2,
+          "wrong_target": 7
+        },
+        "risk_types": {
+          "repairable_missing_hop": 9
+        },
+        "source_runs": {
+          "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think": 5,
+          "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think": 4
+        }
+      },
+      "example_ids": [
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__105767_443779_52195::r3",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__105767_443779_52195::r3",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__132854_417697::r3",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::2hop__151750_141308::r2",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::2hop__151750_141308::r2"
+      ],
+      "gold_action": "repair_missing_hop",
+      "predicted_action": "missing_prediction",
+      "root_cause": "missing_prediction"
+    },
+    {
+      "count": 57,
+      "evidence": {
+        "claims_sources": {
+          "verifier_output": 57
+        },
+        "mining_rules": {
+          "insufficient_evidence": 1,
+          "no_new_evidence": 1,
+          "repairable_missing_hop": 1,
+          "wrong_target": 54
+        },
+        "risk_types": {
+          "repairable_missing_hop": 57
+        },
+        "source_runs": {
+          "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think": 30,
+          "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think": 27
+        }
+      },
+      "example_ids": [
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::3hop1__136129_87694_124169::r2",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__13170_32392_823060_610794::r1",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::4hop1__145494_698949_157828_162309::r2",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think::4hop1__152146_5274_458768_33632::r2",
+        "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think::3hop1__222497_309482_27537::r2"
+      ],
+      "gold_action": "repair_missing_hop",
+      "predicted_action": "refine_query",
+      "root_cause": "repair_anchor_or_relation_not_extracted"
+    }
+  ],
+  "total_records": 172
+}

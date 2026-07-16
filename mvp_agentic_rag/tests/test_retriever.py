@@ -4,7 +4,7 @@ from pathlib import Path
 
 from mvp_agentic_rag import retriever as retriever_module
 from mvp_agentic_rag.dense_index import build_dense_index
-from mvp_agentic_rag.retriever import LexicalRetriever, OracleRetriever
+from mvp_agentic_rag.retriever import LexicalRetriever, OracleRetriever, ScopedLexicalRetriever
 from mvp_agentic_rag.schemas import Passage, Sample
 
 
@@ -30,6 +30,23 @@ class RetrieverTests(unittest.TestCase):
     def test_oracle_retriever_prioritizes_supporting_passages(self):
         results = OracleRetriever(self.corpus).search_for_sample(self.sample, top_k=2)
         self.assertEqual(results[0].passage_id, "p1")
+
+    def test_scoped_retriever_uses_only_runtime_candidate_passages(self):
+        sample = Sample(
+            sample_id="opaque",
+            question="capital France",
+            gold_answer="",
+            metadata={"candidate_passage_ids": ["p2", "p3"]},
+        )
+
+        results = ScopedLexicalRetriever(self.corpus).search_for_sample(
+            sample,
+            top_k=2,
+            query="painted water lilies",
+        )
+
+        self.assertEqual([passage.passage_id for passage in results], ["p3"])
+        self.assertNotIn("p1", [passage.passage_id for passage in results])
 
     def test_reciprocal_rank_fusion_rewards_passages_found_by_both_sources(self):
         fuse = getattr(retriever_module, "reciprocal_rank_fusion", None)

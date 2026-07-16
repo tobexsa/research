@@ -1,0 +1,11 @@
+{
+  "diagnostic_count": 120,
+  "prediction_count": 120,
+  "prediction_coverage_rate": 1.0,
+  "source_runs": [
+    "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_1_repair_query_quality_lifecycle_no_think",
+    "layer1_siliconflow_qwen3_14b_decomp_gate_answer_repair_claim_risk_stratified45_five_stage_verifier_v1_3_2_repair_query_rewrite_no_think"
+  ],
+  "unmatched_by_reason": {},
+  "unmatched_count": 0
+}

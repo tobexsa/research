@@ -3,8 +3,14 @@
 !.env.example
 __pycache__/
 *.pyc
+.pytest_tmp*/
 runs/*/trajectories.jsonl
 runs/*/metrics.json
 runs/*/metrics.md
 indexes/*.index
 indexes/*.pkl
+
+# Full non-leaking MuSiQue assets are deterministic build outputs. Keep the
+# manifest and bounded pilot assets in Git; rebuild the full JSONL files from
+# the official source with scripts/build_nonleaking_standard_musique.py.
+data/musique_standard_nonleaking_v1/*.jsonl

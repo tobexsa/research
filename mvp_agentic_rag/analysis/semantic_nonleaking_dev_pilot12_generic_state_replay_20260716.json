@@ -1,0 +1,2275 @@
+{
+  "source": "runs\\layer1_siliconflow_qwen3_14b_nonleaking_musique_dev_pilot12_generic_20260716_s1\\trajectories.jsonl",
+  "row_count": 12,
+  "event_counts": {
+    "candidate_observed": 8,
+    "candidate_state_updated": 1,
+    "competing_bound_object_conflict": 3,
+    "conflict_scope_mismatch_ignored": 7,
+    "hop_conflict_observed": 1,
+    "hop_schema_drift_ignored": 42,
+    "hop_state_updated": 4,
+    "hop_update_rejected": 9,
+    "hop_update_resolved": 7,
+    "hop_update_unmapped": 33,
+    "incoming_topology_invalid": 2,
+    "missing_requirement_rejected": 40,
+    "missing_requirement_resolved": 15,
+    "sentinel_candidate_ignored": 16,
+    "state_regression_blocked": 3,
+    "topology_initialized": 12,
+    "topology_update_rejected": 16,
+    "unscoped_conflict_observed": 5,
+    "unscoped_typed_reject_observed": 16
+  },
+  "phase_event_counts": {
+    "planning:candidate_observed": 4,
+    "planning:conflict_scope_mismatch_ignored": 3,
+    "planning:incoming_topology_invalid": 1,
+    "planning:missing_requirement_rejected": 9,
+    "planning:missing_requirement_resolved": 6,
+    "planning:sentinel_candidate_ignored": 5,
+    "planning:topology_initialized": 12,
+    "planning:topology_update_rejected": 16,
+    "planning:unscoped_conflict_observed": 2,
+    "planning:unscoped_typed_reject_observed": 5,
+    "terminal:candidate_observed": 4,
+    "terminal:candidate_state_updated": 1,
+    "terminal:competing_bound_object_conflict": 3,
+    "terminal:conflict_scope_mismatch_ignored": 4,
+    "terminal:hop_conflict_observed": 1,
+    "terminal:hop_schema_drift_ignored": 42,
+    "terminal:hop_state_updated": 4,
+    "terminal:hop_update_rejected": 9,
+    "terminal:hop_update_resolved": 7,
+    "terminal:hop_update_unmapped": 33,
+    "terminal:incoming_topology_invalid": 1,
+    "terminal:missing_requirement_rejected": 31,
+    "terminal:missing_requirement_resolved": 9,
+    "terminal:sentinel_candidate_ignored": 11,
+    "terminal:state_regression_blocked": 3,
+    "terminal:unscoped_conflict_observed": 3,
+    "terminal:unscoped_typed_reject_observed": 11
+  },
+  "same_round_topology_update_rejected": 0,
+  "unsafe_failure_candidate_transitions": 0,
+  "structured_legacy_requirement_items": 0,
+  "structured_requirement_objects_after_replay": 35,
+  "terminal_invariant_violation_count": 0,
+  "terminal_invariant_counts": {},
+  "terminal_invariant_samples": {},
+  "topology_revision_applied_samples": [],
+  "samples": [
+    {
+      "id": "q_004732875d5a7b72a7d952f3",
+      "final_answer": "",
+      "final_action": "abstain",
+      "topology_version": 1,
+      "topology_fingerprint": "9c6631d1aaa4b655fa72d2f39a37febf2ed7e45687f4bd6fcd8b5e18ccf9d543",
+      "hop_count": 1,
+      "verified_hop_count": 0,
+      "candidate_values": [],
+      "candidate_statuses": [],
+      "terminal_invariant_violations": [],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_1",
+            "anchor_entity": "",
+            "anchor_entity_id": "",
+            "anchor_entity_type": "",
+            "canonical_relation": "",
+            "expected_object_type": "",
+            "missing_component": "object",
+            "suggested_query": "",
+            "raw_hint": "required_hop_1"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_1",
+            "anchor_entity": "",
+            "anchor_entity_id": "",
+            "anchor_entity_type": "",
+            "canonical_relation": "",
+            "expected_object_type": "",
+            "missing_component": "object",
+            "suggested_query": "",
+            "raw_hint": "required_hop_1"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 0,
+          "incoming_topology_fingerprint": "founded",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "1|beautiful_country_used_as_a_backdrop_for_the_movie_the_lord_of_the_rings|used_as_backdrop_for|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "1|beautiful_country_used_as_a_backdrop_for_the_movie_the_lord_of_the_rings|used_as_backdrop_for|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "2|lord_of_the_rings_film_series|filmed_in|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "2|lord_of_the_rings_film_series|filmed_in|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "3|new_zealand|founded|entity|final",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "3|new_zealand|founded|entity|final",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "founded",
+          "reason": "unknown_target_hop_id",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_1",
+            "anchor_entity": "The beautiful country used as a backdrop for the movie The Lord of the Rings",
+            "anchor_entity_id": "beautiful_country_used_as_a_backdrop_for_the_movie_the_lord_of_the_rings",
+            "anchor_entity_type": "",
+            "canonical_relation": "founded",
+            "expected_object_type": "date",
+            "missing_component": "object",
+            "suggested_query": "What is the founding date of the country used as a backdrop for The Lord of the Rings?",
+            "raw_hint": "founded"
+          },
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_1",
+            "anchor_entity": "The beautiful country used as a backdrop for the movie The Lord of the Rings",
+            "anchor_entity_id": "beautiful_country_used_as_a_backdrop_for_the_movie_the_lord_of_the_rings",
+            "anchor_entity_type": "",
+            "canonical_relation": "founded",
+            "expected_object_type": "date",
+            "missing_component": "object",
+            "suggested_query": "What is the founding date of the country used as a backdrop for The Lord of the Rings?",
+            "raw_hint": "founded"
+          },
+          "round_idx": 3
+        }
+      ]
+    },
+    {
+      "id": "q_00972b0c4d999c38b5c98630",
+      "final_answer": "",
+      "final_action": "abstain",
+      "topology_version": 1,
+      "topology_fingerprint": "76ea09f1063c1edc16f627376091e1d9bedadab2d86c536e1fdcedb7fa75107b",
+      "hop_count": 2,
+      "verified_hop_count": 1,
+      "candidate_values": [
+        "Fred Gwynne",
+        "Pet Sematary"
+      ],
+      "candidate_statuses": [
+        "rejected",
+        "verified"
+      ],
+      "terminal_invariant_violations": [],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "candidate_observed",
+          "candidate": "Pet Sematary",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 1,
+          "incoming_topology_fingerprint": "1234567890",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "competing_bound_object_conflict",
+          "hop_id": "required_hop_1",
+          "existing_object": "Fred Gwynne",
+          "incoming_object": "comedy film Crime School",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "unique_typed_identity",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "2|comedy_film_crime_school|won_oscar_for|entity|final",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "2|comedy_film_crime_school|won_oscar_for|entity|final",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "won_oscar_for",
+          "reason": "target_hop_not_repairable",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "state_regression_blocked",
+          "hop_id": "required_hop_2",
+          "from": "verified",
+          "to": "unresolved",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "candidate_observed",
+          "candidate": "Fred Gwynne",
+          "round_idx": 2
+        }
+      ]
+    },
+    {
+      "id": "q_00b7b7947d662df65733c4d0",
+      "final_answer": "Plymouth Notch",
+      "final_action": "answer",
+      "topology_version": 1,
+      "topology_fingerprint": "4ba27d976c7b3dadd932910666218f426a356ca73d3bc2af00203af3f7658203",
+      "hop_count": 2,
+      "verified_hop_count": 1,
+      "candidate_values": [
+        "Plymouth Notch"
+      ],
+      "candidate_statuses": [
+        "verified"
+      ],
+      "terminal_invariant_violations": [],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_2",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_2",
+            "anchor_entity": "July 4",
+            "anchor_entity_id": "july_4",
+            "anchor_entity_type": "",
+            "canonical_relation": "located_in",
+            "expected_object_type": "location",
+            "missing_component": "object",
+            "suggested_query": "Where was the president born on the fourth of July born?",
+            "raw_hint": "birth_location"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_2",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_2",
+            "anchor_entity": "July 4",
+            "anchor_entity_id": "july_4",
+            "anchor_entity_type": "",
+            "canonical_relation": "located_in",
+            "expected_object_type": "location",
+            "missing_component": "object",
+            "suggested_query": "Where was the president born on the fourth of July born?",
+            "raw_hint": "birth_location"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 1,
+          "incoming_topology_fingerprint": "president->born_on->July_4->birth_location->missing",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_rejected",
+          "reason": "hop_identity_mismatch",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "1|president|born_on|date|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "required_hop_1",
+          "incoming_semantic_key": "1|president|born_on|date|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_rejected",
+          "reason": "hop_identity_mismatch",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "2|calvin_coolidge|located_in|location|final",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "required_hop_2",
+          "incoming_semantic_key": "2|calvin_coolidge|located_in|location|final",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "birth_location",
+          "reason": "hop_binding_subject_mismatch",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {
+            "component": "subject",
+            "expected": "july_4",
+            "observed": "calvin_coolidge",
+            "dependency_object_entity_ids": [
+              "july_4"
+            ]
+          },
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 1,
+          "incoming_topology_fingerprint": "president->born_on->July 4->birth_location->Plymouth Notch",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_state_updated",
+          "hop_id": "required_hop_1",
+          "from": "verified",
+          "to": "verified",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "unique_typed_identity",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "2|calvin_coolidge|located_in|location|final",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "2|calvin_coolidge|located_in|location|final",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "candidate_observed",
+          "candidate": "Plymouth Notch",
+          "round_idx": 3
+        }
+      ]
+    },
+    {
+      "id": "q_00ba96c23347b8d74456e3af",
+      "final_answer": "Bering Sea",
+      "final_action": "answer",
+      "topology_version": 1,
+      "topology_fingerprint": "117af91774c775ef1fcc3e5e047544d0365176af1edd7277f13ab5ec870596e0",
+      "hop_count": 2,
+      "verified_hop_count": 2,
+      "candidate_values": [
+        "Bering Sea"
+      ],
+      "candidate_statuses": [
+        "verified"
+      ],
+      "terminal_invariant_violations": [],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "candidate_observed",
+          "candidate": "Bering Sea",
+          "round_idx": 1
+        }
+      ]
+    },
+    {
+      "id": "q_00e8f0ec574cb8a98efccc93",
+      "final_answer": "",
+      "final_action": "abstain",
+      "topology_version": 1,
+      "topology_fingerprint": "6b20a6d7befcb614d222b311d6e07511a5bea9fb1646c2546ffa1f04b2c75108",
+      "hop_count": 3,
+      "verified_hop_count": 0,
+      "candidate_values": [],
+      "candidate_statuses": [],
+      "terminal_invariant_violations": [],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "opens_us_assembly_plant",
+          "reason": "hop_binding_subject_mismatch",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {
+            "component": "subject",
+            "expected": "Nissan",
+            "observed": "nissan",
+            "dependency_object_entity_ids": []
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "opens_us_assembly_plant",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "opens_us_assembly_plant",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "opens_us_assembly_plant",
+          "reason": "hop_binding_subject_mismatch",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {
+            "component": "subject",
+            "expected": "Nissan",
+            "observed": "nissan",
+            "dependency_object_entity_ids": []
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "opens_us_assembly_plant",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "opens_us_assembly_plant",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 0,
+          "incoming_topology_fingerprint": "Nissan,Comstar_wheel,Scion,open_us_assembly_plant",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "1|nissan|open_us_assembly_plant|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "1|nissan|open_us_assembly_plant|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "2|company_that_makes_the_comstar_wheel|open_us_assembly_plant|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "2|company_that_makes_the_comstar_wheel|open_us_assembly_plant|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "3|company_that_makes_the_scion|open_us_assembly_plant|entity|final",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "3|company_that_makes_the_scion|open_us_assembly_plant|entity|final",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "open_us_assembly_plant",
+          "reason": "hop_binding_relation_mismatch",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {
+            "component": "relation",
+            "expected": "opens_us_assembly_plant",
+            "observed": "open_us_assembly_plant"
+          },
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "open_us_assembly_plant",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "open_us_assembly_plant",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 0,
+          "incoming_topology_fingerprint": "Nissan,Comstar_wheel,Scion",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "1|nissan|open_us_assembly_plant|entity|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "1|nissan|open_us_assembly_plant|entity|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "2|company_that_makes_the_comstar_wheel|open_us_assembly_plant|entity|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "2|company_that_makes_the_comstar_wheel|open_us_assembly_plant|entity|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "3|company_that_makes_the_scion|open_us_assembly_plant|entity|final",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "3|company_that_makes_the_scion|open_us_assembly_plant|entity|final",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "open_us_assembly_plant",
+          "reason": "hop_binding_relation_mismatch",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {
+            "component": "relation",
+            "expected": "opens_us_assembly_plant",
+            "observed": "open_us_assembly_plant"
+          },
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "open_us_assembly_plant",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "open_us_assembly_plant",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "conflict_scope_mismatch_ignored",
+          "candidate_hop_ids": [],
+          "evidence_ids": [
+            "q_00e8f0ec574cb8a98efccc93::p16"
+          ],
+          "claim": "The company that makes the Scion (Toyota) opened a US assembly plant in 1977",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_conflict_observed",
+          "round_idx": 3
+        }
+      ]
+    },
+    {
+      "id": "q_012bbeb36621cbf087ae953a",
+      "final_answer": "",
+      "final_action": "abstain",
+      "topology_version": 1,
+      "topology_fingerprint": "9bc2166aa982ffbf309e901071b26dde5297b1624a6f86878832e5da6ff3e83f",
+      "hop_count": 2,
+      "verified_hop_count": 0,
+      "candidate_values": [],
+      "candidate_statuses": [],
+      "terminal_invariant_violations": [],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_1",
+            "anchor_entity": "",
+            "anchor_entity_id": "",
+            "anchor_entity_type": "",
+            "canonical_relation": "",
+            "expected_object_type": "",
+            "missing_component": "object",
+            "suggested_query": "",
+            "raw_hint": "required_hop_1"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "required_hop_2",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "conflict_scope_mismatch_ignored",
+          "candidate_hop_ids": [],
+          "evidence_ids": [
+            "q_012bbeb36621cbf087ae953a::p4"
+          ],
+          "claim": "The 111th United States Congress is relevant to the question about the party with majorities prior to the 1954 elections.",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_1",
+            "anchor_entity": "",
+            "anchor_entity_id": "",
+            "anchor_entity_type": "",
+            "canonical_relation": "",
+            "expected_object_type": "",
+            "missing_component": "object",
+            "suggested_query": "",
+            "raw_hint": "required_hop_1"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "required_hop_2",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "conflict_scope_mismatch_ignored",
+          "candidate_hop_ids": [],
+          "evidence_ids": [
+            "q_012bbeb36621cbf087ae953a::p4"
+          ],
+          "claim": "The 111th United States Congress is relevant to the question about the party with majorities prior to the 1954 elections.",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 0,
+          "incoming_topology_fingerprint": "party_with_majorities_in_congress_prior_to_1954_elections->body_which_determines_rules_of_the_US_House_and_US_Senate->gained_control_of_body_which_determines_rules_of_the_US_House_and_US_Senate",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_rejected",
+          "reason": "hop_identity_mismatch",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "1|party_with_majorities_in_congress_prior_to_1954_elections|majority_party_in_congress_prior_to_1954_elections|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "required_hop_1",
+          "incoming_semantic_key": "1|party_with_majorities_in_congress_prior_to_1954_elections|majority_party_in_congress_prior_to_1954_elections|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_rejected",
+          "reason": "hop_identity_mismatch",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "2|body_which_determines_rules_of_the_US_House_and_US_Senate|determines_rules_of_the_us_house_and_us_senate|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "required_hop_2",
+          "incoming_semantic_key": "2|body_which_determines_rules_of_the_US_House_and_US_Senate|determines_rules_of_the_us_house_and_us_senate|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_rejected",
+          "reason": "unknown_hop_id",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "3|Democratic Party|gained_control_of_body_which_determines_rules_of_the_us_house_and_us_senate|date|final",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "3|Democratic Party|gained_control_of_body_which_determines_rules_of_the_us_house_and_us_senate|date|final",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "majority_party_in_congress_prior_to_1954_elections",
+          "reason": "hop_binding_relation_mismatch",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {
+            "component": "relation",
+            "expected": "gained_control_of",
+            "observed": "majority_party_in_congress_prior_to_1954_elections"
+          },
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "determines_rules_of_the_US_House_and_US_Senate",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "gained_control_of_body_which_determines_rules_of_the_US_House_and_US_Senate",
+          "reason": "unknown_target_hop_id",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 0,
+          "incoming_topology_fingerprint": "party_with_majorities_in_congress_prior_to_1954_elections.gained_control_of.body_which_determines_rules_of_us_house_and_us_senate.date_of_event",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "1|party_with_majorities_in_congress_prior_to_1954_elections|gained_control_of|entity|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "1|party_with_majorities_in_congress_prior_to_1954_elections|gained_control_of|entity|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "2|body_which_determines_rules_of_us_house_and_us_senate|date_of_event|entity|final",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "2|body_which_determines_rules_of_us_house_and_us_senate|date_of_event|entity|final",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "date_of_event",
+          "reason": "unknown_target_hop_id",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 3
+        }
+      ]
+    },
+    {
+      "id": "q_012f7cf9909b0d1e09510ea3",
+      "final_answer": "",
+      "final_action": "abstain",
+      "topology_version": 1,
+      "topology_fingerprint": "cd565d976aa0bbbbf8510d6b5009b37482b8bf150e3f5c5ff460431f45b68b9d",
+      "hop_count": 4,
+      "verified_hop_count": 2,
+      "candidate_values": [
+        "Portland, Oregon",
+        "Tualatin Mountains (West Hills), Mt. Tabor, Powell Butte, Rocky Butte, Oregon Coast Range, Cascade Range, Mt. Hood, Mt. St. Helens, Mt. Adams, and Mt. Rainier",
+        "Tualatin Mountains, Mt. Tabor, Powell Butte, Rocky Butte, Oregon Coast Range, Cascade Range, Mt. Hood, Mt. St. Helens, Mt. Adams, Mt. Rainier"
+      ],
+      "candidate_statuses": [
+        "observed",
+        "rejected",
+        "support_incomplete"
+      ],
+      "terminal_invariant_violations": [],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "conflict_scope_mismatch_ignored",
+          "candidate_hop_ids": [
+            "required_hop_1",
+            "required_hop_2"
+          ],
+          "evidence_ids": [
+            "q_012f7cf9909b0d1e09510ea3::p10",
+            "q_012f7cf9909b0d1e09510ea3::p9"
+          ],
+          "claim": "Columbia County is in Oregon",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "unscoped_conflict_observed",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "candidate_observed",
+          "candidate": "Tualatin Mountains (West Hills), Mt. Tabor, Powell Butte, Rocky Butte, Oregon Coast Range, Cascade Range, Mt. Hood, Mt. St. Helens, Mt. Adams, and Mt. Rainier",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "candidate_observed",
+          "candidate": "Portland, Oregon",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "conflict_scope_mismatch_ignored",
+          "candidate_hop_ids": [
+            "required_hop_1",
+            "required_hop_2"
+          ],
+          "evidence_ids": [
+            "q_012f7cf9909b0d1e09510ea3::p10",
+            "q_012f7cf9909b0d1e09510ea3::p9"
+          ],
+          "claim": "Columbia County is in Oregon",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_conflict_observed",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 1,
+          "incoming_topology_fingerprint": "1234567890",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "state_regression_blocked",
+          "hop_id": "required_hop_2",
+          "from": "verified",
+          "to": "unresolved",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "competing_bound_object_conflict",
+          "hop_id": "required_hop_4",
+          "existing_object": "Tualatin Mountains (West Hills), Mt. Tabor, Powell Butte, Rocky Butte, Oregon Coast Range, Cascade Range, Mt. Hood, Mt. St. Helens, Mt. Adams, and Mt. Rainier",
+          "incoming_object": "Tualatin Mountains, Mt. Tabor, Powell Butte, Rocky Butte, Oregon Coast Range, Cascade Range, Mt. Hood, Mt. St. Helens, Mt. Adams, Mt. Rainier",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_resolved",
+          "hop_id": "required_hop_4",
+          "reason": "unique_typed_identity",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "located_in",
+          "reason": "target_hop_not_repairable",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "state_regression_blocked",
+          "hop_id": "required_hop_3",
+          "from": "verified",
+          "to": "unresolved",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_conflict_observed",
+          "hop_id": "required_hop_1",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "candidate_state_updated",
+          "candidate": "Tualatin Mountains (West Hills), Mt. Tabor, Powell Butte, Rocky Butte, Oregon Coast Range, Cascade Range, Mt. Hood, Mt. St. Helens, Mt. Adams, and Mt. Rainier",
+          "from": "rejected",
+          "to": "rejected",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "candidate_observed",
+          "candidate": "Tualatin Mountains, Mt. Tabor, Powell Butte, Rocky Butte, Oregon Coast Range, Cascade Range, Mt. Hood, Mt. St. Helens, Mt. Adams, Mt. Rainier",
+          "round_idx": 2
+        }
+      ]
+    },
+    {
+      "id": "q_018b8a368316855e9294e73a",
+      "final_answer": "",
+      "final_action": "abstain",
+      "topology_version": 1,
+      "topology_fingerprint": "303d3c127f8bfb2120e18b05f32e6f40099aa6e67364f13a0592dea29f5334a9",
+      "hop_count": 2,
+      "verified_hop_count": 0,
+      "candidate_values": [],
+      "candidate_statuses": [],
+      "terminal_invariant_violations": [],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_2",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_2",
+            "anchor_entity": "Nanjing",
+            "anchor_entity_id": "nanjing",
+            "anchor_entity_type": "",
+            "canonical_relation": "is_capital_of",
+            "expected_object_type": "entity",
+            "missing_component": "object",
+            "suggested_query": "What is the area where Nanjing has been the capital city?",
+            "raw_hint": "is_capital_of"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_2",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_2",
+            "anchor_entity": "Nanjing",
+            "anchor_entity_id": "nanjing",
+            "anchor_entity_type": "",
+            "canonical_relation": "is_capital_of",
+            "expected_object_type": "entity",
+            "missing_component": "object",
+            "suggested_query": "What is the area where Nanjing has been the capital city?",
+            "raw_hint": "is_capital_of"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 0,
+          "incoming_topology_fingerprint": "China Sunergy-headquarters_location-Nanjing, Jiangsu-has_been_capital_of-Yangzhou region-contains_district-Guangling District-duration_as_capital_of-",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "competing_bound_object_conflict",
+          "hop_id": "required_hop_1",
+          "existing_object": "Nanjing",
+          "incoming_object": "Nanjing, Jiangsu",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "unique_typed_identity",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "2|nanjing_jiangsu|has_been_capital_of|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "2|nanjing_jiangsu|has_been_capital_of|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "3|yangzhou_region|contains_district|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "3|yangzhou_region|contains_district|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "4|nanjing_jiangsu|duration_as_capital_of|entity|final",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "4|nanjing_jiangsu|duration_as_capital_of|entity|final",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "has_been_capital_of",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "duration_as_capital_of",
+          "reason": "unknown_target_hop_id",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 2
+        }
+      ]
+    },
+    {
+      "id": "q_00355d33c009072dab282e74",
+      "final_answer": "",
+      "final_action": "abstain",
+      "topology_version": 1,
+      "topology_fingerprint": "bc9523f584a32befc2ef34e044bc67fa7d8cbb2244928e3610f334f49cf7859d",
+      "hop_count": 3,
+      "verified_hop_count": 2,
+      "candidate_values": [],
+      "candidate_statuses": [],
+      "terminal_invariant_violations": [],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "date_of_creation",
+          "reason": "hop_binding_expected_type_mismatch",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {
+            "component": "expected_object_type",
+            "expected": "entity",
+            "observed": "date"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "date_of_creation",
+          "reason": "hop_binding_expected_type_mismatch",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {
+            "component": "expected_object_type",
+            "expected": "entity",
+            "observed": "date"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 1,
+          "incoming_topology_fingerprint": "3210",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "1|region_immediately_north_of_the_region_where_israel_is_located|located_in|location|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "1|region_immediately_north_of_the_region_where_israel_is_located|located_in|location|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "2|final_destination_for_the_export_crops|destination_of|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "2|final_destination_for_the_export_crops|destination_of|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "3|persian_gulf|created_by|organization|final",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "3|persian_gulf|created_by|organization|final",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "created",
+          "reason": "hop_binding_relation_mismatch",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {
+            "component": "relation",
+            "expected": "date_of_creation",
+            "observed": "created_by"
+          },
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 0,
+          "incoming_topology_fingerprint": "3f8a7e1d6a5c4b2e9f0d7a1e6f2c4a5d",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_state_updated",
+          "hop_id": "required_hop_1",
+          "from": "verified",
+          "to": "verified",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "unique_typed_identity",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "3|persian_gulf|created_by|organization|final",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "3|persian_gulf|created_by|organization|final",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "created",
+          "reason": "hop_binding_relation_mismatch",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {
+            "component": "relation",
+            "expected": "date_of_creation",
+            "observed": "created_by"
+          },
+          "round_idx": 3
+        }
+      ]
+    },
+    {
+      "id": "q_00545634562beb8d5262611e",
+      "final_answer": "",
+      "final_action": "abstain",
+      "topology_version": 1,
+      "topology_fingerprint": "3054b36e19dd331b97e41d148b3f62a41c21d8397b0423296cb570954208cf39",
+      "hop_count": 4,
+      "verified_hop_count": 4,
+      "candidate_values": [],
+      "candidate_statuses": [],
+      "terminal_invariant_violations": [],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "has_more_national_championships_than",
+          "reason": "hop_binding_subject_mismatch",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {
+            "component": "subject",
+            "expected": "atlanta_georgia",
+            "observed": "person",
+            "dependency_object_entity_ids": [
+              "atlanta_georgia"
+            ]
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "conflict_scope_mismatch_ignored",
+          "candidate_hop_ids": [
+            "required_hop_3"
+          ],
+          "evidence_ids": [
+            "q_00545634562beb8d5262611e::p0"
+          ],
+          "claim": "The state with the 404 area code is Delaware.",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "unscoped_conflict_observed",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "has_more_national_championships_than",
+          "reason": "hop_binding_subject_mismatch",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {
+            "component": "subject",
+            "expected": "atlanta_georgia",
+            "observed": "person",
+            "dependency_object_entity_ids": [
+              "atlanta_georgia"
+            ]
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "conflict_scope_mismatch_ignored",
+          "candidate_hop_ids": [
+            "required_hop_3"
+          ],
+          "evidence_ids": [
+            "q_00545634562beb8d5262611e::p0"
+          ],
+          "claim": "The state with the 404 area code is Delaware.",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_conflict_observed",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "incoming_topology_invalid",
+          "reason": "multiple_final_hops",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "incoming_topology_invalid",
+          "reason": "multiple_final_hops",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 1,
+          "incoming_topology_fingerprint": "school_with_fort_hill_has_location_clemson_university_facility_in_location_edwards_won_primary_has_location_georgia_state_with_404_area_code_has_area_code_georgia_person_has_more_national_championships_than_university_of_south_carolina",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "1|school_with_fort_hill|located_in|location|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "1|school_with_fort_hill|located_in|location|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "2|facility_in_location_edwards_won_primary|located_in|location|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "2|facility_in_location_edwards_won_primary|located_in|location|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "3|state_with_404_area_code|has_area_code|entity|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "3|state_with_404_area_code|has_area_code|entity|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "4|school_with_fort_hill|has_national_championships|number|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "4|school_with_fort_hill|has_national_championships|number|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "5|facility_in_location_edwards_won_primary|has_national_championships|entity|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "5|facility_in_location_edwards_won_primary|has_national_championships|entity|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "6|state_with_404_area_code|has_national_championships|entity|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "6|state_with_404_area_code|has_national_championships|entity|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_state_updated",
+          "hop_id": "required_hop_4",
+          "from": "unresolved",
+          "to": "verified",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_resolved",
+          "hop_id": "required_hop_4",
+          "reason": "unique_typed_identity",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "has_national_championships",
+          "reason": "unknown_target_hop_id",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "has_national_championships",
+          "reason": "unknown_target_hop_id",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 3
+        }
+      ]
+    },
+    {
+      "id": "q_0056b70f2e6a2356f20bfa03",
+      "final_answer": "KUAT-TV 6",
+      "final_action": "answer",
+      "topology_version": 1,
+      "topology_fingerprint": "5e5812543adee30479684a48106075a6930cfec3f94d6561e300c45120b194f0",
+      "hop_count": 4,
+      "verified_hop_count": 3,
+      "candidate_values": [
+        "KUAT-TV 6"
+      ],
+      "candidate_statuses": [
+        "verified"
+      ],
+      "terminal_invariant_violations": [],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "second_largest_city_in",
+          "reason": "hop_binding_expected_type_mismatch",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {
+            "component": "expected_object_type",
+            "expected": "city",
+            "observed": "location"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "pbs_station_in",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "second_largest_city_in",
+          "reason": "hop_binding_expected_type_mismatch",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {
+            "component": "expected_object_type",
+            "expected": "city",
+            "observed": "location"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "pbs_station_in",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 1,
+          "incoming_topology_fingerprint": "Yuma's Library District -> located_in -> Yuma County, Arizona -> part_of -> Arizona -> second_largest_city_in -> Tucson -> pbs_station_in -> KUAT-TV 6",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "2|yuma_county_arizona|part_of|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "2|yuma_county_arizona|part_of|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_state_updated",
+          "hop_id": "required_hop_3",
+          "from": "unresolved",
+          "to": "verified",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_resolved",
+          "hop_id": "required_hop_3",
+          "reason": "unique_typed_identity",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "4|tucson|pbs_station_in|entity|final",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "4|tucson|pbs_station_in|entity|final",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "candidate_observed",
+          "candidate": "KUAT-TV 6",
+          "round_idx": 2
+        }
+      ]
+    },
+    {
+      "id": "q_0136b0ef9fb6b898da2cb2f3",
+      "final_answer": "",
+      "final_action": "abstain",
+      "topology_version": 1,
+      "topology_fingerprint": "75de1a211471ca2a5d12996b7b935b67fd17b9dc0b97a82ae5a29b6bc9b88a86",
+      "hop_count": 5,
+      "verified_hop_count": 0,
+      "candidate_values": [],
+      "candidate_statuses": [],
+      "terminal_invariant_violations": [],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_1",
+            "anchor_entity": "Veoh's headquarters",
+            "anchor_entity_id": "veoh_s_headquarters",
+            "anchor_entity_type": "",
+            "canonical_relation": "located_in",
+            "expected_object_type": "location",
+            "missing_component": "object",
+            "suggested_query": "Where is Veoh's headquarters located?",
+            "raw_hint": "located_in"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "formed_in",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_1",
+            "anchor_entity": "Veoh's headquarters",
+            "anchor_entity_id": "veoh_s_headquarters",
+            "anchor_entity_type": "",
+            "canonical_relation": "located_in",
+            "expected_object_type": "location",
+            "missing_component": "object",
+            "suggested_query": "Where is Veoh's headquarters located?",
+            "raw_hint": "located_in"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "formed_in",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 0,
+          "incoming_topology_fingerprint": "00000000000000000000000000000000",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_rejected",
+          "reason": "hop_identity_mismatch",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "1|Veoh's headquarters|located_in|location|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "required_hop_1",
+          "incoming_semantic_key": "1|Veoh's headquarters|located_in|location|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_rejected",
+          "reason": "hop_identity_mismatch",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "2|city where Veoh's headquarters is located|rank_in_top_five_largest_urban_areas|number|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "required_hop_2",
+          "incoming_semantic_key": "2|city where Veoh's headquarters is located|rank_in_top_five_largest_urban_areas|number|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_rejected",
+          "reason": "hop_identity_mismatch",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "3|state where The Paramour Sessions' performers were formed|has_top_five_largest_urban_areas|list|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "required_hop_3",
+          "incoming_semantic_key": "3|state where The Paramour Sessions' performers were formed|has_top_five_largest_urban_areas|list|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_rejected",
+          "reason": "hop_identity_mismatch",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "4|city where Veoh's headquarters is located|is_in_state|location|final",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "required_hop_4",
+          "incoming_semantic_key": "4|city where Veoh's headquarters is located|is_in_state|location|final",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_1",
+            "anchor_entity": "Veoh's headquarters",
+            "anchor_entity_id": "veoh_s_headquarters",
+            "anchor_entity_type": "",
+            "canonical_relation": "located_in",
+            "expected_object_type": "location",
+            "missing_component": "object",
+            "suggested_query": "Where is Veoh's headquarters located?",
+            "raw_hint": "located_in"
+          },
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "formed_in",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "is_in_state",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 0,
+          "incoming_topology_fingerprint": "Veoh-headquarters_location-San_Diego-located_in_state-California-performers_formed_in_state-Tennessee-top_five_largest_urban_areas-Knoxville-Chattanooga-Tri-Cities-rank_in_top_five_largest_urban_areas_of_state-missing",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "1|veoh|headquarters_location|city|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "1|veoh|headquarters_location|city|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "2|san_diego|located_in|location|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "2|san_diego|located_in|location|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "3|paramour_sessions|performers_formed_in_state|entity|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "3|paramour_sessions|performers_formed_in_state|entity|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "4|tennessee|top_five_largest_urban_areas|entity|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "4|tennessee|top_five_largest_urban_areas|entity|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "5|san_diego|rank_in_top_five_largest_urban_areas_of_state|entity|final",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "5|san_diego|rank_in_top_five_largest_urban_areas_of_state|entity|final",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "unique_dependency_frontier",
+          "requirement": {
+            "target_hop_id": "",
+            "anchor_entity": "",
+            "anchor_entity_id": "",
+            "anchor_entity_type": "",
+            "canonical_relation": "",
+            "expected_object_type": "",
+            "missing_component": "object",
+            "suggested_query": "",
+            "raw_hint": "q_0136b0ef9fb6b898da2cb2f3::p15"
+          },
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "unique_dependency_frontier",
+          "requirement": {
+            "target_hop_id": "",
+            "anchor_entity": "",
+            "anchor_entity_id": "",
+            "anchor_entity_type": "",
+            "canonical_relation": "",
+            "expected_object_type": "",
+            "missing_component": "object",
+            "suggested_query": "",
+            "raw_hint": "q_0136b0ef9fb6b898da2cb2f3::p18"
+          },
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 3
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "source": "runs\\layer1_siliconflow_qwen3_14b_semantic_terminal_safety_targeted1_20260715_r29\\trajectories.jsonl",
+  "row_count": 1,
+  "event_counts": {
+    "hop_schema_drift_ignored": 6,
+    "hop_state_updated": 1,
+    "hop_update_resolved": 1,
+    "hop_update_unmapped": 6,
+    "missing_requirement_rejected": 8,
+    "sentinel_candidate_ignored": 3,
+    "topology_initialized": 1,
+    "topology_update_rejected": 2,
+    "unscoped_typed_reject_observed": 3
+  },
+  "phase_event_counts": {
+    "planning:missing_requirement_rejected": 3,
+    "planning:sentinel_candidate_ignored": 1,
+    "planning:topology_initialized": 1,
+    "planning:topology_update_rejected": 2,
+    "planning:unscoped_typed_reject_observed": 1,
+    "terminal:hop_schema_drift_ignored": 6,
+    "terminal:hop_state_updated": 1,
+    "terminal:hop_update_resolved": 1,
+    "terminal:hop_update_unmapped": 6,
+    "terminal:missing_requirement_rejected": 5,
+    "terminal:sentinel_candidate_ignored": 2,
+    "terminal:unscoped_typed_reject_observed": 2
+  },
+  "same_round_topology_update_rejected": 0,
+  "unsafe_failure_candidate_transitions": 0,
+  "structured_legacy_requirement_items": 0,
+  "structured_requirement_objects_after_replay": 5,
+  "terminal_invariant_violation_count": 0,
+  "terminal_invariant_counts": {},
+  "terminal_invariant_samples": {},
+  "topology_revision_applied_samples": [],
+  "samples": [
+    {
+      "id": "4hop1__151650_5274_458768_33632",
+      "final_answer": "",
+      "final_action": "abstain",
+      "topology_version": 1,
+      "topology_fingerprint": "7e8efac6e8f358484dde8dd00ed58f89139a732c21f629623ae53df043b23d88",
+      "hop_count": 4,
+      "verified_hop_count": 1,
+      "candidate_values": [],
+      "candidate_statuses": [],
+      "terminal_invariant_violations": [],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "only_group_larger_than",
+          "reason": "hop_binding_expected_type_mismatch",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {
+            "component": "expected_object_type",
+            "expected": "organization",
+            "observed": "entity"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "headquarters_city",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "feast_day",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "only_group_larger_than",
+          "reason": "hop_binding_expected_type_mismatch",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {
+            "component": "expected_object_type",
+            "expected": "organization",
+            "observed": "entity"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "headquarters_city",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "feast_day",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 0,
+          "incoming_topology_fingerprint": "5hop_chain",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "2|sony_music_entertainment|headquarters_location|city|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "2|sony_music_entertainment|headquarters_location|city|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "3|headquarters_location|city|city|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "3|headquarters_location|city|city|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "4|city|feast|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "4|city|feast|entity|bridge",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "5|feast_of_our_lady_of_the_rosary|date_of_event|entity|final",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "5|feast_of_our_lady_of_the_rosary|date_of_event|entity|final",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "date_of_event",
+          "reason": "unknown_target_hop_id",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {},
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "topology_update_rejected",
+          "reason": "topology_fingerprint_mismatch",
+          "incoming_topology_version": 1,
+          "incoming_topology_fingerprint": "3hop",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_state_updated",
+          "hop_id": "required_hop_1",
+          "from": "verified",
+          "to": "verified",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_resolved",
+          "hop_id": "required_hop_1",
+          "reason": "unique_typed_identity",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "2|sony_music_entertainment|headquarters_location|city|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "2|sony_music_entertainment|headquarters_location|city|bridge",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_update_unmapped",
+          "reason": "no_typed_hop_match",
+          "candidate_hop_ids": [],
+          "incoming_semantic_key": "3|foligno|feast_date|entity|final",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "hop_schema_drift_ignored",
+          "hop_id": "",
+          "incoming_semantic_key": "3|foligno|feast_date|entity|final",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "headquarters_location",
+          "reason": "hop_binding_relation_mismatch",
+          "candidate_hop_ids": [],
+          "binding_mismatch": {
+            "component": "relation",
+            "expected": "parent_organization",
+            "observed": "headquarters_location"
+          },
+          "round_idx": 3
+        }
+      ]
+    }
+  ]
+}

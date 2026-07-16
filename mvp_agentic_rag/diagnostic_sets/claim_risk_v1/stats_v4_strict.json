@@ -1,0 +1,40 @@
+{
+  "valid": true,
+  "record_count": 172,
+  "duplicate_ids": [],
+  "schema_issue_count": 0,
+  "schema_issue_records": {},
+  "status_issue_records": [],
+  "human_review_issue_records": [],
+  "dev_count": 52,
+  "test_count": 120,
+  "dev_test_overlap_ids": [],
+  "test_status_issue_records": [],
+  "missing_test_risk_types": [],
+  "expected_risk_types": [
+    "answer_extraction_failure",
+    "critical_gap",
+    "repairable_missing_hop",
+    "supported_answer",
+    "wrong_target"
+  ],
+  "scarce_risk_types": [
+    "contradiction"
+  ],
+  "risk_type_coverage": {
+    "supported_answer": 20,
+    "repairable_missing_hop": 133,
+    "answer_extraction_failure": 1,
+    "contradiction": 12,
+    "critical_gap": 4,
+    "wrong_target": 2
+  },
+  "test_risk_type_coverage": {
+    "supported_answer": 14,
+    "wrong_target": 1,
+    "repairable_missing_hop": 93,
+    "contradiction": 8,
+    "critical_gap": 3,
+    "answer_extraction_failure": 1
+  }
+}

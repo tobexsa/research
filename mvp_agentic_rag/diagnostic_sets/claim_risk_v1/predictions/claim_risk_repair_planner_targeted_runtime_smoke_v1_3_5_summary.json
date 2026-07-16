@@ -1,0 +1,15 @@
+{
+  "diagnostic_count": 6,
+  "prediction_count": 0,
+  "prediction_coverage_rate": 0.0,
+  "source_run_override": "layer1_siliconflow_qwen3_14b_repair_planner_targeted_runtime_smoke_v1_3_5_20260708",
+  "source_runs": [
+    "layer1_siliconflow_qwen3_14b_repair_planner_targeted_runtime_smoke_v1_3_5_20260708"
+  ],
+  "terminal_carry_forward": true,
+  "terminal_carry_forward_count": 0,
+  "unmatched_by_reason": {
+    "unmatched_no_sample_id": 6
+  },
+  "unmatched_count": 6
+}

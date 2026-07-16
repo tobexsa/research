@@ -22,7 +22,8 @@
 - [x] Run R28 serially only after R27 passes audit.
 - [x] Audit R28 metrics, markers, state replay, and unsupported=0: rejected;
   unsupported was `0.0500` and strict-lane activation was zero.
-- [ ] Write and verify the aggregate 2x2 comparison.
+- [x] Replace the invalid raw 2x2 causal reading with shared-certificate
+  activation-aware attribution and verify it on all relevant streams.
 
 Frozen evidence:
 
@@ -49,36 +50,39 @@ Frozen evidence:
   terminal unsupported-answer failure and zero strict activation are resolved.
 - [x] Record post-R28 route decision:
   `analysis/semantic_fusion_phase3_r28_next_decision_20260715.md`.
-- [ ] Implement general terminal fail-closed and dependency-closure guards.
-- [ ] Add terminal replay invariants and deterministic regression tests.
-- [ ] Pass offending-case probe and repaired 12-case gate.
-- [ ] Complete activation-aware shared-certificate component attribution.
+- [x] Implement general terminal fail-closed and dependency-closure guards.
+- [x] Add terminal replay invariants and deterministic regression tests.
+- [x] Pass offending-case probe and repaired deterministic/online safety gates.
+- [x] Complete activation-aware shared-certificate component attribution.
 
 ## Independent Repeated Runs
 
-- [ ] Freeze fresh Fusion and generic-only repeat configs after ablations.
-- [ ] Record why these are independent repeats rather than seeded repeats.
-- [ ] Produce at least three total observations per main variant when feasible.
-- [ ] Report mean, sample standard deviation, range, paired deltas, and
+- [x] Freeze fresh adapter-only incumbent and generic-only repeat configs after
+  attribution.
+- [x] Record why these are independent repeats rather than seeded repeats.
+- [x] Produce exactly two fresh observations per variant under the later frozen
+  no-extra-draw protocol; historical R25/R26 are non-primary.
+- [x] Report mean, sample standard deviation, range, paired deltas, and
   per-example stability.
-- [ ] Confirm unsupported=0 and safety replay for every repeat.
+- [x] Confirm unsupported=0 and safety replay for every repeat.
 
 ## Matched Modern Baselines
 
-- [ ] Read and freeze benchmark/split/preprocessing/evaluator/metric contract.
-- [ ] Inventory local or attachable candidate baselines before downloading.
-- [ ] Select a primary comparator and label fallback/infrastructure comparators.
-- [ ] Store each route under `baselines/local/` or `baselines/imported/`.
-- [ ] Run a bounded smoke before each substantial reproduction.
-- [ ] Verify completion, source identity, metrics, deviations, feasibility, and
+- [x] Read and freeze benchmark/split/preprocessing/evaluator/metric contract.
+- [x] Inventory local and paper-linked candidate baselines before downloading.
+- [x] Select a primary comparator and label infrastructure comparators.
+- [x] Store the route under `baselines/local/`.
+- [x] Run a bounded deterministic smoke before reproduction.
+- [x] Verify completion, source identity, metrics, deviations, feasibility, and
   downstream trust class.
-- [ ] Reject direct comparison to published numbers from unmatched protocols.
-- [ ] Publish a self-contained matched-baseline verification report.
+- [x] Reject direct comparison to published numbers from unmatched protocols.
+- [x] Publish a self-contained matched-baseline verification report locally.
 
 ## Aggregation And Closeout
 
-- [ ] Classify stable support, contradiction, or unresolved ambiguity.
-- [ ] Summarize highest-impact findings first without hiding null results.
-- [ ] Write the phase-3 campaign report and explicit next-route decision.
-- [ ] Enter non-leaking standard MuSiQue dev/test only after all phase-3 gates.
-- [ ] Keep 300-sample and paper experiments deferred until the final phase.
+- [x] Classify as stable support with narrowed strict-router attribution.
+- [x] Summarize highest-impact findings first without hiding null results.
+- [x] Write the phase-3 campaign report and explicit next-route decision.
+- [x] Authorize non-leaking standard MuSiQue dev/test only after all phase-3
+  gates; phase 4 is next and not yet executed.
+- [x] Keep 300-sample and paper experiments deferred until the final phase.

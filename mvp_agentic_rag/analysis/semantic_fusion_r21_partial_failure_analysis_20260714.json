@@ -1,0 +1,146 @@
+{
+  "status": "partial_gate_failed",
+  "completed": 8,
+  "total": 12,
+  "partial_metrics": {
+    "run_name": "r21_partial_8",
+    "methods": {
+      "claim_risk": {
+        "count": 8,
+        "overall_acc": 0.75,
+        "overall_em": 0.75,
+        "answer_f1": 0.8125,
+        "avg_retrieval_calls": 1.75,
+        "unsupported_claim_rate": 0.5,
+        "abstention_rate": 0.125,
+        "no_new_evidence_call_rate": 0,
+        "coverage": 0.875,
+        "selective_acc": 0.8571428571428571,
+        "selective_answer_f1": 0.9285714285714286,
+        "cost_normalized_acc": 0.42857142857142855,
+        "cost_normalized_f1": 0.4642857142857143,
+        "wasted_retrieval_rate": 0,
+        "answered_unsupported_rate": 0.5714285714285714,
+        "final_answered_unsupported_rate": 0,
+        "final_answered_unsupported_excluding_structured_slot_verified_rate": 0,
+        "structured_slot_verified_final_answer_count": 3,
+        "final_answered_unsupported_structured_slot_verified_count": 0,
+        "normalized_answer_match_count": 6,
+        "normalized_answer_match_rate": 0.8571428571428571,
+        "alias_or_surface_form_mismatch_count": 0,
+        "alias_or_surface_form_mismatch_rate": 0,
+        "abstention_precision": 0,
+        "evaluation_slices": {
+          "all_support_retrieved_no_candidate": {
+            "count": 0,
+            "eligible_count": 7,
+            "rate": 0.0,
+            "sample_ids": []
+          },
+          "correct_candidate_rejected": {
+            "count": 1,
+            "eligible_count": 7,
+            "rate": 0.14285714285714285,
+            "sample_ids": [
+              "2hop__167577_31122"
+            ]
+          },
+          "gold_support_not_textually_entailing": {
+            "count": 0,
+            "eligible_count": 8,
+            "rate": 0.0,
+            "sample_ids": []
+          }
+        },
+        "hop_metrics": {
+          "2hop": {
+            "count": 5,
+            "answered": 4,
+            "overall_acc": 0.6,
+            "overall_em": 0.6,
+            "answer_f1": 0.7,
+            "coverage": 0.8,
+            "selective_acc": 0.75,
+            "selective_answer_f1": 0.875
+          },
+          "3hop": {
+            "count": 1,
+            "answered": 1,
+            "overall_acc": 1,
+            "overall_em": 1,
+            "answer_f1": 1.0,
+            "coverage": 1.0,
+            "selective_acc": 1,
+            "selective_answer_f1": 1.0
+          },
+          "4hop": {
+            "count": 2,
+            "answered": 2,
+            "overall_acc": 1,
+            "overall_em": 1,
+            "answer_f1": 1.0,
+            "coverage": 1.0,
+            "selective_acc": 1,
+            "selective_answer_f1": 1.0
+          }
+        }
+      }
+    }
+  },
+  "completed_gain_count": 5,
+  "retained_gain_count": 4,
+  "retained_gain_ids": [
+    "2hop__136179_13529",
+    "3hop1__136129_87694_124169",
+    "4hop1__161810_583746_457883_650651",
+    "4hop1__236903_153080_33897_81096"
+  ],
+  "completed_loss_count": 3,
+  "recovered_loss_count": 2,
+  "recovered_loss_ids": [
+    "2hop__194469_83289",
+    "2hop__23459_35124"
+  ],
+  "hard_gate_failed": true,
+  "failure_slices": {
+    "ordinal_surface_conflict": {
+      "sample_id": "2hop__167577_31122",
+      "r20_answer": "18th",
+      "r21_answer": "",
+      "events": [
+        {
+          "event": "competing_bound_object_conflict",
+          "existing_object": "18th century",
+          "hop_id": "required_hop_2",
+          "incoming_object": "18th",
+          "round_idx": 2
+        }
+      ],
+      "root_cause": "surface-equivalent ordinal values ('18th century' and '18th') were treated as competing objects, creating a false hard conflict",
+      "recommended_fix": "compare hop objects with type-aware ordinal equivalence before emitting competing_bound_object_conflict"
+    },
+    "date_granularity_collapse": {
+      "sample_id": "2hop__142699_67465",
+      "r12_answer": "March 11, 2011.",
+      "r21_answer": "2011",
+      "binding_value": "2011",
+      "binding_evidence_ids": [
+        "2hop__142699_67465::p11"
+      ],
+      "answer_type": "date",
+      "full_dates_in_retrieved_evidence": [
+        "March 11, 2011"
+      ],
+      "root_cause": "the generic verifier bound a bare year even though the same local final-hop evidence contained one more specific full date",
+      "recommended_fix": "for a date target and a bare-year candidate, promote only a unique same-year full date from the binding evidence IDs; otherwise fail closed"
+    },
+    "external_endpoint": {
+      "status": "blocked",
+      "error": "HTTP 403 Forbidden",
+      "first_failure_after_completed": 8,
+      "retry_added_rows": 0,
+      "methodological_interpretation": "none"
+    }
+  },
+  "decision": "Do not launch phase 2. Repair ordinal equivalence and unique local date precision as explicit generic-compatibility invariants, validate offline, then retry the same fixed 12-case gate when the endpoint is available."
+}

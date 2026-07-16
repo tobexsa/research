@@ -1,0 +1,19 @@
+run_name: musique_2hop_proxy_diag_bm25_top20_dev_agentic_rag_baseline_c1
+dataset: data/musique_2hop_proxy/dev.jsonl
+corpus: data/musique_2hop_proxy/corpus.jsonl
+output_dir: runs/musique_2hop_proxy_diag_bm25_top20_dev_agentic_rag_baseline_c1
+retriever: bm25
+methods: [agentic_rag_baseline, claim_risk]
+top_k: 20
+max_rounds: 3
+progress_every: 50
+progress_display: plain
+answer_backend: heuristic
+verifier_backend: weak
+query_decomposition: none
+claim_evidence_checklist: true
+claim_evidence_query_generator: checklist
+claim_evidence_checklist_include_found_constraints: true
+claim_evidence_checklist_max_found_constraints: 2
+claim_evidence_checklist_max_query_terms: 24
+claim_evidence_checklist_rematch_min_overlap: 0.55

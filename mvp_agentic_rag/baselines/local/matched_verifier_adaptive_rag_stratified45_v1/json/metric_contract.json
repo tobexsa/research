@@ -1,0 +1,83 @@
+{
+  "baseline_id": "matched_verifier_adaptive_rag_stratified45_v1",
+  "status": "verified_complete",
+  "task": "selective multi-hop question answering",
+  "dataset": {
+    "path": "data/musique_mvp_stratified45.jsonl",
+    "sha256": "2B4A0DFAD40AC8B120FF59862FCBF216C5AD419EC7E2783E35534281653D63A5",
+    "rows": 45,
+    "split_semantics": "targeted stratified development surface; not standard MuSiQue dev/test"
+  },
+  "primary_variant": "agentic_rag_baseline",
+  "secondary_variants": [
+    "prompt_verifier",
+    "fixed_k"
+  ],
+  "required_metric_ids": [
+    "overall_em",
+    "answer_f1",
+    "coverage",
+    "selective_acc",
+    "selective_answer_f1",
+    "avg_retrieval_calls",
+    "wasted_retrieval_rate",
+    "final_answered_unsupported_rate",
+    "hop_metrics"
+  ],
+  "metric_direction": {
+    "overall_em": "higher",
+    "answer_f1": "higher",
+    "coverage": "contextual",
+    "selective_acc": "higher",
+    "selective_answer_f1": "higher",
+    "avg_retrieval_calls": "lower_at_equal_quality",
+    "wasted_retrieval_rate": "lower",
+    "final_answered_unsupported_rate": "lower"
+  },
+  "evaluator": "src/mvp_agentic_rag/evaluator.py",
+  "comparison_target": "adapter-only A1/A2 mean under semantic_adapter_generic_online_stability_v1_20260715",
+  "published_number_policy": "unmatched published split/protocol numbers are provenance only, never direct numeric comparators",
+  "config": {
+    "path": "configs/layer1_siliconflow_qwen3_14b_matched_verifier_adaptive_baselines_stratified45_20260715_v1.yaml",
+    "sha256": "D456B238A5147D7CBA14F72B94A8813F6E92FE6C870FE62F84E7983C471991D2"
+  },
+  "output_dir": "runs/layer1_siliconflow_qwen3_14b_matched_verifier_adaptive_agentic_rag_baseline_stratified45_20260715_v1",
+  "metrics_summary": {
+    "agentic_rag_baseline": {
+      "overall_em": 0.1111111111111111,
+      "answer_f1": 0.1511111111111111,
+      "coverage": 0.26666666666666666,
+      "selective_acc": 0.4166666666666667,
+      "selective_answer_f1": 0.5666666666666667,
+      "avg_retrieval_calls": 2.488888888888889,
+      "wasted_retrieval_rate": 0.6666666666666666,
+      "final_answered_unsupported_rate": 0.0
+    },
+    "prompt_verifier": {
+      "overall_em": 0.08888888888888889,
+      "answer_f1": 0.1111111111111111,
+      "coverage": 0.2,
+      "selective_acc": 0.4444444444444444,
+      "selective_answer_f1": 0.5555555555555556,
+      "avg_retrieval_calls": 1.0,
+      "wasted_retrieval_rate": 0.0,
+      "final_answered_unsupported_rate": 0.0
+    },
+    "fixed_k": {
+      "overall_em": 0.15555555555555556,
+      "answer_f1": 0.24931216931216932,
+      "coverage": 1.0,
+      "selective_acc": 0.15555555555555556,
+      "selective_answer_f1": 0.24931216931216932,
+      "avg_retrieval_calls": 3.0,
+      "wasted_retrieval_rate": 1.0,
+      "final_answered_unsupported_rate": 0.0
+    }
+  },
+  "verification": {
+    "completed_date": "2026-07-16",
+    "feasibility": "degraded_but_acceptable",
+    "downstream_trust": "verified_for_local_matched_contract",
+    "paper_reproduction": false
+  }
+}

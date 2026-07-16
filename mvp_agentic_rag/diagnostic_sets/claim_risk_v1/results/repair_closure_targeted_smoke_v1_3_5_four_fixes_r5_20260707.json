@@ -1,0 +1,261 @@
+{
+  "run_dir": "runs\\layer1_siliconflow_qwen3_14b_repair_closure_targeted_runtime_smoke_v1_3_5_four_fixes_r5_20260707",
+  "sample_count": 6,
+  "checks": {
+    "answer_extraction_failure_live_path_attempted": true,
+    "typed_reject_blocks_repair_acceptance": true,
+    "wrong_target_runtime_blocks_unsafe_final": true,
+    "wrong_target_blocked_by_repair_routing_not_guard": true,
+    "generic_refine_query_single_hop_cleanup": true,
+    "answer_safety_guard_fixture_covered_by_unit_test": true,
+    "runtime_core_checks_passed": true,
+    "strict_runtime_guard_round_present": false
+  },
+  "rows": [
+    {
+      "id": "2hop__10620_49084",
+      "final_action": "answer",
+      "final_answer": "Liam Garrigan",
+      "gold_answer": "Liam Thomas Garrigan",
+      "rounds": 1,
+      "queries": [
+        "Who plays the legendary figure featured in Historia Regum Britanniae in the show Once Upon a Time?"
+      ],
+      "actions": [
+        "answer"
+      ],
+      "repair_actions": [],
+      "answer_extraction_repair_attempt_rounds": [],
+      "answer_safety_guard_rounds": [],
+      "generic_refine_query_cleanup_rounds": [],
+      "typed_categories": [],
+      "repair_acceptance_by_round": []
+    },
+    {
+      "id": "2hop__167577_31122",
+      "final_action": "abstain",
+      "final_answer": "",
+      "gold_answer": "18th",
+      "rounds": 3,
+      "queries": [
+        "What century did the author of A Treatise Concerning the Principles of Human Knowledge live in?",
+        "What were the birth and death dates of George Berkeley?",
+        "What were the birth and death dates of George Berkeley?"
+      ],
+      "actions": [
+        "refine_query",
+        "refine_query",
+        "abstain"
+      ],
+      "repair_actions": [],
+      "answer_extraction_repair_attempt_rounds": [],
+      "answer_safety_guard_rounds": [],
+      "generic_refine_query_cleanup_rounds": [],
+      "typed_categories": [],
+      "repair_acceptance_by_round": []
+    },
+    {
+      "id": "2hop__194469_83289",
+      "final_action": "abstain",
+      "final_answer": "",
+      "gold_answer": "Matt Bennett",
+      "rounds": 3,
+      "queries": [
+        "Who is the guy in the One Last Time video by the participant in The Listening Sessions?",
+        "Matt Bennett participant",
+        "Matt Bennett is the guy in the One Last Time video"
+      ],
+      "actions": [
+        "ordered_hop_repair",
+        "ordered_hop_repair",
+        "abstain"
+      ],
+      "repair_actions": [
+        "ordered_hop_repair",
+        "ordered_hop_repair",
+        "ordered_hop_repair"
+      ],
+      "answer_extraction_repair_attempt_rounds": [],
+      "answer_safety_guard_rounds": [],
+      "generic_refine_query_cleanup_rounds": [],
+      "typed_categories": [
+        {
+          "round": 1,
+          "category": "empty_binding",
+          "reason": "binding_verifier_rejected"
+        },
+        {
+          "round": 2,
+          "category": "empty_binding",
+          "reason": "binding_verifier_rejected"
+        },
+        {
+          "round": 3,
+          "category": "verifier_parse_failure",
+          "reason": "binding_verifier_rejected"
+        }
+      ],
+      "repair_acceptance_by_round": [
+        {
+          "round": 1,
+          "acceptance": "unresolved",
+          "state": "repair_unresolved_terminal",
+          "closed": "repair_unresolved_terminal",
+          "typed_passed": false,
+          "action": "ordered_hop_repair"
+        },
+        {
+          "round": 2,
+          "acceptance": "unresolved",
+          "state": "repair_unresolved_terminal",
+          "closed": "repair_unresolved_terminal",
+          "typed_passed": false,
+          "action": "ordered_hop_repair"
+        },
+        {
+          "round": 3,
+          "acceptance": "rejected",
+          "state": "repair_failed",
+          "closed": "repair_rejected",
+          "typed_passed": false,
+          "action": "abstain"
+        }
+      ]
+    },
+    {
+      "id": "3hop1__145194_160545_62931",
+      "final_action": "abstain",
+      "final_answer": "",
+      "gold_answer": "island Koh Phi Phi",
+      "rounds": 1,
+      "queries": [
+        "The Beach was filmed in what location of the country that contains the birth city of Siddhi Savetsila?"
+      ],
+      "actions": [
+        "abstain"
+      ],
+      "repair_actions": [
+        "answer_extraction_repair"
+      ],
+      "answer_extraction_repair_attempt_rounds": [
+        1
+      ],
+      "answer_safety_guard_rounds": [],
+      "generic_refine_query_cleanup_rounds": [],
+      "typed_categories": [
+        {
+          "round": 1,
+          "category": "answer_extraction_failure",
+          "reason": "binding_verifier_rejected"
+        }
+      ],
+      "repair_acceptance_by_round": [
+        {
+          "round": 1,
+          "acceptance": "rejected",
+          "state": "repair_failed",
+          "closed": "repair_rejected",
+          "typed_passed": false,
+          "action": "abstain"
+        }
+      ]
+    },
+    {
+      "id": "3hop1__144439_443779_52195",
+      "final_action": "abstain",
+      "final_answer": "",
+      "gold_answer": "Francisco Guterres",
+      "rounds": 3,
+      "queries": [
+        "who is the president of newly declared independent country of the country of the birthplace of Mulham Arufin–Timor Leste Commission of Truth and Friendship?",
+        "Who is the current president of the newly declared independent country at the time?",
+        "What person answers Friendship?"
+      ],
+      "actions": [
+        "refine_query",
+        "refine_query",
+        "abstain"
+      ],
+      "repair_actions": [],
+      "answer_extraction_repair_attempt_rounds": [],
+      "answer_safety_guard_rounds": [],
+      "generic_refine_query_cleanup_rounds": [
+        2
+      ],
+      "typed_categories": [
+        {
+          "round": 1,
+          "category": "verifier_parse_failure",
+          "reason": "binding_verifier_rejected"
+        },
+        {
+          "round": 2,
+          "category": "verifier_parse_failure",
+          "reason": "binding_verifier_rejected"
+        },
+        {
+          "round": 3,
+          "category": "verifier_parse_failure",
+          "reason": "binding_verifier_rejected"
+        }
+      ],
+      "repair_acceptance_by_round": []
+    },
+    {
+      "id": "2hop__131951_643670",
+      "final_action": "abstain",
+      "final_answer": "",
+      "gold_answer": "Het Scheur",
+      "rounds": 2,
+      "queries": [
+        "What is the name for the mouth of the watercourse of the body of water by Rotterdam Centrum?",
+        "Nieuwe Maas River mouth of the watercourse"
+      ],
+      "actions": [
+        "ordered_hop_repair",
+        "abstain"
+      ],
+      "repair_actions": [
+        "ordered_hop_repair",
+        "ordered_hop_repair"
+      ],
+      "answer_extraction_repair_attempt_rounds": [],
+      "answer_safety_guard_rounds": [],
+      "generic_refine_query_cleanup_rounds": [],
+      "typed_categories": [
+        {
+          "round": 1,
+          "category": "wrong_target",
+          "reason": "mouth_watercourse_downstream_continuation"
+        },
+        {
+          "round": 2,
+          "category": "wrong_target",
+          "reason": "mouth_watercourse_downstream_continuation"
+        }
+      ],
+      "repair_acceptance_by_round": [
+        {
+          "round": 1,
+          "acceptance": "unresolved",
+          "state": "repair_unresolved_terminal",
+          "closed": "repair_unresolved_terminal",
+          "typed_passed": false,
+          "action": "ordered_hop_repair"
+        },
+        {
+          "round": 2,
+          "acceptance": "unresolved",
+          "state": "repair_unresolved_terminal",
+          "closed": "repair_unresolved_terminal",
+          "typed_passed": false,
+          "action": "abstain"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "2hop__131951_643670 was blocked by wrong_target typed reject plus controller ordered_hop_repair routing before an answer action, so answer_safety_guard did not need to fire in this runtime trajectory.",
+    "answer_safety_guard trigger is covered by unit fixture test_mouth_watercourse_parse_failure_does_not_allow_safe_nieuwe_waterweg_answer and test_answer_safety_guard_sees_pre_final_slot_metadata."
+  ]
+}

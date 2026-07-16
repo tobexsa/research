@@ -1,0 +1,335 @@
+{
+  "all_records_metrics": {
+    "claim_support_accuracy": 0.0,
+    "evaluated_count": 0,
+    "oracle_action_accuracy": 0.0,
+    "status": "available"
+  },
+  "by_oracle_action": {},
+  "by_risk_type": {},
+  "by_source_run": {},
+  "clean_claims_metrics": {
+    "count": 0,
+    "status": "not_available"
+  },
+  "diagnostic_metrics": {
+    "bridge_as_final_accuracy": 0.0,
+    "bridge_as_final_metrics": {
+      "accuracy": 0.0,
+      "f1": 0.0,
+      "false_negative": 0,
+      "false_positive": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0,
+      "true_negative": 0,
+      "true_positive": 0
+    },
+    "claim_support_accuracy": 0.0,
+    "claim_support_correct": 0,
+    "claim_support_total": 0,
+    "evidence_sufficiency_accuracy": 0.0,
+    "evidence_sufficiency_macro_f1": 0.0,
+    "evidence_sufficiency_metrics": {
+      "accuracy": 0.0,
+      "balanced_accuracy": 0.0,
+      "confusion": {},
+      "macro_f1": 0.0,
+      "macro_precision": 0.0,
+      "macro_recall": 0.0,
+      "per_label": {
+        "conflicting": {
+          "accuracy": 0.0,
+          "f1": 0.0,
+          "false_negative": 0,
+          "false_positive": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 0,
+          "true_negative": 0,
+          "true_positive": 0
+        },
+        "insufficient": {
+          "accuracy": 0.0,
+          "f1": 0.0,
+          "false_negative": 0,
+          "false_positive": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 0,
+          "true_negative": 0,
+          "true_positive": 0
+        },
+        "sufficient": {
+          "accuracy": 0.0,
+          "f1": 0.0,
+          "false_negative": 0,
+          "false_positive": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 0,
+          "true_negative": 0,
+          "true_positive": 0
+        },
+        "unclear": {
+          "accuracy": 0.0,
+          "f1": 0.0,
+          "false_negative": 0,
+          "false_positive": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 0,
+          "true_negative": 0,
+          "true_positive": 0
+        }
+      }
+    },
+    "risk_type_metrics": {
+      "answer_extraction_failure": {
+        "accuracy": 0.0,
+        "f1": 0.0,
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0,
+        "true_negative": 0,
+        "true_positive": 0
+      },
+      "bridge_as_final": {
+        "accuracy": 0.0,
+        "f1": 0.0,
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0,
+        "true_negative": 0,
+        "true_positive": 0
+      },
+      "contradiction": {
+        "accuracy": 0.0,
+        "f1": 0.0,
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0,
+        "true_negative": 0,
+        "true_positive": 0
+      },
+      "critical_gap": {
+        "accuracy": 0.0,
+        "f1": 0.0,
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0,
+        "true_negative": 0,
+        "true_positive": 0
+      },
+      "repairable_missing_hop": {
+        "accuracy": 0.0,
+        "f1": 0.0,
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0,
+        "true_negative": 0,
+        "true_positive": 0
+      },
+      "supported_answer": {
+        "accuracy": 0.0,
+        "f1": 0.0,
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0,
+        "true_negative": 0,
+        "true_positive": 0
+      },
+      "wrong_target": {
+        "accuracy": 0.0,
+        "f1": 0.0,
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0,
+        "true_negative": 0,
+        "true_positive": 0
+      }
+    },
+    "wrong_target_accuracy": 0.0,
+    "wrong_target_metrics": {
+      "accuracy": 0.0,
+      "f1": 0.0,
+      "false_negative": 0,
+      "false_positive": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 0,
+      "true_negative": 0,
+      "true_positive": 0
+    }
+  },
+  "go_or_no_go_for_checkpoint_c_evaluation": "no_go",
+  "input_counts": {
+    "evaluated_count": 0,
+    "gold_count": 6,
+    "prediction_count": 0
+  },
+  "policy_metrics": {
+    "abstention_precision": 0.0,
+    "abstention_recall": 0.0,
+    "action_confusion": {},
+    "answer_false_negative_but_final_correct_count": 0,
+    "balanced_action_accuracy": 0.0,
+    "final_outcome_correct_after_repair_count": 0,
+    "intermediate_repair_step_error_count": 0,
+    "missed_repair_opportunity_rate": 0.0,
+    "oracle_action_accuracy": 0.0,
+    "oracle_action_macro_f1": 0.0,
+    "over_abstain_rate": 0.0,
+    "per_action": {
+      "abstain": {
+        "accuracy": 0.0,
+        "f1": 0.0,
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0,
+        "true_negative": 0,
+        "true_positive": 0
+      },
+      "answer": {
+        "accuracy": 0.0,
+        "f1": 0.0,
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0,
+        "true_negative": 0,
+        "true_positive": 0
+      },
+      "disambiguate_conflict": {
+        "accuracy": 0.0,
+        "f1": 0.0,
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0,
+        "true_negative": 0,
+        "true_positive": 0
+      },
+      "read_more": {
+        "accuracy": 0.0,
+        "f1": 0.0,
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0,
+        "true_negative": 0,
+        "true_positive": 0
+      },
+      "refine_query": {
+        "accuracy": 0.0,
+        "f1": 0.0,
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0,
+        "true_negative": 0,
+        "true_positive": 0
+      },
+      "repair_missing_hop": {
+        "accuracy": 0.0,
+        "f1": 0.0,
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 0,
+        "true_negative": 0,
+        "true_positive": 0
+      }
+    },
+    "repair_target_exact_match": 0.0,
+    "repair_target_partial_match": {
+      "anchor_entity": 0.0,
+      "missing_hop": 0.0,
+      "suggested_query": 0.0,
+      "target_relation": 0.0
+    },
+    "terminal_carry_forward_unsafe_count": 0,
+    "unsafe_answer_rate": 0.0,
+    "unsafe_answer_rate_excluding_terminal_carry_forward": 0.0
+  },
+  "prediction_integrity": {
+    "duplicate_gold_count": 0,
+    "duplicate_gold_ids": [],
+    "duplicate_prediction_count": 0,
+    "duplicate_prediction_ids": [],
+    "extra_prediction_count": 0,
+    "extra_prediction_ids": [],
+    "gold_count": 6,
+    "matched_prediction_count": 0,
+    "missing_prediction_count": 6,
+    "missing_prediction_ids": [
+      "2hop__10620_49084",
+      "2hop__131951_643670",
+      "2hop__167577_31122",
+      "2hop__194469_83289",
+      "3hop1__144439_443779_52195",
+      "3hop1__145194_160545_62931"
+    ],
+    "prediction_count": 0,
+    "prediction_schema_issue_count": 0,
+    "prediction_schema_issue_records": {}
+  },
+  "scarce_bucket_notes": [
+    {
+      "note": "support_below_5_do_not_use_alone_for_training_decision",
+      "risk_type": "answer_extraction_failure",
+      "support": 0
+    },
+    {
+      "note": "support_below_5_do_not_use_alone_for_training_decision",
+      "risk_type": "bridge_as_final",
+      "support": 0
+    },
+    {
+      "note": "support_below_5_do_not_use_alone_for_training_decision",
+      "risk_type": "contradiction",
+      "support": 0
+    },
+    {
+      "note": "support_below_5_do_not_use_alone_for_training_decision",
+      "risk_type": "critical_gap",
+      "support": 0
+    },
+    {
+      "note": "support_below_5_do_not_use_alone_for_training_decision",
+      "risk_type": "repairable_missing_hop",
+      "support": 0
+    },
+    {
+      "note": "support_below_5_do_not_use_alone_for_training_decision",
+      "risk_type": "supported_answer",
+      "support": 0
+    },
+    {
+      "note": "support_below_5_do_not_use_alone_for_training_decision",
+      "risk_type": "wrong_target",
+      "support": 0
+    }
+  ]
+}

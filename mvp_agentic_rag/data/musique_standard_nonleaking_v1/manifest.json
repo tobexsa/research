@@ -1,0 +1,88 @@
+{
+  "protocol_id": "semantic_nonleaking_musique_v1_20260716",
+  "status": "frozen_assets_built",
+  "sources": {
+    "dev": {
+      "path": "..\\datasets\\data\\musique_ans_v1.0_dev.jsonl",
+      "sha256": "15FA63794D18A94CE12411ACA6E2327E65B6E83B0B1490EFAB3F1962E48ABF3B",
+      "bytes": 30439728
+    },
+    "test": {
+      "path": "..\\datasets\\data\\musique_ans_v1.0_test.jsonl",
+      "sha256": "92EE3067957B8EBCE885BAA71156A7C0C29F3BC72CCA04510AEF506911DD768F",
+      "bytes": 28366572
+    }
+  },
+  "counts": {
+    "dev_runtime": 2417,
+    "dev_labels": 2417,
+    "dev_corpus": 48315,
+    "test_runtime": 2459,
+    "test_corpus": 49155,
+    "test_submission_map": 2459
+  },
+  "field_contract": {
+    "runtime_top_level": [
+      "id",
+      "metadata",
+      "question",
+      "subset"
+    ],
+    "runtime_metadata": [
+      "candidate_passage_ids",
+      "runtime_contract"
+    ],
+    "corpus_top_level": [
+      "id",
+      "metadata",
+      "text",
+      "title"
+    ],
+    "corpus_metadata": [
+      "paragraph_idx",
+      "runtime_question_id"
+    ],
+    "forbidden_runtime_fields": [
+      "answer",
+      "answer_aliases",
+      "gold_answer",
+      "hop",
+      "question_decomposition",
+      "source_id",
+      "supporting_passage_ids"
+    ]
+  },
+  "audits": {
+    "official_dev_test_id_overlap": 0,
+    "opaque_dev_test_id_overlap": 0,
+    "runtime_gold_fields_present": false,
+    "corpus_support_metadata_present": false,
+    "test_labels_available": false
+  },
+  "outputs": {
+    "dev_runtime": {
+      "path": "data\\musique_standard_nonleaking_v1\\dev_runtime.jsonl",
+      "sha256": "E0C4B9A0A1B59999C53A96E0BCA323EA8EAB103CA064D4DE537E4C4D94329DA2"
+    },
+    "dev_labels": {
+      "path": "data\\musique_standard_nonleaking_v1\\dev_labels.jsonl",
+      "sha256": "435D4B736A6E0E41FCAACDABB0E0DF506A5BB37F0CFCC7900836C4DEC8622150"
+    },
+    "dev_corpus": {
+      "path": "data\\musique_standard_nonleaking_v1\\dev_corpus.jsonl",
+      "sha256": "DF32B57B6545455D35EFE8940AFE1840FC7FFB956B743A83CFF88DF20CF2508F"
+    },
+    "test_runtime": {
+      "path": "data\\musique_standard_nonleaking_v1\\test_runtime.jsonl",
+      "sha256": "2362F9DF82EB85CF1F327784340852A8214437C78959F34826634081C9D473F5"
+    },
+    "test_corpus": {
+      "path": "data\\musique_standard_nonleaking_v1\\test_corpus.jsonl",
+      "sha256": "4506F2CBE80EA77568C5BE93D9DC84FCF478F8AAB0DA694221E1A954A19B8DDC"
+    },
+    "test_submission_map": {
+      "path": "data\\musique_standard_nonleaking_v1\\test_submission_map.jsonl",
+      "sha256": "5617EEA37B07EDE7F52EF34196D7B98864BA6F42EC2F9B5507A26B4524D8BBAA"
+    }
+  }
+}

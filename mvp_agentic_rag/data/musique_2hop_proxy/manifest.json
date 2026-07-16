@@ -1,0 +1,30 @@
+{
+  "answerable_only": true,
+  "corpus_output": "data\\musique_2hop_proxy\\corpus.jsonl",
+  "corpus_written": 9600,
+  "decomposition_cross_split_overlap": false,
+  "gold_decomposition_in_model_facing_samples": false,
+  "hop": 2,
+  "max_paragraphs": 20,
+  "min_paragraphs": 20,
+  "output_dir": "data\\musique_2hop_proxy",
+  "seed": 13,
+  "source": "..\\datasets\\data\\musique_ans_v1.0_dev.jsonl",
+  "split_counts": {
+    "dev": 150,
+    "smoke": 30,
+    "test": 300
+  },
+  "split_grouping_rule": "connected_components_over_musique_decomposition_ids",
+  "split_paths": {
+    "dev": "data\\musique_2hop_proxy\\dev.jsonl",
+    "smoke": "data\\musique_2hop_proxy\\smoke.jsonl",
+    "test": "data\\musique_2hop_proxy\\test.jsonl"
+  },
+  "split_sizes": {
+    "dev": 150,
+    "smoke": 30,
+    "test": 300
+  },
+  "support_labels_in_corpus_metadata": false
+}

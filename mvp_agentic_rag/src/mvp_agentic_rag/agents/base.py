@@ -22,9 +22,12 @@ class BaseAgent:
     def search(self, sample: Sample, query: str, memory=None):
         if getattr(self.retriever, "sample_aware", False) and hasattr(self.retriever, "search_for_sample"):
             try:
-                return self.retriever.search_for_sample(sample, self.top_k)
+                return self.retriever.search_for_sample(sample, self.top_k, query=query)
             except TypeError:
-                pass
+                try:
+                    return self.retriever.search_for_sample(sample, self.top_k)
+                except TypeError:
+                    pass
         queries = self.query_decomposer.decompose(sample, query)
         if memory is not None:
             queries = memory.filter_queries(queries)

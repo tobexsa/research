@@ -1,0 +1,4951 @@
+{
+  "run_dir": "runs\\musique_2hop_proxy_hybrid_bm25_bge_top10_dev_agentic_rag_baseline_c1",
+  "config": "configs\\musique_2hop_proxy_hybrid_bm25_bge_top10_dev_agentic_rag_baseline_c1.yaml",
+  "case_definition": "claim_risk follow-up step with evidence_gain <= 0",
+  "summary": {
+    "cases": 52,
+    "category_counts": {
+      "support_retrieved_but_no_evidence_gain": 34,
+      "support_already_seen_before_followup": 34,
+      "verifier_failed_despite_support_context": 29,
+      "top_k_too_small": 14,
+      "per_subquery_or_total_top_k_too_small": 14,
+      "dense_recall_miss_top50": 4
+    },
+    "query_source_counts": {
+      "checklist": 52
+    },
+    "action_counts": {
+      "abstain": 25,
+      "refine_query": 22,
+      "answer": 5
+    },
+    "support_in_raw_top50_cases": 48,
+    "support_in_raw_top50_rate": 0.9230769230769231,
+    "support_in_original_question_top50_cases": 50,
+    "support_in_original_question_top50_rate": 0.9615384615384616
+  },
+  "cases": [
+    {
+      "run_id": "2hop__10620_49084",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "refine_query",
+      "query": "Need answer plays legendary figure featured Historia Regum Britanniae show Once Upon Time Eldol king Britain Geoffrey Monmouth's c",
+      "question": "Who plays the legendary figure featured in Historia Regum Britanniae in the show Once Upon a Time?",
+      "gold_answer": "Liam Thomas Garrigan",
+      "retrieved_ids": [
+        "2hop__10620_79092::p9",
+        "2hop__10620_49084::p7",
+        "2hop__10620_79092::p0",
+        "2hop__10620_49084::p11",
+        "2hop__10620_79092::p7",
+        "2hop__10620_79092::p10",
+        "2hop__10620_49084::p0",
+        "2hop__10620_49084::p15",
+        "2hop__10620_79092::p4",
+        "2hop__10620_49084::p13"
+      ],
+      "support_in_current_retrieved": [],
+      "support_seen_before": [],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [],
+      "supporting_ids": [
+        "2hop__10620_49084::p18",
+        "2hop__10620_49084::p2"
+      ],
+      "support_titles": {
+        "2hop__10620_49084::p18": "Liam Garrigan",
+        "2hop__10620_49084::p2": "Middle Ages"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [],
+      "support_in_raw_top50": [
+        "2hop__10620_49084::p18",
+        "2hop__10620_49084::p2"
+      ],
+      "support_in_decomposed_topk": [],
+      "support_in_decomposed_top50": [
+        "2hop__10620_49084::p18",
+        "2hop__10620_49084::p2"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__10620_49084::p18",
+        "2hop__10620_49084::p2"
+      ],
+      "raw_rank_first_support": 13,
+      "original_question_rank_first_support": 14,
+      "decomposed_queries": [
+        "Need answer plays legendary figure featured Historia Regum Britanniae show Once Upon Time Eldol king Britain Geoffrey Monmouth's c"
+      ],
+      "missing_question_terms": [
+        "a",
+        "in",
+        "the",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "britanniae",
+        "featured",
+        "figure",
+        "historia",
+        "legendary",
+        "once",
+        "plays",
+        "regum",
+        "show",
+        "time",
+        "upon"
+      ],
+      "query_support_overlap_terms": [
+        "britanniae",
+        "c",
+        "geoffrey",
+        "historia",
+        "king",
+        "monmouth",
+        "once",
+        "regum",
+        "s",
+        "time",
+        "upon"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "top_k_too_small",
+        "per_subquery_or_total_top_k_too_small"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__10620_49084",
+      "round": 3,
+      "query_source": "checklist",
+      "action": "abstain",
+      "query": "Need answer plays legendary figure featured Historia Regum Britanniae show Once Upon Time Eldol king Britain Geoffrey Monmouth's c",
+      "question": "Who plays the legendary figure featured in Historia Regum Britanniae in the show Once Upon a Time?",
+      "gold_answer": "Liam Thomas Garrigan",
+      "retrieved_ids": [
+        "2hop__10620_79092::p9",
+        "2hop__10620_49084::p7",
+        "2hop__10620_79092::p0",
+        "2hop__10620_49084::p11",
+        "2hop__10620_79092::p7",
+        "2hop__10620_79092::p10",
+        "2hop__10620_49084::p0",
+        "2hop__10620_49084::p15",
+        "2hop__10620_79092::p4",
+        "2hop__10620_49084::p13"
+      ],
+      "support_in_current_retrieved": [],
+      "support_seen_before": [],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [],
+      "supporting_ids": [
+        "2hop__10620_49084::p18",
+        "2hop__10620_49084::p2"
+      ],
+      "support_titles": {
+        "2hop__10620_49084::p18": "Liam Garrigan",
+        "2hop__10620_49084::p2": "Middle Ages"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [],
+      "support_in_raw_top50": [
+        "2hop__10620_49084::p18",
+        "2hop__10620_49084::p2"
+      ],
+      "support_in_decomposed_topk": [],
+      "support_in_decomposed_top50": [
+        "2hop__10620_49084::p18",
+        "2hop__10620_49084::p2"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__10620_49084::p18",
+        "2hop__10620_49084::p2"
+      ],
+      "raw_rank_first_support": 13,
+      "original_question_rank_first_support": 14,
+      "decomposed_queries": [
+        "Need answer plays legendary figure featured Historia Regum Britanniae show Once Upon Time Eldol king Britain Geoffrey Monmouth's c"
+      ],
+      "missing_question_terms": [
+        "a",
+        "in",
+        "the",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "britanniae",
+        "featured",
+        "figure",
+        "historia",
+        "legendary",
+        "once",
+        "plays",
+        "regum",
+        "show",
+        "time",
+        "upon"
+      ],
+      "query_support_overlap_terms": [
+        "britanniae",
+        "c",
+        "geoffrey",
+        "historia",
+        "king",
+        "monmouth",
+        "once",
+        "regum",
+        "s",
+        "time",
+        "upon"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "top_k_too_small",
+        "per_subquery_or_total_top_k_too_small"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__10620_79092",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "refine_query",
+      "query": "Need answer volcano named after legendary King featured Historia Regum Britanniae last erupted Catellus Britons recounted Geoffrey Monmouth's work",
+      "question": "The volcano, named after the legendary King featured in Historia Regum Britanniae, last erupted when?",
+      "gold_answer": "lava samples have been dated at 341 to 335 million years old",
+      "retrieved_ids": [
+        "2hop__10620_49084::p7",
+        "2hop__10620_79092::p0",
+        "2hop__10620_79092::p7",
+        "2hop__10620_49084::p11",
+        "2hop__10620_49084::p0",
+        "2hop__10620_79092::p10",
+        "2hop__10620_49084::p13",
+        "2hop__10620_79092::p2",
+        "2hop__10620_79092::p9",
+        "2hop__10620_79092::p4"
+      ],
+      "support_in_current_retrieved": [],
+      "support_seen_before": [],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [],
+      "supporting_ids": [
+        "2hop__10620_79092::p12",
+        "2hop__10620_79092::p18"
+      ],
+      "support_titles": {
+        "2hop__10620_79092::p12": "Middle Ages",
+        "2hop__10620_79092::p18": "Arthur's Seat"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [],
+      "support_in_raw_top50": [
+        "2hop__10620_79092::p12",
+        "2hop__10620_79092::p18"
+      ],
+      "support_in_decomposed_topk": [],
+      "support_in_decomposed_top50": [
+        "2hop__10620_79092::p12",
+        "2hop__10620_79092::p18"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__10620_79092::p12",
+        "2hop__10620_79092::p18"
+      ],
+      "raw_rank_first_support": 13,
+      "original_question_rank_first_support": 15,
+      "decomposed_queries": [
+        "Need answer volcano named after legendary King featured Historia Regum Britanniae last erupted Catellus Britons recounted Geoffrey Monmouth's work"
+      ],
+      "missing_question_terms": [
+        "in",
+        "the",
+        "when"
+      ],
+      "overlap_question_terms": [
+        "after",
+        "britanniae",
+        "erupted",
+        "featured",
+        "historia",
+        "king",
+        "last",
+        "legendary",
+        "named",
+        "regum",
+        "volcano"
+      ],
+      "query_support_overlap_terms": [
+        "britanniae",
+        "geoffrey",
+        "historia",
+        "last",
+        "monmouth",
+        "regum",
+        "s",
+        "volcano"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "top_k_too_small",
+        "per_subquery_or_total_top_k_too_small"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__10620_79092",
+      "round": 3,
+      "query_source": "checklist",
+      "action": "abstain",
+      "query": "Need answer volcano named after legendary King featured Historia Regum Britanniae last erupted Catellus Britons recounted Geoffrey Monmouth's work",
+      "question": "The volcano, named after the legendary King featured in Historia Regum Britanniae, last erupted when?",
+      "gold_answer": "lava samples have been dated at 341 to 335 million years old",
+      "retrieved_ids": [
+        "2hop__10620_49084::p7",
+        "2hop__10620_79092::p0",
+        "2hop__10620_79092::p7",
+        "2hop__10620_49084::p11",
+        "2hop__10620_49084::p0",
+        "2hop__10620_79092::p10",
+        "2hop__10620_49084::p13",
+        "2hop__10620_79092::p2",
+        "2hop__10620_79092::p9",
+        "2hop__10620_79092::p4"
+      ],
+      "support_in_current_retrieved": [],
+      "support_seen_before": [],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [],
+      "supporting_ids": [
+        "2hop__10620_79092::p12",
+        "2hop__10620_79092::p18"
+      ],
+      "support_titles": {
+        "2hop__10620_79092::p12": "Middle Ages",
+        "2hop__10620_79092::p18": "Arthur's Seat"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [],
+      "support_in_raw_top50": [
+        "2hop__10620_79092::p12",
+        "2hop__10620_79092::p18"
+      ],
+      "support_in_decomposed_topk": [],
+      "support_in_decomposed_top50": [
+        "2hop__10620_79092::p12",
+        "2hop__10620_79092::p18"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__10620_79092::p12",
+        "2hop__10620_79092::p18"
+      ],
+      "raw_rank_first_support": 13,
+      "original_question_rank_first_support": 15,
+      "decomposed_queries": [
+        "Need answer volcano named after legendary King featured Historia Regum Britanniae last erupted Catellus Britons recounted Geoffrey Monmouth's work"
+      ],
+      "missing_question_terms": [
+        "in",
+        "the",
+        "when"
+      ],
+      "overlap_question_terms": [
+        "after",
+        "britanniae",
+        "erupted",
+        "featured",
+        "historia",
+        "king",
+        "last",
+        "legendary",
+        "named",
+        "regum",
+        "volcano"
+      ],
+      "query_support_overlap_terms": [
+        "britanniae",
+        "geoffrey",
+        "historia",
+        "last",
+        "monmouth",
+        "regum",
+        "s",
+        "volcano"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "top_k_too_small",
+        "per_subquery_or_total_top_k_too_small"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__10900_21567",
+      "round": 3,
+      "query_source": "checklist",
+      "action": "abstain",
+      "query": "Need answer introduced system musical notation 14th century used area Ottoman slave trade flourished first military unit State army organized Osman I tribesmen inhabiting",
+      "question": "Who introduced a system of musical notation in the 14th century used in the area where the Ottoman slave trade flourished?",
+      "gold_answer": "John Kukuzelis",
+      "retrieved_ids": [
+        "2hop__10900_21567::p8",
+        "2hop__10900_21567::p19",
+        "2hop__10900_21567::p2",
+        "2hop__10900_21567::p12",
+        "2hop__832795_350510::p15",
+        "2hop__9930_21567::p1",
+        "2hop__8496_21567::p17",
+        "2hop__70490_21567::p3",
+        "2hop__17455_21567::p2",
+        "2hop__161872_21567::p12"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__10900_21567::p19"
+      ],
+      "support_seen_before": [
+        "2hop__10900_21567::p19"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__10900_21567::p19"
+      ],
+      "supporting_ids": [
+        "2hop__10900_21567::p14",
+        "2hop__10900_21567::p19"
+      ],
+      "support_titles": {
+        "2hop__10900_21567::p14": "Late Middle Ages",
+        "2hop__10900_21567::p19": "Black people"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__10900_21567::p19"
+      ],
+      "support_in_raw_top50": [
+        "2hop__10900_21567::p14",
+        "2hop__10900_21567::p19"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__10900_21567::p19"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__10900_21567::p14",
+        "2hop__10900_21567::p19"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__10900_21567::p14",
+        "2hop__10900_21567::p19"
+      ],
+      "raw_rank_first_support": 2,
+      "original_question_rank_first_support": 17,
+      "decomposed_queries": [
+        "Need answer introduced system musical notation 14th century used area Ottoman slave trade flourished first military unit State army organized Osman I tribesmen inhabiting"
+      ],
+      "missing_question_terms": [
+        "a",
+        "in",
+        "of",
+        "the",
+        "where",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "14th",
+        "area",
+        "century",
+        "flourished",
+        "introduced",
+        "musical",
+        "notation",
+        "ottoman",
+        "slave",
+        "system",
+        "trade",
+        "used"
+      ],
+      "query_support_overlap_terms": [
+        "14th",
+        "army",
+        "century",
+        "first",
+        "flourished",
+        "introduced",
+        "notation",
+        "ottoman",
+        "slave",
+        "system",
+        "trade",
+        "used"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__135652_669373",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "abstain",
+      "query": "Need answer employer physicist Mach number named after Austrian philosopher Ernst designation proposed aeronautical engineer Jakob Ackeret",
+      "question": "Who is the employer of the physicist who Mach number is named after?",
+      "gold_answer": "Charles University",
+      "retrieved_ids": [
+        "2hop__135651_669373::p15",
+        "2hop__135653_669373::p11",
+        "2hop__135652_669373::p4",
+        "2hop__135651_669373::p7",
+        "2hop__135653_669373::p6",
+        "2hop__135652_669373::p17",
+        "2hop__135651_669373::p3",
+        "2hop__135653_669373::p1",
+        "2hop__135652_669373::p15",
+        "2hop__135652_669373::p9"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__135652_669373::p4"
+      ],
+      "support_seen_before": [
+        "2hop__135652_669373::p4"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__135652_669373::p4"
+      ],
+      "supporting_ids": [
+        "2hop__135652_669373::p4",
+        "2hop__135652_669373::p5"
+      ],
+      "support_titles": {
+        "2hop__135652_669373::p4": "Mach number",
+        "2hop__135652_669373::p5": "Vinko Dvořák"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__135652_669373::p4"
+      ],
+      "support_in_raw_top50": [
+        "2hop__135652_669373::p4",
+        "2hop__135652_669373::p5"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__135652_669373::p4"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__135652_669373::p4",
+        "2hop__135652_669373::p5"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__135652_669373::p4",
+        "2hop__135652_669373::p5"
+      ],
+      "raw_rank_first_support": 3,
+      "original_question_rank_first_support": 3,
+      "decomposed_queries": [
+        "Need answer employer physicist Mach number named after Austrian philosopher Ernst designation proposed aeronautical engineer Jakob Ackeret"
+      ],
+      "missing_question_terms": [
+        "is",
+        "of",
+        "the",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "after",
+        "employer",
+        "mach",
+        "named",
+        "number",
+        "physicist"
+      ],
+      "query_support_overlap_terms": [
+        "ackeret",
+        "aeronautical",
+        "after",
+        "austrian",
+        "designation",
+        "engineer",
+        "ernst",
+        "jakob",
+        "mach",
+        "named",
+        "number",
+        "philosopher",
+        "physicist",
+        "proposed"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__13592_49388",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "refine_query",
+      "query": "Need answer How many games season league Barcelona won titles 1948 1949 treble 2014 2015 winning La Liga Copa del Rey UEFA Champions became",
+      "question": "How many games in a season of the league in which Barcelona won titles in 1948 and 1949?",
+      "gold_answer": "38",
+      "retrieved_ids": [
+        "2hop__13539_13493::p1",
+        "2hop__13574_13498::p0",
+        "2hop__13592_85544::p10",
+        "2hop__13592_49388::p7",
+        "2hop__13574_13498::p2",
+        "2hop__13574_13498::p7",
+        "2hop__13539_13493::p19",
+        "2hop__13539_13493::p6",
+        "2hop__13574_13498::p6",
+        "2hop__13592_49388::p9"
+      ],
+      "support_in_current_retrieved": [],
+      "support_seen_before": [],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [],
+      "supporting_ids": [
+        "2hop__13592_49388::p15",
+        "2hop__13592_49388::p2"
+      ],
+      "support_titles": {
+        "2hop__13592_49388::p15": "FC Barcelona",
+        "2hop__13592_49388::p2": "La Liga"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [],
+      "support_in_raw_top50": [
+        "2hop__13592_49388::p15",
+        "2hop__13592_49388::p2"
+      ],
+      "support_in_decomposed_topk": [],
+      "support_in_decomposed_top50": [
+        "2hop__13592_49388::p15",
+        "2hop__13592_49388::p2"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__13592_49388::p15",
+        "2hop__13592_49388::p2"
+      ],
+      "raw_rank_first_support": 38,
+      "original_question_rank_first_support": 20,
+      "decomposed_queries": [
+        "Need answer How many games season league Barcelona won titles 1948 1949 treble 2014 2015 winning La Liga Copa del Rey UEFA Champions became"
+      ],
+      "missing_question_terms": [
+        "a",
+        "and",
+        "in",
+        "of",
+        "the",
+        "which"
+      ],
+      "overlap_question_terms": [
+        "1948",
+        "1949",
+        "barcelona",
+        "games",
+        "how",
+        "league",
+        "many",
+        "season",
+        "titles",
+        "won"
+      ],
+      "query_support_overlap_terms": [
+        "1948",
+        "1949",
+        "barcelona",
+        "games",
+        "la",
+        "liga",
+        "season",
+        "titles"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "top_k_too_small",
+        "per_subquery_or_total_top_k_too_small"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__13592_49388",
+      "round": 3,
+      "query_source": "checklist",
+      "action": "abstain",
+      "query": "Need answer How many games season league Barcelona won titles 1948 1949 treble 2014 2015 winning La Liga Copa del Rey UEFA Champions became",
+      "question": "How many games in a season of the league in which Barcelona won titles in 1948 and 1949?",
+      "gold_answer": "38",
+      "retrieved_ids": [
+        "2hop__13539_13493::p1",
+        "2hop__13574_13498::p0",
+        "2hop__13592_85544::p10",
+        "2hop__13592_49388::p7",
+        "2hop__13574_13498::p2",
+        "2hop__13574_13498::p7",
+        "2hop__13539_13493::p19",
+        "2hop__13539_13493::p6",
+        "2hop__13574_13498::p6",
+        "2hop__13592_49388::p9"
+      ],
+      "support_in_current_retrieved": [],
+      "support_seen_before": [],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [],
+      "supporting_ids": [
+        "2hop__13592_49388::p15",
+        "2hop__13592_49388::p2"
+      ],
+      "support_titles": {
+        "2hop__13592_49388::p15": "FC Barcelona",
+        "2hop__13592_49388::p2": "La Liga"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [],
+      "support_in_raw_top50": [
+        "2hop__13592_49388::p15",
+        "2hop__13592_49388::p2"
+      ],
+      "support_in_decomposed_topk": [],
+      "support_in_decomposed_top50": [
+        "2hop__13592_49388::p15",
+        "2hop__13592_49388::p2"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__13592_49388::p15",
+        "2hop__13592_49388::p2"
+      ],
+      "raw_rank_first_support": 38,
+      "original_question_rank_first_support": 20,
+      "decomposed_queries": [
+        "Need answer How many games season league Barcelona won titles 1948 1949 treble 2014 2015 winning La Liga Copa del Rey UEFA Champions became"
+      ],
+      "missing_question_terms": [
+        "a",
+        "and",
+        "in",
+        "of",
+        "the",
+        "which"
+      ],
+      "overlap_question_terms": [
+        "1948",
+        "1949",
+        "barcelona",
+        "games",
+        "how",
+        "league",
+        "many",
+        "season",
+        "titles",
+        "won"
+      ],
+      "query_support_overlap_terms": [
+        "1948",
+        "1949",
+        "barcelona",
+        "games",
+        "la",
+        "liga",
+        "season",
+        "titles"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "top_k_too_small",
+        "per_subquery_or_total_top_k_too_small"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__13592_85544",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "refine_query",
+      "query": "Need answer How many games team league Barcelona won titles 1948 1949 play one three founding members Primera Divisi n never been relegated top",
+      "question": "How many games do team in the league where Barcelona won titles in 1948 and 1949 play?",
+      "gold_answer": "38",
+      "retrieved_ids": [
+        "2hop__13574_13498::p7",
+        "2hop__13539_13493::p19",
+        "2hop__13539_13493::p6",
+        "2hop__13574_13498::p6",
+        "2hop__13592_49388::p9",
+        "2hop__13574_13498::p2",
+        "2hop__13592_85544::p13",
+        "2hop__13592_85544::p6",
+        "2hop__13592_85544::p10",
+        "2hop__13592_49388::p7"
+      ],
+      "support_in_current_retrieved": [],
+      "support_seen_before": [],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [],
+      "supporting_ids": [
+        "2hop__13592_85544::p11",
+        "2hop__13592_85544::p12"
+      ],
+      "support_titles": {
+        "2hop__13592_85544::p11": "FC Barcelona",
+        "2hop__13592_85544::p12": "La Liga"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [],
+      "support_in_raw_top50": [
+        "2hop__13592_85544::p11",
+        "2hop__13592_85544::p12"
+      ],
+      "support_in_decomposed_topk": [],
+      "support_in_decomposed_top50": [
+        "2hop__13592_85544::p11",
+        "2hop__13592_85544::p12"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__13592_85544::p11",
+        "2hop__13592_85544::p12"
+      ],
+      "raw_rank_first_support": 29,
+      "original_question_rank_first_support": 22,
+      "decomposed_queries": [
+        "Need answer How many games team league Barcelona won titles 1948 1949 play one three founding members Primera Divisi n never been relegated top"
+      ],
+      "missing_question_terms": [
+        "and",
+        "do",
+        "in",
+        "the",
+        "where"
+      ],
+      "overlap_question_terms": [
+        "1948",
+        "1949",
+        "barcelona",
+        "games",
+        "how",
+        "league",
+        "many",
+        "play",
+        "team",
+        "titles",
+        "won"
+      ],
+      "query_support_overlap_terms": [
+        "1948",
+        "1949",
+        "barcelona",
+        "games",
+        "one",
+        "three",
+        "titles"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "top_k_too_small",
+        "per_subquery_or_total_top_k_too_small"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__13592_85544",
+      "round": 3,
+      "query_source": "checklist",
+      "action": "abstain",
+      "query": "Need answer How many games team league Barcelona won titles 1948 1949 play one three founding members Primera Divisi n never been relegated top",
+      "question": "How many games do team in the league where Barcelona won titles in 1948 and 1949 play?",
+      "gold_answer": "38",
+      "retrieved_ids": [
+        "2hop__13574_13498::p7",
+        "2hop__13539_13493::p19",
+        "2hop__13539_13493::p6",
+        "2hop__13574_13498::p6",
+        "2hop__13592_49388::p9",
+        "2hop__13574_13498::p2",
+        "2hop__13592_85544::p13",
+        "2hop__13592_85544::p6",
+        "2hop__13592_85544::p10",
+        "2hop__13592_49388::p7"
+      ],
+      "support_in_current_retrieved": [],
+      "support_seen_before": [],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [],
+      "supporting_ids": [
+        "2hop__13592_85544::p11",
+        "2hop__13592_85544::p12"
+      ],
+      "support_titles": {
+        "2hop__13592_85544::p11": "FC Barcelona",
+        "2hop__13592_85544::p12": "La Liga"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [],
+      "support_in_raw_top50": [
+        "2hop__13592_85544::p11",
+        "2hop__13592_85544::p12"
+      ],
+      "support_in_decomposed_topk": [],
+      "support_in_decomposed_top50": [
+        "2hop__13592_85544::p11",
+        "2hop__13592_85544::p12"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__13592_85544::p11",
+        "2hop__13592_85544::p12"
+      ],
+      "raw_rank_first_support": 29,
+      "original_question_rank_first_support": 22,
+      "decomposed_queries": [
+        "Need answer How many games team league Barcelona won titles 1948 1949 play one three founding members Primera Divisi n never been relegated top"
+      ],
+      "missing_question_terms": [
+        "and",
+        "do",
+        "in",
+        "the",
+        "where"
+      ],
+      "overlap_question_terms": [
+        "1948",
+        "1949",
+        "barcelona",
+        "games",
+        "how",
+        "league",
+        "many",
+        "play",
+        "team",
+        "titles",
+        "won"
+      ],
+      "query_support_overlap_terms": [
+        "1948",
+        "1949",
+        "barcelona",
+        "games",
+        "one",
+        "three",
+        "titles"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "top_k_too_small",
+        "per_subquery_or_total_top_k_too_small"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__157602_21567",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "refine_query",
+      "query": "Need answer 14th century introduced system musical notation used area 3 Turkey located Using his own Hampartsoum Limondjian transcribed most 18th Turkish music compositions",
+      "question": "In the 14th century, who introduced a system of musical notation used in the area where 3% of Turkey is located?",
+      "gold_answer": "John Kukuzelis",
+      "retrieved_ids": [
+        "2hop__10515_21567::p12",
+        "2hop__9930_21567::p1",
+        "2hop__10900_21567::p3",
+        "2hop__8496_21567::p17",
+        "2hop__157602_21567::p11",
+        "2hop__70490_21567::p3",
+        "2hop__161872_21567::p12",
+        "2hop__17455_21567::p2",
+        "2hop__9930_21567::p5",
+        "2hop__8496_21567::p10"
+      ],
+      "support_in_current_retrieved": [],
+      "support_seen_before": [],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [],
+      "supporting_ids": [
+        "2hop__157602_21567::p12",
+        "2hop__157602_21567::p15"
+      ],
+      "support_titles": {
+        "2hop__157602_21567::p12": "Late Middle Ages",
+        "2hop__157602_21567::p15": "Geography of Turkey"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [],
+      "support_in_raw_top50": [
+        "2hop__157602_21567::p12"
+      ],
+      "support_in_decomposed_topk": [],
+      "support_in_decomposed_top50": [
+        "2hop__157602_21567::p12"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__157602_21567::p12"
+      ],
+      "raw_rank_first_support": 30,
+      "original_question_rank_first_support": 21,
+      "decomposed_queries": [
+        "Need answer 14th century introduced system musical notation used area 3 Turkey located Using his own Hampartsoum Limondjian transcribed most 18th Turkish music compositions"
+      ],
+      "missing_question_terms": [
+        "a",
+        "in",
+        "is",
+        "of",
+        "the",
+        "where",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "14th",
+        "3",
+        "area",
+        "century",
+        "introduced",
+        "located",
+        "musical",
+        "notation",
+        "system",
+        "turkey",
+        "used"
+      ],
+      "query_support_overlap_terms": [
+        "14th",
+        "3",
+        "century",
+        "introduced",
+        "music",
+        "notation",
+        "system",
+        "turkey",
+        "used"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "top_k_too_small",
+        "per_subquery_or_total_top_k_too_small"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__157602_21567",
+      "round": 3,
+      "query_source": "checklist",
+      "action": "abstain",
+      "query": "Need answer 14th century introduced system musical notation used area 3 Turkey located Using his own Hampartsoum Limondjian transcribed most 18th Turkish music compositions",
+      "question": "In the 14th century, who introduced a system of musical notation used in the area where 3% of Turkey is located?",
+      "gold_answer": "John Kukuzelis",
+      "retrieved_ids": [
+        "2hop__10515_21567::p12",
+        "2hop__9930_21567::p1",
+        "2hop__10900_21567::p3",
+        "2hop__8496_21567::p17",
+        "2hop__157602_21567::p11",
+        "2hop__70490_21567::p3",
+        "2hop__161872_21567::p12",
+        "2hop__17455_21567::p2",
+        "2hop__9930_21567::p5",
+        "2hop__8496_21567::p10"
+      ],
+      "support_in_current_retrieved": [],
+      "support_seen_before": [],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [],
+      "supporting_ids": [
+        "2hop__157602_21567::p12",
+        "2hop__157602_21567::p15"
+      ],
+      "support_titles": {
+        "2hop__157602_21567::p12": "Late Middle Ages",
+        "2hop__157602_21567::p15": "Geography of Turkey"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [],
+      "support_in_raw_top50": [
+        "2hop__157602_21567::p12"
+      ],
+      "support_in_decomposed_topk": [],
+      "support_in_decomposed_top50": [
+        "2hop__157602_21567::p12"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__157602_21567::p12"
+      ],
+      "raw_rank_first_support": 30,
+      "original_question_rank_first_support": 21,
+      "decomposed_queries": [
+        "Need answer 14th century introduced system musical notation used area 3 Turkey located Using his own Hampartsoum Limondjian transcribed most 18th Turkish music compositions"
+      ],
+      "missing_question_terms": [
+        "a",
+        "in",
+        "is",
+        "of",
+        "the",
+        "where",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "14th",
+        "3",
+        "area",
+        "century",
+        "introduced",
+        "located",
+        "musical",
+        "notation",
+        "system",
+        "turkey",
+        "used"
+      ],
+      "query_support_overlap_terms": [
+        "14th",
+        "3",
+        "century",
+        "introduced",
+        "music",
+        "notation",
+        "system",
+        "turkey",
+        "used"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "top_k_too_small",
+        "per_subquery_or_total_top_k_too_small"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__161872_21567",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "refine_query",
+      "query": "Need answer the14th century introduced musical notation used Jack later participated covert mission this time music staff other elements began take shape",
+      "question": "Who in the14th century introduced musical notation used where Jack later participated in a covert mission?",
+      "gold_answer": "John Kukuzelis",
+      "retrieved_ids": [
+        "2hop__10900_21567::p0",
+        "2hop__9930_21567::p5",
+        "2hop__157602_21567::p4",
+        "2hop__8496_21567::p10",
+        "2hop__161872_21567::p9",
+        "2hop__70490_21567::p9",
+        "2hop__17455_21567::p4",
+        "2hop__9930_21567::p11",
+        "2hop__70490_21567::p10",
+        "2hop__161872_21567::p3"
+      ],
+      "support_in_current_retrieved": [],
+      "support_seen_before": [],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [],
+      "supporting_ids": [
+        "2hop__161872_21567::p17",
+        "2hop__161872_21567::p2"
+      ],
+      "support_titles": {
+        "2hop__161872_21567::p17": "24 (TV series)",
+        "2hop__161872_21567::p2": "Late Middle Ages"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [],
+      "support_in_raw_top50": [
+        "2hop__161872_21567::p17"
+      ],
+      "support_in_decomposed_topk": [],
+      "support_in_decomposed_top50": [
+        "2hop__161872_21567::p17"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__161872_21567::p17",
+        "2hop__161872_21567::p2"
+      ],
+      "raw_rank_first_support": 92,
+      "original_question_rank_first_support": 25,
+      "decomposed_queries": [
+        "Need answer the14th century introduced musical notation used Jack later participated covert mission this time music staff other elements began take shape"
+      ],
+      "missing_question_terms": [
+        "a",
+        "in",
+        "where",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "century",
+        "covert",
+        "introduced",
+        "jack",
+        "later",
+        "mission",
+        "musical",
+        "notation",
+        "participated",
+        "the14th",
+        "used"
+      ],
+      "query_support_overlap_terms": [
+        "century",
+        "covert",
+        "introduced",
+        "jack",
+        "mission",
+        "music",
+        "notation",
+        "used"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "top_k_too_small",
+        "per_subquery_or_total_top_k_too_small"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__161872_21567",
+      "round": 3,
+      "query_source": "checklist",
+      "action": "abstain",
+      "query": "Need answer the14th century introduced musical notation used Jack later participated covert mission this time music staff other elements began take shape",
+      "question": "Who in the14th century introduced musical notation used where Jack later participated in a covert mission?",
+      "gold_answer": "John Kukuzelis",
+      "retrieved_ids": [
+        "2hop__10900_21567::p0",
+        "2hop__9930_21567::p5",
+        "2hop__157602_21567::p4",
+        "2hop__8496_21567::p10",
+        "2hop__161872_21567::p9",
+        "2hop__70490_21567::p9",
+        "2hop__17455_21567::p4",
+        "2hop__9930_21567::p11",
+        "2hop__70490_21567::p10",
+        "2hop__161872_21567::p3"
+      ],
+      "support_in_current_retrieved": [],
+      "support_seen_before": [],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [],
+      "supporting_ids": [
+        "2hop__161872_21567::p17",
+        "2hop__161872_21567::p2"
+      ],
+      "support_titles": {
+        "2hop__161872_21567::p17": "24 (TV series)",
+        "2hop__161872_21567::p2": "Late Middle Ages"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [],
+      "support_in_raw_top50": [
+        "2hop__161872_21567::p17"
+      ],
+      "support_in_decomposed_topk": [],
+      "support_in_decomposed_top50": [
+        "2hop__161872_21567::p17"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__161872_21567::p17",
+        "2hop__161872_21567::p2"
+      ],
+      "raw_rank_first_support": 92,
+      "original_question_rank_first_support": 25,
+      "decomposed_queries": [
+        "Need answer the14th century introduced musical notation used Jack later participated covert mission this time music staff other elements began take shape"
+      ],
+      "missing_question_terms": [
+        "a",
+        "in",
+        "where",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "century",
+        "covert",
+        "introduced",
+        "jack",
+        "later",
+        "mission",
+        "musical",
+        "notation",
+        "participated",
+        "the14th",
+        "used"
+      ],
+      "query_support_overlap_terms": [
+        "century",
+        "covert",
+        "introduced",
+        "jack",
+        "mission",
+        "music",
+        "notation",
+        "used"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "top_k_too_small",
+        "per_subquery_or_total_top_k_too_small"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__167577_31122",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "answer",
+      "query": "Need answer century author Treatise Concerning Principles Human Knowledge live commonly called referring Berkeley's works 1710 work English Irish Empiricist philosopher George Berkeley",
+      "question": "What century did the author of A Treatise Concerning the Principles of Human Knowledge live in?",
+      "gold_answer": "18th",
+      "retrieved_ids": [
+        "2hop__167577_31122::p10",
+        "2hop__31091_31122::p1",
+        "2hop__31091_31122::p10",
+        "2hop__31124_31093::p2",
+        "2hop__31094_31122::p15",
+        "2hop__167577_31122::p9",
+        "2hop__31124_31122::p15",
+        "2hop__431934_30351::p10",
+        "2hop__507722_124896::p13",
+        "2hop__31094_31122::p2"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__167577_31122::p10"
+      ],
+      "support_seen_before": [
+        "2hop__167577_31122::p10"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__167577_31122::p10"
+      ],
+      "supporting_ids": [
+        "2hop__167577_31122::p10",
+        "2hop__167577_31122::p14"
+      ],
+      "support_titles": {
+        "2hop__167577_31122::p10": "A Treatise Concerning the Principles of Human Knowledge",
+        "2hop__167577_31122::p14": "Idealism"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__167577_31122::p10"
+      ],
+      "support_in_raw_top50": [
+        "2hop__167577_31122::p10",
+        "2hop__167577_31122::p14"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__167577_31122::p10"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__167577_31122::p10",
+        "2hop__167577_31122::p14"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__167577_31122::p10",
+        "2hop__167577_31122::p14"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "Need answer century author Treatise Concerning Principles Human Knowledge live commonly called referring Berkeley's works 1710 work English Irish Empiricist philosopher George Berkeley"
+      ],
+      "missing_question_terms": [
+        "a",
+        "did",
+        "in",
+        "of",
+        "the",
+        "what"
+      ],
+      "overlap_question_terms": [
+        "author",
+        "century",
+        "concerning",
+        "human",
+        "knowledge",
+        "live",
+        "principles",
+        "treatise"
+      ],
+      "query_support_overlap_terms": [
+        "1710",
+        "berkeley",
+        "called",
+        "century",
+        "commonly",
+        "concerning",
+        "empiricist",
+        "english",
+        "george",
+        "human",
+        "irish",
+        "knowledge",
+        "philosopher",
+        "principles",
+        "referring",
+        "s",
+        "treatise",
+        "work",
+        "works"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__20685_712629",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "refine_query",
+      "query": "Need answer spouse British queen Mary Princess Royal Countess Harewood Victoria Alexandra Alice 25 April 1897 28 March 1965 member family",
+      "question": "Who was the spouse of the British queen?",
+      "gold_answer": "Philip Mountbatten",
+      "retrieved_ids": [
+        "2hop__20685_712629::p19",
+        "2hop__71900_712629::p12",
+        "2hop__15368_17873::p15",
+        "2hop__71900_712629::p9",
+        "2hop__776637_87295::p3",
+        "2hop__135029_712629::p4",
+        "2hop__284613_87295::p10",
+        "2hop__135029_712629::p11",
+        "2hop__73760_712629::p18",
+        "2hop__71900_712629::p10"
+      ],
+      "support_in_current_retrieved": [],
+      "support_seen_before": [],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [],
+      "supporting_ids": [
+        "2hop__20685_712629::p1",
+        "2hop__20685_712629::p13"
+      ],
+      "support_titles": {
+        "2hop__20685_712629::p1": "Wedding dress of Princess Elizabeth",
+        "2hop__20685_712629::p13": "British Empire"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [],
+      "support_in_raw_top50": [],
+      "support_in_decomposed_topk": [],
+      "support_in_decomposed_top50": [],
+      "support_in_original_question_top50": [],
+      "raw_rank_first_support": null,
+      "original_question_rank_first_support": null,
+      "decomposed_queries": [
+        "Need answer spouse British queen Mary Princess Royal Countess Harewood Victoria Alexandra Alice 25 April 1897 28 March 1965 member family"
+      ],
+      "missing_question_terms": [
+        "of",
+        "the",
+        "was",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "british",
+        "queen",
+        "spouse"
+      ],
+      "query_support_overlap_terms": [
+        "british",
+        "member",
+        "princess",
+        "queen"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "dense_recall_miss_top50"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__20685_712629",
+      "round": 3,
+      "query_source": "checklist",
+      "action": "abstain",
+      "query": "Need answer spouse British queen Mary Princess Royal Countess Harewood Victoria Alexandra Alice 25 April 1897 28 March 1965 member family",
+      "question": "Who was the spouse of the British queen?",
+      "gold_answer": "Philip Mountbatten",
+      "retrieved_ids": [
+        "2hop__20685_712629::p19",
+        "2hop__71900_712629::p12",
+        "2hop__15368_17873::p15",
+        "2hop__71900_712629::p9",
+        "2hop__776637_87295::p3",
+        "2hop__135029_712629::p4",
+        "2hop__284613_87295::p10",
+        "2hop__135029_712629::p11",
+        "2hop__73760_712629::p18",
+        "2hop__71900_712629::p10"
+      ],
+      "support_in_current_retrieved": [],
+      "support_seen_before": [],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [],
+      "supporting_ids": [
+        "2hop__20685_712629::p1",
+        "2hop__20685_712629::p13"
+      ],
+      "support_titles": {
+        "2hop__20685_712629::p1": "Wedding dress of Princess Elizabeth",
+        "2hop__20685_712629::p13": "British Empire"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [],
+      "support_in_raw_top50": [],
+      "support_in_decomposed_topk": [],
+      "support_in_decomposed_top50": [],
+      "support_in_original_question_top50": [],
+      "raw_rank_first_support": null,
+      "original_question_rank_first_support": null,
+      "decomposed_queries": [
+        "Need answer spouse British queen Mary Princess Royal Countess Harewood Victoria Alexandra Alice 25 April 1897 28 March 1965 member family"
+      ],
+      "missing_question_terms": [
+        "of",
+        "the",
+        "was",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "british",
+        "queen",
+        "spouse"
+      ],
+      "query_support_overlap_terms": [
+        "british",
+        "member",
+        "princess",
+        "queen"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "dense_recall_miss_top50"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__227031_144857",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "refine_query",
+      "query": "Need answer name city Tess Gallagher's spouse born D'Urbervilles 4 hour BBC television adaptation Thomas Hardy's book same",
+      "question": "What is the name of the city where Tess Gallagher's spouse was born in?",
+      "gold_answer": "Clatskanie",
+      "retrieved_ids": [
+        "2hop__227031_144857::p3",
+        "2hop__227031_144857::p5",
+        "2hop__370911_589237::p14",
+        "2hop__149983_108549::p18",
+        "2hop__149983_108549::p15",
+        "2hop__647996_551681::p1",
+        "2hop__124933_653666::p10",
+        "2hop__149983_108549::p3",
+        "2hop__149983_108549::p16",
+        "2hop__227031_144857::p7"
+      ],
+      "support_in_current_retrieved": [],
+      "support_seen_before": [],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [],
+      "supporting_ids": [
+        "2hop__227031_144857::p11",
+        "2hop__227031_144857::p19"
+      ],
+      "support_titles": {
+        "2hop__227031_144857::p11": "Raymond Carver",
+        "2hop__227031_144857::p19": "Raymond Carver bibliography"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [],
+      "support_in_raw_top50": [],
+      "support_in_decomposed_topk": [],
+      "support_in_decomposed_top50": [],
+      "support_in_original_question_top50": [
+        "2hop__227031_144857::p19"
+      ],
+      "raw_rank_first_support": null,
+      "original_question_rank_first_support": 60,
+      "decomposed_queries": [
+        "Need answer name city Tess Gallagher's spouse born D'Urbervilles 4 hour BBC television adaptation Thomas Hardy's book same"
+      ],
+      "missing_question_terms": [
+        "in",
+        "is",
+        "of",
+        "the",
+        "was",
+        "what",
+        "where"
+      ],
+      "overlap_question_terms": [
+        "born",
+        "city",
+        "gallagher",
+        "name",
+        "s",
+        "spouse",
+        "tess"
+      ],
+      "query_support_overlap_terms": [
+        "book",
+        "born",
+        "gallagher",
+        "s",
+        "tess"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "dense_recall_miss_top50"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__227031_144857",
+      "round": 3,
+      "query_source": "checklist",
+      "action": "abstain",
+      "query": "Need answer name city Tess Gallagher's spouse born D'Urbervilles 4 hour BBC television adaptation Thomas Hardy's book same",
+      "question": "What is the name of the city where Tess Gallagher's spouse was born in?",
+      "gold_answer": "Clatskanie",
+      "retrieved_ids": [
+        "2hop__227031_144857::p3",
+        "2hop__227031_144857::p5",
+        "2hop__370911_589237::p14",
+        "2hop__149983_108549::p18",
+        "2hop__149983_108549::p15",
+        "2hop__647996_551681::p1",
+        "2hop__124933_653666::p10",
+        "2hop__149983_108549::p3",
+        "2hop__149983_108549::p16",
+        "2hop__227031_144857::p7"
+      ],
+      "support_in_current_retrieved": [],
+      "support_seen_before": [],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [],
+      "supporting_ids": [
+        "2hop__227031_144857::p11",
+        "2hop__227031_144857::p19"
+      ],
+      "support_titles": {
+        "2hop__227031_144857::p11": "Raymond Carver",
+        "2hop__227031_144857::p19": "Raymond Carver bibliography"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [],
+      "support_in_raw_top50": [],
+      "support_in_decomposed_topk": [],
+      "support_in_decomposed_top50": [],
+      "support_in_original_question_top50": [
+        "2hop__227031_144857::p19"
+      ],
+      "raw_rank_first_support": null,
+      "original_question_rank_first_support": 60,
+      "decomposed_queries": [
+        "Need answer name city Tess Gallagher's spouse born D'Urbervilles 4 hour BBC television adaptation Thomas Hardy's book same"
+      ],
+      "missing_question_terms": [
+        "in",
+        "is",
+        "of",
+        "the",
+        "was",
+        "what",
+        "where"
+      ],
+      "overlap_question_terms": [
+        "born",
+        "city",
+        "gallagher",
+        "name",
+        "s",
+        "spouse",
+        "tess"
+      ],
+      "query_support_overlap_terms": [
+        "book",
+        "born",
+        "gallagher",
+        "s",
+        "tess"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "dense_recall_miss_top50"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__279729_20057",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "answer",
+      "query": "Need answer founded Robert J Chassell member Bob one founding directors Free Software Foundation FSF 1985",
+      "question": "Who founded what Robert J Chassell is a member of?",
+      "gold_answer": "Richard Stallman",
+      "retrieved_ids": [
+        "2hop__279729_20057::p14",
+        "2hop__458672_20057::p15",
+        "2hop__458672_20057::p3",
+        "2hop__427249_20057::p10",
+        "2hop__25797_990::p14",
+        "2hop__458672_20057::p19",
+        "2hop__458672_20057::p6",
+        "2hop__458672_20057::p0",
+        "2hop__458672_20057::p16",
+        "2hop__427249_20057::p5"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__279729_20057::p14"
+      ],
+      "support_seen_before": [
+        "2hop__279729_20057::p14"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__279729_20057::p14"
+      ],
+      "supporting_ids": [
+        "2hop__279729_20057::p10",
+        "2hop__279729_20057::p14"
+      ],
+      "support_titles": {
+        "2hop__279729_20057::p10": "Intellectual property",
+        "2hop__279729_20057::p14": "Robert J. Chassell"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__279729_20057::p14"
+      ],
+      "support_in_raw_top50": [
+        "2hop__279729_20057::p10",
+        "2hop__279729_20057::p14"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__279729_20057::p14"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__279729_20057::p10",
+        "2hop__279729_20057::p14"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__279729_20057::p14"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "Need answer founded Robert J Chassell member Bob one founding directors Free Software Foundation FSF 1985"
+      ],
+      "missing_question_terms": [
+        "a",
+        "is",
+        "of",
+        "what",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "chassell",
+        "founded",
+        "j",
+        "member",
+        "robert"
+      ],
+      "query_support_overlap_terms": [
+        "1985",
+        "bob",
+        "chassell",
+        "directors",
+        "foundation",
+        "founding",
+        "free",
+        "fsf",
+        "j",
+        "one",
+        "robert",
+        "software"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__31091_31122",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "answer",
+      "query": "Need answer century author Treatise Concerning Principles Human Knowldege live Knowledge commonly called referring Berkeley's works 1710 work English Irish Empiricist philosopher George Berkeley",
+      "question": "What century did the author of \"Treatise Concerning the Principles of Human Knowldege\" live in?",
+      "gold_answer": "18th",
+      "retrieved_ids": [
+        "2hop__167577_31122::p10",
+        "2hop__31091_31122::p1",
+        "2hop__31091_31122::p10",
+        "2hop__31124_31093::p2",
+        "2hop__31094_31122::p15",
+        "2hop__167577_31122::p4",
+        "2hop__31091_31122::p0",
+        "2hop__31124_31122::p15",
+        "2hop__167577_31122::p1",
+        "2hop__507722_124896::p13"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__31091_31122::p10"
+      ],
+      "support_seen_before": [
+        "2hop__31091_31122::p10"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__31091_31122::p10"
+      ],
+      "supporting_ids": [
+        "2hop__31091_31122::p10",
+        "2hop__31091_31122::p19"
+      ],
+      "support_titles": {
+        "2hop__31091_31122::p10": "Empiricism",
+        "2hop__31091_31122::p19": "Idealism"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__31091_31122::p10"
+      ],
+      "support_in_raw_top50": [
+        "2hop__31091_31122::p10",
+        "2hop__31091_31122::p19"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__31091_31122::p10"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__31091_31122::p10",
+        "2hop__31091_31122::p19"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__31091_31122::p10",
+        "2hop__31091_31122::p19"
+      ],
+      "raw_rank_first_support": 3,
+      "original_question_rank_first_support": 5,
+      "decomposed_queries": [
+        "Need answer century author Treatise Concerning Principles Human Knowldege live Knowledge commonly called referring Berkeley's works 1710 work English Irish Empiricist philosopher George Berkeley"
+      ],
+      "missing_question_terms": [
+        "did",
+        "in",
+        "of",
+        "the",
+        "what"
+      ],
+      "overlap_question_terms": [
+        "author",
+        "century",
+        "concerning",
+        "human",
+        "knowldege",
+        "live",
+        "principles",
+        "treatise"
+      ],
+      "query_support_overlap_terms": [
+        "1710",
+        "berkeley",
+        "called",
+        "century",
+        "concerning",
+        "george",
+        "human",
+        "irish",
+        "knowledge",
+        "principles",
+        "s",
+        "treatise"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__34495_49388",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "refine_query",
+      "query": "Need answer How many games season league had most Champions wins between 1992 2013 38",
+      "question": "How many games are in a season for the league that had the most Champions League wins between 1992 and 2013?",
+      "gold_answer": "38",
+      "retrieved_ids": [
+        "2hop__13592_49388::p5",
+        "2hop__55463_19033::p16",
+        "2hop__424294_19033::p1",
+        "2hop__34495_85544::p15",
+        "2hop__34495_49388::p1",
+        "2hop__34495_49388::p6",
+        "2hop__34495_85544::p3",
+        "2hop__91713_289940::p18",
+        "2hop__88149_807969::p15",
+        "2hop__825727_584042::p6"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__34495_49388::p1"
+      ],
+      "support_seen_before": [
+        "2hop__34495_49388::p1"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__34495_49388::p1"
+      ],
+      "supporting_ids": [
+        "2hop__34495_49388::p1",
+        "2hop__34495_49388::p11"
+      ],
+      "support_titles": {
+        "2hop__34495_49388::p1": "Premier League",
+        "2hop__34495_49388::p11": "La Liga"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__34495_49388::p1"
+      ],
+      "support_in_raw_top50": [
+        "2hop__34495_49388::p1",
+        "2hop__34495_49388::p11"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__34495_49388::p1"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__34495_49388::p1",
+        "2hop__34495_49388::p11"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__34495_49388::p1",
+        "2hop__34495_49388::p11"
+      ],
+      "raw_rank_first_support": 5,
+      "original_question_rank_first_support": 5,
+      "decomposed_queries": [
+        "Need answer How many games season league had most Champions wins between 1992 2013 38"
+      ],
+      "missing_question_terms": [
+        "a",
+        "and",
+        "are",
+        "for",
+        "in",
+        "that",
+        "the"
+      ],
+      "overlap_question_terms": [
+        "1992",
+        "2013",
+        "between",
+        "champions",
+        "games",
+        "had",
+        "how",
+        "league",
+        "many",
+        "most",
+        "season",
+        "wins"
+      ],
+      "query_support_overlap_terms": [
+        "1992",
+        "38",
+        "between",
+        "champions",
+        "had",
+        "league",
+        "season",
+        "wins"
+      ],
+      "query_mentions_gold_answer": true,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__34495_49388",
+      "round": 3,
+      "query_source": "checklist",
+      "action": "abstain",
+      "query": "Need answer How many games season league had most Champions wins between 1992 2013 38",
+      "question": "How many games are in a season for the league that had the most Champions League wins between 1992 and 2013?",
+      "gold_answer": "38",
+      "retrieved_ids": [
+        "2hop__13592_49388::p5",
+        "2hop__55463_19033::p16",
+        "2hop__424294_19033::p1",
+        "2hop__34495_85544::p15",
+        "2hop__34495_49388::p1",
+        "2hop__34495_49388::p6",
+        "2hop__34495_85544::p3",
+        "2hop__91713_289940::p18",
+        "2hop__88149_807969::p15",
+        "2hop__825727_584042::p6"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__34495_49388::p1"
+      ],
+      "support_seen_before": [
+        "2hop__34495_49388::p1"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__34495_49388::p1"
+      ],
+      "supporting_ids": [
+        "2hop__34495_49388::p1",
+        "2hop__34495_49388::p11"
+      ],
+      "support_titles": {
+        "2hop__34495_49388::p1": "Premier League",
+        "2hop__34495_49388::p11": "La Liga"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__34495_49388::p1"
+      ],
+      "support_in_raw_top50": [
+        "2hop__34495_49388::p1",
+        "2hop__34495_49388::p11"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__34495_49388::p1"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__34495_49388::p1",
+        "2hop__34495_49388::p11"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__34495_49388::p1",
+        "2hop__34495_49388::p11"
+      ],
+      "raw_rank_first_support": 5,
+      "original_question_rank_first_support": 5,
+      "decomposed_queries": [
+        "Need answer How many games season league had most Champions wins between 1992 2013 38"
+      ],
+      "missing_question_terms": [
+        "a",
+        "and",
+        "are",
+        "for",
+        "in",
+        "that",
+        "the"
+      ],
+      "overlap_question_terms": [
+        "1992",
+        "2013",
+        "between",
+        "champions",
+        "games",
+        "had",
+        "how",
+        "league",
+        "many",
+        "most",
+        "season",
+        "wins"
+      ],
+      "query_support_overlap_terms": [
+        "1992",
+        "38",
+        "between",
+        "champions",
+        "had",
+        "league",
+        "season",
+        "wins"
+      ],
+      "query_mentions_gold_answer": true,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__34495_85544",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "refine_query",
+      "query": "Need answer How many games team play had most champion league wins between 1992 2013 38",
+      "question": "How many games does the team play that had the most champion league wins between 1992 and 2013?",
+      "gold_answer": "38",
+      "retrieved_ids": [
+        "2hop__13592_49388::p5",
+        "2hop__55463_19033::p16",
+        "2hop__424294_19033::p1",
+        "2hop__34495_85544::p15",
+        "2hop__34495_49388::p1",
+        "2hop__91713_289940::p18",
+        "2hop__88149_807969::p15",
+        "2hop__825727_584042::p6",
+        "2hop__71165_807969::p17",
+        "2hop__50087_807969::p1"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__34495_85544::p15"
+      ],
+      "support_seen_before": [
+        "2hop__34495_85544::p15"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__34495_85544::p15"
+      ],
+      "supporting_ids": [
+        "2hop__34495_85544::p15",
+        "2hop__34495_85544::p16"
+      ],
+      "support_titles": {
+        "2hop__34495_85544::p15": "Premier League",
+        "2hop__34495_85544::p16": "La Liga"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__34495_85544::p15"
+      ],
+      "support_in_raw_top50": [
+        "2hop__34495_85544::p15",
+        "2hop__34495_85544::p16"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__34495_85544::p15"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__34495_85544::p15",
+        "2hop__34495_85544::p16"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__34495_85544::p15"
+      ],
+      "raw_rank_first_support": 4,
+      "original_question_rank_first_support": 3,
+      "decomposed_queries": [
+        "Need answer How many games team play had most champion league wins between 1992 2013 38"
+      ],
+      "missing_question_terms": [
+        "and",
+        "does",
+        "that",
+        "the"
+      ],
+      "overlap_question_terms": [
+        "1992",
+        "2013",
+        "between",
+        "champion",
+        "games",
+        "had",
+        "how",
+        "league",
+        "many",
+        "most",
+        "play",
+        "team",
+        "wins"
+      ],
+      "query_support_overlap_terms": [
+        "1992",
+        "38",
+        "between",
+        "champion",
+        "had",
+        "league",
+        "wins"
+      ],
+      "query_mentions_gold_answer": true,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__34495_85544",
+      "round": 3,
+      "query_source": "checklist",
+      "action": "abstain",
+      "query": "Need answer How many games team play had most champion league wins between 1992 2013 38",
+      "question": "How many games does the team play that had the most champion league wins between 1992 and 2013?",
+      "gold_answer": "38",
+      "retrieved_ids": [
+        "2hop__13592_49388::p5",
+        "2hop__55463_19033::p16",
+        "2hop__424294_19033::p1",
+        "2hop__34495_85544::p15",
+        "2hop__34495_49388::p1",
+        "2hop__91713_289940::p18",
+        "2hop__88149_807969::p15",
+        "2hop__825727_584042::p6",
+        "2hop__71165_807969::p17",
+        "2hop__50087_807969::p1"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__34495_85544::p15"
+      ],
+      "support_seen_before": [
+        "2hop__34495_85544::p15"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__34495_85544::p15"
+      ],
+      "supporting_ids": [
+        "2hop__34495_85544::p15",
+        "2hop__34495_85544::p16"
+      ],
+      "support_titles": {
+        "2hop__34495_85544::p15": "Premier League",
+        "2hop__34495_85544::p16": "La Liga"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__34495_85544::p15"
+      ],
+      "support_in_raw_top50": [
+        "2hop__34495_85544::p15",
+        "2hop__34495_85544::p16"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__34495_85544::p15"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__34495_85544::p15",
+        "2hop__34495_85544::p16"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__34495_85544::p15"
+      ],
+      "raw_rank_first_support": 4,
+      "original_question_rank_first_support": 3,
+      "decomposed_queries": [
+        "Need answer How many games team play had most champion league wins between 1992 2013 38"
+      ],
+      "missing_question_terms": [
+        "and",
+        "does",
+        "that",
+        "the"
+      ],
+      "overlap_question_terms": [
+        "1992",
+        "2013",
+        "between",
+        "champion",
+        "games",
+        "had",
+        "how",
+        "league",
+        "many",
+        "most",
+        "play",
+        "team",
+        "wins"
+      ],
+      "query_support_overlap_terms": [
+        "1992",
+        "38",
+        "between",
+        "champion",
+        "had",
+        "league",
+        "wins"
+      ],
+      "query_mentions_gold_answer": true,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__41158_35124",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "refine_query",
+      "query": "Need answer How many books said been written person proposed explanations origins earthquakes formation mountains Some modern scholars such Fielding H",
+      "question": "How many books were said to have been written by the person who proposed explanations for the origins of earthquakes and the formation of mountains?",
+      "gold_answer": "450",
+      "retrieved_ids": [
+        "2hop__41158_22946::p13",
+        "2hop__41158_35124::p5",
+        "2hop__41158_35123::p16",
+        "2hop__41158_22946::p15",
+        "2hop__41158_35124::p18",
+        "2hop__41158_22946::p3",
+        "2hop__41158_35123::p1",
+        "2hop__23459_35124::p11",
+        "2hop__747667_52835::p15",
+        "2hop__66708_573255::p9"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__41158_35124::p5"
+      ],
+      "support_seen_before": [
+        "2hop__41158_35124::p5"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__41158_35124::p5"
+      ],
+      "supporting_ids": [
+        "2hop__41158_35124::p5",
+        "2hop__41158_35124::p7"
+      ],
+      "support_titles": {
+        "2hop__41158_35124::p5": "Geology",
+        "2hop__41158_35124::p7": "Muslim world"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__41158_35124::p5"
+      ],
+      "support_in_raw_top50": [
+        "2hop__41158_35124::p5"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__41158_35124::p5"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__41158_35124::p5"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__41158_35124::p5"
+      ],
+      "raw_rank_first_support": 2,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "Need answer How many books said been written person proposed explanations origins earthquakes formation mountains Some modern scholars such Fielding H"
+      ],
+      "missing_question_terms": [
+        "and",
+        "by",
+        "for",
+        "have",
+        "of",
+        "the",
+        "to",
+        "were",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "been",
+        "books",
+        "earthquakes",
+        "explanations",
+        "formation",
+        "how",
+        "many",
+        "mountains",
+        "origins",
+        "person",
+        "proposed",
+        "said",
+        "written"
+      ],
+      "query_support_overlap_terms": [
+        "books",
+        "earthquakes",
+        "explanations",
+        "fielding",
+        "formation",
+        "h",
+        "modern",
+        "mountains",
+        "proposed",
+        "scholars",
+        "some",
+        "such"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__41158_35124",
+      "round": 3,
+      "query_source": "checklist",
+      "action": "abstain",
+      "query": "Need answer How many books said been written person proposed explanations origins earthquakes formation mountains Some modern scholars such Fielding H",
+      "question": "How many books were said to have been written by the person who proposed explanations for the origins of earthquakes and the formation of mountains?",
+      "gold_answer": "450",
+      "retrieved_ids": [
+        "2hop__41158_22946::p13",
+        "2hop__41158_35124::p5",
+        "2hop__41158_35123::p16",
+        "2hop__41158_22946::p15",
+        "2hop__41158_35124::p18",
+        "2hop__41158_22946::p3",
+        "2hop__41158_35123::p1",
+        "2hop__23459_35124::p11",
+        "2hop__747667_52835::p15",
+        "2hop__66708_573255::p9"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__41158_35124::p5"
+      ],
+      "support_seen_before": [
+        "2hop__41158_35124::p5"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__41158_35124::p5"
+      ],
+      "supporting_ids": [
+        "2hop__41158_35124::p5",
+        "2hop__41158_35124::p7"
+      ],
+      "support_titles": {
+        "2hop__41158_35124::p5": "Geology",
+        "2hop__41158_35124::p7": "Muslim world"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__41158_35124::p5"
+      ],
+      "support_in_raw_top50": [
+        "2hop__41158_35124::p5"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__41158_35124::p5"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__41158_35124::p5"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__41158_35124::p5"
+      ],
+      "raw_rank_first_support": 2,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "Need answer How many books said been written person proposed explanations origins earthquakes formation mountains Some modern scholars such Fielding H"
+      ],
+      "missing_question_terms": [
+        "and",
+        "by",
+        "for",
+        "have",
+        "of",
+        "the",
+        "to",
+        "were",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "been",
+        "books",
+        "earthquakes",
+        "explanations",
+        "formation",
+        "how",
+        "many",
+        "mountains",
+        "origins",
+        "person",
+        "proposed",
+        "said",
+        "written"
+      ],
+      "query_support_overlap_terms": [
+        "books",
+        "earthquakes",
+        "explanations",
+        "fielding",
+        "formation",
+        "h",
+        "modern",
+        "mountains",
+        "proposed",
+        "scholars",
+        "some",
+        "such"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__44652_165532",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "refine_query",
+      "query": "Need answer spouse actor played Zeb How West Won George Peppard Rawlings Andy Devine Corporal Peterson Harry Morgan Gen",
+      "question": "Who is the spouse of the actor who played Zeb in How the West was Won?",
+      "gold_answer": "Sherry Boucher",
+      "retrieved_ids": [
+        "2hop__44652_165532::p4",
+        "2hop__61143_165532::p11",
+        "2hop__95878_88628::p16",
+        "2hop__93230_319887::p17",
+        "2hop__564984_139312::p19",
+        "2hop__43776_162341::p10",
+        "2hop__263728_705527::p15",
+        "2hop__299142_347613::p19",
+        "2hop__51760_602275::p16",
+        "2hop__729651_631003::p3"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__44652_165532::p4"
+      ],
+      "support_seen_before": [
+        "2hop__44652_165532::p4"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__44652_165532::p4"
+      ],
+      "supporting_ids": [
+        "2hop__44652_165532::p18",
+        "2hop__44652_165532::p4"
+      ],
+      "support_titles": {
+        "2hop__44652_165532::p18": "Five Days from Home",
+        "2hop__44652_165532::p4": "How the West Was Won (film)"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__44652_165532::p4"
+      ],
+      "support_in_raw_top50": [
+        "2hop__44652_165532::p4"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__44652_165532::p4"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__44652_165532::p4"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__44652_165532::p4"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "Need answer spouse actor played Zeb How West Won George Peppard Rawlings Andy Devine Corporal Peterson Harry Morgan Gen"
+      ],
+      "missing_question_terms": [
+        "in",
+        "is",
+        "of",
+        "the",
+        "was",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "actor",
+        "how",
+        "played",
+        "spouse",
+        "west",
+        "won",
+        "zeb"
+      ],
+      "query_support_overlap_terms": [
+        "andy",
+        "corporal",
+        "devine",
+        "gen",
+        "george",
+        "harry",
+        "how",
+        "morgan",
+        "peppard",
+        "peterson",
+        "rawlings",
+        "west",
+        "won",
+        "zeb"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__44652_165532",
+      "round": 3,
+      "query_source": "checklist",
+      "action": "abstain",
+      "query": "Need answer spouse actor played Zeb How West Won George Peppard Rawlings Andy Devine Corporal Peterson Harry Morgan Gen",
+      "question": "Who is the spouse of the actor who played Zeb in How the West was Won?",
+      "gold_answer": "Sherry Boucher",
+      "retrieved_ids": [
+        "2hop__44652_165532::p4",
+        "2hop__61143_165532::p11",
+        "2hop__95878_88628::p16",
+        "2hop__93230_319887::p17",
+        "2hop__564984_139312::p19",
+        "2hop__43776_162341::p10",
+        "2hop__263728_705527::p15",
+        "2hop__299142_347613::p19",
+        "2hop__51760_602275::p16",
+        "2hop__729651_631003::p3"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__44652_165532::p4"
+      ],
+      "support_seen_before": [
+        "2hop__44652_165532::p4"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__44652_165532::p4"
+      ],
+      "supporting_ids": [
+        "2hop__44652_165532::p18",
+        "2hop__44652_165532::p4"
+      ],
+      "support_titles": {
+        "2hop__44652_165532::p18": "Five Days from Home",
+        "2hop__44652_165532::p4": "How the West Was Won (film)"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__44652_165532::p4"
+      ],
+      "support_in_raw_top50": [
+        "2hop__44652_165532::p4"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__44652_165532::p4"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__44652_165532::p4"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__44652_165532::p4"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "Need answer spouse actor played Zeb How West Won George Peppard Rawlings Andy Devine Corporal Peterson Harry Morgan Gen"
+      ],
+      "missing_question_terms": [
+        "in",
+        "is",
+        "of",
+        "the",
+        "was",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "actor",
+        "how",
+        "played",
+        "spouse",
+        "west",
+        "won",
+        "zeb"
+      ],
+      "query_support_overlap_terms": [
+        "andy",
+        "corporal",
+        "devine",
+        "gen",
+        "george",
+        "harry",
+        "how",
+        "morgan",
+        "peppard",
+        "peterson",
+        "rawlings",
+        "west",
+        "won",
+        "zeb"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__506099_20057",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "answer",
+      "query": "Need answer founded organisation owns Defective Design anti DRM initiative Free Software Foundation",
+      "question": "Who founded the organisation that owns Defective by Design?",
+      "gold_answer": "Richard Stallman",
+      "retrieved_ids": [
+        "2hop__506099_20057::p11",
+        "2hop__754021_20057::p8",
+        "2hop__458672_20057::p15",
+        "2hop__458672_20057::p19",
+        "2hop__458672_20057::p16",
+        "2hop__25797_990::p14",
+        "2hop__427249_20057::p10",
+        "2hop__458672_20057::p3",
+        "2hop__458672_20057::p0",
+        "2hop__458672_20057::p6"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__506099_20057::p11"
+      ],
+      "support_seen_before": [
+        "2hop__506099_20057::p11"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__506099_20057::p11"
+      ],
+      "supporting_ids": [
+        "2hop__506099_20057::p11",
+        "2hop__506099_20057::p8"
+      ],
+      "support_titles": {
+        "2hop__506099_20057::p11": "Defective by Design",
+        "2hop__506099_20057::p8": "Intellectual property"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__506099_20057::p11"
+      ],
+      "support_in_raw_top50": [
+        "2hop__506099_20057::p11",
+        "2hop__506099_20057::p8"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__506099_20057::p11"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__506099_20057::p11",
+        "2hop__506099_20057::p8"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__506099_20057::p11",
+        "2hop__506099_20057::p8"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "Need answer founded organisation owns Defective Design anti DRM initiative Free Software Foundation"
+      ],
+      "missing_question_terms": [
+        "by",
+        "that",
+        "the",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "defective",
+        "design",
+        "founded",
+        "organisation",
+        "owns"
+      ],
+      "query_support_overlap_terms": [
+        "anti",
+        "defective",
+        "design",
+        "drm",
+        "foundation",
+        "free",
+        "initiative",
+        "software"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__51760_122023",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "refine_query",
+      "query": "Need answer name university educated character Mel Brooks plays Mr Peabody Sherman Sherman's father died suddenly 1829 leaving his mother care 11 children",
+      "question": "What is the name of the university that educated the character that Mel Brooks plays in Mr. Peabody and Sherman?",
+      "gold_answer": "Luitpold Gymnasium",
+      "retrieved_ids": [
+        "2hop__51760_122023::p6",
+        "2hop__51760_122023::p8",
+        "2hop__51760_602275::p18",
+        "2hop__51760_602275::p1",
+        "2hop__51760_602275::p14",
+        "2hop__51760_122023::p18",
+        "2hop__51760_602275::p4",
+        "2hop__51760_122023::p15",
+        "2hop__124933_653666::p10",
+        "2hop__51760_122023::p3"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__51760_122023::p15"
+      ],
+      "support_seen_before": [
+        "2hop__51760_122023::p15"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__51760_122023::p15"
+      ],
+      "supporting_ids": [
+        "2hop__51760_122023::p15",
+        "2hop__51760_122023::p9"
+      ],
+      "support_titles": {
+        "2hop__51760_122023::p15": "Mr. Peabody & Sherman",
+        "2hop__51760_122023::p9": "Albert Einstein"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__51760_122023::p15"
+      ],
+      "support_in_raw_top50": [
+        "2hop__51760_122023::p15"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__51760_122023::p15"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__51760_122023::p15"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__51760_122023::p15"
+      ],
+      "raw_rank_first_support": 8,
+      "original_question_rank_first_support": 3,
+      "decomposed_queries": [
+        "Need answer name university educated character Mel Brooks plays Mr Peabody Sherman Sherman's father died suddenly 1829 leaving his mother care 11 children"
+      ],
+      "missing_question_terms": [
+        "and",
+        "in",
+        "is",
+        "of",
+        "that",
+        "the",
+        "what"
+      ],
+      "overlap_question_terms": [
+        "brooks",
+        "character",
+        "educated",
+        "mel",
+        "mr",
+        "name",
+        "peabody",
+        "plays",
+        "sherman",
+        "university"
+      ],
+      "query_support_overlap_terms": [
+        "brooks",
+        "mel",
+        "mr",
+        "peabody",
+        "sherman"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__51760_122023",
+      "round": 3,
+      "query_source": "checklist",
+      "action": "abstain",
+      "query": "Need answer name university educated character Mel Brooks plays Mr Peabody Sherman Sherman's father died suddenly 1829 leaving his mother care 11 children",
+      "question": "What is the name of the university that educated the character that Mel Brooks plays in Mr. Peabody and Sherman?",
+      "gold_answer": "Luitpold Gymnasium",
+      "retrieved_ids": [
+        "2hop__51760_122023::p6",
+        "2hop__51760_122023::p8",
+        "2hop__51760_602275::p18",
+        "2hop__51760_602275::p1",
+        "2hop__51760_602275::p14",
+        "2hop__51760_122023::p18",
+        "2hop__51760_602275::p4",
+        "2hop__51760_122023::p15",
+        "2hop__124933_653666::p10",
+        "2hop__51760_122023::p3"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__51760_122023::p15"
+      ],
+      "support_seen_before": [
+        "2hop__51760_122023::p15"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__51760_122023::p15"
+      ],
+      "supporting_ids": [
+        "2hop__51760_122023::p15",
+        "2hop__51760_122023::p9"
+      ],
+      "support_titles": {
+        "2hop__51760_122023::p15": "Mr. Peabody & Sherman",
+        "2hop__51760_122023::p9": "Albert Einstein"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__51760_122023::p15"
+      ],
+      "support_in_raw_top50": [
+        "2hop__51760_122023::p15"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__51760_122023::p15"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__51760_122023::p15"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__51760_122023::p15"
+      ],
+      "raw_rank_first_support": 8,
+      "original_question_rank_first_support": 3,
+      "decomposed_queries": [
+        "Need answer name university educated character Mel Brooks plays Mr Peabody Sherman Sherman's father died suddenly 1829 leaving his mother care 11 children"
+      ],
+      "missing_question_terms": [
+        "and",
+        "in",
+        "is",
+        "of",
+        "that",
+        "the",
+        "what"
+      ],
+      "overlap_question_terms": [
+        "brooks",
+        "character",
+        "educated",
+        "mel",
+        "mr",
+        "name",
+        "peabody",
+        "plays",
+        "sherman",
+        "university"
+      ],
+      "query_support_overlap_terms": [
+        "brooks",
+        "mel",
+        "mr",
+        "peabody",
+        "sherman"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__51965_165532",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "refine_query",
+      "query": "Need answer spouse actor plays Paul Breakfast Tiffany's 1961 American romantic comedy film directed Blake Edwards written George Axelrod loosely based Truman Capote's 1958",
+      "question": "Who is the spouse of the actor who plays Paul in Breakfast at Tiffany's?",
+      "gold_answer": "Sherry Boucher",
+      "retrieved_ids": [
+        "2hop__51965_165532::p8",
+        "2hop__77775_162341::p5",
+        "2hop__77775_162341::p10",
+        "2hop__51965_165532::p19",
+        "2hop__81659_52835::p2",
+        "2hop__85958_87295::p13",
+        "2hop__219456_87295::p1",
+        "2hop__776637_87295::p16",
+        "2hop__284613_87295::p3",
+        "2hop__761291_87295::p16"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__51965_165532::p19"
+      ],
+      "support_seen_before": [
+        "2hop__51965_165532::p19"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__51965_165532::p19"
+      ],
+      "supporting_ids": [
+        "2hop__51965_165532::p15",
+        "2hop__51965_165532::p19"
+      ],
+      "support_titles": {
+        "2hop__51965_165532::p15": "Five Days from Home",
+        "2hop__51965_165532::p19": "Breakfast at Tiffany's (film)"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__51965_165532::p19"
+      ],
+      "support_in_raw_top50": [
+        "2hop__51965_165532::p19"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__51965_165532::p19"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__51965_165532::p19"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__51965_165532::p19"
+      ],
+      "raw_rank_first_support": 4,
+      "original_question_rank_first_support": 4,
+      "decomposed_queries": [
+        "Need answer spouse actor plays Paul Breakfast Tiffany's 1961 American romantic comedy film directed Blake Edwards written George Axelrod loosely based Truman Capote's 1958"
+      ],
+      "missing_question_terms": [
+        "at",
+        "in",
+        "is",
+        "of",
+        "the",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "actor",
+        "breakfast",
+        "paul",
+        "plays",
+        "s",
+        "spouse",
+        "tiffany"
+      ],
+      "query_support_overlap_terms": [
+        "american",
+        "breakfast",
+        "directed",
+        "film",
+        "george",
+        "paul",
+        "s",
+        "tiffany"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__51965_165532",
+      "round": 3,
+      "query_source": "checklist",
+      "action": "abstain",
+      "query": "Need answer spouse actor plays Paul Breakfast Tiffany's 1961 American romantic comedy film directed Blake Edwards written George Axelrod loosely based Truman Capote's 1958",
+      "question": "Who is the spouse of the actor who plays Paul in Breakfast at Tiffany's?",
+      "gold_answer": "Sherry Boucher",
+      "retrieved_ids": [
+        "2hop__51965_165532::p8",
+        "2hop__77775_162341::p5",
+        "2hop__77775_162341::p10",
+        "2hop__51965_165532::p19",
+        "2hop__81659_52835::p2",
+        "2hop__85958_87295::p13",
+        "2hop__219456_87295::p1",
+        "2hop__776637_87295::p16",
+        "2hop__284613_87295::p3",
+        "2hop__761291_87295::p16"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__51965_165532::p19"
+      ],
+      "support_seen_before": [
+        "2hop__51965_165532::p19"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__51965_165532::p19"
+      ],
+      "supporting_ids": [
+        "2hop__51965_165532::p15",
+        "2hop__51965_165532::p19"
+      ],
+      "support_titles": {
+        "2hop__51965_165532::p15": "Five Days from Home",
+        "2hop__51965_165532::p19": "Breakfast at Tiffany's (film)"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__51965_165532::p19"
+      ],
+      "support_in_raw_top50": [
+        "2hop__51965_165532::p19"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__51965_165532::p19"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__51965_165532::p19"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__51965_165532::p19"
+      ],
+      "raw_rank_first_support": 4,
+      "original_question_rank_first_support": 4,
+      "decomposed_queries": [
+        "Need answer spouse actor plays Paul Breakfast Tiffany's 1961 American romantic comedy film directed Blake Edwards written George Axelrod loosely based Truman Capote's 1958"
+      ],
+      "missing_question_terms": [
+        "at",
+        "in",
+        "is",
+        "of",
+        "the",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "actor",
+        "breakfast",
+        "paul",
+        "plays",
+        "s",
+        "spouse",
+        "tiffany"
+      ],
+      "query_support_overlap_terms": [
+        "american",
+        "breakfast",
+        "directed",
+        "film",
+        "george",
+        "paul",
+        "s",
+        "tiffany"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__53175_548781",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "refine_query",
+      "query": "Need answer birth place US president whose election republican ascendancy 1920's began United States presidential 1800 fourth",
+      "question": "What is the birth place of the US president with whose election the republican ascendancy of the 1920's began?",
+      "gold_answer": "Plymouth Notch",
+      "retrieved_ids": [
+        "2hop__53175_548781::p16",
+        "2hop__53175_548781::p8",
+        "2hop__27650_27628::p13",
+        "2hop__58939_213732::p18",
+        "2hop__58939_189318::p7",
+        "2hop__32441_178460::p3",
+        "2hop__32441_522949::p4",
+        "2hop__68590_27628::p16",
+        "2hop__27650_27628::p5",
+        "2hop__27650_27628::p3"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__53175_548781::p8"
+      ],
+      "support_seen_before": [
+        "2hop__53175_548781::p8"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__53175_548781::p8"
+      ],
+      "supporting_ids": [
+        "2hop__53175_548781::p3",
+        "2hop__53175_548781::p8"
+      ],
+      "support_titles": {
+        "2hop__53175_548781::p3": "Plymouth Notch Cemetery",
+        "2hop__53175_548781::p8": "1924 United States presidential election"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__53175_548781::p8"
+      ],
+      "support_in_raw_top50": [
+        "2hop__53175_548781::p8"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__53175_548781::p8"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__53175_548781::p8"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__53175_548781::p3",
+        "2hop__53175_548781::p8"
+      ],
+      "raw_rank_first_support": 2,
+      "original_question_rank_first_support": 5,
+      "decomposed_queries": [
+        "Need answer birth place US president whose election republican ascendancy 1920's began United States presidential 1800 fourth"
+      ],
+      "missing_question_terms": [
+        "is",
+        "of",
+        "the",
+        "what",
+        "with"
+      ],
+      "overlap_question_terms": [
+        "1920",
+        "ascendancy",
+        "began",
+        "birth",
+        "election",
+        "place",
+        "president",
+        "republican",
+        "s",
+        "us",
+        "whose"
+      ],
+      "query_support_overlap_terms": [
+        "election",
+        "place",
+        "president",
+        "presidential",
+        "republican",
+        "states",
+        "united"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__53175_548781",
+      "round": 3,
+      "query_source": "checklist",
+      "action": "abstain",
+      "query": "Need answer birth place US president whose election republican ascendancy 1920's began United States presidential 1800 fourth",
+      "question": "What is the birth place of the US president with whose election the republican ascendancy of the 1920's began?",
+      "gold_answer": "Plymouth Notch",
+      "retrieved_ids": [
+        "2hop__53175_548781::p16",
+        "2hop__53175_548781::p8",
+        "2hop__27650_27628::p13",
+        "2hop__58939_213732::p18",
+        "2hop__58939_189318::p7",
+        "2hop__32441_178460::p3",
+        "2hop__32441_522949::p4",
+        "2hop__68590_27628::p16",
+        "2hop__27650_27628::p5",
+        "2hop__27650_27628::p3"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__53175_548781::p8"
+      ],
+      "support_seen_before": [
+        "2hop__53175_548781::p8"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__53175_548781::p8"
+      ],
+      "supporting_ids": [
+        "2hop__53175_548781::p3",
+        "2hop__53175_548781::p8"
+      ],
+      "support_titles": {
+        "2hop__53175_548781::p3": "Plymouth Notch Cemetery",
+        "2hop__53175_548781::p8": "1924 United States presidential election"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__53175_548781::p8"
+      ],
+      "support_in_raw_top50": [
+        "2hop__53175_548781::p8"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__53175_548781::p8"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__53175_548781::p8"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__53175_548781::p3",
+        "2hop__53175_548781::p8"
+      ],
+      "raw_rank_first_support": 2,
+      "original_question_rank_first_support": 5,
+      "decomposed_queries": [
+        "Need answer birth place US president whose election republican ascendancy 1920's began United States presidential 1800 fourth"
+      ],
+      "missing_question_terms": [
+        "is",
+        "of",
+        "the",
+        "what",
+        "with"
+      ],
+      "overlap_question_terms": [
+        "1920",
+        "ascendancy",
+        "began",
+        "birth",
+        "election",
+        "place",
+        "president",
+        "republican",
+        "s",
+        "us",
+        "whose"
+      ],
+      "query_support_overlap_terms": [
+        "election",
+        "place",
+        "president",
+        "presidential",
+        "republican",
+        "states",
+        "united"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__61143_165532",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "refine_query",
+      "query": "Need answer spouse actor played hannibal smith team Colonel John George Peppard fictional character one four protagonists 1980s action adventure television series",
+      "question": "Who is the spouse of the actor who played hannibal smith in the a team?",
+      "gold_answer": "Sherry Boucher",
+      "retrieved_ids": [
+        "2hop__61143_165532::p11",
+        "2hop__95878_88628::p16",
+        "2hop__93230_319887::p17",
+        "2hop__61143_165532::p13",
+        "2hop__93230_319887::p16",
+        "2hop__93230_319887::p18",
+        "2hop__84971_67668::p13",
+        "2hop__84971_67668::p19",
+        "2hop__61143_165532::p8",
+        "2hop__71715_50429::p9"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__61143_165532::p11"
+      ],
+      "support_seen_before": [
+        "2hop__61143_165532::p11"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__61143_165532::p11"
+      ],
+      "supporting_ids": [
+        "2hop__61143_165532::p11",
+        "2hop__61143_165532::p5"
+      ],
+      "support_titles": {
+        "2hop__61143_165532::p11": "John \"Hannibal\" Smith",
+        "2hop__61143_165532::p5": "Five Days from Home"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__61143_165532::p11"
+      ],
+      "support_in_raw_top50": [
+        "2hop__61143_165532::p11"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__61143_165532::p11"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__61143_165532::p11"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__61143_165532::p11"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 3,
+      "decomposed_queries": [
+        "Need answer spouse actor played hannibal smith team Colonel John George Peppard fictional character one four protagonists 1980s action adventure television series"
+      ],
+      "missing_question_terms": [
+        "a",
+        "in",
+        "is",
+        "of",
+        "the",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "actor",
+        "hannibal",
+        "played",
+        "smith",
+        "spouse",
+        "team"
+      ],
+      "query_support_overlap_terms": [
+        "1980s",
+        "action",
+        "adventure",
+        "character",
+        "colonel",
+        "fictional",
+        "four",
+        "george",
+        "hannibal",
+        "john",
+        "one",
+        "peppard",
+        "played",
+        "protagonists",
+        "series",
+        "smith",
+        "team",
+        "television"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__61143_165532",
+      "round": 3,
+      "query_source": "checklist",
+      "action": "abstain",
+      "query": "Need answer spouse actor played hannibal smith team Colonel John George Peppard fictional character one four protagonists 1980s action adventure television series",
+      "question": "Who is the spouse of the actor who played hannibal smith in the a team?",
+      "gold_answer": "Sherry Boucher",
+      "retrieved_ids": [
+        "2hop__61143_165532::p11",
+        "2hop__95878_88628::p16",
+        "2hop__93230_319887::p17",
+        "2hop__61143_165532::p13",
+        "2hop__93230_319887::p16",
+        "2hop__93230_319887::p18",
+        "2hop__84971_67668::p13",
+        "2hop__84971_67668::p19",
+        "2hop__61143_165532::p8",
+        "2hop__71715_50429::p9"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__61143_165532::p11"
+      ],
+      "support_seen_before": [
+        "2hop__61143_165532::p11"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__61143_165532::p11"
+      ],
+      "supporting_ids": [
+        "2hop__61143_165532::p11",
+        "2hop__61143_165532::p5"
+      ],
+      "support_titles": {
+        "2hop__61143_165532::p11": "John \"Hannibal\" Smith",
+        "2hop__61143_165532::p5": "Five Days from Home"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__61143_165532::p11"
+      ],
+      "support_in_raw_top50": [
+        "2hop__61143_165532::p11"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__61143_165532::p11"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__61143_165532::p11"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__61143_165532::p11"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 3,
+      "decomposed_queries": [
+        "Need answer spouse actor played hannibal smith team Colonel John George Peppard fictional character one four protagonists 1980s action adventure television series"
+      ],
+      "missing_question_terms": [
+        "a",
+        "in",
+        "is",
+        "of",
+        "the",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "actor",
+        "hannibal",
+        "played",
+        "smith",
+        "spouse",
+        "team"
+      ],
+      "query_support_overlap_terms": [
+        "1980s",
+        "action",
+        "adventure",
+        "character",
+        "colonel",
+        "fictional",
+        "four",
+        "george",
+        "hannibal",
+        "john",
+        "one",
+        "peppard",
+        "played",
+        "protagonists",
+        "series",
+        "smith",
+        "team",
+        "television"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__61924_712629",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "refine_query",
+      "query": "Need answer spouse current queen England This list kings queens Kingdom begins Alfred Great King Wessex one petty kingdoms rule portion modern",
+      "question": "Who is the spouse of the current queen of England?",
+      "gold_answer": "Philip Mountbatten",
+      "retrieved_ids": [
+        "2hop__42578_55840::p8",
+        "2hop__88906_55840::p15",
+        "2hop__49887_573255::p2",
+        "2hop__64323_55840::p15",
+        "2hop__61924_712629::p8",
+        "2hop__15368_17873::p16",
+        "2hop__107548_124896::p14",
+        "2hop__135029_712629::p9",
+        "2hop__10122_18974::p15",
+        "2hop__42578_55840::p1"
+      ],
+      "support_in_current_retrieved": [],
+      "support_seen_before": [],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [],
+      "supporting_ids": [
+        "2hop__61924_712629::p10",
+        "2hop__61924_712629::p7"
+      ],
+      "support_titles": {
+        "2hop__61924_712629::p10": "Elizabeth II",
+        "2hop__61924_712629::p7": "Wedding dress of Princess Elizabeth"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [],
+      "support_in_raw_top50": [
+        "2hop__61924_712629::p10"
+      ],
+      "support_in_decomposed_topk": [],
+      "support_in_decomposed_top50": [
+        "2hop__61924_712629::p10"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__61924_712629::p10"
+      ],
+      "raw_rank_first_support": 35,
+      "original_question_rank_first_support": 18,
+      "decomposed_queries": [
+        "Need answer spouse current queen England This list kings queens Kingdom begins Alfred Great King Wessex one petty kingdoms rule portion modern"
+      ],
+      "missing_question_terms": [
+        "is",
+        "of",
+        "the",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "current",
+        "england",
+        "queen",
+        "spouse"
+      ],
+      "query_support_overlap_terms": [
+        "kingdom",
+        "queen"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "top_k_too_small",
+        "per_subquery_or_total_top_k_too_small"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__61924_712629",
+      "round": 3,
+      "query_source": "checklist",
+      "action": "abstain",
+      "query": "Need answer spouse current queen England This list kings queens Kingdom begins Alfred Great King Wessex one petty kingdoms rule portion modern",
+      "question": "Who is the spouse of the current queen of England?",
+      "gold_answer": "Philip Mountbatten",
+      "retrieved_ids": [
+        "2hop__42578_55840::p8",
+        "2hop__88906_55840::p15",
+        "2hop__49887_573255::p2",
+        "2hop__64323_55840::p15",
+        "2hop__61924_712629::p8",
+        "2hop__15368_17873::p16",
+        "2hop__107548_124896::p14",
+        "2hop__135029_712629::p9",
+        "2hop__10122_18974::p15",
+        "2hop__42578_55840::p1"
+      ],
+      "support_in_current_retrieved": [],
+      "support_seen_before": [],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [],
+      "supporting_ids": [
+        "2hop__61924_712629::p10",
+        "2hop__61924_712629::p7"
+      ],
+      "support_titles": {
+        "2hop__61924_712629::p10": "Elizabeth II",
+        "2hop__61924_712629::p7": "Wedding dress of Princess Elizabeth"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [],
+      "support_in_raw_top50": [
+        "2hop__61924_712629::p10"
+      ],
+      "support_in_decomposed_topk": [],
+      "support_in_decomposed_top50": [
+        "2hop__61924_712629::p10"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__61924_712629::p10"
+      ],
+      "raw_rank_first_support": 35,
+      "original_question_rank_first_support": 18,
+      "decomposed_queries": [
+        "Need answer spouse current queen England This list kings queens Kingdom begins Alfred Great King Wessex one petty kingdoms rule portion modern"
+      ],
+      "missing_question_terms": [
+        "is",
+        "of",
+        "the",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "current",
+        "england",
+        "queen",
+        "spouse"
+      ],
+      "query_support_overlap_terms": [
+        "kingdom",
+        "queen"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "top_k_too_small",
+        "per_subquery_or_total_top_k_too_small"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__71900_712629",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "abstain",
+      "query": "Need answer spouse longest reigning British monarch Queen surpassed her great grandmother Victoria become lived December 2007 9 September 2015",
+      "question": "Who is the spouse of the longest reigning British monarch?",
+      "gold_answer": "Philip Mountbatten",
+      "retrieved_ids": [
+        "2hop__15368_17873::p16",
+        "2hop__71900_712629::p6",
+        "2hop__15368_17873::p3",
+        "2hop__71900_712629::p13",
+        "2hop__15368_17873::p13",
+        "2hop__71900_712629::p8",
+        "2hop__20685_712629::p14",
+        "2hop__15368_17873::p19",
+        "2hop__20685_712629::p19",
+        "2hop__71900_712629::p12"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__71900_712629::p6"
+      ],
+      "support_seen_before": [
+        "2hop__71900_712629::p6"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__71900_712629::p6"
+      ],
+      "supporting_ids": [
+        "2hop__71900_712629::p19",
+        "2hop__71900_712629::p6"
+      ],
+      "support_titles": {
+        "2hop__71900_712629::p19": "Wedding dress of Princess Elizabeth",
+        "2hop__71900_712629::p6": "List of monarchs in Britain by length of reign"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__71900_712629::p6"
+      ],
+      "support_in_raw_top50": [
+        "2hop__71900_712629::p6"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__71900_712629::p6"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__71900_712629::p6"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__71900_712629::p6"
+      ],
+      "raw_rank_first_support": 2,
+      "original_question_rank_first_support": 2,
+      "decomposed_queries": [
+        "Need answer spouse longest reigning British monarch Queen surpassed her great grandmother Victoria become lived December 2007 9 September 2015"
+      ],
+      "missing_question_terms": [
+        "is",
+        "of",
+        "the",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "british",
+        "longest",
+        "monarch",
+        "reigning",
+        "spouse"
+      ],
+      "query_support_overlap_terms": [
+        "2015",
+        "9",
+        "british",
+        "grandmother",
+        "great",
+        "her",
+        "longest",
+        "monarch",
+        "queen",
+        "reigning",
+        "september",
+        "surpassed",
+        "victoria"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__73760_712629",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "refine_query",
+      "query": "Need answer spouse individual lives houses Windsor Castle survived tumultuous period English Civil War used military headquarters Parliamentary forces prison Charles I",
+      "question": "Who is the spouse of the individual who lives in the houses in Windsor Castle?",
+      "gold_answer": "Philip Mountbatten",
+      "retrieved_ids": [
+        "2hop__73760_712629::p11",
+        "2hop__73760_712629::p14",
+        "2hop__73760_712629::p4",
+        "2hop__73760_712629::p8",
+        "2hop__35566_17873::p13",
+        "2hop__17854_17873::p5",
+        "2hop__15368_17873::p7",
+        "2hop__73760_712629::p13",
+        "2hop__73760_712629::p15",
+        "2hop__73760_712629::p19"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__73760_712629::p11"
+      ],
+      "support_seen_before": [
+        "2hop__73760_712629::p11"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__73760_712629::p11"
+      ],
+      "supporting_ids": [
+        "2hop__73760_712629::p11",
+        "2hop__73760_712629::p7"
+      ],
+      "support_titles": {
+        "2hop__73760_712629::p11": "Windsor Castle",
+        "2hop__73760_712629::p7": "Wedding dress of Princess Elizabeth"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__73760_712629::p11"
+      ],
+      "support_in_raw_top50": [
+        "2hop__73760_712629::p11"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__73760_712629::p11"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__73760_712629::p11"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__73760_712629::p11"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "Need answer spouse individual lives houses Windsor Castle survived tumultuous period English Civil War used military headquarters Parliamentary forces prison Charles I"
+      ],
+      "missing_question_terms": [
+        "in",
+        "is",
+        "of",
+        "the",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "castle",
+        "houses",
+        "individual",
+        "lives",
+        "spouse",
+        "windsor"
+      ],
+      "query_support_overlap_terms": [
+        "castle",
+        "charles",
+        "civil",
+        "english",
+        "forces",
+        "headquarters",
+        "i",
+        "military",
+        "parliamentary",
+        "period",
+        "prison",
+        "survived",
+        "tumultuous",
+        "used",
+        "war",
+        "windsor"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__73760_712629",
+      "round": 3,
+      "query_source": "checklist",
+      "action": "abstain",
+      "query": "Need answer spouse individual lives houses Windsor Castle survived tumultuous period English Civil War used military headquarters Parliamentary forces prison Charles I",
+      "question": "Who is the spouse of the individual who lives in the houses in Windsor Castle?",
+      "gold_answer": "Philip Mountbatten",
+      "retrieved_ids": [
+        "2hop__73760_712629::p11",
+        "2hop__73760_712629::p14",
+        "2hop__73760_712629::p4",
+        "2hop__73760_712629::p8",
+        "2hop__35566_17873::p13",
+        "2hop__17854_17873::p5",
+        "2hop__15368_17873::p7",
+        "2hop__73760_712629::p13",
+        "2hop__73760_712629::p15",
+        "2hop__73760_712629::p19"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__73760_712629::p11"
+      ],
+      "support_seen_before": [
+        "2hop__73760_712629::p11"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__73760_712629::p11"
+      ],
+      "supporting_ids": [
+        "2hop__73760_712629::p11",
+        "2hop__73760_712629::p7"
+      ],
+      "support_titles": {
+        "2hop__73760_712629::p11": "Windsor Castle",
+        "2hop__73760_712629::p7": "Wedding dress of Princess Elizabeth"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__73760_712629::p11"
+      ],
+      "support_in_raw_top50": [
+        "2hop__73760_712629::p11"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__73760_712629::p11"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__73760_712629::p11"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__73760_712629::p11"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "Need answer spouse individual lives houses Windsor Castle survived tumultuous period English Civil War used military headquarters Parliamentary forces prison Charles I"
+      ],
+      "missing_question_terms": [
+        "in",
+        "is",
+        "of",
+        "the",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "castle",
+        "houses",
+        "individual",
+        "lives",
+        "spouse",
+        "windsor"
+      ],
+      "query_support_overlap_terms": [
+        "castle",
+        "charles",
+        "civil",
+        "english",
+        "forces",
+        "headquarters",
+        "i",
+        "military",
+        "parliamentary",
+        "period",
+        "prison",
+        "survived",
+        "tumultuous",
+        "used",
+        "war",
+        "windsor"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__752214_639679",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "refine_query",
+      "query": "Need answer spouse author Queen Elephants book written conservationist travel writer Mark Shand corresponding BBC documentary based life first female mahout recent times Parbati",
+      "question": "Who is the spouse of the author of Queen of the Elephants?",
+      "gold_answer": "Clio Goldsmith",
+      "retrieved_ids": [
+        "2hop__752214_639679::p6",
+        "2hop__23459_35124::p11",
+        "2hop__71165_807969::p14",
+        "2hop__73921_807969::p14",
+        "2hop__31124_31122::p17",
+        "2hop__31124_31093::p4",
+        "2hop__23459_35124::p5",
+        "2hop__160223_58067::p5",
+        "2hop__89991_58067::p9",
+        "2hop__323534_810083::p18"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__752214_639679::p6"
+      ],
+      "support_seen_before": [
+        "2hop__752214_639679::p6"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__752214_639679::p6"
+      ],
+      "supporting_ids": [
+        "2hop__752214_639679::p13",
+        "2hop__752214_639679::p6"
+      ],
+      "support_titles": {
+        "2hop__752214_639679::p13": "Clio Goldsmith",
+        "2hop__752214_639679::p6": "Queen of the Elephants"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__752214_639679::p6"
+      ],
+      "support_in_raw_top50": [
+        "2hop__752214_639679::p6"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__752214_639679::p6"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__752214_639679::p6"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__752214_639679::p6"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "Need answer spouse author Queen Elephants book written conservationist travel writer Mark Shand corresponding BBC documentary based life first female mahout recent times Parbati"
+      ],
+      "missing_question_terms": [
+        "is",
+        "of",
+        "the",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "author",
+        "elephants",
+        "queen",
+        "spouse"
+      ],
+      "query_support_overlap_terms": [
+        "based",
+        "bbc",
+        "book",
+        "conservationist",
+        "corresponding",
+        "documentary",
+        "elephants",
+        "female",
+        "first",
+        "life",
+        "mahout",
+        "mark",
+        "parbati",
+        "queen",
+        "recent",
+        "shand",
+        "times",
+        "travel",
+        "writer",
+        "written"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__752214_639679",
+      "round": 3,
+      "query_source": "checklist",
+      "action": "abstain",
+      "query": "Need answer spouse author Queen Elephants book written conservationist travel writer Mark Shand corresponding BBC documentary based life first female mahout recent times Parbati",
+      "question": "Who is the spouse of the author of Queen of the Elephants?",
+      "gold_answer": "Clio Goldsmith",
+      "retrieved_ids": [
+        "2hop__752214_639679::p6",
+        "2hop__23459_35124::p11",
+        "2hop__71165_807969::p14",
+        "2hop__73921_807969::p14",
+        "2hop__31124_31122::p17",
+        "2hop__31124_31093::p4",
+        "2hop__23459_35124::p5",
+        "2hop__160223_58067::p5",
+        "2hop__89991_58067::p9",
+        "2hop__323534_810083::p18"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__752214_639679::p6"
+      ],
+      "support_seen_before": [
+        "2hop__752214_639679::p6"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__752214_639679::p6"
+      ],
+      "supporting_ids": [
+        "2hop__752214_639679::p13",
+        "2hop__752214_639679::p6"
+      ],
+      "support_titles": {
+        "2hop__752214_639679::p13": "Clio Goldsmith",
+        "2hop__752214_639679::p6": "Queen of the Elephants"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__752214_639679::p6"
+      ],
+      "support_in_raw_top50": [
+        "2hop__752214_639679::p6"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__752214_639679::p6"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__752214_639679::p6"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__752214_639679::p6"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "Need answer spouse author Queen Elephants book written conservationist travel writer Mark Shand corresponding BBC documentary based life first female mahout recent times Parbati"
+      ],
+      "missing_question_terms": [
+        "is",
+        "of",
+        "the",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "author",
+        "elephants",
+        "queen",
+        "spouse"
+      ],
+      "query_support_overlap_terms": [
+        "based",
+        "bbc",
+        "book",
+        "conservationist",
+        "corresponding",
+        "documentary",
+        "elephants",
+        "female",
+        "first",
+        "life",
+        "mahout",
+        "mark",
+        "parbati",
+        "queen",
+        "recent",
+        "shand",
+        "times",
+        "travel",
+        "writer",
+        "written"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__754021_20057",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "answer",
+      "query": "Need answer started organization founded Defective Design anti DRM initiative Free Software Foundation",
+      "question": "Who started the organization that founded Defective by Design?",
+      "gold_answer": "Richard Stallman",
+      "retrieved_ids": [
+        "2hop__506099_20057::p11",
+        "2hop__754021_20057::p8",
+        "2hop__458672_20057::p15",
+        "2hop__25797_990::p14",
+        "2hop__427249_20057::p10",
+        "2hop__458672_20057::p19",
+        "2hop__458672_20057::p3",
+        "2hop__458672_20057::p16",
+        "2hop__458672_20057::p0",
+        "2hop__458672_20057::p6"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__754021_20057::p8"
+      ],
+      "support_seen_before": [
+        "2hop__754021_20057::p8"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__754021_20057::p8"
+      ],
+      "supporting_ids": [
+        "2hop__754021_20057::p7",
+        "2hop__754021_20057::p8"
+      ],
+      "support_titles": {
+        "2hop__754021_20057::p7": "Intellectual property",
+        "2hop__754021_20057::p8": "Defective by Design"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__754021_20057::p8"
+      ],
+      "support_in_raw_top50": [
+        "2hop__754021_20057::p7",
+        "2hop__754021_20057::p8"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__754021_20057::p8"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__754021_20057::p7",
+        "2hop__754021_20057::p8"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__754021_20057::p7",
+        "2hop__754021_20057::p8"
+      ],
+      "raw_rank_first_support": 2,
+      "original_question_rank_first_support": 2,
+      "decomposed_queries": [
+        "Need answer started organization founded Defective Design anti DRM initiative Free Software Foundation"
+      ],
+      "missing_question_terms": [
+        "by",
+        "that",
+        "the",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "defective",
+        "design",
+        "founded",
+        "organization",
+        "started"
+      ],
+      "query_support_overlap_terms": [
+        "anti",
+        "defective",
+        "design",
+        "drm",
+        "foundation",
+        "free",
+        "initiative",
+        "software"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__77518_548781",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "refine_query",
+      "query": "Need answer president born fourth July Coincidentally both John Adams Thomas Jefferson only signers Declaration Independence later serve Presidents United States died same day",
+      "question": "Where was the president born on the fourth of July born?",
+      "gold_answer": "Plymouth Notch",
+      "retrieved_ids": [
+        "2hop__77518_548781::p17",
+        "2hop__107238_64918::p14",
+        "2hop__107238_64918::p5",
+        "2hop__53175_548781::p16",
+        "2hop__27650_27628::p13",
+        "2hop__77518_548781::p15",
+        "2hop__77518_548781::p11",
+        "2hop__38229_84500::p6",
+        "2hop__107238_64918::p17",
+        "2hop__107238_64918::p6"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__77518_548781::p17"
+      ],
+      "support_seen_before": [
+        "2hop__77518_548781::p17"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__77518_548781::p17"
+      ],
+      "supporting_ids": [
+        "2hop__77518_548781::p10",
+        "2hop__77518_548781::p17"
+      ],
+      "support_titles": {
+        "2hop__77518_548781::p10": "Plymouth Notch Cemetery",
+        "2hop__77518_548781::p17": "Independence Day (United States)"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__77518_548781::p17"
+      ],
+      "support_in_raw_top50": [
+        "2hop__77518_548781::p10",
+        "2hop__77518_548781::p17"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__77518_548781::p17"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__77518_548781::p10",
+        "2hop__77518_548781::p17"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__77518_548781::p10",
+        "2hop__77518_548781::p17"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "Need answer president born fourth July Coincidentally both John Adams Thomas Jefferson only signers Declaration Independence later serve Presidents United States died same day"
+      ],
+      "missing_question_terms": [
+        "of",
+        "on",
+        "the",
+        "was",
+        "where"
+      ],
+      "overlap_question_terms": [
+        "born",
+        "fourth",
+        "july",
+        "president"
+      ],
+      "query_support_overlap_terms": [
+        "adams",
+        "born",
+        "both",
+        "coincidentally",
+        "day",
+        "declaration",
+        "died",
+        "independence",
+        "jefferson",
+        "john",
+        "july",
+        "later",
+        "only",
+        "president",
+        "presidents",
+        "same",
+        "serve",
+        "signers",
+        "states",
+        "thomas",
+        "united"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__77518_548781",
+      "round": 3,
+      "query_source": "checklist",
+      "action": "abstain",
+      "query": "Need answer president born fourth July Coincidentally both John Adams Thomas Jefferson only signers Declaration Independence later serve Presidents United States died same day",
+      "question": "Where was the president born on the fourth of July born?",
+      "gold_answer": "Plymouth Notch",
+      "retrieved_ids": [
+        "2hop__77518_548781::p17",
+        "2hop__107238_64918::p14",
+        "2hop__107238_64918::p5",
+        "2hop__53175_548781::p16",
+        "2hop__27650_27628::p13",
+        "2hop__77518_548781::p15",
+        "2hop__77518_548781::p11",
+        "2hop__38229_84500::p6",
+        "2hop__107238_64918::p17",
+        "2hop__107238_64918::p6"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__77518_548781::p17"
+      ],
+      "support_seen_before": [
+        "2hop__77518_548781::p17"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__77518_548781::p17"
+      ],
+      "supporting_ids": [
+        "2hop__77518_548781::p10",
+        "2hop__77518_548781::p17"
+      ],
+      "support_titles": {
+        "2hop__77518_548781::p10": "Plymouth Notch Cemetery",
+        "2hop__77518_548781::p17": "Independence Day (United States)"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__77518_548781::p17"
+      ],
+      "support_in_raw_top50": [
+        "2hop__77518_548781::p10",
+        "2hop__77518_548781::p17"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__77518_548781::p17"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__77518_548781::p10",
+        "2hop__77518_548781::p17"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__77518_548781::p10",
+        "2hop__77518_548781::p17"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "Need answer president born fourth July Coincidentally both John Adams Thomas Jefferson only signers Declaration Independence later serve Presidents United States died same day"
+      ],
+      "missing_question_terms": [
+        "of",
+        "on",
+        "the",
+        "was",
+        "where"
+      ],
+      "overlap_question_terms": [
+        "born",
+        "fourth",
+        "july",
+        "president"
+      ],
+      "query_support_overlap_terms": [
+        "adams",
+        "born",
+        "both",
+        "coincidentally",
+        "day",
+        "declaration",
+        "died",
+        "independence",
+        "jefferson",
+        "john",
+        "july",
+        "later",
+        "only",
+        "president",
+        "presidents",
+        "same",
+        "serve",
+        "signers",
+        "states",
+        "thomas",
+        "united"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__780652_93362",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "refine_query",
+      "query": "Need answer film features Anil Devgan's sibling Devgan son Veeru brother actor Ajay law actress Kajol",
+      "question": "What film features Anil Devgan's sibling?",
+      "gold_answer": "Yeh Raaste Hain Pyaar Ke",
+      "retrieved_ids": [
+        "2hop__706637_93362::p5",
+        "2hop__780652_93362::p9",
+        "2hop__706637_93362::p4",
+        "2hop__771727_93362::p17",
+        "2hop__780652_93362::p10",
+        "2hop__706637_93362::p19",
+        "2hop__780652_93362::p2",
+        "2hop__780652_93362::p7",
+        "2hop__124933_653666::p10",
+        "2hop__780652_93362::p5"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__780652_93362::p9"
+      ],
+      "support_seen_before": [
+        "2hop__780652_93362::p9"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__780652_93362::p9"
+      ],
+      "supporting_ids": [
+        "2hop__780652_93362::p8",
+        "2hop__780652_93362::p9"
+      ],
+      "support_titles": {
+        "2hop__780652_93362::p8": "Yeh Raaste Hain Pyaar Ke",
+        "2hop__780652_93362::p9": "Anil Devgan"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__780652_93362::p9"
+      ],
+      "support_in_raw_top50": [
+        "2hop__780652_93362::p9"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__780652_93362::p9"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__780652_93362::p9"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__780652_93362::p9"
+      ],
+      "raw_rank_first_support": 2,
+      "original_question_rank_first_support": 2,
+      "decomposed_queries": [
+        "Need answer film features Anil Devgan's sibling Devgan son Veeru brother actor Ajay law actress Kajol"
+      ],
+      "missing_question_terms": [
+        "what"
+      ],
+      "overlap_question_terms": [
+        "anil",
+        "devgan",
+        "features",
+        "film",
+        "s",
+        "sibling"
+      ],
+      "query_support_overlap_terms": [
+        "actor",
+        "actress",
+        "ajay",
+        "anil",
+        "brother",
+        "devgan",
+        "film",
+        "kajol",
+        "law",
+        "son",
+        "veeru"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__780652_93362",
+      "round": 3,
+      "query_source": "checklist",
+      "action": "abstain",
+      "query": "Need answer film features Anil Devgan's sibling Devgan son Veeru brother actor Ajay law actress Kajol",
+      "question": "What film features Anil Devgan's sibling?",
+      "gold_answer": "Yeh Raaste Hain Pyaar Ke",
+      "retrieved_ids": [
+        "2hop__706637_93362::p5",
+        "2hop__780652_93362::p9",
+        "2hop__706637_93362::p4",
+        "2hop__771727_93362::p17",
+        "2hop__780652_93362::p10",
+        "2hop__706637_93362::p19",
+        "2hop__780652_93362::p2",
+        "2hop__780652_93362::p7",
+        "2hop__124933_653666::p10",
+        "2hop__780652_93362::p5"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__780652_93362::p9"
+      ],
+      "support_seen_before": [
+        "2hop__780652_93362::p9"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__780652_93362::p9"
+      ],
+      "supporting_ids": [
+        "2hop__780652_93362::p8",
+        "2hop__780652_93362::p9"
+      ],
+      "support_titles": {
+        "2hop__780652_93362::p8": "Yeh Raaste Hain Pyaar Ke",
+        "2hop__780652_93362::p9": "Anil Devgan"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__780652_93362::p9"
+      ],
+      "support_in_raw_top50": [
+        "2hop__780652_93362::p9"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__780652_93362::p9"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__780652_93362::p9"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__780652_93362::p9"
+      ],
+      "raw_rank_first_support": 2,
+      "original_question_rank_first_support": 2,
+      "decomposed_queries": [
+        "Need answer film features Anil Devgan's sibling Devgan son Veeru brother actor Ajay law actress Kajol"
+      ],
+      "missing_question_terms": [
+        "what"
+      ],
+      "overlap_question_terms": [
+        "anil",
+        "devgan",
+        "features",
+        "film",
+        "s",
+        "sibling"
+      ],
+      "query_support_overlap_terms": [
+        "actor",
+        "actress",
+        "ajay",
+        "anil",
+        "brother",
+        "devgan",
+        "film",
+        "kajol",
+        "law",
+        "son",
+        "veeru"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__89403_122023",
+      "round": 2,
+      "query_source": "checklist",
+      "action": "refine_query",
+      "query": "Need answer university educated scientist developed explanation photoelectric effect 1887 Heinrich Hertz discovered electrodes illuminated ultraviolet light create electric sparks more easily",
+      "question": "Which university educated the scientist who developed an explanation for the photoelectric effect?",
+      "gold_answer": "Luitpold Gymnasium",
+      "retrieved_ids": [
+        "2hop__89403_122023::p5",
+        "2hop__89403_602275::p10",
+        "2hop__89403_122023::p10",
+        "2hop__89403_602275::p13",
+        "2hop__158010_58067::p8",
+        "2hop__557743_92763::p0",
+        "2hop__89403_602275::p5",
+        "2hop__89403_122023::p13",
+        "2hop__89403_602275::p19",
+        "2hop__813461_31270::p11"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__89403_122023::p5"
+      ],
+      "support_seen_before": [
+        "2hop__89403_122023::p5"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__89403_122023::p5"
+      ],
+      "supporting_ids": [
+        "2hop__89403_122023::p1",
+        "2hop__89403_122023::p5"
+      ],
+      "support_titles": {
+        "2hop__89403_122023::p1": "Albert Einstein",
+        "2hop__89403_122023::p5": "Photoelectric effect"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__89403_122023::p5"
+      ],
+      "support_in_raw_top50": [
+        "2hop__89403_122023::p5"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__89403_122023::p5"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__89403_122023::p5"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__89403_122023::p5"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "Need answer university educated scientist developed explanation photoelectric effect 1887 Heinrich Hertz discovered electrodes illuminated ultraviolet light create electric sparks more easily"
+      ],
+      "missing_question_terms": [
+        "an",
+        "for",
+        "the",
+        "which",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "developed",
+        "educated",
+        "effect",
+        "explanation",
+        "photoelectric",
+        "scientist",
+        "university"
+      ],
+      "query_support_overlap_terms": [
+        "1887",
+        "create",
+        "discovered",
+        "easily",
+        "effect",
+        "electric",
+        "electrodes",
+        "heinrich",
+        "hertz",
+        "illuminated",
+        "light",
+        "more",
+        "photoelectric",
+        "sparks",
+        "ultraviolet"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    },
+    {
+      "run_id": "2hop__89403_122023",
+      "round": 3,
+      "query_source": "checklist",
+      "action": "abstain",
+      "query": "Need answer university educated scientist developed explanation photoelectric effect 1887 Heinrich Hertz discovered electrodes illuminated ultraviolet light create electric sparks more easily",
+      "question": "Which university educated the scientist who developed an explanation for the photoelectric effect?",
+      "gold_answer": "Luitpold Gymnasium",
+      "retrieved_ids": [
+        "2hop__89403_122023::p5",
+        "2hop__89403_602275::p10",
+        "2hop__89403_122023::p10",
+        "2hop__89403_602275::p13",
+        "2hop__158010_58067::p8",
+        "2hop__557743_92763::p0",
+        "2hop__89403_602275::p5",
+        "2hop__89403_122023::p13",
+        "2hop__89403_602275::p19",
+        "2hop__813461_31270::p11"
+      ],
+      "support_in_current_retrieved": [
+        "2hop__89403_122023::p5"
+      ],
+      "support_seen_before": [
+        "2hop__89403_122023::p5"
+      ],
+      "new_support_in_current_retrieved": [],
+      "cumulative_support_after_step": [
+        "2hop__89403_122023::p5"
+      ],
+      "supporting_ids": [
+        "2hop__89403_122023::p1",
+        "2hop__89403_122023::p5"
+      ],
+      "support_titles": {
+        "2hop__89403_122023::p1": "Albert Einstein",
+        "2hop__89403_122023::p5": "Photoelectric effect"
+      },
+      "support_missing_corpus": [],
+      "support_missing_index": [],
+      "support_in_raw_topk": [
+        "2hop__89403_122023::p5"
+      ],
+      "support_in_raw_top50": [
+        "2hop__89403_122023::p5"
+      ],
+      "support_in_decomposed_topk": [
+        "2hop__89403_122023::p5"
+      ],
+      "support_in_decomposed_top50": [
+        "2hop__89403_122023::p5"
+      ],
+      "support_in_original_question_top50": [
+        "2hop__89403_122023::p5"
+      ],
+      "raw_rank_first_support": 1,
+      "original_question_rank_first_support": 1,
+      "decomposed_queries": [
+        "Need answer university educated scientist developed explanation photoelectric effect 1887 Heinrich Hertz discovered electrodes illuminated ultraviolet light create electric sparks more easily"
+      ],
+      "missing_question_terms": [
+        "an",
+        "for",
+        "the",
+        "which",
+        "who"
+      ],
+      "overlap_question_terms": [
+        "developed",
+        "educated",
+        "effect",
+        "explanation",
+        "photoelectric",
+        "scientist",
+        "university"
+      ],
+      "query_support_overlap_terms": [
+        "1887",
+        "create",
+        "discovered",
+        "easily",
+        "effect",
+        "electric",
+        "electrodes",
+        "heinrich",
+        "hertz",
+        "illuminated",
+        "light",
+        "more",
+        "photoelectric",
+        "sparks",
+        "ultraviolet"
+      ],
+      "query_mentions_gold_answer": false,
+      "categories": [
+        "support_retrieved_but_no_evidence_gain",
+        "support_already_seen_before_followup",
+        "verifier_failed_despite_support_context"
+      ],
+      "structured_query": {}
+    }
+  ]
+}

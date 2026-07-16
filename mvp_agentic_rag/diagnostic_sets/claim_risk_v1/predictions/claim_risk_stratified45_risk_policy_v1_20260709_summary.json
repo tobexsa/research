@@ -1,0 +1,13 @@
+{
+  "diagnostic_count": 172,
+  "prediction_count": 172,
+  "prediction_coverage_rate": 1.0,
+  "source_run_override": "layer1_siliconflow_qwen3_14b_risk_policy_v1_stratified45_20260709",
+  "source_runs": [
+    "layer1_siliconflow_qwen3_14b_risk_policy_v1_stratified45_20260709"
+  ],
+  "terminal_carry_forward": true,
+  "terminal_carry_forward_count": 9,
+  "unmatched_by_reason": {},
+  "unmatched_count": 0
+}

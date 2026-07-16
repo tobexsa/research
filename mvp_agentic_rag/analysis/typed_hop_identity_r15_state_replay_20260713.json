@@ -1,0 +1,1060 @@
+{
+  "source": "runs\\layer1_siliconflow_qwen3_14b_typed_hop_identity_targeted8_20260713_r15\\trajectories.jsonl",
+  "row_count": 8,
+  "event_counts": {
+    "candidate_observed": 7,
+    "missing_requirement_rejected": 48,
+    "missing_requirement_resolved": 8,
+    "sentinel_candidate_ignored": 16,
+    "state_regression_blocked": 6,
+    "topology_initialized": 8,
+    "topology_revision_applied": 1,
+    "unscoped_typed_reject_observed": 22
+  },
+  "phase_event_counts": {
+    "planning:candidate_observed": 7,
+    "planning:missing_requirement_rejected": 24,
+    "planning:missing_requirement_resolved": 4,
+    "planning:sentinel_candidate_ignored": 8,
+    "planning:state_regression_blocked": 3,
+    "planning:topology_initialized": 8,
+    "planning:topology_revision_applied": 1,
+    "planning:unscoped_typed_reject_observed": 11,
+    "terminal:missing_requirement_rejected": 24,
+    "terminal:missing_requirement_resolved": 4,
+    "terminal:sentinel_candidate_ignored": 8,
+    "terminal:state_regression_blocked": 3,
+    "terminal:unscoped_typed_reject_observed": 11
+  },
+  "same_round_topology_update_rejected": 0,
+  "unsafe_failure_candidate_transitions": 0,
+  "structured_legacy_requirement_items": 0,
+  "structured_requirement_objects_after_replay": 28,
+  "topology_revision_applied_samples": [
+    "2hop__132854_417697"
+  ],
+  "samples": [
+    {
+      "id": "2hop__136179_13529",
+      "final_answer": "June 1982",
+      "final_action": "answer",
+      "topology_version": 1,
+      "topology_fingerprint": "b8ead62a00551b4be1a42754a2a055a86161f458d303fe9e65a691fad77b3d29",
+      "hop_count": 2,
+      "verified_hop_count": 2,
+      "candidate_values": [
+        "Diego Maradona",
+        "June 1982"
+      ],
+      "candidate_statuses": [
+        "observed",
+        "rejected"
+      ],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "candidate_observed",
+          "candidate": "June 1982",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "candidate_observed",
+          "candidate": "Diego Maradona",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "signed_by",
+          "reason": "target_hop_not_repairable",
+          "candidate_hop_ids": [],
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "state_regression_blocked",
+          "hop_id": "required_hop_2",
+          "from": "verified",
+          "to": "unresolved",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "signed_by",
+          "reason": "target_hop_not_repairable",
+          "candidate_hop_ids": [],
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "state_regression_blocked",
+          "hop_id": "required_hop_2",
+          "from": "verified",
+          "to": "unresolved",
+          "round_idx": 2
+        }
+      ]
+    },
+    {
+      "id": "2hop__167577_31122",
+      "final_answer": "18th",
+      "final_action": "answer",
+      "topology_version": 1,
+      "topology_fingerprint": "cbcf08c763ada4d7b77af6bc0cb9c83037e20ac66f81929cb6718498c1b60f24",
+      "hop_count": 2,
+      "verified_hop_count": 2,
+      "candidate_values": [
+        "18th",
+        "18th century",
+        "George Berkeley"
+      ],
+      "candidate_statuses": [
+        "observed",
+        "rejected",
+        "observed"
+      ],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "candidate_observed",
+          "candidate": "18th century",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "candidate_observed",
+          "candidate": "George Berkeley",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "candidate_observed",
+          "candidate": "18th",
+          "round_idx": 1
+        }
+      ]
+    },
+    {
+      "id": "3hop1__129499_33897_81096",
+      "final_answer": "",
+      "final_action": "abstain",
+      "topology_version": 1,
+      "topology_fingerprint": "7c84e61186bc185885007c259217c66dfd6939fec2674039d3d83bc1e9b872e6",
+      "hop_count": 4,
+      "verified_hop_count": 1,
+      "candidate_values": [],
+      "candidate_statuses": [],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "largest_city_by_population",
+          "reason": "requirement_type_mismatch",
+          "candidate_hop_ids": [],
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "hosted_event",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "winner",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "largest_city_by_population",
+          "reason": "requirement_type_mismatch",
+          "candidate_hop_ids": [],
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "hosted_event",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "winner",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_2",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_2",
+            "anchor_entity": "Arizona",
+            "anchor_entity_id": "arizona",
+            "anchor_entity_type": "",
+            "canonical_relation": "city",
+            "expected_object_type": "city",
+            "missing_component": "object",
+            "suggested_query": "What is the largest city by population in Arizona?",
+            "raw_hint": "largest_city_by_population"
+          },
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "hosted_event",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "winner",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_2",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_2",
+            "anchor_entity": "Arizona",
+            "anchor_entity_id": "arizona",
+            "anchor_entity_type": "",
+            "canonical_relation": "city",
+            "expected_object_type": "city",
+            "missing_component": "object",
+            "suggested_query": "What is the largest city by population in Arizona?",
+            "raw_hint": "largest_city_by_population"
+          },
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "hosted_event",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "winner",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 2
+        }
+      ]
+    },
+    {
+      "id": "3hop1__136129_87694_124169",
+      "final_answer": "",
+      "final_action": "abstain",
+      "topology_version": 1,
+      "topology_fingerprint": "3dc314f9f28ae9d96394df55fa529e2aea844df843278af193e1896589f5c438",
+      "hop_count": 4,
+      "verified_hop_count": 4,
+      "candidate_values": [
+        "1952"
+      ],
+      "candidate_statuses": [
+        "verified"
+      ],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "candidate_observed",
+          "candidate": "1952",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "state_regression_blocked",
+          "hop_id": "required_hop_1",
+          "from": "verified",
+          "to": "support_incomplete",
+          "round_idx": 3
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "named_after",
+          "reason": "target_hop_not_repairable",
+          "candidate_hop_ids": [],
+          "round_idx": 3
+        },
+        {
+          "phase": "planning",
+          "event": "state_regression_blocked",
+          "hop_id": "required_hop_1",
+          "from": "verified",
+          "to": "unresolved",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "state_regression_blocked",
+          "hop_id": "required_hop_1",
+          "from": "verified",
+          "to": "support_incomplete",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "named_after",
+          "reason": "target_hop_not_repairable",
+          "candidate_hop_ids": [],
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "state_regression_blocked",
+          "hop_id": "required_hop_1",
+          "from": "verified",
+          "to": "unresolved",
+          "round_idx": 3
+        }
+      ]
+    },
+    {
+      "id": "4hop1__151650_5274_458768_33637",
+      "final_answer": "",
+      "final_action": "abstain",
+      "topology_version": 1,
+      "topology_fingerprint": "178f5b7f050b37519fa50e28cf20b19cc7ffd2a8a87bec53fde163b902267eca",
+      "hop_count": 3,
+      "verified_hop_count": 1,
+      "candidate_values": [],
+      "candidate_statuses": [],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "headquarters location",
+          "reason": "requirement_type_mismatch",
+          "candidate_hop_ids": [],
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "ethnic minorities looked at differently",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "headquarters location",
+          "reason": "requirement_type_mismatch",
+          "candidate_hop_ids": [],
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "ethnic minorities looked at differently",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_2",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_2",
+            "anchor_entity": "Sony Music Entertainment",
+            "anchor_entity_id": "sony_music_entertainment",
+            "anchor_entity_type": "",
+            "canonical_relation": "headquarters_location",
+            "expected_object_type": "city",
+            "missing_component": "object",
+            "suggested_query": "Where is the headquarters of Sony Music Entertainment located?",
+            "raw_hint": "headquarters_location"
+          },
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "ethnic_minorities_looked_at_differently",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_2",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_2",
+            "anchor_entity": "Sony Music Entertainment",
+            "anchor_entity_id": "sony_music_entertainment",
+            "anchor_entity_type": "",
+            "canonical_relation": "headquarters_location",
+            "expected_object_type": "city",
+            "missing_component": "object",
+            "suggested_query": "Where is the headquarters of Sony Music Entertainment located?",
+            "raw_hint": "headquarters_location"
+          },
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "ethnic_minorities_looked_at_differently",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_2",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_2",
+            "anchor_entity": "Sony Music Entertainment",
+            "anchor_entity_id": "sony_music_entertainment",
+            "anchor_entity_type": "",
+            "canonical_relation": "headquarters_location",
+            "expected_object_type": "city",
+            "missing_component": "object",
+            "suggested_query": "Where is the headquarters of Sony Music Entertainment located?",
+            "raw_hint": "headquarters_location"
+          },
+          "round_idx": 3
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "ethnic_minorities_looked_at_differently",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 3
+        },
+        {
+          "phase": "planning",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 3
+        },
+        {
+          "phase": "planning",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_2",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_2",
+            "anchor_entity": "Sony Music Entertainment",
+            "anchor_entity_id": "sony_music_entertainment",
+            "anchor_entity_type": "",
+            "canonical_relation": "headquarters_location",
+            "expected_object_type": "city",
+            "missing_component": "object",
+            "suggested_query": "Where is the headquarters of Sony Music Entertainment located?",
+            "raw_hint": "headquarters_location"
+          },
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "ethnic_minorities_looked_at_differently",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 3
+        }
+      ]
+    },
+    {
+      "id": "4hop1__161810_583746_457883_650651",
+      "final_answer": "",
+      "final_action": "abstain",
+      "topology_version": 1,
+      "topology_fingerprint": "7e655e5ca054b3b64e6d1dcfdf298ce3c87bc8457bbf236584e91eb89513f2aa",
+      "hop_count": 5,
+      "verified_hop_count": 2,
+      "candidate_values": [],
+      "candidate_statuses": [],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "created",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "created",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "verifier_parse_failure",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "verifier_parse_failure",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "verifier_parse_failure",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "verifier_parse_failure",
+          "round_idx": 3
+        }
+      ]
+    },
+    {
+      "id": "4hop1__236903_153080_33897_81096",
+      "final_answer": "",
+      "final_action": "abstain",
+      "topology_version": 1,
+      "topology_fingerprint": "30da30ee4de7c6e957acc85d82146dc377953532a8f6415b922c154c8ce5fb84",
+      "hop_count": 4,
+      "verified_hop_count": 0,
+      "candidate_values": [],
+      "candidate_statuses": [],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "performer",
+          "reason": "requirement_type_mismatch",
+          "candidate_hop_ids": [],
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "from",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "most_populated_city",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "winner",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "performer",
+          "reason": "requirement_type_mismatch",
+          "candidate_hop_ids": [],
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "from",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "most_populated_city",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "winner",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "performer",
+          "reason": "requirement_type_mismatch",
+          "candidate_hop_ids": [],
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "from",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "most_populated_city",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "winner",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "performer",
+          "reason": "requirement_type_mismatch",
+          "candidate_hop_ids": [],
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "from",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "most_populated_city",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "winner",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 2
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "performer",
+          "reason": "requirement_type_mismatch",
+          "candidate_hop_ids": [],
+          "round_idx": 3
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "from",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 3
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "most_populated_city",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 3
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_rejected",
+          "hint": "winner",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 3
+        },
+        {
+          "phase": "planning",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 3
+        },
+        {
+          "phase": "planning",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "performer",
+          "reason": "requirement_type_mismatch",
+          "candidate_hop_ids": [],
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "from",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "most_populated_city",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_rejected",
+          "hint": "winner",
+          "reason": "target_hop_dependencies_incomplete",
+          "candidate_hop_ids": [],
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "sentinel_candidate_ignored",
+          "candidate": "None",
+          "round_idx": 3
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "empty_binding",
+          "round_idx": 3
+        }
+      ]
+    },
+    {
+      "id": "2hop__132854_417697",
+      "final_answer": "Nissan Altima",
+      "final_action": "answer",
+      "topology_version": 2,
+      "topology_fingerprint": "b0bd0b84205e3e4278d30031edabb46c1d1f54fd02d9a880531c44b70470347a",
+      "hop_count": 2,
+      "verified_hop_count": 2,
+      "candidate_values": [
+        "Nissan Altima"
+      ],
+      "candidate_statuses": [
+        "verified"
+      ],
+      "events": [
+        {
+          "phase": "planning",
+          "event": "topology_initialized",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_2",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_2",
+            "anchor_entity": "Mohammed Atta",
+            "anchor_entity_id": "mohammed_atta",
+            "anchor_entity_type": "",
+            "canonical_relation": "owned_vehicle_model",
+            "expected_object_type": "vehicle_model",
+            "missing_component": "object",
+            "suggested_query": "What model of Nissan does Mohammed Atta have?",
+            "raw_hint": "owned_vehicle_model"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "insufficient_bridge_evidence",
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "missing_requirement_resolved",
+          "hop_id": "required_hop_2",
+          "reason": "explicit_target_hop_id",
+          "requirement": {
+            "target_hop_id": "required_hop_2",
+            "anchor_entity": "Mohammed Atta",
+            "anchor_entity_id": "mohammed_atta",
+            "anchor_entity_type": "",
+            "canonical_relation": "owned_vehicle_model",
+            "expected_object_type": "vehicle_model",
+            "missing_component": "object",
+            "suggested_query": "What model of Nissan does Mohammed Atta have?",
+            "raw_hint": "owned_vehicle_model"
+          },
+          "round_idx": 1
+        },
+        {
+          "phase": "terminal",
+          "event": "unscoped_typed_reject_observed",
+          "typed_reject_category": "insufficient_bridge_evidence",
+          "round_idx": 1
+        },
+        {
+          "phase": "planning",
+          "event": "topology_revision_applied",
+          "reason": "deterministic_model_chain_binding",
+          "from_topology_version": 1,
+          "to_topology_version": 2,
+          "old_topology_fingerprint": "df45d7f86d8d579436326e14506f067f81aec5c8ebd01ed70c1ca04307b6351a",
+          "new_topology_fingerprint": "b0bd0b84205e3e4278d30031edabb46c1d1f54fd02d9a880531c44b70470347a",
+          "round_idx": 2
+        },
+        {
+          "phase": "planning",
+          "event": "candidate_observed",
+          "candidate": "Nissan Altima",
+          "round_idx": 2
+        }
+      ]
+    }
+  ]
+}
