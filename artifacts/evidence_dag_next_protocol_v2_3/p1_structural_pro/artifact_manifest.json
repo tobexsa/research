@@ -1,0 +1,25 @@
+{
+  "run_id": "v23-p1-structural-pro-20260718",
+  "canonical_directory": "analysis/evidence_dag_next_protocol_v2_3/p1_structural_pro",
+  "files": [
+    "raw.jsonl",
+    "metrics.json",
+    "p1_structural_report.md",
+    "p1_error_analysis.json",
+    "p1_error_analysis.md",
+    "c2p_chain_evaluation.jsonl",
+    "c4a_graph_evaluation.jsonl",
+    "run_manifest.json",
+    "summary.md",
+    "claim_validation.md",
+    "runlog.summary.md"
+  ],
+  "source_config": [
+    "../preflight/p1_structural_pro/manifest.json",
+    "../preflight/p1_structural_pro/freeze_lock.json",
+    "../../../baselines/imported/v1_p1_structural_diag60/json/metric_contract.json"
+  ],
+  "machine_validation": "pass",
+  "raw_record_count": 362,
+  "result_status": "completed_negative"
+}

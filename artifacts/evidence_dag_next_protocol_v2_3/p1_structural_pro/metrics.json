@@ -1,0 +1,244 @@
+{
+  "baseline_provenance": {
+    "d1_rows": 60,
+    "d2_rows": 60,
+    "id": "v1_p1_structural_diag60",
+    "source_raw_sha256": "d286656bf5fb433854e1d0828306a525f93f7164b44d86e1d1ba93846130af8b"
+  },
+  "call_counts": {
+    "c2p_conceptual_total_including_attached_c1": 112,
+    "c2p_mean_calls_per_question": 1.8666666666666667,
+    "c2p_shape": 52,
+    "c4a_pair": 250,
+    "new_total": 362,
+    "route_a": 60
+  },
+  "campaign_id": "evidence-dag-next-protocol-v2-3",
+  "experiment_id": "p1_structural_pro",
+  "metrics": {
+    "c1_hop_accuracy_attached": {
+      "denominator": 60,
+      "numerator": 24,
+      "rate": 0.4
+    },
+    "c1_invalid_attached": {
+      "denominator": 60,
+      "numerator": 8,
+      "rate": 0.13333333333333333
+    },
+    "c2o_invalid_3_4hop_attached": {
+      "denominator": 50,
+      "numerator": 31,
+      "rate": 0.62
+    },
+    "c2o_shape_match_3_4hop_attached": {
+      "denominator": 50,
+      "numerator": 7,
+      "rate": 0.14
+    },
+    "c2p_end_to_end_topology_match": {
+      "denominator": 60,
+      "numerator": 7,
+      "rate": 0.11666666666666667
+    },
+    "c2p_invalid": {
+      "denominator": 60,
+      "numerator": 18,
+      "rate": 0.3
+    },
+    "c4a_allowed_topology": {
+      "denominator": 60,
+      "numerator": 2,
+      "rate": 0.03333333333333333
+    },
+    "c4a_exact_graph_recovery": {
+      "denominator": 60,
+      "numerator": 1,
+      "rate": 0.016666666666666666
+    },
+    "c4a_global_consistency": {
+      "denominator": 60,
+      "numerator": 2,
+      "rate": 0.03333333333333333
+    },
+    "c4a_pair_invalid": {
+      "denominator": 250,
+      "numerator": 23,
+      "rate": 0.092
+    },
+    "c4a_pair_relation_accuracy": {
+      "denominator": 250,
+      "numerator": 85,
+      "rate": 0.34
+    },
+    "finish_stop": {
+      "denominator": 362,
+      "numerator": 279,
+      "rate": 0.7707182320441989
+    },
+    "json_parse_ok": {
+      "denominator": 362,
+      "numerator": 279,
+      "rate": 0.7707182320441989
+    },
+    "majority_topology_baseline": {
+      "denominator": 60,
+      "numerator": 10,
+      "rate": 0.16666666666666666
+    },
+    "route_a_invalid": {
+      "denominator": 60,
+      "numerator": 50,
+      "rate": 0.8333333333333334
+    },
+    "route_a_topology_match": {
+      "denominator": 60,
+      "numerator": 0,
+      "rate": 0.0
+    },
+    "schema_valid": {
+      "denominator": 362,
+      "numerator": 279,
+      "rate": 0.7707182320441989
+    },
+    "task_exact_match": {
+      "denominator": 362,
+      "numerator": 92,
+      "rate": 0.2541436464088398
+    },
+    "transport_success": {
+      "denominator": 362,
+      "numerator": 362,
+      "rate": 1.0
+    }
+  },
+  "planned_count": 362,
+  "schema_version": "2.3.0",
+  "statistics": {
+    "c2p": {
+      "balanced_accuracy": 0.11666666666666665,
+      "macro_f1": 0.0750915750915751,
+      "per_label": {
+        "2hop": {
+          "f1": 0.0,
+          "fn": 10,
+          "fp": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "3hop1": {
+          "f1": 0.14285714285714288,
+          "fn": 9,
+          "fp": 3,
+          "precision": 0.25,
+          "recall": 0.1,
+          "tp": 1
+        },
+        "3hop2": {
+          "f1": 0.0,
+          "fn": 10,
+          "fp": 5,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "4hop1": {
+          "f1": 0.0,
+          "fn": 10,
+          "fp": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "4hop2": {
+          "f1": 0.3076923076923077,
+          "fn": 4,
+          "fp": 23,
+          "precision": 0.20689655172413793,
+          "recall": 0.6,
+          "tp": 6
+        },
+        "4hop3": {
+          "f1": 0.0,
+          "fn": 10,
+          "fp": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        }
+      },
+      "prediction_counts": {
+        "3hop1": 4,
+        "3hop2": 5,
+        "4hop1": 4,
+        "4hop2": 29
+      },
+      "prediction_entropy_bits": 1.3806248196088458,
+      "valid_prediction_count": 42
+    },
+    "c4a_mean_edge_f1": 0.025,
+    "route_a": {
+      "balanced_accuracy": 0.0,
+      "macro_f1": 0.0,
+      "per_label": {
+        "2hop": {
+          "f1": 0.0,
+          "fn": 10,
+          "fp": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "3hop1": {
+          "f1": 0.0,
+          "fn": 10,
+          "fp": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "3hop2": {
+          "f1": 0.0,
+          "fn": 10,
+          "fp": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "4hop1": {
+          "f1": 0.0,
+          "fn": 10,
+          "fp": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "4hop2": {
+          "f1": 0.0,
+          "fn": 10,
+          "fp": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "4hop3": {
+          "f1": 0.0,
+          "fn": 10,
+          "fp": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        }
+      },
+      "prediction_counts": {
+        "2hop": 2,
+        "3hop1": 4,
+        "4hop1": 1,
+        "4hop2": 3
+      },
+      "prediction_entropy_bits": 1.8464393446710154,
+      "valid_prediction_count": 10
+    }
+  }
+}

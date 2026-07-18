@@ -1,0 +1,130 @@
+{
+  "campaign_id": "evidence-dag-next-protocol-v2-3",
+  "conditional_on_resolved": {
+    "alias_resolved_recall": {
+      "denominator": 89,
+      "numerator": 68,
+      "rate": 0.7640449438202247
+    },
+    "normalized_span_recall": {
+      "denominator": 89,
+      "numerator": 68,
+      "rate": 0.7640449438202247
+    }
+  },
+  "experiment_id": "p2a_span_candidates",
+  "gate": {
+    "alias_resolved_recall_ge_98": false,
+    "normalized_recall_ge_98": false,
+    "passed": false
+  },
+  "metrics": {
+    "alias_resolved_recall": {
+      "denominator": 90,
+      "numerator": 68,
+      "rate": 0.7555555555555555
+    },
+    "gold_annotation_resolved": {
+      "denominator": 90,
+      "numerator": 89,
+      "rate": 0.9888888888888889
+    },
+    "literal_span_recall": {
+      "denominator": 90,
+      "numerator": 60,
+      "rate": 0.6666666666666666
+    },
+    "non_ner_phrase_recall": {
+      "denominator": 23,
+      "numerator": 16,
+      "rate": 0.6956521739130435
+    },
+    "normalized_span_recall": {
+      "denominator": 90,
+      "numerator": 68,
+      "rate": 0.7555555555555555
+    }
+  },
+  "per_topology": {
+    "2hop": {
+      "alias_resolved_recall": {
+        "denominator": 10,
+        "numerator": 10,
+        "rate": 1.0
+      },
+      "count": 10,
+      "normalized_span_recall": {
+        "denominator": 10,
+        "numerator": 10,
+        "rate": 1.0
+      }
+    },
+    "3hop1": {
+      "alias_resolved_recall": {
+        "denominator": 10,
+        "numerator": 8,
+        "rate": 0.8
+      },
+      "count": 10,
+      "normalized_span_recall": {
+        "denominator": 10,
+        "numerator": 8,
+        "rate": 0.8
+      }
+    },
+    "3hop2": {
+      "alias_resolved_recall": {
+        "denominator": 20,
+        "numerator": 18,
+        "rate": 0.9
+      },
+      "count": 20,
+      "normalized_span_recall": {
+        "denominator": 20,
+        "numerator": 18,
+        "rate": 0.9
+      }
+    },
+    "4hop1": {
+      "alias_resolved_recall": {
+        "denominator": 10,
+        "numerator": 5,
+        "rate": 0.5
+      },
+      "count": 10,
+      "normalized_span_recall": {
+        "denominator": 10,
+        "numerator": 5,
+        "rate": 0.5
+      }
+    },
+    "4hop2": {
+      "alias_resolved_recall": {
+        "denominator": 20,
+        "numerator": 13,
+        "rate": 0.65
+      },
+      "count": 20,
+      "normalized_span_recall": {
+        "denominator": 20,
+        "numerator": 13,
+        "rate": 0.65
+      }
+    },
+    "4hop3": {
+      "alias_resolved_recall": {
+        "denominator": 20,
+        "numerator": 14,
+        "rate": 0.7
+      },
+      "count": 20,
+      "normalized_span_recall": {
+        "denominator": 20,
+        "numerator": 14,
+        "rate": 0.7
+      }
+    }
+  },
+  "planned_count": 90,
+  "schema_version": "2.3.0"
+}

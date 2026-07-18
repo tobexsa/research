@@ -1,0 +1,84 @@
+{
+  "answer_f1": 0.8333333333333334,
+  "answer_ready_rate": 0.8333333333333334,
+  "by_graph_type": {
+    "2hop": {
+      "answer_f1": 0.9,
+      "answer_ready_rate": 0.9,
+      "count": 10,
+      "cross_hypothesis_mix_rate": 0.0,
+      "exact_match": 0.9,
+      "physical_retrieval_calls": 2.0,
+      "resolved_step_rate": 0.95,
+      "supporting_document_recall": 0.95
+    },
+    "3hop1": {
+      "answer_f1": 0.9,
+      "answer_ready_rate": 0.9,
+      "count": 10,
+      "cross_hypothesis_mix_rate": 0.0,
+      "exact_match": 0.9,
+      "physical_retrieval_calls": 2.8,
+      "resolved_step_rate": 0.9,
+      "supporting_document_recall": 0.9
+    },
+    "3hop2": {
+      "answer_f1": 1.0,
+      "answer_ready_rate": 1.0,
+      "count": 10,
+      "cross_hypothesis_mix_rate": 0.0,
+      "exact_match": 1.0,
+      "physical_retrieval_calls": 3.0,
+      "resolved_step_rate": 1.0,
+      "supporting_document_recall": 0.9666666666666667
+    },
+    "4hop1": {
+      "answer_f1": 0.6,
+      "answer_ready_rate": 0.6,
+      "count": 10,
+      "cross_hypothesis_mix_rate": 0.0,
+      "exact_match": 0.6,
+      "physical_retrieval_calls": 3.8,
+      "resolved_step_rate": 0.85,
+      "supporting_document_recall": 0.825
+    },
+    "4hop2": {
+      "answer_f1": 0.8,
+      "answer_ready_rate": 0.8,
+      "count": 10,
+      "cross_hypothesis_mix_rate": 0.0,
+      "exact_match": 0.8,
+      "physical_retrieval_calls": 3.6,
+      "resolved_step_rate": 0.85,
+      "supporting_document_recall": 0.775
+    },
+    "4hop3": {
+      "answer_f1": 0.8,
+      "answer_ready_rate": 0.8,
+      "count": 10,
+      "cross_hypothesis_mix_rate": 0.0,
+      "exact_match": 0.8,
+      "physical_retrieval_calls": 4.0,
+      "resolved_step_rate": 0.95,
+      "supporting_document_recall": 0.975
+    }
+  },
+  "cache_hits": 0,
+  "corpus": "/root/worktrees/evidence-dag-next-protocol-v2-3/mvp_agentic_rag/data/evidence_dag_planner_protocol_v1/retrieval_corpus.jsonl",
+  "cross_hypothesis_mix_rate": 0.0,
+  "dataset": "/root/worktrees/evidence-dag-next-protocol-v2-3/mvp_agentic_rag/data/evidence_dag_planner_protocol_v1/diagnostic_60.jsonl",
+  "evaluated_sample_count": 60,
+  "exact_match": 0.8333333333333334,
+  "extraction_calls": 192,
+  "gate": "G3_oracle_plan_dense_retriever",
+  "gate_valid": true,
+  "physical_retrieval_calls": 192,
+  "plan_error_count": 0,
+  "plan_errors": [],
+  "proposal_calls": 192,
+  "requested_sample_count": 60,
+  "resolved_step_rate": 0.9166666666666666,
+  "retriever": "dense",
+  "supporting_document_recall": 0.8986111111111111,
+  "top_k": 10
+}

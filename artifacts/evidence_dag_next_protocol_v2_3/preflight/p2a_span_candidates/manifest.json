@@ -1,0 +1,32 @@
+{
+  "campaign_id": "evidence-dag-next-protocol-v2-3",
+  "experiment_id": "p2a_span_candidates",
+  "variant": "question-only-deterministic-span-generator",
+  "dataset_split": "Diagnostic-Dev-60",
+  "candidate_configuration": {
+    "generator": "question-only quoted-title-number-date-np-ngram rules",
+    "generator_version": "2.3.0",
+    "gold_usage": "offline annotation and evaluation only",
+    "planned_input_slots": 90,
+    "runner_git_commit": "f9934e483a6d989cb78112d62282aaa8f718306c"
+  },
+  "budgets": {
+    "planner_calls_2hop": 0,
+    "planner_calls_3hop": 0,
+    "planner_calls_4hop": 0,
+    "total_llm_calls_4hop": 0,
+    "strong_calls": 0
+  },
+  "gold_policy": {
+    "oracle_diagnostic": true,
+    "gold_inputs_allowed_in_runtime": true
+  },
+  "fair_comparison_verified": true,
+  "schema_versions": {
+    "manifest": "2.3.0",
+    "freeze_lock": "2.3.0",
+    "raw_record": "2.3.0",
+    "metrics": "2.3.0"
+  },
+  "output_dir": "analysis/evidence_dag_next_protocol_v2_3/p2a_span_candidates"
+}

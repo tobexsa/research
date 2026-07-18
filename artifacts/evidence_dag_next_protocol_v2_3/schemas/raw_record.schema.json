@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "evidence-dag-v2.3-raw-record",
+  "type": "object",
+  "required": [
+    "schema_version", "campaign_id", "experiment_id", "variant", "request_id",
+    "model", "endpoint", "prompt_sha256", "schema_sha256", "finish_reason",
+    "raw_response", "latency_ms", "prompt_tokens", "completion_tokens",
+    "transport_success", "retry_index"
+  ],
+  "properties": {
+    "schema_version": {"const": "2.3.0"},
+    "campaign_id": {"type": "string", "minLength": 1},
+    "experiment_id": {"type": "string", "minLength": 1},
+    "variant": {"type": "string", "minLength": 1},
+    "request_id": {"type": "string", "minLength": 1},
+    "model": {"type": "string", "minLength": 1},
+    "endpoint": {"type": "string", "minLength": 1},
+    "prompt_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "finish_reason": {"type": "string"},
+    "raw_response": {"type": "string"},
+    "latency_ms": {"type": "number", "minimum": 0},
+    "prompt_tokens": {"type": "integer", "minimum": 0},
+    "completion_tokens": {"type": "integer", "minimum": 0},
+    "transport_success": {"type": "boolean"},
+    "retry_index": {"type": "integer", "minimum": 0},
+    "byte_exact_match": {"type": "boolean"},
+    "canonical_json_match": {"type": "boolean"},
+    "schema_semantic_match": {"type": "boolean"},
+    "repetition_defect": {"type": "boolean"}
+  },
+  "additionalProperties": true
+}
+

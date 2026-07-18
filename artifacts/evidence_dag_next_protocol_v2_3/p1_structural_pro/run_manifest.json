@@ -1,0 +1,33 @@
+{
+  "run_id": "v23-p1-structural-pro-20260718",
+  "tier": "auxiliary/dev",
+  "campaign_id": "evidence-dag-next-protocol-v2-3",
+  "branch": "analysis/evidence-dag-next-protocol-v2-3",
+  "runner_commit": "7771bba92c28879729f7619916927bccc35e0b86",
+  "freeze_commit": "aef24e4",
+  "baseline_reference": "baselines/imported/v1_p1_structural_diag60",
+  "dataset": {
+    "path": "data/evidence_dag_planner_protocol_v1/diagnostic_60.jsonl",
+    "sha256": "117780afcf47d1ffea7634e484812c2870440e8d8aaa13b76f959cda50ee8ff2",
+    "split": "Diagnostic-Dev-60",
+    "sample_count": 60
+  },
+  "model": "Pro/Qwen/Qwen2.5-7B-Instruct",
+  "endpoint": "SiliconFlow Pro",
+  "response_mode": "provider_json_schema",
+  "temperature": 0.0,
+  "max_tokens": 128,
+  "seed": "provider unsupported or unspecified",
+  "workers": 8,
+  "planned_new_calls": 362,
+  "exact_command": "set -a; source /root/research/mvp_agentic_rag/.env; set +a; PYTHONPATH=src /root/research/.venv/bin/python scripts/run_evidence_dag_v2_3_p1.py --dataset data/evidence_dag_planner_protocol_v1/diagnostic_60.jsonl --v1-raw analysis/evidence_dag_planner_protocol_v1/planner_diagnostic_raw.jsonl --output-dir analysis/evidence_dag_next_protocol_v2_3/p1_structural_pro --workers 8",
+  "manifest": "analysis/evidence_dag_next_protocol_v2_3/preflight/p1_structural_pro/manifest.json",
+  "freeze_lock": "analysis/evidence_dag_next_protocol_v2_3/preflight/p1_structural_pro/freeze_lock.json",
+  "environment_sha256": "cdb94b1339c0f404e4a208c93913fcee0e741d95ae7b9c2e1940aca1c5ccd6c2",
+  "started_at": "2026-07-18T12:34:56+08:00",
+  "ended_at": "2026-07-18T12:35:54+08:00",
+  "status": "completed",
+  "confirmation_touched_by_model": false,
+  "internal_holdout_touched_by_model": false,
+  "runtime_deviation": "The experiment skill's bash_exec/artifact/memory APIs and dedicated run-node API were unavailable; the isolated campaign worktree, freeze commits, raw JSONL, Preflight and Git commits are the compatibility path."
+}

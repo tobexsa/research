@@ -1,0 +1,14 @@
+{
+  "run_id": "v23-p4-retriever-oracle-dense-20260718",
+  "files": [
+    "metrics.json",
+    "records.jsonl",
+    "report.md",
+    "run_manifest.json",
+    "claim_validation.md",
+    "summary.md"
+  ],
+  "invalidated_predecessor": "../p4_retriever_oracle_dense_invalid_contract",
+  "result_status": "completed_gate_pass",
+  "machine_validation": "pass"
+}

@@ -1,0 +1,136 @@
+{
+  "by_topology": {
+    "2hop": {
+      "all_steps_recall": {
+        "denominator": 10,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "mrr_at_10": 0.0,
+      "recall_at_10": {
+        "denominator": 20,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "sample_count": 10,
+      "step_count": 20
+    },
+    "3hop1": {
+      "all_steps_recall": {
+        "denominator": 10,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "mrr_at_10": 0.0,
+      "recall_at_10": {
+        "denominator": 30,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "sample_count": 10,
+      "step_count": 30
+    },
+    "3hop2": {
+      "all_steps_recall": {
+        "denominator": 10,
+        "numerator": 1,
+        "rate": 0.1
+      },
+      "mrr_at_10": 0.1,
+      "recall_at_10": {
+        "denominator": 30,
+        "numerator": 3,
+        "rate": 0.1
+      },
+      "sample_count": 10,
+      "step_count": 30
+    },
+    "4hop1": {
+      "all_steps_recall": {
+        "denominator": 10,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "mrr_at_10": 0.03333333333333333,
+      "recall_at_10": {
+        "denominator": 40,
+        "numerator": 3,
+        "rate": 0.075
+      },
+      "sample_count": 10,
+      "step_count": 40
+    },
+    "4hop2": {
+      "all_steps_recall": {
+        "denominator": 10,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "mrr_at_10": 0.04,
+      "recall_at_10": {
+        "denominator": 40,
+        "numerator": 3,
+        "rate": 0.075
+      },
+      "sample_count": 10,
+      "step_count": 40
+    },
+    "4hop3": {
+      "all_steps_recall": {
+        "denominator": 10,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "mrr_at_10": 0.0,
+      "recall_at_10": {
+        "denominator": 40,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "sample_count": 10,
+      "step_count": 40
+    }
+  },
+  "campaign_id": "evidence-dag-next-protocol-v2-3",
+  "experiment_id": "p4_retriever_oracle_dense",
+  "gate": {
+    "all_steps_recall_ge_60": false,
+    "passed": false,
+    "recall_at_10_ge_75": false,
+    "timeout_zero": true
+  },
+  "gold_policy": "Gold decomposition questions and prior Gold answers are used only to build offline teacher-forced Gold queries.",
+  "mean_latency_ms": 21.175674999999984,
+  "mean_returned_count": 10.0,
+  "merge_joint_definition": "For merge topologies, every direct merge parent step and the merge step itself must retrieve its own Gold support passage in that step's top 10.",
+  "metrics": {
+    "all_steps_recall": {
+      "denominator": 60,
+      "numerator": 1,
+      "rate": 0.016666666666666666
+    },
+    "error_rate": {
+      "denominator": 200,
+      "numerator": 0,
+      "rate": 0.0
+    },
+    "merge_joint_recall": {
+      "denominator": 30,
+      "numerator": 1,
+      "rate": 0.03333333333333333
+    },
+    "recall_at_10": {
+      "denominator": 200,
+      "numerator": 9,
+      "rate": 0.045
+    },
+    "timeout_rate": {
+      "denominator": 200,
+      "numerator": 0,
+      "rate": 0.0
+    }
+  },
+  "mrr_at_10": 0.029666666666666668,
+  "planned_count": 200,
+  "schema_version": "2.3.0"
+}

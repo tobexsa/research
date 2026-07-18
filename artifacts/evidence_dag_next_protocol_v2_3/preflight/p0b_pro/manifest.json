@@ -1,0 +1,42 @@
+{
+  "campaign_id": "evidence-dag-next-protocol-v2-3",
+  "experiment_id": "p0b_pro",
+  "variant": "real-schema-envelope-six-families",
+  "dataset_split": "Synthetic-Canonical-Payload",
+  "candidate_configuration": {
+    "model": "Pro/Qwen/Qwen2.5-7B-Instruct",
+    "endpoint": "https://api.siliconflow.cn/v1",
+    "mode": "provider_json_schema",
+    "schemas": [
+      "topology",
+      "hop",
+      "shape",
+      "slot",
+      "query",
+      "validator"
+    ],
+    "count_per_schema": 72,
+    "temperature": 0.0,
+    "max_tokens": 128,
+    "runner_git_commit": "f9934e483a6d989cb78112d62282aaa8f718306c"
+  },
+  "budgets": {
+    "planner_calls_2hop": 0,
+    "planner_calls_3hop": 0,
+    "planner_calls_4hop": 0,
+    "total_llm_calls_4hop": 0,
+    "strong_calls": 0
+  },
+  "gold_policy": {
+    "oracle_diagnostic": false,
+    "gold_inputs_allowed_in_runtime": false
+  },
+  "fair_comparison_verified": true,
+  "schema_versions": {
+    "manifest": "2.3.0",
+    "freeze_lock": "2.3.0",
+    "raw_record": "2.3.0",
+    "metrics": "2.3.0"
+  },
+  "output_dir": "analysis/evidence_dag_next_protocol_v2_3/p0b_pro"
+}

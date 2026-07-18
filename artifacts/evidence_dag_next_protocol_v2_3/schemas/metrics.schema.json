@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "evidence-dag-v2.3-metrics",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "campaign_id", "experiment_id", "planned_count", "metrics"],
+  "properties": {
+    "schema_version": {"const": "2.3.0"},
+    "campaign_id": {"type": "string", "minLength": 1},
+    "experiment_id": {"type": "string", "minLength": 1},
+    "planned_count": {"type": "integer", "minimum": 1},
+    "metrics": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["numerator", "denominator", "rate"],
+        "properties": {
+          "numerator": {"type": "integer", "minimum": 0},
+          "denominator": {"type": "integer", "minimum": 1},
+          "rate": {"type": "number", "minimum": 0, "maximum": 1}
+        }
+      }
+    }
+  }
+}

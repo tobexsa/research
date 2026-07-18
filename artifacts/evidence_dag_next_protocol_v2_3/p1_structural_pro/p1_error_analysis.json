@@ -1,0 +1,185 @@
+{
+  "by_variant": {
+    "c2p_shape": {
+      "completion_tokens_total": 1848,
+      "finish_length": 10,
+      "finish_stop": 42,
+      "latency_ms_p50": 768.994,
+      "latency_ms_p90": 2043.225,
+      "length_examples": [
+        {
+          "completion_tokens": 128,
+          "raw_character_count": 294,
+          "raw_head": "{\n\n\n  \n  \n  \"shape\": \"linear_chain\"\n  \n\n\n \n  \n \n  \n \n  \n \n  \n \n  \n \n  \n \n  \n \n  \n  \n  \n \n  \n \n  \n \n  \n \n\n\n \n  \n \n  \n  \n  \n \n  \n \n  \n  \n  \n \n  \n \n  \n \n  \n \n  \n \n  \n \n  \n  \n  \n  \n  \n  \n  \n \n  \n \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  ",
+          "raw_tail": " \n \n  \n \n  \n \n  \n \n  \n \n  \n  \n  \n \n  \n \n  \n \n  \n \n\n\n \n  \n \n  \n  \n  \n \n  \n \n  \n  \n  \n \n  \n \n  \n \n  \n \n  \n \n  \n \n  \n  \n  \n  \n  \n  \n  \n \n  \n \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  ",
+          "request_id": "c2p_shape-2hop__505469_333904"
+        },
+        {
+          "completion_tokens": 128,
+          "raw_character_count": 401,
+          "raw_head": "{\n\n\"shape\": \"two_independent_roots_merge\"\n \n\n \n\n     \n    \n      \n    \n      \n    \n       \n    \n       \n    \n       \n    \n       \n    \n       \n    \n       \n    \n       \n    \n       \n    \n       \n    \n       \n    \n       \n    \n       \n    \n ",
+          "raw_tail": "       \n    \n       \n    \n       \n    \n       \n    \n       \n    \n       \n    \n       \n    \n       \n    \n       \n    \n       \n    \n       \n    \n       \n    \n       \n    \n       \n    \n       \n    \n        \n    \n        \n    \n        \n    \n   ",
+          "request_id": "c2p_shape-2hop__469702_61463"
+        },
+        {
+          "completion_tokens": 128,
+          "raw_character_count": 405,
+          "raw_head": "{ \n\n\n\"shape\": \"linear_chain\"\n\n   \t\t\t\t\t\t\t   \t\t\n\n \t \t\t\t\t\t\t\t    \t\t\t\t   \n\n   \t\t\t\t\t\t\t    \t\t\t\t   \n\n  \t\t\t\t   \n\n  \t\t\t\t    \t\t\t\t   \n\n  \t\t\t\t    \t\t\t\t   \n\n \t\n \t\t\t\t   \n\n  \t\t\t\t    \t\t\t\t   \n\n  \t\t\t\t   \n\n  \t\t\t\t   \n\n  \t\t\t\t    \t\t\t\t   \n\n  \t\t\t\t    \t\t\t\t   \n\n  \t\t\t\t",
+          "raw_tail": "\t\t\t\t   \n\n  \t\t\t\t   \n\n  \t\t\t\t   \n\n  \t\t\t\t    \t\t\t\t   \n\n  \t\t\t\t    \t\t\t\t   \n\n  \t\t\t\t    \t\t\t\t   \n\n  \t\t\t\t    \t\t\t\t   \n\n  \t\t\t\t    \t\t\t\t   \n\n  \t\t\t\t    \t\t\t\t   \n\n  \t\t\t\t    \t\t\t\t   \n\n  \t\t\t\t    \t\t\t\t   \n\n  \t\t\t\t    \t\t\t\t   \n\n  \t\t\t\t    \t\t\t\t   \n\n  \t\t\t\t    \t\t\t\t   \n\n",
+          "request_id": "c2p_shape-4hop1__151650_5274_458768_33632"
+        }
+      ],
+      "planned": 52,
+      "prediction_counts": {
+        "linear_chain": 8,
+        "two_independent_roots_merge": 5,
+        "two_roots_merge_then_final": 29
+      },
+      "prompt_tokens_total": 6948,
+      "repetition_defect": 0,
+      "repetition_examples": [],
+      "schema_valid": 42,
+      "task_exact": 7,
+      "transport_success": 52,
+      "valid_but_semantically_wrong": 35
+    },
+    "c4a_pair": {
+      "completion_tokens_total": 4771,
+      "finish_length": 23,
+      "finish_stop": 227,
+      "latency_ms_p50": 597.397,
+      "latency_ms_p90": 1204.487,
+      "length_examples": [
+        {
+          "completion_tokens": 128,
+          "raw_character_count": 270,
+          "raw_head": "{\"relation\"\n  \n  :  \"right_to_left\"\n  \n  \n  \n    \n    \n  \n \n\n  \n  \n   \n  \n    \n  \n    \n  \n     \n  \n     \n  \n    \n  \n     \n  \n    \n  \n \n   \n  \n    \n       \n  \n      \n  \n    \n  \n    \n   \n  \n    \n  \n    \n  \n    \n  \n    \n  \n     \n  \n     \n  \n  ",
+          "raw_tail": "left\"\n  \n  \n  \n    \n    \n  \n \n\n  \n  \n   \n  \n    \n  \n    \n  \n     \n  \n     \n  \n    \n  \n     \n  \n    \n  \n \n   \n  \n    \n       \n  \n      \n  \n    \n  \n    \n   \n  \n    \n  \n    \n  \n    \n  \n    \n  \n     \n  \n     \n  \n      \n  \n                      ",
+          "request_id": "c4a_pair-2hop__754021_20057-1-2"
+        },
+        {
+          "completion_tokens": 128,
+          "raw_character_count": 554,
+          "raw_head": "{\"relation\" \n\n\n\n \n\n\n\n \n\n\n\n \n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n \n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n",
+          "raw_tail": "\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n ",
+          "request_id": "c4a_pair-3hop1__706183_20196_85677-1-2"
+        },
+        {
+          "completion_tokens": 128,
+          "raw_character_count": 336,
+          "raw_head": "{\"relation\" \n\n  \n\n\n\n\n\n:  \"independent\" \n\n  \n\n\n\n\n\n  \n\n\n\n\n\n \t\t\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \t\t\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n",
+          "raw_tail": "\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \t\t\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n \t\t\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  ",
+          "request_id": "c4a_pair-3hop2__129681_11988_24628-1-3"
+        }
+      ],
+      "planned": 250,
+      "prediction_counts": {
+        "independent": 180,
+        "right_to_left": 47
+      },
+      "prompt_tokens_total": 42836,
+      "repetition_defect": 0,
+      "repetition_examples": [],
+      "schema_valid": 227,
+      "task_exact": 85,
+      "transport_success": 250,
+      "valid_but_semantically_wrong": 142
+    },
+    "route_a": {
+      "completion_tokens_total": 6526,
+      "finish_length": 50,
+      "finish_stop": 10,
+      "latency_ms_p50": 3211.927,
+      "latency_ms_p90": 4289.168,
+      "length_examples": [
+        {
+          "completion_tokens": 128,
+          "raw_character_count": 341,
+          "raw_head": "{\n\n\n \n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \t\t\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n \n\n\n\n\n\n\n\n\n\n\n\n  \t\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n \t\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n",
+          "raw_tail": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n \t\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  ",
+          "request_id": "route_a-2hop__505469_333904"
+        },
+        {
+          "completion_tokens": 128,
+          "raw_character_count": 256,
+          "raw_head": "{ \n                        \n  \n                        \n   \n                        \n   \n\n   \n\n   \n   \n   \n   \n   \n\n \n\t\t\n   \n   \n   \n   \n   \n   \n \t\n  \n   \n   \n   \n    \n   \n   \n   \n     \n   \n    \n   \n                                         ",
+          "raw_tail": "           \n  \n                        \n   \n                        \n   \n\n   \n\n   \n   \n   \n   \n   \n\n \n\t\t\n   \n   \n   \n   \n   \n   \n \t\n  \n   \n   \n   \n    \n   \n   \n   \n     \n   \n    \n   \n                                                         ",
+          "request_id": "route_a-2hop__708311_62776"
+        },
+        {
+          "completion_tokens": 128,
+          "raw_character_count": 334,
+          "raw_head": "{                                   \t\t\n  \n   \n  \n   \n  \n   \n  \n   \n \t\t\n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n   \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n \t\t\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n",
+          "raw_tail": "\n\n\n\n\n  \n\n\n\n\n\n\n\n   \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n \t\t\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n",
+          "request_id": "route_a-2hop__469702_61463"
+        }
+      ],
+      "planned": 60,
+      "prediction_counts": {
+        "2hop": 2,
+        "3hop1": 4,
+        "4hop1": 1,
+        "4hop2": 3
+      },
+      "prompt_tokens_total": 8743,
+      "repetition_defect": 0,
+      "repetition_examples": [],
+      "schema_valid": 10,
+      "task_exact": 0,
+      "transport_success": 60,
+      "valid_but_semantically_wrong": 10
+    }
+  },
+  "experiment_id": "p1_structural_pro_error_analysis",
+  "overall": {
+    "completion_tokens_total": 13145,
+    "finish_length": 83,
+    "finish_stop": 279,
+    "latency_ms_p50": 666.861,
+    "latency_ms_p90": 3556.155,
+    "length_examples": [
+      {
+        "completion_tokens": 128,
+        "raw_character_count": 341,
+        "raw_head": "{\n\n\n \n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \t\t\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n \n\n\n\n\n\n\n\n\n\n\n\n  \t\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n \t\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n",
+        "raw_tail": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n \t\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n  ",
+        "request_id": "route_a-2hop__505469_333904"
+      },
+      {
+        "completion_tokens": 128,
+        "raw_character_count": 256,
+        "raw_head": "{ \n                        \n  \n                        \n   \n                        \n   \n\n   \n\n   \n   \n   \n   \n   \n\n \n\t\t\n   \n   \n   \n   \n   \n   \n \t\n  \n   \n   \n   \n    \n   \n   \n   \n     \n   \n    \n   \n                                         ",
+        "raw_tail": "           \n  \n                        \n   \n                        \n   \n\n   \n\n   \n   \n   \n   \n   \n\n \n\t\t\n   \n   \n   \n   \n   \n   \n \t\n  \n   \n   \n   \n    \n   \n   \n   \n     \n   \n    \n   \n                                                         ",
+        "request_id": "route_a-2hop__708311_62776"
+      },
+      {
+        "completion_tokens": 128,
+        "raw_character_count": 334,
+        "raw_head": "{                                   \t\t\n  \n   \n  \n   \n  \n   \n  \n   \n \t\t\n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n   \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n \t\t\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n",
+        "raw_tail": "\n\n\n\n\n  \n\n\n\n\n\n\n\n   \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n \t\t\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n",
+        "request_id": "route_a-2hop__469702_61463"
+      }
+    ],
+    "planned": 362,
+    "prediction_counts": {
+      "2hop": 2,
+      "3hop1": 4,
+      "4hop1": 1,
+      "4hop2": 3,
+      "independent": 180,
+      "linear_chain": 8,
+      "right_to_left": 47,
+      "two_independent_roots_merge": 5,
+      "two_roots_merge_then_final": 29
+    },
+    "prompt_tokens_total": 58527,
+    "repetition_defect": 0,
+    "repetition_examples": [],
+    "schema_valid": 279,
+    "task_exact": 92,
+    "transport_success": 362,
+    "valid_but_semantically_wrong": 187
+  },
+  "raw_record_count": 362,
+  "schema_version": "2.3.0"
+}

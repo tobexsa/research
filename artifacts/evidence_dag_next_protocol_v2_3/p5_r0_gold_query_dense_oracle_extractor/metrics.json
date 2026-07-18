@@ -1,0 +1,54 @@
+{
+  "answer_f1_mean": 0.8333333333333334,
+  "campaign_id": "evidence-dag-next-protocol-v2-3",
+  "configuration": {
+    "extractor": "ExplicitValueExtractor oracle",
+    "llm_calls": 0,
+    "plan": "Gold decomposition",
+    "query": "Gold relation question with runtime-bound prior values",
+    "retriever": "contract-matched BGE dense top-10",
+    "validator": "oracle deterministic candidate checks"
+  },
+  "experiment_id": "p5_r0_gold_query_dense_oracle_extractor",
+  "extraction_calls": 192,
+  "gate": {
+    "claim_scope": "R0 component attribution only; not a production Planner gate",
+    "execution_valid": true
+  },
+  "metrics": {
+    "answer_exact_match": {
+      "denominator": 60,
+      "numerator": 50,
+      "rate": 0.8333333333333334
+    },
+    "answer_ready_rate": {
+      "denominator": 60,
+      "numerator": 50,
+      "rate": 0.8333333333333334
+    },
+    "cross_hypothesis_mix": {
+      "denominator": 60,
+      "numerator": 0,
+      "rate": 0.0
+    },
+    "evaluated": {
+      "denominator": 60,
+      "numerator": 60,
+      "rate": 1.0
+    },
+    "resolved_step_rate": {
+      "denominator": 200,
+      "numerator": 182,
+      "rate": 0.91
+    },
+    "supporting_document_recall": {
+      "denominator": 200,
+      "numerator": 178,
+      "rate": 0.89
+    }
+  },
+  "physical_retrieval_calls": 192,
+  "planned_count": 60,
+  "schema_version": "2.3.0",
+  "source_gate_valid": true
+}

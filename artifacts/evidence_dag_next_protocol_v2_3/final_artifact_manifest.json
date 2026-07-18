@@ -1,0 +1,28 @@
+{
+  "campaign_id": "evidence-dag-next-protocol-v2-3",
+  "final_report": "evidence_dag_v2_3_result_report_zh.md",
+  "closure_files": [
+    "SUMMARY.md",
+    "status.md",
+    "final_decision.md",
+    "resume_packet.md",
+    "final_claim_ledger.json",
+    "final_report_review.md",
+    "git_graph.txt"
+  ],
+  "core_result_directories": [
+    "g0_holdout_feasibility",
+    "p0a_pro",
+    "p0b_pro",
+    "p0c_standard",
+    "p2a_span_candidates",
+    "p1_structural_pro",
+    "p4_retriever_oracle_dense",
+    "p5_r0_gold_query_dense_oracle_extractor"
+  ],
+  "excluded_but_retained": ["p4_retriever_oracle_dense_invalid_contract"],
+  "full_regression": "829 passed",
+  "final_action": "archive_current_candidate",
+  "confirmation_touched_by_model": false,
+  "internal_holdout_used": false
+}

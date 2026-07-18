@@ -1,0 +1,48 @@
+{
+  "campaign_id": "evidence-dag-next-protocol-v2-3",
+  "experiment_id": "p1_structural_pro",
+  "variant": "route-a-c2p-c4a-with-attached-c1-c2o",
+  "dataset_split": "Diagnostic-Dev-60",
+  "candidate_configuration": {
+    "model": "Pro/Qwen/Qwen2.5-7B-Instruct",
+    "endpoint": "https://api.siliconflow.cn/v1",
+    "response_mode": "provider_json_schema",
+    "temperature": 0.0,
+    "max_tokens": 128,
+    "dataset_sha256": "117780afcf47d1ffea7634e484812c2870440e8d8aaa13b76f959cda50ee8ff2",
+    "attached_baseline_id": "v1_p1_structural_diag60",
+    "attached_v1_raw_sha256": "d286656bf5fb433854e1d0828306a525f93f7164b44d86e1d1ba93846130af8b",
+    "new_call_counts": {
+      "route_a": 60,
+      "c2p_shape": 52,
+      "c4a_pair": 250,
+      "total": 362
+    },
+    "c2p_upstream_prediction_counts": {
+      "predicted_3hop": 12,
+      "predicted_4hop": 40,
+      "invalid": 8
+    },
+    "gold_runtime_boundary": "Gold decomposition is exposed only to explicitly Oracle C4A pair calls; Route A/C2P receive composed question only",
+    "runner_git_commit": "7771bba92c28879729f7619916927bccc35e0b86"
+  },
+  "budgets": {
+    "planner_calls_2hop": 1,
+    "planner_calls_3hop": 2,
+    "planner_calls_4hop": 2,
+    "total_llm_calls_4hop": 6,
+    "strong_calls": 0
+  },
+  "gold_policy": {
+    "oracle_diagnostic": true,
+    "gold_inputs_allowed_in_runtime": true
+  },
+  "fair_comparison_verified": true,
+  "schema_versions": {
+    "manifest": "2.3.0",
+    "freeze_lock": "2.3.0",
+    "raw_record": "2.3.0",
+    "metrics": "2.3.0"
+  },
+  "output_dir": "analysis/evidence_dag_next_protocol_v2_3/p1_structural_pro"
+}

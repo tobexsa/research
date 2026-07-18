@@ -1,0 +1,43 @@
+{
+  "campaign_id": "evidence-dag-next-protocol-v2-3",
+  "experiment_id": "p0c_standard",
+  "variant": "minimal-decoder-standard-endpoint-isolation",
+  "dataset_split": "Synthetic-Canonical-Payload",
+  "candidate_configuration": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "endpoint": "https://api.siliconflow.cn/v1",
+    "modes": [
+      "plain_text",
+      "plain_json",
+      "provider_json_schema"
+    ],
+    "count_per_mode": 72,
+    "temperature": 0.0,
+    "max_tokens": 128,
+    "payload": {
+      "status": "ready",
+      "value": 7
+    },
+    "matched_against": "p0a_pro",
+    "runner_git_commit": "f9934e483a6d989cb78112d62282aaa8f718306c"
+  },
+  "budgets": {
+    "planner_calls_2hop": 0,
+    "planner_calls_3hop": 0,
+    "planner_calls_4hop": 0,
+    "total_llm_calls_4hop": 0,
+    "strong_calls": 0
+  },
+  "gold_policy": {
+    "oracle_diagnostic": false,
+    "gold_inputs_allowed_in_runtime": false
+  },
+  "fair_comparison_verified": true,
+  "schema_versions": {
+    "manifest": "2.3.0",
+    "freeze_lock": "2.3.0",
+    "raw_record": "2.3.0",
+    "metrics": "2.3.0"
+  },
+  "output_dir": "analysis/evidence_dag_next_protocol_v2_3/p0c_standard"
+}

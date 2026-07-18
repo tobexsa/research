@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "evidence-dag-v2.3-freeze-lock",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "freeze_version", "campaign_id", "experiment_id",
+    "candidate_configuration_sha256", "manifest_sha256", "git_commit", "git_clean",
+    "holdout", "budgets", "versions", "exact_command", "environment_sha256",
+    "created_at", "fair_comparison_verified", "gold_policy"
+  ],
+  "properties": {
+    "freeze_version": {"const": "2.3.0"},
+    "campaign_id": {"type": "string", "minLength": 1},
+    "experiment_id": {"type": "string", "minLength": 1},
+    "candidate_configuration_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "git_commit": {"type": "string", "pattern": "^[0-9a-f]{7,40}$"},
+    "git_clean": {"const": true},
+    "holdout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "already_used", "ids_sha256"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "already_used": {"const": false},
+        "ids_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "budgets": {"$ref": "#/$defs/budgets"},
+    "versions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ontology", "graph_matcher", "span_generator", "query_builder", "trigger", "parser", "validator"],
+      "properties": {
+        "ontology": {"type": "string", "minLength": 1},
+        "graph_matcher": {"type": "string", "minLength": 1},
+        "span_generator": {"type": "string", "minLength": 1},
+        "query_builder": {"type": "string", "minLength": 1},
+        "trigger": {"type": "string", "minLength": 1},
+        "parser": {"type": "string", "minLength": 1},
+        "validator": {"type": "string", "minLength": 1}
+      }
+    },
+    "exact_command": {"type": "string", "minLength": 1},
+    "environment_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "fair_comparison_verified": {"const": true},
+    "gold_policy": {"type": "object"}
+  },
+  "$defs": {
+    "budgets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["planner_calls_2hop", "planner_calls_3hop", "planner_calls_4hop", "total_llm_calls_4hop", "strong_calls"],
+      "properties": {
+        "planner_calls_2hop": {"type": "integer", "minimum": 0},
+        "planner_calls_3hop": {"type": "integer", "minimum": 0},
+        "planner_calls_4hop": {"type": "integer", "minimum": 0},
+        "total_llm_calls_4hop": {"type": "integer", "minimum": 0},
+        "strong_calls": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}

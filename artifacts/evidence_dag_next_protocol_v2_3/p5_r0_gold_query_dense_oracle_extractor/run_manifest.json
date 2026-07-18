@@ -1,0 +1,15 @@
+{
+  "run_id": "v23-p5-r0-oracle-attribution-20260718",
+  "tier": "auxiliary/dev",
+  "campaign_id": "evidence-dag-next-protocol-v2-3",
+  "runner_commit": "37f0cf383f8707febab7ab787c34430ff2c98f54",
+  "freeze_commit": "bc3720e",
+  "dataset": "Diagnostic-Dev-60",
+  "configuration": "Gold Plan + Gold bound query + contract-matched BGE dense top-10 + Oracle extractor/validator",
+  "llm_calls": 0,
+  "exact_command": "PYTHONPATH=src /root/research/.venv/bin/python scripts/run_evidence_dag_v2_3_p5_r0.py --config configs/evidence_dag_v2_3_p4_diagnostic_dense.yaml --dataset data/evidence_dag_planner_protocol_v1/diagnostic_60.jsonl --corpus data/evidence_dag_planner_protocol_v1/retrieval_corpus.jsonl --output-dir analysis/evidence_dag_next_protocol_v2_3/p5_r0_gold_query_dense_oracle_extractor --top-k 10",
+  "status": "completed",
+  "machine_validation": "pass",
+  "confirmation_touched_by_model": false,
+  "internal_holdout_touched_by_model": false
+}

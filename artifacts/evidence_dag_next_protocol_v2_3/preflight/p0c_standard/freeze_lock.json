@@ -1,0 +1,38 @@
+{
+  "freeze_version": "2.3.0",
+  "campaign_id": "evidence-dag-next-protocol-v2-3",
+  "experiment_id": "p0c_standard",
+  "candidate_configuration_sha256": "ea0e13f8d5729f70fadf6616d3a0ded9a67e256a2d515febd976e31df3a5fe7e",
+  "manifest_sha256": "331d497e441e81f7647dd200341c26f11c1a120719b7c22079bcc7fcc9d6b30b",
+  "git_commit": "f9934e483a6d989cb78112d62282aaa8f718306c",
+  "git_clean": true,
+  "holdout": {
+    "name": "NotApplicable-Synthetic-Canonical-Payload",
+    "already_used": false,
+    "ids_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "budgets": {
+    "planner_calls_2hop": 0,
+    "planner_calls_3hop": 0,
+    "planner_calls_4hop": 0,
+    "total_llm_calls_4hop": 0,
+    "strong_calls": 0
+  },
+  "versions": {
+    "ontology": "2.3.0",
+    "graph_matcher": "2.3.0",
+    "span_generator": "2.3.0",
+    "query_builder": "2.3.0",
+    "trigger": "2.3.0",
+    "parser": "1.1b",
+    "validator": "1.1b"
+  },
+  "exact_command": "set -a; source /root/research/mvp_agentic_rag/.env; set +a; PYTHONPATH=src /root/research/.venv/bin/python scripts/run_evidence_dag_v2_3_p0.py --experiment p0c --model standard --modes plain_text plain_json provider_json_schema --count 72 --workers 8 --output-dir analysis/evidence_dag_next_protocol_v2_3/p0c_standard",
+  "environment_sha256": "cdb94b1339c0f404e4a208c93913fcee0e741d95ae7b9c2e1940aca1c5ccd6c2",
+  "created_at": "2026-07-18T11:52:30+08:00",
+  "fair_comparison_verified": true,
+  "gold_policy": {
+    "oracle_diagnostic": false,
+    "gold_inputs_allowed_in_runtime": false
+  }
+}

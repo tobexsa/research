@@ -1,0 +1,14 @@
+{
+  "run_id": "v23-p5-r0-oracle-attribution-20260718",
+  "files": [
+    "metrics.json",
+    "records.jsonl",
+    "source_metrics.json",
+    "report.md",
+    "run_manifest.json",
+    "summary.md",
+    "claim_validation.md"
+  ],
+  "result_status": "completed_partial_support",
+  "machine_validation": "pass"
+}

@@ -1,0 +1,21 @@
+{
+  "run_id": "v23-p4-retriever-oracle-dense-20260718",
+  "tier": "auxiliary/dev",
+  "campaign_id": "evidence-dag-next-protocol-v2-3",
+  "runner_commit": "acd0c00ab322bf5a191d3d498061de08d908d9cf",
+  "freeze_commit": "6108ee1",
+  "dataset": "Diagnostic-Dev-60 / 200 Gold steps",
+  "corpus": "data/evidence_dag_planner_protocol_v1/retrieval_corpus.jsonl",
+  "corpus_ids": 3720,
+  "index_ids": 3720,
+  "gold_targets_covered": 200,
+  "retriever": "BAAI/bge-base-en-v1.5 dense FAISS",
+  "top_k": 10,
+  "llm_calls": 0,
+  "exact_command": "PYTHONPATH=src /root/research/.venv/bin/python scripts/run_evidence_dag_v2_3_p4_retriever.py --config configs/evidence_dag_v2_3_p4_diagnostic_dense.yaml --dataset data/evidence_dag_planner_protocol_v1/diagnostic_60.jsonl --corpus data/evidence_dag_planner_protocol_v1/retrieval_corpus.jsonl --output-dir analysis/evidence_dag_next_protocol_v2_3/p4_retriever_oracle_dense --top-k 10",
+  "completed_at": "2026-07-18T13:08:51+08:00",
+  "status": "completed",
+  "machine_validation": "pass",
+  "confirmation_touched_by_model": false,
+  "internal_holdout_touched_by_model": false
+}

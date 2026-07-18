@@ -1,0 +1,40 @@
+{
+  "campaign_id": "evidence-dag-next-protocol-v2-3",
+  "experiment_id": "p5_r0_gold_query_dense_oracle_extractor",
+  "variant": "gold-plan-gold-query-dense-oracle-extractor-validator",
+  "dataset_split": "Diagnostic-Dev-60",
+  "candidate_configuration": {
+    "plan": "Gold MuSiQue decomposition",
+    "query": "Gold relation question with runtime-bound prior Gold values",
+    "retriever": "contract-matched BAAI/bge-base-en-v1.5 dense FAISS top-10",
+    "extractor": "ExplicitValueExtractor oracle",
+    "validator": "deterministic oracle candidate checks",
+    "sample_count": 60,
+    "step_count": 200,
+    "llm_calls": 0,
+    "dataset_sha256": "117780afcf47d1ffea7634e484812c2870440e8d8aaa13b76f959cda50ee8ff2",
+    "corpus_sha256": "e0cff794ff51ad6b4b167140aa5b13e883bf6a1fe53dfaa6173e5634f9a1b814",
+    "index_sha256": "5f78f18a13372fe58611f29c07b0e4e575934496333f80e663515d8bff26204a",
+    "index_meta_sha256": "e61cd13b824b5439cc239c37d68cae5f48d7b7f14f07cea76ef512d334112a78",
+    "runner_git_commit": "37f0cf383f8707febab7ab787c34430ff2c98f54"
+  },
+  "budgets": {
+    "planner_calls_2hop": 0,
+    "planner_calls_3hop": 0,
+    "planner_calls_4hop": 0,
+    "total_llm_calls_4hop": 0,
+    "strong_calls": 0
+  },
+  "gold_policy": {
+    "oracle_diagnostic": true,
+    "gold_inputs_allowed_in_runtime": true
+  },
+  "fair_comparison_verified": true,
+  "schema_versions": {
+    "manifest": "2.3.0",
+    "freeze_lock": "2.3.0",
+    "raw_record": "2.3.0",
+    "metrics": "2.3.0"
+  },
+  "output_dir": "analysis/evidence_dag_next_protocol_v2_3/p5_r0_gold_query_dense_oracle_extractor"
+}

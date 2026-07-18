@@ -1,0 +1,278 @@
+{
+  "by_variant": {
+    "p0b-pro-provider_json_schema-hop": {
+      "byte_exact_match": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      },
+      "canonical_json_match": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      },
+      "count": 1,
+      "finish_length": {
+        "denominator": 1,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "finish_stop": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      },
+      "repetition_defect": {
+        "denominator": 1,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "schema_semantic_match": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      },
+      "task_exact_match": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      }
+    },
+    "p0b-pro-provider_json_schema-query": {
+      "byte_exact_match": {
+        "denominator": 1,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "canonical_json_match": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      },
+      "count": 1,
+      "finish_length": {
+        "denominator": 1,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "finish_stop": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      },
+      "repetition_defect": {
+        "denominator": 1,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "schema_semantic_match": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      },
+      "task_exact_match": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      }
+    },
+    "p0b-pro-provider_json_schema-shape": {
+      "byte_exact_match": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      },
+      "canonical_json_match": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      },
+      "count": 1,
+      "finish_length": {
+        "denominator": 1,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "finish_stop": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      },
+      "repetition_defect": {
+        "denominator": 1,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "schema_semantic_match": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      },
+      "task_exact_match": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      }
+    },
+    "p0b-pro-provider_json_schema-slot": {
+      "byte_exact_match": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      },
+      "canonical_json_match": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      },
+      "count": 1,
+      "finish_length": {
+        "denominator": 1,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "finish_stop": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      },
+      "repetition_defect": {
+        "denominator": 1,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "schema_semantic_match": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      },
+      "task_exact_match": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      }
+    },
+    "p0b-pro-provider_json_schema-topology": {
+      "byte_exact_match": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      },
+      "canonical_json_match": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      },
+      "count": 1,
+      "finish_length": {
+        "denominator": 1,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "finish_stop": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      },
+      "repetition_defect": {
+        "denominator": 1,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "schema_semantic_match": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      },
+      "task_exact_match": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      }
+    },
+    "p0b-pro-provider_json_schema-validator": {
+      "byte_exact_match": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      },
+      "canonical_json_match": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      },
+      "count": 1,
+      "finish_length": {
+        "denominator": 1,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "finish_stop": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      },
+      "repetition_defect": {
+        "denominator": 1,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "schema_semantic_match": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      },
+      "task_exact_match": {
+        "denominator": 1,
+        "numerator": 1,
+        "rate": 1.0
+      }
+    }
+  },
+  "campaign_id": "evidence-dag-next-protocol-v2-3",
+  "experiment_id": "p0b_pro",
+  "metrics": {
+    "byte_exact_match": {
+      "denominator": 6,
+      "numerator": 5,
+      "rate": 0.8333333333333334
+    },
+    "canonical_json_match": {
+      "denominator": 6,
+      "numerator": 6,
+      "rate": 1.0
+    },
+    "finish_length": {
+      "denominator": 6,
+      "numerator": 0,
+      "rate": 0.0
+    },
+    "finish_stop": {
+      "denominator": 6,
+      "numerator": 6,
+      "rate": 1.0
+    },
+    "repetition_defect": {
+      "denominator": 6,
+      "numerator": 0,
+      "rate": 0.0
+    },
+    "schema_semantic_match": {
+      "denominator": 6,
+      "numerator": 6,
+      "rate": 1.0
+    },
+    "task_exact_match": {
+      "denominator": 6,
+      "numerator": 6,
+      "rate": 1.0
+    },
+    "transport_success": {
+      "denominator": 6,
+      "numerator": 6,
+      "rate": 1.0
+    }
+  },
+  "planned_count": 6,
+  "schema_version": "2.3.0"
+}

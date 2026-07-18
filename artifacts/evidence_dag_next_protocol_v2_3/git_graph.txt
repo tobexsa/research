@@ -1,0 +1,19 @@
+* 081deeb Finalize Evidence-DAG V2.3 experiment report
+* 93c9d68 Record V2.3 P5 R0 Oracle attribution result
+* bc3720e Freeze V2.3 P5 R0 Oracle attribution slice
+* e554a31 Record corrected V2.3 P4 Retriever Oracle gate
+* 37f0cf3 Implement V2.3 P5 R0 Oracle attribution slice
+* 6108ee1 Refreeze P4 on contract-matched Diagnostic index
+* acd0c00 Diagnose and repair P4 corpus-index contract
+* c63a63e Freeze V2.3 P4 dense Retriever Oracle gate
+* 6bc27cb Prepare bounded V2.3 P4 Retriever Oracle gate
+* 484ad9b Record V2.3 P1 structural experiment failure
+* aef24e4 Freeze V2.3 P1 structural diagnostic package
+* 7771bba Open V2.3 P1 structural branch with verified baseline
+* fe34784 Run V2.3 decoder envelope and complete E0 gates
+* d401ff7 Freeze V2.3 safe-stage experiment configurations
+* f9934e4 Harden V2.3 artifact bundle validation
+* 9d3b7be Run V2.3 holdout and span safe-stage experiments
+* b6a244f Implement V2.3 safe-stage experiment infrastructure
+* 40b56c1 Charter Evidence-DAG V2.3 experiment campaign
+* a7842f3 Parent V1 diagnostic campaign

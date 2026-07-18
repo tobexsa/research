@@ -1,0 +1,19 @@
+{
+  "campaign_id": "evidence-dag-next-protocol-v2-3",
+  "export_scope": "github-safe-public-results",
+  "source_complete_package_file_count": 90,
+  "copied_artifact_file_count_before_export_metadata": 84,
+  "excluded_sensitive_files": [
+    "g0_holdout_feasibility/internal_holdout_a.jsonl",
+    "g0_holdout_feasibility/internal_holdout_b.jsonl",
+    "g0_holdout_feasibility/internal_holdout_corpus.jsonl",
+    "g0_holdout_feasibility/holdout_reservation.json",
+    "g0_holdout_feasibility/holdout_overlap_ledger.csv",
+    "g0_holdout_feasibility/ambiguous_candidates.jsonl"
+  ],
+  "exclusion_reason": "Preserve untouched one-shot Internal-Holdout confidentiality and prevent reconstruction of reserved sample membership.",
+  "confirmation_touched_by_model": false,
+  "internal_holdout_used": false,
+  "credential_scan": "passed; no API key or authorization token detected",
+  "source_remote_experiment_head": "27a533c26e27f0b7cde2195dbf8139fc1df5e496"
+}

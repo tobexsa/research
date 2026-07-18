@@ -1,0 +1,164 @@
+{
+  "by_variant": {
+    "p0c-standard-plain_json-minimal_decoder": {
+      "byte_exact_match": {
+        "denominator": 72,
+        "numerator": 72,
+        "rate": 1.0
+      },
+      "canonical_json_match": {
+        "denominator": 72,
+        "numerator": 72,
+        "rate": 1.0
+      },
+      "count": 72,
+      "finish_length": {
+        "denominator": 72,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "finish_stop": {
+        "denominator": 72,
+        "numerator": 72,
+        "rate": 1.0
+      },
+      "repetition_defect": {
+        "denominator": 72,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "schema_semantic_match": {
+        "denominator": 72,
+        "numerator": 72,
+        "rate": 1.0
+      },
+      "task_exact_match": {
+        "denominator": 72,
+        "numerator": 72,
+        "rate": 1.0
+      }
+    },
+    "p0c-standard-plain_text-minimal_decoder": {
+      "byte_exact_match": {
+        "denominator": 72,
+        "numerator": 72,
+        "rate": 1.0
+      },
+      "canonical_json_match": {
+        "denominator": 72,
+        "numerator": 72,
+        "rate": 1.0
+      },
+      "count": 72,
+      "finish_length": {
+        "denominator": 72,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "finish_stop": {
+        "denominator": 72,
+        "numerator": 72,
+        "rate": 1.0
+      },
+      "repetition_defect": {
+        "denominator": 72,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "schema_semantic_match": {
+        "denominator": 72,
+        "numerator": 72,
+        "rate": 1.0
+      },
+      "task_exact_match": {
+        "denominator": 72,
+        "numerator": 72,
+        "rate": 1.0
+      }
+    },
+    "p0c-standard-provider_json_schema-minimal_decoder": {
+      "byte_exact_match": {
+        "denominator": 72,
+        "numerator": 72,
+        "rate": 1.0
+      },
+      "canonical_json_match": {
+        "denominator": 72,
+        "numerator": 72,
+        "rate": 1.0
+      },
+      "count": 72,
+      "finish_length": {
+        "denominator": 72,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "finish_stop": {
+        "denominator": 72,
+        "numerator": 72,
+        "rate": 1.0
+      },
+      "repetition_defect": {
+        "denominator": 72,
+        "numerator": 0,
+        "rate": 0.0
+      },
+      "schema_semantic_match": {
+        "denominator": 72,
+        "numerator": 72,
+        "rate": 1.0
+      },
+      "task_exact_match": {
+        "denominator": 72,
+        "numerator": 72,
+        "rate": 1.0
+      }
+    }
+  },
+  "campaign_id": "evidence-dag-next-protocol-v2-3",
+  "experiment_id": "p0c_standard",
+  "metrics": {
+    "byte_exact_match": {
+      "denominator": 216,
+      "numerator": 216,
+      "rate": 1.0
+    },
+    "canonical_json_match": {
+      "denominator": 216,
+      "numerator": 216,
+      "rate": 1.0
+    },
+    "finish_length": {
+      "denominator": 216,
+      "numerator": 0,
+      "rate": 0.0
+    },
+    "finish_stop": {
+      "denominator": 216,
+      "numerator": 216,
+      "rate": 1.0
+    },
+    "repetition_defect": {
+      "denominator": 216,
+      "numerator": 0,
+      "rate": 0.0
+    },
+    "schema_semantic_match": {
+      "denominator": 216,
+      "numerator": 216,
+      "rate": 1.0
+    },
+    "task_exact_match": {
+      "denominator": 216,
+      "numerator": 216,
+      "rate": 1.0
+    },
+    "transport_success": {
+      "denominator": 216,
+      "numerator": 216,
+      "rate": 1.0
+    }
+  },
+  "planned_count": 216,
+  "schema_version": "2.3.0"
+}
